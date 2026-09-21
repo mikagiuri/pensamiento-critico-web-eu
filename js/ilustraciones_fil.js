@@ -80,5 +80,59 @@ const ILUSTRACIONES = [
   "license": "Domeinu publikoa",
   "artist": "Whitehead and Russell",
   "page": "https://commons.wikimedia.org/wiki/File:Principia_Mathematica_54-43.png"
+ },
+ {
+  "f": "media/ilustraciones/escuela_atenas.jpg",
+  "t": "Atenasko Eskola",
+  "pie": "Rafael: filosofo greziarrak bildurik; mitotik logosera igarotzea.",
+  "tema": "fil-t1",
+  "license": "Domeinu publikoa",
+  "artist": "Raphael",
+  "page": "https://commons.wikimedia.org/wiki/File:%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg"
+ },
+ {
+  "f": "media/ilustraciones/acropolis.jpg",
+  "t": "Atenasko Akropolia",
+  "pie": "Atenas, filosofiaren eta poliseko bizitzaren sehaska.",
+  "tema": "fil-t1",
+  "license": "CC0",
+  "artist": "Jebulon",
+  "page": "https://commons.wikimedia.org/wiki/File:Acropolis_Parthenon_Athens_Greece.jpg"
+ },
+ {
+  "f": "media/ilustraciones/muerte_socrates.jpg",
+  "t": "Sokratesen heriotza",
+  "pie": "David: Sokratesek koherentzia morala hautatzen du bizitza salbatu baino lehen.",
+  "tema": "fil-t5",
+  "license": "Domeinu publikoa",
+  "artist": "Jacques-Louis David",
+  "page": "https://commons.wikimedia.org/wiki/File:David_-_The_Death_of_Socrates.jpg"
+ },
+ {
+  "f": "media/ilustraciones/justicia.jpg",
+  "t": "Justiziaren alegoria",
+  "pie": "Etikak galdegiten du zer den bidezkoa eta nola jokatu behar dugun.",
+  "tema": "fil-t5",
+  "license": "Domeinu publikoa",
+  "artist": "Sienese school",
+  "page": "https://commons.wikimedia.org/wiki/File:Allegory_of_Justice-f3434433.jpg"
+ },
+ {
+  "f": "media/ilustraciones/venus_milo.jpg",
+  "t": "Venus de Milo",
+  "pie": "Edertasun klasikoa: proportzioa eta harmonia ideal estetiko gisa.",
+  "tema": "fil-t7",
+  "license": "Domeinu publikoa",
+  "artist": "Unknown artistUnknown artist",
+  "page": "https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399_n4.jpg"
+ },
+ {
+  "f": "media/ilustraciones/las_meninas.jpg",
+  "t": "Las Meninas",
+  "pie": "Velázquez: bere buruaz pentsatzen duen artea (irudikapena eta begirada).",
+  "tema": "fil-t7",
+  "license": "Domeinu publikoa",
+  "artist": "?",
+  "page": "https://commons.wikimedia.org/wiki/File:Las_Meninas_(1656),_by_Velazquez.jpg"
  }
 ];
