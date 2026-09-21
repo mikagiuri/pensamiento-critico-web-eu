@@ -67,7 +67,7 @@ const ILUSTRACIONES = [
   "f": "media/ilustraciones/frege_begriffsschrift.png",
   "t": "Fregeren kontzeptografia",
   "pie": "Fregek logika modernoa (lehen mailakoa) sortu zuen.",
-  "tema": "fil-t3",
+  "tema": "fil-t4",
   "license": "Domeinu publikoa",
   "artist": "Frege",
   "page": "https://commons.wikimedia.org/wiki/File:Frege-gegens%C3%A4tze.png"
@@ -76,7 +76,7 @@ const ILUSTRACIONES = [
   "f": "media/ilustraciones/principia_mathematica.png",
   "t": "«1+1=2» Principia Mathematica-n",
   "pie": "Logika sinbolikoa: aritmetika logikatik eratortzea.",
-  "tema": "fil-t3",
+  "tema": "fil-t4",
   "license": "Domeinu publikoa",
   "artist": "Whitehead and Russell",
   "page": "https://commons.wikimedia.org/wiki/File:Principia_Mathematica_54-43.png"
