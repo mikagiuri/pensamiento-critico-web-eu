@@ -1,0 +1,39 @@
+/* ===== Cronogramas: líneas de tiempo SVG ===== usa los tokens de styles.css ===== */
+#cronogramas .crono-filter{ display:flex; flex-wrap:wrap; gap:.4rem; margin:.2rem 0 .6rem; }
+#cronogramas .crono-filter .flabel{ width:100%; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.1rem; }
+#cronogramas .cbtn{ font:inherit; cursor:pointer; border:1px solid var(--line); background:var(--surface); color:var(--ink);
+  padding:.4rem .8rem; border-radius:999px; transition:transform .12s, border-color .15s, background .15s; }
+#cronogramas .cbtn:hover{ transform:translateY(-1px); border-color:var(--accent); }
+#cronogramas .cbtn[aria-pressed="true"]{ background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+#cronogramas .crono-chips{ display:flex; flex-wrap:wrap; gap:.4rem; margin:.3rem 0 1.1rem; }
+#cronogramas .crono-chips .chip{ font:inherit; cursor:pointer; border:1px solid var(--line); background:var(--surface-2);
+  color:var(--ink); padding:.38rem .7rem; border-radius:10px; font-size:.85rem; transition:border-color .15s, transform .1s; }
+#cronogramas .crono-chips .chip:hover{ border-color:var(--accent); transform:translateY(-1px); }
+#cronogramas .crono-chips .chip[aria-pressed="true"]{ border-color:var(--accent); background:var(--accent); color:var(--on-accent); }
+
+#cronogramas .crono-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem 1.2rem; box-shadow:var(--shadow); }
+#cronogramas .crono-h{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:.6rem; }
+#cronogramas .crono-title{ font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.25; text-wrap:balance; }
+#cronogramas .crono-span{ font-family:var(--mono); font-size:.82rem; color:var(--muted); white-space:nowrap; }
+#cronogramas .crono-svg{ width:100%; height:auto; display:block; overflow:visible; }
+#cronogramas .crono-svg .lane-bg{ fill:var(--surface-2); }
+#cronogramas .crono-svg .grid{ stroke:var(--line-soft); stroke-width:1; }
+#cronogramas .crono-svg .tick-lbl{ fill:var(--muted); font-family:var(--mono); font-size:11px; }
+#cronogramas .crono-svg .lane-lbl{ fill:var(--ink); font-family:var(--sans); font-size:13px; }
+#cronogramas .crono-svg .bar{ rx:6; }
+#cronogramas .crono-svg .bar-lbl{ fill:var(--on-accent); font-family:var(--mono); font-size:10.5px; }
+#cronogramas .crono-svg .bar-yr{ fill:var(--muted); font-family:var(--mono); font-size:10.5px; }
+#cronogramas .crono-svg .band{ fill:var(--ink); opacity:.035; }
+#cronogramas .crono-svg .zero{ stroke:var(--bad); stroke-width:1; stroke-dasharray:3 3; opacity:.7; }
+
+/* épocas (secuencia de etapas) */
+#cronogramas .crono-epochs{ display:grid; gap:.6rem; }
+#cronogramas .epoch{ display:grid; grid-template-columns:minmax(120px,180px) 1fr; gap:.9rem; align-items:start;
+  padding:.7rem .2rem; border-top:1px solid var(--line-soft); }
+#cronogramas .epoch:first-child{ border-top:0; }
+#cronogramas .epoch .ep-label{ font-family:var(--serif); font-weight:600; color:var(--accent); }
+#cronogramas .epoch .ep-text{ color:var(--ink); line-height:1.5; }
+
+@media (max-width:640px){
+  #cronogramas .epoch{ grid-template-columns:1fr; gap:.15rem; }
+}
