@@ -4,7 +4,7 @@
 (function(){
   if (typeof CITAS === "undefined") return;
 
-  const EPOCAS = { antigua: "Antzinakoa", moderna: "Modernoa", contemporanea: "Garaikidea" };
+  const EPOCAS = { antigua: "Antzinakoa", medieval: "Erdi Arokoa", moderna: "Modernoa", contemporanea: "Garaikidea" };
   const CSS = ''
     + '#citas .citgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:14px; }'
     + '#citas .citcard{ background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--accent); '
@@ -29,7 +29,7 @@
     if (!box) return;
     injectCss();
     box.innerHTML = '<div class="fgroup"><span class="flabel">Garaia</span>' +
-      ["all", "antigua", "moderna", "contemporanea"].map(function (e){
+      ["all", "antigua", "medieval", "moderna", "contemporanea"].map(function (e){
         return '<button class="fbtn" data-ce="' + e + '" aria-pressed="' + (e === citEpoca) + '">' +
           (e === "all" ? "Guztiak" : EPOCAS[e]) + '</button>'; }).join("") + '</div>';
     box.querySelectorAll("[data-ce]").forEach(function (b){ b.addEventListener("click", function (){
