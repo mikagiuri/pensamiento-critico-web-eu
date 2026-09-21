@@ -5,6 +5,8 @@
 
 let cronoBlock = null;      // A / B / C / "otros"
 let cronoId = null;
+/* Título descriptivo: usa el override de cronogramas_titulos.js si existe, si no el del dato. */
+function cronoTitle(c){ return (typeof CRONO_TITULOS !== "undefined" && CRONO_TITULOS[c.id]) || c.title; }
 
 function cronoOf(code){ const ch = (code || "").trim().charAt(0).toUpperCase(); return "ABC".includes(ch) ? ch : "·"; }
 function cronoBlocksPresent(){ return [...new Set(CRONOGRAMAS.map(c => cronoOf(c.code)))]; }
@@ -38,7 +40,7 @@ function renderCronoChips(){
   const list = cronoList(cronoBlock);
   if (!list.some(c => c.id === cronoId)) cronoId = list.length ? list[0].id : null;
   box.innerHTML = list.map(c =>
-    '<button class="chip" data-crono="' + c.id + '" aria-pressed="' + (c.id === cronoId) + '">' + c.title + '</button>').join("");
+    '<button class="chip" data-crono="' + c.id + '" aria-pressed="' + (c.id === cronoId) + '">' + cronoTitle(c) + '</button>').join("");
   box.querySelectorAll("[data-crono]").forEach(b => b.addEventListener("click", () => { cronoId = b.dataset.crono; renderCronoChips(); drawCrono(); }));
 }
 
@@ -48,7 +50,7 @@ function drawCrono(){
   const c = CRONOGRAMAS.find(x => x.id === cronoId);
   if (!c){ box.innerHTML = '<p class="lead">Elige un cronograma.</p>'; return; }
   const span = (c.type === "timeline" && c.start != null && c.end != null) ? (cronoYear(c.start) + " – " + cronoYear(c.end)) : "";
-  box.innerHTML = '<div class="crono-card"><div class="crono-h"><h2 class="crono-title">' + c.title + '</h2>' +
+  box.innerHTML = '<div class="crono-card"><div class="crono-h"><h2 class="crono-title">' + cronoTitle(c) + '</h2>' +
     (span ? '<span class="crono-span">' + span + '</span>' : '') + '</div>' +
     (c.type === "timeline" ? cronoSvg(c) : cronoEpochs(c)) + '</div>';
 }
@@ -68,7 +70,7 @@ function cronoSvg(c){
   const x0 = gutter, x1 = W - padR;
   const xOf = y => x0 + (y - start) / (end - start) * (x1 - x0);
 
-  let svg = '<svg class="crono-svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + c.title.replace(/"/g, "") + '">';
+  let svg = '<svg class="crono-svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + cronoTitle(c).replace(/"/g, "") + '">';
   // bandas alternas por periodo + rejilla + años (orientación temporal)
   const step = niceStep(end - start);
   const first = Math.ceil(start / step) * step;
