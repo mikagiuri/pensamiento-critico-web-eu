@@ -18,7 +18,7 @@ let galList = [];
 let galPos = 0;
 
 const GAL_CSS = `
-#galeria .galgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:12px}
+#galeria .galgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr));gap:12px;margin-top:12px}
 #galeria .galcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);cursor:zoom-in;box-shadow:var(--shadow);text-align:left;padding:0;font:inherit;color:inherit}
 #galeria .galcard img{display:block;width:100%;height:150px;object-fit:cover;background:var(--surface-2)}
 #galeria .galcard .cap{padding:8px 11px;font-size:13px;line-height:1.35;color:var(--ink)}
@@ -35,7 +35,7 @@ const GAL_CSS = `
 .gallb .nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:60px;font-size:26px;background:rgba(0,0,0,.35);border:0;color:#fff;cursor:pointer}
 .gallb .prev{left:6px;border-radius:0 10px 10px 0}
 .gallb .next{right:6px;border-radius:10px 0 0 10px}
-@media (max-width:520px){ #galeria .galgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))} #galeria .galcard img{height:120px} }
+@media (max-width:520px){ #galeria .galgrid{grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr))} #galeria .galcard img{height:120px} }
 `;
 let _galCss = false, _lb = null, _galPrev = null;
 function galInject(){

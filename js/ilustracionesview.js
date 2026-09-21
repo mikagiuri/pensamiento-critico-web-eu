@@ -9,7 +9,7 @@
   const CSS = ''
     + '.ilus-strip{ margin:2.4rem 0 .5rem; padding-top:1.2rem; border-top:1px solid var(--line); }'
     + '.ilus-strip h3{ font-family:var(--serif,Georgia,serif); font-size:1.05rem; margin:0 0 .2rem; }'
-    + '.ilus-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.9rem; margin:.9rem 0 .6rem; }'
+    + '.ilus-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr)); gap:.9rem; margin:.9rem 0 .6rem; }'
     + '.ilus-card{ margin:0; background:var(--surface); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }'
     + '.ilus-card .ilus-img{ width:100%; height:170px; object-fit:contain; background:var(--surface-2); cursor:zoom-in; padding:6px; transition:transform .18s ease; }'
     + '.ilus-card .ilus-img:hover{ transform:scale(1.03); }'
@@ -19,7 +19,7 @@
     + '.ilus-cred{ font-size:.68rem; color:var(--muted); margin-top:.1rem; }'
     + '.ilus-cred a{ color:var(--accent); text-decoration:none; } .ilus-cred a:hover{ text-decoration:underline; }'
     + '.ilus-note{ font-size:.76rem; color:var(--muted); line-height:1.5; margin:.4rem 0 0; }'
-    + '@media (max-width:560px){ .ilus-grid{ grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); } .ilus-card .ilus-img{ height:140px; } }';
+    + '@media (max-width:560px){ .ilus-grid{ grid-template-columns:repeat(auto-fill,minmax(min(130px,100%),1fr)); } .ilus-card .ilus-img{ height:140px; } }';
   let cssDone = false;
   function injectCss(){ if (cssDone) return; const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); cssDone = true; }
 

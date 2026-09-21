@@ -6,7 +6,7 @@
 
   const EPOCAS = { antigua: "Antzinakoa", medieval: "Erdi Arokoa", moderna: "Modernoa", contemporanea: "Garaikidea" };
   const CSS = ''
-    + '#citas .citgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:14px; }'
+    + '#citas .citgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:14px; margin-top:14px; }'
     + '#citas .citcard{ background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--accent); '
     + '  border-radius:12px; padding:18px 18px 15px; display:flex; flex-direction:column; gap:10px; box-shadow:var(--shadow); }'
     + '#citas .cit-q{ font-family:var(--serif,Georgia,serif); font-style:italic; font-size:1.08rem; line-height:1.45; color:var(--ink); margin:0; }'
