@@ -11,7 +11,7 @@ const CINE = [
  {
   "tema": "fil-t1",
   "kind": "cine",
-  "t": "El club de los poetas muertos",
+  "t": "Poeta hilen kluba",
   "year": 1989,
   "autor": "Peter Weir",
   "q": "Nork bere kabuz pentsatzea eta «carpe diem»: jasotakoa zalantzan jartzearen balioa."
@@ -27,7 +27,7 @@ const CINE = [
  {
   "tema": "fil-t2",
   "kind": "cine",
-  "t": "2001: Una odisea del espacio",
+  "t": "2001: espazioko odisea bat",
   "year": 1968,
   "autor": "Stanley Kubrick",
   "q": "Hezur-tresnatik ontzira: hominizazioa, teknika eta eboluzioa."
@@ -35,9 +35,9 @@ const CINE = [
  {
   "tema": "fil-t2",
   "kind": "arte",
-  "t": "La creación de Adán",
+  "t": "Adamen sorrera",
   "year": 1512,
-  "autor": "Miguel Ángel",
+  "autor": "Michelangelo",
   "q": "Gizakiaren jatorria eta duintasuna: natura eta kultura."
  },
  {
@@ -45,13 +45,13 @@ const CINE = [
   "kind": "cine",
   "t": "Matrix",
   "year": 1999,
-  "autor": "Hnas. Wachowski",
+  "autor": "Wachowski ahizpak",
   "q": "Erreala al da mundua? Eszeptizismoa, Platonen kobazuloa eta Descartesen jeinu gaiztoa."
  },
  {
   "tema": "fil-t3",
   "kind": "cine",
-  "t": "El show de Truman",
+  "t": "Trumanen showa",
   "year": 1998,
   "autor": "Peter Weir",
   "q": "Itxura eta errealitatea: nola dakit ez nautela engainatzen ari?"
@@ -67,7 +67,7 @@ const CINE = [
  {
   "tema": "fil-t7",
   "kind": "arte",
-  "t": "La fuente (urinario)",
+  "t": "Iturria (pixatokia)",
   "year": 1917,
   "autor": "Marcel Duchamp",
   "q": "Ready-made bat museo batean: zerk bihurtzen du zerbait arte? (teoria instituzionala)."
@@ -83,7 +83,7 @@ const CINE = [
  {
   "tema": "fil-t7",
   "kind": "cine",
-  "t": "El misterio Picasso",
+  "t": "Picasso misterioa",
   "year": 1956,
   "autor": "Henri-Georges Clouzot",
   "q": "Sormen-prozesua zuzenean: zer da sortzea eta zer da edertasuna?"
@@ -101,13 +101,13 @@ const CINE = [
   "kind": "cine",
   "t": "Matrix",
   "year": 1999,
-  "autor": "Hnas. Wachowski",
+  "autor": "Wachowski ahizpak",
   "q": "Kobazuloaren mitoa gako garaikidean: itzaletatik askatzea."
  },
  {
   "tema": "hf-platon",
   "kind": "cine",
-  "t": "El show de Truman",
+  "t": "Trumanen showa",
   "year": 1998,
   "autor": "Peter Weir",
   "q": "Kobazulotik irtetea: fabrikatutako mundutik errealaren ezagutzara."
@@ -123,7 +123,7 @@ const CINE = [
  {
   "tema": "hf-medieval",
   "kind": "cine",
-  "t": "El nombre de la rosa",
+  "t": "Arrosaren izena",
   "year": 1986,
   "autor": "Jean-Jacques Annaud",
   "q": "Arrazoia eta fedea, metodoa eta unibertsalak (Guillermo, Ockhamengan inspiratua)."
@@ -139,7 +139,7 @@ const CINE = [
  {
   "tema": "hf-contrato",
   "kind": "cine",
-  "t": "El señor de las moscas",
+  "t": "Eulien erregea",
   "year": 1990,
   "autor": "Harry Hook",
   "q": "Hobbesen naturazko egoera: itunik gabe, «gizakia otsoa da gizakiarentzat»."
@@ -147,7 +147,7 @@ const CINE = [
  {
   "tema": "hf-sospecha",
   "kind": "cine",
-  "t": "Tiempos modernos",
+  "t": "Garai modernoak",
   "year": 1936,
   "autor": "Charles Chaplin",
   "q": "Lanaren alienazioa muntaia-katean (Marx)."
@@ -155,7 +155,7 @@ const CINE = [
  {
   "tema": "hf-capitalismo",
   "kind": "cine",
-  "t": "Parásitos",
+  "t": "Parasitoak",
   "year": 2019,
   "autor": "Bong Joon-ho",
   "q": "Desberdintasuna eta klase-borroka: kapitalismoaren kritika gaur."
@@ -171,7 +171,7 @@ const CINE = [
  {
   "tema": "hf-existencialismo",
   "kind": "cine",
-  "t": "El séptimo sello",
+  "t": "Zazpigarren zigilua",
   "year": 1957,
   "autor": "Ingmar Bergman",
   "q": "Heriotza, zentzua eta Jainkoaren isiltasuna: existentzia-larritasuna."
@@ -179,7 +179,7 @@ const CINE = [
  {
   "tema": "hf-analitica",
   "kind": "cine",
-  "t": "La llegada",
+  "t": "Etorrera",
   "year": 2016,
   "autor": "Denis Villeneuve",
   "q": "Hizkuntzak nola pentsatzen dugun determinatzen al du? Bihurgune linguistikoa."
@@ -189,13 +189,13 @@ const CINE = [
   "kind": "cine",
   "t": "Matrix",
   "year": 1999,
-  "autor": "Hnas. Wachowski",
+  "autor": "Wachowski ahizpak",
   "q": "Simulakroa eta hiperrealitatea (Baudrillard): erreala bere kopiak ordezkatua."
  },
  {
   "tema": "hf-beauvoir",
   "kind": "cine",
-  "t": "Las sufragistas",
+  "t": "Sufragistak",
   "year": 2015,
   "autor": "Sarah Gavron",
   "q": "«Emakumea ez da jaiotzen, egin egiten da»: eskubideen eta askatasunaren aldeko borroka."
@@ -203,7 +203,7 @@ const CINE = [
  {
   "tema": "hf-siglo21",
   "kind": "cine",
-  "t": "Black Mirror (serie)",
+  "t": "Black Mirror (telesaila)",
   "year": 2011,
   "autor": "Charlie Brooker",
   "q": "Teknoetika: zaintza, identitate digitala eta teknikaren mugak."

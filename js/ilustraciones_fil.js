@@ -119,7 +119,7 @@ const ILUSTRACIONES = [
  },
  {
   "f": "media/ilustraciones/venus_milo.jpg",
-  "t": "Venus de Milo",
+  "t": "Miloko Venus",
   "pie": "Edertasun klasikoa: proportzioa eta harmonia ideal estetiko gisa.",
   "tema": "fil-t7",
   "license": "Domeinu publikoa",

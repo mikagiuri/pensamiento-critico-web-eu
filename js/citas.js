@@ -15,7 +15,7 @@ const CITAS = [
  {
   "c": "Bertutea gutariko bakoitzari dagokion erdibide bat da, arrazoiak zehaztua.",
   "a": "Aristoteles",
-  "o": "Ética a Nicómaco",
+  "o": "Nikomakorentzako Etika",
   "e": "antigua"
  },
  {
@@ -26,20 +26,20 @@ const CITAS = [
  },
  {
   "c": "Alde egin hortik, eguzkia estaltzen didazu.",
-  "a": "Diógenes de Sínope",
+  "a": "Diogenes Sinopekoa",
   "o": "Alexandro Handiari",
   "e": "antigua"
  },
  {
   "c": "Diren gauzetatik, batzuk gure mende daude eta beste batzuk ez daude gure mende.",
-  "a": "Epicteto",
+  "a": "Epikteto",
   "o": "Gure esku dagoena (Enquiridión 1)",
   "e": "antigua"
  },
  {
   "c": "Heriotza ez da ezer guretzat: existitzen garen bitartean, heriotza ez dago; eta heriotza dagoenean, gu jada ez gaude.",
   "a": "Epikuro",
-  "o": "Carta a Meneceo",
+  "o": "Menezeori gutuna",
   "e": "antigua"
  },
  {
@@ -75,7 +75,7 @@ const CITAS = [
  {
   "c": "Gorputza dugun bitartean, ez dugu behar bezala edukiko desiratzen duguna: egia.",
   "a": "Platon",
-  "o": "Fedón",
+  "o": "Fedon",
   "e": "antigua"
  },
  {
@@ -122,19 +122,19 @@ const CITAS = [
  },
  {
   "c": "Alferrik da gehiagorekin egitea gutxiagorekin egin daitekeena.",
-  "a": "Guillermo de Ockham",
+  "a": "Ockhamgo Gilen",
   "o": "Ockham-en labana (Summa Logicae I, 12)",
   "e": "medieval"
  },
  {
   "c": "Eta argi biziaren ispilu baten modukoa ikusi nuen, eta hartan argitasun distiratsu bat isurtzen zen kreatura ororen gainera.",
-  "a": "Hildegard von Bingen",
+  "a": "Hildegarda Bingengoa",
   "o": "Argi biziaren ikuspena (Scivias I)",
   "e": "medieval"
  },
  {
   "c": "Errebelazioa giza gaitasunaren arabera ulertu behar da, metaforetara eta sinboloetara joz esanezina adierazteko.",
-  "a": "Maimónides",
+  "a": "Maimonides",
   "o": "Interpretazioaren zailtasuna (Guía de los perplejos I, 31)",
   "e": "medieval"
  },
@@ -159,19 +159,19 @@ const CITAS = [
  {
   "c": "Gizakia kanabera bat besterik ez da, naturako ahulena, baina pentsatzen duen kanabera bat da.",
   "a": "Blaise Pascal",
-  "o": "Pensamientos",
+  "o": "Pentsamenduak",
   "e": "modernoa"
  },
  {
   "c": "Arrazoia grinen esklabo da, eta halakoa besterik ez luke izan behar.",
   "a": "David Hume",
-  "o": "Tratado de la naturaleza humana",
+  "o": "Giza naturari buruzko tratatua",
   "e": "modernoa"
  },
  {
   "c": "Edertasuna ez da gauzen beren nolakotasun bat: hura kontenplatzen duen gogoan baino ez da existitzen.",
   "a": "David Hume",
-  "o": "La norma del gusto",
+  "o": "Gustuaren araua",
   "e": "modernoa"
  },
  {
@@ -182,7 +182,7 @@ const CITAS = [
  },
  {
   "c": "Gizonik zapalduenak ere izaki bat zapal dezake: bere emaztea. Bera da proletarioaren beraren proletarioa.",
-  "a": "Flora Tristán",
+  "a": "Flora Tristan",
   "o": "Langile eta emakumeen emantzipazioa (Unión obrera)",
   "e": "modernoa"
  },
@@ -237,7 +237,7 @@ const CITAS = [
  {
   "c": "Jokatu ezazu gizateria —bai zeure baitan, bai beste edonoren baitan— beti helburu gisa eta inoiz ez soilik baliabide gisa tratatzeko moduan.",
   "a": "Immanuel Kant",
-  "o": "Fundamentación de la metafísica de las costumbres",
+  "o": "Ohituren metafisikaren funtsapena",
   "e": "modernoa"
  },
  {
@@ -249,13 +249,13 @@ const CITAS = [
  {
   "c": "Ederra da unibertsalki eta kontzepturik gabe atsegin ematen duena.",
   "a": "Immanuel Kant",
-  "o": "Crítica del juicio",
+  "o": "Judizioaren kritika",
   "e": "modernoa"
  },
  {
   "c": "Legearen helburua ez da askatasuna deuseztatzea edo murriztea, baizik eta hura zaindu eta zabaltzea.",
   "a": "John Locke",
-  "o": "Segundo tratado sobre el gobierno civil",
+  "o": "Gobernu zibilari buruzko bigarren tratatua",
   "e": "modernoa"
  },
  {
@@ -267,7 +267,7 @@ const CITAS = [
  {
   "c": "Arima ez da gorputzeko organoen funtzionamenduaren emaitza besterik.",
   "a": "La Mettrie",
-  "o": "El hombre máquina",
+  "o": "Gizaki-makina",
   "e": "modernoa"
  },
  {
@@ -284,14 +284,14 @@ const CITAS = [
  },
  {
   "c": "Kristaua gauza guztien jauna da eta ez dago inoren mende. Kristaua gauza guztien zerbitzaria da eta guztien mende dago.",
-  "a": "Martín Lutero",
+  "a": "Martin Luther",
   "o": "Kristauaren askatasuna (De libertate christiana)",
   "e": "modernoa"
  },
  {
   "c": "Ez dut nahi emakumeek gizonen gaineko boterea izatea, baizik eta beren buruaren gainekoa.",
   "a": "Mary Wollstonecraft",
-  "o": "Vindicación de los derechos de la mujer",
+  "o": "Emakumearen eskubideen aldarrikapena",
   "e": "modernoa"
  },
  {
@@ -333,7 +333,7 @@ const CITAS = [
  {
   "c": "Egia aztertzeko beharrezkoa da, behin bizitzan, gauza guztiak ahalik eta gehien zalantzan jartzea.",
   "a": "René Descartes",
-  "o": "Principios de la filosofía",
+  "o": "Filosofiaren printzipioak",
   "e": "modernoa"
  },
  {
@@ -375,7 +375,7 @@ const CITAS = [
  {
   "c": "Munduaren betiko ulertezina haren ulergarritasuna da.",
   "a": "Albert Einstein",
-  "o": "Física y realidad",
+  "o": "Fisika eta errealitatea",
   "e": "contemporanea"
  },
  {
@@ -405,19 +405,19 @@ const CITAS = [
  {
   "c": "Gizakiak bere gorputzean darama oraindik bere jatorriaren zigilu ezabaezina.",
   "a": "Charles Darwin",
-  "o": "El origen del hombre",
+  "o": "Gizakiaren jatorria",
   "e": "contemporanea"
  },
  {
   "c": "Ez dago ezer testutik kanpo.",
   "a": "Derrida",
-  "o": "La différance (De la gramatología)",
+  "o": "La différance (Gramatologiaz)",
   "e": "contemporanea"
  },
  {
   "c": "Etikaren irizpide material unibertsala giza bizitzaren ekoizpena, birsorkuntza eta garapena da komunitatean.",
   "a": "Dussel",
-  "o": "Ética de la liberación (1998)",
+  "o": "Askapenaren etika (1998)",
   "e": "contemporanea"
  },
  {
@@ -441,19 +441,19 @@ const CITAS = [
  {
   "c": "Jainkoa hil da.",
   "a": "Friedrich Nietzsche",
-  "o": "La gaya ciencia",
+  "o": "Zientzia alaia",
   "e": "contemporanea"
  },
  {
   "c": "Norberak kaosa eduki behar du bere baitan izar dantzari bat sortzeko.",
   "a": "Friedrich Nietzsche",
-  "o": "Así habló Zaratustra",
+  "o": "Honela mintzatu zen Zaratustra",
   "e": "contemporanea"
  },
  {
   "c": "Artea dugu egiaren ondorioz ez hiltzeko.",
   "a": "Friedrich Nietzsche",
-  "o": "Fragmentos póstumos",
+  "o": "Zati postumoak",
   "e": "contemporanea"
  },
  {
@@ -465,13 +465,13 @@ const CITAS = [
  {
   "c": "Existentzia esentziaren aurretik dator.",
   "a": "Jean-Paul Sartre",
-  "o": "El existencialismo es un humanismo",
+  "o": "Existentzialismoa humanismo bat da",
   "e": "contemporanea"
  },
  {
   "c": "Gizakia libre izatera kondenatuta dago.",
   "a": "Jean-Paul Sartre",
-  "o": "El ser y la nada",
+  "o": "Izatea eta ezereza",
   "e": "contemporanea"
  },
  {
@@ -489,25 +489,25 @@ const CITAS = [
  {
   "c": "Jokatu zure ekintzen ondorioak Lurrean benetako giza bizitza batek irautearekin bateragarriak izan daitezen.",
   "a": "Jonas",
-  "o": "Principio de responsabilidad (1979)",
+  "o": "Erantzukizunaren printzipioa (1979)",
   "e": "contemporanea"
  },
  {
   "c": "Ni neu naiz eta nire zirkunstantzia, eta hura salbatzen ez badut, neu ere ez naiz salbatzen.",
   "a": "José Ortega y Gasset",
-  "o": "Meditaciones del Quijote",
+  "o": "Kixoteari buruzko meditazioak",
   "e": "contemporanea"
  },
  {
   "c": "Filosofian, bidean egotea da funtsezkoena: bere galderak bere erantzunak baino garrantzitsuagoak dira.",
   "a": "Karl Jaspers",
-  "o": "Introducción a la filosofía",
+  "o": "Filosofiarako sarrera",
   "e": "contemporanea"
  },
  {
   "c": "Filosofoek mundua modu askotan interpretatu besterik ez dute egin; kontua, ordea, mundua eraldatzea da.",
   "a": "Karl Marx",
-  "o": "Tesis sobre Feuerbach",
+  "o": "Feuerbachi buruzko tesiak",
   "e": "contemporanea"
  },
  {
@@ -537,7 +537,7 @@ const CITAS = [
  {
   "c": "Filosofia hizkuntzaren bidez gure adimenari egiten zaion sorginkeriaren aurkako borroka da.",
   "a": "Ludwig Wittgenstein",
-  "o": "Investigaciones filosóficas §109",
+  "o": "Ikerketa filosofikoak §109",
   "e": "contemporanea"
  },
  {
@@ -561,7 +561,7 @@ const CITAS = [
  {
   "c": "Arte oro guztiz alferrikakoa da.",
   "a": "Oscar Wilde",
-  "o": "El retrato de Dorian Gray (prefacio)",
+  "o": "Dorian Grayren erretratua (hitzaurrea)",
   "e": "contemporanea"
  },
  {
@@ -573,13 +573,13 @@ const CITAS = [
  {
   "c": "Libre izan nahi izatea besteak ere libre izatea nahi izatea da.",
   "a": "Simone de Beauvoir",
-  "o": "Para una moral de la ambigüedad",
+  "o": "Anbiguotasunaren moral baterako",
   "e": "contemporanea"
  },
  {
   "c": "Paradigmak aldatzen direnean, mundua bera aldatzen da haiekin.",
   "a": "Thomas Kuhn",
-  "o": "La estructura de las revoluciones científicas",
+  "o": "Iraultza zientifikoen egitura",
   "e": "contemporanea"
  },
  {
