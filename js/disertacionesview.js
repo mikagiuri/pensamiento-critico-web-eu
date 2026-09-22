@@ -4,12 +4,12 @@
 let disertKey = Object.keys(DISERTACIONES)[0];
 let disertTipo = "guia";  /* tipo concreto por defecto, nunca «Todas» */
 
-const DISERT_TIPOS = { guia: "Nola egiten den", modelo: "Ereduak", comparativa: "Konparatiboak" };
+const DISERT_TIPOS = { guia: "Nola egiten den", modelo: "Ereduak", comparativa: "Konparatiboak", temas: "Temas para practicar" };
 
 function renderDisertFilter(){
   const box = document.getElementById("disertfilter");
   if (!box) return;
-  const btns = ["all", "guia", "modelo", "comparativa"].map(t =>
+  const btns = ["all", "guia", "modelo", "comparativa", "temas"].map(t =>
     '<button class="fbtn" data-tipo="' + t + '" aria-pressed="' + (t === disertTipo) + '">' +
     (t === "all" ? "Guztiak" : DISERT_TIPOS[t]) + '</button>'
   ).join("");
