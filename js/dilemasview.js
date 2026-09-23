@@ -6,7 +6,7 @@
    proyectar en el aula (también se guarda en este navegador). */
 
 const DIL_KEY = "aula-dilemas", DIL_VOTES_KEY = "aula-dilemas-votos", DIL_CLASS_KEY = "aula-dilemas-clase";
-const DIL_GROUPS = { tecno: "Teknoetikoak", dia: "Egunekoak" };
+const DIL_GROUPS = { tecno: "Teknoetikoak", clasicos: "Klasikoak", dia: "Egunekoak" };
 /* textos de interfaz: cada uno es una cadena entera (así los traduce web_i18n/ui/<lang>.json) */
 const DIL_TXT = {
   decididos: "Erabakita:", borrar: "ezabatu nire erantzunak", azar: "Ausazko dilema", azarSub: "oraindik erabaki ez duzun bat",

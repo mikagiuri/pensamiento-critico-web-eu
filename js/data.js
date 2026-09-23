@@ -99,6 +99,11 @@ const SUBJECTS = {
     ""
    ],
    [
+    "Jokoa: Gela mundua balitz",
+    "mundo",
+    ""
+   ],
+   [
     "Teoria: nire aztarna planetan",
     "teoria",
     "ipc-huella"

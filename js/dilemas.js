@@ -5,6 +5,11 @@ const DILEMAS_INTRO = {
   "texto": "Aurrerapen bakoitzaren atzean erabaki etiko ezkutuak daude. Tresnek mundua aldatzen dute, erabiltzen ditugun moduaren arabera. Lau dimentsio, lau egoera erreal eta atzera bueltarik gabeko lau erabaki.",
   "cierre": "Teknologiak diseinatzen du gure mundua, baina balioek gidatzen dute teknologia. Gure erantzukizun etikoari uko egiten badiogu, algoritmoen, makinen eta enpresen balioak nagusituko dira. Etorkizuna ez da asmatu bakarrik egiten: etorkizuna aukeratu egiten da."
  },
+ "clasicos": {
+  "titulo": "Dilema klasikoak",
+  "texto": "Mundu osoko etika-eskoletan eztabaidatzen diren bi dilema ospetsu. Hemen ez da asmatzea kontua: erreparatu zer arrazoik konbentzitzen zaituzten eta noiz aldatzen duzun iritziz.",
+  "cierre": "Kohlbergek Heinzen dilema erabiltzen zuen nola arrazoitzen dugun aztertzeko: ez da hain garrantzitsua zer aukeratzen duzun, baizik eta zergatik aukeratzen duzun (zigorraren beldurra, besteek zer pentsatzen duten, arauak edo guztientzat balio duten printzipioak)."
+ },
  "dia": {
   "titulo": "Eguneko dilemak",
   "texto": "Zure adineko egoerak, garrantzitsuak diren bi gauzaren artean aukeratu behar denean. Ez dago liburuko erantzunik: ematen duzun arrazoia da axola duena.",
@@ -77,6 +82,45 @@ const DILEMAS = [
    "Zer da hobea: arazoa teknologiarekin konpontzea sortu ondoren, ala sortzea saihestea?",
    "Benetan konpon dezake teknologiak naturari egiten diogun kaltea?"
   ]
+ },
+ {
+  "grupo": "clasicos",
+  "subject": "ipc",
+  "id": "cla-heinz",
+  "emoji": "💊",
+  "etiqueta": "Legea, bizitza eta justizia",
+  "titulo": "Heinzen dilema",
+  "situacion": "Heinzen emaztea minbizi arraro batez hiltzen ari da. Bere hiriko farmazialari batek hura salba lezakeen sendagai bat aurkitu du, baina 5.000 euro kobratzen ditu dosi bakoitzeko, egiteak kostatzen diona baino askoz gehiago. Heinzek senideei eta lagunei dirua eskatzen die, eta erdia baino ez du biltzen. Merkeago saltzeko edo geroago ordaintzen uzteko erregutzen dio. Farmazialariak ezetz dio: berak aurkitu du, eta dirua irabazi nahi du.",
+  "a": "Heinz gauez farmazian sartu eta sendagaia lapurtzen du.",
+  "b": "Heinzek ez du lapurtzen: dirua bilatzen jarraitzen du eta legea errespetatzen du.",
+  "enjuego": "Pertsona baten bizitza, legearen eta jabetzaren aurrean. Bidezkoa al da prezioa? Ba al daude desobeditu behar diren legeak?",
+  "preguntas": [
+   "Lapurtzea legearen aurkakoa da. Horrek pertsona txar bihurtzen al du Heinz? Zergatik?",
+   "Ba al du errurik farmazialariak? Egon beharko litzateke prezioa jaistera behartuko lukeen legerik?",
+   "Zergatik komeni da, oro har, legeak betetzea? Ba al dago salbuespenik?"
+  ],
+  "ysi": "Eta Heinzek bere emaztea maite ez balu? Eta gaixoa ezezagun bat balitz? Eta bere txakurra balitz? Aldatzen al da zure erantzuna kasuren batean?",
+  "dato": "Lawrence Kohlberg psikologoak ehunka pertsonari planteatu zien dilema hau. Ez zitzaion interesatzen «bai» ala «ez» esaten zuten, haien arrazoiak baizik: horrela deskribatu zituen garapen moralaren etapak, «zigor ez nazaten» hasi eta «guztientzat balio duten printzipioengatik» arte."
+ },
+ {
+  "grupo": "clasicos",
+  "subject": "ipc",
+  "id": "cla-confederacion",
+  "emoji": "🛸",
+  "etiqueta": "Gehiengoa eta gutxiengoa",
+  "titulo": "Galaxia Arteko Konfederazioa",
+  "situacion": "Galaxia Arteko Konfederazioaren ordezkaritza bat iristen da Lurrera: «Kontrolatzen ditugun planeta guztietan, jendea guztiz zoriontsua da. Gauza bera egin dezakegu gizateriarekin: zoriontasuna betiko». «Zeren truke?», galdetzen dute gizakiek. «Oso gutxiren truke: herrialde bakoitzeko haur bat, neska edo mutila, eta bizitza osoan torturatuko dugu. Prezio txikia guztion betiko zoriontasunaren truke, ezta?»",
+  "a": "Tratua onartu: milaka milioi pertsonaren zoriontasunak konpentsatzen du gutxi batzuen sufrimendua.",
+  "b": "Tratua baztertu: inor ezin da sakrifikatu, guztion zoriontasunaren truke bada ere.",
+  "enjuego": "Zoriontasunik handiena kopururik handienarentzat (utilitarismoa), pertsona bakoitzaren eskubideen aurrean, ezeren truke alda ezin baitira (duintasuna).",
+  "preguntas": [
+   "Zer arrazoi emango zenituzke proposamena baztertzeko?",
+   "Beti al da hobea «zoriontasunik handiena kopururik handienarentzat», gutxiengo batek sufritu arren?",
+   "Gehiengoaren eskubideak gutxiengoenen gainetik al daude?",
+   "Prest egongo zinateke zu zeu sakrifikatzeko gizateria osoaren zoriontasunaren truke?"
+  ],
+  "ysi": "Eta, gainera, haur horiek betiko ahaztuko dituzuela ziurtatzen badizuete? Eta haurren ordez hiltzeko zorian dauden pertsonak edo gaizkileak balira? Orduan onartuko zenuke?",
+  "dato": "Ursula K. Le Guinen «Los que se marchan de Omelas» (1973) kontakizun ospetsuaren bertsio bat da: hiri zoriontsu bat, zeinaren zoriontasuna haur bakar baten sufrimenduaren mende dagoen."
  },
  {
   "grupo": "dia",
