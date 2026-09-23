@@ -56,6 +56,7 @@ function renderRetoStart(){
 /* ---------- juego ---------- */
 function retoStart(pool, title){
   reto.pool = pool; reto.title = title; reto.idx = 0; reto.score = 0; reto.streak = 0; reto.correct = 0; reto.answered = false;
+  reto.wrong = [];
   reto.best = (store.get("aula-reto-best", {}))[title] || 0;
   renderRetoQuestion();
 }
@@ -65,6 +66,7 @@ function retoStreakMult(){ return 1 + Math.min(reto.streak, 4) * 0.25; }   // ha
 function renderRetoQuestion(){
   const box = retoBox(); const n = reto.pool.length; const cur = reto.pool[reto.idx]; const it = cur.it;
   reto.answered = false; reto.remaining = RETO_TIME;
+  reto.optOrder = retoShuffle(it.o.map((_, i) => i));
   const mult = retoStreakMult();
   box.innerHTML =
     '<div class="reto-wrap">' +
@@ -79,7 +81,7 @@ function renderRetoQuestion(){
         '<div class="reto-tag">' + cur.from + '</div>' +
         '<p class="reto-q">' + it.q + '</p>' +
         '<div class="reto-opts" id="retoOpts">' +
-          it.o.map((o, i) => '<button class="reto-opt" data-i="' + i + '"><span class="k">' + "ABCD"[i] + '</span><span>' + o + '</span></button>').join("") +
+          reto.optOrder.map((orig, disp) => '<button class="reto-opt" data-i="' + orig + '"><span class="k">' + "ABCD"[disp] + '</span><span>' + it.o[orig] + '</span></button>').join("") +
         '</div>' +
         '<div class="reto-fb" id="retoFb"></div>' +
         '<div class="reto-foot"><button class="reto-next" id="retoNext" hidden>' +
@@ -111,6 +113,7 @@ function retoAnswer(i){
   if (reto.t){ clearInterval(reto.t); reto.t = null; }
   const it = reto.pool[reto.idx].it;
   const opts = [...document.querySelectorAll(".reto-opt")];
+  const byOrig = k => opts.find(o => +o.dataset.i === k);
   opts.forEach(o => { o.disabled = true; o.classList.add("dim"); });
   const card = document.getElementById("retoCard");
   let gain = 0;
@@ -119,18 +122,19 @@ function retoAnswer(i){
     const frac = reto.remaining / RETO_TIME;
     gain = Math.round((100 + 100 * frac) * retoStreakMult());
     reto.score += gain; reto.correct++; reto.streak++;
-    if (opts[i]){ opts[i].classList.remove("dim"); opts[i].classList.add("correct"); }
+    const b = byOrig(i); if (b){ b.classList.remove("dim"); b.classList.add("correct"); }
     if (card) card.classList.add("pop");
     const st = document.querySelector(".reto-streak"); if (st){ st.classList.add("bump"); setTimeout(() => st.classList.remove("bump"), 200); }
   } else {
     reto.streak = 0;
-    if (i >= 0 && opts[i]){ opts[i].classList.remove("dim"); opts[i].classList.add("wrong"); }
-    if (opts[it.a]){ opts[it.a].classList.remove("dim"); opts[it.a].classList.add("correct"); }
+    reto.wrong.push(reto.pool[reto.idx]);
+    const b = byOrig(i); if (i >= 0 && b){ b.classList.remove("dim"); b.classList.add("wrong"); }
+    const bc = byOrig(it.a); if (bc){ bc.classList.remove("dim"); bc.classList.add("correct"); }
     if (card) card.classList.add("shake");
   }
   const sc = document.querySelector(".reto-score"); if (sc) sc.textContent = reto.score + " pts";
   const fb = document.getElementById("retoFb");
-  const head = ok ? '<b class="reto-gain">+' + gain + ' pts.</b> ' : (i < 0 ? '<b>¡Tiempo!</b> ' : '<b>La correcta es ' + "ABCD"[it.a] + '.</b> ');
+  const head = ok ? '<b class="reto-gain">+' + gain + ' pts.</b> ' : (i < 0 ? '<b>¡Tiempo!</b> ' : '<b>La correcta es ' + "ABCD"[reto.optOrder.indexOf(it.a)] + '.</b> ');
   fb.innerHTML = head + it.fb;
   fb.classList.add("show");
   document.getElementById("retoNext").hidden = false;
@@ -167,10 +171,13 @@ function renderRetoResult(){
         (record ? '¡nueva mejor marca! 🎉' : 'mejor marca: ' + Math.max(prev, reto.score) + ' pts') + '</p>' +
       '<div class="reto-actions">' +
         '<button class="btn2 primary" id="retoAgain">Errepikatu</button>' +
+        (reto.wrong && reto.wrong.length ? '<button class="btn2" id="retoReview">Repasar las que fallé (' + reto.wrong.length + ')</button>' : '') +
         '<button class="btn2" id="retoHome">Otro reto</button>' +
       '</div>' +
     '</div></div>';
   document.getElementById("retoAgain").addEventListener("click", () => retoStart(retoShuffle(reto.pool), reto.title));
+  const rev = document.getElementById("retoReview");
+  if (rev) rev.addEventListener("click", () => { const w = reto.wrong.slice(); retoStart(retoShuffle(w), "Repaso · " + reto.title); });
   document.getElementById("retoHome").addEventListener("click", renderRetoStart);
 }
 

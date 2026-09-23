@@ -237,13 +237,19 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 60px;colo
 /* Teoría */
 .theory-layout{display:grid;grid-template-columns:1fr;gap:26px;margin-top:8px}
 @media(min-width:880px){.theory-layout{grid-template-columns:210px 1fr;align-items:start}}
-.toc{font-size:.86rem}
+/* min-width:0 en las dos columnas del grid .theory-layout: por defecto un ítem de grid
+   tiene min-width:auto, que impide encogerlo por debajo de su contenido mínimo; a 375 px
+   eso ensancha el único track por encima del viewport y saca scroll horizontal (se ve en
+   el índice, que se estira para rellenar el track, pero lo fuerza la columna de texto).
+   overflow-wrap parte palabras/títulos muy largos. No afecta al sticky de escritorio
+   (allí el track del índice es de 210 px fijos). Ver también .theory. */
+.toc{font-size:.86rem;min-width:0}
 @media(min-width:880px){.toc{position:sticky;top:80px}}
 .toc .toc-title{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
 .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;border-left:1px solid var(--line)}
-.toc a{display:block;padding:4px 12px;color:var(--muted);border-left:2px solid transparent;margin-left:-1px}
+.toc a{display:block;padding:4px 12px;color:var(--muted);border-left:2px solid transparent;margin-left:-1px;overflow-wrap:anywhere}
 .toc a:hover{color:var(--ink);border-left-color:var(--line)}
-.theory{max-width:70ch;font-family:var(--serif);font-size:1.07rem;line-height:1.72;color:var(--ink)}
+.theory{max-width:70ch;min-width:0;overflow-wrap:break-word;font-family:var(--serif);font-size:1.07rem;line-height:1.72;color:var(--ink)}
 .theory-head{margin-bottom:10px}
 .theory-head .kick{font-family:var(--sans);color:var(--hf);font-weight:600;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
 .theory-head h1{font-size:clamp(1.7rem,4vw,2.3rem);margin-top:4px}

@@ -16,8 +16,13 @@ function show(id){
      los hijos directos de la barra. */
   tabs.querySelectorAll("button[data-view]").forEach(b =>
     b.setAttribute("aria-current", b.dataset.view === id ? "true" : "false"));
-  /* deep-linking: refleja la vista en la URL (enlace compartible; persiste al refrescar). */
-  if (id && ("#" + id) !== location.hash){ try { location.hash = id; } catch (e){} }
+  /* deep-linking: refleja la vista en la URL (enlace compartible; persiste al refrescar).
+     Conserva el argumento profundo (#vista/arg): solo reescribe el hash cuando cambia la
+     vista, para no borrar la clave del tema/cuestionario abierto al hacer show(). */
+  if (id){
+    var _cur = (location.hash || "").replace(/^#/, "").split("/")[0];
+    if (_cur !== id){ try { location.hash = id; } catch (e){} }
+  }
   window.scrollTo(0, 0);
   /* accesibilidad: lleva el foco al encabezado de la vista para que el cambio se anuncie. */
   const v = document.getElementById(id), h = v && v.querySelector("h1");
@@ -25,16 +30,68 @@ function show(id){
 }
 tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(b.dataset.view); });
 
-/* enrutado por hash: enlaces directos, refrescar y atrás/adelante del navegador */
-function viewIdFromHash(){
-  const id = (location.hash || "").replace(/^#/, "");
-  const el = id && document.getElementById(id);
-  return (el && el.classList.contains("view")) ? id : null;
+/* ===== Registro común vista→cargador =====
+   Fuente única del mapa {vista: nombreDeFunciónCargadora}. Lo consumen el enrutado por
+   hash de aquí y el buscador (search.js), para no duplicar la lista. Los nombres son
+   funciones globales (declaraciones de función, existen antes que app.js). resume.js
+   mantiene su propio MAP porque guarda además colección/tipo/etiqueta por vista
+   (superconjunto), no solo el nombre del cargador. */
+window.VIEW_LOADERS = {
+  teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial",
+  infografias: "loadInfografia", cuestionarios: "loadQuiz", tarjetas: "loadDeck",
+  esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap"
+};
+
+/* enrutado por hash: admite «#vista» (compatibilidad) y «#vista/argumento» (enlace
+   profundo a un tema/cuestionario/tarjeta concretos: para Classroom o un QR). */
+function parseHash(){
+  const raw = (location.hash || "").replace(/^#/, "");
+  if (!raw) return null;
+  const i = raw.indexOf("/");
+  const go = i < 0 ? raw : raw.slice(0, i);
+  let arg = i < 0 ? null : raw.slice(i + 1);
+  const el = go && document.getElementById(go);
+  if (!(el && el.classList.contains("view"))) return null;   // p. ej. #th-3 (ancla interna del índice): se ignora
+  if (arg){ try { arg = decodeURIComponent(arg); } catch (e){} }
+  return { go: go, arg: arg };
 }
-function routeFromHash(){ const id = viewIdFromHash(); if (id && id !== activeViewId()) (window.show || show)(id); }
+/* compatibilidad: por si algo sigue llamando a viewIdFromHash() */
+function viewIdFromHash(){ const r = parseHash(); return r ? r.go : null; }
+function routeFromHash(){
+  const r = parseHash(); if (!r) return;
+  if (r.go !== activeViewId()) (window.show || show)(r.go);
+  if (r.arg){
+    const fn = window.VIEW_LOADERS[r.go];
+    if (fn && typeof window[fn] === "function"){ try { window[fn](r.arg); } catch (e){} }
+  }
+}
 window.addEventListener("hashchange", routeFromHash);
 /* enrutado inicial tras cargar todos los scripts (para pasar por el show() ya envuelto por navctx) */
 document.addEventListener("DOMContentLoaded", routeFromHash);
+
+/* Cada tema/chip/recurso abierto refleja su clave en la URL (#vista/argumento) con
+   replaceState: sin ensuciar el historial ni disparar hashchange, de modo que el enlace
+   de la barra siempre sea compartible. Se envuelven los cargadores globales igual que
+   hace resume.js; las llamadas del arranque ocurren ANTES de este envoltorio, así que no
+   fuerzan un hash en la primera carga. Solo actualiza si la vista del cargador está
+   activa (evita reescribir el hash en cargas colaterales como la tira «De este tema»). */
+function setDeepHash(go, arg){
+  const h = "#" + go + (arg != null && arg !== "" ? "/" + encodeURIComponent(String(arg)) : "");
+  if (location.hash === h) return;
+  try {
+    if (history && history.replaceState) history.replaceState(null, "", h);
+    else location.hash = h;
+  } catch (e){}
+}
+Object.keys(window.VIEW_LOADERS).forEach(function(go){
+  const name = window.VIEW_LOADERS[go], orig = window[name];
+  if (typeof orig !== "function") return;
+  window[name] = function(k){
+    const out = orig.apply(this, arguments);
+    if (k != null && activeViewId() === go) setDeepHash(go, k);
+    return out;
+  };
+});
 
 /* ----- tema claro / oscuro / sistema ----- */
 const themeBtn = document.getElementById("theme");

@@ -15,11 +15,12 @@
   /* tokens completos para que el diccionario de interfaz los traduzca con el orden correcto */
   var BLOCK = { A: "A blokea", B: "B blokea", C: "C blokea" };
 
-  /* go (vista) → nombre de la función loader global */
-  var LOADER = {
+  /* go (vista) → nombre de la función loader global. Registro común definido en app.js
+     (window.VIEW_LOADERS); se conserva un respaldo por si cambiara el orden de carga. */
+  var LOADER = window.VIEW_LOADERS || {
     teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial",
     infografias: "loadInfografia", cuestionarios: "loadQuiz", tarjetas: "loadDeck",
-    esquemas: "loadEsq", pau: "loadPau"
+    esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap"
   };
 
   var index = null;   // se construye una vez, al abrir

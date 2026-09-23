@@ -7,7 +7,9 @@
    tema de styles.css, así que respetan claro/oscuro). */
 
 const GLO_BLOCKS = { A: "Antzinakoa", B: "Erdi Arokoa-Modernoa", C: "Garaikidea" };
-const GLO_SUBJECTS = { hf: "Filosofiaren Historia", fil: "Filosofia 1." };
+const GLO_SUBJECTS = { hf: "Filosofiaren Historia", fil: "Filosofia 1.", ipc: "Pentsamendu kritikoa" };
+/* materias con términos en ESTE glosario (cada web de alumnado trae solo la suya) */
+function gloPresent(){ return ["hf", "fil", "ipc"].filter(s => GLOSARIO.some(g => g.subject === s)); }
 let gloSubject = "hf", gloBloque = "A", gloArea = "all", gloQuery = "";  /* materia y bloque concretos por defecto, nunca «Todos» */
 
 const GLO_CSS = `
@@ -52,8 +54,10 @@ function renderGloControls(){
   const box = document.getElementById("glofilter");
   if (!box) return;
   gloInject();
+  const present = gloPresent();
+  if (gloSubject !== "all" && !present.includes(gloSubject) && present.length) gloSubject = present[0];
   const areas = Array.from(new Set(gloTermsForSubject().map(g => g.area).filter(Boolean))).sort((a, b) => a.localeCompare(b, "es"));
-  const subjBtns = ["all", "hf", "fil"].map(s =>
+  const subjBtns = ["all"].concat(present).map(s =>
     '<button class="fbtn" data-sub="' + s + '" aria-pressed="' + (s === gloSubject) + '">' +
     (s === "all" ? "Guztiak" : GLO_SUBJECTS[s]) + '</button>').join("");
   const blkBtns = ["all", "A", "B", "C"].map(b =>
@@ -62,8 +66,8 @@ function renderGloControls(){
   const areaOpts = ['<option value="all">Arlo guztiak</option>']
     .concat(areas.map(a => '<option value="' + a + '">' + a + '</option>')).join("");
   box.innerHTML =
-    '<div class="fgroup"><span class="flabel">Ikasgaia</span>' + subjBtns + '</div>' +
-    (gloSubject !== "fil"
+    (present.length > 1 ? '<div class="fgroup"><span class="flabel">Ikasgaia</span>' + subjBtns + '</div>' : '') +
+    (gloSubject === "hf" || (gloSubject === "all" && present.includes("hf"))
       ? '<div class="fgroup"><span class="flabel">Blokea</span>' + blkBtns + '</div>'
       : '') +
     '<div class="glotools">' +
@@ -73,7 +77,7 @@ function renderGloControls(){
 
   box.querySelectorAll("[data-sub]").forEach(b => b.addEventListener("click", () => {
     gloSubject = b.dataset.sub;
-    if (gloSubject === "fil") gloArea = "all";
+    if (gloSubject !== "hf") gloArea = "all";
     renderGloControls(); renderGloList();
   }));
   box.querySelectorAll("[data-blk]").forEach(b => b.addEventListener("click", () => {
@@ -94,10 +98,10 @@ function renderGloList(){
   const list = document.getElementById("glolist");
   const cnt = document.getElementById("glocount");
   if (!list) return;
-  const q = gloFold(gloQuery);
+  const q = gloFold(gloQuery), present = gloPresent();
   const rows = GLOSARIO.filter(g => {
     if (gloSubject !== "all" && g.subject !== gloSubject) return false;
-    if (gloSubject !== "fil" && gloBloque !== "all" && g.bloque !== gloBloque) return false;
+    if ((gloSubject === "hf" || gloSubject === "all") && present.includes("hf") && gloBloque !== "all" && g.bloque && g.bloque !== gloBloque) return false;
     if (gloArea !== "all" && g.area !== gloArea) return false;
     if (q && !gloFold(g.t + " " + g.def + " " + g.area).includes(q)) return false;
     return true;

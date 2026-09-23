@@ -16,7 +16,7 @@ const INFOGRAFIAS = {
    {
     "type": "tiles",
     "n": "01",
-    "title": "Zer da falazia bat?",
+    "title": "Zer da faltsukeria bat?",
     "items": [
      {
       "emoji": "🎭",

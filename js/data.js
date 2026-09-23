@@ -204,7 +204,7 @@ const DECKS = {
    ],
    [
     "🎓",
-    "Agintera jo",
+    "Autoritateari deia",
     "«Ospetsu batek dio, egia izango da». Gaian aditua ez den norbait aipatzea."
    ],
    [
@@ -366,6 +366,138 @@ const DECKS = {
     "Berdea ez den zerbait «berde» margotzen duen publizitatea. Galdetu: zer aldatzen da benetan enpresak egiten duenean?"
    ]
   ]
+ },
+ "ipc-prejuicios": {
+  "name": "Pentsamendu kritikoa · Aurreiritziak eta estereotipoak",
+  "subject": "ipc",
+  "cards": [
+   [
+    "🔍",
+    "Estereotipoa ala datua?",
+    "Datu bat egiazta daiteke eta gertaerei buruz ari da («%30ek…»). Estereotipo batek talde oso bat zaku berean sartzen du («X guztiak… dira»)."
+   ],
+   [
+    "🌍",
+    "Arrazakeria",
+    "Norbait epaitzea edo okerrago tratatzea bere azal-koloreagatik edo jatorri etnikoagatik, horrek nolakoa den esango balu bezala."
+   ],
+   [
+    "🧳",
+    "Xenofobia",
+    "Beste herrialde batzuetatik datozen pertsonen aurkako arbuioa: mehatxu edo zama gisa ikusten dira, ezagutu gabe."
+   ],
+   [
+    "🪙",
+    "Aporofobia",
+    "Pertsona pobreen aurkako arbuioa (Adela Cortina filosofoaren hitza). Turista aberatsari ongietorria ematen zaio; pobreari, ez."
+   ],
+   [
+    "♀️",
+    "Matxismoa eta sexismoa",
+    "Genero batek gehiago balio duela edo gauza batzuetarako bai eta beste batzuetarako ez duela balio uste izatea («hori neskena da», «mutilek ez dute negarrik egiten»)."
+   ],
+   [
+    "🏳️‍🌈",
+    "LGTBIfobia",
+    "Pertsonen aurkako arbuioa edo iseka, beren sexu-orientazioagatik edo genero-identitateagatik."
+   ],
+   [
+    "👵",
+    "Adinakeria",
+    "Adinagatiko aurreiritziak: «adinekoek ez dute ezer ulertzen», «gazteek ez dakite ezer»."
+   ],
+   [
+    "♿",
+    "Gaitasunkeria",
+    "Desgaitasuna duten pertsonak dena egiteko gutxiago balira bezala tratatzea, edo errukia emateko objektu gisa soilik."
+   ],
+   [
+    "🕊️",
+    "Aurreiritzi erlijiosoa",
+    "Norbaiti buruzko ideia negatiboak, bere erlijioagatik edo bat ere ez izateagatik."
+   ],
+   [
+    "👀",
+    "Itxuragatik",
+    "Gorputzagatik, pisuagatik, arropagatik edo aurpegiagatik epaitzea. Pisuagatiko isekak jazarpen-modu ohikoenetako bat dira."
+   ],
+   [
+    "🧠",
+    "Osasun mentalaren estigma",
+    "Osasun mentaleko arazoren bat duena arriskutsua edo alferra dela, edo «asmatu egiten duela» uste izatea. Estigmaren ondorioz, jendeak ez du laguntzarik eskatzen."
+   ],
+   [
+    "🙋",
+    "Zer egin dezaket?",
+    "Datuak eskatzea orokortu aurretik, pertsona ezagutzea etiketa baino lehen eta iraintzen duen txantxari barrerik ez egitea."
+   ]
+  ]
+ },
+ "ipc-moda": {
+  "name": "Pentsamendu kritikoa · Moda azkarra (dokumentala)",
+  "subject": "ipc",
+  "cards": [
+   [
+    "📅",
+    "52 bilduma urtean",
+    "Lehen urtean 4 bilduma inguru zeuden; gaur, kate batzuek mikrobilduma bat ateratzen dute astero."
+   ],
+   [
+    "👕",
+    "120.000 milioi",
+    "Dokumentalaren arabera, urtero 120.000 milioi jantzi baino gehiago ekoizten dira munduan."
+   ],
+   [
+    "🏷️",
+    "Estreinatu gabe",
+    "Greenpeaceren ikerketa baten arabera, erosten den arroparen %40 inguru ez da inoiz erabiltzen."
+   ],
+   [
+    "🎉",
+    "Festarako topa",
+    "Festarako jantzi bat, batez beste, behin edo bitan erabiltzen da bota aurretik."
+   ],
+   [
+    "🛢️",
+    "Petroliozko arropa",
+    "Ehun berrien %70 inguru petroliotik ateratzen diren zuntz sintetikoak dira."
+   ],
+   [
+    "♻️",
+    "Birziklapenaren mitoa",
+    "Arropa zaharra birziklatuz arropa berria egitea ia ez da existitzen: poliester «birziklatua» plastikozko botiletatik ateratzen da batez ere."
+   ],
+   [
+    "🔥",
+    "Helmuga: Bulgaria",
+    "Botatako arropa asko Ekialdeko Europako herrialde pobreetan amaitzen da; han, familia batzuek sutegietan erretzen dute, ezin dutelako egurra ordaindu."
+   ],
+   [
+    "☠️",
+    "Ke toxikoa",
+    "Plastikoa duten ehunak erretzeak gas kutsatzaileak eta dioxinak askatzen ditu, eta minbizia eragin dezakete."
+   ],
+   [
+    "📱",
+    "Influencerrak",
+    "Sare sozialek etengabe bultzatzen dituzte joerak eta zuzenean eramaten zaituzte online dendara."
+   ],
+   [
+    "🙂",
+    "Egun bateko zoriona",
+    "Arropa estreinatzearen pozak oso gutxi irauten du: horregatik erosten dugu berriro."
+   ],
+   [
+    "🔄",
+    "Alternatibak",
+    "Bigarren eskukoak, trukeak, maileguak eta arropa konpontzeak haren bizitza luzatzen dute."
+   ],
+   [
+    "🌱",
+    "Jantzirik jasangarriena",
+    "Fabrikatu behar ez dena. Dokumentalaren ondorioa: moda azkarra ez da inoiz jasangarria izango."
+   ]
+  ]
  }
 };
 const QUIZZES = {
@@ -374,7 +506,7 @@ const QUIZZES = {
   "subject": "ipc",
   "items": [
    {
-    "q": "Zer da falazia bat?",
+    "q": "Zer da faltsukeria bat?",
     "o": [
      "Arrazoi sendoak eta frogak dituen argudio bat.",
      "Ona dirudien baina hala ez den arrazoibidea; askotan konbentzitzeko edo engainatzeko erabiltzen da.",
@@ -830,6 +962,260 @@ const QUIZZES = {
     ],
     "a": 0,
     "fb": "Garraioa da gehien pisatzen duen zatietako bat: oinez, bizikletaz edo garraio publikoan ibiltzeak asko murrizten du aztarna."
+   }
+  ]
+ },
+ "ipc-hecho-q": {
+  "name": "Gertaera, iritzia, hipotesia ala galdera? (Pentsamendu kritikoa)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "«Urak 100 °C-tan irakiten du itsas mailan.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 0,
+    "fb": "Gertaera bat da: egiazta daiteke, eta neurtzen duen edonork emaitza bera lortzen du."
+   },
+   {
+    "q": "«Reggaetoia da dagoen musikarik okerrena.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 1,
+    "fb": "Iritzi bat da: gustu edo balorazio bat adierazten du. Arrazoiekin defenda daiteke, baina ez da gertaera bat bezala «egiaztatzen»."
+   },
+   {
+    "q": "«Agian landareak gehiago hazten dira musikarekin: bi lorontzi berdinekin frogatuko dugu.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 2,
+    "fb": "Hipotesi bat da: oraindik egia den ala ez ez dakigun suposizio bat, baina frogara jar daitekeena."
+   },
+   {
+    "q": "«Bidezkoa al da herrialde batzuek beste batzuek baino askoz gehiago izatea?»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 3,
+    "fb": "Galdera filosofiko bat da: ez zaio datu batekin edo esperimentu batekin erantzuten, pentsatuz eta arrazoiak emanez baizik."
+   },
+   {
+    "q": "«Bilbo Bizkaian dago.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 0,
+    "fb": "Gertaera bat da: nahikoa da mapa bat begiratzea egiaztatzeko."
+   },
+   {
+    "q": "«Gaur egungo telesailak lehengoak baino aspergarriagoak dira.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 1,
+    "fb": "Iritzi bat da: gustuen araberakoa da. Kontuz: iritzia izateak ez du esan nahi arrazoitu behar ez denik."
+   },
+   {
+    "q": "«Agian lo egin aurretik mugikorra begiratzeak loa okertzen du: alderatu ditzagun hori egiten dutenak eta egiten ez dutenak.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 2,
+    "fb": "Hipotesi bat da: posible gisa planteatzen da, eta egiaztatzeko modu bat proposatzen da. Hipotesi bat EZ da iritzi baten gauza bera."
+   },
+   {
+    "q": "«Zer da zoriona?»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 3,
+    "fb": "Galdera filosofikoa: irekia eta garrantzitsua da, eta ez du liburuko erantzun bakarra."
+   },
+   {
+    "q": "«1969an astronauta batzuk Ilargira iritsi ziren.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 0,
+    "fb": "Gertaera historiko bat da, froga independente askorekin egiaztatua (nahiz eta kontrakoa dioten buloak zabaldu)."
+   },
+   {
+    "q": "«Kritikoki pentsatzea aspergarria da.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 1,
+    "fb": "Iritzi bat da: balorazio pertsonal bat. Beste pertsona batek kontrakoa pentsa dezake arrazoi onekin."
+   },
+   {
+    "q": "«Musikarekin ikasten badut, agian okerrago kontzentratuko naiz: aste bat musikarekin eta beste bat gabe probatuko dut.»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 2,
+    "fb": "Hipotesi bat da: proba erraz batekin egiaztatzen den suposizio bat."
+   },
+   {
+    "q": "«Ziur egon gaitezke ezertaz?»",
+    "o": [
+     "Gertaera bat.",
+     "Iritzi bat.",
+     "Hipotesi bat.",
+     "Galdera filosofiko bat."
+    ],
+    "a": 3,
+    "fb": "Galdera filosofikoa: ezagutzari berari buruzkoa. Zientziak ezin du esperimentu batekin ebatzi."
+   }
+  ]
+ },
+ "ipc-moda-q": {
+  "name": "Moda azkarra: dokumentala (Pentsamendu kritikoa)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Nori zuzentzen zaio batez ere moda azkarraren negozioa?",
+    "o": [
+     "Nerabeei.",
+     "Adinekoei.",
+     "Enpresei.",
+     "Kirolariei."
+    ],
+    "a": 0,
+    "fb": "Dokumentalak azaltzen duenez, publiko nagusia nerabeak dira."
+   },
+   {
+    "q": "Lehen urtean 4 bilduma inguru zeuden. Zenbat mikrobilduma ateratzen dituzte gaur kate batzuek?",
+    "o": [
+     "8.",
+     "52, bat astero.",
+     "12, bat hilean.",
+     "Bat ere ez."
+    ],
+    "a": 1,
+    "fb": "Urtean 52 arte: mikrobilduma berri bat astero, erosteko beti zerbait «berria» egon dadin."
+   },
+   {
+    "q": "Greenpeaceren ikerketa baten arabera, erosten den arroparen zer zati ez da inoiz erabiltzen?",
+    "o": [
+     "Ia ezer ez.",
+     "%5 bat.",
+     "%40 inguru.",
+     "Dena."
+    ],
+    "a": 2,
+    "fb": "%40 inguru: erosten denaren ia erdia estreinatu gabe geratzen da."
+   },
+   {
+    "q": "Nondik ateratzen da ehun berrien %70 inguru?",
+    "o": [
+     "Kotoi ekologikotik.",
+     "Artilatik.",
+     "Arropa birziklatutik.",
+     "Petroliotik (zuntz sintetikoak)."
+    ],
+    "a": 3,
+    "fb": "Petroliotik eratorritako zuntz sintetikoak dira, poliesterra adibidez."
+   },
+   {
+    "q": "Marka handi askoren poliester «birziklatua» batez ere nondik ateratzen da?",
+    "o": [
+     "Plastikozko botila zaharretatik.",
+     "Arropa erabilitik.",
+     "Kotoitik.",
+     "Papertik."
+    ],
+    "a": 0,
+    "fb": "Plastikozko botiletatik, ez arropa erabilitik: arropa birziklatuz arropa berria egitea ia ez da existitzen."
+   },
+   {
+    "q": "Zer egiten dute Bulgariako familia pobre batzuek saltzen dieten arropa botatakoarekin?",
+    "o": [
+     "Asiara esportatzen dute.",
+     "Sutegietan erretzen dute berotzeko.",
+     "Paper bihurtzen dute.",
+     "Dendetara itzultzen dute."
+    ],
+    "a": 1,
+    "fb": "Berotzeko erretzen dute, ezin dutelako egurra ordaindu: ke toxikoa sortzen da eta hiria kutsatu egiten da."
+   },
+   {
+    "q": "Zergatik da hain kutsagarria arropa hori erretzea?",
+    "o": [
+     "Paperezkoa delako.",
+     "Ur asko duelako.",
+     "Jantzi askok plastikoa dutelako, eta gas toxikoak eta dioxinak askatzen dituztelako.",
+     "Usain txarra duelako."
+    ],
+    "a": 2,
+    "fb": "Ehunetako plastikoek gas kutsatzaileak eta dioxinak askatzen dituzte, osasunarentzat kaltegarriak."
+   },
+   {
+    "q": "Dokumentalaren arabera, zenbat irauten du jantzi bat estreinatzearen zorionak?",
+    "o": [
+     "Urteak.",
+     "Denboraldi osoa.",
+     "Hilabete bat.",
+     "Egun bat eta pixka bat."
+    ],
+    "a": 3,
+    "fb": "Egun bat eta pixka bat: horregatik hasten da berehala berriro erosketaren zikloa."
+   },
+   {
+    "q": "Denda batek deskontu bat ematen dizu zure arropa zaharra bere «birziklatzeko» edukiontzian uzteagatik. Zer teknika dago horren atzean?",
+    "o": [
+     "Berriro erostera bultzatzen zaitu eta markaren irudia garbitzen du (greenwashing).",
+     "Karitatea besterik ez da.",
+     "Ez erostera behartzen zaitu.",
+     "Zerga bat da."
+    ],
+    "a": 0,
+    "fb": "Deskontua hurrengo erosketarako da: kontsumitzen jarraitzen duzu eta marka «berdea» dirudi. Dokumentalak marketin-trikimailu deitzen dio."
+   },
+   {
+    "q": "Dokumentalaren ondorioaren arabera, zein da jantzirik jasangarriena?",
+    "o": [
+     "Kotoizkoa.",
+     "Fabrikatu behar ez dena.",
+     "Merkeena.",
+     "Edukiontzira botatzen dena."
+    ],
+    "a": 1,
+    "fb": "Ekoiztu behar ez dena: gutxiago erostea, denbora gehiagoz erabiltzea, konpontzea eta partekatzea."
    }
   ]
  }

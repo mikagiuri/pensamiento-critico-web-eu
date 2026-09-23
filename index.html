@@ -1,7 +1,10 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pentsamendu kritikoa · DBH 2</title>
-<meta name="description" content="El taller de filosofía en una página: teoría, materiales, esquemas, tarjetas, mapas y juegos de Filosofía 1.º, Historia de la Filosofía 2.º y Pensamiento crítico.">
+<meta name="description" content="Iniciación al pensamiento crítico (2.º de ESO): teoría, fichas, tarjetas y herramientas para pensar mejor: preguntar, argumentar, dialogar y detectar falacias y sesgos.">
 <meta name="theme-color" content="#f0ece3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141519" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
@@ -17,9 +20,17 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/mobile.css">
 <link rel="stylesheet" href="css/reto.css">
+<link rel="stylesheet" href="css/parejas.css">
 <link rel="stylesheet" href="css/dilemas.css">
 <link rel="stylesheet" href="css/mundo.css">
+<link rel="stylesheet" href="css/camino.css">
 <link rel="stylesheet" href="css/retratos.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pentsamendu kritikoa · DBH 2">
+<meta property="og:description" content="Iniciación al pensamiento crítico (2.º de ESO): teoría, fichas, tarjetas y herramientas para pensar mejor: preguntar, argumentar, dialogar y detectar falacias y sesgos.">
+<meta property="og:image" content="media/icons/icon-512.png">
+</head>
+<body>
 
 <a class="skiplink" href="#contenido">Edukira jauzi egin</a>
 <header class="bar">
@@ -35,6 +46,7 @@
           <button data-view="materiales">Materialak</button>
           <button data-view="tarjetas">Txartelak</button>
           <button data-view="cuestionarios">Galdetegiak</button>
+          <button data-view="glosario">Glosarioa</button>
           <button data-view="citas">Aipuak</button>
         </div>
       </div>
@@ -42,8 +54,10 @@
         <span class="navgroup" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Jokoak</span>
         <div class="navmenu">
           <button data-view="reto">Erronka</button>
+          <button data-view="parejas">Bikoteak</button>
           <button data-view="dilemas">Aukeratu A edo B</button>
           <button data-view="mundo">Gela mundua balitz</button>
+          <button data-view="camino">Elige tu camino</button>
         </div>
       </div>
       <div class="navsec">
@@ -77,7 +91,7 @@
       </article>
     </div>
 
-    <div class="sec-head"><h2 class="sec">Aste hau (irailak 14-18)</h2><p>Tus dos horas de Pensamiento crítico: jueves 11:15 y viernes 9:50.</p></div>
+    <div class="sec-head"><h2 class="sec">Aste hau</h2><p>Tus dos horas de Pensamiento crítico: jueves 11:15 y viernes 9:50.</p></div>
     <div class="weekwrap">
       <table class="week">
         <thead><tr><th>Ordua</th><th>Astelehena</th><th>Asteartea</th><th>Asteazkena</th><th>Osteguna</th><th>Ostirala</th></tr></thead>
@@ -177,7 +191,14 @@
   
 
   <!-- GLOSARIO -->
-  
+  <section class="view" id="glosario">
+    <p class="eyebrow">Erreferentzia</p>
+    <h1 class="title">Glosarioa</h1>
+    <p class="lead">Ikasgaiaren hiztegia: Filosofiaren Historiako <strong>301 termino</strong> beren definizioarekin, departamentuaren liburutik ateratakoak. Bilatu hitzaren arabera edo iragazi <strong>blokearen</strong> eta <strong>arloaren</strong> arabera.</p>
+    <div class="filterbar" id="glofilter" role="group" aria-label="Iragazi glosarioa"></div>
+    <div class="glocount" id="glocount"></div>
+    <div class="glolist" id="glolist"></div>
+  </section>
 
   <!-- CITAS -->
   <section class="view" id="citas">
@@ -240,7 +261,12 @@
 
   
 
-  
+  <section class="view" id="parejas">
+    <p class="eyebrow">Tresna</p>
+    <h1 class="title">Bikoteak</h1>
+    <p class="lead">Empareja cada término del glosario con su definición, contrarreloj. Suma puntos y racha; se guarda tu mejor marca en este navegador.</p>
+    <div id="parbox"></div>
+  </section>
 
   <section class="view" id="dilemas">
     <p class="eyebrow">Jokoa</p>
@@ -254,6 +280,13 @@
     <h1 class="title">Gela mundua balitz</h1>
     <p class="lead">Zure gela planeta txikian: asmatu zuetako zenbatek pasatuko luketen gosea, ez luketen ur edangarririk izango edo ez liratekeen eskolara joango, eta egiaztatu.</p>
     <div id="mundobox"></div>
+  </section>
+
+  <section class="view" id="camino">
+    <p class="eyebrow">Jokoa</p>
+    <h1 class="title">Elige tu camino</h1>
+    <p class="lead">Historias en las que tú decides qué pasa. Cada decisión lleva a otro sitio y hay varios finales: descúbrelos todos y piensa por qué acaba cada uno así.</p>
+    <div id="caminobox"></div>
   </section>
 
   
@@ -297,10 +330,13 @@
 <script src="js/infografiasview.js"></script>
 <script src="js/glosario.js"></script>
 <script src="js/glosarioview.js"></script>
+<script src="js/parejasview.js"></script>
 <script src="js/dilemas.js"></script>
 <script src="js/dilemasview.js"></script>
 <script src="js/mundo.js"></script>
 <script src="js/mundoview.js"></script>
+<script src="js/camino.js"></script>
+<script src="js/caminoview.js"></script>
 <!-- mermaid se carga bajo demanda al abrir Esquemas (js/lazy_libs.js) -->
 <script src="js/esquemas.js"></script>
 <script src="js/esquemasview.js"></script>
@@ -327,3 +363,5 @@
     });
   }
 </script>
+</body>
+</html>

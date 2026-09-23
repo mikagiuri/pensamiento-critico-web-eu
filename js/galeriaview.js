@@ -97,11 +97,14 @@ function renderGalGrid(){
   grid.querySelectorAll(".galcard").forEach(function (b){ b.addEventListener("click", function (){ galOpen(+b.dataset.i); }); });
 }
 
+function galEsc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 function galShow(){
   const g = galList[galPos]; if (!g) return;
   document.getElementById("gallbimg").src = g.f;
   document.getElementById("gallbt").textContent = g.t;
-  document.getElementById("gallbp").textContent = (g.pie ? g.pie + " · " : "") + (g.unidad || "");
+  const cred = (g.pie ? g.pie + " · " : "") + (g.unidad || "");
+  document.getElementById("gallbp").innerHTML = galEsc(cred) +
+    (g.page ? ' · <a href="' + galEsc(g.page) + '" target="_blank" rel="noopener">Ikusi jatorria</a>' : "");
 }
 function galOpen(i){ galInject(); _galPrev = document.activeElement; galPos = i; galShow(); _lb.hidden = false;
   const c = _lb.querySelector(".close"); if (c) c.focus(); }
