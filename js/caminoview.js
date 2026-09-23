@@ -7,9 +7,9 @@
 const CAM_KEY = "aula-caminos";
 /* textos de interfaz: cadenas enteras (así los traduce web_i18n/ui/<lang>.json) */
 const CAM_TXT = {
-  finales: "Finales descubiertos:", empezar: "Empezar", volver: "← Todas las historias",
-  tuCamino: "Tu camino", laIdea: "La idea", otroCamino: "Probar otro camino", otraHistoria: "Otra historia",
-  todos: "¡Has descubierto todos los finales de esta historia!", nuevo: "¡Final nuevo!"
+  finales: "Aurkitutako amaierak:", empezar: "Hasi", volver: "← Istorio guztiak",
+  tuCamino: "Zure bidea", laIdea: "Ideia", otroCamino: "Probatu beste bide bat", otraHistoria: "Beste istorio bat",
+  todos: "Istorio honen amaiera guztiak aurkitu dituzu!", nuevo: "Amaiera berria!"
 };
 const cam = { story: null, node: null, path: [] };
 
