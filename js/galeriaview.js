@@ -13,7 +13,9 @@ if (typeof ILUSTRACIONES !== "undefined" && Array.isArray(GALERIA)){
       unidad: "Filosofía 1.º · " + (x.license || "Dominio público") + " · Wikimedia Commons" });
   });
 }
-let galBloque = ["A", "B", "C"].find(function (b){ return GALERIA.some(function (g){ return g.bloque === b; }); }) || "all";  /* bloque concreto por defecto, nunca «Todos» */
+/* bloques con alguna imagen (en las webs por materia GALERIA llega ya filtrada: 1.º solo trae «F1») */
+function galBlocksPresent(){ return Object.keys(GAL_BLOCKS).filter(function (b){ return GALERIA.some(function (g){ return g.bloque === b; }); }); }
+let galBloque = galBlocksPresent()[0] || "all";  /* bloque concreto por defecto, nunca «Todos» */
 let galList = [];
 let galPos = 0;
 
@@ -72,8 +74,10 @@ function renderGalFilter(){
   const box = document.getElementById("galfilter");
   if (!box) return;
   galInject();
+  const present = galBlocksPresent();
+  if (present.length < 2){ box.innerHTML = ""; return; }   /* un solo grupo: sin filtro */
   box.innerHTML = '<div class="fgroup"><span class="flabel">Blokea</span>' +
-    ["all", "A", "B", "C"].concat(GAL_BLOCKS.F1 ? ["F1"] : []).map(function (b){
+    ["all"].concat(present).map(function (b){
       return '<button class="fbtn" data-gb="' + b + '" aria-pressed="' + (b === galBloque) + '">' +
         (b === "all" ? "Guztiak" : GAL_BLOCKS[b]) + '</button>'; }).join("") + '</div>';
   box.querySelectorAll("[data-gb]").forEach(function (b){ b.addEventListener("click", function (){
