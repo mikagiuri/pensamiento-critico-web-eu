@@ -134,5 +134,176 @@ const ILUSTRACIONES = [
   "license": "Domeinu publikoa",
   "artist": "?",
   "page": "https://commons.wikimedia.org/wiki/File:Las_Meninas_(1656),_by_Velazquez.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_leviatan.jpg",
+  "t": "Frontispicio del Leviatán (Hobbes, 1651)",
+  "pie": "El Estado como un gran cuerpo formado por los individuos.",
+  "tema": "fil-t6",
+  "license": "Domeinu publikoa",
+  "artist": "Wenceslas Hollar or (more likely) Abraham Bosse.",
+  "page": "https://commons.wikimedia.org/wiki/File:Drawing_of_frontispiece_of_Leviathan.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_hobbes.jpg",
+  "t": "Thomas Hobbes",
+  "pie": "Del miedo de «todos contra todos» al soberano que trae la paz.",
+  "tema": "fil-t6",
+  "license": "Domeinu publikoa",
+  "artist": "John Michael Wright",
+  "page": "https://commons.wikimedia.org/wiki/File:Thomas_Hobbes_by_John_Michael_Wright.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_locke.jpg",
+  "t": "John Locke",
+  "pie": "Derechos naturales y gobierno limitado: raíz del liberalismo.",
+  "tema": "fil-t6",
+  "license": "Domeinu publikoa",
+  "artist": "Godfrey Kneller",
+  "page": "https://commons.wikimedia.org/wiki/File:Godfrey_Kneller_-_Portrait_of_John_Locke_(Hermitage).jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_rousseau_pol.jpg",
+  "t": "Jean-Jacques Rousseau",
+  "pie": "El contrato social y la voluntad general: soberanía popular.",
+  "tema": "fil-t6",
+  "license": "Domeinu publikoa",
+  "artist": "Martin, David, 1737-1797, engraver; Ramsay, Allan, 1713-1784, artist",
+  "page": "https://commons.wikimedia.org/wiki/File:Jean-Jacques_Rousseau,_half-length_portrait,_facing_left_with_right_hand_on_chest,_wearing_fur-trimmed_coat_and_hat_LCCN2012645515.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_marx.jpg",
+  "t": "Karl Marx",
+  "pie": "Clases, trabajo y crítica del Estado y la desigualdad.",
+  "tema": "fil-t6",
+  "license": "Domeinu publikoa",
+  "artist": "John Jabez Edwin Mayall",
+  "page": "https://commons.wikimedia.org/wiki/File:Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png"
+ },
+ {
+  "f": "media/ilustraciones/fil_ddhh.jpg",
+  "t": "Declaración de los Derechos del Hombre (1789)",
+  "pie": "Los derechos como límite que ningún poder puede traspasar.",
+  "tema": "fil-t6",
+  "license": "CC0",
+  "artist": "Imprimerie des Frères Périsse, imprimeur",
+  "page": "https://commons.wikimedia.org/wiki/File:DECLARATION_DES_DROITS_ET_DES_DEVOIRS_DE_L%27HOMME_ET_DU_CITOYEN,_AFF2950.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_socrates.jpg",
+  "t": "Sokrates",
+  "pie": "«Solo sé que no sé nada»: la pregunta como método.",
+  "tema": "fil-t1",
+  "license": "Domeinu publikoa",
+  "artist": "Copy of Lysippos (?)",
+  "page": "https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_diogenes.jpg",
+  "t": "Diógenes",
+  "pie": "El filósofo que buscaba a un hombre honesto con un candil.",
+  "tema": "fil-t1",
+  "license": "Domeinu publikoa",
+  "artist": "Jean-Léon Gérôme",
+  "page": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_galileo.jpg",
+  "t": "Galileo Galilei",
+  "pie": "El método científico: observar, medir, contrastar.",
+  "tema": "fil-t3",
+  "license": "Domeinu publikoa",
+  "artist": "Justus Sustermans",
+  "page": "https://commons.wikimedia.org/wiki/File:Justus_Sustermans_-_Portrait_of_Galileo_Galilei,_1636.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_vesalio.jpg",
+  "t": "Anatomía (Vesalio, 1543)",
+  "pie": "Observar para conocer: nace la ciencia moderna.",
+  "tema": "fil-t3",
+  "license": "Domeinu publikoa",
+  "artist": "desconocido",
+  "page": "https://commons.wikimedia.org/wiki/File:Vesalius_Fabrica_p163.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_newton.jpg",
+  "t": "Isaac Newton",
+  "pie": "Las leyes de la naturaleza descubiertas por la razón.",
+  "tema": "fil-t3",
+  "license": "Domeinu publikoa",
+  "artist": "Godfrey Kneller",
+  "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_Sir_Isaac_Newton,_1689.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_boole.jpg",
+  "t": "George Boole",
+  "pie": "El álgebra de la lógica: lo verdadero y lo falso como 1 y 0.",
+  "tema": "fil-t4",
+  "license": "Domeinu publikoa",
+  "artist": "Unknown authorUnknown author",
+  "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_George_Boole.png"
+ },
+ {
+  "f": "media/ilustraciones/fil_leibniz.jpg",
+  "t": "Gottfried W. Leibniz",
+  "pie": "El sueño de un cálculo universal del razonamiento.",
+  "tema": "fil-t4",
+  "license": "Domeinu publikoa",
+  "artist": "Christoph Bernhard Francke",
+  "page": "https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_aristoteles_log.jpg",
+  "t": "Aristoteles",
+  "pie": "El Organon: la primera teoría de la deducción válida.",
+  "tema": "fil-t4",
+  "license": "Domeinu publikoa",
+  "artist": "Unknown authorUnknown author",
+  "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_Aristotle,_set_on_a_restored_bust,_Colosseum.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_kant.jpg",
+  "t": "Immanuel Kant",
+  "pie": "El deber y el imperativo categórico.",
+  "tema": "fil-t5",
+  "license": "CC0",
+  "artist": "Rijksmuseum",
+  "page": "https://commons.wikimedia.org/wiki/File:Portret_van_Immanuel_Kant_Emanuel_Kant_(titel_op_object),_RP-P-2015-26-1764.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_epicuro.jpg",
+  "t": "Epikuro",
+  "pie": "La felicidad como placer sereno y ausencia de dolor.",
+  "tema": "fil-t5",
+  "license": "Domeinu publikoa",
+  "artist": "Unknown artistUnknown artist",
+  "page": "https://commons.wikimedia.org/wiki/File:Epikouros_BM_1843.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_mill.jpg",
+  "t": "John Stuart Mill",
+  "pie": "El utilitarismo: la mayor felicidad para el mayor número.",
+  "tema": "fil-t5",
+  "license": "Domeinu publikoa",
+  "artist": "London Stereoscopic Company",
+  "page": "https://commons.wikimedia.org/wiki/File:John_Stuart_Mill_by_London_Stereoscopic_Company,_c1870.jpg"
+ },
+ {
+  "f": "media/ilustraciones/fil_friedrich.jpg",
+  "t": "El caminante sobre el mar de nubes",
+  "pie": "Lo sublime: el arte romántico ante lo inabarcable.",
+  "tema": "fil-t7",
+  "license": "Domeinu publikoa",
+  "artist": "Caspar David Friedrich (1774–1840)",
+  "page": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg"
+ },
+ {
+  "f": "media/ilustraciones/fil_botticelli.jpg",
+  "t": "El nacimiento de Venus (Botticelli)",
+  "pie": "La belleza ideal del Renacimiento.",
+  "tema": "fil-t7",
+  "license": "Domeinu publikoa",
+  "artist": "Sandro Botticelli",
+  "page": "https://commons.wikimedia.org/wiki/File:Botticelli_Venus.jpg"
  }
 ];

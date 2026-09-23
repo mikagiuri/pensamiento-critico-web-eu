@@ -1,0 +1,33 @@
+{
+  "name": "Pentsamendu kritikoa · DBH 2",
+  "short_name": "Pensamiento",
+  "description": "Iniciación al pensamiento crítico (2.º de ESO): teoría, fichas, tarjetas y herramientas para pensar mejor.",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f0ece3",
+  "theme_color": "#1f5d5a",
+  "icons": [
+    {
+      "src": "media/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "media/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "media/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
