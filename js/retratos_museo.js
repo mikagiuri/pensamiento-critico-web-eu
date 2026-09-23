@@ -25,6 +25,18 @@ const RETRATOS = [
   "page": "https://commons.wikimedia.org/wiki/File:Plato_bust.png"
  },
  {
+  "slug": "aristoteles",
+  "name": "Aristóteles",
+  "aliases": [
+   "Aristóteles"
+  ],
+  "file": "media/retratos/museo/aristoteles.jpg",
+  "title": "Aristotle Altemps Inv8575",
+  "artist": "After Lysippos",
+  "license": "Public Domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg"
+ },
+ {
   "slug": "alejandro",
   "name": "Alejandro Magno",
   "aliases": [

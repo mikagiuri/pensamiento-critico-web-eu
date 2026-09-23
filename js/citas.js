@@ -1,6 +1,30 @@
 // Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/citas.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
 const CITAS = [
  {
+  "c": "Gizakiak harridurak bultzatuta hasten dira eta beti hasi izan dira filosofatzen.",
+  "a": "Aristoteles",
+  "o": "Metafisika",
+  "e": "antigua"
+ },
+ {
+  "c": "Gizakia, berez, animalia politikoa da.",
+  "a": "Aristoteles",
+  "o": "Politika",
+  "e": "antigua"
+ },
+ {
+  "c": "Bertutea gutariko bakoitzari dagokion erdibide bat da, arrazoiak zehaztua.",
+  "a": "Aristoteles",
+  "o": "Nikomakorentzako Etika",
+  "e": "antigua"
+ },
+ {
+  "c": "Gizaki guztiek, berez, jakin nahi dute.",
+  "a": "Aristoteles",
+  "o": "Jakintzaren unibertsaltasuna (Met. 980a1)",
+  "e": "antigua"
+ },
+ {
   "c": "Alde egin hortik, eguzkia estaltzen didazu.",
   "a": "Diogenes Sinopekoa",
   "o": "Alexandro Handiari",

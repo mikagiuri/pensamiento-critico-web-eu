@@ -81,12 +81,6 @@ const SUBJECTS = {
     "ipc-eval-inicial"
    ],
    [
-    "Elkarrizketaren kontrol-zerrenda",
-    "Bai / Erdizka / Ez, lau dimentsiotan.",
-    "ipc\\rubricas",
-    "ipc-lista-dialogo"
-   ],
-   [
     "Irakurgaiak pentsatzeko",
     "Lau ipuin filosofiko marrazkiarekin eta galderekin: Sokrates, sugea, Hakuin eta bi monjeak.",
     "ipc\\fichas",
