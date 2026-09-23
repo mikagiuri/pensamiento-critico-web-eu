@@ -92,6 +92,21 @@ const SUBJECTS = {
     "Galdetegia: faltsukeriak",
     "cuestionarios",
     "falacias"
+   ],
+   [
+    "Jokoa: Aukeratu A edo B (dilemak)",
+    "dilemas",
+    ""
+   ],
+   [
+    "Teoria: nire aztarna planetan",
+    "teoria",
+    "ipc-huella"
+   ],
+   [
+    "Galdetegia: aztarna ekologikoa",
+    "cuestionarios",
+    "ipc-huella-q"
    ]
   ]
  }
@@ -298,6 +313,52 @@ const DECKS = {
     "🧠",
     "Alfabetatze mediatikoa",
     "Hedabideak modu kritikoan irakurtzen jakitea: informazioa, iritzia eta publizitatea bereiztea."
+   ]
+  ]
+ },
+ "ipc-huella": {
+  "name": "Pentsamendu kritikoa · Nire aztarna planetan",
+  "subject": "ipc",
+  "cards": [
+   [
+    "👣",
+    "Aztarna ekologikoa",
+    "Kontsumitzen duguna ekoizteko eta gure hondakinak xurgatzeko behar diren lur eta itsaso emankorrak. Hektarea globaletan neurtzen da."
+   ],
+   [
+    "🌱",
+    "Biogaitasuna",
+    "Naturak urtebetean birsor dezakeena: basoak, arrantza, uztak, lurzorua."
+   ],
+   [
+    "🌍",
+    "Zenbat planeta?",
+    "Gizateriak 1,7 planeta inguru izango balitu bezala kontsumitzen du. Espainian bezala biziz gero, bi planeta baino gehiago beharko lirateke."
+   ],
+   [
+    "📅",
+    "Gaintasun Eguna",
+    "Planetak urte osoan birsortzen duena dagoeneko gastatu dugun data. Azken urteetan, uztailaren amaieran edo abuztuaren hasieran."
+   ],
+   [
+    "🏭",
+    "Karbono-aztarna",
+    "Energiarekin, garraioarekin eta erosten dugunarekin isurtzen dugun CO₂-a. Herrialde aberatsen aztarnaren zatirik handiena da."
+   ],
+   [
+    "⚖️",
+    "Ingurumen-justizia",
+    "Gehien kontsumitzen duena ez da ondorioak gehien jasaten dituena: lehorteek eta uholdeek pobreak kaltetzen dituzte gehien."
+   ],
+   [
+    "♻️",
+    "Murriztu, berrerabili, birziklatu",
+    "Ordena horretan: onena hondakina ez sortzea da; birziklatzea azken baliabidea da."
+   ],
+   [
+    "🎭",
+    "Greenwashing",
+    "Berdea ez den zerbait «berde» margotzen duen publizitatea. Galdetu: zer aldatzen da benetan enpresak egiten duenean?"
    ]
   ]
  }
@@ -659,6 +720,111 @@ const QUIZZES = {
     ],
     "a": 0,
     "fb": "Iturriak egiaztatzea funtsezkoa da gezurrak ez zabaltzeko."
+   }
+  ]
+ },
+ "ipc-huella-q": {
+  "name": "Nire aztarna planetan (Pentsamendu kritikoa)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Zer neurtzen du aztarna ekologikoak?",
+    "o": [
+     "Egunean oinez egiten ditugun kilometroak.",
+     "Kontsumitzen duguna ekoizteko eta gure hondakinak xurgatzeko behar diren lur eta itsaso emankorrak.",
+     "Hiri bateko zuhaitz kopurua.",
+     "Birziklatzen dugun zaborra."
+    ],
+    "a": 1,
+    "fb": "Aztarna ekologikoa: gure kontsumorako eta hondakinetarako behar den azalera emankorra (hektarea globaletan)."
+   },
+   {
+    "q": "Familia batek urte osoko soldata bost hilabetean gastatzen du, eta gero maileguekin bizi da. Zer ideiarekin alderatzen da?",
+    "o": [
+     "Lurraren Gaintasun Egunarekin.",
+     "Birziklapenarekin.",
+     "Biogaitasunarekin.",
+     "Ur-aztarnarekin."
+    ],
+    "a": 0,
+    "fb": "Gaintasun Egunak adierazten du noiz gastatu dugun planetak urte osoan birsortzen duena; egun horretatik aurrera «kredituan» bizi gara."
+   },
+   {
+    "q": "Gizateria osoa Espainian batez beste bizi den bezala biziko balitz, zenbat planeta beharko lirateke?",
+    "o": [
+     "Bat baino gutxiago.",
+     "Zehazki bat.",
+     "Bi baino gehiago.",
+     "Hamar."
+    ],
+    "a": 2,
+    "fb": "Bi planeta baino gehiago: gure kontsumoak askoz gainditzen du dagokiguna."
+   },
+   {
+    "q": "Zer da biogaitasuna?",
+    "o": [
+     "Naturak urtebetean birsor dezakeena.",
+     "Fabrika baten ahalmena.",
+     "Herrialde bateko biztanle kopurua.",
+     "Baterien energia."
+    ],
+    "a": 0,
+    "fb": "Biogaitasuna: berriro hazten diren basoak, ugaltzen diren arrainak, berriro uzta ematen duen lurzorua."
+   },
+   {
+    "q": "Herrialde aberatsetan, zein da aztarna ekologikoaren zatirik handiena?",
+    "o": [
+     "Edateko ura.",
+     "Karbono-aztarna (energia, garraioa, kontsumoa).",
+     "Ikastetxeko papera.",
+     "Maskotak."
+    ],
+    "a": 1,
+    "fb": "Karbono-aztarna: energiaren, garraioaren eta erosten dugunaren CO₂-a."
+   },
+   {
+    "q": "Gehien kontsumitzen duten herrialdeak ez dira lehorteak edo uholdeak gehien jasaten dituztenak. Nola deitzen da arazo hori?",
+    "o": [
+     "Greenwashing.",
+     "Ingurumen-injustizia.",
+     "Biogaitasuna.",
+     "Birziklapena."
+    ],
+    "a": 1,
+    "fb": "Ingurumen-injustizia: kalteak gutxien kutsatu duenaren eta baliabide gutxien dituenaren gainera erortzen dira."
+   },
+   {
+    "q": "Zein da hondakinak murrizteko ordena zuzena?",
+    "o": [
+     "Birziklatu, berrerabili, murriztu.",
+     "Berrerabili, birziklatu, murriztu.",
+     "Murriztu, berrerabili, birziklatu.",
+     "Ordena berdin da."
+    ],
+    "a": 2,
+    "fb": "Lehenik murriztu (hondakina ez sortu), gero berrerabili eta, azkenik, birziklatu."
+   },
+   {
+    "q": "Moda azkarreko marka batek «bilduma berde» bat iragartzen du, baina astero milaka jantzi berri ateratzen jarraitzen du. Horri esaten zaio…",
+    "o": [
+     "ingurumen-justizia.",
+     "greenwashing.",
+     "biogaitasuna.",
+     "kontsumo arduratsua."
+    ],
+    "a": 1,
+    "fb": "Greenwashing: publizitatean berdez margotzea, egiten dena aldatu gabe."
+   },
+   {
+    "q": "Ekintza hauetatik zeinek murrizten du gehien zure aztarna egunez egun?",
+    "o": [
+     "Institutura oinez edo garraio publikoan joatea, autoan joan beharrean.",
+     "Urtero mugikorra aldatzea.",
+     "Hilero arropa berria erostea.",
+     "Argia piztuta uztea."
+    ],
+    "a": 0,
+    "fb": "Garraioa da gehien pisatzen duen zatietako bat: oinez, bizikletaz edo garraio publikoan ibiltzeak asko murrizten du aztarna."
    }
   ]
  }

@@ -4,7 +4,7 @@
    para que tras la primera visita toda la web (teoría, css, js, imágenes, fuentes y
    los CDN de mapas/esquemas ya visitados) funcione sin conexión.
    ⚠ Sube VERSION al desplegar cambios para invalidar la caché antigua. */
-const VERSION = "v3-2026-09-23";
+const VERSION = "v4-2026-09-23";
 // Bachillerato y 2.º ESO se sirven en el MISMO origen (mikagiuri.github.io) bajo
 // subrutas distintas. La caché debe ser única por sitio o una web desalojaría la
 // de la otra: derivamos el prefijo del scope del propio service worker.

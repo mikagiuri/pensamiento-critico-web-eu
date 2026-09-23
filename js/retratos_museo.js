@@ -121,5 +121,17 @@ const RETRATOS = [
   "artist": "Jan Saenredam / After Cornelis van Haarlem",
   "license": "Public Domain",
   "page": "https://commons.wikimedia.org/wiki/File:Platon_Cave_Sanraedam_1604.jpg"
+ },
+ {
+  "slug": "james",
+  "name": "William James",
+  "aliases": [
+   "William James"
+  ],
+  "file": "media/retratos/museo/james.jpg",
+  "title": "William James b1842c",
+  "artist": "Notman Studios (photographer)",
+  "license": "Public Domain",
+  "page": "https://commons.wikimedia.org/wiki/File%3AWilliam_James_b1842c.jpg"
  }
 ];
