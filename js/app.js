@@ -183,8 +183,8 @@ function renderSubjects(){
     el.innerHTML = `<div class="subhead" style="--c:${s.color}"><span class="kick">${s.kick}</span><h1>${s.name}</h1></div>
       <p class="lead">${s.intro}</p>
       ${hub}
-      <div class="sec-head"><h2 class="sec">Materialak</h2></div>
-      <div class="mats">${mats}</div>${tools}`;
+      ${mats ? `<div class="sec-head"><h2 class="sec">Materialak</h2></div>
+      <div class="mats">${mats}</div>` : ""}${tools}`;
   });
   document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => {
     const go = b.dataset.go, arg = b.dataset.arg;

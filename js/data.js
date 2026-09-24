@@ -61,32 +61,7 @@ const SUBJECTS = {
   "kick": "DBH 2 · Ikasturte-hasiera",
   "color": "var(--ipc)",
   "intro": "Ikasturteko kontzeptuak oinarritzea (iritzia, galdera eta galdera motak, argudiaketa, eztabaida, elkarrizketa, kritika, irizpidea, autonomia, gatazka, negoziazioa) eta hasierako aurrebaluazioa egitea.",
-  "mats": [
-   [
-    "Ikasgelako kontratua",
-    "Arauak, konpromisoak eta sinadura-orria.",
-    "ipc\\gestion_aula",
-    "ipc-contrato"
-   ],
-   [
-    "Ikaskuntza-egunerokoa",
-    "Azala, sarrera-txantiloia eta ebidentzien orria.",
-    "ipc\\gestion_aula",
-    "ipc-diario"
-   ],
-   [
-    "Hasierako ebaluazioa",
-    "«Arrazoi ona ala trikimailua?»: 10 itemeko testa + idazlan laburra.",
-    "ipc\\fichas",
-    "ipc-eval-inicial"
-   ],
-   [
-    "Irakurgaiak pentsatzeko",
-    "Lau ipuin filosofiko marrazkiarekin eta galderekin: Sokrates, sugea, Hakuin eta bi monjeak.",
-    "ipc\\fichas",
-    "ipc-lec-tamices"
-   ]
-  ],
+  "mats": [],
   "tools": [
    [
     "Galdetegia: faltsukeriak",
@@ -112,6 +87,11 @@ const SUBJECTS = {
     "Galdetegia: aztarna ekologikoa",
     "cuestionarios",
     "ipc-huella-q"
+   ],
+   [
+    "Irakurgaiak pentsatzeko (ipuinak)",
+    "cuentos",
+    ""
    ]
   ]
  }
