@@ -60,6 +60,7 @@
     addAll(typeof DECKS       !== "undefined" ? DECKS       : null, "tarjetas",      function(i){ return i.name; },             function(i){ return subjName(i.subject); },                      "Txartelak");
     addAll(typeof ESQUEMAS    !== "undefined" ? ESQUEMAS    : null, "esquemas",      function(i){ return i.title; },            function(i){ return i.tema || subjName(i.subject); },            "Eskema");
     addAll(typeof PAU         !== "undefined" ? PAU         : null, "pau",           function(i){ return i.title; },            function(i){ return i.kick || "USE"; },                          "USE");
+    addAll(typeof ILUSTRES    !== "undefined" ? ILUSTRES    : null, "ilustres",      function(i){ return i.name; },             function(i){ return i.dates + (i.role ? " · " + i.role : ""); }, "Ilustre");
     index = out;
     return out;
   }

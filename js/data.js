@@ -502,7 +502,7 @@ const DECKS = {
 };
 const QUIZZES = {
  "falacias": {
-  "name": "Faltsukeriak (Pentsamendu kritikoa)",
+  "name": "Faltsukeriak",
   "subject": "ipc",
   "items": [
    {
@@ -629,7 +629,7 @@ const QUIZZES = {
   ]
  },
  "ipc-sesgos-q": {
-  "name": "Alborapen kognitiboak (Pentsamendu kritikoa)",
+  "name": "Alborapen kognitiboak",
   "subject": "ipc",
   "items": [
    {
@@ -745,7 +745,7 @@ const QUIZZES = {
   ]
  },
  "ipc-medios-q": {
-  "name": "Publizitatea eta hedabideak (Pentsamendu kritikoa)",
+  "name": "Publizitatea eta hedabideak",
   "subject": "ipc",
   "items": [
    {
@@ -861,7 +861,7 @@ const QUIZZES = {
   ]
  },
  "ipc-huella-q": {
-  "name": "Nire aztarna planetan (Pentsamendu kritikoa)",
+  "name": "Nire aztarna planetan",
   "subject": "ipc",
   "items": [
    {
@@ -966,7 +966,7 @@ const QUIZZES = {
   ]
  },
  "ipc-hecho-q": {
-  "name": "Gertaera, iritzia, hipotesia ala galdera? (Pentsamendu kritikoa)",
+  "name": "Gertaera, iritzia, hipotesia ala galdera?",
   "subject": "ipc",
   "items": [
    {
@@ -1104,7 +1104,7 @@ const QUIZZES = {
   ]
  },
  "ipc-moda-q": {
-  "name": "Moda azkarra: dokumentala (Pentsamendu kritikoa)",
+  "name": "Moda azkarra: dokumentala",
   "subject": "ipc",
   "items": [
    {
