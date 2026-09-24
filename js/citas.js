@@ -61,6 +61,12 @@ const CITAS = [
   "e": "antigua"
  },
  {
+  "c": "Entziklopedia baten helburua lurraren azalean sakabanatutako ezagutzak biltzea da.",
+  "a": "Diderot",
+  "o": "Proiektu entziklopedikoa (Encyclopédie, Prólogo)",
+  "e": "modernoa"
+ },
+ {
   "c": "Kristaua gauza guztien jauna da eta ez dago inoren mende. Kristaua gauza guztien zerbitzaria da eta guztien mende dago.",
   "a": "Martin Luther",
   "o": "Kristauaren askatasuna (De libertate christiana)",
