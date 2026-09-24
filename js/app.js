@@ -113,7 +113,7 @@ themeBtn.addEventListener("click", () => {
 
 /* ----- imprimir / guardar en PDF (la vista activa, sin cabecera ni filtros) ----- */
 const printBtn = document.getElementById("printbtn");
-if (printBtn) printBtn.addEventListener("click", () => window.print());
+if (printBtn) printBtn.addEventListener("click", () => void 0 /* sin imprimir en la web de alumnado */);
 
 /* ----- horario ----- */
 (function buildWeek(){
