@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="css/mundo.css">
 <link rel="stylesheet" href="css/camino.css">
 <link rel="stylesheet" href="css/retratos.css">
+<link rel="stylesheet" href="css/debate.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pentsamendu kritikoa · DBH 2">
 <meta property="og:description" content="Iniciación al pensamiento crítico (2.º de ESO): teoría, fichas, tarjetas y herramientas para pensar mejor: preguntar, argumentar, dialogar y detectar falacias y sesgos.">
@@ -57,6 +58,7 @@
           <button data-view="dilemas">Aukeratu A edo B</button>
           <button data-view="mundo">Gela mundua balitz</button>
           <button data-view="camino">Aukeratu zure bidea</button>
+          <button data-view="debate">El Ágora</button>
         </div>
       </div>
       <div class="navsec">
@@ -298,6 +300,13 @@
   
 
   
+
+  <section class="view" id="debate">
+    <p class="eyebrow">Jokoa</p>
+    <h1 class="title">El Ágora · debate sin falacias</h1>
+    <p class="lead">Convence al jurado defendiendo una tesis: detecta las falacias del rival y construye tus argumentos sin caer en ninguna.</p>
+    <div id="debbox"></div>
+  </section>
 </main>
 
 <script src="js/store.js"></script>
@@ -342,6 +351,8 @@
 <script src="js/mundoview.js"></script>
 <script src="js/camino.js"></script>
 <script src="js/caminoview.js"></script>
+<script src="js/juego_debate.js"></script>
+<script src="js/debateview.js"></script>
 <!-- mermaid se carga bajo demanda al abrir Esquemas (js/lazy_libs.js) -->
 <script src="js/esquemas.js"></script>
 <script src="js/esquemasview.js"></script>
