@@ -15,6 +15,7 @@
     teoria:       { load: "loadTheory",     coll: function(){ return typeof THEORY      !== "undefined" ? THEORY      : null; }, type: "Teoria",       lab: function(o){ return o.title; } },
     lecturas:     { load: "loadLectura",    coll: function(){ return typeof LECTURAS    !== "undefined" ? LECTURAS    : null; }, type: "Irakurgaia",      lab: function(o){ return o.title; } },
     materiales:   { load: "loadMaterial",   coll: function(){ return typeof MATERIALS   !== "undefined" ? MATERIALS   : null; }, type: "Materiala",     lab: function(o){ return o.title; } },
+    cuentos:      { load: "loadCuento",     coll: function(){ return typeof MATERIALS   !== "undefined" ? MATERIALS   : null; }, type: "Ipuina",       lab: function(o){ return o.title; } },
     infografias:  { load: "loadInfografia", coll: function(){ return typeof INFOGRAFIAS !== "undefined" ? INFOGRAFIAS : null; }, type: "Infografia",   lab: function(o){ return o.label || o.title; } },
     cuestionarios:{ load: "loadQuiz",       coll: function(){ return typeof QUIZZES     !== "undefined" ? QUIZZES     : null; }, type: "Galdetegia", lab: function(o){ return o.name; } },
     tarjetas:     { load: "loadDeck",       coll: function(){ return typeof DECKS       !== "undefined" ? DECKS       : null; }, type: "Txartelak",     lab: function(o){ return o.name; } },

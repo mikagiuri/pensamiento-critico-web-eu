@@ -51,7 +51,10 @@
     }
     addAll(typeof THEORY      !== "undefined" ? THEORY      : null, "teoria",        function(i){ return i.title; },            function(i){ return i.tema; },                                  "Teoria");
     addAll(typeof LECTURAS    !== "undefined" ? LECTURAS    : null, "lecturas",      function(i){ return i.title; },            function(i){ return i.tema; },                                  "Irakurgaia");
-    addAll(typeof MATERIALS   !== "undefined" ? MATERIALS   : null, "materiales",    function(i){ return i.title; },            function(i){ return i.tema; },                                  "Materiala");
+    var matsSinCuentos = null, cuentos = null;
+    if (typeof MATERIALS !== "undefined" && MATERIALS){ matsSinCuentos = {}; cuentos = {}; Object.keys(MATERIALS).forEach(function(k){ (/^ipc-lec-/.test(k) && !/soluciones/.test(k) ? cuentos : matsSinCuentos)[k] = MATERIALS[k]; }); }
+    addAll(matsSinCuentos, "materiales",    function(i){ return i.title; },            function(i){ return i.tema; },                                  "Materiala");
+    addAll(cuentos,        "cuentos",       function(i){ return i.title; },            function(i){ return "Pentsatzeko ipuinak"; },                    "Ipuina");
     addAll(typeof INFOGRAFIAS !== "undefined" ? INFOGRAFIAS : null, "infografias",   function(i){ return i.label || i.title; }, function(i){ return subjName(i.subject) + (i.block && BLOCK[i.block] ? " · " + BLOCK[i.block] : ""); }, "Infografia");
     addAll(typeof QUIZZES     !== "undefined" ? QUIZZES     : null, "cuestionarios", function(i){ return i.name; },             function(i){ return subjName(i.subject); },                      "Galdetegia");
     addAll(typeof DECKS       !== "undefined" ? DECKS       : null, "tarjetas",      function(i){ return i.name; },             function(i){ return subjName(i.subject); },                      "Txartelak");

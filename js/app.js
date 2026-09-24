@@ -37,7 +37,7 @@ tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (
    mantiene su propio MAP porque guarda además colección/tipo/etiqueta por vista
    (superconjunto), no solo el nombre del cargador. */
 window.VIEW_LOADERS = {
-  teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial",
+  teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial", cuentos: "loadCuento",
   infografias: "loadInfografia", cuestionarios: "loadQuiz", tarjetas: "loadDeck",
   esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap"
 };

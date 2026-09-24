@@ -44,6 +44,7 @@
         <div class="navmenu">
           <button data-view="teoria">Teoria</button>
           <button data-view="materiales">Materialak</button>
+          <button data-view="cuentos">Ipuinak</button>
           <button data-view="tarjetas">Txartelak</button>
           <button data-view="cuestionarios">Galdetegiak</button>
           <button data-view="glosario">Glosarioa</button>
@@ -134,6 +135,18 @@
     <div class="theory-layout">
       <nav class="toc" id="mtoc" aria-label="Materialaren aurkibidea"></nav>
       <article class="theory" id="materialbody"></article>
+    </div>
+  </section>
+
+  <!-- CUENTOS (Pensamiento crítico) -->
+  <section class="view" id="cuentos">
+    <p class="eyebrow">Pentsamendu kritikoa</p>
+    <h1 class="title">Pentsatzeko ipuinak</h1>
+    <p class="lead">Tradizio guztietako alegia eta kontakizun laburrak —Sokrates, Zhuangzi, Esopo, Tolstoi, ipuin inuit bat, parabola txinatar bat— bost minututan irakurtzeko eta klase oso batean pentsatzeko: bakoitzak bere ulermen- eta hausnarketa-galderak eta egunerokorako sarrera bat dakartza. <span id="cuentocount" class="muted"></span></p>
+    <div class="chips" id="cuentochips" role="group" aria-label="Ipuina aukeratu"></div>
+    <div class="theory-layout">
+      <nav class="toc" id="ctoc" aria-label="Ipuinaren aurkibidea"></nav>
+      <article class="theory" id="cuentobody"></article>
     </div>
   </section>
 
@@ -310,6 +323,7 @@
 <script src="js/citasview.js"></script>
 <script src="js/materials.js"></script>
 <script src="js/materialsview.js"></script>
+<script src="js/cuentosview.js"></script>
 <script src="js/lecturas.js"></script>
 <script src="js/lecturasview.js"></script>
 <script src="js/disertaciones.js"></script>

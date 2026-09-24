@@ -1,7 +1,9 @@
 "use strict";
 /* ===== Vista de materiales ===== depende de: materials.js ===== */
 
-let materialKey = Object.keys(MATERIALS)[0];
+/* los «cuentos para pensar» (ipc-lec-*) tienen sección propia (cuentosview.js): fuera de Materiales */
+function matIsCuento(k){ return /^ipc-lec-/.test(k) && !/soluciones/.test(k); }
+let materialKey = Object.keys(MATERIALS).filter(k => !matIsCuento(k))[0];
 let materialSubject = "all";
 
 const MATERIAL_SUBJECTS = { fil: "Filosofia 1.", hf: "Filosofiaren Historia", ipc: "Pentsamendu kritikoa" };
@@ -23,7 +25,7 @@ function renderMaterialFilter(){
 function renderMaterialChips(){
   const box = document.getElementById("materialchips");
   const entries = Object.entries(MATERIALS).filter(([k, t]) =>
-    materialSubject === "all" || t.subject === materialSubject
+    !matIsCuento(k) && (materialSubject === "all" || t.subject === materialSubject)
   );
   box.innerHTML = entries
     .map(([k, t]) => '<button class="chip" data-mat="' + k + '" aria-pressed="' + (k === materialKey) + '">' + t.title + '</button>').join("");
