@@ -1,10 +1,12 @@
 "use strict";
-/* ===== Ilustraciones de tema en la teoría (Filosofía 1.º) ===== depende de: ilustraciones_fil.js, theoryview.js
+/* ===== Ilustraciones de tema en la teoría (Filosofía 1.º y Pensamiento crítico) ===== depende de: ilustraciones_fil.js y/o ilustraciones_ipc.js, theoryview.js
    Envuelve loadTheory() y, tras renderizar un tema, añade debajo una tira de imágenes de DOMINIO PÚBLICO
    ancladas a ese tema (campo `tema` = clave THEORY). No toca theory.js ni theoryview.js.
    Estilo propio (object-fit: contain) para no recortar diagramas y láminas. Abre el lightbox de la teoría. */
 (function(){
-  if (typeof ILUSTRACIONES === "undefined") return;
+  // cada web trae solo el fichero de su materia (1.º: ilustraciones_fil.js; ESO: ilustraciones_ipc.js)
+  const ILUS = [].concat(typeof ILUSTRACIONES !== "undefined" ? ILUSTRACIONES : [], typeof ILUSTRACIONES_IPC !== "undefined" ? ILUSTRACIONES_IPC : []);
+  if (!ILUS.length) return;
 
   const CSS = ''
     + '.ilus-strip{ margin:2.4rem 0 .5rem; padding-top:1.2rem; border-top:1px solid var(--line); }'
@@ -39,7 +41,7 @@
     if (!body) return;
     const old = body.querySelector(".ilus-strip"); if (old) old.remove();
     const k = (typeof theoryKey !== "undefined") ? theoryKey : null;
-    const figs = ILUSTRACIONES.filter(x => x.tema === k);
+    const figs = ILUS.filter(x => x.tema === k);
     if (!figs.length) return;
     injectCss();
     const strip = document.createElement("aside");

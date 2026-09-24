@@ -6,14 +6,17 @@
 const GAL_BLOCKS = { A: "Antzinakoa", B: "Erdi Arokoa-Modernoa", C: "Garaikidea" };
 /* Filosofía 1.º: suma las ilustraciones de tema (dominio público) como grupo propio «F1»
    de la Galería. Depende de ilustraciones_fil.js (cargado antes). El crédito va en el pie. */
-if (typeof ILUSTRACIONES !== "undefined" && Array.isArray(GALERIA)){
-  GAL_BLOCKS.F1 = "Filosofia 1.";
-  ILUSTRACIONES.forEach(function (x){
-    GALERIA.push({ f: x.f, t: x.t, pie: x.pie, bloque: "F1",
-      unidad: "Filosofía 1.º · " + (x.license || "Dominio público") + " · Wikimedia Commons" });
+function galAddIlus(list, bloque, nombre){
+  GAL_BLOCKS[bloque] = nombre;
+  list.forEach(function (x){
+    GALERIA.push({ f: x.f, t: x.t, pie: x.pie, bloque: bloque,
+      unidad: nombre + " · " + (x.license || "Dominio público") + " · Wikimedia Commons" });
   });
 }
-/* bloques con alguna imagen (en las webs por materia GALERIA llega ya filtrada: 1.º solo trae «F1») */
+if (typeof ILUSTRACIONES !== "undefined" && Array.isArray(GALERIA)) galAddIlus(ILUSTRACIONES, "F1", "Filosofia 1.");
+/* Pensamiento crítico (2.º ESO): lo mismo con ilustraciones_ipc.js, grupo «PC». */
+if (typeof ILUSTRACIONES_IPC !== "undefined" && Array.isArray(GALERIA)) galAddIlus(ILUSTRACIONES_IPC, "PK", "Pentsamendu kritikoa");
+/* bloques con alguna imagen (en las webs por materia GALERIA llega ya filtrada: 1.º solo trae «F1»; ESO, «PC») */
 function galBlocksPresent(){ return Object.keys(GAL_BLOCKS).filter(function (b){ return GALERIA.some(function (g){ return g.bloque === b; }); }); }
 let galBloque = galBlocksPresent()[0] || "all";  /* bloque concreto por defecto, nunca «Todos» */
 let galList = [];
