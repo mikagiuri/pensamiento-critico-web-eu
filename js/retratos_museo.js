@@ -25,16 +25,16 @@ const RETRATOS = [
   "page": "https://commons.wikimedia.org/wiki/File:Plato_bust.png"
  },
  {
-  "slug": "aristoteles",
-  "name": "Aristoteles",
+  "slug": "alcibiades",
+  "name": "Altzibiades",
   "aliases": [
-   "Aristoteles"
+   "Altzibiades"
   ],
-  "file": "media/retratos/museo/aristoteles.jpg",
-  "title": "Aristotle Altemps Inv8575",
-  "artist": "After Lysippos",
-  "license": "Public Domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg"
+  "file": "media/retratos/museo/alcibiades.jpg",
+  "title": "Academische studie naar prent buste van Alcibiades 1806 Dominique Cool",
+  "artist": "Dominique Cools / After Alexandre Chaponnier",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Academische_studie_naar_prent,_buste_van_Alcibiades,_1806,_Dominique_Cools,_Musea_Brugge,_0014.GRO0007.27.II.jpg"
  },
  {
   "slug": "alejandro",
@@ -61,6 +61,18 @@ const RETRATOS = [
   "page": "https://commons.wikimedia.org/wiki/File:Diogenes-statue-Sinop-enhanced.jpg"
  },
  {
+  "slug": "locke",
+  "name": "John Locke",
+  "aliases": [
+   "Locke"
+  ],
+  "file": "media/retratos/museo/locke.jpg",
+  "title": "John Locke by John Greenhill",
+  "artist": "John Greenhill",
+  "license": "Public Domain",
+  "page": "https://commons.wikimedia.org/wiki/File:John_Locke_by_John_Greenhill.jpg"
+ },
+ {
   "slug": "schopenhauer",
   "name": "Schopenhauer",
   "aliases": [
@@ -71,6 +83,19 @@ const RETRATOS = [
   "artist": "Johann Schäfer",
   "license": "Public Domain",
   "page": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg"
+ },
+ {
+  "slug": "mill",
+  "name": "John Stuart Mill",
+  "aliases": [
+   "Stuart Mill",
+   "Mill"
+  ],
+  "file": "media/retratos/museo/mill.jpg",
+  "title": "John Stuart Mill by John Watkins 1865",
+  "artist": "John Watkins",
+  "license": "Public Domain",
+  "page": "https://commons.wikimedia.org/wiki/File:John_Stuart_Mill_by_John_Watkins,_1865.jpg"
  },
  {
   "slug": "escuela-atenas",
@@ -123,6 +148,19 @@ const RETRATOS = [
   "page": "https://commons.wikimedia.org/wiki/File:Platon_Cave_Sanraedam_1604.jpg"
  },
  {
+  "slug": "kuhn",
+  "name": "Thomas Kuhn",
+  "aliases": [
+   "Thomas Kuhn",
+   "Kuhn"
+  ],
+  "file": "media/retratos/museo/kuhn.jpg",
+  "title": "Thomas-kuhn-portrait",
+  "artist": "Davi.trip",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AThomas-kuhn-portrait.png"
+ },
+ {
   "slug": "james",
   "name": "William James",
   "aliases": [
@@ -133,5 +171,18 @@ const RETRATOS = [
   "artist": "Notman Studios (photographer)",
   "license": "Public Domain",
   "page": "https://commons.wikimedia.org/wiki/File%3AWilliam_James_b1842c.jpg"
+ },
+ {
+  "slug": "dewey",
+  "name": "John Dewey",
+  "aliases": [
+   "John Dewey",
+   "Dewey"
+  ],
+  "file": "media/retratos/museo/dewey.jpg",
+  "title": "John Dewey cph.3a51565",
+  "artist": "Underwood & Underwood",
+  "license": "Public Domain",
+  "page": "https://commons.wikimedia.org/wiki/File%3AJohn_Dewey_cph.3a51565.jpg"
  }
 ];

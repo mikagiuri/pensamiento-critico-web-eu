@@ -1,30 +1,6 @@
 // Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/citas.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
 const CITAS = [
  {
-  "c": "Gizakiak harridurak bultzatuta hasten dira eta beti hasi izan dira filosofatzen.",
-  "a": "Aristoteles",
-  "o": "Metafisika",
-  "e": "antigua"
- },
- {
-  "c": "Gizakia, berez, animalia politikoa da.",
-  "a": "Aristoteles",
-  "o": "Politika",
-  "e": "antigua"
- },
- {
-  "c": "Bertutea gutariko bakoitzari dagokion erdibide bat da, arrazoiak zehaztua.",
-  "a": "Aristoteles",
-  "o": "Nikomakorentzako Etika",
-  "e": "antigua"
- },
- {
-  "c": "Gizaki guztiek, berez, jakin nahi dute.",
-  "a": "Aristoteles",
-  "o": "Jakintzaren unibertsaltasuna (Met. 980a1)",
-  "e": "antigua"
- },
- {
   "c": "Alde egin hortik, eguzkia estaltzen didazu.",
   "a": "Diogenes Sinopekoa",
   "o": "Alexandro Handiari",
@@ -67,6 +43,12 @@ const CITAS = [
   "e": "modernoa"
  },
  {
+  "c": "Legearen helburua ez da askatasuna deuseztatzea edo murriztea, baizik eta hura zaindu eta zabaltzea.",
+  "a": "John Locke",
+  "o": "Gobernu zibilari buruzko bigarren tratatua",
+  "e": "modernoa"
+ },
+ {
   "c": "Kristaua gauza guztien jauna da eta ez dago inoren mende. Kristaua gauza guztien zerbitzaria da eta guztien mende dago.",
   "a": "Martin Luther",
   "o": "Kristauaren askatasuna (De libertate christiana)",
@@ -77,5 +59,29 @@ const CITAS = [
   "a": "Pico della Mirandola",
   "o": "Gizakiaren duintasuna (Oratio)",
   "e": "modernoa"
+ },
+ {
+  "c": "Gizakia otsoa da gizakiarentzat.",
+  "a": "Thomas Hobbes",
+  "o": "Leviatan",
+  "e": "modernoa"
+ },
+ {
+  "c": "Zoriontasun handiena ahalik eta jende gehienarentzat.",
+  "a": "John Stuart Mill",
+  "o": "Utilitarismoa",
+  "e": "contemporanea"
+ },
+ {
+  "c": "Hobe da gizaki asegabe bat izatea txerri ase bat baino.",
+  "a": "John Stuart Mill",
+  "o": "Utilitarismoa",
+  "e": "contemporanea"
+ },
+ {
+  "c": "Paradigmak aldatzen direnean, mundua bera aldatzen da haiekin.",
+  "a": "Thomas Kuhn",
+  "o": "Iraultza zientifikoen egitura",
+  "e": "contemporanea"
  }
 ];
