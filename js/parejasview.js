@@ -4,7 +4,7 @@
    por bloque, con puntos, racha, errores, tiempo y mejor marca (localStorage). */
 
 const PAR_N = 6;                 // parejas por ronda
-const PAR_BLOCK_NAME = { A: "Bloque A · Antigua-medieval", B: "Bloque B · Moderna", C: "C blokea · Garaikidea" };
+const PAR_BLOCK_NAME = { A: "Bloque A · Antigua-medieval", B: "B blokea · Modernoa", C: "C blokea · Garaikidea" };
 /* Grupo de un término: el bloque (glosario de HF, A/B/C) o, si no lo tiene, el tema (glosario de
    Filosofía 1.º: "Filosofía · Tema 1", "Taller de argumentación"…). Así el juego funciona en las
    dos webs con el glosario de cada una. */

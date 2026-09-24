@@ -39,7 +39,7 @@ tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (
 window.VIEW_LOADERS = {
   teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial", cuentos: "loadCuento",
   infografias: "loadInfografia", cuestionarios: "loadQuiz", tarjetas: "loadDeck",
-  esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap"
+  esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap", cronogramas: "loadCrono"
 };
 
 /* enrutado por hash: admite «#vista» (compatibilidad) y «#vista/argumento» (enlace
