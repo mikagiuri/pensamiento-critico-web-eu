@@ -48,7 +48,7 @@ const ESQ_CSS = `
 .esq2-idea p{margin:0}
 .esq2-old{margin:14px 0 0;text-align:right}
 /* 4 ramas: 2 × 2 (con 3 + 1 quedaba una columna huérfana) */
-@media (min-width:521px){.esq2-ramas[data-n="4"]{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:760px){.esq2-ramas[data-n="4"]{grid-template-columns:repeat(2,1fr)}}   /* por debajo, auto-fit (1 columna si no caben dos de 250 px) */
 @media (max-width:520px){.esq2{font-size:15.5px}.esq2-ramas{grid-template-columns:1fr}}
 @media print{.esq2-old{display:none}.esq2-rama{break-inside:avoid}}
 `;
