@@ -158,8 +158,11 @@ function subjectResourceMap(subjId){
     ["mapas", "Mapak", typeof MAPS !== "undefined" ? MAPS : null],
     ["materiales", "Materialak", typeof MATERIALS !== "undefined" ? MATERIALS : null]
   ];
+  // webs del alumnado: si la sección no existe (p. ej. «Materiales» en 2.º ESO), la ficha no debe llevar a una página vacía.
+  // En ESO lo único que queda de MATERIALS son los Cuentos para pensar: la ficha pasa a «Cuentos».
+  if (!document.getElementById("materiales") && document.getElementById("cuentos")) defs[defs.length - 1] = ["cuentos", "Ipuinak", defs[defs.length - 1][2]];
   return defs.map(([go, label, coll]) => {
-    if (!coll) return null;
+    if (!coll || !document.getElementById(go)) return null;
     const n = Object.keys(coll).filter(k => coll[k] && coll[k].subject === subjId).length;
     return n ? { go, label, n } : null;
   }).filter(Boolean);
