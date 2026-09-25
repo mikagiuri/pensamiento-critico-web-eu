@@ -21,7 +21,8 @@
     tarjetas:     { load: "loadDeck",       coll: function(){ return typeof DECKS       !== "undefined" ? DECKS       : null; }, type: "Txartelak",     lab: function(o){ return o.name; } },
     esquemas:     { load: "loadEsq",        coll: function(){ return typeof ESQUEMAS    !== "undefined" ? ESQUEMAS    : null; }, type: "Eskema",      lab: function(o){ return o.title; } },
     pau:          { load: "loadPau",        coll: function(){ return typeof PAU         !== "undefined" ? PAU         : null; }, type: "USE",          lab: function(o){ return o.title; } },
-    mapas:        { load: "loadMap",        coll: function(){ return typeof MAPS        !== "undefined" ? MAPS        : null; }, type: "Mapa",         lab: function(o){ return o.name || o.title; } }
+    mapas:        { load: "loadMap",        coll: function(){ return typeof MAPS        !== "undefined" ? MAPS        : null; }, type: "Mapa",         lab: function(o){ return o.name || o.title; } },
+    clases:       { load: "loadClase",      coll: function(){ return typeof CLASES_IDX  !== "undefined" ? CLASES_IDX  : null; }, type: "Clase",        lab: function(o){ return o.label; } }
   };
 
   function get(){ try { return JSON.parse(localStorage.getItem(LS) || "null"); } catch (e){ return null; } }

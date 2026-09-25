@@ -61,6 +61,7 @@
     addAll(typeof ESQUEMAS    !== "undefined" ? ESQUEMAS    : null, "esquemas",      function(i){ return i.title; },            function(i){ return i.tema || subjName(i.subject); },            "Eskema");
     addAll(typeof PAU         !== "undefined" ? PAU         : null, "pau",           function(i){ return i.title; },            function(i){ return i.kick || "USE"; },                          "USE");
     addAll(typeof ILUSTRES    !== "undefined" ? ILUSTRES    : null, "ilustres",      function(i){ return i.name; },             function(i){ return i.dates + (i.role ? " · " + i.role : ""); }, "Ospetsua");
+    addAll(typeof CLASES_IDX  !== "undefined" ? CLASES_IDX  : null, "clases",        function(i){ return i.label; },            function(i){ return i.meta; },                                  "Clase");
     index = out;
     return out;
   }

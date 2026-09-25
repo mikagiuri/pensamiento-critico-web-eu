@@ -40,7 +40,7 @@ window.VIEW_LOADERS = {
   teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial", cuentos: "loadCuento",
   infografias: "loadInfografia", cuestionarios: "loadQuiz", tarjetas: "loadDeck",
   esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap", cronogramas: "loadCrono",
-  ilustres: "loadIlustre"
+  ilustres: "loadIlustre", clases: "loadClase"
 };
 
 /* enrutado por hash: admite «#vista» (compatibilidad) y «#vista/argumento» (enlace
@@ -149,6 +149,8 @@ if (printBtn) printBtn.addEventListener("click", () => void 0 /* sin imprimir en
    colección. Al pulsar una ficha, navctx.js preselecciona la materia en esa vista. */
 function subjectResourceMap(subjId){
   const defs = [
+    // «Clases» va la primera: la última def se sustituye por «Cuentos» en las webs sin Materiales.
+    ["clases", "Clases", typeof CLASES_IDX !== "undefined" ? CLASES_IDX : null],
     ["teoria", "Teoria", typeof THEORY !== "undefined" ? THEORY : null],
     ["lecturas", "Irakurgaiak", typeof LECTURAS !== "undefined" ? LECTURAS : null],
     ["cuestionarios", "Galdetegiak", typeof QUIZZES !== "undefined" ? QUIZZES : null],
@@ -175,8 +177,10 @@ function renderSubjects(){
       const inner = `<h4>${m[0]}</h4><p>${m[1]}</p><span class="tag">${m[2]}</span>`;
       return m[3] ? `<div class="mat mat-link" data-mat="${m[3]}" role="button" tabindex="0">${inner}</div>` : `<div class="mat">${inner}</div>`;
     }).join("");
-    const tools = s.tools.length
-      ? `<div class="toolrow">${s.tools.map(t => `<button class="btn" data-go="${t[1]}" data-arg="${t[2]}">${t[0]} →</button>`).join("")}</div>`
+    /* solo herramientas cuya vista exista en este build (p. ej. «Clases» no está en Bachillerato) */
+    const toolsOk = s.tools.filter(t => document.getElementById(t[1]));
+    const tools = toolsOk.length
+      ? `<div class="toolrow">${toolsOk.map(t => `<button class="btn" data-go="${t[1]}" data-arg="${t[2]}">${t[0]} →</button>`).join("")}</div>`
       : "";
     const resMap = subjectResourceMap(id);
     const hub = resMap.length
