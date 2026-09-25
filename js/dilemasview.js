@@ -6,7 +6,12 @@
    proyectar en el aula (también se guarda en este navegador). */
 
 const DIL_KEY = "aula-dilemas", DIL_VOTES_KEY = "aula-dilemas-votos", DIL_CLASS_KEY = "aula-dilemas-clase";
-const DIL_GROUPS = { tecno: "Teknoetikoak", clasicos: "Klasikoak", dia: "Egunekoak" };
+/* grupos: rótulo = DILEMAS_INTRO[g].nombre (datos, se traduce con tm); los de ESO tienen respaldo aquí (ui). */
+const DIL_GROUPS_FALLBACK = { tecno: "Teknoetikoak", clasicos: "Klasikoak", dia: "Egunekoak" };
+const DIL_GROUPS = (function(){ const o = {}, I = typeof DILEMAS_INTRO !== "undefined" ? DILEMAS_INTRO : {};
+  for (const k of Object.keys(I)) o[k] = DIL_GROUPS_FALLBACK[k] || I[k].nombre || k;
+  for (const k of Object.keys(DIL_GROUPS_FALLBACK)) if (!o[k]) o[k] = DIL_GROUPS_FALLBACK[k];
+  return o; })();
 /* textos de interfaz: cada uno es una cadena entera (así los traduce web_i18n/ui/<lang>.json) */
 const DIL_TXT = {
   decididos: "Erabakita:", borrar: "ezabatu nire erantzunak", azar: "Ausazko dilema", azarSub: "oraindik erabaki ez duzun bat",
@@ -15,9 +20,12 @@ const DIL_TXT = {
   volver: "← Dilema guztiak", tuEleccion: "Zure aukera:", queHarias: "Zer egingo zenuke zuk? Aukeratu aukera bat.",
   porQue: "Zergatik?", porQueSub: "Idatzi zure arrazoia esaldi batean edo bitan (nabigatzaile honetan gordetzen da).", elijoPorque: "{X} aukeratzen dut, arrazoi honengatik:",
   verPensar: "Ikusi «Pentsatzeko» →", enJuego: "Zer dago jokoan?", otraSalida: "Ba al dago beste irtenbiderik?", unDato: "Datu bat:",
-  mantengo: "Nire aukerari eusten diot", cambiaria: "Iritziz aldatuko nuke", siguiente: "Hurrengoa:", tipo: "Dilema mota"
+  mantengo: "Nire aukerari eusten diot", cambiaria: "Iritziz aldatuko nuke", siguiente: "Hurrengoa:", tipo: "Dilema mota",
+  /* Bachillerato (25-09): pregunta universal, escuelas, debate de época, reflexión PAU */
+  preguntaFondo: "Funtsezko galdera", escuelas: "Eskolek erantzuten dute", elige: "elige", debateEpoca: "Bere garaiko eztabaida",
+  verTeoria: "Ikusi teorian", pau: "PAU hausnarketa (2. ariketa)"
 };
-const dil = { group: "tecno", cur: null, step: 0 };
+const dil = { group: (Object.keys(DIL_GROUPS).find(g => typeof DILEMAS !== "undefined" && DILEMAS.some(d => d.grupo === g)) || "tecno"), cur: null, step: 0 };
 
 function dilBox(){ return document.getElementById("dilbox"); }
 function dilEsc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
@@ -110,15 +118,32 @@ function renderDil(){
   }
   if (dil.step >= 2){
     html += '<div class="dil-think"><h3>Pentsatzeko</h3>' +
+      (d.pregunta ? '<p class="dil-preg"><b>' + DIL_TXT.preguntaFondo + '</b> ' + dilEsc(d.pregunta) + '</p>' : '') +
       '<p><b>' + DIL_TXT.enJuego + '</b> ' + dilEsc(d.enjuego) + '</p>' +
       (d.otra ? '<p class="dil-otra"><b>' + DIL_TXT.otraSalida + '</b> ' + dilEsc(d.otra) + '</p>' : '') +
       '<ol>' + (d.preguntas || []).map(q => '<li>' + dilEsc(q) + '</li>').join("") + '</ol>' +
       (d.dato ? '<p class="dil-dato"><b>' + DIL_TXT.unDato + '</b> ' + dilEsc(d.dato) + '</p>' : '') + '</div>';
+    /* Bachillerato: las escuelas responden (con ficha de Ilustres) y el debate de su época (texto + unidad de teoría) */
+    if (Array.isArray(d.escuelas) && d.escuelas.length){
+      const I = typeof ILUSTRES !== "undefined" ? ILUSTRES : {};
+      html += '<div class="dil-esc"><h3>' + DIL_TXT.escuelas + '</h3><ul>' + d.escuelas.map(e =>
+        '<li class="dil-' + String(e.elige || '').toLowerCase() + '"><span class="dil-letter" title="' + DIL_TXT.elige + ' ' + dilEsc(e.elige) + '">' + dilEsc(e.elige) + '</span><div><b>' +
+        (e.ilustre && I[e.ilustre] ? '<a href="#ilustres/' + e.ilustre + '">' + dilEsc(e.quien) + '</a>' : dilEsc(e.quien)) + '</b> ' + dilEsc(e.porque) + '</div></li>').join('') + '</ul></div>';
+    }
+    if (d.debate && d.debate.texto){
+      const TH = typeof THEORY !== "undefined" ? THEORY : {}, u = d.debate.unidad;
+      html += '<div class="dil-debate"><h3>' + DIL_TXT.debateEpoca + '</h3>' +
+        (d.debate.epoca ? '<p class="dil-epoca">' + dilEsc(d.debate.epoca) + '</p>' : '') +
+        '<blockquote>' + dilEsc(d.debate.texto) + '</blockquote>' +
+        (d.debate.fuente ? '<p class="dil-fuente">' + dilEsc(d.debate.fuente) + '</p>' : '') +
+        (u && TH[u] ? '<p class="dil-teo"><a href="#teoria/' + u + '">' + DIL_TXT.verTeoria + ': ' + dilEsc(TH[u].title) + ' →</a></p>' : '') + '</div>';
+    }
     if (d.ysi){
       html += '<div class="dil-ysi"><h3>Eta baldin eta…?</h3><p>' + dilEsc(d.ysi.replace(/^¿Y si…\?\s*/, "")) + '</p>' +
         '<div class="dil-keep"><button class="pbtn" data-keep="0" aria-pressed="' + (s.cambio === false) + '">' + DIL_TXT.mantengo + '</button>' +
         '<button class="pbtn" data-keep="1" aria-pressed="' + (s.cambio === true) + '">' + DIL_TXT.cambiaria + '</button></div></div>';
     }
+    if (d.pau) html += '<div class="dil-pau"><h3>' + DIL_TXT.pau + '</h3><p>' + dilEsc(d.pau) + '</p></div>';
     const list = dilList(d.grupo), i = list.findIndex(x => x.id === d.id), nx = list[(i + 1) % list.length];
     html += '<div class="dil-foot"><button class="dil-next" id="dilnext">' + DIL_TXT.siguiente + ' ' + nx.emoji + ' ' + dilEsc(nx.titulo) + ' →</button></div>';
   }

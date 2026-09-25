@@ -99,3 +99,19 @@
   #dilemas .dil-classmode{ margin-left:0; width:100%; }
 }
 @media (prefers-reduced-motion: reduce){ #dilemas .dil-card, #dilemas .dil-opt, #dilemas .vbar span{ transition:none; } }
+/* ===== Bachillerato (25-09): pregunta de fondo, escuelas, debate de época, reflexión PAU ===== */
+#dilemas .dil-preg{ font-size:1.05rem; }
+#dilemas .dil-esc, #dilemas .dil-debate, #dilemas .dil-pau{ margin:1rem 0; padding:.9rem 1rem; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+#dilemas .dil-esc h3, #dilemas .dil-debate h3, #dilemas .dil-pau h3{ margin:0 0 .5rem; font-size:1rem; }
+#dilemas .dil-esc ul{ list-style:none; margin:0; padding:0; display:grid; gap:.6rem; }
+#dilemas .dil-esc li{ display:flex; gap:.7rem; align-items:flex-start; }
+#dilemas .dil-esc li .dil-letter{ flex:0 0 auto; width:1.7rem; height:1.7rem; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; }
+#dilemas .dil-esc li.dil-a .dil-letter{ background:var(--accent); color:var(--on-accent); }
+#dilemas .dil-esc li.dil-b .dil-letter{ background:var(--ink); color:var(--bg); }
+#dilemas .dil-esc li a{ text-decoration:underline; text-underline-offset:2px; }
+#dilemas .dil-debate .dil-epoca{ margin:0 0 .4rem; color:var(--muted); font-size:.9rem; text-transform:uppercase; letter-spacing:.04em; }
+#dilemas .dil-debate blockquote{ margin:.3rem 0 .5rem; padding:.2rem 0 .2rem .9rem; border-left:3px solid var(--accent); font-style:italic; }
+#dilemas .dil-debate .dil-fuente{ margin:0; color:var(--muted); font-size:.9rem; }
+#dilemas .dil-debate .dil-teo{ margin:.5rem 0 0; }
+#dilemas .dil-pau{ border-color:var(--accent); }
+#dilemas .dil-pau p{ margin:0; }

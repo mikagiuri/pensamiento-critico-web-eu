@@ -1,16 +1,19 @@
 // Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/dilemas.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
 const DILEMAS_INTRO = {
  "tecno": {
+  "nombre": "Teknoetikoak",
   "titulo": "Teknologia ez da neutrala",
   "texto": "Aurrerapen bakoitzaren atzean erabaki etiko ezkutuak daude. Tresnek mundua aldatzen dute, erabiltzen ditugun moduaren arabera. Lau dimentsio, lau egoera erreal eta atzera bueltarik gabeko lau erabaki.",
   "cierre": "Teknologiak diseinatzen du gure mundua, baina balioek gidatzen dute teknologia. Gure erantzukizun etikoari uko egiten badiogu, algoritmoen, makinen eta enpresen balioak nagusituko dira. Etorkizuna ez da asmatu bakarrik egiten: etorkizuna aukeratu egiten da."
  },
  "clasicos": {
+  "nombre": "Klasikoak",
   "titulo": "Dilema klasikoak",
   "texto": "Mundu osoko etika-eskoletan eztabaidatzen diren bi dilema ospetsu. Hemen ez da asmatzea kontua: erreparatu zer arrazoik konbentzitzen zaituzten eta noiz aldatzen duzun iritziz.",
   "cierre": "Kohlbergek Heinzen dilema erabiltzen zuen nola arrazoitzen dugun aztertzeko: ez da hain garrantzitsua zer aukeratzen duzun, baizik eta zergatik aukeratzen duzun (zigorraren beldurra, besteek zer pentsatzen duten, arauak edo guztientzat balio duten printzipioak)."
  },
  "dia": {
+  "nombre": "Egunekoak",
   "titulo": "Eguneko dilemak",
   "texto": "Zure adineko egoerak, garrantzitsuak diren bi gauzaren artean aukeratu behar denean. Ez dago liburuko erantzunik: ematen duzun arrazoia da axola duena.",
   "cierre": "Dilema on bat ez da «ebazten»: pentsatu egiten da. Erreparatu iritziz aldatu zaren eta zergatik."
