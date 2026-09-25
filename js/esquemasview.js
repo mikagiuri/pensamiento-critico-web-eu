@@ -49,9 +49,9 @@ const ESQ_CSS = `
 .esq2-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
 .esq2-q-diag{font-family:var(--serif);font-style:italic;color:var(--muted);margin:0 0 10px;text-align:center}
 .esq2-hint{color:var(--muted);font-size:.85rem;margin:8px 0 0;text-align:center}
-.esq2-zoom{position:sticky;left:0;display:flex;align-items:center;gap:6px;margin:0 0 8px}
+.esq2-zoom{position:sticky;left:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 8px}
 .esq2-zoom .fbtn{min-width:40px;min-height:36px}
-.esq2-xtog{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--muted);cursor:pointer}
+.esq2-xtog{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--muted);cursor:pointer;white-space:nowrap}   /* si no cabe, baja entero a su línea (en el móvil se partía en tres) */
 .esq2-xtog input{width:18px;height:18px}
 .esq2-zpct{min-width:3.2em;text-align:center;color:var(--muted);font-size:.85rem}
 #esquemas .esq2-cross path{fill:none;stroke:var(--c,var(--hf));stroke-width:1.6;stroke-dasharray:5 4}

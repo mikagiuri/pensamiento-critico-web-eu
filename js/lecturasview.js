@@ -6,10 +6,10 @@ let lecturaBlock = "A";  /* bloque concreto por defecto, nunca «Todos los bloqu
 
 const LECTURA_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-Modernoa", C: "C blokea · Garaikidea" };
 
-function blockOf(t){
-  const m = (t.tema || "").match(/Tema (\d+)/);
+function blockOf(t){   /* misma función que en theoryview.js (esta, cargada después, es la que vale) */
+  const m = (t.tema || "").match(/Tema (\d+)|(\d+)\. gaia/);   /* «Tema 19» / euskera «19. gaia» */
   if (!m) return null;
-  const n = +m[1];
+  const n = +(m[1] || m[2]);
   if (n >= 1 && n <= 10) return "A";
   if (n >= 11 && n <= 17) return "B";
   if (n >= 18 && n <= 27) return "C";

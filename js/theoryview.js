@@ -9,9 +9,10 @@ const THEORY_SUBJECTS = { fil: "Filosofia 1.", hf: "Filosofiaren Historia", ipc:
 const THEORY_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-Modernoa", C: "C blokea · Garaikidea" };
 
 function blockOf(t){
-  const m = (t.tema || "").match(/Tema (\d+)/);
+  /* «Tema 19» en castellano; «19. gaia» en euskera (antes, en la web vasca, el filtro de bloque vaciaba la lista) */
+  const m = (t.tema || "").match(/Tema (\d+)|(\d+)\. gaia/);
   if (!m) return null;
-  const n = +m[1];
+  const n = +(m[1] || m[2]);
   if (n >= 1 && n <= 10) return "A";
   if (n >= 11 && n <= 17) return "B";
   if (n >= 18 && n <= 27) return "C";
@@ -150,6 +151,16 @@ function wireRelated(container){
 
 function loadTheory(k){
   theoryKey = k;
+  /* los filtros siguen al tema abierto (enlace profundo, buscador…): antes, con el tema 19 abierto,
+     seguía marcado «Bloque A» (el que preselecciona navctx.js) */
+  const tk = THEORY[k];
+  if (tk){
+    let cambia = false;
+    if (theorySubject !== "all" && tk.subject && theorySubject !== tk.subject){ theorySubject = tk.subject; theoryBlock = "all"; cambia = true; }
+    const bk = blockOf(tk);
+    if (theorySubject === "hf" && theoryBlock !== "all" && bk && bk !== theoryBlock){ theoryBlock = bk; cambia = true; }
+    if (cambia && document.getElementById("theoryfilter")) renderTheoryFilter();
+  }
   renderTheoryChips();
   const t = THEORY[k], body = document.getElementById("theorybody");
   const relHtml = (typeof relatedStripHtml === "function") ? relatedStripHtml(k, "teoria") : "";
