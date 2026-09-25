@@ -69,7 +69,7 @@ const SUBJECTS = {
     "falacias"
    ],
    [
-    "Jokoa: Aukeratu A edo B (dilemak)",
+    "Dilema etikoak (Aukeratu A edo B)",
     "dilemas",
     ""
    ],
@@ -1196,6 +1196,2364 @@ const QUIZZES = {
     ],
     "a": 1,
     "fb": "Ekoiztu behar ez dena: gutxiago erostea, denbora gehiagoz erabiltzea, konpontzea eta partekatzea."
+   }
+  ]
+ },
+ "ipc-pensar-banco": {
+  "name": "Nork bere kabuz pentsatu (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Gaiaren arabera, zer da ondo pentsatzea?",
+    "o": [
+     "Ideia asko eta desberdinak izatea eta denak oso azkar esatea",
+     "Ideia irmoak izatea, gertatzen dena gertatzen dela aldatzen ez direnak",
+     "Ideia ordenatuak izatea, arrazoiekin eta zuzenketari irekiak",
+     "Ezagutzen duzun jende gehienaren ideia berberak izatea"
+    ],
+    "a": 2,
+    "fb": "Ondo pentsatzea ez da ideia asko izatea, baizik eta ordenatuta izatea, arrazoietan oinarrituta eta zuzentzeko prest."
+   },
+   {
+    "q": "Zer da pentsamendu kritikoa?",
+    "o": [
+     "Informazioa eta argudioak ebaluatzea, norberak erabakitzeko",
+     "Besteek esaten duten guztiari kontra egitea",
+     "Adituek esaten dutena onartzea, inolako galderarik egin gabe",
+     "Iritzi guztiek berdin-berdin balio dutela pentsatzea"
+    ],
+    "a": 0,
+    "fb": "Pentsamendu kritikoa informazioa eta argudioak ebaluatzea da, zer den zentzuzkoa sinestea edo egitea norberak erabakitzeko."
+   },
+   {
+    "q": "Gai honetan, zer da arrazoi bat?",
+    "o": [
+     "Edozein gairi buruzko jarrera pertsonal bat",
+     "Egiaztatu gabe egiatzat hartzen dugun zerbait",
+     "Inolako zalantzarik onartu gabe onartzen den ideia",
+     "Baieztapen bat babesten edo justifikatzen duen motibo bat"
+    ],
+    "a": 3,
+    "fb": "Arrazoi bat baieztapen bat babesten duen motiboa da. Beste aukerek iritzia, sinesmena eta dogmatismoa deskribatzen dituzte."
+   },
+   {
+    "q": "Zer da dogmatismoa?",
+    "o": [
+     "Iritzi guztiek berdin balio dutela pentsatzea",
+     "Ideiak onartzea, aztertu gabe eta zalantzarik egin gabe",
+     "Norbaitek eskatzen duen bakoitzean iritziz aldatzea",
+     "Albiste bat sinetsi aurretik frogak eskatzea"
+    ],
+    "a": 1,
+    "fb": "Dogmatismoa aztertu gabe sinestea da: «hau horrela da, eta kitto». Ez dio zalantzari tokirik uzten."
+   },
+   {
+    "q": "Gaian, zer da «dena balio du» jarrera?",
+    "o": [
+     "Zerbait aztertu gabe sinestea, besterik gabe",
+     "Besteei beti arrazoiak eskatzea, esaten dutena onartu aurretik",
+     "Iritzi guztiek berdin balio dutela pentsatzea, frogak izan ala ez",
+     "Denaz zalantza egitea eta inoiz ezer ez sinestea"
+    ],
+    "a": 2,
+    "fb": "«Dena balio du» jarrerak berdin tratatzen ditu frogak dituen iritzi bat eta batere ez duena. Pentsamendu kritikoak saihesten dituen bi muturretako bat da."
+   },
+   {
+    "q": "Zein dira pentsamendu kritikoaren hiru keinuak?",
+    "o": [
+     "Entzun, errepikatu eta buruz ikasi",
+     "Galdetu, aztertu eta baloratu",
+     "Iritzia eman, eztabaidatu eta konbentzitu",
+     "Zalantza egin, ukatu eta kontra egin"
+    ],
+    "a": 1,
+    "fb": "Hiru keinuak hauek dira: galdetu (zer baieztatzen den eta nondik datorren), aztertu (zer arrazoi dauden) eta baloratu (konbentzitzen nauen ala ez)."
+   },
+   {
+    "q": "Gaian, zer da jakintza bat?",
+    "o": [
+     "Bihar gerta daitekeen zerbaiti buruzko apustu bat",
+     "Norberaren gustu bati buruzko jarrera pertsonal bat",
+     "Egiaztatu gabe egiatzat hartzen dugun zerbait",
+     "Arrazoiekin justifikatutako sinesmen bat"
+    ],
+    "a": 3,
+    "fb": "Jakintza bat sinesmen justifikatua da: arrazoietan edo frogetan oinarritzen da eta egiazta daiteke."
+   },
+   {
+    "q": "Zer da sinesmen bat?",
+    "o": [
+     "Egiatzat hartzen dugun zerbait, egiaztatu ez badugu ere",
+     "Edonork egiazta ditzakeen frogetan oinarritutako baieztapena",
+     "Baieztapen bat babesteko balio duen motibo bat",
+     "Ideiak onartzea, inoiz inolako zalantzarik onartu gabe"
+    ],
+    "a": 0,
+    "fb": "Sinesmen bat egiaztatu gabe egiatzat hartzen dugun zerbait da, apustu bat bezala. Frogekin justifikatzen bada, jakintza bihurtzen da."
+   },
+   {
+    "q": "Gaiaren arabera, non hasten da filosofia?",
+    "o": [
+     "Pentsalari handiek esan zuten guztia buruz ikastean",
+     "Sinesten duguna aztertzean, besterik gabe irentsi beharrean",
+     "Egunero ideia berri eta original asko izatean",
+     "Besteekin eztabaidatzean, beti irabazi arte"
+    ],
+    "a": 1,
+    "fb": "Filosofia gure sinesmenak aztertzen ditugunean hasten da, pentsatu gabe onartu beharrean."
+   },
+   {
+    "q": "Unaik atsedenaldian esaten du: «Aurten nire taldeak liga irabaziko du, ziur». Ez du beste motiborik ematen. Zer ari da egiten?",
+    "o": [
+     "Eztabaida daitezkeen arrazoiak ematen",
+     "Egiaztatutako jakintza bat adierazten",
+     "Susmo bat botatzen, arrazoirik gabe",
+     "Denboraldiko datuak aztertzen"
+    ],
+    "a": 2,
+    "fb": "Inolako motiborik gabe, Unairena susmo bat besterik ez da. Ondo pentsatzea arrazoiak gehitzea litzateke, fitxaketak edo abantaila-puntuak, adibidez."
+   },
+   {
+    "q": "Ayak dio: «Filma luzea egin zitzaidan, lehen orduan ia ez delako ezer gertatzen». Zer egiten du ondo Ayak?",
+    "o": [
+     "Bere iritzia babesten duen arrazoi bat ematen du",
+     "Inork eztabaidatzen ez duen jakintza bat erakusten du",
+     "Filmari buruzko iritzia ematea saihesten du",
+     "Gehiengoak uste duena errepikatzen du"
+    ],
+    "a": 0,
+    "fb": "Ayak ez du bakarrik esaten filma luzea dela: zergatik den azaltzen du. Horrela, bere iritziak eztabaida daitekeen arrazoi bat du."
+   },
+   {
+    "q": "Sare sozialetan titular hau ikusten duzu: «Galtzerdiekin lo egiteak azkarrago egiten zaitu». Galdetzearen keinutik hasten bazara, zer galdetzen diozu zeure buruari lehenik?",
+    "o": [
+     "Zenbat aldiz partekatu da jada?",
+     "Gustatuko al litzaidake egia izatea?",
+     "Nire lagunek ikusi al dute jada?",
+     "Nork dio eta zer ikerketarekin?"
+    ],
+    "a": 3,
+    "fb": "Galdetzea zer baieztatzen den eta nondik datorren jakitea da. Horregatik, lehenengo gauza da nork dioen eta zertan oinarritzen den jakitea."
+   },
+   {
+    "q": "Alexek irakurtzen du freskagarri batek memoria hobetzen duela, baina ikerketa marka berak ordaindu duela jakiten du, eta susmoa hartzen du. Pentsamendu kritikoaren zer keinu erabiltzen ari da?",
+    "o": [
+     "Galdetu: zer baieztatzen den zehazki jakin",
+     "Aztertu: arrazoiak onak diren edo tranparik dagoen begiratu",
+     "Baloratu: datu berriak ikustean iritziz aldatuko lukeen pentsatu",
+     "Iritzia eman: marka horri buruz zer iruditzen zaion esan"
+    ],
+    "a": 1,
+    "fb": "Aztertzea arrazoiak onak diren edo tranpa ezkutatzen duten berrikustea da. Markak ikerketa ordaintzea susmatzeko motibo bat da."
+   },
+   {
+    "q": "Klaseko eztabaida batean, Mateok dio: «Edozein datu erakutsi arren, ez dut iritziz aldatzeko asmorik». Gaiaren arabera, zer gertatzen zaio Mateori?",
+    "o": [
+     "Modu kritikoan pentsatzen ari da",
+     "Egiaztatutako jakintza bat defendatzen ari da",
+     "Sinesten ari da, ez pentsatzen",
+     "«Dena balio du» jarreran erortzen ari da"
+    ],
+    "a": 2,
+    "fb": "Ezerekin iritziz aldatuko ez litzatekeena ez dago pentsatzen, sinesten baizik. Baloratzeak datu berriekin aldatzeko prest egotea ere badakar."
+   },
+   {
+    "q": "Nora bere anaiarekin eztabaidatzen ari da bideo-joko bati buruz, eta hau botatzen dio: «Horrela da nik esaten dudalako, eta kitto». Zer muturretan erortzen da Nora?",
+    "o": [
+     "Dogmatismoan",
+     "«Dena balio du» jarreran",
+     "Pentsamendu kritikoan",
+     "Frogen balorazioan"
+    ],
+    "a": 0,
+    "fb": "«Horrela da, eta kitto» dogmatismoaren esaldi tipikoa da: ideia bat onartzea, aztertu gabe eta zalantzarik onartu gabe."
+   },
+   {
+    "q": "Zure lagun Sarak dio Lurra laua dela, baina ez du inolako frogarik. Zer litzateke kritikoena zure aldetik?",
+    "o": [
+     "Berarekin hitz egiteari uztea, zentzugabekeriak esaten dituelako",
+     "Bere ideia onartzea, iritzi guztiek berdin balio dutelako",
+     "Hemendik aurrera esaten duen guztiari kontra egitea",
+     "Bera errespetatzea, baina bere ideia frogarik gabe ez onartzea"
+    ],
+    "a": 3,
+    "fb": "Pertsona bat errespetatzeak ez zaitu behartzen esaten duena onartzera. Ondo trata dezakezu eta, aldi berean, bere ideiaren frogak eskatu."
+   },
+   {
+    "q": "Lucasek dio: «Badakit izotza beroarekin urtzen dela: askotan egiaztatu dut». Zergatik da jakintza bat, eta ez sinesmen bat soilik?",
+    "o": [
+     "Lucasek segurtasun handiz esaten duelako",
+     "Lucasen jarrera pertsonal bat delako",
+     "Frogekin egiazta daitekeelako",
+     "Jende gehienak hala pentsatzen duelako"
+    ],
+    "a": 2,
+    "fb": "Zerbait jakintza bihurtzen duena da frogekin justifikatuta dagoela eta egiazta daitekeela, ez zer segurtasunez esaten den."
+   },
+   {
+    "q": "Hugok pentsatzen du: «Gaztelaniako irakasleak mania dit». Zer egin beharko luke sinesmen hori zerbait pentsatu bihurtzeko?",
+    "o": [
+     "Denei kontatzea, arrazoia ematen dioten ikusteko",
+     "Gertaerak begiratzea, lanak entregatu zituen, adibidez",
+     "Hori pentsatzen jarraitzea, berak hori sentitzen duelako",
+     "Iritziz aldatzea, irakasleak eskatzen badio bakarrik"
+    ],
+    "a": 1,
+    "fb": "Egiaztatu gabeko sinesmen batetik zerbait pentsatura igarotzeko, gertaerak begiratu behar dira; adibidez, lanak entregatu ziren ala ez."
+   },
+   {
+    "q": "Lagun taldean Martari esaten diote: «Egin ezazu, ez izan arraroa», erronka bat onar dezan. Zertan laguntzen dio bere kabuz pentsatzeak?",
+    "o": [
+     "Bere arrazoiekin erabakitzen, egingo duen ala ez",
+     "Taldeak esaten duena egiten, kanpoan ez geratzeko",
+     "Taldeak proposatzen duenari beti kontra egiten",
+     "Aukera guztiek berdin balio dutela pentsatzen"
+    ],
+    "a": 0,
+    "fb": "Nork bere kabuz pentsatzeak taldearen presioak manipula ez gaitzan balio du, eta norberaren arrazoiekin erabakitzeko."
+   },
+   {
+    "q": "Leirek bere paga entzungailu batzuetan gastatu nahi du. Aurretik prezioak alderatzen ditu, iritziak irakurtzen ditu eta benetan behar dituen pentsatzen du. Zer ari da egiten?",
+    "o": [
+     "Dogmatismoan erortzen, hainbeste pentsatzeagatik",
+     "«Dena balio du» bere erosketei aplikatzen",
+     "Susmo batek eramaten uzten",
+     "Kritikoki pentsatzen, erabaki aurretik"
+    ],
+    "a": 3,
+    "fb": "Leirek galdetu, aztertu eta baloratu egiten du gastatu aurretik. Hori kritikoki pentsatzea da, erabaki hobea hartzeko."
+   },
+   {
+    "q": "Zertan bereizten dira iritzi bat eta jakintza bat?",
+    "o": [
+     "Iritzia egiaztatuta dago; jakintza zerbait pertsonala da",
+     "Ez dira bereizten: biek berdin-berdin balio dute",
+     "Iritzia pertsonala da; jakintza frogekin justifikatzen da",
+     "Iritzia adituena da; jakintza, edonorena"
+    ],
+    "a": 2,
+    "fb": "Iritzi bat jarrera pertsonal bat da; jakintza bat, berriz, egiazta daitezkeen arrazoiekin edo frogekin justifikatutako sinesmena."
+   },
+   {
+    "q": "Zertan bereizten dira dogmatismoa eta «dena balio du»?",
+    "o": [
+     "Batek frogak eskatzen ditu; besteak ezer aztertu gabe sinesten du",
+     "Batek ez du aztertzen; besteak iritzi guztiak berdintzen ditu",
+     "Gauza bera dira: pentsamendu kritikoaren bi modu",
+     "Batek denaz zalantza egiten du; besteak ez du inoiz zalantzarik"
+    ],
+    "a": 1,
+    "fb": "Dogmatismoak ideiak onartzen ditu aztertu gabe; «dena balio du» jarrerak berdin tratatzen ditu frogak dituen iritzi bat eta batere ez duena."
+   },
+   {
+    "q": "Zer alde dago kritikoa izatearen eta kontra egitearen artean?",
+    "o": [
+     "Kritikoak arrazoiak begiratzen ditu; besteak beti egiten du kontra",
+     "Batere ez: kritikoak beti esaten du kontrakoa",
+     "Kritikoak dena onartzen du; besteak ez du ezer onartzen",
+     "Kritikoak iritzia bakarrik ematen du; besteak frogak dakartza"
+    ],
+    "a": 0,
+    "fb": "Kritikoa izatea ez da sistematikoki kontra egitea, zerbait onartu edo baztertu aurretik arrazoiak aztertzea baizik."
+   },
+   {
+    "q": "Zer alde dago pertsona bat errespetatzearen eta esaten duen guztia onartzearen artean?",
+    "o": [
+     "Batere ez: errespetatzen baduzu, beti ematen diozu arrazoia",
+     "Errespetatzea bere ideiak onartzea da, frogarik ez badute ere",
+     "Frogak dituzten ideiak dituena bakarrik errespetatzen da",
+     "Errespeta dezakezu eta, hala ere, arrazoiak eskatu"
+    ],
+    "a": 3,
+    "fb": "Norbait errespetatzea ez da esaten duen edozer onartzea. Pertsona errespetatzen da, eta bere ideien arrazoiak eskatzen dira."
+   },
+   {
+    "q": "Zergatik laguntzen du nork bere kabuz pentsatzeak besteekin bizitzen?",
+    "o": [
+     "Horrela beti irabazten dituzulako besteekiko eztabaidak",
+     "Horrela inork ez dizulako inoiz kontra egiten",
+     "Arrazoiak ematen dituenak besteenak entzuten dakielako",
+     "Horrela denek berdin-berdin pentsatzen amaitzen dutelako"
+    ],
+    "a": 2,
+    "fb": "Arrazoiak ematera ohituta dagoenak besteenak entzuten ere badaki, eta horrek elkarbizitza errazten du."
+   }
+  ]
+ },
+ "ipc-argumentar-banco": {
+  "name": "Ondo argudiatu (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Zerk bereizten du iritzi bat argudio batetik?",
+    "o": [
+     "Iritzia egiazkoa da, eta argudioa faltsua izan daiteke.",
+     "Argudioa aditu batek ematen du, eta iritzia edonork.",
+     "Argudioa arrazoiekin lagundutako iritzi bat da.",
+     "Iritzia laburra da, eta argudioa beti oso luzea."
+    ],
+    "a": 2,
+    "fb": "Iritzi bat norberak pentsatzen duena da. Gainera hura babesten duten arrazoiak ematen baditu, argudio bihurtzen da."
+   },
+   {
+    "q": "Argudio batean, zer dira premisak?",
+    "o": [
+     "Abiapuntu diren arrazoiak edo datuak.",
+     "Defendatu nahi den azken ideia.",
+     "Ados ez dagoenaren kritikak.",
+     "Amaieran gehitzen diren adibideak."
+    ],
+    "a": 0,
+    "fb": "Premisak ondorioa babesteko abiapuntu diren arrazoiak dira."
+   },
+   {
+    "q": "Zer da argudio baten ondorioa?",
+    "o": [
+     "Hura proban jartzen duen kontrako arrazoia.",
+     "Arrazoibide osoaren abiapuntu den datua.",
+     "Hobeto ulertzen laguntzen duen adibidea.",
+     "Premisek babestu nahi duten ideia."
+    ],
+    "a": 3,
+    "fb": "Ondorioa defendatu nahi den ideia da; premisak hura babesten duten arrazoiak dira."
+   },
+   {
+    "q": "Zer hitzek iragartzen dute normalean argudio baten ondorioa?",
+    "o": [
+     "«Zeren» eta «izan ere».",
+     "«Beraz» eta «hortaz».",
+     "«-lako» eta «zeren».",
+     "«Izan ere» eta «-lako»."
+    ],
+    "a": 1,
+    "fb": "Ondorioa «beraz», «hortaz» edo «ondorioz» hitzen ondoren joan ohi da. «Zeren» eta «izan ere» hitzek premisak sartzen dituzte normalean."
+   },
+   {
+    "q": "Teoriaren arabera, noiz da ona argudio bat?",
+    "o": [
+     "Premisak egiazkoak direnean eta haietatik ondorioa ateratzen denean.",
+     "Entzuten duten ia pertsona guztiak konbentzitzen dituenean.",
+     "Ondorioa egiazkoa denean, premisak faltsuak izan arren.",
+     "Premisa asko dituenean, ideiarekin zerikusirik ez badute ere."
+    ],
+    "a": 0,
+    "fb": "Argudio on batek bi gauza betetzen ditu aldi berean: premisa egiazkoak edo sinesgarriak, eta haietatik ateratzen den ondorio bat."
+   },
+   {
+    "q": "Zer da karitatearen printzipioa?",
+    "o": [
+     "Bestearekin atsegina izatea, gauza faltsuak esan arren.",
+     "Besteari arrazoia ematea, eztabaidatu behar ez izateko.",
+     "Besteak egiten dituen akatsik txikienak bakarrik kritikatzea.",
+     "Bestea kritikatu aurretik bere bertsiorik indartsuenean ulertzea."
+    ],
+    "a": 3,
+    "fb": "Karitatearen printzipioa besteak esan nahi duena ahalik eta modurik onenean berreraikitzea da, hari aurka egin aurretik."
+   },
+   {
+    "q": "Zer da objekzio bat?",
+    "o": [
+     "Arrazoibide osoa hondatzen duen premisa faltsu bat.",
+     "Inolako arrazoirik ematen ez duen iritzi bat.",
+     "Argudio bat proban jartzen duen kontrako arrazoi bat.",
+     "Defendatzen duzun ondorioa berresten duen adibide bat."
+    ],
+    "a": 2,
+    "fb": "Objekzio bat kontrako arrazoi bat da: zurekin ados ez dagoenak esango lukeena."
+   },
+   {
+    "q": "Teoriaren arabera, zer urrats jarraitzen dituzu zure argudioa eraikitzeko?",
+    "o": [
+     "Adibidea, iritzia eta ideia hainbat aldiz jarraian errepikatu.",
+     "Ondorioa, arrazoiak, adibidea eta objekzioari erantzuna.",
+     "Arrazoiak, ondorioa eta berdin pentsatzen ez duenaren kritika.",
+     "Iritzia, ospetsu baten esaldia eta azken ondorio argia."
+    ],
+    "a": 1,
+    "fb": "Ondorioa esaten da, bi edo hiru arrazoi ematen dira, adibide bat jartzen da eta objekzioari erantzuten zaio."
+   },
+   {
+    "q": "Teoriaren arabera, zerk bereizten du argudiatzen duena lehendik pentsatzen zuena errepikatzen duenetik?",
+    "o": [
+     "Ozenago eta askoz segurtasun handiagoz hitz egiten duela.",
+     "Hitz zailak eta datu asko erabiltzen dituela.",
+     "Eztabaida batean inoiz ez dela iritziz aldatzen.",
+     "Objekzioan pentsatzen duela eta erantzuten diola."
+    ],
+    "a": 3,
+    "fb": "Benetan argudiatzen duenak pentsatzen du zer esango liokeen ados ez dagoenak, eta erantzun egiten dio."
+   },
+   {
+    "q": "Leirek dio: «Bideo-joko hau aspergarria da». Zer da bere esaldia?",
+    "o": [
+     "Iritzi bat, ez duelako inolako arrazoirik ematen.",
+     "Argudio bat, berak pentsatzen duena esaten duelako.",
+     "Premisa faltsu bat, beste batzuei gustatzen zaielako.",
+     "Objekzio bat, bideo-jokoa kritikatzen duelako."
+    ],
+    "a": 0,
+    "fb": "Leirek pentsatzen duena bakarrik esaten du, arrazoirik eman gabe. Horregatik da iritzi bat, eta ez argudio bat."
+   },
+   {
+    "q": "Omarrek dio: «Entrenamenduak beranduago hasi beharko luke, askok bostetan ateratzen garelako klasetik eta ez garelako iristen». Zer da bere esaldia?",
+    "o": [
+     "Iritzi bat, berak pentsatzen duena esaten duelako.",
+     "Objekzio bat, ordutegia kritikatzen duelako.",
+     "Argudio bat, bere ideiarako arrazoi bat ematen duelako.",
+     "Premisa faltsu bat, denak ez direlako bostetan ateratzen."
+    ],
+    "a": 2,
+    "fb": "Omarrek iritzi bat ematen du, eta arrazoi batekin laguntzen du («askok bostetan ateratzen garelako»). Hori argudio bat da."
+   },
+   {
+    "q": "«Asteartetan entrenamendua dago. Gaur asteartea da. Beraz, gaur entrenamendua dago.» Zein da ondorioa?",
+    "o": [
+     "Asteartetan entrenamendua dago.",
+     "Gaur entrenamendua dago.",
+     "Gaur asteartea da, aste guztietan bezala.",
+     "Egunero dago entrenamendua."
+    ],
+    "a": 1,
+    "fb": "Ondorioa «beraz» hitzaren ondoren doa: gaur entrenamendua dago. Beste bi esaldiak premisak dira."
+   },
+   {
+    "q": "Nereak dio: «Aterkia eramango dut, zeren zerua oso beltz dago eta iragarpenak euria egingo duela dio». Zein dira premisak?",
+    "o": [
+     "Aterkia eramango duela eta zerua beltz dagoela.",
+     "Aterkia eramango duela eta iragarpenak huts egiten duela.",
+     "Bihar klasera aterkia eramango duela, besterik ez.",
+     "Zerua beltz dagoela eta iragarpenak euria dakarrela."
+    ],
+    "a": 3,
+    "fb": "Premisak «zeren» hitzaren ondoren doazen arrazoiak dira. «Aterkia eramango dut» ondorioa da."
+   },
+   {
+    "q": "Hugok honela arrazoitzen du: «Fruta guztiak gorriak dira. Platanoa fruta bat da. Beraz, platanoa gorria da». Zer dago gaizki?",
+    "o": [
+     "Ondorioa ez da premisetatik ateratzen.",
+     "Ez du ondoriorik, premisak bakarrik ditu.",
+     "Premisa bat faltsua da, nahiz eta egokitu.",
+     "Iritzi bat da, ez duelako arrazoirik ematen."
+    ],
+    "a": 2,
+    "fb": "Arrazoibidea egokitzen da, baina faltsua den zerbaitetik abiatzen da: fruta guztiak ez dira gorriak."
+   },
+   {
+    "q": "Carlak dio: «Zapatila berriak estreinatu ditut eta bi gol sartu ditut; beraz, zapatila hauei esker sartzen ditut golak». Zer dago gaizki bere argudioan?",
+    "o": [
+     "Ondorioa ez da ematen duen arrazoitik ateratzen.",
+     "Premisa bat faltsua da: ez ditu bi gol sartu.",
+     "Ez du arrazoirik ematen; iritzi bat besterik ez.",
+     "Objekzio zehatz bati erantzutea falta zaio."
+    ],
+    "a": 0,
+    "fb": "Zapatilak estreinatzeak ez du zerikusirik golak sartzearekin: ondorioa ez da ateratzen. Superstizio bat da."
+   },
+   {
+    "q": "Unaik dio: «Eguzkia dago; beraz, gaur gelako ordezkari aukeratuko naute». Zer gertatzen zaio argudio honi?",
+    "o": [
+     "Premisa faltsu bat du, gaur ez dagoelako batere eguzkirik.",
+     "Arrazoiak ez du zerikusirik ondorioarekin.",
+     "Ona da, ematen duen premisa egiazkoa delako.",
+     "Objekzio bat da, beste ideia bat proban jartzen duelako."
+    ],
+    "a": 1,
+    "fb": "Eguzkia egoteak ez du batere laguntzen hura ordezkari aukeratzeko. Ondorioa ez da premisatik ateratzen."
+   },
+   {
+    "q": "Sarak klasean dio: «Etxerako lan gutxiago jarri beharko lukete». Pablok erantzuten dio: «Hau da, ez dugula inoiz ezer ikastea nahi duzula». Zer egiten du gaizki Pablok?",
+    "o": [
+     "Ez du errespetatzen karitatearen printzipioa Sararekin.",
+     "Ez du bere jarrera babesten duen adibiderik jartzen.",
+     "Ez du argi esaten zein den bere ondorioa.",
+     "Premisa egiazko eta sinesgarri batetik abiatzen da."
+    ],
+    "a": 0,
+    "fb": "Pablok Sarak esaten duenaren karikatura bati erantzuten dio, ez bere bertsiorik indartsuenari. Karitatearen printzipioa hausten du."
+   },
+   {
+    "q": "Izanek jantokiko menua aldatzea proposatzen du, eta Marta ez dago ados. Zer egiten du Martak karitatearen printzipioa aplikatzen badu?",
+    "o": [
+     "Izanen ideia modurik barregarrienean laburtzen du.",
+     "Izani arrazoia ematen dio, berarekin haserre ez dadin.",
+     "Izanek nola hitz egiten duen kritikatzen du, ez zer dioen.",
+     "Izanek esaten duenaren bertsiorik onena bilatzen du."
+    ],
+    "a": 3,
+    "fb": "Karitatearen printzipioa aplikatzea bestearen ideia bere bertsiorik indartsuenean ulertzea eta horri erantzutea da."
+   },
+   {
+    "q": "Aitanak patioan ur-iturriak egotea defendatzen du. Esaldi hauetako zein da bere ideiari egindako objekzio bat?",
+    "o": [
+     "«Horrela ur gehiago edango dugu eta hobeto egongo gara.»",
+     "«Beste egunean ezin izan nuen edan atsedenaldian.»",
+     "«Jartzeak ez dagoen dirua kostatuko luke.»",
+     "«Beraz, iturri berriak jarri behar dira.»"
+    ],
+    "a": 2,
+    "fb": "Objekzio bat kontrako arrazoi bat da. Iturriak jartzearen kostuak Aitanaren ideia proban jartzen du."
+   },
+   {
+    "q": "Ivanek dio: «Armairutxoak izan beharko genituzke, motxilek asko pisatzen dutelako. Atzo sei liburu eraman nituen». Zer egiteko du «Atzo sei liburu eraman nituen» esaldiak?",
+    "o": [
+     "Defendatu nahi duen ondorioa da.",
+     "Bere arrazoia babesten duen adibide bat da.",
+     "Bere ideiari egindako objekzio bat da.",
+     "Objekzio bati emandako erantzuna da."
+    ],
+    "a": 1,
+    "fb": "Motxilek pisatzen dutelako arrazoia argitzen duen kasu zehatz bat da. Horregatik da adibide bat."
+   },
+   {
+    "q": "Lucasek eskola-irteera gehiago egotea defendatzen du. Norbaitek dio horrela klaseak galtzen direla. Lucasek erantzuten du: «Irteeretan ere ikasten da». Zer egin du Lucasek?",
+    "o": [
+     "Bere ondorioa errepikatu du, besterik gabe.",
+     "Premisa faltsu bat erabili du.",
+     "Irteera baten adibide bat jarri du.",
+     "Objekzio bati erantzun dio."
+    ],
+    "a": 3,
+    "fb": "Klaseak galtzea kontrako arrazoi bat da (objekzioa), eta Lucasek erantzun egiten dio. Horrek bere argudioa indartzen du."
+   },
+   {
+    "q": "Jonek klaseko eztabaida bat irabazten du denei barre eragiten dien trikimailu batekin, baina bere arrazoiak txarrak ziren. Zer esan daiteke?",
+    "o": [
+     "Arrazoia zuela, klasea konbentzitu zuelako.",
+     "Konbentzitu zuela, baina horrek ez duela esan nahi arrazoia zuenik.",
+     "Bere argudioa ona zela, klaseko eztabaida irabazi zuelako.",
+     "Klaseak karitatearen printzipioa aplikatu ziola."
+    ],
+    "a": 1,
+    "fb": "Konbentzitzea eta arrazoia izatea ez dira gauza bera: trikimailu on batek konbentzi dezake eta, hala ere, oker egon."
+   },
+   {
+    "q": "Anek dio: «Patioa zaindu behar da». Nola bihur dezake bere esaldia argudio?",
+    "o": [
+     "Arrazoi bat gehituz, adibidez horrela garbi dagoela.",
+     "Gehiagotan eta ozenago esanez.",
+     "Klaseko gehiengoak alde bozkatzeko eskatuz.",
+     "Klase osoari egindako galdera batez ordezkatuz."
+    ],
+    "a": 0,
+    "fb": "Argudio bat arrazoiak dituen iritzi bat da. Anek azaldu behar du zergatik zaindu behar den patioa."
+   },
+   {
+    "q": "Argudio hauetako zein da ona?",
+    "o": [
+     "«Gaur goizean oso ondo gosaldu dut; beraz, ingeleseko azterketa gaindituko dut.»",
+     "«Bizikletek gasolina-motorra dute; beraz, bizikletek asko kutsatzen dute.»",
+     "«Landarea ureztatzen ez badut, lehortu egiten da; banoa, beraz, ureztatzeko eskatuko dut.»",
+     "«Nire taldeak beti irabazten du zelaira noanean; beraz, nik zorte ona ematen diot.»"
+    ],
+    "a": 2,
+    "fb": "Bere premisak egiazkoak dira eta ondorioa haietatik ateratzen da. Besteak faltsua den zerbaitetik abiatzen dira edo ateratzen ez den ondorio bat ateratzen dute."
+   },
+   {
+    "q": "Zertan bereizten dira premisa bat eta ondorio bat?",
+    "o": [
+     "Premisa beti da faltsua; ondorioa beti da egiazkoa.",
+     "Premisa arrazoi bat da; ondorioa, babesten den ideia.",
+     "Premisa iritzi bat da; ondorioa egiaztatutako datu bat.",
+     "Premisa amaieran doa; ondorioa beti hasieran."
+    ],
+    "a": 1,
+    "fb": "Premisak abiapuntu diren arrazoiak dira; ondorioa arrazoi horiek babestu nahi duten ideia da."
+   },
+   {
+    "q": "Zer alde dago premisa faltsuak dituen argudio baten eta ondorioa ateratzen ez den baten artean?",
+    "o": [
+     "Batek ez du ondoriorik; besteak ez du inolako premisarik.",
+     "Bata iritzi bat besterik ez da; bestea arrazoidun argudio bat.",
+     "Batek mundu guztia konbentzitzen du; besteak ez du inor konbentzitzen.",
+     "Bata faltsua den zerbaitetik abiatzen da; bestean, ondorioa ez da ateratzen."
+    ],
+    "a": 3,
+    "fb": "Argudio batek huts egin dezake faltsua den zerbaitetik abiatzen delako edo bere arrazoiek ondorioarekin zerikusirik ez dutelako."
+   },
+   {
+    "q": "Zertan bereizten dira konbentzitzea eta arrazoia izatea?",
+    "o": [
+     "Gauza bera dira: konbentzitzen baduzu, arrazoia duzulako da.",
+     "Arrazoia izatea zenbat jendek babesten zaituen araberakoa da.",
+     "Trikimailu on batek konbentzi dezake, oker egon arren.",
+     "Premisa egiazkoak dituenak bakarrik konbentzitzen du."
+    ],
+    "a": 2,
+    "fb": "Trikimailu batekin konbentzi daiteke eta oker egon. Arrazoia izatea premisen araberakoa da, eta ondorioa ateratzen den ala ez."
+   },
+   {
+    "q": "Zergatik da erabilgarria karitatearen printzipioa aplikatzea eztabaida batean?",
+    "o": [
+     "Besteak pentsatzen duenari erantzuten diozulako, ez karikatura bati.",
+     "Horrela besteak askoz azkarrago ematen dizulako arrazoia.",
+     "Horrela eztabaidan ez dituzulako zure arrazoiak eman behar.",
+     "Horrela beti irabazten duzulako eztabaida, arrazoirik ez izan arren."
+    ],
+    "a": 0,
+    "fb": "Ondo eztabaidatzea bestearen onenari erantzutea da. Karikatura bati erasotzen badiozu, benetan ez diozu erantzuten."
+   }
+  ]
+ },
+ "ipc-falacias-banco": {
+  "name": "Faltsukeriak: arrazoiketa txarraren trikimailuak (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Zertan bereizten dira faltsukeria bat eta gezur bat?",
+    "o": [
+     "Faltsukeria datu faltsu bat da; gezurra, arrazoiketako akats bat.",
+     "Ez dago alderik: biak dira gauza faltsuak esateko moduak.",
+     "Gezurra datu faltsu bat da; faltsukeria, arrazoiketako akats bat.",
+     "Faltsukeria beti nahita esaten da; gezurra, nahi gabe."
+    ],
+    "a": 2,
+    "fb": "Gezur batek datu faltsu bat ematen du. Faltsukeria bat gaizki eraikitako argudio bat da, ona dirudiena."
+   },
+   {
+    "q": "Amaiak bizikletaz bakarrik joan nahi du institutura. Aitak esaten dio: «Gaur bizikleta, bihar beste hiri batera bakarrik joan nahiko duzu, eta galduta amaituko duzu». Zer faltsukeria erabiltzen du?",
+    "o": [
+     "Aldapa irristakorra",
+     "Dilema faltsua",
+     "Orokorpen presatua",
+     "Emozioari deia"
+    ],
+    "a": 0,
+    "fb": "Lehen urrats txiki batek ezinbestean hondamendi batera daramala uste du. Hori aldapa irristakorra da."
+   },
+   {
+    "q": "Zer egiten du lastozko gizonaren faltsukeria erabiltzen duenak?",
+    "o": [
+     "Hitz egiten ari den pertsonari erasotzen dio, ez haren ideiei.",
+     "Bi aukera bakarrik ematen ditu, egiaz gehiago daudenean.",
+     "Arau orokor bat ateratzen du oso kasu gutxitatik.",
+     "Besteak esandakoa aldatzen du, zerbait errazagoa ezeztatzeko."
+    ],
+    "a": 3,
+    "fb": "Lastozko gizonak besteak esandakoa desitxuratzen du, eta asmatutako bertsio hori ezeztatzen du, ez benetakoa."
+   },
+   {
+    "q": "Bideojokoei buruzko klaseko eztabaida batean, Pablok bere arrazoiak azaltzen ditu. Martak bota dio: «Zuk ez eman iritzirik, beti izerdi-jertse bera daramazu eta». Zer faltsukeria erabiltzen du Martak?",
+    "o": [
+     "Lastozko gizona",
+     "Ad hominem",
+     "Dilema faltsua",
+     "Gehiengoarengana jo"
+    ],
+    "a": 1,
+    "fb": "Martak ez die Pabloren arrazoiei erantzuten: Pablori erasotzen dio. Hori ad hominem bat da."
+   },
+   {
+    "q": "Gaiaren arabera, noiz du balioa autoritate baten iritziak?",
+    "o": [
+     "Oso ezaguna denean eta jarraitzaile asko dituenean.",
+     "Boterea edo kargu garrantzitsu bat duenean.",
+     "Hitz egiten duen gaian aditua denean.",
+     "Jende asko berarekin ados dagoenean."
+    ],
+    "a": 2,
+    "fb": "Autoritate batek balio du gaiaz badaki. Ospetsua izatea edo boterea izatea ez da nahikoa."
+   },
+   {
+    "q": "Zapatila-iragarki batek dio: «Edo gure zapatilak janzten dituzu, edo ordezkoen aulkian geratzen zara». Zer faltsukeria dago?",
+    "o": [
+     "Autoritateari deia",
+     "Aldapa irristakorra",
+     "Orokorpen presatua",
+     "Dilema faltsua"
+    ],
+    "a": 3,
+    "fb": "Bi irteera bakarrik aurkezten ditu, askoz gehiago daudenean: beste zapatila batzuekin ere ondo joka dezakezu."
+   },
+   {
+    "q": "Zer alde dago ad hominem baten eta lastozko gizon baten artean?",
+    "o": [
+     "Ad hominemak pertsonari erasotzen dio; lastozko gizonak esandakoa desitxuratzen du.",
+     "Ad hominemak besteak esandakoa desitxuratzen du; lastozko gizonak hari erasotzen dio.",
+     "Ad hominemak bi aukera ematen ditu; lastozko gizonak ondorioak puzten ditu.",
+     "Batere ez: tranpa beraren bi izen desberdin dira."
+    ],
+    "a": 0,
+    "fb": "Biek saihesten dute benetako argudioa, baina ad hominemak pertsonaren aurka egiten du, eta lastozko gizonak haren hitzak aldatzen ditu."
+   },
+   {
+    "q": "Nereak fantasiazko bi liburu irakurri ditu, eta ez zaizkio gustatu. Ondorioa atera du: «Fantasiazko liburu guztiak aspergarriak dira». Zer faltsukeria egiten du?",
+    "o": [
+     "Gehiengoarengana jo",
+     "Orokorpen presatua",
+     "Aldapa irristakorra",
+     "Lastozko gizona"
+    ],
+    "a": 1,
+    "fb": "Fantasiazko liburu guztiei buruzko arau bat ateratzen du, bi kasu bakarrik kontuan hartuta."
+   },
+   {
+    "q": "Emozioari deian, zer erabiltzen da arrazoien ordez?",
+    "o": [
+     "Pertsona ospetsu baten iritzia",
+     "Gehiengoak egiten duena",
+     "Pertsonaren aurkako eraso bat",
+     "Beldurra, pena edo amorrua"
+    ],
+    "a": 3,
+    "fb": "Faltsukeria honek beldurra, pena edo amorrua piztuz konbentzitu nahi du, arrazoirik eman gabe."
+   },
+   {
+    "q": "Milioika ikustaldi dituen bideo batek dio lau orduz lo egitea nahikoa dela. Lucasek dio: «Hainbeste jendek ikusi badu, egia izango da». Zer faltsukeria da?",
+    "o": [
+     "Gehiengoarengana jo",
+     "Autoritateari deia",
+     "Orokorpen presatua",
+     "Emozioari deia"
+    ],
+    "a": 0,
+    "fb": "Jende askok zerbait ikusteak edo sinesteak ez du egia bihurtzen. Gehiengoari deia da."
+   },
+   {
+    "q": "Zer akats egiten du orokorpen presatuak?",
+    "o": [
+     "Bi aukera bakarrik ematen ditu, askoz gehiago daudenean.",
+     "Urrats txiki batek hondamendian amaitzen duela uste du.",
+     "Arau orokor bat ateratzen du oso kasu gutxitatik.",
+     "Zerbait egiatzat hartzen du denek egiten dutelako."
+    ],
+    "a": 2,
+    "fb": "Oso adibide gutxirekin ezin da guztientzat balio duen araurik atera."
+   },
+   {
+    "q": "Aktore oso ospetsu batek app bat gomendatzen du sare sozialetan, matematika «ikasten aritu gabe» menderatzeko. Zure lehengusuak dio ona izango dela, bera oso ezaguna delako. Zer faltsukeria da?",
+    "o": [
+     "Gehiengoarengana jo",
+     "Autoritateari deia",
+     "Emozioari deia",
+     "Lastozko gizona"
+    ],
+    "a": 1,
+    "fb": "Ospetsua izateak ez du matematika ikasten aditu bihurtzen. Gaizki erabilitako autoritatea da."
+   },
+   {
+    "q": "Alarma-iragarki batek etxe ilun bat erakusten du, eta ahots batek galdetzen du: «Lasai egingo al zenuke lo, zure familia arriskuan egonda?». Ez du daturik ematen. Zer faltsukeria dago?",
+    "o": [
+     "Emozioari deia",
+     "Aldapa irristakorra",
+     "Gehiengoarengana jo",
+     "Ad hominem"
+    ],
+    "a": 0,
+    "fb": "Beldurra eman nahi du, alarma zergatik den ona azaldu beharrean."
+   },
+   {
+    "q": "Zertan datza aldapa irristakorra?",
+    "o": [
+     "Oso kasu gutxitatik arau orokor bat ateratzean.",
+     "Bi irteera bakarrik eskaintzean, gehiago daudenean.",
+     "Zerbait sinestean, jende askok sinesten duelako.",
+     "Urrats batek hondamendi batera daramala uste izatean."
+    ],
+    "a": 3,
+    "fb": "Lehen urrats txiki batetik abiatuta, konponbiderik gabeko gaitz-kate bat irudikatzen du."
+   },
+   {
+    "q": "Sarak etxean esan du astean zehar denbora libre pixka bat gehiago izatea gustatuko litzaiokeela. Anaiak erantzun dio: «Noski, zuk nahi duzuna ikasturte osoan ez ikastea da». Zer faltsukeria da?",
+    "o": [
+     "Ad hominem",
+     "Dilema faltsua",
+     "Lastozko gizona",
+     "Aldapa irristakorra"
+    ],
+    "a": 2,
+    "fb": "Sarak ez zuen hori esan: anaiak haren hitzak desitxuratzen ditu, zerbait errazagoa ezeztatzeko."
+   },
+   {
+    "q": "Zerk bereizten ditu orokorpen presatua eta gehiengoari deia?",
+    "o": [
+     "Lehenak zerbait sinesten du askok sinesten dutelako; bigarrenak kasu gutxi erabiltzen ditu.",
+     "Lehenak kasu gutxi erabiltzen ditu; bigarrenak zerbait sinesten du askok sinesten dutelako.",
+     "Lehenak pertsonari erasotzen dio; bigarrenak bi aukera bakarrik ematen ditu.",
+     "Lehenak beldurra erabiltzen du; bigarrena pertsona ospetsu batez fidatzen da."
+    ],
+    "a": 1,
+    "fb": "Orokorpenak adibide gutxitatik ateratzen du arau bat. Gehiengoari deia jende askok pentsatzen duenaz fidatzen da."
+   },
+   {
+    "q": "Egoera hauetako zeinetan EZ dago faltsukeriarik?",
+    "o": [
+     "Iratxek uste du jogurt bat osasuntsua dela futbolari batek iragartzen duelako.",
+     "Iratxek uste du mugikor bat ona dela denek dutelako.",
+     "Iratxek uste du joko bat txarra dela haren sortzailea atsegina ez delako.",
+     "Iratxek medikuak sendagai bati buruz esaten diona egiten du."
+    ],
+    "a": 3,
+    "fb": "Medikua gai horretan aditua da; beraz, harengan fidatzea zentzuzkoa da. Besteak faltsukeriak dira."
+   },
+   {
+    "q": "Gaiaren arabera, zergatik erabiltzen dira hainbeste faltsukeriak?",
+    "o": [
+     "Funtzionatzen dutelako: konbentzitu egiten dute, arrazoirik ez izan arren.",
+     "Datu egiazkoak emateko modurik azkarrena direlako.",
+     "Gezurra esan nahi duten pertsonek bakarrik erabiltzen dituztelako.",
+     "Argudio zuzenak baina zailak direlako."
+    ],
+    "a": 0,
+    "fb": "Faltsukeriek argudio onak dirudite, eta horregatik konbentzitzen dute, arrazoirik ez izan arren."
+   },
+   {
+    "q": "Zure anaia txikiak esaten dizu: «Benetan maite banindu, zure kontsola asteburu osoan utziko zenidake». Zer faltsukeria erabiltzen du?",
+    "o": [
+     "Ad hominem",
+     "Emozioari deia",
+     "Autoritateari deia",
+     "Orokorpen presatua"
+    ],
+    "a": 1,
+    "fb": "Ez du arrazoirik ematen: zu gaizki sentiaraztea bilatzen du, kontsola lortzeko."
+   },
+   {
+    "q": "Beste institutu bateko mutil bat iritsi da klasera, eta lehen bi egunetan berandu etorri da. Norbaitek dio: «Institutu horretako guztiak berandukariak dira». Zer faltsukeria da?",
+    "o": [
+     "Ad hominem",
+     "Gehiengoarengana jo",
+     "Orokorpen presatua",
+     "Lastozko gizona"
+    ],
+    "a": 2,
+    "fb": "Mutil bakar batekin eta bi egunekin ezin da institutu oso bati buruzko araurik atera."
+   },
+   {
+    "q": "Zertarako balio du faltsukeriak ezagutzen ikasteak?",
+    "o": [
+     "Ez gaitzaten engainatu, eta guk konturatu gabe ez engainatzeko.",
+     "Eztabaidak beti irabazteko, arrazoia izan ala ez.",
+     "Edozein albistetan zer datu diren faltsuak jakiteko.",
+     "Faltsukeriak erabili ahal izateko, inor konturatu gabe."
+    ],
+    "a": 0,
+    "fb": "Ezagutzeak engainuetatik babesten gaitu, eta guri geuri hobeto arrazoitzen laguntzen digu."
+   },
+   {
+    "q": "Mikelek badaki azterketa asteartean dela, baina lagunei astelehenean dela esaten die, ikas ez dezaten. Zer egiten du Mikelek?",
+    "o": [
+     "Orokorpen presatu bat",
+     "Dilema faltsu bat",
+     "Lastozko gizon bat",
+     "Gezur bat, ez faltsukeria bat"
+    ],
+    "a": 3,
+    "fb": "Mikelek datu faltsu bat ematen du nahita. Hori gezurra da, ez arrazoiketako akats bat."
+   },
+   {
+    "q": "Gaiaren arabera, zer frogatzen du jende askok zerbait sinesteak edo egiteak?",
+    "o": [
+     "Egia dela, hainbeste jende ezin delako oker egon.",
+     "Ezer ez: askok sinesteak ez du egia edo ona bihurtzen.",
+     "Ona dela, agian guztiz egia ez bada ere.",
+     "Egia dela, baina erdiak baino gehiagok sinesten badu soilik."
+    ],
+    "a": 1,
+    "fb": "Zerbait sinesten duten pertsonen kopurua ez da egia denaren froga."
+   },
+   {
+    "q": "Zer alde dago dilema faltsuaren eta aldapa irristakorraren artean?",
+    "o": [
+     "Dilema faltsuak urratsak lotzen ditu hondamendiraino; aldapak bi aukera ematen ditu.",
+     "Dilema faltsuak pertsonari erasotzen dio; aldapak haren hitzak desitxuratzen ditu.",
+     "Dilema faltsuak bi aukera ematen ditu; aldapak urratsak lotzen ditu hondamendiraino.",
+     "Dilema faltsuak kasu gutxi erabiltzen ditu; aldapa gehiengoaz fidatzen da."
+    ],
+    "a": 2,
+    "fb": "Dilema faltsuak dena bi irteeratara murrizten du. Aldapa irristakorrak gaizki amaitzen den kate bat irudikatzen du."
+   },
+   {
+    "q": "Omarrek proposatzen du taldeak hurrengo partidan atzerago defendatzea. Taldekide batek erantzun dio: «Zuk zer jakin behar duzu, ordezkoa zara eta?». Zer faltsukeria da?",
+    "o": [
+     "Ad hominem",
+     "Dilema faltsua",
+     "Autoritateari deia",
+     "Lastozko gizona"
+    ],
+    "a": 0,
+    "fb": "Ez dio Omarren ideiari erantzuten; Omarri erasotzen dio. Ordezkoa izateak ez du haren proposamena faltsu bihurtzen."
+   },
+   {
+    "q": "Gaiaren arabera, zergatik funtzionatzen dute faltsukeriek, argudio txarrak izan arren?",
+    "o": [
+     "Beti datu egiazko eta egiaztatuetan oinarritzen direlako.",
+     "Gaian adituak diren pertsonek bakarrik erabiltzen dituztelako.",
+     "Inor ez delako gai haiek ezagutzeko, saiatu arren.",
+     "Gure emozioak edo erabakitzeko presa ukitzen dituztelako."
+    ],
+    "a": 3,
+    "fb": "Pentsatzeko lana aurrezten digute: sentitzen dugunarekin eta azkar erabakitzeko gogoarekin jokatzen dute."
+   },
+   {
+    "q": "Aitanak Rubéni esaten dio: «Edo abeslari hau gustatzen zaizu, edo ez dakizu musikaz ezer». Zer faltsukeria erabiltzen du?",
+    "o": [
+     "Orokorpen presatua",
+     "Dilema faltsua",
+     "Gehiengoarengana jo",
+     "Aldapa irristakorra"
+    ],
+    "a": 1,
+    "fb": "Dena bi aukeratara murrizten du, musikaz jakin daitekeenean abeslari hori gustatu gabe ere."
+   },
+   {
+    "q": "Zertan bereizten dira gaizki erabilitako autoritateari deia eta gehiengoari deia?",
+    "o": [
+     "Batek besteak esandakoa desitxuratzen du; besteak pertsonari erasotzen dio.",
+     "Batek beldurra edo pena erabiltzen ditu; besteak bi irteera bakarrik ematen ditu.",
+     "Bata pertsona ospetsu batez fidatzen da; bestea, jende askok sinesten duenaz.",
+     "Batek kasu gutxitatik ateratzen ditu arauak; besteak hondamendi bat irudikatzen du."
+    ],
+    "a": 2,
+    "fb": "Gaizki erabilitako autoritateak ezaguna baina aditua ez den norbaitengan du konfiantza. Gehiengoari deiak askok egiten dutenean du konfiantza."
+   },
+   {
+    "q": "Iragarki batek presa sartzen dizu, eta gaizki sentiarazten zaitu orain erosten ez baduzu. Gaiaren arabera, zer da egin dezakezun gauzarik erabilgarriena?",
+    "o": [
+     "Gelditu eta bilatu zer arrazoi ematen dituen, emozioaz gain.",
+     "Azkar erosi, eskaintza amaitu baino lehen.",
+     "Begiratu iragarkia jende askok ikusi duen.",
+     "Fidatu, norbait ospetsua gomendatzen ateratzen bada."
+    ],
+    "a": 0,
+    "fb": "Faltsukeriek emozioarekin eta presarekin jokatzen dute. Gelditu eta arrazoiak bilatzeak babesten gaitu."
+   },
+   {
+    "q": "Zer faltsukeria da bi irteera bakarrik eskaintzea, egiaz gehiago daudenean?",
+    "o": [
+     "Aldapa irristakorra",
+     "Lastozko gizona",
+     "Orokorpen presatua",
+     "Dilema faltsua"
+    ],
+    "a": 3,
+    "fb": "Dilema faltsuak gainerako aukerak ezkutatzen ditu, ondorioa behartzeko."
+   }
+  ]
+ },
+ "ipc-sesgos-banco": {
+  "name": "Adimenaren tranpak: alborapenak (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Teoriaren arabera, zergatik egiten ditu alborapenak gure adimenak?",
+    "o": [
+     "Norbaitek ona dirudien baina ona ez den argudio batekin konbentzitzen gaituelako",
+     "Garunak lasterbideak hartzen dituelako azkar erabakitzeko, eta batzuetan huts egiten dutelako",
+     "Nekatuta edo aspertuta gaudenean bakarrik arrazoitzen dugulako gaizki",
+     "Informazioa falta zaigulako eta ez dakigulako logikaz pentsatzen"
+    ],
+    "a": 1,
+    "fb": "Garunak lasterbideak erabiltzen ditu azkar erabakitzeko, eta lasterbide horiek batzuetan okerrera eramaten gaituzte. Ez da tontoak garelako."
+   },
+   {
+    "q": "Zer da ainguraketa?",
+    "o": [
+     "Errazago gogoratzen duguna probableagotzat jotzea",
+     "Lehendik uste genuena berresten duten datuak bakarrik bilatzea",
+     "Iritziz aldatzea taldeak egiten duen gauza bera egiteko",
+     "Jasotzen dugun lehen datuak gehiegi baldintzatzea"
+    ],
+    "a": 3,
+    "fb": "Ainguraketan, entzuten dugun lehen datua «kakoan» geratzen da, eta ondoren datorrenari buruzko iritzia okertzen du."
+   },
+   {
+    "q": "Zer da eskuragarritasun-alborapena?",
+    "o": [
+     "Ematen diguten lehen prezioaz edo lehen datuaz gehiegi fidatzea",
+     "Oroimenera azkar etortzen zaiguna probableagotzat jotzea",
+     "Gehiengoari jarraitzea taldetik kanpo ez geratzeko",
+     "Gure ideiei arrazoia ematen diena bakarrik kontuan hartzea"
+    ],
+    "a": 1,
+    "fb": "Eskuragarritasunaren eraginez, erraz gogoratzen duguna den baino probableagoa iruditzen zaigu."
+   },
+   {
+    "q": "Zer da arraste-efektua?",
+    "o": [
+     "Taldea imitatzea, kanpoan ez geratzeagatik bakarrik",
+     "Lehendik uste duguna babesten duten datuak bakarrik gogoratzea",
+     "Zerbait epaitzea entzun dugun lehen zenbakiaren arabera",
+     "Albisteetan sarri ikusten dugunari beldur handiagoa izatea"
+    ],
+    "a": 0,
+    "fb": "Arraste-efektuak taldeak egiten duena egitera eramaten gaitu. Baina «denek egiten zuten» ez da arrazoi bat."
+   },
+   {
+    "q": "Gai honetan, zer da burbuila bat?",
+    "o": [
+     "Beti gehiengoak esaten duena egiten duen lagun-talde bat",
+     "Beste bat merke-merkea dirudiela egiten duen prezio puztu bat",
+     "Sareetako ingurune bat, non dagoeneko gustuko duguna bakarrik agertzen den",
+     "Oroitzapen oso indartsu bat, benetan baino askoz probableagoa iruditzen zaiguna"
+    ],
+    "a": 2,
+    "fb": "Burbuila ingurune bat da, batez ere sareetan, non dagoeneko gustuko duguna bakarrik ikusten dugun eta denek arrazoia ematen digutela dirudien."
+   },
+   {
+    "q": "Teoriaren arabera, zergatik da okerragoa berrespen-alborapena interneten?",
+    "o": [
+     "Interneten gezur gehiago dagoelako liburuetan edo telebistan baino",
+     "Sareek batez ere lehendik gustuko duzuna erakusten dizutelako",
+     "Sareetan denek besteek egiten dutena kopiatzen dutelako",
+     "Ikusten duzun lehen bideoak ondoren ikusten duzun guztia ainguratzen duelako"
+    ],
+    "a": 1,
+    "fb": "Sareek lehendik gustuko duzunetik gehiago erakusten dizute, eta pentsatzen duzuna berresten duen burbuila batean ixten zaituzte."
+   },
+   {
+    "q": "Teoriaren arabera, itzal al daitezke alborapenak?",
+    "o": [
+     "Bai, nahikoa da horietako bakoitzaren izena jakitea",
+     "Bai, baina pertsona helduek eta asko ikasi dutenek bakarrik",
+     "Ez, eta horregatik ez du merezi haiek zaintzen saiatzea",
+     "Ez, baina zaindu ditzakegu, gutxiago engaina gaitzaten"
+    ],
+    "a": 3,
+    "fb": "Alborapenak ezin dira itzali, baina bai zaindu: horrela gutxiago engainatzen gaituzte."
+   },
+   {
+    "q": "Zer galdera deseroso proposatzen du teoriak zure alborapenak zaintzeko?",
+    "o": [
+     "Hau sinesten dut egia delako, ala komeni zaidalako?",
+     "Zer pentsatzen du nire klaseko gehiengoak honi buruz?",
+     "Nor izan zen hau kontatu zidan lehen pertsona?",
+     "Zenbat aldiz entzun dut hau albisteetan?"
+    ],
+    "a": 0,
+    "fb": "Zerbait egia delako ala komeni zaizulako sinesten duzun galdetzeak berrespen-alborapena harrapatzen laguntzen dizu."
+   },
+   {
+    "q": "Aizkora-lapurraren ipuinean, zer aldatu zen nekazariak aizkora aurkitu zuenean?",
+    "o": [
+     "Mutilak susmagarri jokatzeari utzi zion",
+     "Bizilagunak konbentzitu zuen bere semea pertsona ona zela",
+     "Nekazariak mutilari begiratzeko modua aldatu zuen",
+     "Mutilak aitortu zuen aizkora ezkutatu zuela"
+    ],
+    "a": 2,
+    "fb": "Mutilak ez zuen ezer aldatu: nekazariaren begirada aldatu zen. Hori berrespen-alborapena da."
+   },
+   {
+    "q": "Aholku hauetako zein EZ du proposatzen teoriak alborapenetatik babesteko?",
+    "o": [
+     "Zuk ez bezala pentsatzen duten pertsonei ere jarraitzea",
+     "Presaka edo emozio handiz erabakitzen duzunaz mesfidatzea",
+     "Erabakiak azkar hartzea, buelta gehiegi ez emateko",
+     "Segundo batzuk gelditzea mezu alarmagarri bat birbidali aurretik"
+    ],
+    "a": 2,
+    "fb": "Teoriak justu kontrakoa aholkatzen du: presaka hartutako erabakiez mesfidatzea."
+   },
+   {
+    "q": "Mikelek dio «ingelesa izugarri gaizki ematen zaiola». Suspentsitako azterketa guztiak gogoratzen ditu, baina gainditutako azken hirurak ahaztu egiten zaizkio. Zer alborapen ari da lanean?",
+    "o": [
+     "Berrespen-alborapena",
+     "Ainguraketa-alborapena",
+     "Arraste-efektua",
+     "Eskuragarritasun-alborapena"
+    ],
+    "a": 0,
+    "fb": "Mikelek bere buruaz lehendik uste zuena berresten duena bakarrik ikusten du, eta kontra egiten diona ahazten du."
+   },
+   {
+    "q": "Lucíak kosk egiten duten txakurren bideo asko ikusi ditu. Orain uste du bere auzoko txakurrak oso arriskutsuak direla, inoiz ezer gertatu ez bada ere. Zer alborapen da?",
+    "o": [
+     "Arraste-efektua",
+     "Berrespen-alborapena",
+     "Ainguraketa-alborapena",
+     "Eskuragarritasun-alborapena"
+    ],
+    "a": 3,
+    "fb": "Bideo horiek erraz gogoratzen dituenez, probableagoa iruditzen zaio txakur batek kosk egitea. Eskuragarritasuna da."
+   },
+   {
+    "q": "Irakasleak eskatu du bakoitzak isilean idazteko herri batek zenbat biztanle dituen. Aurretik, Álexek txantxetan «milioi bat» esan du, eta ia denek zifra oso altuak idatzi dituzte. Zer alborapenek azaltzen du hau?",
+    "o": [
+     "Eskuragarritasun-alborapena",
+     "Berrespen-alborapena",
+     "Ainguraketa-alborapena",
+     "Arraste-efektua"
+    ],
+    "a": 2,
+    "fb": "Entzundako lehen zenbakiak, txantxetan izan arren, klase osoaren erantzunak ainguratu zituen."
+   },
+   {
+    "q": "Carlak bere bizikleta erabilia saltzen du. Lehenik 300 € eskatzen ditu, gutxiago balio duen arren. Erosleak azkenean 200 € ordaintzen ditu, eta negozio ona egin duela uste du. Zer alborapenez baliatzen da Carla?",
+    "o": [
+     "Berrespen-alborapena",
+     "Ainguraketa-alborapena",
+     "Arraste-efektua",
+     "Eskuragarritasun-alborapena"
+    ],
+    "a": 1,
+    "fb": "300 €-ko lehen prezioak erosleen iritzia ainguratzen du, eta 200 € merke iruditzen zaizkio."
+   },
+   {
+    "q": "Jolasaldian, talde osoak erronka biral bat egiten du: ur-botilak lurrera hustea. Nereak ere egiten du, txorakeria bat iruditzen zaion arren. Zer alborapen da?",
+    "o": [
+     "Arraste-efektua",
+     "Eskuragarritasun-alborapena",
+     "Ainguraketa-alborapena",
+     "Berrespen-alborapena"
+    ],
+    "a": 0,
+    "fb": "Nereak taldeak egiten duena egiten du kanpoan ez geratzeagatik bakarrik, ez arrazoi on bat duelako."
+   },
+   {
+    "q": "Klase osoak mugikor-zorro bera erosi du. Pablori ez zaio gustatzen, baina erosi egiten du kanpoan ez geratzeko. Zer alborapen ari da lanean?",
+    "o": [
+     "Ainguraketa-alborapena",
+     "Berrespen-alborapena",
+     "Eskuragarritasun-alborapena",
+     "Arraste-efektua"
+    ],
+    "a": 3,
+    "fb": "Pablok taldeak bezala jokatzen du, kanpoan ez geratzeko bakarrik. Hori arraste-efektua da."
+   },
+   {
+    "q": "Anek bere feedean bere futbol-taldea goraipatzen duten bideoak bakarrik ikusten ditu, eta ziur dago mundu guztiak berak bezala pentsatzen duela. Zertan sartuta dago?",
+    "o": [
+     "Arraste-efektu batean",
+     "Ainguraketa batean",
+     "Burbuila batean",
+     "Faltsukeria batean"
+    ],
+    "a": 2,
+    "fb": "Sareek gustuko duena bakarrik erakusten diote, eta denek arrazoia ematen diotela dirudi: burbuila batean dago."
+   },
+   {
+    "q": "Irenek uste du Dani, berria, harroputza dela. Hark bere bidaia kontatzen duenean, «harrotzen ari da berriro» pentsatzen du; besteei laguntzen dienean, ez da ohartu ere egiten. Zer alborapen da?",
+    "o": [
+     "Berrespen-alborapena",
+     "Arraste-efektua",
+     "Eskuragarritasun-alborapena",
+     "Ainguraketa-alborapena"
+    ],
+    "a": 0,
+    "fb": "Irenek Daniri buruzko bere ideia berresten duenari erreparatzen dio, eta ez du ikusten ideia hori ukatzen duena."
+   },
+   {
+    "q": "Albisteetan erdiguneko denda batean izandako lapurreta bat ikusi ondoren, Martínek dio bere hiria gero eta arriskutsuagoa dela, lehen baino lapurreta gutxiago egon arren. Zer alborapen da?",
+    "o": [
+     "Ainguraketa-alborapena",
+     "Eskuragarritasun-alborapena",
+     "Berrespen-alborapena",
+     "Arraste-efektua"
+    ],
+    "a": 1,
+    "fb": "Martínek oso ondo gogoratzen du albiste hori, eta horregatik uste du lapurretak diren baino ohikoagoak direla."
+   },
+   {
+    "q": "Sarari izugarrizko beldurra ematen dio itsasoan bainatzeak, marrazoengatik, baina kalea mugikorrari begira gurutzatzen du, batere kezkatu gabe. Zer alborapenek azaltzen du bere beldurra?",
+    "o": [
+     "Arraste-efektua",
+     "Ainguraketa-alborapena",
+     "Berrespen-alborapena",
+     "Eskuragarritasun-alborapena"
+    ],
+    "a": 3,
+    "fb": "Marrazoak oso bakanak dira, baina erraz gogoratzen dira; trafikoa, berriz, egunero dagoen benetako arriskua da."
+   },
+   {
+    "q": "Lagun batek esaten dio Iratxeri: «entzungailu horiek oso-oso garestiak dira, 120 € balio dute». Gero, Iratxek 70 €-ko beste batzuk ikusten ditu, eta oso merkeak iruditzen zaizkio. Zer alborapen ari da lanean?",
+    "o": [
+     "Berrespen-alborapena",
+     "Arraste-efektua",
+     "Ainguraketa-alborapena",
+     "Eskuragarritasun-alborapena"
+    ],
+    "a": 2,
+    "fb": "Entzun zuen lehen prezioa, 120 €, gainerako guztia alderatzeko aingura bihurtzen da."
+   },
+   {
+    "q": "Ainhoak ez du bere estutxea aurkitzen, eta Ikerrez susmatzen du. Harrezkero, hark egiten duen guztia arraroa iruditzen zaio. Gero, bere motxilan aurkitzen du, eta Iker normala iruditzen zaio berriro. Zer alborapen da?",
+    "o": [
+     "Ainguraketa-alborapena",
+     "Arraste-efektua",
+     "Eskuragarritasun-alborapena",
+     "Berrespen-alborapena"
+    ],
+    "a": 3,
+    "fb": "Aizkora-lapurraren ipuinaren antzekoa da: Iker ez zen aldatu; Ainhoaren begirada aldatu zen."
+   },
+   {
+    "q": "Klasean, txangorako filma bozkatzen dute. Omarrek beste bat nahiago zuen, baina bere lagun guztiek bezala bozkatzen du, kanpoan ez geratzeko. Zer alborapen da?",
+    "o": [
+     "Berrespen-alborapena",
+     "Arraste-efektua",
+     "Eskuragarritasun-alborapena",
+     "Ainguraketa-alborapena"
+    ],
+    "a": 1,
+    "fb": "Omarrek taldeak aukeratzen duena aukeratzen du, kanpoan ez geratzeagatik bakarrik: arraste-efektua."
+   },
+   {
+    "q": "Leirek, partida bat galdu ondoren oso haserre, saskibaloi-taldea une horretan bertan utzi nahi du. Teoriaren zer aholku etorriko litzaioke ondo?",
+    "o": [
+     "Presaka eta emozio handiz hartutako erabakiez mesfidatzea",
+     "Taldeko neska-lagun gehienek erabakitzen dutena egitea",
+     "Denboraldiko lehen emaitzari begiratzea erabakitzeko",
+     "Partida onak bakarrik gogoratzea, orain bertan hobeto sentitzeko"
+    ],
+    "a": 0,
+    "fb": "Presaka edo emozio handiz hartutako erabakiak alborapenek okertuta egon ohi dira."
+   },
+   {
+    "q": "Zertan bereizten dira ainguraketa eta eskuragarritasuna?",
+    "o": [
+     "Ainguraketa lehen datuaren araberakoa da; eskuragarritasuna, erraz gogoratzen denaren araberakoa",
+     "Ainguraketa taldeak egiten duenaren araberakoa da; eskuragarritasuna, lehen datuaren araberakoa",
+     "Ainguraketa prezioekin bakarrik gertatzen da; eskuragarritasuna, albisteekin bakarrik",
+     "Ainguraketa alborapen bat da, eta eskuragarritasuna argudio bateko akats bat"
+    ],
+    "a": 0,
+    "fb": "Ainguraketa jasotako lehen datuari lotzen zaio; eskuragarritasuna, oroimenera erraz etortzen zaigunari."
+   },
+   {
+    "q": "Zer alde dago berrespen-alborapenaren eta arraste-efektuaren artean?",
+    "o": [
+     "Lehenak taldeari jarraitzen dio; bigarrenak lehendik uste genuena bilatzen du",
+     "Lehenak lehendik uste genuena bilatzen du; bigarrenak taldeari jarraitzen dio",
+     "Lehena interneten bakarrik gertatzen da; bigarrena, institutuan bakarrik",
+     "Lehena alborapen bat da; bigarrena, argudio bateko akats bat"
+    ],
+    "a": 1,
+    "fb": "Berrespenak gure ideiei arrazoia ematen diena bilatzen du; arrasteak taldea imitatzera bultzatzen gaitu."
+   },
+   {
+    "q": "Zer lotura dago sareetako burbuilaren eta berrespen-alborapenaren artean?",
+    "o": [
+     "Burbuilak ezabatu egiten du, era guztietako iritziak erakusten dizkigulako",
+     "Burbuila arraste-efektuaren berdina da, ez berrespenarena",
+     "Burbuilak indartu egiten du, batez ere gustuko duguna erakusten digulako",
+     "Ez dute loturarik: burbuila interneteko prezio-ainguraketa bat da"
+    ],
+    "a": 2,
+    "fb": "Burbuilan gustuko duguna bakarrik ikusten dugu; beraz, berrespen-alborapena indartsuago bihurtzen da."
+   },
+   {
+    "q": "Zer dute komunean ainguraketak, eskuragarritasunak eta arraste-efektuak?",
+    "o": [
+     "Norbaitek gu engainatzeko erabiltzen dituen argudio-akatsak dira",
+     "Sareetan ordu asko ematen dituztenei bakarrik gertatzen zaizkie",
+     "Guztiz itzal daitezke, nola deitzen diren ikasten badugu",
+     "Konturatzen ez garen adimenaren joera automatikoak dira"
+    ],
+    "a": 3,
+    "fb": "Hirurak alborapenak dira: gure adimenaren joera automatikoak, ez beste pertsona baten argudioko akatsak."
+   },
+   {
+    "q": "Denok alborapenak baditugu, guztiz objektiboak izan gaitezke? Teoriaren arabera…",
+    "o": [
+     "Bai, betiere gauzak poliki eta lasai pentsatzen baditugu",
+     "Ez, eta horregatik berdin da edozein gairi buruz zer sinesten dugun",
+     "Bai, alborapenek adinekoei bakarrik eragiten dietelako",
+     "Agian ez guztiz, baina bai zintzoagoak, zaintzen baditugu"
+    ],
+    "a": 3,
+    "fb": "Agian ezin gara guztiz objektiboak izan, baina alborapenak onartzeak eta zaintzeak zintzoago egiten gaitu."
+   },
+   {
+    "q": "Zertarako balio dizu eguneroko bizitzan alborapenak ezagutzeak?",
+    "o": [
+     "Lagunekin dituzun eztabaida guztiak beti irabazteko",
+     "Buruak engainatzen zaituenean harrapatzeko eta hobeto erabakitzeko",
+     "Albiste bat nondik datorren inoiz egiaztatu behar ez izateko",
+     "Gehiengoak zer uste duen jakin eta beti gauza bera egiteko"
+    ],
+    "a": 1,
+    "fb": "Alborapenak ezagutzen badituzu, zure burua okerreko bidetik noiz doan konturatu zaitezke eta erabaki hobeak har ditzakezu."
+   }
+  ]
+ },
+ "ipc-dialogo-banco": {
+  "name": "Elkarrizketaren artea (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Gaiaren arabera, zer da elkarrizketan aritzea?",
+    "o": [
+     "Txandaka hitz egitea, norbaitek irabazi arte",
+     "Elkarrekin pentsatzea, arazo bat hobeto ulertzeko",
+     "Besteari zure ideia ona dela sinestaraztea",
+     "Akordio batera iristea, inork arrazoirik eman gabe"
+    ],
+    "a": 1,
+    "fb": "Elkarrizketan aritzea arazo bat hobeto ulertzeko elkarrekin pentsatzea da, ez txandaka hitz egitea norbaitek irabazi arte."
+   },
+   {
+    "q": "Elkarrizketa on batean, denak talde berean jokatzen dute. Orduan, nor da aurkaria?",
+    "o": [
+     "Desberdin pentsatzen duen pertsona",
+     "Ozenen hitz egiten duen ikaskidea",
+     "Pentsatzen ari garen galdera",
+     "Klaseko eztabaida gidatzen duena"
+    ],
+    "a": 2,
+    "fb": "Elkarrizketan aurkaria galdera edo arazoa da, inoiz ez beste pertsona."
+   },
+   {
+    "q": "Zergatik esaten da elkarrizketa on batean denek irabazten dutela?",
+    "o": [
+     "Azkenean beti adostasun batera iristen delako",
+     "Inork ez duelako inoiz iritziz aldatu behar",
+     "Bakoitza bere iritziarekin geratzen delako",
+     "Denek lehen baino gehiago ulertzen dutelako"
+    ],
+    "a": 3,
+    "fb": "Akordiorik ez badago ere, denek hasieran baino hobeto ulertzen dute arazoa."
+   },
+   {
+    "q": "Zer da entzute aktiboa?",
+    "o": [
+     "Isilik egotea, zer erantzungo duzun prestatzen duzun bitartean",
+     "Buruarekin baietz egitea, besteak jarraitu dezan",
+     "Bestearen akatsak idaztea, gero gezurtatzeko",
+     "Arreta jartzea, besteak dioena errepikatu ahal izan arte"
+    ],
+    "a": 3,
+    "fb": "Aktiboki entzutea benetan arreta jartzea da, besteak esandakoa zure hitzekin errepikatzeko moduan."
+   },
+   {
+    "q": "Zer da adostasuna?",
+    "o": [
+     "Banan-banan hitz egiteko araua",
+     "Elkarrizketa baten ondoren lortzen den akordioa",
+     "Ondoen hitz egiten duenaren iritzia",
+     "Gehiengoak beti irabazten duen bozketa bat"
+    ],
+    "a": 1,
+    "fb": "Adostasuna elkarrizketaren ondoren lortzen den akordioa da."
+   },
+   {
+    "q": "Zergatik da erabilgarria elkarrizketan aritzen jakitea bizitza errealean, adibidez zure koadrilarekin?",
+    "o": [
+     "Arazo bat ulertzen laguntzen duelako, ados ez egon arren",
+     "Horrela besteek zuk nahi duzuna egitea lortzen duzulako",
+     "Pentsatzen duzunaren arrazoiak azaldu beharrik ez duzulako",
+     "Iritziz aldatu gabe eztabaidak irabazteko aukera ematen dizulako"
+    ],
+    "a": 0,
+    "fb": "Elkarrizketak arazoak elkarrekin hobeto ulertzeko balio du, akordiorik lortzen ez denean ere."
+   },
+   {
+    "q": "Kontrol-zerrendako zein puntuk galdetzen du arrazoiak eta adibideak eman dituzun ala iritziak soilik?",
+    "o": [
+     "Jarrera",
+     "Parte-hartzea",
+     "Argudioen kalitatea",
+     "Arazoari buruzko begirada"
+    ],
+    "a": 2,
+    "fb": "Argudioen kalitateak begiratzen du zure ideiak arrazoiekin eta adibideekin babestu dituzun."
+   },
+   {
+    "q": "Uniformeari buruzko eztabaidan, Hugok Sarari esaten dio: «Zuk zer jakingo duzu, hain gaizki janzten bazara». Elkarrizketaren zein arau hausten du Hugok?",
+    "o": [
+     "Arazora joan, ez pertsonara",
+     "Iritziz aldatu ahal izatea",
+     "Hitz-txanda errespetatzea",
+     "Karitatearen printzipioa"
+    ],
+    "a": 0,
+    "fb": "Hugok Sarari erasotzen dio, bere ideia kritikatu beharrean. Elkarrizketan ideiak kritikatzen dira, inoiz ez haiek esaten dituena."
+   },
+   {
+    "q": "Anek eta Marcok jolastorduko mugikorrari buruz eztabaidatzen dute. Anek «debekatu egin behar da» errepikatzen du, eta Marcok «ba nik ezetz diot», gero eta ozenago eta elkarri entzun gabe. Zer da hau?",
+    "o": [
+     "Borroka bat",
+     "Gorren eztabaida bat",
+     "Elkarrizketa bat",
+     "Adostasun bat"
+    ],
+    "a": 1,
+    "fb": "Bakoitzak bere ideia gero eta ozenago errepikatzen du, besteari entzun gabe: gorren eztabaida da. Ez dago irainik; beraz, ez da borroka."
+   },
+   {
+    "q": "Unaik jantokian menu begetarianoko egun bat proposatzen du. Claudiak erantzuten du: «Hau da, haragia betiko debekatu nahi duzu». Zein arau EZ du errespetatzen Claudiak?",
+    "o": [
+     "Hitz-txanda",
+     "Iritziz aldatu ahal izatea",
+     "Arazora joan, ez pertsonara",
+     "Karitatearen printzipioa"
+    ],
+    "a": 3,
+    "fb": "Claudiak Unairen ideiaren karikatura bati erantzuten dio, ez haren bertsiorik onenari. Horrek karitate-printzipioa hausten du."
+   },
+   {
+    "q": "Yasmini entzun ondoren, Ivanek dio: «Arrazoi duzu, ez nuen hori pentsatu. Iritziz aldatzen naiz». Zer ari da egiten Ivan?",
+    "o": [
+     "Eztabaida galtzen du, bere ideia ez defendatzeagatik",
+     "Iritziz aldatzeko araua aplikatzen du",
+     "Karitate-printzipioa hausten du Yasminekin",
+     "Arrazoiak ematea saihesten du, lehenago amaitzeko"
+    ],
+    "a": 1,
+    "fb": "«Arrazoi duzu» onartzea ez da galtzea, ikastea baizik. Ivanek iritziz aldatu ahal izateko araua betetzen du."
+   },
+   {
+    "q": "Klaseko eztabaidan, Leirek ideia interesgarriak zituen, baina ez zuen ezer esan ordu osoan. Kontrol-zerrendako zein puntu hobetu beharko luke?",
+    "o": [
+     "Jarrera",
+     "Argudioen kalitatea",
+     "Parte-hartzea",
+     "Arazoari buruzko begirada"
+    ],
+    "a": 2,
+    "fb": "Parte-hartzeak galdetzen du eztabaidari ekarpenik egin diozun eta besteei hitz egiten utzi diezun."
+   },
+   {
+    "q": "Eztabaidan, Mateok ez du arrazoirik ematen, baina denak barrez jartzen ditu bere txisteekin, eta horrela irabazi duela uste du. Zein arau ahazten du?",
+    "o": [
+     "Benetan entzun",
+     "Iritziz aldatu ahal izatea",
+     "Arazora joan, ez pertsonara",
+     "Arrazoiak eman, ez oihukatu"
+    ],
+    "a": 3,
+    "fb": "Elkarrizketan argudiorik onenak irabazten du, ez ahotsik ozenenak ezta barregarrienak ere."
+   },
+   {
+    "q": "Eztabaida batean, Nereak ikaskide batek hitz egiteko duen moduaz burla egiten du, eta keinuak egiten ditu hura hizketan ari den bitartean. Kontrol-zerrendako zein puntu berrikusi behar du?",
+    "o": [
+     "Jarrera",
+     "Parte-hartzea",
+     "Argudioen kalitatea",
+     "Arazoari buruzko begirada"
+    ],
+    "a": 0,
+    "fb": "Jarrerak begiratzen du txandak eta pertsonak errespetatu dituzun, eta Nereak ez du bere ikaskidea errespetatzen."
+   },
+   {
+    "q": "Lucas: «Uste dut mugikorrak klasean arreta galarazten duela; zuk zergatik uste duzu ezetz?». Irati: «Informazioa bilatzeko erabiltzen dugulako». Lucas: «Egia da hori... eta horretarako bakarrik balitz?». Zer da?",
+    "o": [
+     "Gorren eztabaida bat",
+     "Borroka bat",
+     "Elkarrizketa bat",
+     "Adostasun bat"
+    ],
+    "a": 2,
+    "fb": "Elkarri entzuten diote, arrazoiak ematen dituzte eta ideiak mugitu egiten dira: elkarrizketa da."
+   },
+   {
+    "q": "Ikasturte amaierako bidaiari buruz, Aimarrek oihu egiten dio Rociori «Astuna zara!», eta hark erantzuten dio «Eta zu harroputza!». Zer eszena mota da?",
+    "o": [
+     "Borroka bat",
+     "Gorren eztabaida bat",
+     "Elkarrizketa bat",
+     "Adostasun bat"
+    ],
+    "a": 0,
+    "fb": "Pertsonei erasotzen diete ideiei beharrean (ad hominem), eta ez dute ezer aurreratzen: borroka da."
+   },
+   {
+    "q": "Zertan bereizten dira borroka bat eta gorren eztabaida bat?",
+    "o": [
+     "Borrokan arrazoiak ematen dira; gorrenean ozenago oihukatu besterik ez",
+     "Borrokan pertsonari erasotzen zaio; gorrenean inork ez du entzuten",
+     "Borroka akordioz amaitzen da; gorrenean inork ez du amore ematen",
+     "Borrokan besteari entzuten zaio; gorrenean hitza mozten zaio"
+    ],
+    "a": 1,
+    "fb": "Borrokan pertsonei erasotzen zaie; gorren eztabaidan bakoitzak bere ideia errepikatzen du, entzun gabe."
+   },
+   {
+    "q": "Zer desberdintasun dago entzute aktiboaren eta karitate-printzipioaren artean?",
+    "o": [
+     "Entzutea isiltzea da; karitatea, besteari arrazoia ematea",
+     "Entzutea txandak errespetatzea da; karitatea, oker dagoenari laguntzea",
+     "Entzutea errepikatzeko gai izatea da; karitatea, bertsiorik onenari erantzutea",
+     "Ez dago desberdintasunik: biak besteari hitza inoiz ez moztea dira"
+    ],
+    "a": 2,
+    "fb": "Entzutea besteak dioena ulertzea da, errepikatu ahal izan arte; karitatea haren ideiaren bertsiorik onenari erantzutea da."
+   },
+   {
+    "q": "Zer lotura dago elkarrizketaren eta adostasunaren artean?",
+    "o": [
+     "Adostasunik gabe, elkarrizketak ez du ezertarako balio izan",
+     "Adostasuna banan-banan hitz egiteko araua da",
+     "Elkarrizketa bietako batek besteari irabazten dionean bakarrik amaitzen da",
+     "Adostasuna elkarrizketatik sor daiteke, baina ez beti"
+    ],
+    "a": 3,
+    "fb": "Adostasuna elkarrizketatik sor daitekeen akordioa da, baina hara iritsi ezean ere, denek gehiago ulertzen dute."
+   }
+  ]
+ },
+ "ipc-medios-banco": {
+  "name": "Begiratu hedabideak lupaz (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Zer da post-egia?",
+    "o": [
+     "Emozioek gertakariek baino pisu handiagoa duten garaia",
+     "Egiazkoa balitz bezala zabaltzen den albiste faltsua",
+     "Klik asko lortu nahi dituen titular puztua",
+     "Albisteak hainbat iturritan egiaztatzeko ohitura"
+    ],
+    "a": 0,
+    "fb": "Post-egia da emozioek eta sinesmenek egiaztatutako gertakariek baino pisu handiagoa duten egoera."
+   },
+   {
+    "q": "Zer da buloa (fake news)?",
+    "o": [
+     "Norbaitek bere sareetan argitaratzen duen iritzi pertsonala",
+     "Ospetsu batek produktu bat gomendatzen duen iragarkia",
+     "Egia balitz bezala zabaltzen den albiste faltsua",
+     "Titular deigarri batekin kontatutako benetako albistea"
+    ],
+    "a": 2,
+    "fb": "Buloa egiazkoa balitz bezala zabaltzen den albiste faltsua da."
+   },
+   {
+    "q": "Gaiaren arabera, zein da edozein mezuren aurrean egin beharreko lehen galdera?",
+    "o": [
+     "Zenbat pertsonak partekatu dute jada?",
+     "Gustatzen zait nola dagoen idatzita eta diseinatuta?",
+     "Bat dator lehendik pentsatzen nuenarekin?",
+     "Nork bidaltzen du, eta zer irabazten du horrekin?"
+    ],
+    "a": 3,
+    "fb": "Mezu askok ez dute zu informatu nahi, zerbait saldu edo zu konbentzitu baizik; beraz, lehenik jakin behar da nork bidaltzen duen eta zer irabazten duen."
+   },
+   {
+    "q": "Gaiaren arabera, zer da beharra?",
+    "o": [
+     "Publizitateak gaur bertan erostera bultzatzen gaituen zerbait",
+     "Ondo bizitzeko falta zaigun zerbait, jatea adibidez",
+     "Nahi dugun zerbait, hura gabe berdin-berdin biziko bagina ere",
+     "Gure lagunek jada duten eta guk oraindik ez dugun zerbait"
+    ],
+    "a": 1,
+    "fb": "Beharra ondo bizitzeko falta zaigun zerbait da: jatea, hotzetik babestea, etxea izatea, ikastea edo lagunak izatea."
+   },
+   {
+    "q": "Zertan datza Diderot efektua?",
+    "o": [
+     "Ospetsu batek produktu bat erabiltzen du, eta haren ospea markara pasatzen da",
+     "Iragarki batek presa sartzen digu egun bakarreko eskaintzekin",
+     "Erosketa berri batek harekin bat datozen beste batzuk desiratzera garamatza",
+     "Besteek egiten dutenetik kanpo geratzeko beldurra sentitzen dugu"
+    ],
+    "a": 2,
+    "fb": "Diderot efektuan, erosketa batek harekin bat datorren beste bat desiratzera bultzatzen gaitu, eta horrela bata bestearen atzetik."
+   },
+   {
+    "q": "Zer esan nahi du informazio bat egiaztatzeak edo kontrastatzeak?",
+    "o": [
+     "Laster partekatzea, besteek ere ezagut dezaten",
+     "Sinestea, jarraitzaile asko dituen kontu batek argitaratzen badu",
+     "Titularra soilik irakurtzea, konbentzitzen gaituen erabakitzeko",
+     "Hainbat iturri fidagarritan egiaztatzea, sinetsi aurretik"
+    ],
+    "a": 3,
+    "fb": "Egiaztatzea informazio bat hainbat iturri fidagarritan frogatzea da, sinetsi aurretik."
+   },
+   {
+    "q": "Gaiaren arabera, zer saltzen du benetan publizitateak?",
+    "o": [
+     "Bere produktuei buruzko informazio objektiboa",
+     "Adituek egiaztatutako datuak",
+     "Bizitzeko behar duguna soilik",
+     "Emozioak eta desioak"
+    ],
+    "a": 3,
+    "fb": "Publizitateak ez ditu hainbeste produktuak saltzen, markari lotzen dizkiogun emozioak eta desioak baizik."
+   },
+   {
+    "q": "Lupaz begiratzeko planean, zer berrikusten duzu «Data eta irudia» urratsean?",
+    "o": [
+     "Argazkia edo bideoa gaurkoak diren ala lehengoak birziklatuak",
+     "Hedabide serio batek edo edozein kontuk argitaratzen duen",
+     "Beste leku fidagarri batzuek ere gauza bera kontatzen duten",
+     "Nork irabazten duen zerbait nik sinesten edo partekatzen badut"
+    ],
+    "a": 0,
+    "fb": "Bulo askok argazki edo bideo zaharrak birziklatzen dituzte; horregatik begiratu behar da irudia gaurkoa den."
+   },
+   {
+    "q": "Gaiaren arabera, desiratzea ez da txarra. Orduan, noiz dator arazoa?",
+    "o": [
+     "Jana edo arropa ez den edozer desiratzean",
+     "Lehenago iragarki batean ikusi dugun zerbait eskatzean",
+     "Desio soberako bat behar bat dela sentitzean",
+     "Gure lagunek ere badaukaten zerbait nahi izatean"
+    ],
+    "a": 2,
+    "fb": "Desiratzea ez da txarra; arazoa publizitateak desio soberako bat behar bat dela sentiarazten digunean dator."
+   },
+   {
+    "q": "Zer irakasten du bolizko txotxen ipuin txinatarrak?",
+    "o": [
+     "Luxu batek harekin bat datozen beste luxu batzuk eskatzen dituela",
+     "Gauza garestiek merkeek baino gehiago irauten dutela beti",
+     "Norbaiten ospea hark erabiltzen dituen gauzei kutsatzen zaiela",
+     "Azken orduko eskaintzek azkar erosarazten digutela"
+    ],
+    "a": 0,
+    "fb": "Luxuzko txotxek ontziak, oturuntzak eta jauregiak eskatzen dituzte azkenean: Diderot efektuaren eskailera bera da."
+   },
+   {
+    "q": "Luciari WhatsAppeko audio bat iristen zaio, auzoko txorrotako ura pozoituta dagoela dioena, eta «bidali hau denei!» esanez amaitzen da. Hedabide batek ere ez du horren berri ematen. Zer da ziurrenik?",
+    "o": [
+     "Beldurra sartu nahi duen buloa, parteka dadin",
+     "Publizitate aspirazionala erabiltzen duen iragarkia",
+     "Hainbat iturrik egiaztatutako abisu ofiziala",
+     "Egunkari serio baten clickbait titularra"
+    ],
+    "a": 0,
+    "fb": "Beldurra ematen du, berriro bidaltzeko eskatzen du eta hedabide batek ere ez du berresten: buloaren ezaugarri tipikoak dira."
+   },
+   {
+    "q": "Marcosek Instagramen bere hiriko uholde baten argazki bat ikusten du, «gaurkoa». Bilatu egiten du, eta hamar urte lehenagokoa dela ikusten du. Planeko zein urrats izan zaio baliagarri?",
+    "o": [
+     "Interesa: nork irabazten du partekatzen badut",
+     "Data eta irudia: gaurkoa den",
+     "Iturria: nork argitaratzen duen",
+     "Kontrastea: besteek esaten duten"
+    ],
+    "a": 1,
+    "fb": "Irudi bat gaurkoa den egiaztatzeak argazki zaharrak birziklatzen dituzten bulo asko agerian uzten ditu."
+   },
+   {
+    "q": "Hugok ondo geratzen zaizkion markako bi izerdi-kamiseta ditu, baina iragarki batean ikusi duen hirugarren bat nahi du. Gaiaren arabera, hirugarren izerdi-kamiseta hori…",
+    "o": [
+     "Beharra da, arropak hotzetik babesteko balio duelako",
+     "Desio soberakoa da, hura gabe berdin-berdin biziko litzatekeelako",
+     "Buloa da, iragarkiak zerbait faltsua kontatzen duelako",
+     "Post-egiaren kasu bat da, ilusioa egiten diolako"
+    ],
+    "a": 1,
+    "fb": "Hugo jada babestuta dago hotzetik; hirugarren izerdi-kamiseta nahi duen zerbait da, baina hura gabe berdin-berdin biziko litzateke."
+   },
+   {
+    "q": "Nereak zapatila berri batzuk estreinatzen ditu. Bat-batean, bere txandala zahar iruditzen zaio eta aldatu egiten du; gero, konjuntuan doan motxila bat ere nahi du. Zerk azaltzen du gertatzen zaiona?",
+    "o": [
+     "FOMOak: besteek egiten dutenetik kanpo geratzeko beldurra",
+     "Urritasunak: dendak presa sartzen dio erosteko",
+     "Testigantzak: ospetsu batek zapatila horiek daramatza",
+     "Diderot efektuak: erosketa batek beste batzuk desiratzera darama"
+    ],
+    "a": 3,
+    "fb": "Erosketa berri batek harekin bat datozen beste batzuk desiratzera darama: hori da Diderot efektua."
+   },
+   {
+    "q": "Samuelek entzungailu batzuk begiratzen ditu online denda batean. «2 bakarrik geratzen dira!» agertzen da, atzerako kontaketa batekin batera. Zer bilatzen du dendak mezu horrekin?",
+    "o": [
+     "Biltegian zer geratzen den modu objektiboan jakinaraztea",
+     "Prezioa lehenago beste denda batzuetakoarekin alderatzea",
+     "Azkar erostea, ondo pentsatzeko denborarik gabe",
+     "Egun batzuk itxarotea, prezioa jaitsi arte"
+    ],
+    "a": 2,
+    "fb": "Urritasunak eta presak nahi dute eros dezazun, benetan nahi duzun pentsatzeko gelditu gabe."
+   },
+   {
+    "q": "Carlak sareetan irakurtzen du bere abeslari gogokoenaren kontzertua bertan behera utzi dutela. Sinetsi aurretik, albistea beste hedabide fidagarri batzuetan bilatzen du, eta ez da inon agertzen. Zer urrats aplikatu du?",
+    "o": [
+     "Data eta irudia",
+     "Interesa",
+     "Kontrastea",
+     "Iturria"
+    ],
+    "a": 2,
+    "fb": "Kontrastatu egin du: beste leku fidagarri batzuek kontatzen duten begiratu du. Leku bakarrean agertzen bada, susmatu egin behar da."
+   },
+   {
+    "q": "Omarrek irabiatu-marka baten bideo bat ikusten du, bere irabiatuak nekea betiko kentzen duela dioena. Omarrek bere buruari galdetzen dio nork irabazten duen berak sinesten badu. Zer urrats aplikatzen du?",
+    "o": [
+     "Kontrastea",
+     "Iturria",
+     "Data eta irudia",
+     "Interesa"
+    ],
+    "a": 3,
+    "fb": "Nik sinesten edo partekatzen badut nork irabazten duen galdetzea interesaren urratsa da."
+   },
+   {
+    "q": "Yasminak erabakitzen du interneten ikusten duen ezer ez sinestea, ezta hedabide serioek argitaratzen dutena ere. Gaiaren arabera, zer gertatzen zaio?",
+    "o": [
+     "Ondo egiten du, horrela ez baita inoiz bulo batean eroriko",
+     "Gehiegi egiten du, denaz mesfidatzeak ere geldiarazi egiten baitu",
+     "Kontrastearen urratsa oso ondo aplikatzen ari da",
+     "Post-egiaren tranpan erortzen ari da"
+    ],
+    "a": 1,
+    "fb": "Kontua ez da denaz mesfidatzea, erabaki aurretik egiaztatzea baizik."
+   },
+   {
+    "q": "Pablok miresten duen bideojokoetako youtuber batek azalerako krema bat iragartzen du, azala zaintzeaz ezer ez badaki ere. Zergatik da trikimailua?",
+    "o": [
+     "Youtuberrek ezin dutelako inoiz iragarkirik egin",
+     "Krema ziur produktu faltsua delako",
+     "Salgai krema gutxi batzuk bakarrik geratzen direlako",
+     "Bere ospeak ez duelako kremetan aditu bihurtzen"
+    ],
+    "a": 3,
+    "fb": "Ospetsuen testigantza gaizki erabilitako autoritateari deia da: ospetsu izateak ez zaitu denetan aditu bihurtzen."
+   },
+   {
+    "q": "Klaseko eztabaida batean, Leirek dio: «Berdin zait datuek zer dioten. Nik egia dela sentitzen dut, eta kitto». Gaiaren zein ideia islatzen du bere jarrerak?",
+    "o": [
+     "Post-egia",
+     "Clickbait titularra",
+     "Diderot efektua",
+     "Egiaztapena"
+    ],
+    "a": 0,
+    "fb": "Post-egian, emozioek eta sinesmenek egiaztatutako gertakariek baino pisu handiagoa dute."
+   },
+   {
+    "q": "Noak beroki bat behar du, berea txiki geratu zaiolako eta negua datorrelako. Gaiaren arabera, beroki hori…",
+    "o": [
+     "Desio soberakoa da, arropa berria delako",
+     "Diderot efektua da, erosketa bat delako",
+     "Beharra da, hotzetik babestea beharrezkoa delako",
+     "FOMO kasu bat da, denek daramatelako berokia"
+    ],
+    "a": 2,
+    "fb": "Hotzetik babestea ondo bizitzeko behar dugun zerbait da; beraz, beharra da."
+   },
+   {
+    "q": "Ikerrek sareetan amorru handia ematen dion albiste bat ikusten du. Gaiaren arabera, zer seinalek eragin beharko lioke gelditzea partekatu aurretik?",
+    "o": [
+     "Hedabide serio eta ezagun batek argitaratzen duela",
+     "Beste leku fidagarri batzuek ere kontatzen dutela",
+     "Gaurko data duela eta oso gaurkoa dela",
+     "Emozio oso bizia sentiarazten diola"
+    ],
+    "a": 3,
+    "fb": "Mezu batek zenbat eta gehiago sentiarazi, orduan eta gehiago gelditu eta egiaztatu behar da: buloek emozioa ukitzen dute."
+   },
+   {
+    "q": "Auto-iragarki batek ez du ezer esaten motorraz ezta prezioaz ere. Bidaia batean barrez ari den familia bat erakusten du soilik. Zer publizitate-trikimailu erabiltzen du?",
+    "o": [
+     "Emozioa",
+     "Urritasuna eta presa",
+     "Ospetsuen testigantza",
+     "FOMOa"
+    ],
+    "a": 0,
+    "fb": "Iragarkiak ez du produktuaz hitz egiten, familiaz eta zoriontasunaz baizik, emozio hori markari lot diezaiozun."
+   },
+   {
+    "q": "Paulak titular hau ikusten du: «Ez duzu sinetsiko futbolari honek egin duena!». Ireki egiten du, eta ilea moztu duela besterik ez du kontatzen. Buloa da?",
+    "o": [
+     "Bai, titular puztu oro albiste faltsua delako",
+     "Ez, clickbaita da: puztu egiten du, baina kontatzen duena egia da",
+     "Bai, ospetsu bati buruz hitz egiten duelako zerbait saltzeko",
+     "Ez, futbolariari buruzko publizitate aspirazionala da"
+    ],
+    "a": 1,
+    "fb": "Clickbaitak titularra puzten du klikak lortzeko; buloak, aldiz, zerbait faltsua kontatzen du egia balitz bezala."
+   },
+   {
+    "q": "Zer desberdintasun dago emozioaren trikimailuaren eta publizitate aspirazionalaren artean?",
+    "o": [
+     "Emozioak kirolari ospetsuak erabiltzen ditu; aspirazionalak, gaur bakarrik diren eskaintzak",
+     "Emozioak presa sartzen du erosteko; aspirazionalak prezio baxuaz hitz egiten du",
+     "Emozioak marka adiskidetasunari lotzen dio; aspirazionalak, nahi duzun bezalakoa izateari",
+     "Emozioa telebistan bakarrik ateratzen da; aspirazionala, sare sozialetan bakarrik"
+    ],
+    "a": 2,
+    "fb": "Emozioak marka adiskidetasuna edo familia bezalako sentimenduei lotzen die; aspirazionalak politagoa, ezagunagoa edo zoriontsuagoa izango zarela agintzen du."
+   },
+   {
+    "q": "Zertan bereizten da Diderot efektua urritasuna edo ospetsuen testigantza bezalako trikimailuetatik?",
+    "o": [
+     "Ez dagoela iragarkiaren mende, gure beraren mende baizik",
+     "Diru asko duen jendeari bakarrik eragiten diola",
+     "Influencerrek erabiltzen duten trikimailua dela",
+     "Altzariekin eta dekorazioarekin bakarrik gertatzen dela"
+    ],
+    "a": 0,
+    "fb": "Diderot efektua ez du iragarki batek eragiten: gu geu gara, erosketa baten ondoren, harekin bat datozen beste batzuk desiratzen ditugunak."
+   },
+   {
+    "q": "Zer desberdintasun dago lupaz begiratzeko planeko «Iturria» eta «Kontrastea» urratsen artean?",
+    "o": [
+     "Iturriak gaurkoa den begiratzen du; Kontrasteak, nork irabazten duen",
+     "Iturriak nork argitaratzen duen begiratzen du; Kontrasteak, besteek esaten duten",
+     "Iturriak hunkitzen duen begiratzen du; Kontrasteak, like asko dituen",
+     "Iturriak data begiratzen du; Kontrasteak, argazkia benetakoa den"
+    ],
+    "a": 1,
+    "fb": "Iturria nork argitaratzen duen da; kontrastea, beste leku fidagarri batzuek gauza bera esaten duten egiaztatzea."
+   },
+   {
+    "q": "Zertarako balio du, bizitza errealean, zerbait sinetsi edo partekatu aurretik segundo batzuez zalantza egiteak?",
+    "o": [
+     "Interneteko albisteak inoiz ez irakurtzeko",
+     "Engainu gehienak saihesteko",
+     "Hunkitzen gaituena bakarrik partekatzeko",
+     "Esaten diguten guztiaz mesfidatzeko"
+    ],
+    "a": 1,
+    "fb": "Hamar segundoko zalantzak eta egiaztapenak engainu gehienak saihesten dituzte."
+   }
+  ]
+ },
+ "ipc-grupo-banco": {
+  "name": "Talde bat ala pilo bat gara? Kohesioa (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Gaiaren arabera, autobus-ilaran elkarrekin zain dauden pertsonek hau osatzen dute…",
+    "o": [
+     "talde bat, leku bera eta itxaronaldi bera partekatzen dituztelako",
+     "talde ez oso batua, elkarren artean ia hitz egiten ez dutelako",
+     "pilo bat, ez dutelako elkar ezagutzen ez helburu komunik",
+     "pilo bat, talde bat izateko pertsona gehiegi direlako"
+    ],
+    "a": 2,
+    "fb": "Pilo bat da: ez dute elkar ezagutzen, ez dute helbururik partekatzen eta, autobusa iristean, bakoitza bere kasa doa."
+   },
+   {
+    "q": "Zer da talde baten kohesioa?",
+    "o": [
+     "Batuta mantentzen duen indarra: elkarrekin egoteko eta gauzak egiteko gogoa",
+     "Kide guztiek azkenean edozein gairi buruz berdin pentsatzea",
+     "Kanpokoei ixteko ohitura, barrukoak babesteko",
+     "Kide guztiek bete behar dituzten arau idatzien multzoa"
+    ],
+    "a": 0,
+    "fb": "Kohesioa elkarrekin egoteko eta lan egiteko gogoa da. Ez du esan nahi denek berdin pentsatzea, ezta kanpokoei ixtea ere."
+   },
+   {
+    "q": "Yusufen saskibaloi-taldean hain ondo moldatzen dira, ezen desberdin pentsatzen duena isildu egiten baita giro ona ez hausteko. Gaiaren arabera, hori…",
+    "o": [
+     "kohesioa da, denek elkarrekin egon nahi dutelako eztabaidatu gabe",
+     "elkartasuna da, bakoitzak amore ematen duelako besteei laguntzeko",
+     "inklusioa da, inor ez delako erabakietatik kanpo geratzen",
+     "taldearen presioa da, batuta egoteak isiltzera behartzen baitu"
+    ],
+    "a": 3,
+    "fb": "«Batuta egotea» pentsatzen duzuna isiltzea denean, jada ez da kohesioa: taldearen presioa da."
+   },
+   {
+    "q": "Salma Marokotik dator ikasturte erdian. Ikaskideek beren mahaira eta jolastorduko planetara gonbidatzen dute. Kohesioaren zein dimentsio ikusten da hemen?",
+    "o": [
+     "Parte-hartzea eta adostasunezko akordioak",
+     "Inor ez da kanpoan geratzen (inklusioa)",
+     "Taldean lan egiteko gogoa",
+     "Rolen banaketa taldearen barruan"
+    ],
+    "a": 1,
+    "fb": "Inklusioa da harreman ona egotea beste kultura batetik datorrenarekin edo desgaitasunen bat duenarekin ere."
+   },
+   {
+    "q": "Txangoa aukeratzeko, ikasle bakoitzak bere ideiak isilean idazten ditu. Gero txandaka esaten dira, arbelean idazten dira eta bakoitzak puntuatu egiten ditu. Zer teknika erabiltzen dute?",
+    "o": [
+     "Elur-bola",
+     "Talde nominala",
+     "Bi zutabe",
+     "Iritzi kontrajarriak"
+    ],
+    "a": 1,
+    "fb": "Talde nominalean bakoitzak bere ideiak idazten ditu, txandaka bateratzen dira eta puntuatu egiten dira."
+   },
+   {
+    "q": "Asch-en esperimentuan, nortzuk ziren mahaiko beste zazpi neska-mutilak?",
+    "o": [
+     "Lerroak ondo ikusten ez zituzten benetako parte-hartzaileak",
+     "Pertsona bakoitzak esaten zuena idazten zuten psikologoak",
+     "Parte-hartzaileari asmatzen lagundu nahi zioten lagunak",
+     "Huts egiteko elkarrekin ados jarri ziren aktoreak"
+    ],
+    "a": 3,
+    "fb": "Aktoreak ziren: txanda batzuetan denek nahita erantzun okerra esaten zuten, «A»."
+   },
+   {
+    "q": "DBH 2 A-ko batzarrean Marcosek eta Leirek erabakitzen dute beti, ozenago hitz egiten dutelako. Besteak isilik geratzen dira. Kohesioaren zer dimentsiok huts egiten du?",
+    "o": [
+     "Parte-hartzea eta adostasunak",
+     "Elkartasuna eta bizikidetza",
+     "Taldean lan egiteko gogoa",
+     "Elkar ezagutzea eta ondo moldatzea"
+    ],
+    "a": 0,
+    "fb": "Talde kohesionatu batean denek parte hartzen dute eta adostasunez erabakitzen da, ez gehien hitz egiten dutenek esaten dutena bakarrik."
+   },
+   {
+    "q": "Zer desberdintasun dago kohesioaren eta taldearen presioaren artean?",
+    "o": [
+     "Kohesioan denek berdin pentsatzen dute; presioan bakoitzak nahi duena pentsatzen du",
+     "Kohesioa talde handietan gertatzen da; presioa talde txikietan bakarrik",
+     "Kohesioan elkarrekin egoteko gogoa dago; presioan pentsatzen duzuna isiltzen duzu",
+     "Gauza bera dira: biak taldea oso batuta egotean datza"
+    ],
+    "a": 2,
+    "fb": "Kohesioa elkarrekin egoteko gogoa da. Batuta egoteko isildu edo norbait kanpoan utzi behar bada, taldearen presioa da."
+   },
+   {
+    "q": "Tutoretzan, Anek lehenik bakarrik pentsatzen du, gero Omarrekin partekatzen ditu bere ideiak, ondoren beste bikote batekin elkartzen dira eta azkenik klase osoak hitz egiten du. Zer teknika erabiltzen dute?",
+    "o": [
+     "Talde nominala",
+     "Iritzi kontrajarriak",
+     "Bi zutabe",
+     "Elur-bola"
+    ],
+    "a": 3,
+    "fb": "Elur-bolan bakarka hasi eta bikoteetara, lauko taldeetara eta klase osora pasatzen da, ideiak bilduz eta laburtuz."
+   },
+   {
+    "q": "Asch-en esperimentuaren arabera, zer da konformismoa?",
+    "o": [
+     "Taldearekin ados egotea, ondo pentsatu dugulako",
+     "Esaten duguna aldatzea taldeak esaten duenarekin bat etortzeko",
+     "Talde bat batuta mantentzen duen eta elkarrekin egoteko gogoa ematen dion indarra",
+     "Marrak gaizki ikustea eta konturatu gabe oker egitea"
+    ],
+    "a": 1,
+    "fb": "Konformismoa esaten duguna aldatzea da taldearekin bat etortzeko, beste gauza bat ikusi arren."
+   },
+   {
+    "q": "DBH 2 C-n hiru koadrila daude. Koadrila bakoitzaren barruan oso ondo moldatzen dira, baina koadrilen artean ia ez dute hitz egiten. Kohesioaren zer dimentsio hobetu behar dute?",
+    "o": [
+     "Elkar ezagutzea eta ondo moldatzea",
+     "Parte-hartzea eta adostasunak",
+     "Taldean lan egiteko gogoa",
+     "Inor ez da kanpoan geratzen (inklusioa)"
+    ],
+    "a": 0,
+    "fb": "Dimentsio honek harreman positiboak eskatzen ditu ikaskide guztien artean, ez koadrila bakoitzaren barruan bakarrik."
+   },
+   {
+    "q": "Zertarako balio du batez ere talde nominalak?",
+    "o": [
+     "Talde batek jarrera bat defenda dezan eta beste batek kontrakoa",
+     "Ideiak biltzeko, bikoteetatik lauko taldeetara pasatuz",
+     "Lotsatiek hitz egin dezaten eta beti berberek agindu ez dezaten",
+     "Proposamen bakoitzaren abantailak eta arazoak idazteko"
+    ],
+    "a": 2,
+    "fb": "Denek txandaka idazten eta hitz egiten dutenez, talde nominalean lotsatiek ere parte hartzen dute."
+   },
+   {
+    "q": "Musikan, denek diote abestia ingelesez dagoela. Pablok argi entzuten du portugesez dagoela, baina «ingelesez» dio, kontra ez egiteko. Zer gertatzen zaio?",
+    "o": [
+     "Kohesioa: gustura egon eta bere klasearekin gauzak egin nahi ditu",
+     "Elkartasuna: besteen arazoak bereak balira bezala sentitzen ditu",
+     "Konformismoa: esaten duena aldatzen du taldearekin bat etortzeko",
+     "Inklusioa: inor desberdina izateagatik kanpoan ez geratzea nahi du"
+    ],
+    "a": 2,
+    "fb": "Asch-en esperimentuan bezala, Pablok esaten duena aldatzen du taldearekin bat etortzeko. Hori konformismoa da."
+   },
+   {
+    "q": "Klaseak zalantza du ikasturte amaierako festarako bi proposamenen artean. Bakoitzaren abantailak eta nahi ez dituzten ondorioak idazten dituzte. Zer teknika erabiltzen dute?",
+    "o": [
+     "Bi zutabe",
+     "Talde nominala",
+     "Elur-bola",
+     "Iritzi kontrajarriak"
+    ],
+    "a": 0,
+    "fb": "Bi zutabeetan proposamen bakoitzaren abantailak eta nahi ez ditugun ondorioak idazten dira."
+   },
+   {
+    "q": "Gauza hauetako zein da talde batena, eta ez jende pilo batena?",
+    "o": [
+     "Leku berean ordu berean egotea denbora batez",
+     "Oso adin eta leku desberdinetako pertsona asko izatea",
+     "Gauza bera itxarotea, gero bakoitza bere kontura joan arren",
+     "Helburu komun bat, arauak eta «gu» bat izatea"
+    ],
+    "a": 3,
+    "fb": "Talde bateko kideek elkar ezagutzen dute, helburu bat partekatzen dute, arauak eta rolak dituzte, eta «gu» bat sentitzen dute."
+   },
+   {
+    "q": "Asch-en esperimentuan, zerk eragiten zuen ia denak erantzun zuzena esatera ausartzea?",
+    "o": [
+     "Txartelak ondo begiratzeko denbora gehiago ematea",
+     "Taldeko pertsona bakar batek erantzun zuzena esatea",
+     "Psikologoak aktoreak zeudela abisatzea",
+     "Talde osoak erantzun oker bera errepikatzea"
+    ],
+    "a": 1,
+    "fb": "Egia esaten zuen aliatu bakar batekin, ia denak ausartzen ziren hura esatera."
+   },
+   {
+    "q": "Irakasleak taldeko lan bat proposatzen duenean, Hugoren klasean denek protesta egiten dute: «Bakarrik gehiago ikasten dut eta lehenago bukatzen dut». Kohesioaren zer dimentsio falta zaie?",
+    "o": [
+     "Parte-hartzea eta adostasunezko akordioak",
+     "Elkar ezagutzea eta ondo moldatzea",
+     "Elkartasuna eta bizikidetza",
+     "Taldean lan egiteko gogoa"
+    ],
+    "a": 3,
+    "fb": "Dimentsio hau kooperazioa baloratzea da, eta ikustea elkarrekin gehiago ikasten dela bakoitzak bere kabuz baino."
+   },
+   {
+    "q": "Mikelek eta Aroak elkarrekin egiten dute Teknologiarako maketa bat. Bati bere zatia ondo ateratzen zaionean, besteari errazagoa egiten zaio berea. Zer kontzeptuk azaltzen du hori?",
+    "o": [
+     "Lankidetza",
+     "Solidaritatea",
+     "Konformismoa",
+     "Inklusioa"
+    ],
+    "a": 0,
+    "fb": "Kooperatzea helburu komun baterantz elkarrekin lan egitea da, batek arrakasta izateak besteei ere lagun diezaien."
+   },
+   {
+    "q": "Zertan bereizten dira elur-bola eta talde nominala?",
+    "o": [
+     "Elur-bolan alde eta kontra eztabaidatzen da; nominalean isilean idazten da",
+     "Elur-bolan ideiak taldeetan biltzen joaten dira; nominalean puntuatu egiten dira",
+     "Elur-bolan abantailak eta arazoak idazten dira; nominalean esku altxatuta bozkatzen da",
+     "Elur-bolan moderatzaile batek erabakitzen du; nominalean ideia gehien ematen dituenak"
+    ],
+    "a": 1,
+    "fb": "Elur-bola bakarka hasi eta klase osoraino doa, ideiak bilduz; talde nominalean ideiak txandaka esaten dira eta puntuatu egiten dira."
+   },
+   {
+    "q": "Asch-en esperimentuan, zenbat pertsonak utzi zioten taldeari gutxienez behin eramaten?",
+    "o": [
+     "Gutxi gorabehera hamarretik batek",
+     "Haien erdiak, gutxi gorabehera",
+     "Lautik hiruk, inguru",
+     "Denek, salbuespenik gabe"
+    ],
+    "a": 2,
+    "fb": "Lautik hiru pertsonak inguru esan zuten noizbait taldearen erantzuna, beste bat zela ikusten zuten arren."
+   },
+   {
+    "q": "Nereak besoa hautsi du. Ikaskideek apunteak pasatzen dizkiote, motxila eramaten diote eta txandaka laguntzen diote. Kohesioaren zer dimentsio erakusten dute?",
+    "o": [
+     "Elkartasuna eta bizikidetza",
+     "Parte-hartzea eta adostasunak",
+     "Taldean lan egiteko gogoa",
+     "Elkar ezagutzea eta ondo moldatzea"
+    ],
+    "a": 0,
+    "fb": "Elkartasuna besteei laguntzea eta haien arazoak norberarenak bezala sentitzea da: elkarri laguntzen zaio."
+   },
+   {
+    "q": "Balioetan, talde batek institutuan uniformea egotea defendatzen du, beste batek kontrakoa, eta hirugarren batek moderatu eta ondorioak ateratzen ditu. Zer teknika da?",
+    "o": [
+     "Talde nominala",
+     "Elur-bola",
+     "Bi zutabe",
+     "Iritzi kontrajarriak"
+    ],
+    "a": 3,
+    "fb": "Iritzi kontrajarrietan bi taldek jarrera kontrakoak defendatzen dituzte eta hirugarren batek moderatzen du. Horrela argudiatzen ikasten da."
+   },
+   {
+    "q": "Zertan bereizten dira inklusioa eta elkartasuna?",
+    "o": [
+     "Inklusioa gaizki dagoenari laguntzea da; elkartasuna, dena adostasunez erabakitzea",
+     "Inklusioa inor kanpoan ez geratzea da; elkartasuna, laguntzea eta besteen arazoak norberarenak sentitzea",
+     "Inklusioa helburu baten alde elkarrekin lan egitea da; elkartasuna, koadrilarekin ondo moldatzea",
+     "Inklusioa denek berdin pentsatzea da; elkartasuna, denek arau berak betetzea"
+    ],
+    "a": 1,
+    "fb": "Inklusioa: inor ez geratzea kanpoan bere desberdintasunengatik. Elkartasuna: besteei laguntzea eta haien arazoak norberarenak bezala sentitzea."
+   },
+   {
+    "q": "Eztabaida batean, klase osoak Carlak okertzat duen ideia bat babesten du. Asch-ekin ikusi zenaren arabera, bera pentsatzen duena esatera ausartzen bada, zer gerta daiteke?",
+    "o": [
+     "Baztertu egingo dutela, talde batuak berdin pentsatu behar duelako",
+     "Ezer ez dela aldatuko, pertsona bakar batek ez duelako inor eragiten",
+     "Bera bezala pentsatzen duten beste batzuk ere esatera ausartuko direla",
+     "Arrazoia izango duela, lehena hitz egiten izateagatik bakarrik"
+    ],
+    "a": 2,
+    "fb": "Aliatu bakar batek dena aldatzen du: zuk pentsatzen duzuna esaten baduzu, beste batzuk ere ausartzen laguntzen duzu."
+   },
+   {
+    "q": "Zergatik da erabilgarria Asch-en esperimentua ezagutzea benetako bizitzan?",
+    "o": [
+     "Gogorarazten duelako zerbait ez dela egia denek esaten dutelako bakarrik",
+     "Erakusten duelako taldeko gehiengoak arrazoia izan ohi duela",
+     "Frogatzen duelako jende askok arazoak dituela ondo ikusteko",
+     "Azaltzen duelako nola hartzen diren erabakiak adostasunez"
+    ],
+    "a": 0,
+    "fb": "Asch-ek erakusten du taldeari eramaten uzten diogula. Hori jakiteak gogorarazten digu denek esateak ez duela egia bihurtzen."
+   }
+  ]
+ },
+ "ipc-huella-banco": {
+  "name": "Nire aztarna planetan (galdera-bilduma zabaldua)",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Zer unitatetan neurtzen da aztarna ekologikoa?",
+    "o": [
+     "Zabor-tonatan",
+     "Hektarea globaletan",
+     "Eguneko CO₂ kilotan",
+     "Gastatutako ur-litrotan"
+    ],
+    "a": 1,
+    "fb": "Aztarna ekologikoak lur eta itsaso azalera emankorra neurtzen du, eta hektarea globaletan adierazten da."
+   },
+   {
+    "q": "Nork proposatu zuen aztarna ekologikoaren ideia laurogeita hamarreko hamarkadan?",
+    "o": [
+     "Greenpeacek eta beste erakunde ekologista batzuek",
+     "Mathis Wackernagelek eta William Reesek",
+     "Energia berriztagarriko hainbat enpresak",
+     "NBEko zientzialari talde batek"
+    ],
+    "a": 1,
+    "fb": "Ideia laurogeita hamarreko hamarkadan proposatu zuten Mathis Wackernagel eta William Rees ekologoek."
+   },
+   {
+    "q": "Aztarnak gure hondakinak xurgatzeko behar den azalera ere hartzen du. Gaiaren arabera, zein da hondakin nagusia?",
+    "o": [
+     "Plastikozko ontziak",
+     "Isurtzen dugun CO₂-a",
+     "Etxeko ur zikina",
+     "Janari-hondarrak"
+    ],
+    "a": 1,
+    "fb": "Aztarnak hondakinak xurgatzeko behar den azalera hartzen du, batez ere isurtzen dugun CO₂-a."
+   },
+   {
+    "q": "Zer gertatzen da gizateriaren aztarna biogaitasuna baino handiagoa denean?",
+    "o": [
+     "Baliabideak soberan daude eta gero erabiltzeko gorde daitezke",
+     "Lurrak baliabide gehiago ekoizten ditu konpentsatzeko",
+     "Basoak azkarrago hazten dira berriro",
+     "Planetak urtero berritzen duena baino gehiago gastatzen dugu"
+    ],
+    "a": 3,
+    "fb": "Aztarnak biogaitasuna gainditzen badu, naturak birsortzeko gai dena baino gehiago kontsumitzen dugu."
+   },
+   {
+    "q": "Global Footprint Networken arabera, zenbat planetaren parekoa kontsumitzen du gaur gizateriak oro har?",
+    "o": [
+     "Bost planeta inguru",
+     "1,7 planeta inguru",
+     "Planeta bat baino gutxiago",
+     "Planeta bat justu"
+    ],
+    "a": 1,
+    "fb": "Gizateriak planeta bat eta erdi baino gehiago izango balitu bezala kontsumitzen du: 1,7 inguru."
+   },
+   {
+    "q": "Azken urteetan, noiz izan ohi da Lurraren Gaintasun Eguna?",
+    "o": [
+     "Udaberrian, apirila aldera",
+     "Abenduaren amaieran, urtea bukatzear",
+     "Urtarrilaren hasieran, urtea hastean",
+     "Uztailaren amaieran edo abuztuaren hasieran"
+    ],
+    "a": 3,
+    "fb": "Azken urteetan uztailaren amaieran edo abuztuaren hasieran izan da. Udaberrian Espainiakoa iristen da, ez mundukoa."
+   },
+   {
+    "q": "Zer esan nahi du Gaintasun Egunaren ondoren «kredituan» bizi garela?",
+    "o": [
+     "Basoak, arrainak eta lurzorua gastatzen ditugula berritu gabe",
+     "Planetak urte horretan birsortzen duena bakarrik erabiltzen dugula",
+     "Txartelarekin eskudirutan baino gauza gehiago erosten ditugula",
+     "Herrialde pobreek dirua uzten dietela aberatsei"
+    ],
+    "a": 0,
+    "fb": "Egun horretatik aurrera planetak berritzen ez dituen baliabideak gastatzen ditugu eta CO₂-a metatzen dugu atmosferan."
+   },
+   {
+    "q": "Zer da ingurumen-justizia?",
+    "o": [
+     "Ingurumen-onurak eta -kalteak justiziaz banatzea",
+     "Zaborra botatzen edo kalea zikintzen duenari isuna jartzea",
+     "Herrialde bakoitzak naturari buruzko bere legeak erabakitzea",
+     "Herrialdeko natura-gune politenak bakarrik babestea"
+    ],
+    "a": 0,
+    "fb": "Ingurumen-justiziak bilatzen du ingurumen-onurak eta -kalteak justiziaz banatzea pertsonen eta herrialdeen artean."
+   },
+   {
+    "q": "Carlak nahi du bere arropak aztarna txikiagoa uztea. Zer ohiturak laguntzen dio gehien?",
+    "o": [
+     "Hilero arropa berria erostea, beherapenak aprobetxatuz",
+     "Erabilitako arropa zabor orokorraren edukiontzira botatzea",
+     "Gutxiago erostea, konpontzea eta bigarren eskuko arropa erabiltzea",
+     "Beti iragarkirik berdeena duen arropa aukeratzea"
+    ],
+    "a": 2,
+    "fb": "Gutxiago eta hobeto erosteak, konpontzeak eta bigarren eskukoa erabiltzeak aztarna murrizten dute; moda azkarrak aztarna izugarria du."
+   },
+   {
+    "q": "Iratxeren etxean beti soberan geratzen dira makarroiak, eta zakarrontzira joaten dira. Zer proposatuko zenioke gaiaren arabera?",
+    "o": [
+     "Menuan pasta haragi gehiagorekin ordeztea",
+     "Plater ultraprozesatuak erostea, gehiago irauten dutelako",
+     "Makarroiak edukiontzi horira botatzea",
+     "Janaririk ez botatzea eta hondarrak aprobetxatzea"
+    ],
+    "a": 3,
+    "fb": "Janariaren aztarna murrizteko ohituretako bat janaririk ez botatzea da."
+   },
+   {
+    "q": "Mateok kontsola eta telebista piztuta uzten ditu gau osoan, inork erabiltzen ez dituen arren. Zer ohitura falta zaio?",
+    "o": [
+     "Tresna zaharrak birziklatzea",
+     "Erabiltzen ez diren tresnak itzaltzea",
+     "Garraio publikoa gehiago erabiltzea",
+     "Sasoiko produktuak erostea"
+    ],
+    "a": 1,
+    "fb": "Energian, ohituretako bat erabiltzen ez dena itzaltzea da."
+   },
+   {
+    "q": "Nereak jada ez du brik-eko zukurik erosten: txorrotako ura edaten du, eta horrela ez du ontzi hori sortzen. Hondakinen zer urrats aplikatzen du?",
+    "o": [
+     "Konpondu",
+     "Birziklatu",
+     "Murriztu",
+     "Berrerabili"
+    ],
+    "a": 2,
+    "fb": "Hondakina ez sortzea murriztea da, lehen urratsa eta garrantzitsuena."
+   },
+   {
+    "q": "Auto-iragarki batek basoak eta tximeletak erakusten ditu eta «gidatu berdean» dio, baina bere autoek lehen bezainbeste kutsatzen dute. Hori…",
+    "o": [
+     "karbono-aztarna da",
+     "ingurumen-justizia da",
+     "greenwashing-a da",
+     "biogaitasuna da"
+    ],
+    "a": 2,
+    "fb": "Greenwashing-a ekologikoa ez den zerbait ekologiko gisa aurkeztea da, iragarkietan berdez margotuz."
+   },
+   {
+    "q": "Klasean, Ainhoak galdetzen du: «Nork irabazten du eta nork ordaintzen du gure bizimoduarekin?». Zer ideiatan ari da pentsatzen?",
+    "o": [
+     "Ingurumen-justizian",
+     "Greenwashing-ean",
+     "Biogaitasunean",
+     "Karbono-aztarnan"
+    ],
+    "a": 0,
+    "fb": "Gure bizimoduarekin nork irabazten duen eta nork ordaintzen duen galdetzea ingurumen-justizian pentsatzea da."
+   },
+   {
+    "q": "Jangelan, Lucíak askotan bertako eta sasoiko lekaleak eta barazkiak aukeratzen ditu. Bere aztarnaren zer zati murrizten du?",
+    "o": [
+     "Arroparena",
+     "Tresna elektronikoena",
+     "Etxeko energiarena",
+     "Janariarena"
+    ],
+    "a": 3,
+    "fb": "Haragi gutxiago jateak eta bertako eta sasoiko produktuak aukeratzeak janariaren aztarna murrizten dute."
+   },
+   {
+    "q": "Samuelek dio: «Nik jada birziklatzen dut, beraz ez dut beste ezer aldatu behar». Zer ahazten zaio?",
+    "o": [
+     "Lehenik murriztea eta berrerabiltzea komeni dela",
+     "Birziklatzeak lehen-lehena izan behar duela",
+     "Birziklatzeak aztarna ekologikoa handitzen duela",
+     "Birziklatzeak beirarako bakarrik balio duela"
+    ],
+    "a": 0,
+    "fb": "Ordena hau da: murriztu, berrerabili eta, azkenik, birziklatu. Birziklatzea azken urratsa da, ez bakarra."
+   },
+   {
+    "q": "Eztabaida batean, Martak dio planeta zaintzeko nahikoa dela pertsona bakoitzak argia itzaltzea. Gaiaren arabera, zer ahazten zaio?",
+    "o": [
+     "Erabaki kolektiboek ere garrantzia dutela",
+     "Enpresek bakarrik aldatu behar dutela",
+     "Keinu indibidualek ez dutela ezertarako balio",
+     "Argia itzaltzeak ez duela energiarik aurrezten"
+    ],
+    "a": 0,
+    "fb": "Keinu indibidualek garrantzia dute, baina baita erabaki kolektiboek ere: nola ekoizten den energia edo nola diseinatzen diren hiriak."
+   },
+   {
+    "q": "Leirek irakurri du Espainia udaberrian iristen dela bere gaintasun egunera, mundua baino askoz lehenago. Zer adierazten du?",
+    "o": [
+     "Espainian beste herrialdeetan baino gehiago birziklatzen dela",
+     "Espainiak munduko batez bestekoak baino gehiago kontsumitzen duela",
+     "Espainian natura lehenago birsortzen dela",
+     "Espainiaren aztarna batez bestekoa baino txikiagoa dela"
+    ],
+    "a": 1,
+    "fb": "Espainiak planetak urtebetean birsortzen duena lehenago gastatzen badu, munduko batez bestekoak baino gehiago kontsumitzen duelako da."
+   },
+   {
+    "q": "Anderrek 25 minutuko dutxak hartzen ditu eta berogailua gehienera jartzen du mahuka motzean egoteko. Bere aztarnaren zer arlo zaindu beharko luke?",
+    "o": [
+     "Arropa eta kontsumoa",
+     "Janaria",
+     "Garraioa",
+     "Energia eta ura"
+    ],
+    "a": 3,
+    "fb": "Dutxa laburrak eta berogailua ez gehiegi erabiltzea energiaren eta uraren ataleko ohiturak dira."
+   },
+   {
+    "q": "Herri batean urtero ibaian jaiotzen direnak baino arrain gehiago harrapatzen dituzte, eta gero eta gutxiago geratzen dira. Zer ari da gertatzen?",
+    "o": [
+     "Ibaiak biogaitasuna irabazten du urtero",
+     "Haien karbono-aztarna oso txikia da",
+     "Haien kontsumoak ibaiaren biogaitasuna gainditzen du",
+     "Arrantzarekin greenwashing-a egiten ari dira"
+    ],
+    "a": 2,
+    "fb": "Naturak birsortzen duena baino gehiago kontsumitzen denean, biogaitasuna gainditzen da eta baliabidea agortu egiten da."
+   },
+   {
+    "q": "Zertan bereizten dira aztarna ekologikoa eta biogaitasuna?",
+    "o": [
+     "Gauza bera dira, baina biogaitasuna herrialdeetarako erabiltzen da",
+     "Aztarnak CO₂-a neurtzen du; biogaitasunak, dagoen zaborra",
+     "Aztarna naturarena da; biogaitasuna, berriz, gurea",
+     "Batak gastatzen duguna neurtzen du; besteak, berritzen dena"
+    ],
+    "a": 3,
+    "fb": "Aztarnak kontsumitzen duguna neurtzen du, eta biogaitasunak Lurrak urtero birsor dezakeena."
+   },
+   {
+    "q": "Zer desberdintasun dago aztarna ekologikoaren eta karbono-aztarnaren artean?",
+    "o": [
+     "Karbono-aztarna CO₂-a bakarrik da; ekologikoa, kontsumo osoa",
+     "Ekologikoak janaria bakarrik neurtzen du; karbonokoak, garraioa",
+     "Karbono-aztarna planetatan neurtzen da; ekologikoa, kilotan",
+     "Neurri bererako bi izen desberdin dira"
+    ],
+    "a": 0,
+    "fb": "Karbono-aztarna isuritako CO₂-a eta beste gas batzuk dira; aztarna ekologikoaren zatirik handiena da, baina ez osoa."
+   },
+   {
+    "q": "Álexek pote hutsak erabiltzen ditu arkatzak gordetzeko; Irenek beirearen edukiontzira botatzen ditu bereak. Zer egiten du bakoitzak?",
+    "o": [
+     "Álexek birziklatu eta Irenek berrerabili",
+     "Álexek murriztu eta Irenek berrerabili",
+     "Álexek berrerabili eta Irenek birziklatu",
+     "Biek murrizten dituzte hondakinak"
+    ],
+    "a": 2,
+    "fb": "Objektu bati beste erabilera bat ematea berrerabiltzea da; edukiontzira eramatea zerbait berria fabrikatzeko birziklatzea da."
+   },
+   {
+    "q": "Zer lotura dago biogaitasunaren eta Lurraren Gaintasun Egunaren artean?",
+    "o": [
+     "Egun horretan biogaitasuna bere punturik gorenera iristen da",
+     "Egun horretan basoak berriro hazten hasten dira",
+     "Egun horretan urtean gastatutakoa biogaitasunaren parekoa da",
+     "Egun horretan herrialde bakoitzaren karbono-aztarna neurtzen da"
+    ],
+    "a": 2,
+    "fb": "Planetak urte horretan birsor dezakeen guztia, hau da, bere biogaitasuna, jada gastatu dugun eguna da."
+   },
+   {
+    "q": "Zertarako balio dizu zure aztarna ekologikoa kalkulatzeak?",
+    "o": [
+     "Zure zer ohiturak pisatzen duten gehien ikusi eta aldatzeko",
+     "Zure aztarnak garrantzirik ez duela frogatzeko",
+     "Zure herrialdeak zenbat planeta dituen jakiteko",
+     "Berde gisa iragarritako produktuak aukeratzeko"
+    ],
+    "a": 0,
+    "fb": "Zure aztarna kalkulatzeak laguntzen dizu ikusten zuk egiten duzun zerk (garraioa, janaria, erosketak) eragiten dion gehien planetari."
    }
   ]
  }
