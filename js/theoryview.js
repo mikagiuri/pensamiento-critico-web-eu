@@ -122,6 +122,11 @@ function relatedFor(key, self){
       add("infografias", firstBy(typeof INFOGRAFIAS !== "undefined" ? INFOGRAFIAS : null), "Infografia");
     }
   }
+  /* Dilemas éticos de Bachillerato (25-09): cada dilema declara la unidad de teoría de su debate
+     (debate.unidad); se enlazan todos los de esta unidad (no se deduplica por vista: puede haber varios). */
+  if (typeof DILEMAS !== "undefined" && Array.isArray(DILEMAS) && self !== "dilemas"){
+    for (const d of DILEMAS) if (d && d.debate && d.debate.unidad === key) out.push({ go: "dilemas", arg: d.id, label: "Dilema: " + d.titulo });
+  }
   return out;
 }
 
@@ -138,6 +143,10 @@ function goRelated(go, arg){
   else if (go === "lecturas" && typeof loadLectura === "function") loadLectura(arg);
   else if (go === "infografias" && typeof loadInfografia === "function") loadInfografia(arg);
   else if (go === "teoria" && typeof loadTheory === "function") loadTheory(arg);
+  else if (go === "dilemas" && typeof openDil === "function"){
+    if (typeof dil !== "undefined" && typeof dilById === "function"){ const d = dilById(arg); if (d) dil.group = d.grupo; }   // «Siguiente» recorre su grupo
+    openDil(arg);
+  }
   else if (go === "unidad" && typeof unidadKey !== "undefined"){
     unidadKey = +arg;
     if (typeof renderUnidadChips === "function") renderUnidadChips();
