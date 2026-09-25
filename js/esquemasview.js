@@ -181,7 +181,7 @@ function esqZoomSetup(st){
   const nat = sv.getBoundingClientRect().width, hint = st.querySelector(".esq2-hint");
   sv.removeAttribute("height"); sv.style.height = "auto";
   const fit = Math.min(1, st.clientWidth / nat);
-  function apply(z){ esqZoom = Math.max(0.3, Math.min(1.6, z)); sv.style.width = (nat * esqZoom) + "px";
+  function apply(z){ esqZoom = Math.max(Math.min(0.3, fit), Math.min(1.6, z));   /* el mínimo nunca impide «Ajustar» (en el móvil puede hacer falta < 30 %) */ sv.style.width = (nat * esqZoom) + "px";
     const pct = st.querySelector(".esq2-zpct"); if (pct) pct.textContent = Math.round(esqZoom * 100) + " %"; }
   if (fit >= 0.999){ if (hint) hint.remove(); apply(1);   /* cabe: sin zoom (solo el interruptor de relaciones, si hay) */
     const tg = esqCrossToggle(st); if (tg) st.insertAdjacentHTML("afterbegin", '<div class="esq2-zoom">' + tg + "</div>");

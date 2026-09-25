@@ -1,10 +1,14 @@
 "use strict";
 /* ===== Service Worker — Aula de Filosofía (PWA offline) =====
-   Estrategia: precache mínimo del «app shell» + stale-while-revalidate en runtime,
-   para que tras la primera visita toda la web (teoría, css, js, imágenes, fuentes y
-   los CDN de mapas/esquemas ya visitados) funcione sin conexión.
+   Estrategia (desde el 25-09, v21):
+   · el CÓDIGO propio (html, js, css, json, manifest) va RED PRIMERO, revalidando con el servidor
+     (cache:"no-cache" → un 304 si no ha cambiado), y solo sin conexión sale de la caché: así una
+     publicación nueva se ve en la primera visita (antes, con stale-while-revalidate, en la segunda
+     o tercera, y la caché HTTP de 10 min de GitHub Pages podía colar ficheros viejos);
+   · imágenes, fuentes y CDN (mermaid, markmap) siguen stale-while-revalidate: pesan y casi no cambian.
+   Tras la primera visita toda la web ya visitada funciona sin conexión.
    ⚠ Sube VERSION al desplegar cambios para invalidar la caché antigua. */
-const VERSION = "v20-2026-09-25";
+const VERSION = "v21-2026-09-25";
 // Bachillerato y 2.º ESO se sirven en el MISMO origen (mikagiuri.github.io) bajo
 // subrutas distintas. La caché debe ser única por sitio o una web desalojaría la
 // de la otra: derivamos el prefijo del scope del propio service worker.
@@ -34,7 +38,18 @@ self.addEventListener("fetch", e => {
     e.respondWith(fetch(req).catch(() => caches.match("./index.html")));
     return;
   }
-  // Resto de recursos (css/js/img/fuentes/CDN): stale-while-revalidate.
+  // Código propio (html/js/css/json/manifest): red primero revalidando; sin red, la caché.
+  const url = new URL(req.url);
+  if (url.origin === self.location.origin && /\.(?:js|css|html?|json|webmanifest)$/i.test(url.pathname)) {
+    e.respondWith(
+      fetch(req, { cache: "no-cache" }).then(res => {
+        if (res && res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
+        return res;
+      }).catch(() => caches.match(req))
+    );
+    return;
+  }
+  // Resto (imágenes, fuentes, CDN): stale-while-revalidate.
   e.respondWith(
     caches.open(CACHE).then(cache => cache.match(req).then(hit => {
       const net = fetch(req).then(res => {
