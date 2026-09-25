@@ -1199,6 +1199,309 @@ const QUIZZES = {
    }
   ]
  },
+ "ipc-bulos-q": {
+  "name": "Buloak detektatu: argudioak, falaziak eta albiste faltsuak",
+  "subject": "ipc",
+  "items": [
+   {
+    "q": "Klaseko eztabaida batean, Carlosek dio: «Kafetegian edari azukredunak debekatu beharko genituzke, azukre asko-asko dutelako eta gazteen artean diabetes-arriskua handitzen dutelako». Zein da ematen duen arrazoia?",
+    "o": [
+     "Edari azukredunek azukre asko dute eta gazteen artean diabetes-arriskua handitzen dute.",
+     "Kafetegian edari azukredunak debekatu beharko genituzke.",
+     "Kafetegian saltzen den guztia txarra da osasunerako.",
+     "Kafetegiak ez luke elikagai prozesaturik saldu beharko."
+    ],
+    "a": 0,
+    "fb": "Arrazoia «-lako» horretan dago. «Debekatu beharko genituzke…» ondorioa da: Carlosek onar dezagun nahi duena."
+   },
+   {
+    "q": "Martak dio: «Irakasleak 10 bat jarri behar digu proiektuan, izugarri ahalegindu garelako eta ia ez dugulako lorik egin». Hiru galderekin (egia al da?, zerikusirik al du?, nahikoa al da?), zeinetan huts egiten du batez ere?",
+    "o": [
+     "«Zerikusirik al du?» galderan: ahaleginak eta loak ez dute neurtzen lana ondo egina dagoen.",
+     "«Egia al da?» galderan: ezin da jakin lo egin zuten ala ez.",
+     "«Nahikoa al da?» galderan bakarrik: ahalegintzeak beti bermatzen du lan ona.",
+     "Bakar batean ere ez: notak bakoitzaren sakrifizioaren araberakoa izan behar du."
+    ],
+    "a": 0,
+    "fb": "Baliteke egia izatea ahalegindu zirela, baina notak lana neurtzen du, ez nekea. Arrazoiak ez du zerikusirik ondorioarekin."
+   },
+   {
+    "q": "Ikasturte amaierako jarduera aukeratzeko, ikasle batek dio: «Egin dezagun saskibaloi-txapelketa bat, niri asteburuetan jokatzea asko gustatzen zaidalako». Zergatik ez da argudio ona?",
+    "o": [
+     "Gustu pertsonal bat ematen du: berak zer nahiago duen azaltzen du, baina ez taldearentzat onena denik.",
+     "Kirola gustuko ez duten ikaskideak iraintzen ditu.",
+     "Taldea mehatxatzen du bere proposamena bozkatzen ez badute.",
+     "Ez du «-lako» edo «zeren» erabiltzen."
+    ],
+    "a": 0,
+    "fb": "Zerbait gustatzeak zure hobespena azaltzen du, ez du frogatzen guztientzat onena denik."
+   },
+   {
+    "q": "Ikasle batek idazten du: «Ezinbestekoa da klasera garaiz iristea, orduan egon behar delako». Zer gertatzen zaio arrazoi horri?",
+    "o": [
+     "Ez da arrazoia: ondorioa errepikatzen du beste hitz batzuekin.",
+     "Berandu iristen direnei eraso egiten die.",
+     "Dilema faltsu bat planteatzen du: puntualtasuna edo kanporatzea.",
+     "Zigorraren beldurra erabiltzen du konbentzitzeko."
+    ],
+    "a": 0,
+    "fb": "«Garaiz iristea» eta «orduan egotea» gauza bera dira. «-lako» darama, baina ez du arrazoirik gehitzen."
+   },
+   {
+    "q": "Uniformeari buruzko eztabaida batean, Lucíak azaltzen du familiek zenbat aurreztuko luketen. Pablok erantzuten du: «Ez egin kasurik; iaz bi ikasgai gainditu gabe utzi zituen eta beti berandu iristen da». Zer falazia egiten du Pablok?",
+    "o": [
+     "Ad hominem.",
+     "Lastozko gizona.",
+     "Autoritateari deia.",
+     "Orokortze presakakoa."
+    ],
+    "a": 0,
+    "fb": "Pablok Lucíari egiten dio eraso (bere notak, bere berandutzeak), aurrezteari buruz esaten duenari erantzun beharrean."
+   },
+   {
+    "q": "Bideo biral batek dio: «Streamer ospetsu honek dio C bitaminak gaixotasun infekzioso guztiak saihesten dituela; beraz, egunero hartu behar da». Zergatik da autoritateari deia?",
+    "o": [
+     "Baieztapen mediko bat egiatzat ematen du, medikuntzan aditua ez den pertsona ospetsu batek esaten duelako.",
+     "Jendea infekzioekin beldurtu nahi du.",
+     "Bi aukera bakarrik uzten ditu: C bitamina hartu edo gaixotu.",
+     "Medikuek esaten dutena desitxuratzen du."
+    ],
+    "a": 0,
+    "fb": "Bideojokoetan ospetsua izateak ez zaitu medikuntzan aditu bihurtzen. Galdetu behar da: gai honetan aditua al da? zer froga ematen ditu?"
+   },
+   {
+    "q": "Ikasle batek jantokiko ilara beste modu batera antolatzea proposatzen du, azkarrago joateko. Arduradunak erantzuten du: «Hemen ilara beti zerrendaren arabera egin da; beraz, hori da modu zuzena». Zer falazia da?",
+    "o": [
+     "Tradizioari deia.",
+     "Ad populum.",
+     "Dilema faltsua.",
+     "Errukiari deia."
+    ],
+    "a": 0,
+    "fb": "Zerbait beti horrela egin izanak ez du frogatzen modurik onena denik."
+   },
+   {
+    "q": "Ikasle batek irakasleari esaten dio: «Ez jarri zero bat; gainditzen ez badut, gurasoek hiruhileko osoan zigortuko naute eta oso gaizki sentituko naiz». Zer falazia erabiltzen du?",
+    "o": [
+     "Errukiari deia.",
+     "Beldurrari deia.",
+     "Ad hominem.",
+     "Lastozko gizona."
+    ],
+    "a": 0,
+    "fb": "Errukia pizten saiatzen da, lanari buruzko arrazoiak eman beharrean. Ez du irakaslea beldurtzen: errukia eskatzen dio."
+   },
+   {
+    "q": "Elenak proposatzen du: «Klaseetan mugikorrak motxilan gorde genitzake, hobeto kontzentratzeko». Robertok erantzuten du: «Zuk teknologia guztia debekatu eta Erdi Arora itzuli nahi duzu!». Zer falazia erabiltzen du Robertok?",
+    "o": [
+     "Lastozko gizona.",
+     "Autoritateari deia.",
+     "Orokortze presakakoa.",
+     "Kausa faltsua."
+    ],
+    "a": 0,
+    "fb": "Robertok Elenak esandakoa puztu eta asmatutako bertsio hori gezurtatzen du, errazago erasotzen delako."
+   },
+   {
+    "q": "Norbaitek foro batean idazten du: «Ikasi gabe gidabaimena atera zuten bi pertsona ezagutzen ditut; beraz, ikastea denbora galtzea da». Zer akats egiten du?",
+    "o": [
+     "Orokortze presakakoa.",
+     "Dilema faltsua.",
+     "Ad populum.",
+     "Tradizioari deia."
+    ],
+    "a": 0,
+    "fb": "Guztientzako arau bat ateratzen du bi kasutatik bakarrik."
+   },
+   {
+    "q": "«Atzo kamiseta gorria jantzi nuen partida ikusteko, eta hiru porrot eta gero irabazi genuen. Argi dago: kamiseta gorriak irabazarazten digu». Zer falazia da?",
+    "o": [
+     "Kausa faltsua.",
+     "Orokortze presakakoa.",
+     "Autoritateari deia.",
+     "Ad populum."
+    ],
+    "a": 0,
+    "fb": "Gauza bat beste baten ondoren gertatzeak ez du esan nahi hark eragin duenik. Galdetu: ez ote da kasualitatea, edo beste kausaren bat egongo da?"
+   },
+   {
+    "q": "Trafikoari buruzko eztabaida batean, norbaitek dio: «Edo erdigunean autoak erabat debekatzen ditugu, edo onartzen dugu kutsadurak birikak suntsitzea». Zer falazia egiten du?",
+    "o": [
+     "Dilema faltsua.",
+     "Lastozko gizona.",
+     "Beldurrari deia.",
+     "Ad hominem."
+    ],
+    "a": 0,
+    "fb": "Tranpa-kasua: beldurra ere sartzen du, baina argudioari eusten diona da bi aukera muturreko bakarrik ematen dituela eta tarteko aukerak ahazten dituela."
+   },
+   {
+    "q": "Sareetako mezu batek dio: «Abisu hau 15 kontakturi hamar minututan birbidaltzen ez badiezu, kontua blokeatuko dizute eta zure fitxategi guztiak galduko dituzu». Zer trikimailu erabiltzen du?",
+    "o": [
+     "Beldurrari deia.",
+     "Tradizioari deia.",
+     "Lastozko gizona.",
+     "Kausa faltsua."
+    ],
+    "a": 0,
+    "fb": "Beldurtu egiten zaitu presaka joka dezazun, ezer egiaztatu gabe. Mehatxu horren frogarik ez dago."
+   },
+   {
+    "q": "Ikasle batek dio: «Telesail hau historiako onena da, mundu osoko milioika pertsonak ikusten dutelako». Zer falazia egiten du?",
+    "o": [
+     "Ad populum.",
+     "Autoritateari deia.",
+     "Orokortze presakakoa.",
+     "Dilema faltsua."
+    ],
+    "a": 0,
+    "fb": "Zerbait oso ezaguna izateak ez du frogatzen onena denik."
+   },
+   {
+    "q": "Eztabaida batean lastozko gizon bati erantzuteko, zer galdera da egokiena?",
+    "o": [
+     "Hori al da nik esan dudana, zehazki?",
+     "Zer zerikusi du nork esaten duen egia izatearekin?",
+     "Jende askok pentsatzeak egia bihurtzen al du?",
+     "Arrisku hori benetakoa al da? Zer froga dago?"
+    ],
+    "a": 0,
+    "fb": "Lastozko gizonak zuk esandakoa aldatzen du. Bigarren galdera ad hominemerako da, hirugarrena ad populumerako eta laugarrena beldurrari deirako."
+   },
+   {
+    "q": "Ad hominem bat desegiteko, zer galdera egin behar da?",
+    "o": [
+     "Zer zerikusi du nork esaten duen ideia egia izatearekin?",
+     "Gai honetan aditua al da? Zer froga ematen ditu?",
+     "Ez ote da kasualitatea? Beste kausaren bat egongo al da?",
+     "Ez al dago hirugarren aukerarik?"
+    ],
+    "a": 0,
+    "fb": "Ad hominemak pertsonari egiten dio eraso. Galderak bereizi egiten ditu nork hitz egiten duen eta zer esaten duen."
+   },
+   {
+    "q": "Bulo bat edo konspirazio-teoria bat aztertzeko, zer galdera dagokio «beharraren» irizpideari?",
+    "o": [
+     "Zer ematen dit hori sinesteak: segurtasuna, erruduna argi, talde bateko kide sentitzea?",
+     "Zer froga ematen ditu? Egiazta daitezke?",
+     "Nork esaten du eta zer irabazten du horrekin?",
+     "Askeago egiten nau ala manipulatu egiten nau?"
+    ],
+    "a": 0,
+    "fb": "Beharrak begiratzen du zuk zer irabazten duzun hori sinestearekin. Beste galderak frogenak, iturri eta interesarenak eta askatasunarenak dira."
+   },
+   {
+    "q": "Artikulu batek epidemiologo-talde bat aipatzen du txerto batek funtzionatzen duela defendatzeko. Zergatik EZ da autoritateari deiaren falazia?",
+    "o": [
+     "Bere arloko adituak aipatzea, frogetan oinarritzen badira, arrazoi ona delako.",
+     "Epidemiologoak ospetsuak direlako eta telebistan asko agertzen direlako.",
+     "Jende askok sinesten badu, zerbait egia delako.",
+     "Titulu bat duen edonork esaten duen guztia zuzena delako."
+    ],
+    "a": 0,
+    "fb": "Tranpa-kasua: bere gaian adituak direnez eta frogak dituztenez fidatzea zentzuzkoa da. Falazia gaia ezagutzen ez duen edo frogarik ematen ez duen norbaitez fidatzea da."
+   },
+   {
+    "q": "Web ezezagun batek argitaratzen du: «Zientzialariek aurkitu dute sagarrak bakarrik jateak txantxar guztiak kentzen dituela 24 orduan». Zerk huts egiten du argi eta garbi?",
+    "o": [
+     "Ez du egiazta daitekeen frogarik ematen, eta beste hedabide serio batek ere ez du berresten.",
+     "Web ezezaguna izatea bakarrik: zientzialariek esaten badute, fidagarria da.",
+     "Tradizioari dei egiten dio, antzinako errezetei buruz hitz egiten ez duelako.",
+     "Dentistei eraso egiten die: ad hominem bat da."
+    ],
+    "a": 0,
+    "fb": "«Zientzialariek aurkitu dute» ez da froga: ez du esaten nortzuk, non, ezta nola ere. Eta egia balitz, beste hedabide askok kontatuko lukete."
+   },
+   {
+    "q": "Zer bi falaziak jokatzen dute zure emozioekin (errukia edo beldurra), frogak eman beharrean?",
+    "o": [
+     "Errukiari deia eta beldurrari deia.",
+     "Orokortze presakakoa eta kausa faltsua.",
+     "Lastozko gizona eta dilema faltsua.",
+     "Tradizioari deia eta orokortze presakakoa."
+    ],
+    "a": 0,
+    "fb": "Errukiak pena ematea bilatzen du; beldurrak, beldurtzea. Besteak arrazoitzeko akatsak dira, ez emozioekin egindako trikimailuak."
+   },
+   {
+    "q": "Iritsi zaizun albiste bat bulo bat den egiaztatu nahi duzu. Hauetako zein EZ da baliagarria?",
+    "o": [
+     "Sinestea, askotan birbidalita iritsi zaizulako.",
+     "Nork argitaratzen duen eta horrekin zer irabazten duen begiratzea.",
+     "Data begiratzea, albiste zaharra ote den.",
+     "Irudiaren alderantzizko bilaketa egitea."
+    ],
+    "a": 0,
+    "fb": "Tranpa-kasua: zerbait asko zabaltzeak ez du egia bihurtzen (hori ad populum bat litzateke). Beste hirurak egiaztatzeko urratsak dira."
+   },
+   {
+    "q": "Mezu bat partekatu aurretik, komeni da «hiru baheetatik» pasatzea. Zein dira?",
+    "o": [
+     "Egia al da? Ona al da? Erabilgarria al da?",
+     "Egia al da? Berria al da? Barregarria al da?",
+     "Ezaguna al da? Ona al da? Erabilgarria al da?",
+     "Egia al da? Polita al da? Laburra al da?"
+    ],
+    "a": 0,
+    "fb": "Egia, ontasuna eta erabilgarritasuna. Istorioa Sokratesi egotzi ohi zaio, baina ez da antzinako inongo testutan agertzen: anekdota modernoa da."
+   },
+   {
+    "q": "Gauza batek beste bat eragiten duela pentsatzea, lehenago gertatu delako bakarrik, falazia hau da:",
+    "o": [
+     "kausa faltsua.",
+     "dilema faltsua.",
+     "lastozko gizona.",
+     "ad populum."
+    ],
+    "a": 0,
+    "fb": "Kausa faltsua: «lehenago gertatu zen» eta «kausa da» nahasten ditu."
+   },
+   {
+    "q": "Besteak esandakoa aldatzea, bertsio ahulago bat gezurtatzeko, falazia hau da:",
+    "o": [
+     "lastozko gizona.",
+     "ad hominem.",
+     "dilema faltsua.",
+     "orokortze presakakoa."
+    ],
+    "a": 0,
+    "fb": "Lastozko gizona: erraz botatzen den panpina bat, bestea esan zuena ez dena."
+   },
+   {
+    "q": "Zerbait egia dela esatea, jende gehienak sinesten duelako bakarrik, falazia hau da:",
+    "o": [
+     "ad populum (gehiengoari deia).",
+     "tradizioari deia.",
+     "autoritateari deia.",
+     "ad hominem."
+    ],
+    "a": 0,
+    "fb": "Ad populum esan nahi du «herriari»: jende askok sinesten duena eta egia dena nahasten ditu."
+   },
+   {
+    "q": "Arrazoi bat ona den jakiteko, zein da hiru galderetako lehena?",
+    "o": [
+     "Egia al da, edo, gutxienez, sinesgarria?",
+     "Zerikusirik al du ondorioarekin?",
+     "Nahikoa al da?",
+     "Nork esaten du?"
+    ],
+    "a": 0,
+    "fb": "Lehenik, egia al da? Arrazoia faltsua bada, argudioa erori egiten da. Gero, zerikusirik al du? eta nahikoa al da?"
+   },
+   {
+    "q": "Falazia hauetako zein EZ da buloek zabaltzeko gehien erabiltzen dutenetako bat?",
+    "o": [
+     "Tradizioari deia.",
+     "Beldurrari deia.",
+     "Ad populum.",
+     "Autoritateari deia."
+    ],
+    "a": 0,
+    "fb": "Buloek beldurtu egiten dute (beldurra), «denek partekatzen dute» diote (ad populum) edo «aditu batek dio» (autoritatea). Tradizioari dei egitea ez da ohikoa."
+   }
+  ]
+ },
  "ipc-pensar-banco": {
   "name": "Nork bere kabuz pentsatu (galdera-bilduma zabaldua)",
   "subject": "ipc",
