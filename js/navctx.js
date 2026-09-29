@@ -61,10 +61,12 @@
     }
     return "all";
   }
-  /* primera clave de esa materia y bloque (bloque «all» = cualquiera) */
-  function firstKeyOfSB(obj, subj, block){
+  /* (30-09) temas introductorios de HF (1-2): solo con «Todos los bloques» (epocas.js) */
+  function intro(go, k){ return !!(window.Epocas && window.Epocas.soloTodos && window.Epocas.soloTodos(go, k)); }
+  /* primera clave de esa materia y bloque (bloque «all» = cualquiera); con un bloque concreto, sin los temas introductorios */
+  function firstKeyOfSB(obj, subj, block, go){
     var ks = Object.keys(obj);
-    for (var i = 0; i < ks.length; i++){ var it = obj[ks[i]]; if (it && it.subject === subj && (block === "all" || it.block === block)) return ks[i]; }
+    for (var i = 0; i < ks.length; i++){ var it = obj[ks[i]]; if (it && it.subject === subj && (block === "all" || (it.block === block && !(go && intro(go, ks[i]))))) return ks[i]; }
     return null;
   }
 
@@ -90,7 +92,9 @@
          en orden A→B→C, así que el bloque por defecto es «A» y el primer tema de HF
          ya es de bloque A. En Filosofía no hay bloques → «all». */
       theorySubject = sub; theoryBlock = (sub === "hf") ? "A" : "all"; renderTheoryFilter(); renderTheoryChips();
-      var k = firstKeyOf(THEORY, sub); if (k) loadTheory(k);
+      var k = null, tks = Object.keys(THEORY);
+      for (var i = 0; i < tks.length && !k; i++) if (THEORY[tks[i]].subject === sub && !(theoryBlock !== "all" && intro("teoria", tks[i]))) k = tks[i];
+      if (k) loadTheory(k);
     },
     materiales: function(s){
       if (typeof materialSubject === "undefined") return; var sub = pick(MATERIALS, s); if (materialSubject === sub) return;
@@ -101,12 +105,12 @@
       if (typeof deckSubject === "undefined") return; var sub = pick(DECKS, s); if (deckSubject === sub) return;
       var tipo = typeof deckTipo !== "undefined" && deckTipo !== "all";   // (29-09) filtro «Tipo»: conceptos o frases
       deckSubject = sub; deckBlock = tipo ? "all" : firstBlockOf(DECKS, sub); renderDeckFilter(); renderDeckChips();
-      var k = tipo && typeof deckFirstKey === "function" ? deckFirstKey(sub, deckBlock) : firstKeyOfSB(DECKS, sub, deckBlock); if (k) loadDeck(k);
+      var k = tipo && typeof deckFirstKey === "function" ? deckFirstKey(sub, deckBlock) : firstKeyOfSB(DECKS, sub, deckBlock, "tarjetas"); if (k) loadDeck(k);
     },
     cuestionarios: function(s){
       if (typeof quizSubject === "undefined") return; var sub = pick(QUIZZES, s); if (quizSubject === sub) return;
       quizSubject = sub; quizBlock = firstBlockOf(QUIZZES, sub); renderQuizFilter(); renderQuizChips();
-      var k = firstKeyOfSB(QUIZZES, sub, quizBlock); if (k) loadQuiz(k);
+      var k = firstKeyOfSB(QUIZZES, sub, quizBlock, "cuestionarios"); if (k) loadQuiz(k);
     },
     sesiones: function(s){
       if (typeof sesAsig === "undefined" || sesAsig === s) return;

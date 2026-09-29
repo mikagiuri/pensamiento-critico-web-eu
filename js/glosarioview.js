@@ -114,7 +114,8 @@ function renderGloList(){
     const def = gloHi(gloBold(gloEsc(g.def)), gloQuery);
     const tag = (g.area ? g.area : "") + (g.bloque ? " · " + (GLO_BLOCKS[g.bloque] || g.bloque) : "");
     const src = g.tema ? '<div class="src">' + gloEsc(g.tema) + (g.unidad ? " · " + g.unidad : "") + '</div>' : "";
-    return '<article class="gloitem"><div class="top"><h4>' + term + '</h4><span class="tag">' + gloEsc(tag) + '</span></div><p>' + def + '</p>' + src + '</article>';
+    const ep = g.subject === "hf" && { A: "ant", B: "medmod", C: "con" }[g.bloque];   // (30-09) color del bloque de HF (styles.css)
+    return '<article class="gloitem"' + (ep ? ' data-ep="' + ep + '"' : '') + '><div class="top"><h4>' + term + '</h4><span class="tag">' + gloEsc(tag) + '</span></div><p>' + def + '</p>' + src + '</article>';
   }).join("");
 }
 

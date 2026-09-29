@@ -107,7 +107,8 @@ function renderEsqFilter(){
 function renderEsqChips(){
   const box = document.getElementById("esqchips");
   if (!box) return;
-  const entries = Object.entries(ESQUEMAS).filter(function (e){ return esqBlock === "all" || e[1].block === esqBlock; });
+  /* (30-09) temas 1-2 de HF (introductorios): solo con «Todos» (epocas.js) */
+  const entries = Object.entries(ESQUEMAS).filter(function (e){ return esqBlock === "all" || (e[1].block === esqBlock && !(window.Epocas && window.Epocas.soloTodos("esquemas", e[0]))); });
   box.innerHTML = entries.map(function (e){
     return '<button class="chip" data-eq="' + e[0] + '" aria-pressed="' + (e[0] === esqKey) + '">' + e[1].title + '</button>'; }).join("");
   box.querySelectorAll("[data-eq]").forEach(function (b){ b.addEventListener("click", function (){ loadEsq(b.dataset.eq); }); });
@@ -307,6 +308,7 @@ function loadEsq(k){
   esqKey = k;
   /* el filtro de bloque sigue al esquema abierto (enlace profundo, buscador…) */
   if (esqBlock !== "all" && ESQUEMAS[k].block && ESQUEMAS[k].block !== esqBlock){ esqBlock = ESQUEMAS[k].block; renderEsqFilter(); }
+  if (esqBlock !== "all" && window.Epocas && window.Epocas.soloTodos("esquemas", k)){ esqBlock = "all"; renderEsqFilter(); }
   renderEsqChips();
   drawEsq();
 }

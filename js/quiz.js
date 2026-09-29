@@ -51,6 +51,7 @@ function quizTemaDe(k){ const m = QUIZ_TEMAS[QUIZZES[k].subject] || {}; return m
 function quizEnFiltro(k, q, conTema){
   if (quizSubject !== "all" && q.subject !== quizSubject) return false;
   if (quizSubject === "hf" && quizBlock !== "all" && q.block !== quizBlock) return false;
+  if (quizBlock !== "all" && window.Epocas && window.Epocas.soloTodos("cuestionarios", k)) return false;   // (30-09) temas 1-2 de HF: solo con «Todos los bloques» (epocas.js)
   if (conTema && quizTema !== "all" && quizTemaDe(k) !== quizTema) return false;
   return true;
 }
@@ -122,7 +123,8 @@ function renderQuizChips(){
   box.querySelectorAll("[data-quiz]").forEach(b => b.addEventListener("click", () => loadQuiz(b.dataset.quiz)));
 }
 
-function loadQuiz(k){ quizKey = k; quizReviewing = false; quizPool = QUIZZES[k].items; renderQuizChips(); startQuizRun(); }
+function loadQuiz(k){ quizKey = k;
+  if (quizBlock !== "all" && window.Epocas && window.Epocas.soloTodos("cuestionarios", k)){ quizBlock = "all"; if (document.getElementById("quizfilter")) renderQuizFilter(); } quizReviewing = false; quizPool = QUIZZES[k].items; renderQuizChips(); startQuizRun(); }
 function startQuizRun(){ qpos = 0; qscore = 0; qdone = false; quizFailed = []; quizOrder = quizShuffle(quizPool.map((_, i) => i)); drawQuiz(); }
 
 function drawQuiz(){

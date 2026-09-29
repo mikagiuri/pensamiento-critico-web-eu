@@ -10,12 +10,14 @@
   --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   /* épocas (30-09): los colores de Ilustres y del eje cronológico, para toda la web (js/epocas.js) */
+  --e-int:#6E6E78; --on-e:#fff;   /* int = temas introductorios de HF (1-2), en gris; --on-e = texto sobre el color */
   --e-ant:#8F6600; --e-med:#8A4B84; --e-ren:#B83220; --e-mod:#0A76A0; --e-ilu:#5B4FC4; --e-con:#267A5B;
   /* ramas (30-09): un color por rama en Filosofía 1.º (js/epocas.js), igual que las épocas en HF */
   --r-ant:#B0672B; --r-con:#2B6CB0; --r-log:#6D5BA6; --r-eti:#3E8A5B; --r-pol:#C0392B; --r-est:#B04A8A;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
+    --e-int:#A3A3AE; --on-e:#141519;
     --e-ant:#E3B23C; --e-med:#C48ABF; --e-ren:#F07A66; --e-mod:#5BC3EA; --e-ilu:#A9A2F2; --e-con:#6FCBA6;
     --r-ant:#E0A05C; --r-con:#7FB3E8; --r-log:#A89BD0; --r-eti:#85CE9C; --r-pol:#EE9387; --r-est:#D88FC0;
     --bg:#141519; --surface:#1c1e25; --surface-2:#232631; --ink:#e9e6df; --muted:#a3a3b0;
@@ -27,6 +29,7 @@
   }
 }
 :root[data-theme="dark"]{
+  --e-int:#A3A3AE; --on-e:#141519;
   --e-ant:#E3B23C; --e-med:#C48ABF; --e-ren:#F07A66; --e-mod:#5BC3EA; --e-ilu:#A9A2F2; --e-con:#6FCBA6;
   --r-ant:#E0A05C; --r-con:#7FB3E8; --r-log:#A89BD0; --r-eti:#85CE9C; --r-pol:#EE9387; --r-est:#D88FC0;
   --bg:#141519; --surface:#1c1e25; --surface-2:#232631; --ink:#e9e6df; --muted:#a3a3b0;
@@ -399,8 +402,24 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 60px;colo
 /* épocas (30-09): data-ep fija --e; se usa en chips, cabecera del tema, lista de temas y paso anterior/siguiente */
 [data-ep="ant"]{--e:var(--e-ant)} [data-ep="med"]{--e:var(--e-med)} [data-ep="ren"]{--e:var(--e-ren)}
 [data-ep="mod"]{--e:var(--e-mod)} [data-ep="ilu"]{--e:var(--e-ilu)} [data-ep="con"]{--e:var(--e-con)}
+[data-ep="int"]{--e:var(--e-int)}
+/* bloque B de HF (Medieval-Moderna): dos tonos, medieval fuera y moderna dentro */
+[data-ep="medmod"]{--e:var(--e-med);--e2:var(--e-mod)}
 .chip[data-ep]{border-left:4px solid var(--e)}
-.chip[data-ep][aria-pressed="true"]{background:var(--e);border-color:var(--e);color:#fff}
+.chip[data-ep][aria-pressed="true"]{background:var(--e);border-color:var(--e);color:var(--on-e)}
+/* (30-09) también las etiquetas de los filtros: bloques, épocas, temas T1…T27 (js/epocas.js) */
+.fbtn[data-ep]{border-left:4px solid var(--e)}
+.fbtn[data-ep]:not([aria-pressed="true"]):hover{border-color:var(--e)}
+.fbtn[data-ep][aria-pressed="true"]{background:var(--e);border-color:var(--e);color:var(--on-e)}
+#cronogramas .cbtn[data-ep]{border-left:4px solid var(--e)}
+#cronogramas .cbtn[data-ep][aria-pressed="true"]{background:var(--e);border-color:var(--e);color:var(--on-e)}
+.chip[data-ep="medmod"],.fbtn[data-ep="medmod"]{box-shadow:inset 4px 0 0 var(--e2)}
+.chip[data-ep="medmod"][aria-pressed="true"],.fbtn[data-ep="medmod"][aria-pressed="true"]{background:linear-gradient(90deg,var(--e),var(--e2));box-shadow:none}
+/* Frases y Glosario: la tarjeta lleva el color de su época */
+#citas .citcard[data-ep]{border-left-color:var(--e)}
+#citas .citcard[data-ep] .cit-q::before{color:var(--e)}
+#glosario .gloitem[data-ep]{border-left-color:var(--e)}
+#glosario .gloitem[data-ep] .tag{color:var(--e)}
 .theory-head[data-ep] .kick{color:var(--e) !important}   /* la vista pone color:var(--hf) en línea */
 .theory-head[data-ep] h1{border-left:4px solid var(--e);padding-left:12px}
 .fin-pn-card[data-ep]{border-top:3px solid var(--e)}

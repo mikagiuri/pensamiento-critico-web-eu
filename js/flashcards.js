@@ -21,7 +21,7 @@ const deckOk = d => deckTipo === "all" || (deckTipo === "frases") === deckEsFras
 /* primera baraja que cumple materia, bloque y tipo (la usa también navctx.js) */
 function deckFirstKey(sub, block){
   return Object.keys(DECKS).find(k => { const d = DECKS[k];
-    return (sub === "all" || d.subject === sub) && (!block || block === "all" || d.block === block) && deckOk(d); });
+    return (sub === "all" || d.subject === sub) && (!block || block === "all" || (d.block === block && !(window.Epocas && window.Epocas.soloTodos("tarjetas", k)))) && deckOk(d); });
 }
 function setDeckTipo(t){
   deckTipo = DECK_TIPOS[t] ? t : "all";
@@ -68,6 +68,7 @@ function renderDeckChips(){
   const entries = Object.entries(DECKS).filter(([k, d]) => {
     if (deckSubject !== "all" && d.subject !== deckSubject) return false;
     if (deckSubject === "hf" && deckBlock !== "all" && d.block !== deckBlock) return false;
+    if (deckBlock !== "all" && window.Epocas && window.Epocas.soloTodos("tarjetas", k)) return false;   // (30-09) temas 1-2 de HF: solo con «Todos los bloques» (epocas.js)
     if (!deckOk(d)) return false;
     return true;
   });
@@ -78,6 +79,7 @@ function renderDeckChips(){
 
 function loadDeck(k){
   deckKey = k;
+  if (deckBlock !== "all" && window.Epocas && window.Epocas.soloTodos("tarjetas", k)){ deckBlock = "all"; if (document.getElementById("deckfilter")) renderDeckFilter(); }
   order = DECKS[k].cards.map((_, i) => i);
   pos = 0; flipped = false;
   renderDeckChips();

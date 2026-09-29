@@ -52,6 +52,7 @@ function renderTheoryChips(){
   const entries = Object.entries(THEORY).filter(([k, t]) => {
     if (theorySubject !== "all" && t.subject !== theorySubject) return false;
     if (theorySubject === "hf" && theoryBlock !== "all" && blockOf(t) !== theoryBlock) return false;
+    if (theoryBlock !== "all" && window.Epocas && window.Epocas.soloTodos("teoria", k)) return false;   // (30-09) temas 1-2 de HF: solo con «Todos los bloques» (epocas.js)
     return true;
   });
   box.innerHTML = entries
@@ -168,6 +169,7 @@ function loadTheory(k){
     if (theorySubject !== "all" && tk.subject && theorySubject !== tk.subject){ theorySubject = tk.subject; theoryBlock = "all"; cambia = true; }
     const bk = blockOf(tk);
     if (theorySubject === "hf" && theoryBlock !== "all" && bk && bk !== theoryBlock){ theoryBlock = bk; cambia = true; }
+    if (theoryBlock !== "all" && window.Epocas && window.Epocas.soloTodos("teoria", k)){ theoryBlock = "all"; cambia = true; }   // tema introductorio: se ve con «Todos»
     if (cambia && document.getElementById("theoryfilter")) renderTheoryFilter();
   }
   renderTheoryChips();
