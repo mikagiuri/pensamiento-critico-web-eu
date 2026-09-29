@@ -157,7 +157,7 @@ function subjectResourceMap(subjId){
     ["tarjetas", "Txartelak", typeof DECKS !== "undefined" ? DECKS : null],
     ["infografias", "Infografiak", typeof INFOGRAFIAS !== "undefined" ? INFOGRAFIAS : null],
     ["esquemas", "Eskemak", typeof ESQUEMAS !== "undefined" ? ESQUEMAS : null],
-    ["mapas", "Mapak", typeof MAPS !== "undefined" ? MAPS : null],
+    ["mapas", "Kontzeptu-mapak", typeof MAPS !== "undefined" ? MAPS : null],
     ["materiales", "Materialak", typeof MATERIALS !== "undefined" ? MATERIALS : null]
   ];
   // webs del alumnado: si la sección no existe (p. ej. «Materiales» en 2.º ESO), la ficha no debe llevar a una página vacía.
