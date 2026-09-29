@@ -291,6 +291,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 60px;colo
 .hubtile:focus-visible{outline:2px solid var(--c,var(--accent));outline-offset:2px}
 .hubtile-n{font:800 1.5rem/1 var(--serif);color:var(--c,var(--accent));font-variant-numeric:tabular-nums}
 .hubtile-l{font-size:.9rem;color:var(--muted)}
+.hubtile-s{font-size:.78rem;color:var(--muted);opacity:.8}
 
 /* ===== «Continuar donde lo dejaste» (Inicio) ===== */
 .resume{display:flex;align-items:center;gap:.8rem;margin:0 0 1.4rem;padding:.7rem .9rem;
