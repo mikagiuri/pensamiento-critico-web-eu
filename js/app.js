@@ -147,7 +147,7 @@ if (printBtn) printBtn.addEventListener("click", () => void 0 /* sin imprimir en
    hay de esa materia. Da al hub un índice navegable de todo lo disponible (además
    de los enlaces curados de s.tools). Guardas typeof por si un build no trae alguna
    colección. Al pulsar una ficha, navctx.js preselecciona la materia en esa vista. */
-const HUB_PREGUNTAS = "{n} galdera", HUB_TARJETAS = "{n} txartel";
+const HUB_PREGUNTAS = "{n} galdera", HUB_TARJETAS = "{n} txartel", HUB_FRASES = "{n} esaldi";
 function hubNum(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "."); }   // 1293 → 1.293
 function subjectResourceMap(subjId){
   const defs = [
@@ -156,7 +156,8 @@ function subjectResourceMap(subjId){
     ["teoria", "Teoria-gaiak", typeof THEORY !== "undefined" ? THEORY : null],
     ["lecturas", "Irakurgaiak", typeof LECTURAS !== "undefined" ? LECTURAS : null],
     ["cuestionarios", "Galdetegiak", typeof QUIZZES !== "undefined" ? QUIZZES : null],
-    ["tarjetas", "Txartel-sortak", typeof DECKS !== "undefined" ? DECKS : null],
+    ["tarjetas", "Kontzeptu-sortak", typeof DECKS !== "undefined" ? DECKS : null, d => d.tipo !== "frases", "conceptos"],
+    ["tarjetas", "Esaldi-sortak", typeof DECKS !== "undefined" ? DECKS : null, d => d.tipo === "frases", "frases"],
     ["infografias", "Infografiak", typeof INFOGRAFIAS !== "undefined" ? INFOGRAFIAS : null],
     ["esquemas", "Eskemak", typeof ESQUEMAS !== "undefined" ? ESQUEMAS : null],
     ["mapas", "Kontzeptu-mapak", typeof MAPS !== "undefined" ? MAPS : null],
@@ -167,11 +168,12 @@ function subjectResourceMap(subjId){
   if (!document.getElementById("materiales") && document.getElementById("cuentos")) defs[defs.length - 1] = ["cuentos", "Ipuinak", defs[defs.length - 1][2]];
   // (29-09) cuestionarios y barajas cuentan conjuntos: debajo, el total de preguntas o tarjetas que contienen
   const INNER = { cuestionarios: [x => (x.items || []).length, HUB_PREGUNTAS], tarjetas: [x => (x.cards || []).length, HUB_TARJETAS] };
-  return defs.map(([go, label, coll]) => {
+  return defs.map(([go, label, coll, filt, tipo]) => {
     if (!coll || !document.getElementById(go)) return null;
-    const ks = Object.keys(coll).filter(k => coll[k] && coll[k].subject === subjId), n = ks.length;
+    const ks = Object.keys(coll).filter(k => coll[k] && coll[k].subject === subjId && (!filt || filt(coll[k]))), n = ks.length;
     const inn = INNER[go], m = inn ? ks.reduce((a, k) => a + inn[0](coll[k]), 0) : 0;
-    return n ? { go, label, n, sub: m ? inn[1].replace("{n}", hubNum(m)) : "" } : null;
+    const sub = m ? (tipo === "frases" ? HUB_FRASES : inn[1]).replace("{n}", hubNum(m)) : "";
+    return n ? { go, label, n, sub, tipo } : null;
   }).filter(Boolean);
 }
 
@@ -190,7 +192,7 @@ function renderSubjects(){
     const resMap = subjectResourceMap(id);
     const hub = resMap.length
       ? `<div class="sec-head"><h2 class="sec">Arakatu ikasgaia</h2><p>Eskuragarri dagoen guztia, motaren arabera. Sakatu irekitzeko.</p></div>
-      <div class="hubmap" style="--c:${s.color}">${resMap.map(r => `<button class="hubtile" data-hub="${r.go}"><span class="hubtile-n">${r.n}</span><span class="hubtile-l">${r.label}</span>${r.sub ? `<span class="hubtile-s">${r.sub}</span>` : ""}</button>`).join("")}</div>`
+      <div class="hubmap" style="--c:${s.color}">${resMap.map(r => `<button class="hubtile" data-hub="${r.go}"${r.tipo ? ` data-tipo="${r.tipo}"` : ""}><span class="hubtile-n">${r.n}</span><span class="hubtile-l">${r.label}</span>${r.sub ? `<span class="hubtile-s">${r.sub}</span>` : ""}</button>`).join("")}</div>`
       : "";
     el.innerHTML = `<div class="subhead" style="--c:${s.color}"><span class="kick">${s.kick}</span><h1>${s.name}</h1></div>
       <p class="lead">${s.intro}</p>
@@ -208,7 +210,10 @@ function renderSubjects(){
     if (go === "mapas") loadMap(arg);
   }));
   /* Fichas del hub: solo cambian de vista; navctx.js preselecciona la materia. */
-  document.querySelectorAll("[data-hub]").forEach(b => b.addEventListener("click", () => show(b.dataset.hub)));
+  document.querySelectorAll("[data-hub]").forEach(b => b.addEventListener("click", () => {
+    if (b.dataset.hub === "tarjetas" && typeof setDeckTipo === "function") setDeckTipo(b.dataset.tipo || "all");   // ficha de conceptos o de frases → Tarjetas filtrada
+    show(b.dataset.hub);
+  }));
   document.querySelectorAll("[data-mat]").forEach(b => b.addEventListener("click", () => {
     show("materiales");
     loadMaterial(b.dataset.mat);

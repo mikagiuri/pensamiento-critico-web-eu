@@ -99,8 +99,9 @@
     },
     tarjetas: function(s){
       if (typeof deckSubject === "undefined") return; var sub = pick(DECKS, s); if (deckSubject === sub) return;
-      deckSubject = sub; deckBlock = firstBlockOf(DECKS, sub); renderDeckFilter(); renderDeckChips();
-      var k = firstKeyOfSB(DECKS, sub, deckBlock); if (k) loadDeck(k);
+      var tipo = typeof deckTipo !== "undefined" && deckTipo !== "all";   // (29-09) filtro «Tipo»: conceptos o frases
+      deckSubject = sub; deckBlock = tipo ? "all" : firstBlockOf(DECKS, sub); renderDeckFilter(); renderDeckChips();
+      var k = tipo && typeof deckFirstKey === "function" ? deckFirstKey(sub, deckBlock) : firstKeyOfSB(DECKS, sub, deckBlock); if (k) loadDeck(k);
     },
     cuestionarios: function(s){
       if (typeof quizSubject === "undefined") return; var sub = pick(QUIZZES, s); if (quizSubject === sub) return;

@@ -7,6 +7,7 @@ let pos = 0;
 let flipped = false;
 let deckSubject = "all";
 let deckBlock = "all";
+let deckTipo = "all";   // (29-09) «conceptos» | «frases» (barajas con tipo:"frases")
 const known = store.get("aula-known", {});
 
 const cardEl = document.getElementById("card");
@@ -14,8 +15,26 @@ const cardEl = document.getElementById("card");
 const DECK_SUBJECTS = { fil: "Filosofia 1.", hf: "Filosofiaren Historia", ipc: "Pentsamendu kritikoa" };
 const DECK_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-Modernoa", C: "C blokea · Garaikidea" };
 
+const DECK_TIPOS = { conceptos: "Kontzeptuak", frases: "Esaldiak" };
+const deckEsFrases = d => d.tipo === "frases";
+const deckOk = d => deckTipo === "all" || (deckTipo === "frases") === deckEsFrases(d);
+/* primera baraja que cumple materia, bloque y tipo (la usa también navctx.js) */
+function deckFirstKey(sub, block){
+  return Object.keys(DECKS).find(k => { const d = DECKS[k];
+    return (sub === "all" || d.subject === sub) && (!block || block === "all" || d.block === block) && deckOk(d); });
+}
+function setDeckTipo(t){
+  deckTipo = DECK_TIPOS[t] ? t : "all";
+  if (deckTipo !== "all") deckBlock = "all";          // al cambiar de tipo se ven todos sus bloques
+  if (DECKS[deckKey] && !deckOk(DECKS[deckKey])){ const k = deckFirstKey(deckSubject, deckBlock); if (k) loadDeck(k); }
+  if (document.getElementById("deckfilter")){ renderDeckFilter(); renderDeckChips(); }
+}
 function renderDeckFilter(){
   const box = document.getElementById("deckfilter");
+  const hayFrases = Object.values(DECKS).some(deckEsFrases);
+  const tipoBtns = hayFrases ? ["all", "conceptos", "frases"].map(t =>
+    '<button class="fbtn" data-tipo="' + t + '" aria-pressed="' + (t === deckTipo) + '">' +
+    (t === "all" ? "Guztiak" : DECK_TIPOS[t]) + '</button>').join("") : "";
   const subjBtns = ["all", "fil", "hf", "ipc"].map(s =>
     '<button class="fbtn" data-subj="' + s + '" aria-pressed="' + (s === deckSubject) + '">' +
     (s === "all" ? "Guztiak" : DECK_SUBJECTS[s]) + '</button>'
@@ -27,7 +46,8 @@ function renderDeckFilter(){
       (b === "all" ? "Bloke guztiak" : DECK_BLOCKS[b]) + '</button>'
     ).join("");
   }
-  box.innerHTML = '<div class="fgroup"><span class="flabel">Ikasgaia</span>' + subjBtns + '</div>' +
+  box.innerHTML = (tipoBtns ? '<div class="fgroup"><span class="flabel">Mota</span>' + tipoBtns + '</div>' : '') +
+    '<div class="fgroup"><span class="flabel">Ikasgaia</span>' + subjBtns + '</div>' +
     (blockBtns ? '<div class="fgroup"><span class="flabel">Blokea</span>' + blockBtns + '</div>' : '');
   box.querySelectorAll("[data-subj]").forEach(b => b.addEventListener("click", () => {
     deckSubject = b.dataset.subj;
@@ -35,6 +55,7 @@ function renderDeckFilter(){
     renderDeckFilter();
     renderDeckChips();
   }));
+  box.querySelectorAll("[data-tipo]").forEach(b => b.addEventListener("click", () => setDeckTipo(b.dataset.tipo)));
   box.querySelectorAll("[data-block]").forEach(b => b.addEventListener("click", () => {
     deckBlock = b.dataset.block;
     renderDeckFilter();
@@ -47,6 +68,7 @@ function renderDeckChips(){
   const entries = Object.entries(DECKS).filter(([k, d]) => {
     if (deckSubject !== "all" && d.subject !== deckSubject) return false;
     if (deckSubject === "hf" && deckBlock !== "all" && d.block !== deckBlock) return false;
+    if (!deckOk(d)) return false;
     return true;
   });
   box.innerHTML = entries
