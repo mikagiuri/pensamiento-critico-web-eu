@@ -9,6 +9,7 @@ const views = [...document.querySelectorAll(".view")];
 function activeViewId(){ const v = views.find(v => v.classList.contains("active")); return v ? v.id : null; }
 
 function show(id){
+  if (!document.getElementById(id)) return;   // (29-09) una vista que este build no lleva (p. ej. «unidad» en el alumnado): no dejar la página en blanco
   views.forEach(v => v.classList.toggle("active", v.id === id));
   /* «estás aquí»: marca TODOS los botones de vista, también los de dentro de los
      desplegables. Al hacerlo, se reactiva el resaltado del grupo (regla :has de mobile.css)
@@ -40,7 +41,8 @@ window.VIEW_LOADERS = {
   teoria: "loadTheory", lecturas: "loadLectura", materiales: "loadMaterial", cuentos: "loadCuento",
   infografias: "loadInfografia", cuestionarios: "loadQuiz", tarjetas: "loadDeck",
   esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap", cronogramas: "loadCrono", genealogias: "loadGenea",
-  ilustres: "loadIlustre", clases: "loadClase"
+  ilustres: "loadIlustre", clases: "loadClase",
+  comentario: "loadComentario", disertaciones: "loadDisert"   // (29-09) enlaces profundos a un ejemplo resuelto o una disertación: #comentario/heraclito
 };
 
 /* enrutado por hash: admite «#vista» (compatibilidad) y «#vista/argumento» (enlace
@@ -67,8 +69,15 @@ function routeFromHash(){
   }
 }
 window.addEventListener("hashchange", routeFromHash);
-/* enrutado inicial tras cargar todos los scripts (para pasar por el show() ya envuelto por navctx) */
-document.addEventListener("DOMContentLoaded", routeFromHash);
+/* enrutado inicial tras cargar todos los scripts (para pasar por el show() ya envuelto por navctx).
+   (29-09) Las webs del alumnado no tienen portada: sin hash, se abre la ficha de su materia. */
+document.addEventListener("DOMContentLoaded", function(){
+  routeFromHash();
+  if (!activeViewId()){
+    const home = document.getElementById("inicio") ? "inicio" : (typeof SUBJECTS !== "undefined" ? Object.keys(SUBJECTS).find(s => document.getElementById(s)) : null);
+    if (home) (window.show || show)(home);
+  }
+});
 
 /* Cada tema/chip/recurso abierto refleja su clave en la URL (#vista/argumento) con
    replaceState: sin ensuciar el historial ni disparar hashchange, de modo que el enlace
@@ -117,7 +126,7 @@ if (printBtn) printBtn.addEventListener("click", () => void 0 /* sin imprimir en
 
 /* ----- horario ----- */
 (function buildWeek(){
-  const tb = document.getElementById("weekbody");
+  const tb = document.getElementById("weekbody"); if (!tb) return;   // sin portada no hay horario
   WEEK.forEach(row => {
     const tr = document.createElement("tr");
     const th = document.createElement("td"); th.className = "h"; th.textContent = row[0]; tr.appendChild(th);

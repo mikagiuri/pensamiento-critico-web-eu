@@ -39,16 +39,14 @@
   <div class="wrap bar-in">
     <div class="brand"><span class="owl" aria-hidden="true">🦉</span> Pentsamendu kritikoa</div>
     <nav class="tabs" id="tabs" aria-label="Atalak">
-      <button data-view="inicio" aria-current="true">Hasiera</button>
+      <button data-view="ipc" aria-current="true">Hasiera</button>
       
       <div class="navsec">
         <span class="navgroup" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Ikasi</span>
         <div class="navmenu">
           <button data-view="teoria">Teoria</button>
           <button data-view="cuentos">Ipuinak</button>
-          <button data-view="dilemas">Dilema etikoak</button>
           <button data-view="tarjetas">Txartelak</button>
-          <button data-view="cuestionarios">Galdetegiak</button>
           <button data-view="glosario">Glosarioa</button>
         </div>
       </div>
@@ -69,7 +67,13 @@
           <button data-view="mapas">Kontzeptu-mapak</button>
         </div>
       </div>
-      
+      <div class="navsec">
+        <span class="navgroup" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Ariketak</span>
+        <div class="navmenu">
+          <button data-view="dilemas">Dilema etikoak</button>
+          <button data-view="cuestionarios">Galdetegiak</button>
+        </div>
+      </div>
     </nav>
     <button class="navtoggle" id="navtoggle" aria-label="Ireki atalen menua" aria-expanded="false">☰</button>
     <button class="theme" id="theme" title="Aldatu itxura (argia/iluna)" aria-label="Aldatu itxura (argia/iluna)">◐</button>
@@ -79,28 +83,7 @@
 <main class="wrap" id="contenido">
 
   <!-- INICIO -->
-  <section class="view active" id="inicio">
-    <p class="eyebrow">IES Martín de Bertendona · 2.º ESO · Curso 2026-27</p>
-    <h1 class="title">Pentsamendu kritikoa</h1>
-    <p class="lead">Iniciación al Pensamiento crítico (2.º de ESO). Aquí tienes la teoría, las fichas y las herramientas para pensar mejor: preguntar, argumentar, dialogar y detectar falacias y sesgos.</p>
-
-    <div class="courses">
-      <article class="course" data-view="ipc" role="button" tabindex="0" aria-label="Ireki Pentsamendu kritikoa DBH 2" style="--c:var(--ipc)">
-        <span class="kick">Pentsamendu kritikoa · DBH 2</span>
-        <h3>Nork bere kabuz pentsatzea</h3>
-        <p>Galdetu, argudiatu, elkarrizketan aritu eta faltsukeriak antzeman. Ikaskuntza-egunerokoa eta proiektuka lan egitea.</p>
-        <div class="meta"><span><b>Kontzeptuak</b> eta aurrebaluazioa</span><span>DBH 2 A/B/C/D</span></div>
-      </article>
-    </div>
-
-    <div class="sec-head"><h2 class="sec">Aste hau</h2><p>Tus dos horas de Pensamiento crítico: jueves 11:15 y viernes 9:50.</p></div>
-    <div class="weekwrap">
-      <table class="week">
-        <thead><tr><th>Ordua</th><th>Astelehena</th><th>Asteartea</th><th>Asteazkena</th><th>Osteguna</th><th>Ostirala</th></tr></thead>
-        <tbody id="weekbody"></tbody>
-      </table>
-    </div>
-  </section>
+  
 
   <!-- MATERIAS (se rellenan desde js/app.js) -->
   
@@ -116,9 +99,7 @@
 
   <!-- TEORÍA -->
   <section class="view" id="teoria">
-    <p class="eyebrow">Teoria</p>
-    <h1 class="title">Testu teorikoak</h1>
-    <p class="lead">Gai bakoitzaren testu osoa, klasean edo etxean irakurtzeko. Gainerako gaiak gehitzen joango dira.</p>
+    <!-- (29-09) sin cabecera de sección: el tema abierto ya lleva la suya («Historia de la Filosofía · Tema 6» + título) -->
     <div class="filterbar" id="theoryfilter" role="group" aria-label="Iragazi gaiak"></div>
     <div class="chips" id="theorychips" role="group" aria-label="Aukeratu gaia"></div>
     <div class="theory-layout">
@@ -250,6 +231,7 @@
         <button class="icon-btn" id="fcnext" aria-label="Hurrengoa">›</button>
       </div>
     </div>
+    <div id="itin-tarjetas"></div>
   </section>
 
   <!-- CUESTIONARIOS -->
@@ -260,6 +242,7 @@
     <div class="filterbar" id="quizfilter" role="group" aria-label="Iragazi galdetegiak"></div>
     <div class="chips" id="quizchips" role="group" aria-label="Aukeratu galdetegia"></div>
     <div class="quiz" id="quizbox"></div>
+    <div id="itin-quiz"></div>
   </section>
 
   <section class="view" id="reto">
@@ -365,6 +348,9 @@
 <script src="js/progreso.js"></script>
 <script src="js/search.js"></script>
 <script src="js/resume.js"></script>
+<script src="js/itinerario.js"></script>
+<script src="js/epocas.js"></script>
+<script src="js/compacto.js"></script>
 <script src="js/nav_toc.js"></script>
 <script src="js/lazy_libs.js"></script>
 <script>

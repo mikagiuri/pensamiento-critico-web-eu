@@ -10,7 +10,8 @@ const MUNDO_TXT = {
   tamano: "Ikasleak zure gelan:", adivina: "Zenbat uste duzu?", comprobar: "Egiaztatu",
   enClase: "Zure gelan:", ninguno: "1 baino gutxiago: zure gelan inori ez litzaioke tokatuko, baina institutu osoan bai.",
   clavado: "Zehatz-mehatz!", cerca: "Oso gertu", lejos: "Urrundu egin zara", aciertos: "Puntuak:", otraVez: "Hasi berriro",
-  paraPensar: "Pentsatzeko", fuentes: "Iturriak"
+  paraPensar: "Pentsatzeko", fuentes: "Iturriak",
+  como: "Nola jokatzen den:", howto: "Doitu zenbat zareten gelan, mugitu barra zenbati tokatuko litzaizuekeen asmatzeko eta sakatu «Egiaztatu»: zenbat eta gehiago hurbildu, puntu gehiago."
 };
 const mundo = { n: 25, done: {}, score: 0 };
 
@@ -27,6 +28,7 @@ function renderMundo(){
   const box = mundoBox(); if (!box || typeof MUNDO === "undefined") return;
   const saved = +store.get(MUNDO_N_KEY, 25); if (saved >= 5 && saved <= 40) mundo.n = saved;
   box.innerHTML =
+    '<p class="howto"><span><b>' + MUNDO_TXT.como + '</b> ' + MUNDO_TXT.howto + '</span></p>' +
     '<p class="mundo-intro">' + mundoEsc(MUNDO.intro) + '</p>' +
     '<div class="mundo-bar"><label>' + MUNDO_TXT.tamano + ' <input type="number" id="mundon" min="5" max="40" value="' + mundo.n + '"></label>' +
       '<span class="mundo-score">' + MUNDO_TXT.aciertos + ' <b id="mundoscore">' + mundo.score + '</b></span>' +

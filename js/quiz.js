@@ -139,7 +139,7 @@ function drawQuiz(){
     }
     const reviewBtn = quizFailed.length
       ? `<button class="btn" id="qreview">Repasar las que fallé (${quizFailed.length})</button>` : "";
-    box.innerHTML = `<div class="q-result"><p class="eyebrow">${quizReviewing ? "Repaso" : "Emaitza"}</p>
+    box.innerHTML = `<div class="q-result"><p class="eyebrow">${quizReviewing ? "Errepasoa" : "Emaitza"}</p>
       <div class="big">${qscore} / ${total}</div>
       ${bestLine}
       <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="qretry">Errepikatu</button>${reviewBtn}</div></div>`;

@@ -23,7 +23,8 @@ const DIL_TXT = {
   mantengo: "Nire aukerari eusten diot", cambiaria: "Iritziz aldatuko nuke", siguiente: "Hurrengoa:", tipo: "Dilema mota",
   /* Bachillerato (25-09): pregunta universal, escuelas, debate de época, reflexión PAU */
   preguntaFondo: "Funtsezko galdera", escuelas: "Eskolek erantzuten dute", elige: "elige", debateEpoca: "Bere garaiko eztabaida",
-  verTeoria: "Ikusi teorian", pau: "PAU hausnarketa (2. ariketa)"
+  verTeoria: "Ikusi teorian", pau: "PAU hausnarketa (2. ariketa)",
+  como: "Nola jokatzen den:", howto: "Ireki dilema bat, aukeratu A ala B, idatzi zergatik eta begiratu «pentsatzeko»: amaieran erabakiko duzu zure aukerari eutsi ala aldatu."
 };
 const dil = { group: (Object.keys(DIL_GROUPS).find(g => typeof DILEMAS !== "undefined" && DILEMAS.some(d => d.grupo === g)) || "tecno"), cur: null, step: 0 };
 
@@ -43,6 +44,7 @@ function renderDilStart(){
   const done = list.filter(d => st[d.id] && st[d.id].choice).length;
   const groups = Object.keys(DIL_GROUPS).filter(g => dilList(g).length);
   box.innerHTML =
+    '<p class="howto"><span><b>' + DIL_TXT.como + '</b> ' + DIL_TXT.howto + '</span></p>' +
     '<div class="dil-pick" role="group" aria-label="' + DIL_TXT.tipo + '">' +
       groups.map(g => '<button class="pbtn" data-g="' + g + '" aria-pressed="' + (g === dil.group) + '">' + DIL_GROUPS[g] + ' <span class="n">' + dilList(g).length + '</span></button>').join("") +
       '<label class="dil-classmode"><input type="checkbox" id="dilclass"' + (dilClassMode() ? " checked" : "") + '> Klase modua (botoak zenbatu)</label>' +

@@ -86,7 +86,7 @@ function relatedFor(key, self){
     for (const n of Object.keys(UNIDADES)){
       const u = UNIDADES[n];
       if (u && (u.teoria === key || u.lectura === key)){
-        add("unidad", n, "Ikusi gai osoa →");
+        if (document.getElementById("unidad")) add("unidad", n, "Ikusi gai osoa →");
         if (u.teoria && has(THEORY, u.teoria)) add("teoria", u.teoria, "Teoria");
         if (u.quiz && has(QUIZZES, u.quiz)) add("cuestionarios", u.quiz, "Galdetegia");
         if (u.lectura && has(LECTURAS, u.lectura)) add("lecturas", u.lectura, "Irakurri testua");

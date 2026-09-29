@@ -52,14 +52,16 @@
   var card, goBtn;
   function ensureCard(){
     if (card) return card;
-    var inicio = document.getElementById("inicio"); if (!inicio) return null;
+    var inicio = document.getElementById("inicio");
+    if (!inicio && typeof SUBJECTS !== "undefined" && Object.keys(SUBJECTS).length === 1) inicio = document.getElementById(Object.keys(SUBJECTS)[0]);   // (29-09) sin portada: en la ficha de la materia
+    if (!inicio) return null;
     card = document.createElement("div");
     card.className = "resume"; card.id = "resumecard"; card.hidden = true;
     card.innerHTML =
       '<div class="resume-txt"><span class="resume-kick">Jarraitu utzi zenuen tokitik</span>' +
       '<button class="resume-go" id="resumego" type="button"></button></div>' +
       '<button class="resume-x" id="resumex" type="button" title="Baztertu" aria-label="Baztertu">×</button>';
-    var courses = inicio.querySelector(".courses");
+    var courses = inicio.querySelector(".courses") || inicio.querySelector(".sec-head");
     if (courses) inicio.insertBefore(card, courses); else inicio.appendChild(card);
     goBtn = card.querySelector("#resumego");
     goBtn.addEventListener("click", resume);

@@ -9,7 +9,8 @@ const CAM_KEY = "aula-caminos";
 const CAM_TXT = {
   finales: "Aurkitutako amaierak:", empezar: "Hasi", volver: "← Istorio guztiak",
   tuCamino: "Zure bidea", laIdea: "Ideia", otroCamino: "Probatu beste bide bat", otraHistoria: "Beste istorio bat",
-  todos: "Istorio honen amaiera guztiak aurkitu dituzu!", nuevo: "Amaiera berria!"
+  todos: "Istorio honen amaiera guztiak aurkitu dituzu!", nuevo: "Amaiera berria!",
+  como: "Nola jokatzen den:", howto: "Aukeratu istorio bat, irakurri eszena bakoitza eta erabaki: erabaki bakoitzak amaiera aldatzen du. Saiatu guztiak aurkitzen."
 };
 const cam = { story: null, node: null, path: [] };
 
@@ -21,7 +22,8 @@ function camStory(id){ return CAMINOS.find(s => s.id === id); }
 function renderCamStart(){
   const box = camBox(); if (!box) return;
   const found = camFound();
-  box.innerHTML = '<div class="cam-grid">' + CAMINOS.map(s => {
+  box.innerHTML = '<p class="howto"><span><b>' + CAM_TXT.como + '</b> ' + CAM_TXT.howto + '</span></p>' +
+    '<div class="cam-grid">' + CAMINOS.map(s => {
     const n = Object.keys(s.finales).length, got = (found[s.id] || []).length;
     return '<button class="cam-card" data-s="' + s.id + '"><span class="cam-emoji" aria-hidden="true">' + s.emoji + '</span>' +
       '<span class="cam-tag">' + camEsc(s.tema) + '</span><span class="cam-title">' + camEsc(s.titulo) + '</span>' +

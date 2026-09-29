@@ -115,6 +115,33 @@
   .mcard { width: 100%; }
 }
 
+/* ===== Móvil compacto (29-09, js/compacto.js): filtros, lista de temas e índice plegados en una línea ===== */
+.ctl-toggle, .toc-toggle { display: none; }
+@media (max-width: 760px) {
+  .ctl-toggle, .toc-toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px;
+    margin: 12px 0 0; padding: 9px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    color: var(--ink); font: 600 15px/1.3 var(--sans); text-align: left; cursor: pointer;
+  }
+  .ctl-toggle[hidden], .toc-toggle[hidden] { display: none; }
+  .ctl-toggle .ctl-l, .toc-toggle .ctl-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .toc-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: 13px; }
+  .ctl-caret { flex: none; color: var(--muted); transition: transform .15s ease; }
+  .ctl-open > .ctl-toggle .ctl-caret, .toc-open > .toc-toggle .ctl-caret { transform: rotate(180deg); }
+  .view:not(.ctl-open) > .filterbar, .view:not(.ctl-open) > .chips, .view:not(.ctl-open) > .crono-filter, .view:not(.ctl-open) > .crono-chips { display: none; }
+  .view.ctl-open > .filterbar { margin-top: 10px; }
+  .view.ctl-open > .chips { margin: 12px 0 6px; }
+  .theory-layout:not(.toc-open) > .toc { display: none; }
+  .theory-layout { gap: 12px; }
+  .toc-toggle { margin: 0; }
+  .theory-layout > .toc { margin: 0 0 8px; padding: 8px 4px 0; }
+  /* con el plegado, la entradilla de la sección sobra: el contenido ya se explica solo */
+  .view:has(> .ctl-toggle:not([hidden])) > .lead { display: none; }
+  .view:has(> .ctl-toggle:not([hidden])) > h1.title { font-size: 24px; }
+  /* la tira «De este tema» y «Siguiente paso» van al final del tema; en móvil, más pequeñas aún */
+  .itin-strip .btn { min-height: 36px; padding: 5px 11px; font-size: 14px; }
+}
+
 @media (max-width: 420px) {
   .title { font-size: 25px; }
   .sec { font-size: 20px; }
