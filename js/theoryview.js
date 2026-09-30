@@ -159,7 +159,58 @@ function wireRelated(container){
   (container || document).querySelectorAll(".related-row [data-go]").forEach(b => b.addEventListener("click", () => goRelated(b.dataset.go, b.dataset.arg)));
 }
 
+/* ===== Teoría por apartados (30-09, Filosofía 1.º) =====
+   Los temas de estas materias se ven de apartado en apartado (cada <h2> abre uno; lo previo al
+   primer <h2> va con el primero). Solo cambia la vista: theory.js sigue igual. «Ver el tema entero»
+   lo muestra seguido, como antes. */
+const THEORY_POR_APARTADOS = ["fil"];
+let theoryPart = 0, theoryWhole = false;
+/* al imprimir sale siempre el tema entero, sin la barra de apartados */
+document.head.insertAdjacentHTML("beforeend",
+  '<style>.th-partnav{flex-wrap:nowrap;gap:.5rem}.th-partnav .btn:disabled{visibility:hidden}.th-partnav .th-partpos{text-align:center;flex:1}' +
+  '@media print{.th-part[hidden]{display:block!important}.th-partnav,[data-thwhole]{display:none!important}}</style>');
+
+function theoryShowPart(body, i, scroll){
+  const parts = [...body.querySelectorAll(".th-part")];
+  if (!parts.length) return;
+  theoryPart = Math.max(0, Math.min(i, parts.length - 1));
+  parts.forEach((p, j) => { p.hidden = !theoryWhole && j !== theoryPart; });
+  body.querySelectorAll(".th-partnav").forEach(nav => { nav.hidden = theoryWhole; });
+  body.querySelectorAll("[data-thprev]").forEach(b => { b.disabled = theoryPart === 0; });
+  body.querySelectorAll("[data-thnext]").forEach(b => { b.disabled = theoryPart === parts.length - 1; });
+  body.querySelectorAll(".th-partpos").forEach(s => { s.textContent = (theoryPart + 1) + ". atala / " + parts.length; });
+  body.querySelectorAll("[data-thwhole]").forEach(b => { b.textContent = theoryWhole ? "Ikusi ataleka" : "Ikusi gai osoa"; b.setAttribute("aria-pressed", theoryWhole); });
+  document.querySelectorAll("#toc [data-thpart]").forEach(a => a.classList.toggle("on", !theoryWhole && +a.dataset.thpart === theoryPart));
+  if (scroll) body.scrollIntoView({ block: "start" });
+}
+
+function theorySplitParts(body, html){
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  const groups = [[]];
+  [...tmp.childNodes].forEach(n => {
+    if (n.nodeType === 1 && n.tagName === "H2" && groups[groups.length - 1].some(x => x.nodeType === 1 && x.tagName === "H2")) groups.push([]);
+    groups[groups.length - 1].push(n);
+  });
+  const navHtml = '<div class="toolrow th-partnav" style="justify-content:space-between;align-items:center;margin:1.2rem 0">' +
+    '<button class="btn" data-thprev>← Aurrekoa</button><span class="flabel th-partpos"></span>' +
+    '<button class="btn" data-thnext>Hurrengoa →</button></div>';
+  const top = '<div class="toolrow" style="justify-content:flex-end;margin:.2rem 0 .6rem"><button class="fbtn" data-thwhole></button></div>';
+  body.insertAdjacentHTML("beforeend", top);
+  groups.forEach(g => {
+    const sec = document.createElement("section");
+    sec.className = "th-part";
+    g.forEach(n => sec.appendChild(n));
+    body.appendChild(sec);
+  });
+  body.insertAdjacentHTML("beforeend", navHtml);
+  body.querySelectorAll("[data-thprev]").forEach(b => b.addEventListener("click", () => theoryShowPart(body, theoryPart - 1, true)));
+  body.querySelectorAll("[data-thnext]").forEach(b => b.addEventListener("click", () => theoryShowPart(body, theoryPart + 1, true)));
+  body.querySelectorAll("[data-thwhole]").forEach(b => b.addEventListener("click", () => { theoryWhole = !theoryWhole; theoryShowPart(body, theoryPart, true); }));
+}
+
 function loadTheory(k){
+  if (k !== theoryKey) theoryPart = 0;
   theoryKey = k;
   /* los filtros siguen al tema abierto (enlace profundo, buscador…): antes, con el tema 19 abierto,
      seguía marcado «Bloque A» (el que preselecciona navctx.js) */
@@ -175,14 +226,29 @@ function loadTheory(k){
   renderTheoryChips();
   const t = THEORY[k], body = document.getElementById("theorybody");
   const relHtml = (typeof relatedStripHtml === "function") ? relatedStripHtml(k, "teoria") : "";
-  body.innerHTML = '<div class="theory-head"><span class="kick" style="color:var(--' + t.subject + ')">' + t.tema + '</span><h1>' + t.title + '</h1></div>' + relHtml + t.html;
+  const porApartados = THEORY_POR_APARTADOS.includes(t.subject);
+  const head = '<div class="theory-head"><span class="kick" style="color:var(--' + t.subject + ')">' + t.tema + '</span><h1>' + t.title + '</h1></div>' + relHtml;
+  if (porApartados){ body.innerHTML = head; theorySplitParts(body, t.html); }
+  else body.innerHTML = head + t.html;
   if (typeof wireRelated === "function") wireRelated(body);
   const hs = [...body.querySelectorAll("h2")];
   hs.forEach((h, i) => { h.id = "th-" + i; });
   body.querySelectorAll(".figimg").forEach(img => img.addEventListener("click", () => openLightbox(img.src)));
   const toc = document.getElementById("toc");
-  toc.innerHTML = '<div class="toc-title">Gai honetan</div><ol>' +
-    hs.map((h, i) => '<li><a href="#th-' + i + '">' + h.textContent + '</a></li>').join("") + '</ol>';
+  if (porApartados){
+    /* índice = selector de apartado (en «tema entero», salta al ancla como antes) */
+    toc.innerHTML = '<div class="toc-title">Gaiaren atalak</div><ol>' +
+      hs.map((h, i) => '<li><a href="#th-' + i + '" data-thpart="' + i + '">' + h.textContent + '</a></li>').join("") + '</ol>';
+    toc.querySelectorAll("[data-thpart]").forEach(a => a.addEventListener("click", ev => {
+      if (theoryWhole) return;
+      ev.preventDefault();
+      theoryShowPart(body, +a.dataset.thpart, true);
+    }));
+    theoryShowPart(body, theoryPart, false);
+  } else {
+    toc.innerHTML = '<div class="toc-title">Gai honetan</div><ol>' +
+      hs.map((h, i) => '<li><a href="#th-' + i + '">' + h.textContent + '</a></li>').join("") + '</ol>';
+  }
 }
 
 renderTheoryFilter();

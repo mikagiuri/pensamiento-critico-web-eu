@@ -180,6 +180,9 @@ table.week tr:last-child td{border-bottom:0}
 /* Rúbricas */
 .rubricaslist{display:flex;flex-direction:column;gap:28px}
 .rcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.r-html{overflow-x:auto}.r-html h2{font-size:1.2rem;margin:1.4em 0 .5em}.r-html h3{font-size:1.05rem;margin:1.1em 0 .4em}.r-html p,.r-html li{max-width:80ch}
+.r-html table{width:100%;border-collapse:collapse;font-size:.92rem;margin:.6em 0 1em}.r-html th,.r-html td{padding:6px 8px;border-bottom:1px solid var(--line-soft);text-align:left;vertical-align:top}.r-html thead th{background:var(--surface-2)}
+.r-html blockquote{margin:1em 0;padding:.5em 1em;border-left:3px solid var(--accent);background:var(--surface-2)}
 .rcard h3{font-size:1.4rem;margin:0 0 4px}
 .r-tema{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin:0 0 8px}
 .r-intro{font-size:.95rem;margin:0 0 16px}
