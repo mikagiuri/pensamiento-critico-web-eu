@@ -54,37 +54,37 @@ const PISTAS = [
       "etiqueta": "Adibidea",
       "titulo": "Begiratu elkarrizketa hau",
       "definicion": [
-       "Ane: «Gelan gehiago birziklatu beharko genuke: botatzen dugun papera aprobetxa daiteke».",
-       "Iker: «Zuk? Baina beste egunean lata bat lurrera botatzen ikusi zintudan. Ez egin kasurik»."
+       "Ikaskide batek: «Gelan gehiago birziklatu beharko genuke: botatzen dugun papera aprobetxa daiteke».",
+       "Beste ikaskide batek: «Zuk? Baina lehengo egunean lata bat lurrera botatzen ikusi zintudan. Ez egiozue kasurik»."
       ],
       "parrafos": [
-       "Ikerrek lortzen du gelak Aneren zalantza egitea. Baina esan al du ezer papera birziklatzeko ideiaren aurka?"
+       "Beste ikaskideak lortzen du klaseak harengan zalantza izatea. Baina esan al du ezer papera birziklatzeko ideiaren aurka?"
       ],
       "comprobacion": {
        "etiqueta": "Adibidearen egiaztapena",
-       "pregunta": "Zer egiten du Ikerrek?",
+       "pregunta": "Zer egiten du beste ikaskideak?",
        "opciones": [
         [
-         "Aneri erasotzen dio, bere argudioari erantzun beharrean.",
+         "Ikaskideari erasotzen dio, bere argumentuari erantzun beharrean.",
          true
         ],
         [
          "Papera birziklatzeak ez duela balio frogatzen du.",
          false,
-         "Ez du paperari buruz ezer esaten: Anek egin zuenaz bakarrik hitz egiten du."
+         "Ez du ezer esaten paperari buruz: ikaskideak egin zuenaz bakarrik hitz egiten du."
         ],
         [
-         "Anerena baino arrazoi hobea ematen du.",
+         "Ikaskidearena baino arrazoi hobea ematen du.",
          false,
-         "Anek lata batekin egin zuenak ez du ezer esaten papera birziklatzea komeni den ala ez."
+         "Ikaskideak lata batekin egindakoak ez du ezer esaten papera birziklatzea komeni den ala ez."
         ],
         [
          "Ezer arraro: argudio ona da.",
          false,
-         "Konbentzitzen du, baina ez dio Anek proposatzen duenari erantzuten: hor dago tranpa."
+         "Konbentzitzen du, baina ez dio erantzuten ikaskideak proposatzen duenari: hor dago tranpa."
         ]
        ],
-       "ok": "Zuzen. Bere erantzunak argudio bat dirudi, baina ez du Aneren ideia ukitzen: faltsukeria da.",
+       "ok": "Zuzena. Bere erantzunak argumentua dirudi, baina ez du ikaskidearen ideia ukitzen: faltsukeria bat da.",
        "mal": "Irakurri berriro elkarrizketa.",
        "intentos": 2
       }
@@ -133,7 +133,7 @@ const PISTAS = [
     "etiqueta": "Galdera berria",
     "pregunta": "Zergatik da tranpa pertsonari erasotzea, bere argudioari erantzun beharrean?",
     "intro": [
-     "Ikerrek egin zuenak izena du: <em>ad hominem</em> («pertsonaren aurka»). Pentsatu zergatik ez duen erantzun gisa balio."
+     "Beste ikaskideak egin zuenak izena du: <em>ad hominem</em> («pertsonaren aurka»). Pentsatu zergatik ez duen balio erantzun gisa."
     ],
     "pistas": [
      "Bereizi bi gauza: <em>nork</em> esaten duen zerbait eta <em>zer</em> esaten duen.",
@@ -268,18 +268,18 @@ const PISTAS = [
      {
       "boton": "Adibide bat behar dut",
       "etiqueta": "Adibidea",
-      "titulo": "Leireren matematikak",
+      "titulo": "«Matematikarako ez naiz batere ona»",
       "definicion": [
-       "Leirek pentsatzen du: «Matematikak fatal ematen zaizkit».",
+       "Norbaitek honela pentsatzen du: «Matematikarako ez naiz batere ona».",
        "Primeran gogoratzen du urrian suspenditu zuen azterketa.",
        "Baina ahaztu egiten zaizkio gero gainditu zituen hirurak, eta atzo bakarrik ebatzi zuela problema zail bat."
       ],
       "parrafos": [
-       "Zer ari da egiten Leireren burua bere oroitzapenekin?"
+       "Zer ari da egiten haren adimena bere oroitzapenekin?"
       ],
       "comprobacion": {
        "etiqueta": "Adibidearen egiaztapena",
-       "pregunta": "Zer gertatzen zaio Leireri?",
+       "pregunta": "Zer gertatzen zaio pertsona honi?",
        "opciones": [
         [
          "Bere ideia berresten duena bakarrik gogoratzen du, eta kontra egiten diona ahazten du.",
