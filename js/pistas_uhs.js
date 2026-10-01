@@ -432,5 +432,223 @@ const PISTAS = [
     "Erronka: aukeratu oso ziur zauden ideia bat eta bilatu gaur haren kontrako argudio on bat."
    ]
   }
+ },
+ {
+  "id": "ipc-medios",
+  "subject": "ipc",
+  "tema": "Begiratu hedabideak lupaz",
+  "unidad": "ipc-medios",
+  "materia": "Pentsamendu kritikoa · DBH 2",
+  "titulo": "Nola jakin albiste bat buloa den?",
+  "lede": "Sinetsi edo birbidali aurretik, begiratu lupaz. Eskatu behar dituzun pistak bakarrik.",
+  "ciclos": [
+   {
+    "fase": "1. fasea · Berreskuratzea",
+    "etiqueta": "Hasierako galdera",
+    "pregunta": "Zer da buloa eta zergatik zabaltzen da hain azkar?",
+    "intro": [
+     "Pentsatu «bidali denei!» zekarren azken mezuan. Saiatu azaltzen laguntza eskatu aurretik."
+    ],
+    "pistas": [
+     "Buloa (edo <em>fake news</em>) albiste bat da, baina arazo batekin.",
+     "Faltsua da, nahiz eta egiazkoa balitz bezala aurkezten den.",
+     "Buloek emozioa ukitu ohi dute: beldurra, amorrua edo barrea eragiten dute.",
+     "Buloa <strong>egiazko gisa zabaltzen den albiste faltsua</strong> da; hain azkar zabaltzen da barrutik astintzen gaituelako eta pentsatu gabe partekatzeko gogoa ematen duelako."
+    ],
+    "comprobacion": {
+     "pregunta": "Zergatik zabaltzen dira hain azkar buloak?",
+     "opciones": [
+      [
+       "Emozioa ukitzen dutelako eta egiaztatu gabe partekatzeko gogoa ematen dutelako.",
+       true
+      ],
+      [
+       "Egunkari serioenek argitaratzen dituztelako beti.",
+       false,
+       "Buloak mezu eta sare sozialetan ibili ohi dira, askotan iturri argirik gabe."
+      ],
+      [
+       "Benetako albisteak baino aspergarriagoak direlako.",
+       false,
+       "Alderantziz: arreta erakartzeko pentsatuta daude."
+      ],
+      [
+       "Jendeak beti egiaztatzen duelako dena birbidali aurretik.",
+       false,
+       "Hala egingo bagenu, buloak ez lirateke hain azkar zabalduko."
+      ]
+     ],
+     "ok": "Ondo. Emozioa egiaztapena baino azkarrago doa.",
+     "mal": "Oraindik ez."
+    },
+    "rescate": [
+     {
+      "boton": "Adibide bat behar dut",
+      "etiqueta": "Adibidea",
+      "titulo": "Mezu bat klaseko taldean",
+      "definicion": [
+       "«PREMIAZKOA!! Bihar institutu guztiak itxiko dituzte birus berri baten ondorioz. Nire izebaren lagun den mediku batek esan du. Bidali denei!!»",
+       "Ez du esaten zein medikuk, ezta zein iturri ofizialek argitaratu duen ere.",
+       "Letra larriz idatzita dago, presaz eta beldurrez."
+      ],
+      "parrafos": [
+       "Zer alarma-seinale ikusten dituzu mezu honetan?"
+      ],
+      "comprobacion": {
+       "etiqueta": "Adibidearen egiaztapena",
+       "pregunta": "Zein da buloa izan daitekeelako seinalerik onena?",
+       "opciones": [
+        [
+         "Ez du iturri identifikagarririk, eta presaka birbidaltzea nahi du.",
+         true
+        ],
+        [
+         "Institutuei buruz ari da.",
+         false,
+         "Gaiak ez du buloa bihurtzen: iturririk ez izatea da hutsegitea."
+        ],
+        [
+         "Klaseko norbaitek bidali du.",
+         false,
+         "Birbidaltzen duena konfiantzazkoa izan daiteke eta, hala ere, bulo bat sinetsi izana."
+        ],
+        [
+         "Gaztelaniaz dago.",
+         false,
+         "Hizkuntzak ez du zerikusirik."
+        ]
+       ],
+       "ok": "Zuzen: iturririk gabe, premiaz eta beldurrez badator, kontu handiz.",
+       "mal": "Irakurri berriro mezua.",
+       "intentos": 2
+      }
+     },
+     {
+      "etiqueta": "Definizioa eta azalpena",
+      "titulo": "Buloa eta post-egia",
+      "definicion": [
+       "<strong>Buloa</strong> egiazko gisa zabaltzen den albiste faltsua da.",
+       "<strong>Post-egiaren</strong> garaian bizi gara: askotan emozioek eta sinesmenek egiaztatutako gertaerek baino pisu handiagoa dute.",
+       "Horregatik, edozein mezuren aurrean lehen galdera hau da: <strong>nork bidaltzen du eta zer irabazten du horrekin?</strong>"
+      ],
+      "comprobacion": {
+       "boton": "Ulermena egiaztatu",
+       "etiqueta": "Azken egiaztapena",
+       "pregunta": "Zer da post-egia?",
+       "opciones": [
+        [
+         "Emozioek eta sinesmenek egiaztatutako gertaerek baino pisu handiagoa duten egoera.",
+         true
+        ],
+        [
+         "Gertaera baten ondoren argitaratzen den albistea.",
+         false,
+         "Ez du zerikusirik denboran duen ordenarekin."
+        ],
+        [
+         "Zientzialariek egiaztatutako egia.",
+         false,
+         "Ia kontrakoa da: gertaerek pisua galtzen dute emozioen aurrean."
+        ],
+        [
+         "Sare sozial mota bat.",
+         false,
+         "Fenomeno bat da, ez plataforma bat."
+        ]
+       ],
+       "ok": "Zuzen.",
+       "mal": "Oraindik ez."
+      }
+     }
+    ]
+   },
+   {
+    "fase": "2. fasea · Sakontzea",
+    "etiqueta": "Galdera berria",
+    "pregunta": "Zer egin behar dut albiste bat sinetsi edo birbidali aurretik?",
+    "intro": [
+     "Badakizu zer den buloa. Orain pentsatu plan bat: zer urrats egingo zenituzke «birbidali» sakatu aurretik?"
+    ],
+    "pistas": [
+     "Lehenik, gelditu: mezu batek presa handia sartzen badizu, susmatu.",
+     "Begiratu nondik datorren: nork sinatzen du? Iturri ezaguna eta fidagarria da?",
+     "Bilatu beste iturri fidagarri batzuek gauza bera kontatzen duten.",
+     "Sinetsi edo partekatu aurretik, <strong>egiaztatu</strong>: begiratu informazioa iturri fidagarri batzuetan."
+    ],
+    "comprobacion": {
+     "pregunta": "Zer esan nahi du informazio bat egiaztatzeak?",
+     "opciones": [
+      [
+       "Iturri fidagarri batzuetan begiratzea, sinetsi aurretik.",
+       true
+      ],
+      [
+       "Jende askori birbidaltzea, zer iritzi duten ikusteko.",
+       false,
+       "Horrela zabaltzen da buloa: lehenik egiaztatu egiten da eta gero, beharbada, partekatu."
+      ],
+      [
+       "Sinestea «atsegin dut» asko baditu.",
+       false,
+       "Ospeak ez du frogatzen zerbait egia denik."
+      ],
+      [
+       "Titularra bakarrik irakurtzea.",
+       false,
+       "Titularrak engaina dezake: iturria eta edukia begiratu behar dira."
+      ]
+     ],
+     "ok": "Hala da. Egiaztatzea iturri fidagarriekin kontrastatzea da.",
+     "mal": "Ez zehazki."
+    },
+    "rescate": [
+     {
+      "boton": "Erakutsi urratsak",
+      "etiqueta": "Birbidali aurretik",
+      "titulo": "Lau urrats",
+      "definicion": [
+       "<strong>1. Gelditu.</strong> Beldurra, amorrua edo presa sentitzen baduzu, hartu arnasa ezer egin aurretik.",
+       "<strong>2. Begiratu iturria.</strong> Nork dio? Hedabide edo erakunde ezaguna da?",
+       "<strong>3. Kontrastatu.</strong> Bilatu beste iturri fidagarri batzuek gauza bera kontatzen duten.",
+       "<strong>4. Erabaki.</strong> Ezin baduzu egiaztatu, ez birbidali."
+      ],
+      "comprobacion": {
+       "boton": "Egiaztatuz amaitu",
+       "pregunta": "Ez duzu mezu bat berresten duen iturri fidagarririk aurkitzen. Zer egiten duzu?",
+       "opciones": [
+        [
+         "Ez dut birbidaltzen.",
+         true
+        ],
+        [
+         "Birbidali egiten dut, badaezpada egia bada.",
+         false,
+         "«Badaezpada» da, hain zuzen, buloak zabaltzeko modua."
+        ],
+        [
+         "Birbidali egiten dut, «ez dakit egia den» gehituta.",
+         false,
+         "Hala ere, zabaltzen ari zara."
+        ],
+        [
+         "Sinetsi egiten dut, baina ez diot inori esaten.",
+         false,
+         "Iturri fidagarririk gabe, ez dago sinesteko arrazoirik ere."
+        ]
+       ],
+       "ok": "Zuzen: egiaztatu ezin dena ez da partekatzen.",
+       "mal": "Irakurri berriro urratsak."
+      }
+     }
+    ]
+   }
+  ],
+  "cierre": {
+   "titulo": "Hedabideei lupaz begiratzen diezu jada",
+   "parrafos": [
+    "Buloa egiazko gisa zabaltzen den albiste faltsua da, emozioa ukitzen duelako. Sinetsi edo birbidali aurretik: gelditu, begiratu iturria, kontrastatu eta, ezin baduzu egiaztatu, ez partekatu.",
+    "Erronka: hartu aste honetako mezu edo titular bat eta aplikatu lau urratsak."
+   ]
+  }
  }
 ];
