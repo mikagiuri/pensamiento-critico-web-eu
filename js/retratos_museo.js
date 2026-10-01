@@ -160,19 +160,6 @@ const RETRATOS = [
   "page": "https://commons.wikimedia.org/wiki/File:Platon_Cave_Sanraedam_1604.jpg"
  },
  {
-  "slug": "kuhn",
-  "name": "Thomas Kuhn",
-  "aliases": [
-   "Thomas Kuhn",
-   "Kuhn"
-  ],
-  "file": "media/retratos/museo/kuhn.jpg",
-  "title": "Thomas-kuhn-portrait",
-  "artist": "Davi.trip",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File%3AThomas-kuhn-portrait.png"
- },
- {
   "slug": "james",
   "name": "William James",
   "aliases": [
