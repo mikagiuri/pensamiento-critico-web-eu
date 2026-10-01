@@ -77,7 +77,7 @@
   var IG_TEMA = { "hf-platon": 6, "hf-kant": 19, "hf-helenismo": 10, "hf-beauvoir": 26, "hf-posmodernidad": 23,
     "fil-t1": 1, "fil-ramas": 1, "fil-mito-logos": 1, "fil-t2": 2, "fil-natur-cultura": 2, "fil-cuerpo-mente": 2, "fil-t3": 3, "fil-posverdad": 3 };
   var ESQ_REL = { AA: 7, BH: 14, CK: 19, CC: 21, CM: 21, CF: 21, C5A: 22, C5B: 27, CdB: 26, C8: 25, C8K: 25, C6: 23, C7: 24, C9: 26 };
-  var THEORY_EXTRA = { "fil-presocraticos": 1, "fil-helenismo": 5, "hf-descartes-makro": 14 };
+  var THEORY_EXTRA = { "fil-presocraticos": 1, "fil-helenismo": 5, "hf-descartes-makro": 14, "hf-platon-superficie": 6, "hf-descartes-simulacion": 14 };
   /* unidades del curso de 2.º ESO («Clases») → tema */
   var CLASES_TEMA = { 1: "pensar", 2: "argumentar", 3: "falacias", 4: "falacias", 5: "falacias", 6: "medios", 7: "medios", 8: "sesgos", 9: "medios", 10: "pensar",
     11: "dialogo", 12: "grupo", 13: "huella", 14: "argumentar", 20: "huella" };
