@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="css/dilemas.css">
 <link rel="stylesheet" href="css/mundo.css">
 <link rel="stylesheet" href="css/camino.css">
+<link rel="stylesheet" href="css/pistas.css">
 <link rel="stylesheet" href="css/retratos.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pentsamendu kritikoa · DBH 2">
@@ -71,6 +72,7 @@
         <span class="navgroup" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Ariketak</span>
         <div class="navmenu">
           <button data-view="dilemas">Dilema etikoak</button>
+          <button data-view="pistas">Pistak</button>
           <button data-view="cuestionarios">Galdetegiak</button>
         </div>
       </div>
@@ -96,6 +98,7 @@
   <!-- CALENDARIO -->
   
 
+  
 
   <!-- TEORÍA -->
   <section class="view" id="teoria">
@@ -288,6 +291,13 @@
 
   
 
+  <section class="view" id="pistas">
+    <p class="eyebrow">Ariketa</p>
+    <h1 class="title">Pista mailakatuak</h1>
+    <p class="lead">Gai-zerrendako galdera nagusiak, zeure kabuz erantzuteko, banan-banan agertzen diren pistekin: lausoenetik ia erantzuna ematen dizunera arte. Amaitzen badira, testu batek eta azalpen batek iristen lagunduko dizute.</p>
+    <div id="pistasbox"></div>
+  </section>
+
   
 </main>
 
@@ -333,6 +343,8 @@
 <script src="js/mundoview.js"></script>
 <script src="js/camino.js"></script>
 <script src="js/caminoview.js"></script>
+<script src="js/pistas_uhs.js"></script>
+<script src="js/pistasview.js"></script>
 <!-- mermaid se carga bajo demanda al abrir Esquemas (js/lazy_libs.js) -->
 <script src="js/esquemas.js"></script>
 <script src="js/esquemasview.js"></script>
