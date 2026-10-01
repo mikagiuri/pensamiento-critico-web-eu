@@ -227,7 +227,7 @@ function loadTheory(k){
   const t = THEORY[k], body = document.getElementById("theorybody");
   const relHtml = (typeof relatedStripHtml === "function") ? relatedStripHtml(k, "teoria") : "";
   const porApartados = THEORY_POR_APARTADOS.includes(t.subject);
-  const head = '<div class="theory-head"><span class="kick" style="color:var(--' + t.subject + ')">' + t.tema + '</span><h1>' + t.title + '</h1></div>' + relHtml;
+  const head = '<div class="theory-head"><span class="kick" style="color:var(--' + t.subject + ')">' + t.tema + '</span><h1>' + t.title + '</h1>' + (typeof t.temaN === "number" ? '<span class="en-clase">Klasean</span>' : '') + '</div>' + relHtml;
   if (porApartados){ body.innerHTML = head; theorySplitParts(body, t.html); }
   else body.innerHTML = head + t.html;
   if (typeof wireRelated === "function") wireRelated(body);
