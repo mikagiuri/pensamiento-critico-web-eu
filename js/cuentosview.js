@@ -20,7 +20,7 @@ const CUENTO_PDF = {
   "ipc-lec-mariposa": "sueno_de_la_mariposa", "ipc-lec-zar": "zar_camisa_hombre_feliz",
   "ipc-lec-zorro": "zorro_y_tigre",
 };
-function cuentoPdf(k){ return CUENTO_PDF[k] ? "media/lecturas/fichas/lectura_" + CUENTO_PDF[k] + "_alumnado_bn.pdf" : null; }
+function cuentoPdf(k){ return CUENTO_PDF[k] ? "media/lecturas/fichas/lectura_" + CUENTO_PDF[k] + "_alumnado_eu_bn.pdf" : null; }
 
 function isCuento(k){ return /^ipc-lec-/.test(k) && !/soluciones/.test(k); }
 function cuentoKeys(){ return typeof MATERIALS === "undefined" ? [] : Object.keys(MATERIALS).filter(isCuento); }
