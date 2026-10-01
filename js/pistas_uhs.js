@@ -215,5 +215,222 @@ const PISTAS = [
     "Erronka: bilatu gaur benetako adibide bat (sareetan, telebistan, eztabaida batean) eta azaldu non dagoen tranpa."
    ]
   }
+ },
+ {
+  "id": "ipc-sesgos",
+  "subject": "ipc",
+  "tema": "Alborapenak",
+  "unidad": "ipc-sesgos",
+  "materia": "Pentsamendu kritikoa · DBH 2",
+  "titulo": "Zer da baieztapen-alborapena?",
+  "lede": "Kanpoan ez, gure buruaren barruan dagoen tranpa bat. Eskatu behar dituzun pistak bakarrik.",
+  "ciclos": [
+   {
+    "fase": "1. fasea · Berreskuratzea",
+    "etiqueta": "Hasierako galdera",
+    "pregunta": "Zer da baieztapen-alborapena?",
+    "intro": [
+     "Saiatu zure hitzekin azaltzen. Pentsatu zerbaitez ziur dagoen eta arrazoia ematen dionari bakarrik kasu egiten dion norbaitengan."
+    ],
+    "pistas": [
+     "Alborapena buruaren lasterbide bat da, okerreko moduan pentsarazten diguna konturatu gabe.",
+     "Faltsukeriak argudioetan daude; alborapenak, aldiz, gure <em>barruan</em> daude.",
+     "Begiratu «berrespen» hitzari: zer nahi dugu berretsi?",
+     "Lehendik pentsatzen genuena <strong>berresten duena bakarrik bilatzeko eta sinesteko</strong> joera da, eta kontra egiten digunari ez ikusiarena egitekoa."
+    ],
+    "comprobacion": {
+     "pregunta": "Kasu hauetatik, zein da berrespen-alborapena?",
+     "opciones": [
+      [
+       "Nire ikaskidea jatorra ez dela uste dut, eta hori berresten duten keinuei bakarrik erreparatzen diet.",
+       true
+      ],
+      [
+       "Iritziz aldatzen naiz datu berriak ikusi ondoren.",
+       false,
+       "Hori justu kontrakoa da: frogek pentsatzen duzuna aldatzen uztea."
+      ],
+      [
+       "Hainbat pertsonari galdetzen diet erabaki aurretik.",
+       false,
+       "Iritzi desberdinak bilatzeak alborapena saihesten laguntzen du."
+      ],
+      [
+       "Batuketa batean huts egiten dut, arreta faltagatik.",
+       false,
+       "Akats bat da, baina ez du zerikusirik lehendik pentsatzen zenuena berrestearekin."
+      ]
+     ],
+     "ok": "Ondo. Alborapenak ikusten duguna iragazten du, lehendik uste genuenarekin bat etor dadin.",
+     "mal": "Oraindik ez."
+    },
+    "rescate": [
+     {
+      "boton": "Adibide bat behar dut",
+      "etiqueta": "Adibidea",
+      "titulo": "Leireren matematikak",
+      "definicion": [
+       "Leirek pentsatzen du: «Matematikak fatal ematen zaizkit».",
+       "Primeran gogoratzen du urrian suspenditu zuen azterketa.",
+       "Baina ahaztu egiten zaizkio gero gainditu zituen hirurak, eta atzo bakarrik ebatzi zuela problema zail bat."
+      ],
+      "parrafos": [
+       "Zer ari da egiten Leireren burua bere oroitzapenekin?"
+      ],
+      "comprobacion": {
+       "etiqueta": "Adibidearen egiaztapena",
+       "pregunta": "Zer gertatzen zaio Leireri?",
+       "opciones": [
+        [
+         "Bere ideia berresten duena bakarrik gogoratzen du, eta kontra egiten diona ahazten du.",
+         true
+        ],
+        [
+         "Oroimen txarra du denetarako.",
+         false,
+         "Suspentsoa oso ondo gogoratzen du: bere oroimenak aukeratzen du zer gorde."
+        ],
+        [
+         "Arrazoi du: matematikak fatal ematen zaizkio.",
+         false,
+         "Datuek (hiru gainditu eta problema zail bat ebatzita) beste zerbait diote."
+        ],
+        [
+         "Nahita gezurra esaten du.",
+         false,
+         "Ez du gezurrik esaten: alborapenak konturatu gabe jokatzen du."
+        ]
+       ],
+       "ok": "Zuzen. Aurretiko ideiak erabakitzen du zer gogoratzen duen: hori da berrespen-alborapena.",
+       "mal": "Irakurri berriro kasua.",
+       "intentos": 2
+      }
+     },
+     {
+      "etiqueta": "Definizioa eta azalpena",
+      "titulo": "Berrespen-alborapena",
+      "definicion": [
+       "<strong>Berrespen-alborapena</strong> lehendik pentsatzen genuena berresten duena bakarrik bilatzeko, gogoratzeko eta sinesteko joera da.",
+       "Kontra egiten diguna ez dugu ikusten, ahaztu egiten dugu edo gutxietsi egiten dugu.",
+       "Ez da gezurra esatea ezta tontoa izatea ere: denoi gertatzen zaigu. Horregatik ikasi behar da zaintzen."
+      ],
+      "comprobacion": {
+       "boton": "Ulermena egiaztatu",
+       "etiqueta": "Azken egiaztapena",
+       "pregunta": "Berrespen-alborapenari buruzko esaldi hauetatik, zein da egia?",
+       "opciones": [
+        [
+         "Denoi eragiten digu, konturatu ez arren.",
+         true
+        ],
+        [
+         "Adimen gutxiko pertsonei bakarrik gertatzen zaie.",
+         false,
+         "Denei gertatzen zaie, oso azkarrak direnei ere bai."
+        ],
+        [
+         "Gezurra esatearen berdina da.",
+         false,
+         "Gezurra esaten duenak badaki zerbait faltsua esaten ari dela; alborapenak guk nabaritu gabe jokatzen du."
+        ],
+        [
+         "Besteak konbentzitzeko erabiltzen dugun faltsukeria bat da.",
+         false,
+         "Faltsukeriak argudioetan daude; alborapenak, gure buruaren barruan."
+        ]
+       ],
+       "ok": "Zuzen.",
+       "mal": "Oraindik ez."
+      }
+     }
+    ]
+   },
+   {
+    "fase": "2. fasea · Sakontzea",
+    "etiqueta": "Galdera berria",
+    "pregunta": "Zer egin dezakegu berrespen-alborapenean ez erortzeko?",
+    "intro": [
+     "Alborapena gure barruan badago, ez da nahikoa badagoela jakitea. Zer ohiturak lagun diezazukete hura zaintzen?"
+    ],
+    "pistas": [
+     "Alborapenak arrazoia ematen diguna bakarrik bilatzera garamatza. Zer gertatuko litzateke kontrakoa egingo bazenu?",
+     "Sare sozialek batez ere lehendik gustatzen zaiguna erakusten digute. Pentsatu horrek zer egiten duen gure ideiekin.",
+     "Galdera on bat hau da: «Zerk aldaraziko ninduke iritziz?».",
+     "Bilatu nahita kontra egiten dizuten frogak eta iritziak, eta entzun itzazu erabaki aurretik."
+    ],
+    "comprobacion": {
+     "pregunta": "Ohitura hauetatik, zeinek laguntzen du gehien berrespen-alborapena saihesten?",
+     "opciones": [
+      [
+       "Nahita bilatzea pentsatzen dudanaren kontra doan informazioa.",
+       true
+      ],
+      [
+       "Ni bezala pentsatzen duten kontuak bakarrik jarraitzea.",
+       false,
+       "Horrek alborapena elikatzen du: lehendik arrazoia ematen dizuna bakarrik ikusiko duzu."
+      ],
+      [
+       "Inoiz iritziz ez aldatzea, koherentea izateko.",
+       false,
+       "Koherentea izatea ez da inoiz ez aldatzea: arrazoi onak agertzen badira, aldatzea zentzuzkoa da."
+      ],
+      [
+       "Azkar erabakitzea, zalantzarik ez izateko.",
+       false,
+       "Presak buruaren lasterbideen alde egiten du, eta alborapena horietako bat da."
+      ]
+     ],
+     "ok": "Hala da. Kontra egiten dizuna bilatzea da alborapenaren aurkako txertorik onena.",
+     "mal": "Ez zehazki."
+    },
+    "rescate": [
+     {
+      "boton": "Azalpena erakutsi",
+      "etiqueta": "Antidotoak",
+      "titulo": "Nola zaindu alborapena",
+      "definicion": [
+       "<strong>Bilatu kontrakoa.</strong> Erabaki aurretik, bilatu gutxienez arrazoi edo datu bat pentsatzen duzunaren kontra.",
+       "<strong>Galdetu zeure buruari zerk aldaraziko zintuzkeen iritziz.</strong> Erantzuna «ezerk ez» bada, kontuz: ez zaude pentsatzen, defendatzen baizik.",
+       "<strong>Hautsi burbuila.</strong> Sareek lehendik gustatzen zaizuna erakusten dizute: entzun desberdin pentsatzen duenari ere."
+      ],
+      "comprobacion": {
+       "boton": "Egiaztatuz amaitu",
+       "pregunta": "Ezerk ezin bazaitu iritziz aldarazi, zer gertatzen zaizu?",
+       "opciones": [
+        [
+         "Seguruenik ideia bat defendatzen ari zarela, hura pentsatu beharrean.",
+         true
+        ],
+        [
+         "Arrazoi osoa duzula.",
+         false,
+         "Kontrako frogarik ezin irudikatzea alarma-seinale bat da, ez asmatu duzunaren seinale."
+        ],
+        [
+         "Oso koherentea zarela.",
+         false,
+         "Koherentzia ez datza frogei ixtean."
+        ],
+        [
+         "Ezer ez: normala da.",
+         false,
+         "Normala da, baina justu hori da zaindu behar dena."
+        ]
+       ],
+       "ok": "Zuzen: pentsatzea arrazoi onak badaude aldatzeko prest egotea da.",
+       "mal": "Irakurri berriro azalpena."
+      }
+     }
+    ]
+   }
+  ],
+  "cierre": {
+   "titulo": "Badakizu zure burua zaintzen",
+   "parrafos": [
+    "Berrespen-alborapenak lehendik pentsatzen genuena berresten duena bakarrik bilatzera eta gogoratzera garamatza. Denoi gertatzen zaigu; antidotoa nahita kontra egiten diguna bilatzea da.",
+    "Erronka: aukeratu oso ziur zauden ideia bat eta bilatu gaur haren kontrako argudio on bat."
+   ]
+  }
  }
 ];
