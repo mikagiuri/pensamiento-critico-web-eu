@@ -164,6 +164,11 @@ function wireRelated(container){
    primer <h2> va con el primero). Solo cambia la vista: theory.js sigue igual. «Ver el tema entero»
    lo muestra seguido, como antes. */
 const THEORY_POR_APARTADOS = ["fil"];
+/* HF (01-10): solo los temas largos (los ampliados con el contenido del euskera) van por apartados, y sus bloques
+   muy largos se parten por los <h3> en páginas de lectura tranquila: «Agustín de Hipona (2/3)». */
+const THEORY_LARGO = { hf: 9000 }, THEORY_TROZO = 4500;
+const theoryTextLen = html => { const d = document.createElement("div"); d.innerHTML = html; return d.textContent.replace(/\s+/g, " ").length; };
+function theoryPorApartados(t){ return THEORY_POR_APARTADOS.includes(t.subject) || (THEORY_LARGO[t.subject] && theoryTextLen(t.html) > THEORY_LARGO[t.subject]); }
 let theoryPart = 0, theoryWhole = false;
 /* al imprimir sale siempre el tema entero, sin la barra de apartados */
 document.head.insertAdjacentHTML("beforeend",
@@ -184,7 +189,7 @@ function theoryShowPart(body, i, scroll){
   if (scroll) body.scrollIntoView({ block: "start" });
 }
 
-function theorySplitParts(body, html){
+function theorySplitParts(body, html, trocear){
   const tmp = document.createElement("div");
   tmp.innerHTML = html;
   const groups = [[]];
@@ -192,6 +197,24 @@ function theorySplitParts(body, html){
     if (n.nodeType === 1 && n.tagName === "H2" && groups[groups.length - 1].some(x => x.nodeType === 1 && x.tagName === "H2")) groups.push([]);
     groups[groups.length - 1].push(n);
   });
+  if (trocear){   /* un bloque muy largo se reparte en varias páginas, cortando solo delante de un <h3> */
+    const len = ns => ns.reduce((a, n) => a + (n.textContent || "").replace(/\s+/g, " ").length, 0);
+    for (let gi = groups.length - 1; gi >= 0; gi--){
+      const g = groups[gi], h2 = g.find(x => x.nodeType === 1 && x.tagName === "H2");
+      if (!h2 || len(g) <= THEORY_TROZO * 1.5) continue;
+      const trozos = [[]];
+      g.forEach(n => {
+        const cur = trozos[trozos.length - 1];
+        if (n.nodeType === 1 && n.tagName === "H3" && len(cur) >= THEORY_TROZO) trozos.push([]);
+        trozos[trozos.length - 1].push(n);
+      });
+      if (trozos.length < 2) continue;
+      const tit = h2.textContent;
+      h2.textContent = tit + " (1/" + trozos.length + ")";
+      trozos.forEach((tz, ti) => { if (ti){ const h = document.createElement("h2"); h.textContent = tit + " (" + (ti + 1) + "/" + trozos.length + ")"; tz.unshift(h); } });
+      groups.splice(gi, 1, ...trozos);
+    }
+  }
   const navHtml = '<div class="toolrow th-partnav" style="justify-content:space-between;align-items:center;margin:1.2rem 0">' +
     '<button class="btn" data-thprev>← Aurrekoa</button><span class="flabel th-partpos"></span>' +
     '<button class="btn" data-thnext>Hurrengoa →</button></div>';
@@ -226,9 +249,9 @@ function loadTheory(k){
   renderTheoryChips();
   const t = THEORY[k], body = document.getElementById("theorybody");
   const relHtml = (typeof relatedStripHtml === "function") ? relatedStripHtml(k, "teoria") : "";
-  const porApartados = THEORY_POR_APARTADOS.includes(t.subject);
+  const porApartados = theoryPorApartados(t), trocear = !THEORY_POR_APARTADOS.includes(t.subject);
   const head = '<div class="theory-head"><span class="kick" style="color:var(--' + t.subject + ')">' + t.tema + '</span><h1>' + t.title + '</h1>' + (typeof t.temaN === "number" ? '<span class="en-clase">Klasean</span>' : '') + '</div>' + relHtml;
-  if (porApartados){ body.innerHTML = head; theorySplitParts(body, t.html); }
+  if (porApartados){ body.innerHTML = head; theorySplitParts(body, t.html, trocear); }
   else body.innerHTML = head + t.html;
   if (typeof wireRelated === "function") wireRelated(body);
   const hs = [...body.querySelectorAll("h2")];
