@@ -397,6 +397,30 @@ const TEMAS = [
    {t:"Azokako bi engainatzailek baino ez lukete horrelakorik esango; ez dizuet jaramonik egingo.", f:"persona"},
    {t:"Edo zuen jolasa hitz-jario hutsa dela onartzen duzue, edo iruzurtiak zaretela: aukeratu.", f:"dos"},
   ]},
+ {nivel:["fil","hf"], claim:"Sokrates Kritonen aurka: ihes egin behar al zaio kondena injustu bati?",
+  cpuLado:"Ordenagailua Kriton da: goizaldean kartzelara sartzen den lagun bat, Sokrates ihes egitera konbentzitzeko; dirua, kontaktuak eta plan bat ditu.",
+  tuLado:"Sokrates zara: kontua ez da zer esango duten, ezta zer komeni den ere, baizik eta ihes egitea justua den; eta inoiz ez da injustiziarik egin behar.",
+  estrat:[
+   {t:"«Bihotza hautsiko didazu; hiltzen bazara ordezkaezina den lagun bat galtzen dut, eta inork ez du sinetsiko ahal nuena egin nuenik.»", nombre:"lagunaren xantaia", schop:"pena ematea / errudun sentiaraztea", q:"Zure mina axola zait, baina ez du erabakitzen zer den justua."},
+   {t:"«Azkar ibili, itsasontzia iristear dago, gaur gauean edo inoiz ez; ez dago filosofatzeko astirik!»", nombre:"presa", schop:"gainera etortzea pentsa ez dezazun", q:"Presa ez da argudio bat; larria denez, hain zuzen, ondo pentsatu behar da."},
+   {t:"«Hor geldituko al zara hain lasai zure seme-alabak umezurtz geratzen diren bitartean? Nolako aita zara?»", nombre:"aitaren leporatzea", schop:"argudiatu ordez errudun sentiaraztea", q:"Aita txarra naizela iradokitzeak ez dio erantzuten ihes egitea justua den galderari."},
+  ],
+  opp:[
+   {t:"Ihes egiten ez baduzu, jendeak esango du zure lagunok zekenak eta koldarrak izan ginela zu salbatzeko dirurik gastatu ez genuelako. Pentsa gure ospean.", f:"todos", peso:2},
+   {t:"Pentsa zure seme-alabengan: umezurtz uzten dituzu, haztapenik eta hezkuntzarik gabe. Horrela abandonatzea berekoien kontua da.", f:"pena", peso:2},
+   {t:"Edo ihes egin eta bizi, edo gelditu eta injustuki kondenatu zintuztenei garaipena eman: ez dago besterik.", f:"dos", peso:2},
+   {t:"Gelditzea bide erosoa aukeratzea da; kemenen bat duen edonork ihes egingo zukeen jadanik.", f:"persona", fAlt:["todos"], peso:1},
+   {t:"Baliabideak eta zu ateratzeko prest dauden lagunak ditugu; guretzako arriskua gogo onez hartzen dugu.", f:null},
+   {t:"Zure heriotzak injustuki kondenatu zintuztenei mesede egiten die, eta maite zaitugunoi min.", f:null},
+  ],
+  counters:[
+   {t:"Ez zaio gehiengoak dioenari erreparatu behar, dakienari baizik: osasunean medikuari jarraitzen diogu, ez jendetzari; justuan, berdin. Masak hil dezake, baina ez du erabakitzen zer den justua.", str:3},
+   {t:"Galdera ez da zer esango duten, baizik eta ihes egitea justua den; eta inoiz ez da injustiziarik egin behar, ezta jasotako kalte bat itzultzeko ere.", str:3},
+   {t:"Norbanako bakoitzak gustuko ez dituen epaiak baliogabetzen baditu, ez da hiririk zutik mantentzen. Hemen biziz legeak obeditzea onartu nuen, eta ados ez banengoen alde egin nezakeen: itun hori orain haustea injustua litzateke.", str:3},
+   {t:"Nire seme-alabak hobeto hazten ditu bere itunak hausten ez dituen aita batek: ihes egiteak kontrakoa irakatsiko lieke. Hobe diet lagun onak eta eredu on bat uztea, aita iheslari bat baino.", str:2},
+   {t:"Zu bezalako koldar batek bakarrik, zer esango dutenaren beldur denak, eskatzen dit ihes egiteko.", f:"persona"},
+   {t:"Edo gaur gauean bertan ihes egiten dugu, edo heriotzaren esku uzten nauzu: aukeratu.", f:"dos"},
+  ]},
 ];
 
 // Nivel de cada tema: cada objeto de TEMAS trae su `nivel`. Se filtra según la web por el hash del enlace (#eso/#fil/#hf; sin hash, todos).

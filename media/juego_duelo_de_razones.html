@@ -397,6 +397,30 @@ const TEMAS = [
    {t:"Solo un par de embaucadores de feria diría algo así; no voy a haceros el menor caso.", f:"persona"},
    {t:"O admitís que vuestro juego es pura palabrería, o sois unos farsantes: elegid.", f:"dos"},
   ]},
+ {nivel:["fil","hf"], claim:"Sócrates contra Critón: ¿hay que escapar de una condena injusta?",
+  cpuLado:"El ordenador es Critón: un amigo que entra de madrugada en la cárcel para convencer a Sócrates de que huya; tiene dinero, contactos y un plan.",
+  tuLado:"Eres Sócrates: la cuestión no es qué dirán ni qué conviene, sino si huir es justo; y jamás se debe cometer injusticia.",
+  estrat:[
+   {t:"“Me romperás el corazón; si mueres pierdo a un amigo irreemplazable y nadie creerá que hice lo posible.”", nombre:"el chantaje del amigo", schop:"dar pena / culpabilizar", q:"Tu dolor me importa, pero no decide qué es justo."},
+   {t:"“¡Date prisa, el barco está al llegar, es esta noche o nunca; no hay tiempo de filosofar!”", nombre:"la prisa", schop:"atropellar para que no pienses", q:"La prisa no es un argumento; justamente por grave hay que pensarlo bien."},
+   {t:"“¿Vas a quedarte ahí tan tranquilo mientras tus hijos quedan huérfanos? ¿Qué clase de padre eres?”", nombre:"el reproche del padre", schop:"culpar en vez de argumentar", q:"Insinuar que soy mal padre no responde a si escapar es justo."},
+  ],
+  opp:[
+   {t:"Si no escapas, la gente dirá que tus amigos fuimos unos tacaños y unos cobardes por no gastar en salvarte. Piensa en nuestra fama.", f:"todos", peso:2},
+   {t:"Piensa en tus hijos: los dejas huérfanos, sin crianza ni educación. Abandonarlos así es de egoístas.", f:"pena", peso:2},
+   {t:"O escapas y vives, o te quedas y les das la victoria a los que te condenaron injustamente: no hay otra.", f:"dos", peso:2},
+   {t:"Quedarte es elegir el camino cómodo; cualquiera con agallas ya habría huido.", f:"persona", fAlt:["todos"], peso:1},
+   {t:"Tenemos los medios y amigos dispuestos a sacarte; el riesgo para nosotros lo asumimos de buena gana.", f:null},
+   {t:"Tu muerte beneficia a quienes te condenaron injustamente y hiere a quienes te queremos.", f:null},
+  ],
+  counters:[
+   {t:"No hay que atender a lo que opina la mayoría, sino a quien sabe: en salud seguimos al médico, no a la multitud; en lo justo, igual. La masa puede matar, pero no decide qué es justo.", str:3},
+   {t:"La pregunta no es qué dirán, sino si escapar es justo; y jamás se debe cometer injusticia, ni siquiera para devolver un daño recibido.", str:3},
+   {t:"Si cada particular anula las sentencias que no le gustan, ninguna ciudad se sostiene. Viviendo aquí acepté obedecer las leyes y pude irme si no estaba de acuerdo: romper ese pacto ahora sería injusto.", str:3},
+   {t:"A mis hijos los cría mejor un padre que no rompe sus pactos: huir les enseñaría lo contrario. Mejor les dejo buenos amigos y un buen ejemplo que un padre fugitivo.", str:2},
+   {t:"Solo un cobarde como tú, que teme el qué dirán, me pide que huya.", f:"persona"},
+   {t:"O huimos ya esta noche, o me abandonas a la muerte: elige.", f:"dos"},
+  ]},
 ];
 
 // Nivel de cada tema: cada objeto de TEMAS trae su `nivel`. Se filtra según la web por el hash del enlace (#eso/#fil/#hf; sin hash, todos).
