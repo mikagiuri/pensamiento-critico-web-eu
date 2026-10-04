@@ -348,6 +348,30 @@ const TEMAS = [
    {t:"Zuk hau defendatzen duzu eskrupulurik gabeko handinahia zarelako; horregatik ez dizut sinesten.", f:"persona"},
    {t:"Edo justiziak balio duela onartzen duzu, edo tirano bat besterik ez zarela aitortzen duzu: aukeratu.", f:"dos"},
   ]},
+ {nivel:["fil","hf"], claim:"Sokrates Eutifronen aurka: zer da santutasuna?",
+  cpuLado:"Ordenagailua Eutifron da: erlijioan aditua dela uste duen igarle bat, bere aita salatzera doana; «santua» zer den badakiela ziurtatzen du.",
+  tuLado:"Sokrates zara: ez dituzu adibideak bilatzen, definizioa baizik: ekintza santu oro santu egiten duen ezaugarria.",
+  estrat:[
+   {t:"«Gauza hauetaz zuk baino askoz gehiago dakit, Sokrates; zerbaitegatik naiz igarlea.»", nombre:"adituaren harrokeria", schop:"norberaren autoritatera jotzea", q:"Igarlea izateak ez dio galderari erantzuten: esadazu zer den santua."},
+   {t:"«Hainbeste galderatxorekin nekatzen nauzu; hau edonork ulertzen du zuk izan ezik.»", nombre:"ezinegona", schop:"mespretxua / ad hominem", q:"Nekatzeak ez du ezer errefusatzen. Itzul gaitezen galderara."},
+   {t:"«Presa dut, Sokrates, zain naukate; beste egun baterako utziko dugu.»", nombre:"ihesa", schop:"galderari itzuri egitea", q:"Joatea ez da erantzutea: ihes egiteak galdera zutik uzten du."},
+  ],
+  opp:[
+   {t:"Zer da santua? Santua orain bertan egiten ari naizena da: krimena egiten duena jazartzea. Hor duzu.", f:null},
+   {t:"Zeusek berak kateatu zuen bere aita Krono; jainkoek gauza horiek egiten badituzte, nor naiz ni haiek ez imitatzeko?", f:"famoso", peso:2},
+   {t:"Argi-argi dago: santua jainkoek maite dutena da, eta santugabea haiei gorrotagarria zaiena.", f:null},
+   {t:"Orduan, santua jainko GUZTIEK salbuespenik gabe maite dutena izango da; benetan jainko den batek ere ez luke krimenik maiteko.", f:"notrue", peso:2},
+   {t:"Santua da jainkoek maite dutelako, eta kito; horrekin nahikoa duzu zer den jakiteko.", f:null},
+   {t:"Atenas osoak ongi asko daki zer den santutasuna; zuk bakarrik egiten duzu ez ulertzenarena.", f:"todos", peso:2},
+  ],
+  counters:[
+   {t:"ZER den santutasuna galdetu dizut, ez santua den zerbaiten adibidea. Emadazu ekintza santu oro santu egiten duen ezaugarria, edozein egintza harekin neurtzeko.", str:3},
+   {t:"Jainkoak elkarren artean liskarrean badabiltza, poetek dioten bezala, gauza bera batzuek maite eta besteek gorrotatuko dute: santua eta santugabea aldi berean. Zure definizioak bere burua kontraesaten du.", str:3},
+   {t:"Santua jainkoek maite dute santua DELAKO, ala santua da maite DUTELAKO? Dagoeneko santua delako maite badute, maitatua izatea ez da santu egiten duena: gertatzen zaiona esaten didazu, ez dena.", str:3},
+   {t:"Jainkoekiko zure «merkataritzak» hasierara darama berriro: haiei atsegin ematea haiek maitatua izatea besterik ez da, eta hori jada errefusatu dugu. Biribilean zabiltza.", str:2},
+   {t:"Bere aita auzitara eramateko gai den gizon batek ez du bihotzik; ez diot dioen ezeri sinesten.", f:"persona"},
+   {t:"Edo santutasuna hemen eta orain definitzen duzu, edo santugabe bat zarela aitortzen duzu: aukeratu.", f:"dos"},
+  ]},
 ];
 
 // Nivel de cada tema: cada objeto de TEMAS trae su `nivel`. Se filtra según la web por el hash del enlace (#eso/#fil/#hf; sin hash, todos).

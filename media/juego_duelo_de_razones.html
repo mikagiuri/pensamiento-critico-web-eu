@@ -348,6 +348,30 @@ const TEMAS = [
    {t:"Tú defiendes esto porque eres un ambicioso sin escrúpulos; por eso no te creo.", f:"persona"},
    {t:"O admites que la justicia vale, o reconoces que no eres más que un tirano: elige.", f:"dos"},
   ]},
+ {nivel:["fil","hf"], claim:"Sócrates contra Eutifrón: ¿qué es la piedad?",
+  cpuLado:"El ordenador es Eutifrón: un adivino que se cree experto en religión y va a denunciar a su propio padre; asegura saber qué es «lo pío».",
+  tuLado:"Eres Sócrates: no buscas ejemplos, sino la definición: el rasgo por el que toda acción pía es pía.",
+  estrat:[
+   {t:"“Yo sé de estas cosas mucho más que tú, Sócrates; para algo soy adivino.”", nombre:"la suficiencia del experto", schop:"apelar a la propia autoridad", q:"Que seas adivino no responde a la pregunta: dime qué es lo pío."},
+   {t:"“Me cansas con tanta preguntita; esto lo entiende cualquiera menos tú.”", nombre:"la impaciencia", schop:"desdén / ad hominem", q:"Cansarte no refuta nada. Volvamos a la pregunta."},
+   {t:"“Tengo prisa, Sócrates, me esperan; lo dejamos para otro día.”", nombre:"la huida", schop:"esquivar la pregunta", q:"Irte no es responder: huir deja la pregunta en pie."},
+  ],
+  opp:[
+   {t:"¿Qué es lo pío? Pío es lo que hago ahora mismo: perseguir al que comete un crimen. Ahí lo tienes.", f:null},
+   {t:"El propio Zeus encadenó a su padre Crono; si los dioses hacen estas cosas, ¿quién soy yo para no imitarlos?", f:"famoso", peso:2},
+   {t:"Está clarísimo: lo pío es lo que resulta querido por los dioses, y lo impío lo que les resulta odioso.", f:null},
+   {t:"Pues lo pío será lo que aman TODOS los dioses sin excepción; ninguno que de verdad sea dios amaría un crimen.", f:"notrue", peso:2},
+   {t:"Es pío porque los dioses lo aman, y punto; con eso te basta para saber qué es.", f:null},
+   {t:"Todo Atenas sabe de sobra lo que es la piedad; solo tú finges no entenderlo.", f:"todos", peso:2},
+  ],
+  counters:[
+   {t:"Te pregunté QUÉ es la piedad, no un ejemplo de algo piadoso. Dame el rasgo por el que toda acción pía es pía, para medir con él cualquier acto.", str:3},
+   {t:"Si los dioses riñen entre sí, como cuentan los poetas, lo mismo será amado por unos y odiado por otros: pío e impío a la vez. Tu definición se contradice.", str:3},
+   {t:"¿Lo pío es amado por los dioses PORQUE es pío, o es pío PORQUE lo aman? Si lo aman porque ya es pío, ser amado no es lo que lo hace pío: me dices lo que le ocurre, no lo que es.", str:3},
+   {t:"Tu «comercio» con los dioses vuelve al principio: agradarles no es sino ser amado por ellos, y eso ya lo refutamos. Giras en círculo.", str:2},
+   {t:"Un hombre capaz de llevar a su propio padre a juicio no tiene corazón; no me fío de nada que diga.", f:"persona"},
+   {t:"O defines la piedad aquí y ahora, o reconoce que eres un impío: elige.", f:"dos"},
+  ]},
 ];
 
 // Nivel de cada tema: cada objeto de TEMAS trae su `nivel`. Se filtra según la web por el hash del enlace (#eso/#fil/#hf; sin hash, todos).
