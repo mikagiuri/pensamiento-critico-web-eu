@@ -146,8 +146,9 @@ const FALACIAS = {
   miedo:  {nombre:"Beldurtzea, konbentzitzeko", tec:"beldurrarako deia", q:"Arrazoi bat ematen al dit, ala beldurra sartzen besterik ez?"},
   todos:  {nombre:"Mundu guztiak dio", tec:"ad populum", q:"Jende askok egiteak, egia bihurtzen al du?"},
   notrue: {nombre:"Komeni den bezala birdefinitzea", tec:"«no true scotsman»", q:"Definizioa aldatzen al duzu kontradibidea saihesteko soilik? (Sokratesek bereizketa onartu zuen… eta buelta eman zion.)"},
+  equivoco:{nombre:"Esanahi bikoitzarekin jolastea", tec:"ekibokoa / anfibologia", q:"Hitz horrek bi esanahi ditu: zeinetan erabiltzen duzu? Bidearen erdian esanahiz aldatzen baduzu, ez duzu ezer frogatu."},
 };
-const ORDEN_FAL = ["persona","famoso","siempre","pena","deformar","pocos","causa","dos","miedo","todos","notrue"];
+const ORDEN_FAL = ["persona","famoso","siempre","pena","deformar","pocos","causa","dos","miedo","todos","notrue","equivoco"];
 const FIBRA = new Set(["persona"]); // falacias que, además de trampa, son una falta de respeto: cuestan temple aunque las caces
 
 /* ---------- Estratagemas eristas: atacan el temple, no el tema ---------- */
@@ -371,6 +372,30 @@ const TEMAS = [
    {t:"Jainkoekiko zure «merkataritzak» hasierara darama berriro: haiei atsegin ematea haiek maitatua izatea besterik ez da, eta hori jada errefusatu dugu. Biribilean zabiltza.", str:2},
    {t:"Bere aita auzitara eramateko gai den gizon batek ez du bihotzik; ez diot dioen ezeri sinesten.", f:"persona"},
    {t:"Edo santutasuna hemen eta orain definitzen duzu, edo santugabe bat zarela aitortzen duzu: aukeratu.", f:"dos"},
+  ]},
+ {nivel:["fil","hf"], claim:"Sokrates Eutidemo eta Dionisodororen aurka: hitzekin irabazteko artea",
+  cpuLado:"Ordenagailua Eutidemo eta Dionisodoro anaia eristak dira: edozein gauza errefusatzeaz harro daude, besteak dioena diola ere, hitzen esanahi bikoitzarekin jolastuz.",
+  tuLado:"Sokrates zara: bereizi hitz bakoitzaren esanahiak eta erakutsi terminoa errefusatzen dutela, ez gauza.",
+  estrat:[
+   {t:"Biek batera egiten dute barre: «Ikusten? Sokrates handiak ez daki haurren galdera bati erantzuten ere.»", nombre:"bikoteko barrea", schop:"errefusatu ordez barregarri uztea", q:"Barre egiteak ez du ezer errefusatzen. Non dago diodanaren hutsa?"},
+   {t:"Txandaka estutzen zaituzte pentsatzen utzi gabe: «Erantzun orain! Bai edo ez! Azkar!»", nombre:"txandakako estutzea", schop:"gainera etortzea, bereizi ez dezazun", q:"Gainera etortzea ez da argudiatzea. Emadazu denbora esanahiak bereizteko."},
+   {t:"«Berdin dio zer erantzuten duzun, berdin eroriko zara; hobe orain amore ematea.»", nombre:"garaiezinen blufa", schop:"garaiezintasun faltsuz beldurtzea", q:"Irabazteaz harro egoteak ez du frogatzen arrazoia duzuenik."},
+  ],
+  opp:[
+   {t:"Ikasten dutenak jakintsuak ala ezjakinak dira? Jakintsuak badira, dagoeneko dakitena ikasten dute; ezjakinak badira, ezer ulertu gabe ikasten dute. Beraz, ikastea ezinezkoa da.", f:"equivoco", peso:2},
+   {t:"Zerbait badakizu? Orduan jakintsua zara. Eta dakienak, badaki. Beraz, DENA dakizu, eta beti jakin izan duzu.", f:"equivoco", peso:2},
+   {t:"Txakur bat duzu eta kumeen aita da? Orduan aita da eta zurea da: zure aita da. Eta zu kumeen anaia zara.", f:"equivoco", peso:2},
+   {t:"Gaztea jakintsu bihurtzea nahi duzu, hau da, den hori izateari uztea; izateari uztea nahi duzu: hil dadila nahi duzu!", f:"equivoco", peso:2},
+   {t:"Galdera orori bai edo ez erantzuten zaio. Erantzun bai edo ez soilik eta ikusiko duzu nola erortzen zaren; ñabardurak egitea tranpatien kontua da.", f:"dos", peso:2},
+   {t:"Lehen gauza bat esan duzu eta orain beste bat; beraz, zeure burua kontraesaten duzu eta galdu egin duzu, diozuna diozula.", f:"deformar", peso:1},
+  ],
+  counters:[
+   {t:"Bereizten dut: «ikastea»k bi gauza esan nahi ditu, jakite berri bat eskuratzea eta dagoeneko duena ulertzea. Ezjakinak lehen zentzuan ikasten du. Ekibokoa desegin eta gero, ez dago paradoxarik.", str:3},
+   {t:"«Zerbait jakitea» ez da «dena jakitea»: gauza bat jakiteak ez dakar guztiak jakitea. «Jakin» hitzarekin jolasten ari zara.", str:3},
+   {t:"«Aita da» eta «nirea da» egia dira bereiz, baina ez dira batzen: txakurra bere kumeen aita da eta nirea animalia gisa, ez nire aita. «Izan»en bi esanahi nahasten dituzu.", str:3},
+   {t:"Norbait jakintsu bihurtzea nahi izatea ez da «izateari uztea» nahi izatea: bera izaten jarraitzea eta gainera jakitea nahi izatea da. Hitz bat errefusatzen duzu, ez nire nahia.", str:2},
+   {t:"Azokako bi engainatzailek baino ez lukete horrelakorik esango; ez dizuet jaramonik egingo.", f:"persona"},
+   {t:"Edo zuen jolasa hitz-jario hutsa dela onartzen duzue, edo iruzurtiak zaretela: aukeratu.", f:"dos"},
   ]},
 ];
 

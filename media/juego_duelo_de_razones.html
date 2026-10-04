@@ -146,8 +146,9 @@ const FALACIAS = {
   miedo:  {nombre:"Asustar para convencer", tec:"apelación al miedo", q:"¿Me da una razón, o solo me mete miedo?"},
   todos:  {nombre:"Lo dice todo el mundo", tec:"ad populum", q:"Que lo haga mucha gente, ¿lo convierte en verdad?"},
   notrue: {nombre:"Redefinir a conveniencia", tec:"«no true scotsman»", q:"¿Cambias la definición solo para esquivar el contraejemplo? (Sócrates aceptó la distinción… y se la dio la vuelta.)"},
+  equivoco:{nombre:"Jugar con el doble sentido", tec:"equívoco / anfibología", q:"Esa palabra tiene dos sentidos: ¿en cuál la usas? Si cambias de sentido a mitad de camino, no has probado nada."},
 };
-const ORDEN_FAL = ["persona","famoso","siempre","pena","deformar","pocos","causa","dos","miedo","todos","notrue"];
+const ORDEN_FAL = ["persona","famoso","siempre","pena","deformar","pocos","causa","dos","miedo","todos","notrue","equivoco"];
 const FIBRA = new Set(["persona"]); // falacias que, además de trampa, son una falta de respeto: cuestan temple aunque las caces
 
 /* ---------- Estratagemas eristas: atacan el temple, no el tema ---------- */
@@ -371,6 +372,30 @@ const TEMAS = [
    {t:"Tu «comercio» con los dioses vuelve al principio: agradarles no es sino ser amado por ellos, y eso ya lo refutamos. Giras en círculo.", str:2},
    {t:"Un hombre capaz de llevar a su propio padre a juicio no tiene corazón; no me fío de nada que diga.", f:"persona"},
    {t:"O defines la piedad aquí y ahora, o reconoce que eres un impío: elige.", f:"dos"},
+  ]},
+ {nivel:["fil","hf"], claim:"Sócrates contra Eutidemo y Dionisodoro: el arte de vencer con palabras",
+  cpuLado:"El ordenador son los hermanos eristas Eutidemo y Dionisodoro: presumen de refutar cualquier cosa, diga lo que diga el otro, jugando con el doble sentido de las palabras.",
+  tuLado:"Eres Sócrates: distingue los sentidos de cada palabra y muestra que refutan el término, no la cosa.",
+  estrat:[
+   {t:"Se ríen a dúo: “¿Lo veis? El gran Sócrates no sabe ni responder una pregunta de niños.”", nombre:"la risa a dúo", schop:"ridiculizar en vez de refutar", q:"Reírse no refuta nada. ¿Dónde está el fallo de lo que digo?"},
+   {t:"Te acosan por turnos sin dejarte pensar: “¡Responde ya! ¡Sí o no! ¡Rápido!”", nombre:"el acoso por turnos", schop:"atropellar para que no distingas", q:"Atropellar no es argumentar. Dame tiempo de distinguir los sentidos."},
+   {t:"“Da igual lo que respondas, caerás igual; mejor ríndete ya.”", nombre:"el farol de invencibles", schop:"intimidar con falsa invencibilidad", q:"Que presumáis de ganar no prueba que tengáis razón."},
+  ],
+  opp:[
+   {t:"Los que aprenden, ¿son los sabios o los ignorantes? Si son los sabios, aprenden lo que ya saben; si los ignorantes, aprenden sin entender nada. Luego aprender es imposible.", f:"equivoco", peso:2},
+   {t:"¿Sabes algo? Entonces eres un sabio. Y el que sabe, sabe. Luego lo sabes TODO, y siempre lo has sabido.", f:"equivoco", peso:2},
+   {t:"¿Tienes un perro y es padre de cachorros? Entonces es padre y es tuyo: es tu padre. Y tú eres hermano de los cachorros.", f:"equivoco", peso:2},
+   {t:"Quieres que el joven se vuelva sabio, es decir, que deje de ser lo que es; quieres que deje de ser: ¡quieres que muera!", f:"equivoco", peso:2},
+   {t:"Toda pregunta se responde sí o no. Responde solo sí o no y verás cómo caes; matizar es de tramposos.", f:"dos", peso:2},
+   {t:"Antes dijiste una cosa y ahora otra; luego te contradices y has perdido, digas lo que digas.", f:"deformar", peso:1},
+  ],
+  counters:[
+   {t:"Distingo: «aprender» significa dos cosas, adquirir un saber nuevo y entender lo que ya se tiene. El ignorante aprende en el primer sentido. Deshecho el equívoco, no hay paradoja.", str:3},
+   {t:"«Saber algo» no es «saberlo todo»: de que sepa una cosa no se sigue que las sepa todas. Juegas con la palabra «saber».", str:3},
+   {t:"«Es padre» y «es mío» son verdad por separado, pero no se suman: el perro es padre de sus cachorros y mío como animal, no mi padre. Confundes dos sentidos de «ser».", str:3},
+   {t:"Querer que alguien llegue a ser sabio no es querer que «deje de ser»: es querer que siga siendo él y además sepa. Refutas una palabra, no mi deseo.", str:2},
+   {t:"Solo un par de embaucadores de feria diría algo así; no voy a haceros el menor caso.", f:"persona"},
+   {t:"O admitís que vuestro juego es pura palabrería, o sois unos farsantes: elegid.", f:"dos"},
   ]},
 ];
 
