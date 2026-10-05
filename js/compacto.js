@@ -47,10 +47,49 @@
     btn.innerHTML = '<span class="ctl-l">' + esc(t ? strip(t.textContent) : "") + (n ? ' <i>' + n + '</i>' : '') + '</span><span class="ctl-caret" aria-hidden="true">▾</span>';
     btn.hidden = !n;
   }
+  /* (05-10) Escritorio: la lista de temas/materiales también se pliega cuando es larga. Con 11-27 chips en varias
+     filas, el profesor lo considera ruido que empuja el contenido (lo pidió varias veces). Regla: más de MANY
+     opciones → una sola línea con la elegida y el número total («El surgimiento… 11 ▾»); con pocas, siguen a la vista.
+     Los filtros (Materia, Bloque) no se pliegan en escritorio: son una fila corta. Solo CSS ≥880 px lo muestra. */
+  var MANY = 6;
+  function ensureDesk(sec){
+    var chips = sec.querySelector(":scope > .chips, :scope > .crono-chips");
+    var btn = sec.querySelector(":scope > .chips-toggle");
+    var n = chips ? chips.querySelectorAll("button").length : 0;
+    sec.classList.toggle("ctl-many", n > MANY);
+    if (!chips) return;
+    if (!btn){
+      btn = document.createElement("button"); btn.type = "button"; btn.className = "chips-toggle"; btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function(){ var on = sec.classList.toggle("chips-open"); btn.setAttribute("aria-expanded", String(on)); });
+    }
+    if (btn.nextElementSibling !== chips) sec.insertBefore(btn, chips);
+    var act = chips.querySelector("[aria-pressed='true']");
+    var l = act ? strip(act.textContent) : strip(chips.getAttribute("aria-label"));
+    btn.innerHTML = '<span class="ctl-l">' + esc(l) + ' <i>' + n + '</i></span><span class="ctl-caret" aria-hidden="true">▾</span>';
+    btn.hidden = n <= MANY;
+  }
+  function closeDesk(){
+    document.querySelectorAll(".view.chips-open").forEach(function(v){
+      v.classList.remove("chips-open"); var t = v.querySelector(":scope > .chips-toggle"); if (t) t.setAttribute("aria-expanded", "false");
+    });
+  }
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeDesk(); });
+  document.addEventListener("click", function(e){
+    var t = e.target; if (!t.closest) return;
+    var b = t.closest(".chip, .chips button, .crono-chips button");
+    if (b && b.closest(".view > .chips, .view > .crono-chips")) {
+      /* elegir un tema pliega la lista; un botón de grupo (p. ej. «Tema N» de los cuestionarios) que no sea .chip, no */
+      if (b.classList.contains("chip") || b.hasAttribute("aria-pressed")) closeDesk();
+      return;
+    }
+    if (!t.closest(".chips-toggle")) closeDesk();   // clic fuera
+  }, true);
+
   var pending = false;
   function refresh(){
     pending = false;
     document.querySelectorAll(".view").forEach(ensureCtl);
+    document.querySelectorAll(".view").forEach(ensureDesk);
     document.querySelectorAll(".view .theory-layout > .toc").forEach(ensureToc);
   }
   function schedule(){ if (pending) return; pending = true; setTimeout(refresh, 0); }
@@ -65,7 +104,7 @@
   /* al cambiar de vista, todo plegado */
   if (typeof window.show === "function"){
     var orig = window.show;
-    window.show = function(id){ orig.apply(this, arguments); document.querySelectorAll(".view.ctl-open").forEach(function(v){ v.classList.remove("ctl-open"); }); document.querySelectorAll(".toc-open").forEach(function(v){ v.classList.remove("toc-open"); }); schedule(); };
+    window.show = function(id){ orig.apply(this, arguments); document.querySelectorAll(".view.ctl-open").forEach(function(v){ v.classList.remove("ctl-open"); }); document.querySelectorAll(".toc-open").forEach(function(v){ v.classList.remove("toc-open"); }); closeDesk(); schedule(); };
   }
   new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["aria-pressed"] });
   refresh();

@@ -483,7 +483,7 @@ ol.itin-temas li.temas-extra .temas-t{font-size:.95rem;color:var(--muted)}
   /* dentro de la vista activa: intro genérica y filtros fuera (el título propio del
      contenido va dentro del cuerpo y sí se imprime) */
   .view.active > .eyebrow, .view.active > .title, .view.active > .lead,
-  .view.active > .filterbar, .view.active > .chips { display:none !important; }
+  .view.active > .filterbar, .view.active > .chips, .chips-toggle { display:none !important; }
   .view:not(.active){ display:none !important; }
   html, body{ background:#fff !important; }
   body{ color:#000 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }

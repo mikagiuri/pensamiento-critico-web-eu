@@ -147,6 +147,23 @@
   .itin-strip .btn { min-height: 36px; padding: 5px 11px; font-size: 14px; }
 }
 
+/* ===== Escritorio (05-10, js/compacto.js): una lista larga de temas/materiales (más de 6) se pliega en una línea con
+   el elegido y el total; se despliega al tocar y se pliega al elegir, con Esc o con un clic fuera. ===== */
+.chips-toggle { display: none; }
+@media (min-width: 880px) {
+  .view.ctl-many > .chips-toggle:not([hidden]) {
+    display: inline-flex; align-items: center; gap: 12px; max-width: 100%; min-height: 42px;
+    margin: 20px 0 4px; padding: 8px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+    color: var(--ink); font: 600 15px/1.3 var(--sans); text-align: left; cursor: pointer;
+  }
+  .view.ctl-many > .chips-toggle:hover { border-color: var(--accent); }
+  .chips-toggle .ctl-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chips-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: 13px; margin-left: 4px; }
+  .chips-open > .chips-toggle .ctl-caret { transform: rotate(180deg); }
+  .view.ctl-many:not(.chips-open) > .chips, .view.ctl-many:not(.chips-open) > .crono-chips { display: none; }
+  .view.ctl-many.chips-open > .chips, .view.ctl-many.chips-open > .crono-chips { margin: 12px 0 18px; }
+}
+
 @media (max-width: 420px) {
   .title { font-size: 25px; }
   .sec { font-size: 20px; }
