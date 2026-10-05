@@ -1292,7 +1292,7 @@ const QUIZZES = {
     "fb": "Errukia pizten saiatzen da, lanari buruzko arrazoiak eman beharrean. Ez du irakaslea beldurtzen: errukia eskatzen dio."
    },
    {
-    "q": "Elenak proposatzen du: «Klaseetan mugikorrak motxilan gorde genitzake, hobeto kontzentratzeko». Robertok erantzuten du: «Zuk teknologia guztia debekatu eta Erdi Arora itzuli nahi duzu!». Zer falazia erabiltzen du Robertok?",
+    "q": "Neska batek honako hau proposatzen du: «Mugikorrak motxilan gorde genitzake eskola orduetan, hobeto kontzentratzeko». Mutil batek erantzuten dio: «Zuk nahi duzuna da teknologia guztia debekatzea eta Erdi Arora itzultzea!». Zein faltsukeria erabiltzen du mutil horrek?",
     "o": [
      "Lastozko gizona.",
      "Autoritateari deia.",
@@ -1300,7 +1300,7 @@ const QUIZZES = {
      "Kausa faltsua."
     ],
     "a": 0,
-    "fb": "Robertok Elenak esandakoa puztu eta asmatutako bertsio hori gezurtatzen du, errazago erasotzen delako."
+    "fb": "Mutil horrek neskak esandakoa puzten du eta asmatutako bertsio hori errefusatzen du, erasotzen errazagoa baita."
    },
    {
     "q": "Norbaitek foro batean idazten du: «Ikasi gabe gidabaimena atera zuten bi pertsona ezagutzen ditut; beraz, ikastea denbora galtzea da». Zer akats egiten du?",
@@ -1617,7 +1617,7 @@ const QUIZZES = {
     "fb": "Arrazoirik gabe, hori bihotzkada bat da. Ondo pentsatzea arrazoiak gehitzea litzateke, hala nola fitxaketak edo abantaila-puntuak."
    },
    {
-    "q": "Ayak dio: «Filma luzea egin zitzaidan, lehen orduan ia ez delako ezer gertatzen». Zer egiten du ondo Ayak?",
+    "q": "Neska batek honela dio: «Filma luze egin zait, lehen orduan ia ez baita ezer gertatzen». Zer egiten du ondo?",
     "o": [
      "Bere iritzia babesten duen arrazoi bat ematen du",
      "Inork eztabaidatzen ez duen jakintza bat erakusten du",
@@ -1625,7 +1625,7 @@ const QUIZZES = {
      "Gehiengoak uste duena errepikatzen du"
     ],
     "a": 0,
-    "fb": "Ayak ez du bakarrik esaten filma luzea dela: zergatik den azaltzen du. Horrela, bere iritziak eztabaida daitekeen arrazoi bat du."
+    "fb": "Neska horrek ez du soilik esaten filma luzea denik: zergatik den azaltzen du. Horrela, bere iritziak eztabaidatu daitekeen arrazoi bat du."
    },
    {
     "q": "Sare sozialetan titular hau ikusten duzu: «Galtzerdiekin lo egiteak azkarrago egiten zaitu». Galdetzearen keinutik hasten bazara, zer galdetzen diozu zeure buruari lehenik?",
@@ -1639,7 +1639,7 @@ const QUIZZES = {
     "fb": "Galdetzea zer baieztatzen den eta nondik datorren jakitea da. Horregatik, lehenengo gauza da nork dioen eta zertan oinarritzen den jakitea."
    },
    {
-    "q": "Alexek irakurtzen du freskagarri batek memoria hobetzen duela, baina ikerketa marka berak ordaindu duela jakiten du, eta susmoa hartzen du. Pentsamendu kritikoaren zer keinu erabiltzen ari da?",
+    "q": "Mutil batek irakurtzen du freskagarri batek memoria hobetzen duela, baina ikerketa marka berak ordaindu duela deskubritu eta susmoa hartzen du. Pentsamendu kritikoaren zein keinu erabiltzen ari da?",
     "o": [
      "Galdetu: zer baieztatzen den zehazki jakin",
      "Aztertu: arrazoiak onak diren edo tranparik dagoen begiratu",
@@ -1898,7 +1898,7 @@ const QUIZZES = {
     "fb": "Pentsatzen duena soilik dio, arrazoirik eman gabe. Horregatik da iritzi bat eta ez argudio bat."
    },
    {
-    "q": "Omarrek dio: «Entrenamenduak beranduago hasi beharko luke, askok bostetan ateratzen garelako klasetik eta ez garelako iristen». Zer da bere esaldia?",
+    "q": "Mutil batek honela dio: «Entrenamenduak geroago hasi beharko luke, askok bostetan ateratzen baikara klasetik eta ez baikara iristen». Zer da bere esaldia?",
     "o": [
      "Iritzi bat, berak pentsatzen duena esaten duelako.",
      "Objekzio bat, ordutegia kritikatzen duelako.",
@@ -1906,7 +1906,7 @@ const QUIZZES = {
      "Premisa faltsu bat, denak ez direlako bostetan ateratzen."
     ],
     "a": 2,
-    "fb": "Omarrek iritzi bat ematen du, eta arrazoi batekin laguntzen du («askok bostetan ateratzen garelako»). Hori argudio bat da."
+    "fb": "Mutil horrek iritzi bat ematen du eta arrazoi batekin laguntzen du («askok bostetan ateratzen baikara»). Hori argudio bat da."
    },
    {
     "q": "«Asteartetan entrenamendua dago. Gaur asteartea da. Beraz, gaur entrenamendua dago.» Zein da ondorioa?",
@@ -1942,7 +1942,7 @@ const QUIZZES = {
     "fb": "Arrazoibidea egokitzen da, baina faltsua den zerbaitetik abiatzen da: fruta guztiak ez dira gorriak."
    },
    {
-    "q": "Carlak dio: «Zapatila berriak estreinatu ditut eta bi gol sartu ditut; beraz, zapatila hauei esker sartzen ditut golak». Zer dago gaizki bere argudioan?",
+    "q": "Neska batek honela dio: «Zapatila berriak estreinatu ditut eta bi gol sartu ditut, beraz zapatila hauek gola sarrarazten didate». Zer huts egiten du bere argudioan?",
     "o": [
      "Ondorioa ez da ematen duen arrazoitik ateratzen.",
      "Premisa bat faltsua da: ez ditu bi gol sartu.",
@@ -1977,16 +1977,16 @@ const QUIZZES = {
    {
     "q": "Norbaitek jantokiko menua aldatzea proposatzen du eta beste pertsona bat ez dago ados. Zer egiten du beste pertsona horrek karitatearen printzipioa aplikatzen badu?",
     "o": [
-     "Izanen ideia modurik barregarrienean laburtzen du.",
-     "Izani arrazoia ematen dio, berarekin haserre ez dadin.",
-     "Izanek nola hitz egiten duen kritikatzen du, ez zer dioen.",
-     "Izanek esaten duenaren bertsiorik onena bilatzen du."
+     "Ikaskide horren ideia modurik barregarrienean laburbiltzen du.",
+     "Ikaskide horri arrazoia ematen dio berarekin haserretu ez dadin.",
+     "Ikaskide horrek nola hitz egiten duen kritikatzen du, eta ez esaten ari dena.",
+     "Ikaskide horrek dioenaren bertsiorik onena bilatzen du."
     ],
     "a": 3,
     "fb": "Karitatearen printzipioa aplikatzea bestearen ideia bere bertsiorik indartsuenean ulertzea eta horri erantzutea da."
    },
    {
-    "q": "Aitanak patioan ur-iturriak egotea defendatzen du. Esaldi hauetako zein da bere ideiari egindako objekzio bat?",
+    "q": "Neska batek jolastokian ur-iturriak egotearen alde egiten du. Esaldi hauetako zein da bere ideiaren aurkako eragozpena?",
     "o": [
      "«Horrela ur gehiago edango dugu eta hobeto egongo gara.»",
      "«Beste egunean ezin izan nuen edan atsedenaldian.»",
@@ -1994,7 +1994,7 @@ const QUIZZES = {
      "«Beraz, iturri berriak jarri behar dira.»"
     ],
     "a": 2,
-    "fb": "Objekzio bat kontrako arrazoi bat da. Iturriak jartzearen kostuak Aitanaren ideia proban jartzen du."
+    "fb": "Eragozpen bat aurkako arrazoi bat da. Horiek jartzeko kostuak bere ideia zalantzan jartzen du."
    },
    {
     "q": "Norbaitek dio: «Takilak izan beharko genituzke, motxilek asko pisatzen dutelako. Atzo sei liburu eraman nituen». Zer eginkizun betetzen du «Atzo sei liburu eraman nituen» esaldiak?",
@@ -2280,10 +2280,10 @@ const QUIZZES = {
    {
     "q": "Egoera hauetako zeinetan EZ dago faltsukeriarik?",
     "o": [
-     "Iratxek uste du jogurt bat osasuntsua dela futbolari batek iragartzen duelako.",
-     "Iratxek uste du mugikor bat ona dela denek dutelako.",
-     "Iratxek uste du joko bat txarra dela haren sortzailea atsegina ez delako.",
-     "Iratxek medikuak sendagai bati buruz esaten diona egiten du."
+     "Neska batek uste du jogurt bat osasungarria dela futbolari batek iragartzen duelako.",
+     "Neska batek uste du mugikor bat ona dela denek dutelako.",
+     "Neska batek uste du joko bat txarra dela bere sortzailea antipatikoa delako.",
+     "Neska batek bere medikuak sendagai bati buruz esandakoari jarraitzen dio."
     ],
     "a": 3,
     "fb": "Medikua gai horretan aditua da; beraz, harengan fidatzea zentzuzkoa da. Besteak faltsukeriak dira."
@@ -2366,7 +2366,7 @@ const QUIZZES = {
     "fb": "Dilema faltsuak dena bi irteeratara murrizten du. Aldapa irristakorrak gaizki amaitzen den kate bat irudikatzen du."
    },
    {
-    "q": "Omarrek proposatzen du taldeak hurrengo partidan atzerago defendatzea. Taldekide batek erantzun dio: «Zuk zer jakin behar duzu, ordezkoa zara eta?». Zer faltsukeria da?",
+    "q": "Mutil batek proposatzen du taldeak atzerago defendatzea hurrengo partidan. Ikaskide batek erantzuten dio: «Zuk zer jakingo duzu, ordezkoa bazara?». Zein faltsukeria da?",
     "o": [
      "Ad hominem",
      "Dilema faltsua",
@@ -2374,7 +2374,7 @@ const QUIZZES = {
      "Lastozko gizona"
     ],
     "a": 0,
-    "fb": "Ez dio Omarren ideiari erantzuten; Omarri erasotzen dio. Ordezkoa izateak ez du haren proposamena faltsu bihurtzen."
+    "fb": "Ez dio erantzuten mutilaren ideiari, bera erasotzen du baizik. Ordezkoa izateak ez du bere proposamena faltsu bihurtzen."
    },
    {
     "q": "Gaiaren arabera, zergatik funtzionatzen dute faltsukeriek, argudio txarrak izan arren?",
@@ -2388,7 +2388,7 @@ const QUIZZES = {
     "fb": "Pentsatzeko lana aurrezten digute: sentitzen dugunarekin eta azkar erabakitzeko gogoarekin jokatzen dute."
    },
    {
-    "q": "Aitanak Rubéni esaten dio: «Edo abeslari hau gustatzen zaizu, edo ez dakizu musikaz ezer». Zer faltsukeria erabiltzen du?",
+    "q": "Neska batek mutil bati esaten dio: «Edo abeslari hau gustatzen zaizu edo ez duzu musikaz batere ideiarik». Zein faltsukeria erabiltzen du?",
     "o": [
      "Orokorpen presatua",
      "Dilema faltsua",
@@ -2570,7 +2570,7 @@ const QUIZZES = {
     "fb": "Bideo horiek erraz gogoratzen dituenez, probableagoa iruditzen zaio txakur batek kosk egitea. Eskuragarritasuna da."
    },
    {
-    "q": "Irakasleak eskatu du bakoitzak isilean idazteko herri batek zenbat biztanle dituen. Aurretik, Álexek txantxetan «milioi bat» esan du, eta ia denek zifra oso altuak idatzi dituzte. Zer alborapenek azaltzen du hau?",
+    "q": "Irakasleak eskatzen du bakoitzak isilpean idazteko herri batek zenbat biztanle dituen. Aurretik, mutil batek txantxetan «milioi bat» esaten du, eta ia denek zifra oso altuak idazten dituzte. Zein alborapenek azaltzen du hau?",
     "o": [
      "Eskuragarritasun-alborapena",
      "Berrespen-alborapena",
@@ -2581,7 +2581,7 @@ const QUIZZES = {
     "fb": "Entzundako lehen zenbakiak, txantxetan izan arren, klase osoaren erantzunak ainguratu zituen."
    },
    {
-    "q": "Carlak bere bizikleta erabilia saltzen du. Lehenik 300 € eskatzen ditu, gutxiago balio duen arren. Erosleak azkenean 200 € ordaintzen ditu, eta negozio ona egin duela uste du. Zer alborapenez baliatzen da Carla?",
+    "q": "Neska batek bere bizikleta erabilia saltzen du. Hasieran 300 € eskatzen ditu, gutxiago balio badu ere. Erosleak azkenean 200 € ordaintzen ditu eta uste du negozio ona egin duela. Zein alborapen baliatzen du?",
     "o": [
      "Berrespen-alborapena",
      "Ainguraketa-alborapena",
@@ -2636,7 +2636,7 @@ const QUIZZES = {
     "fb": "Pertsona horrek ikaskideari buruzko bere ideia berresten duenari erreparatzen dio eta ez du hari kontra egiten diona ikusten."
    },
    {
-    "q": "Albisteetan erdiguneko denda batean izandako lapurreta bat ikusi ondoren, Martínek dio bere hiria gero eta arriskutsuagoa dela, lehen baino lapurreta gutxiago egon arren. Zer alborapen da?",
+    "q": "Erdialdeko denda batean lapurreta bat berrietan ikusi ondoren, mutil batek dio bere hiria gero eta arriskutsuagoa dela, lehen baino lapurreta gutxiago egon arren. Zein alborapen da?",
     "o": [
      "Ainguraketa-alborapena",
      "Eskuragarritasun-alborapena",
@@ -2644,7 +2644,7 @@ const QUIZZES = {
      "Arraste-efektua"
     ],
     "a": 1,
-    "fb": "Martínek oso ondo gogoratzen du albiste hori, eta horregatik uste du lapurretak diren baino ohikoagoak direla."
+    "fb": "Mutil horrek oso ondo gogoratzen du berri hori eta horregatik uste du lapurretak diren baino ohikoagoak direla."
    },
    {
     "q": "Norbaitek izua dio itsasoan bainatzeari marrazoengatik, baina kalea mugikorrari begira zeharkatzen du kezkatu gabe. Zein alborapenek azaltzen du bere beldurra?",
@@ -2658,7 +2658,7 @@ const QUIZZES = {
     "fb": "Marrazoak oso bakanak dira, baina erraz gogoratzen dira; trafikoa, berriz, egunero dagoen benetako arriskua da."
    },
    {
-    "q": "Lagun batek esaten dio Iratxeri: «entzungailu horiek oso-oso garestiak dira, 120 € balio dute». Gero, Iratxek 70 €-ko beste batzuk ikusten ditu, eta oso merkeak iruditzen zaizkio. Zer alborapen ari da lanean?",
+    "q": "Lagun batek neska bati esaten dio: «entzungailu horiek garestiegiak dira, 120 € balio dute». Gero neska horrek 70 €-ko beste batzuk ikusten ditu eta oso merke iruditzen zaizkio. Zein alborapen aritzen da?",
     "o": [
      "Berrespen-alborapena",
      "Arraste-efektua",
@@ -2680,7 +2680,7 @@ const QUIZZES = {
     "fb": "Aizkora-lapurraren ipuina bezalakoa da: ikaskidea ez zen aldatu, susmoa zuenaren begirada aldatu zen."
    },
    {
-    "q": "Klasean, txangorako filma bozkatzen dute. Omarrek beste bat nahiago zuen, baina bere lagun guztiek bezala bozkatzen du, kanpoan ez geratzeko. Zer alborapen da?",
+    "q": "Klasean irteerarako filma bozkatzen dute. Mutil batek beste bat nahiago zuen, baina lagun guztiek bozkatzen duten bera bozkatzen du, kanpoan ez geratzeko. Zein alborapen da?",
     "o": [
      "Berrespen-alborapena",
      "Arraste-efektua",
@@ -2688,7 +2688,7 @@ const QUIZZES = {
      "Ainguraketa-alborapena"
     ],
     "a": 1,
-    "fb": "Omarrek taldeak aukeratzen duena aukeratzen du, kanpoan ez geratzeagatik bakarrik: arraste-efektua."
+    "fb": "Mutil horrek taldeak aukeratzen duena aukeratzen du kanpoan ez geratzeko bakarrik: arraste-efektua."
    },
    {
     "q": "Pertsona bat, partida bat galdu ondoren oso haserre, saskibaloi-taldea une horretan bertan utzi nahi du. Teoriaren zein aholku etorriko litzaioke ondo?",
@@ -3110,7 +3110,7 @@ const QUIZZES = {
     "fb": "Beldurra ematen du, berriro bidaltzeko eskatzen du eta hedabide batek ere ez du berresten: buloaren ezaugarri tipikoak dira."
    },
    {
-    "q": "Marcosek Instagramen bere hiriko uholde baten argazki bat ikusten du, «gaurkoa». Bilatu egiten du, eta hamar urte lehenagokoa dela ikusten du. Planeko zein urrats izan zaio baliagarri?",
+    "q": "Mutil batek Instagramen bere hiriko uholde baten argazki bat ikusten du, «gaurkoa». Bilatu eta duela hamar urtekoa dela deskubritzen du. Planaren zein urrats izan zaio baliagarria?",
     "o": [
      "Interesa: nork irabazten du partekatzen badut",
      "Data eta irudia: gaurkoa den",
@@ -3143,7 +3143,7 @@ const QUIZZES = {
     "fb": "Erosketa berri batek harekin bat datozen beste batzuk desiratzera darama: hori da Diderot efektua."
    },
    {
-    "q": "Samuelek entzungailu batzuk begiratzen ditu online denda batean. «2 bakarrik geratzen dira!» agertzen da, atzerako kontaketa batekin batera. Zer bilatzen du dendak mezu horrekin?",
+    "q": "Mutil batek entzungailu batzuk begiratzen ditu lineako denda batean. «2 besterik ez dira geratzen!» agertzen da atzerako kontaketa batekin batera. Zer bilatzen du dendak mezu horrekin?",
     "o": [
      "Biltegian zer geratzen den modu objektiboan jakinaraztea",
      "Prezioa lehenago beste denda batzuetakoarekin alderatzea",
@@ -3154,7 +3154,7 @@ const QUIZZES = {
     "fb": "Urritasunak eta presak nahi dute eros dezazun, benetan nahi duzun pentsatzeko gelditu gabe."
    },
    {
-    "q": "Carlak sareetan irakurtzen du bere abeslari gogokoenaren kontzertua bertan behera utzi dutela. Sinetsi aurretik, albistea beste hedabide fidagarri batzuetan bilatzen du, eta ez da inon agertzen. Zer urrats aplikatu du?",
+    "q": "Neska batek sareetan irakurtzen du bere abeslari gogokoenaren kontzertua bertan behera utzi dutela. Sinetsi aurretik, berria beste hedabide fidagarri batzuetan bilatzen du eta ez da batean ere agertzen. Zein urrats aplikatu du?",
     "o": [
      "Data eta irudia",
      "Interesa",
@@ -3165,7 +3165,7 @@ const QUIZZES = {
     "fb": "Kontrastatu egin du: beste leku fidagarri batzuek kontatzen duten begiratu du. Leku bakarrean agertzen bada, susmatu egin behar da."
    },
    {
-    "q": "Omarrek irabiatu-marka baten bideo bat ikusten du, bere irabiatuak nekea betiko kentzen duela dioena. Omarrek bere buruari galdetzen dio nork irabazten duen berak sinesten badu. Zer urrats aplikatzen du?",
+    "q": "Mutil batek irabiaki-marka baten bideo bat ikusten du, bere irabiakiak nekea betiko kentzen duela ziurtatzen duena. Mutil horrek bere buruari galdetzen dio nork irabazten duen berak sinesten badu. Zein urrats aplikatzen du?",
     "o": [
      "Kontrastea",
      "Iturria",
@@ -3176,7 +3176,7 @@ const QUIZZES = {
     "fb": "Nik sinesten edo partekatzen badut nork irabazten duen galdetzea interesaren urratsa da."
    },
    {
-    "q": "Yasminak erabakitzen du interneten ikusten duen ezer ez sinestea, ezta hedabide serioek argitaratzen dutena ere. Gaiaren arabera, zer gertatzen zaio?",
+    "q": "Neska batek erabakitzen du interneten ikusten duenetik ezer ez sinestea, ezta hedabide serioek argitaratzen dutena ere. Gaiaren arabera, zer gertatzen zaio?",
     "o": [
      "Ondo egiten du, horrela ez baita inoiz bulo batean eroriko",
      "Gehiegi egiten du, denaz mesfidatzeak ere geldiarazi egiten baitu",
@@ -3325,7 +3325,7 @@ const QUIZZES = {
     "fb": "Kohesioa elkarrekin egoteko eta lan egiteko gogoa da. Ez du esan nahi denek berdin pentsatzea, ezta kanpokoei ixtea ere."
    },
    {
-    "q": "Yusufen saskibaloi-taldean hain ondo moldatzen dira, ezen desberdin pentsatzen duena isildu egiten baita giro ona ez hausteko. Gaiaren arabera, hori…",
+    "q": "Saskibaloi-talde batean hain ondo konpontzen dira non bestela pentsatzen duena isildu egiten baita giro ona ez hausteko. Gaiaren arabera, hori…",
     "o": [
      "kohesioa da, denek elkarrekin egon nahi dutelako eztabaidatu gabe",
      "elkartasuna da, bakoitzak amore ematen duelako besteei laguntzeko",
@@ -3336,7 +3336,7 @@ const QUIZZES = {
     "fb": "«Batuta egotea» pentsatzen duzuna isiltzea denean, jada ez da kohesioa: taldearen presioa da."
    },
    {
-    "q": "Salma Marokotik dator ikasturte erdian. Ikaskideek beren mahaira eta jolastorduko planetara gonbidatzen dute. Kohesioaren zein dimentsio ikusten da hemen?",
+    "q": "Neska bat Marokotik iristen da ikasturte erdian. Ikaskideek beren mahaira eta jolasorduko planetara gonbidatzen dute. Kohesioaren zein dimentsio ikusten da hemen?",
     "o": [
      "Parte-hartzea eta adostasunezko akordioak",
      "Inor ez da kanpoan geratzen (inklusioa)",
@@ -3556,7 +3556,7 @@ const QUIZZES = {
     "fb": "Inklusioa: inor ez geratzea kanpoan bere desberdintasunengatik. Elkartasuna: besteei laguntzea eta haien arazoak norberarenak bezala sentitzea."
    },
    {
-    "q": "Eztabaida batean, klase osoak Carlak okertzat duen ideia bat babesten du. Asch-ekin ikusi zenaren arabera, bera pentsatzen duena esatera ausartzen bada, zer gerta daiteke?",
+    "q": "Eztabaida batean, klase osoak neska batek okertzat jotzen duen ideia bat babesten du. Asch-ekin ikusitakoaren arabera, pentsatzen duena esatera ausartzen bada, zer gerta daiteke?",
     "o": [
      "Baztertu egingo dutela, talde batuak berdin pentsatu behar duelako",
      "Ezer ez dela aldatuko, pertsona bakar batek ez duelako inor eragiten",
@@ -3672,7 +3672,7 @@ const QUIZZES = {
     "fb": "Ingurumen-justiziak bilatzen du ingurumen-onurak eta -kalteak justiziaz banatzea pertsonen eta herrialdeen artean."
    },
    {
-    "q": "Carlak nahi du bere arropak aztarna txikiagoa uztea. Zer ohiturak laguntzen dio gehien?",
+    "q": "Neska batek bere arropak aztarna txikiagoa uztea nahi du. Zein ohiturak laguntzen dio gehien?",
     "o": [
      "Hilero arropa berria erostea, beherapenak aprobetxatuz",
      "Erabilitako arropa zabor orokorraren edukiontzira botatzea",
@@ -3683,7 +3683,7 @@ const QUIZZES = {
     "fb": "Gutxiago eta hobeto erosteak, konpontzeak eta bigarren eskukoa erabiltzeak aztarna murrizten dute; moda azkarrak aztarna izugarria du."
    },
    {
-    "q": "Iratxeren etxean beti soberan geratzen dira makarroiak, eta zakarrontzira joaten dira. Zer proposatuko zenioke gaiaren arabera?",
+    "q": "Neska baten etxean beti sobratzen dira makarroiak eta zakarrontzian amaitzen dute. Zer proposatuko zenioke gaiaren arabera?",
     "o": [
      "Menuan pasta haragi gehiagorekin ordeztea",
      "Plater ultraprozesatuak erostea, gehiago irauten dutelako",
@@ -3749,7 +3749,7 @@ const QUIZZES = {
     "fb": "Haragi gutxiago jateak eta bertako eta sasoiko produktuak aukeratzeak janariaren aztarna murrizten dute."
    },
    {
-    "q": "Samuelek dio: «Nik jada birziklatzen dut, beraz ez dut beste ezer aldatu behar». Zer ahazten zaio?",
+    "q": "Mutil batek honela dio: «Nik dagoeneko birziklatzen dut, beraz ez dut beste ezer aldatu behar». Zer ahazten zaio?",
     "o": [
      "Lehenik murriztea eta berrerabiltzea komeni dela",
      "Birziklatzeak lehen-lehena izan behar duela",
@@ -3826,11 +3826,11 @@ const QUIZZES = {
     "fb": "Karbono-aztarna isuritako CO₂-a eta beste gas batzuk dira; aztarna ekologikoaren zatirik handiena da, baina ez osoa."
    },
    {
-    "q": "Álexek pote hutsak erabiltzen ditu arkatzak gordetzeko; Irenek beirearen edukiontzira botatzen ditu bereak. Zer egiten du bakoitzak?",
+    "q": "Mutil batek poto hutsak erabiltzen ditu arkatzak gordetzeko; neska batek bereak beiraren edukiontzira botatzen ditu. Zer egiten du bakoitzak?",
     "o": [
-     "Álexek birziklatu eta Irenek berrerabili",
-     "Álexek murriztu eta Irenek berrerabili",
-     "Álexek berrerabili eta Irenek birziklatu",
+     "Mutilak birziklatu egiten du eta neskak berrerabili",
+     "Mutilak murriztu egiten du eta neskak berrerabili",
+     "Mutilak berrerabili egiten du eta neskak birziklatu",
      "Biek murrizten dituzte hondakinak"
     ],
     "a": 2,
