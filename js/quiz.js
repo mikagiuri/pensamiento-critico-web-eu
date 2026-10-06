@@ -43,10 +43,89 @@ const QUIZ_TEMA = {
   "hf-c26-banco": "T26", "ltfh-CdB": "T26", "ltfh-C9": "T26", "hf-c27-banco": "T27", "ltfh-C10": "T27", "ltfh-C5B": "T27",
   "ipc-pensar-banco": "pensar", "ipc-hecho-q": "pensar", "ipc-argumentar-banco": "argumentar", "falacias": "falacias", "ipc-falacias-banco": "falacias", "ipc-bulos-q": "falacias",
   "ipc-sesgos-q": "sesgos", "ipc-sesgos-banco": "sesgos", "ipc-dialogo-banco": "dialogo", "ipc-medios-q": "medios", "ipc-medios-banco": "medios",
-  "ipc-grupo-banco": "grupo", "ipc-huella-q": "huella", "ipc-huella-banco": "huella", "ipc-moda-q": "huella"
+  "ipc-grupo-banco": "grupo", "ipc-huella-q": "huella", "ipc-huella-banco": "huella", "ipc-moda-q": "huella",
+  /* REPASO */ "fil-t1-repaso": "T1", "fil-t2-repaso": "T2", "fil-t3-repaso": "T3", "fil-t4-repaso": "T4", "fil-t5-repaso": "T5", "fil-t6-repaso": "T6", "fil-t7-repaso": "T7", "hf-t1-repaso": "T1", "hf-t3-repaso": "T3", "hf-t4-repaso": "T4", "hf-t5-repaso": "T5", "hf-t6-repaso": "T6", "hf-t7-repaso": "T7", "hf-t8-repaso": "T8", "hf-t9-repaso": "T9", "hf-t10-repaso": "T10", "hf-t11-repaso": "T11", "hf-t12-repaso": "T12", "hf-t13-repaso": "T13", "hf-t14-repaso": "T14", "hf-t15-repaso": "T15", "hf-t16-repaso": "T16", "hf-t17-repaso": "T17", "hf-t18-repaso": "T18", "hf-t19-repaso": "T19", "hf-t20-repaso": "T20", "hf-t21-repaso": "T21", "hf-t22-repaso": "T22", "hf-t23-repaso": "T23", "hf-t24-repaso": "T24", "hf-t25-repaso": "T25", "hf-t26-repaso": "T26", "hf-t27-repaso": "T27"
 };
-/* Orden dentro de un tema: banco ampliado, cuestionario breve, libro. */
-function quizTipo(k){ return /-banco$/.test(k) ? 0 : /^ltfh-/.test(k) ? 2 : 1; }
+/* Orden dentro de un tema: banco ampliado, cuestionario breve, libro, léxico. */
+function quizTipo(k){ return /-banco$/.test(k) ? 0 : /^ltfh-/.test(k) ? 2 : /^lex-/.test(k) ? 3 : 1; }
+
+/* ===== Test de léxico (05-10) =====
+   Un cuestionario por tema generado del glosario (GLOSARIO, glosario.js; se carga después de este
+   archivo, por eso se monta en DOMContentLoaded). Cada partida saca preguntas nuevas, en las dos
+   direcciones (definición → término y término → definición), con distractores del mismo tema y, si
+   no llegan, de su bloque o materia. Se tapa el término en su definición y no se usan como distractor
+   variantes del mismo término (arché / arjé, átomo / átomos). Idea tomada del Gem LéxicoSofía. */
+const LEX_MIN = 5, LEX_N = 10;
+const LEX_NAME = "Lexikoa · {tema}";
+const LEX_Q_TERM = "Zein terminori dagokio definizio hau?";
+const LEX_Q_DEF = "Zer da «{t}»?";
+/* unidades del glosario de HF sin cuestionario del libro (las demás: QUIZ_TEMA["ltfh-" + unidad]) */
+const LEX_UNIDAD = { "A1-A2": "T1", A3: "T3", A4: "T4", A5: "T5", DM: "T14" };
+/* temas de Pensamiento crítico por el nombre del glosario, en castellano y en euskera */
+const LEX_IPC = [["pensar", /pensar|pentsatu/i], ["argumentar", /argument|argudi/i], ["falacias", /falac|faltsu/i], ["sesgos", /sesgo|alborap/i],
+  ["dialogo", /di[aá]logo|elkarrizk/i], ["medios", /medios|hedabide/i], ["huella", /huella|aztarna/i], ["grupo", /grupo|taldea/i]];
+const LEX = {};   // clave → { terms: términos del tema, extra: resto del bloque o la materia }
+
+const lexFold = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+/* esqueleto para comparar términos: sin tildes, plural ni grafías griegas alternativas */
+const lexSkel = s => lexFold(s).replace(/ch|kh/g, "j").replace(/ph/g, "f").replace(/th/g, "t").replace(/y/g, "i").replace(/k/g, "c").replace(/s\b/g, "");
+const lexClean = s => String(s || "").replace(/\*\*/g, "");
+/* tapa en un texto las palabras del término (o de su misma familia: idealismo → ideal…) */
+function lexMask(text, term){
+  const stems = lexFold(term).split(" ").filter(w => w.length >= 4).map(w => w.slice(0, Math.max(4, Math.ceil(w.length * 0.6))));   // participación → particip(ar)
+  if (!stems.length) return text;
+  return text.replace(/[\p{L}\p{N}]+/gu, w => stems.some(s => lexFold(w).startsWith(s)) ? "___" : w);
+}
+function lexTemaDe(g){
+  if (g.subject === "hf"){ const t = LEX_UNIDAD[g.unidad] || QUIZ_TEMA["ltfh-" + g.unidad]; return t ? { id: t } : null; }
+  if (g.subject === "fil"){ const m = /(\d+)/.exec(g.tema || ""); return { id: m ? "T" + m[1] : "T4" }; }   // sin número: el taller de argumentación (tema 4)
+  const hit = LEX_IPC.find(([, re]) => re.test(g.tema || ""));
+  return { id: hit ? hit[0] : "otros", etq: String(g.tema || "").split(" · ").pop() };
+}
+function lexUnicos(list){ const seen = new Set(); return list.filter(g => { const s = lexSkel(g.t); if (seen.has(s)) return false; seen.add(s); return true; }); }
+/* Casos trampa (GLOSARIO_TRAMPAS, glosario.js): si el término preguntado tiene pareja en su tema, la pareja
+   va siempre entre las opciones y la explicación da las dos definiciones. Cada partida incluye hasta
+   LEX_TRAMPAS_N de ellas (en orden barajado); el resto, al azar. */
+const LEX_TRAMPA = "Tranpa-galdera:", LEX_TRAMPAS_N = 2;
+function lexPareja(L, g){ const s = L.pairs.get(lexSkel(g.t)); return s ? L.terms.find(c => lexSkel(c.t) === s) : null; }
+function lexItems(k){
+  const L = LEX[k], items = [];
+  const conPareja = quizShuffle(L.terms.filter(g => lexPareja(L, g))).slice(0, LEX_TRAMPAS_N);
+  const targets = conPareja.concat(quizShuffle(L.terms.filter(g => !conPareja.includes(g)))).slice(0, LEX_N);
+  for (const g of targets){
+    const ok = c => c !== g && lexSkel(c.t) !== lexSkel(g.t) && lexFold(c.def) !== lexFold(g.def);
+    const par = lexPareja(L, g);
+    const dis = (par ? [par] : []).concat(quizShuffle(L.terms.filter(c => ok(c) && c !== par)), quizShuffle(L.extra.filter(ok))).slice(0, 3);
+    if (dis.length < 3) continue;
+    const def = lexClean(g.def), pre = par ? LEX_TRAMPA + " " : "";
+    const fb = "<b>" + g.t + "</b>: " + def + (par ? "<br><b>" + par.t + "</b>: " + lexClean(par.def) : "");
+    if (Math.random() < 0.5) items.push({ q: pre + LEX_Q_TERM + "<br>«" + lexMask(def, g.t) + "»", o: [g.t].concat(dis.map(c => c.t)), a: 0, fb });
+    else items.push({ q: pre + LEX_Q_DEF.replace("{t}", g.t), o: [def].concat(dis.map(c => lexClean(c.def))).map(d => lexMask(d, g.t)), a: 0, fb });
+  }
+  return items;
+}
+function lexMontar(){
+  if (typeof GLOSARIO === "undefined" || !Array.isArray(GLOSARIO)) return;
+  const grupos = {};
+  GLOSARIO.forEach(g => {
+    if (!g.t || !g.def || !QUIZ_TEMAS[g.subject]) return;
+    const tema = lexTemaDe(g); if (!tema) return;
+    const k = "lex-" + g.subject + "-" + (tema.id === "otros" ? lexFold(tema.etq).replace(/ /g, "-") : tema.id);
+    (grupos[k] = grupos[k] || { subject: g.subject, block: g.bloque, tema: tema.id, etq: tema.etq, terms: [] }).terms.push(g);
+  });
+  Object.entries(grupos).forEach(([k, gr]) => {
+    const terms = lexUnicos(gr.terms);
+    if (terms.length < LEX_MIN) return;
+    const extra = lexUnicos(GLOSARIO.filter(g => g.subject === gr.subject && g.t && g.def && (gr.subject !== "hf" || g.bloque === gr.block) && !gr.terms.includes(g)));
+    const pairs = new Map(), skels = new Set(terms.map(g => lexSkel(g.t)));
+    const tr = typeof GLOSARIO_TRAMPAS !== "undefined" ? GLOSARIO_TRAMPAS[gr.subject] || [] : [];
+    tr.forEach(([a, b]) => { const sa = lexSkel(a), sb = lexSkel(b); if (skels.has(sa) && skels.has(sb)){ if (!pairs.has(sa)) pairs.set(sa, sb); if (!pairs.has(sb)) pairs.set(sb, sa); } });
+    LEX[k] = { terms, extra, pairs };
+    const etq = gr.tema === "otros" ? gr.etq : QUIZ_TEMAS[gr.subject][gr.tema];
+    QUIZZES[k] = { name: LEX_NAME.replace("{tema}", etq), subject: gr.subject, block: gr.block, lex: true, items: lexItems(k) };
+    if (gr.tema !== "otros") QUIZ_TEMA[k] = gr.tema;
+  });
+}
 function quizTemaDe(k){ const m = QUIZ_TEMAS[QUIZZES[k].subject] || {}; return m[QUIZ_TEMA[k]] ? QUIZ_TEMA[k] : "otros"; }
 function quizEnFiltro(k, q, conTema){
   if (quizSubject !== "all" && q.subject !== quizSubject) return false;
@@ -124,7 +203,7 @@ function renderQuizChips(){
 }
 
 function loadQuiz(k){ quizKey = k;
-  if (quizBlock !== "all" && window.Epocas && window.Epocas.soloTodos("cuestionarios", k)){ quizBlock = "all"; if (document.getElementById("quizfilter")) renderQuizFilter(); } quizReviewing = false; quizPool = QUIZZES[k].items; renderQuizChips(); startQuizRun(); }
+  if (quizBlock !== "all" && window.Epocas && window.Epocas.soloTodos("cuestionarios", k)){ quizBlock = "all"; if (document.getElementById("quizfilter")) renderQuizFilter(); } quizReviewing = false; quizPool = QUIZZES[k].lex ? (QUIZZES[k].items = lexItems(k)) : QUIZZES[k].items; renderQuizChips(); startQuizRun(); }
 function startQuizRun(){ qpos = 0; qscore = 0; qdone = false; quizFailed = []; quizOrder = quizShuffle(quizPool.map((_, i) => i)); drawQuiz(); }
 
 function drawQuiz(){
@@ -186,3 +265,5 @@ function drawQuiz(){
 
 renderQuizFilter();
 loadQuiz(quizKey);
+/* los tests de léxico, cuando ya está el glosario (antes del enrutado de app.js, que también espera a DOMContentLoaded) */
+document.addEventListener("DOMContentLoaded", () => { lexMontar(); renderQuizFilter(); renderQuizChips(); });

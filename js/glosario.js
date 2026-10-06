@@ -512,3 +512,103 @@ const GLOSARIO = [
   "def": "Benetan behar duzunean eta pertsonengan eta planetan duen eraginean pentsatuz erostea."
  }
 ];
+const GLOSARIO_TRAMPAS = {
+ "ipc": [
+  [
+   "Iritzia",
+   "Jakitea"
+  ],
+  [
+   "Sinesmena",
+   "Iritzia"
+  ],
+  [
+   "Objekzioa",
+   "Kontraargudioa"
+  ],
+  [
+   "Premisa",
+   "Ondorioa"
+  ],
+  [
+   "Ad hominem",
+   "Lastozko gizona"
+  ],
+  [
+   "Gehiengoarengana jo",
+   "Autoritateari deia"
+  ],
+  [
+   "Dilema faltsua",
+   "Aldapa irristakorra"
+  ],
+  [
+   "Ainguraketa",
+   "Eskuragarritasuna"
+  ],
+  [
+   "Arraste-efektua",
+   "Burbuila"
+  ],
+  [
+   "Alborapen kognitiboa",
+   "Berrespen-alborapena"
+  ],
+  [
+   "Adostasuna",
+   "Negoziazioa"
+  ],
+  [
+   "Enpatia",
+   "Asertibitatea"
+  ],
+  [
+   "Entzute aktiboa",
+   "Enpatia"
+  ],
+  [
+   "Gezurra (fake news)",
+   "Clickbait-a"
+  ],
+  [
+   "Postegia",
+   "Gezurra (fake news)"
+  ],
+  [
+   "Aztarna ekologikoa",
+   "Karbono-aztarna"
+  ],
+  [
+   "Biogaitasuna",
+   "Gaintasun Eguna"
+  ],
+  [
+   "Kontsumismoa",
+   "Kontsumo arduratsua"
+  ],
+  [
+   "Emozioa",
+   "Sentimendua"
+  ],
+  [
+   "Taldearen presioa",
+   "Konformismoa"
+  ],
+  [
+   "Kohesioa",
+   "Lankidetza"
+  ],
+  [
+   "Taldea",
+   "Talde nominala"
+  ],
+  [
+   "Aurreiritzia",
+   "Estereotipoa"
+  ],
+  [
+   "Diskriminazioa",
+   "Estigma"
+  ]
+ ]
+};
