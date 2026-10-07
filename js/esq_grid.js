@@ -79,14 +79,27 @@ const EsqGrid = (function (){
     return s;
   }
 
+  /* ---- comprobación previa (el «contrato» del método): un concepto solo tiene 8 vecinos, y sus nietos han de
+     estar en la segunda corona (16 celdas). Con k hijos y g nietos hace falta 24 - k ≥ g. Devuelve null si cabe,
+     o {id, k, g, cap} del primer concepto que no cabe: así el fallo se explica en vez de buscar a ciegas. ---- */
+  function whyNotFit(tree){
+    for (const id in tree.children){
+      const k = tree.children[id].length;
+      if (k > 8) return { id: id, k: k, g: 0, cap: 8 };
+      const g = tree.children[id].reduce(function (s, c){ return s + tree.children[c].length; }, 0);
+      if (g > 24 - k) return { id: id, k: k, g: g, cap: 24 - k };
+    }
+    return null;
+  }
+
   /* ---- mejor colocación en rows×cols: reinicios cortos durante `ms` milisegundos (o `max` soluciones) ---- */
-  function layout(tree, rows, cols, seed, ms, max){
+  function layout(tree, rows, cols, seed, ms, max, limit){
     if (tree.nodes.length > rows * cols) return null;
-    for (const id in tree.children) if (tree.children[id].length > 8) return null;
+    if (whyNotFit(tree)) return null;
     const rnd = rng(seed || 1), t0 = Date.now();
     let best = null, bestS = Infinity, found = 0;
     while (Date.now() - t0 < (ms || 250) && found < (max || 80)){
-      const sol = solveOnce(tree, rows, cols, rnd, 150);
+      const sol = solveOnce(tree, rows, cols, rnd, limit || 150);
       if (!sol) continue;
       found++; const sc = score(tree, sol, rows, cols);
       if (sc < bestS){ bestS = sc; best = sol; }
@@ -99,7 +112,7 @@ const EsqGrid = (function (){
      4 hijos), 4 y 5 columnas con desplazamiento horizontal dentro de la cuadrícula ---- */
   const MIN_COL = 150;   /* ancho mínimo de columna cuando hay que desplazar */
   function gridShapes(n, width){
-    const sq = n <= 16 ? 4 : 5, out = [];
+    const sq = Math.max(4, Math.ceil(Math.sqrt(n))), out = [];   /* 4×4 hasta 16, 5×5 hasta 25, 6×6 hasta 36… */
     if (width < 560){ out.push({ rows: Math.max(4, Math.ceil(n / 3)), cols: 3 }); out.push({ rows: Math.max(4, Math.ceil(n / 3)) + 1, cols: 3 }); out.push({ rows: Math.max(4, Math.ceil(n / 4)) + 1, cols: 4 }); }
     out.push({ rows: sq, cols: sq }); out.push({ rows: sq + 1, cols: sq });
     return out;
@@ -143,6 +156,30 @@ const EsqGrid = (function (){
   let cssDone = false;
   function injectCss(){ if (cssDone) return; const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); cssDone = true; }
   function esc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  /* texto con **negrita** de Markdown (los mapas Markmap): se escapa y luego se marca */
+  function md(s){ return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
+
+  /* Markmap (cabeceras # ## ### y viñetas) → árbol v2 {raiz, ramas:[{t, a, c}]}. En cada viñeta, «**Título**: resto»
+     o «**Título** — resto» se parte en título (t) y detalle (a); si no, la línea entera es el título. */
+  function fromMarkmap(mdText){
+    const root = { t: "", c: [] }, stack = [{ lvl: 0, node: root }];
+    let lastH = 0;
+    mdText.split("\n").forEach(function (raw){
+      const h = raw.match(/^(#+)\s+(.*)/), b = raw.match(/^(\s*)[-*]\s+(.*)/);
+      if (!h && !b) return;
+      let lvl, text;
+      if (h){ lvl = h[1].length; lastH = lvl; text = h[2].trim(); }
+      else { lvl = lastH + 1 + Math.floor(b[1].length / 2); text = b[2].trim(); }
+      while (stack.length > 1 && stack[stack.length - 1].lvl >= lvl) stack.pop();
+      const node = { t: text, c: [] };
+      const m = text.match(/^\*\*([^*]+)\*\*\s*(?::|—|–|-)\s+(.+)$/);
+      if (m){ node.t = m[1].trim(); node.a = m[2].trim(); }
+      if (stack.length === 1 && !root.t && h && lvl === 1){ root.t = node.t; stack.push({ lvl: lvl, node: root }); return; }
+      stack[stack.length - 1].node.c.push(node);
+      stack.push({ lvl: lvl, node: node });
+    });
+    return { raiz: root.t || "·", ramas: root.c };
+  }
 
   /* punto del borde de la caja `b` en la recta de su centro al punto (x,y) */
   function edgePoint(b, x, y){
@@ -204,7 +241,13 @@ const EsqGrid = (function (){
     const width = st.clientWidth || 700;
     let shape = null, pos = null;
     for (const sh of gridShapes(n, width)){ pos = layout(tree, sh.rows, sh.cols, 1, 140, 60); if (pos){ shape = sh; break; } }   /* 140 ms por forma: las que no caben (3 columnas con varios nodos de 4 hijos) se descartan rápido */
-    if (!pos){ st.innerHTML = '<p class="esq-wait">Eskema hau ez da saretan sartzen.</p>'; return; }
+    if (!pos){
+      const why = whyNotFit(tree);
+      st.innerHTML = '<p class="esq-wait">' + (why
+        ? "Mapa hau ez da saretan sartzen: hainbeste adar dituen kontzeptu baten inguruan ez dago lekurik bere azpikontzeptu guztientzat." + " (" + esc(tree.byId[why.id].t) + ": " + why.k + " → " + why.g + " / " + why.cap + ")"
+        : "Eskema hau ez da saretan sartzen.") + "</p>";
+      return;
+    }
     const scrollX = shape.cols * MIN_COL > width;   /* columnas mínimas: la cuadrícula se desliza en horizontal */
     const hasX = Array.isArray(v.cruces) && v.cruces.length > 0;
     /* relaciones entre ramas: insignia numerada en las dos cajas (①…) y leyenda debajo de la cuadrícula */
@@ -216,10 +259,11 @@ const EsqGrid = (function (){
       tree.nodes.map(function (nd){ const p = pos[nd.id];
         const bs = badges[nd.t] ? '<span class="esqg-bs">' + badges[nd.t].map(function (i){ return '<span class="esqg-b">' + i + "</span>"; }).join("") + "</span>" : "";
         return '<div class="esqg-n' + (nd.k ? " esqg-k" : "") + '" data-id="' + nd.id + '" data-d="' + Math.min(nd.depth, 3) + '" style="grid-row:' + (p[0] + 1) + ';grid-column:' + (p[1] + 1) + '">' + bs +
-          (nd.rel ? '<span class="esqg-rel">' + esc(nd.rel) + "</span>" : "") + '<span class="esqg-t">' + esc(nd.t) + "</span>" + (nd.a ? '<span class="esqg-a">' + esc(nd.a) + "</span>" : "") + "</div>"; }).join("") +
+          (nd.rel ? '<span class="esqg-rel">' + esc(nd.rel) + "</span>" : "") + '<span class="esqg-t">' + md(nd.t) + "</span>" + (nd.a ? '<span class="esqg-a">' + md(nd.a) + "</span>" : "") + "</div>"; }).join("") +
       "</div></div>" +
       (hasX ? '<ol class="esqg-xl">' + v.cruces.map(function (x){ return "<li><em>" + esc(x.de) + '</em> <span class="esqg-xr">' + esc(x.rel) + "</span> <em>" + esc(x.a) + "</em></li>"; }).join("") + "</ol>" : "") +
-      '<p class="esq2-hint">' + (scrollX ? "Irristatu sareta alboetara." + " " : "") + "Kontzeptu bakoitzak bere kontzeptu gurasoa ukitzen du (diagonalean ere bai). Erlazio mota kutxa bakoitzaren barruan idatzita dago." + "</p>";   /* literales enteros entre comillas: así los traduce ui/eu.json */
+      '<p class="esq2-hint">' + (scrollX ? "Irristatu sareta alboetara." + " " : "") + "Kontzeptu bakoitzak bere kontzeptu gurasoa ukitzen du (diagonalean ere bai)." +
+        (tree.nodes.some(function (nd){ return nd.rel; }) ? " " + "Erlazio mota kutxa bakoitzaren barruan idatzita dago." : "") + "</p>";   /* literales enteros entre comillas: así los traduce ui/<lang>.json */
     const grid = st.querySelector(".esqg");
     drawArrows(grid, tree, v.cruces);
     const cb = st.querySelector("#esqgxtog");
@@ -238,5 +282,5 @@ const EsqGrid = (function (){
     }
   }
 
-  return { render: render, layout: layout, buildTree: buildTree, score: score };
+  return { render: render, layout: layout, buildTree: buildTree, score: score, fromMarkmap: fromMarkmap, whyNotFit: whyNotFit };
 })();

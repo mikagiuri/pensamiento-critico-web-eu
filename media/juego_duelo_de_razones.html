@@ -177,7 +177,7 @@ const TEMAS = [
   tuLado:"Tú defiendes: «mejor fuera del aula».",
   opp:[
    {t:"El móvil te da diccionario y calculadora al instante; bien usado es una herramienta de estudio.", f:null},
-   {t:"Lo dijo un gurú de la tecnología en una charla: prohibir el móvil es de analfabetos digitales.", f:"famoso", peso:1},
+   {t:"Lo dijo un gurú de la tecnología en una charla: prohibir el móvil es de analfabetos digitales.", f:"famoso", peso:1, interes:"Ese gurú asesora a una empresa que vende tabletas y aplicaciones a los institutos."},
    {t:"En todos los institutos modernos ya se usan; quedarse atrás es de pueblo.", f:"todos", peso:2},
    {t:"O móvil libre, o criaremos a chavales incapaces de vivir en el siglo XXI.", f:"dos", peso:3},
    {t:"Conozco a dos que aprobaron buscando cosas en el móvil; está claro que ayuda a todos.", f:"pocos", peso:2},
@@ -196,7 +196,7 @@ const TEMAS = [
   tuLado:"Tú defiendes: «de vez en cuando sí, a diario no».",
   opp:[
    {t:"Es barata y rápida; para quien tiene poco tiempo, resuelve la comida.", f:null},
-   {t:"La anuncia el futbolista más famoso del mundo, así que tan mala no será.", f:"famoso", peso:1},
+   {t:"La anuncia el futbolista más famoso del mundo, así que tan mala no será.", f:"famoso", peso:1, interes:"El futbolista cobra millones por anunciar esa cadena de comida rápida."},
    {t:"Toda la clase come ahí los viernes; por algo será.", f:"todos", peso:2},
    {t:"Mi primo come hamburguesas y está fortísimo: esta comida te pone fuerte.", f:"causa", peso:2},
    {t:"O comes esto, o te quedas con hambre; no hay otra opción barata.", f:"dos", peso:3},
@@ -383,7 +383,7 @@ const TEMAS = [
   ],
   opp:[
    {t:"Los que aprenden, ¿son los sabios o los ignorantes? Si son los sabios, aprenden lo que ya saben; si los ignorantes, aprenden sin entender nada. Luego aprender es imposible.", f:"equivoco", peso:2},
-   {t:"¿Sabes algo? Entonces eres un sabio. Y el que sabe, sabe. Luego lo sabes TODO, y siempre lo has sabido.", f:"equivoco", peso:2},
+   {t:"¿Sabes algo? Entonces eres un sabio. Y el que sabe, sabe. Luego lo sabes TODO, y siempre lo has sabido.", f:"equivoco", peso:2, interes:"Los dos hermanos cobran por enseñar este arte: cuanto más deslumbre la trampa, más alumnos de pago."},
    {t:"¿Tienes un perro y es padre de cachorros? Entonces es padre y es tuyo: es tu padre. Y tú eres hermano de los cachorros.", f:"equivoco", peso:2},
    {t:"Quieres que el joven se vuelva sabio, es decir, que deje de ser lo que es; quieres que deje de ser: ¡quieres que muera!", f:"equivoco", peso:2},
    {t:"Toda pregunta se responde sí o no. Responde solo sí o no y verás cómo caes; matizar es de tramposos.", f:"dos", peso:2},
@@ -406,7 +406,7 @@ const TEMAS = [
    {t:"“¿Vas a quedarte ahí tan tranquilo mientras tus hijos quedan huérfanos? ¿Qué clase de padre eres?”", nombre:"el reproche del padre", schop:"culpar en vez de argumentar", q:"Insinuar que soy mal padre no responde a si escapar es justo."},
   ],
   opp:[
-   {t:"Si no escapas, la gente dirá que tus amigos fuimos unos tacaños y unos cobardes por no gastar en salvarte. Piensa en nuestra fama.", f:"todos", peso:2},
+   {t:"Si no escapas, la gente dirá que tus amigos fuimos unos tacaños y unos cobardes por no gastar en salvarte. Piensa en nuestra fama.", f:"todos", peso:2, interes:"A Critón le preocupa su propia fama: teme que digan que él no quiso pagar la fuga."},
    {t:"Piensa en tus hijos: los dejas huérfanos, sin crianza ni educación. Abandonarlos así es de egoístas.", f:"pena", peso:2},
    {t:"O escapas y vives, o te quedas y les das la victoria a los que te condenaron injustamente: no hay otra.", f:"dos", peso:2},
    {t:"Quedarte es elegir el camino cómodo; cualquiera con agallas ya habría huido.", f:"persona", fAlt:["todos"], peso:1},
@@ -436,7 +436,7 @@ const app=()=>document.getElementById('app');
 
 function freshState(ti){
   return {ti, meter:50, temple:3, lastHit:false, turno:0, thread:[], move:null, hand:null,
-          fase:"turn", _oppQueue:shuffle(TEMAS[ti].opp.map((_,i)=>i))};
+          fase:"turn", _oppQueue:shuffle(TEMAS[ti].opp.map((_,i)=>i)), comodines:{sabes:1, gana:1}};
 }
 function clamp(v){ return Math.max(0,Math.min(100,v)); }
 
@@ -456,8 +456,9 @@ function renderIntro(){
      </div>
      <div class="rules">
        <div class="rule"><span class="n">A</span><p><b>Señalar la falacia.</b> Si su argumento hace trampa, la nombras y le obligas a defenderla. Cuando la trampa es el corazón de su postura, esto le hace mucho daño.</p></div>
-       <div class="rule"><span class="n">B</span><p><b>Contraargumentar.</b> Dejas pasar su jugada y respondes con una razón tuya. Si es lo bastante fuerte, convence más que entretenerte en corregir una trampa pequeña… pero si es floja y su trampa era gorda, te hunde.</p></div>
+       <div class="rule"><span class="n">B</span><p><b>Contraargumentar.</b> Dejas pasar su jugada y respondes con una razón tuya. Si es lo bastante fuerte, convence más que entretenerte en corregir una trampa pequeña… pero si es floja y su trampa era gorda, te hunde. Ojo: sus argumentos también tienen fuerza; si tu razón es más floja que la suya, el público se va con él.</p></div>
        <div class="rule"><span class="n">♦</span><p><b>Temple.</b> Cuando te faltan al respeto o te tocan la fibra (un insulto, una amenaza, un ataque personal) pierdes temple, aunque caces la jugada: el golpe duele igual. No se recupera solo, así que se acumula. A cero pierdes los estribos (solo te sale insultar, rendirte o huir); entonces para y respira para recobrar algo de calma.</p></div>
+       <div class="rule"><span class="n">★</span><p><b>Comodines (uno de cada por partida).</b> <b>¿Cómo lo sabes?</b> desmonta las trampas que fingen tener apoyo (un famoso, todo el mundo, pocos casos, una falsa causa, la tradición) aunque no sepas su nombre; ante un argumento legítimo te resta, porque te da sus razones. <b>¿Qué gana?</b> saca a la luz el interés oculto de quien habla, si lo tiene; si no lo tiene, te resta: presuponer mala fe sin indicios es atacar a la persona.</p></div>
      </div>
      <div class="center" style="font-weight:600;margin:4px 0 8px">Elige el tema de esta partida:</div>
      <div class="pick">
@@ -482,7 +483,7 @@ function nextTurn(first){
     if(!S._oppQueue.length) S._oppQueue=shuffle(TEMAS[S.ti].opp.map((_,i)=>i));
     const idx=S._oppQueue.shift();
     const m=T.opp[idx];
-    S.move={kind:"arg", t:m.t, f:m.f, peso:m.peso||0};
+    S.move={kind:"arg", t:m.t, f:m.f, peso:m.peso||0, fuerza:m.fuerza, interes:m.interes};
   }
   S.lastHit = (S.move.kind==="estrat");
   pushThread("cpu", S.move.t, "Ordenador");
@@ -529,7 +530,10 @@ function renderGame(){
        <button class="btn btn-a choice" data-act="a">${hot?'Señalar que es una trampa (no un argumento)':'Señalar la falacia y obligarle a defenderla'}<small>${hot?'le dices que eso no responde al tema':'la nombras; si es el eje de su postura, le haces mucho daño'}</small></button>
        <button class="btn btn-b choice" data-act="b">Contraargumentar con una razón tuya<small>dejas pasar su jugada y pegas con lo tuyo</small></button>
      </div>`;
+    if(!S.comodines) S.comodines={sabes:1, gana:1};
+    html+=comodinesHTML();
     app().innerHTML=html; scrollThread();
+    app().querySelectorAll('[data-com]').forEach(b=>b.onclick=()=>usarComodin(b.dataset.com));
     app().querySelector('[data-act="a"]').onclick=()=>chooseA();
     app().querySelector('[data-act="b"]').onclick=()=>chooseB();
 
@@ -581,11 +585,37 @@ function nameFal(k){
     if(alts.length){ const todas=[m.f,...alts].map(x=>FALACIAS[x].nombre).join(" y "); extra = ` Esta carta esconde dos trampas a la vez (${todas}): cualquiera de las dos vale.`+extra; }
     return showFB("win","¡Cazada y con nombre!",`Era <b>${elegida.nombre}</b> <span style="color:var(--muted)">(${elegida.tec})</span> y le obligas a defenderla.${extra}${notaFibra}`,{q:elegida.q},d);
   }
-  if(fibra){ pushThread("you", `Eso es ${fa.nombre}…`); const d=3; S.meter=clamp(S.meter+d);
+  if(fibra){ pushThread("you", `Eso es ${fa.nombre}…`); const d=-3; S.meter=clamp(S.meter+d);
     return showFB("mid","Viste la falta de respeto, pero no era esa falacia.",`Era <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span>, no «${fa.nombre}».${notaFibra}`,{q:real.q},d); }
   pushThread("you", `Eso es ${fa.nombre}…`);
-  const d=3; S.meter=clamp(S.meter+d);
-  showFB("mid","Viste la trampa, pero no era esa.",`Había trampa, sí, pero no «${fa.nombre}»: era <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span>. Media razón.`,{q:real.q},d);
+  const d=-3; S.meter=clamp(S.meter+d);
+  showFB("mid","Viste la trampa, pero no era esa.",`Había trampa, sí, pero no «${fa.nombre}»: era <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span>. Acusarla con otro nombre resta: el público ve que no sabes bien qué falla.`,{q:real.q},d);
+}
+
+/* ---------- Comodines (08-10-2026): «¿Cómo lo sabes?» y «¿Qué gana?», uno de cada por partida ---------- */
+const SIN_PRUEBAS = new Set(["famoso","todos","pocos","causa","siempre"]); // trampas que fingen tener apoyo: se caen al pedir pruebas
+function temaConInteres(){ return TEMAS[S.ti].opp.some(o=>o.interes); }
+function comodinesHTML(){
+  const c=S.comodines||{sabes:1,gana:1}; let h=`<div class="choices comodines fade" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:10px">`;
+  h+=`<button class="btn choice" data-com="sabes" ${c.sabes?'':'disabled'}>★ ¿Cómo lo sabes?<small>${c.sabes?'pide pruebas; sirve aunque no sepas el nombre de la trampa':'ya usado'}</small></button>`;
+  if(temaConInteres()) h+=`<button class="btn choice" data-com="gana" ${c.gana?'':'disabled'}>★ ¿Qué gana?<small>${c.gana?'busca un interés oculto; sin indicios, te resta':'ya usado'}</small></button>`;
+  return h+`</div>`;
+}
+function usarComodin(k){
+  const m=S.move; S.comodines[k]=0;
+  if(k==="sabes"){
+    pushThread("you", "¿Cómo lo sabes? ¿Qué pruebas tienes?");
+    if(m.kind==="estrat"){ S.temple=Math.max(0,S.temple-1); return showFB("mid", "Eso no era una afirmación.", "Te estaba provocando; preguntarle cómo lo sabe no le para los pies, y la provocación te ha tocado la fibra.", {}, 0); }
+    if(m.f===null){ const d=-3; S.meter=clamp(S.meter+d); return showFB("lose", "Sí lo sabía.", "Te explica sus razones y el público le escucha: era un argumento legítimo. Pedir pruebas está bien, pero aquí has gastado el comodín.", {}, d); }
+    const fa=FALACIAS[m.f];
+    if(FIBRA.has(m.f)) S.temple=Math.max(0,S.temple-1);
+    if(SIN_PRUEBAS.has(m.f)){ const d=8; S.meter=clamp(S.meter+d); return showFB("win", "No tenía pruebas.", `Le preguntas cómo lo sabe y no puede enseñar nada: su «${fa.nombre}» se queda sin apoyo. Si además le pones nombre, sumas más.`, {q:fa.q}, d); }
+    return showFB("mid", "Su trampa no iba de pruebas.", `Era «${fa.nombre}»: no se arregla pidiendo pruebas.`, {q:fa.q}, 0);
+  }
+  pushThread("you", "¿Y tú qué ganas con que me lo crea?");
+  if(m.kind==="arg" && m.interes){ const d=12; S.meter=clamp(S.meter+d); return showFB("win", "¡Tenía un interés!", `Preguntas qué gana quien lo dice y sale a la luz: ${m.interes} No demuestra que mienta, pero el público ya no se fía igual.`, {}, d); }
+  if(m.kind==="estrat") S.temple=Math.max(0,S.temple-1);
+  const d=-6; S.meter=clamp(S.meter+d); return showFB("lose", "Le acusas sin indicios.", "Nada indica que gane algo con esto. Pensar en los intereses es parte del pensamiento crítico, pero presuponer mala fe sin indicios es atacar a la persona.", {}, d);
 }
 
 function chooseB(){
@@ -608,10 +638,13 @@ function playCounter(i){
     return showFB("lose","Tu propio golpe era tramposo.",`Has contraatacado con <b>${fa.nombre}</b> <span style="color:var(--muted)">(${fa.tec})</span>, y el ordenador te caza. El público te lo descuenta.`,{q:fa.q},d);
   }
   const unchallenged = (m.kind==="arg" && m.f) ? m.peso : 0;
-  const d = c.str*5 - unchallenged*4;
+  // el ordenador también tiene fuerza (08-10-2026): argumento legítimo 2, trampa 1, provocación 2; un tema puede fijar «fuerza» por argumento
+  const rival = m.kind==="arg" ? (m.fuerza || (m.f ? 1 : 2)) : 2;
+  const d = (c.str - rival)*5 - unchallenged*4;
   S.meter=clamp(S.meter+d);
   if(unchallenged===0){
-    return showFB(d>0?"win":"mid", "Buen contraargumento.", `Has respondido con una razón de fuerza ${c.str}. ${m.kind==="estrat"?"Y has pasado de su provocación: elegante.":"Su jugada no tenía trampa; aquí tocaba argumentar."}`,{},d);
+    if(d<0) return showFB("lose", "Su argumento pesaba más.", `Tu razón (fuerza ${c.str}) era más floja que lo que él había dicho. ${m.kind==="estrat"?"Pasar de su provocación está bien, pero hacía falta una respuesta más sólida.":"No había trampa que señalar: tocaba una razón más fuerte."}`,{},d);
+    return showFB(d>0?"win":"mid", d>0?"Buen contraargumento.":"Tablas en este turno.", `Has respondido con una razón de fuerza ${c.str}. ${m.kind==="estrat"?"Y has pasado de su provocación: elegante.":"Su jugada no tenía trampa; aquí tocaba argumentar."}`,{},d);
   }
   if(d>0){
     const fa=FALACIAS[m.f];

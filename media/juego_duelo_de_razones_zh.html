@@ -177,7 +177,7 @@ const TEMAS = [
   tuLado:"你主张：«最好放在教室外»。",
   opp:[
    {t:"手机能让你随时查词典、用计算器；用得好就是一种学习工具。", f:null},
-   {t:"一位科技大咖在演讲里说过：禁用手机是数字文盲的做法。", f:"famoso", peso:1},
+   {t:"一位科技大咖在演讲里说过：禁用手机是数字文盲的做法。", f:"famoso", peso:1, interes:"这位大咖是一家向学校推销平板电脑和应用程序的公司的顾问。"},
    {t:"所有现代化的学校都已经在用了；落在后面就太土了。", f:"todos", peso:2},
    {t:"要么手机自由使用，要么就养出一群没法在21世纪生活的孩子。", f:"dos", peso:3},
    {t:"我认识两个人靠在手机上查东西考及格了；可见它对所有人都有帮助。", f:"pocos", peso:2},
@@ -196,7 +196,7 @@ const TEMAS = [
   tuLado:"你主张：«偶尔吃可以，天天吃不行»。",
   opp:[
    {t:"它又便宜又快；对时间少的人来说，一顿饭就解决了。", f:null},
-   {t:"全世界最有名的足球运动员代言它，所以也不会太糟吧。", f:"famoso", peso:1},
+   {t:"全世界最有名的足球运动员代言它，所以也不会太糟吧。", f:"famoso", peso:1, interes:"这位足球运动员为这家快餐连锁店代言，拿了几百万。"},
    {t:"全班每周五都去那儿吃；总有道理吧。", f:"todos", peso:2},
    {t:"我表哥天天吃汉堡，壮得很：这种吃法让人强壮。", f:"causa", peso:2},
    {t:"要么吃这个，要么饿肚子；没有别的便宜选择。", f:"dos", peso:3},
@@ -383,7 +383,7 @@ const TEMAS = [
   ],
   opp:[
    {t:"学习的人，是有知识的人还是无知的人？如果是有知识的人，那他们学的是自己已经知道的东西；如果是无知的人，那他们学了也什么都不懂。所以学习是不可能的。", f:"equivoco", peso:2},
-   {t:"你知道某件事吗？那你就是个有知识的人。而知道的人，就是知道。所以你知道一切，而且你一向都知道。", f:"equivoco", peso:2},
+   {t:"你知道某件事吗？那你就是个有知识的人。而知道的人，就是知道。所以你知道一切，而且你一向都知道。", f:"equivoco", peso:2, interes:"这两兄弟教这门本事是要收钱的：花招越唬人，付钱来学的学生就越多。"},
    {t:"你有一条狗，它又是幼崽的父亲吗？那它既是父亲，又是你的：它就是你的父亲。而你就是那些幼崽的兄弟。", f:"equivoco", peso:2},
    {t:"你希望这个年轻人变得有智慧，也就是说，希望他不再是现在的他；你希望他不再存在：你是希望他去死！", f:"equivoco", peso:2},
    {t:"任何问题都只能用是或不是来回答。你只许回答是或不是，看你怎么栽；细分辨析是骗子的做法。", f:"dos", peso:2},
@@ -406,7 +406,7 @@ const TEMAS = [
    {t:"“你的孩子就要成了孤儿，你还这么安稳地待在这儿？你算哪门子父亲？”", nombre:"拿父亲身份责备", schop:"用指责代替论证", q:"暗示我是个坏父亲，回答不了逃走是否正义这个问题。"},
   ],
   opp:[
-   {t:"你要是不逃，人们就会说我们这些做朋友的又吝啬又懦弱，连救你的钱都舍不得花。想想我们的名声吧。", f:"todos", peso:2},
+   {t:"你要是不逃，人们就会说我们这些做朋友的又吝啬又懦弱，连救你的钱都舍不得花。想想我们的名声吧。", f:"todos", peso:2, interes:"克力同担心的是自己的名声：他怕别人说他舍不得出钱帮苏格拉底逃走。"},
    {t:"想想你的孩子：你把他们丢下成了孤儿，无人抚养、无人教育。这样抛弃他们是自私的。", f:"pena", peso:2},
    {t:"要么你逃走、活下来，要么你留下、把胜利拱手让给那些不公正地判你罪的人：没有第三种选择。", f:"dos", peso:2},
    {t:"留下来是选那条省事的路；但凡有点骨气的人早就逃了。", f:"persona", fAlt:["todos"], peso:1},
@@ -436,7 +436,7 @@ const app=()=>document.getElementById('app');
 
 function freshState(ti){
   return {ti, meter:50, temple:3, lastHit:false, turno:0, thread:[], move:null, hand:null,
-          fase:"turn", _oppQueue:shuffle(TEMAS[ti].opp.map((_,i)=>i))};
+          fase:"turn", _oppQueue:shuffle(TEMAS[ti].opp.map((_,i)=>i)), comodines:{sabes:1, gana:1}};
 }
 function clamp(v){ return Math.max(0,Math.min(100,v)); }
 
@@ -456,8 +456,9 @@ function renderIntro(){
      </div>
      <div class="rules">
        <div class="rule"><span class="n">A</span><p><b>指出谬误。</b> 如果他的论证耍了花招，你就点出它的名字，逼他去为它辩护。当这个花招正是他立场的核心时，这一招会给他造成重创。</p></div>
-       <div class="rule"><span class="n">B</span><p><b>反驳。</b> 你放过他的这一招，用你自己的一个理由来回应。如果理由够强，比起纠缠着去纠正一个小花招，它更能说服人……但如果理由很弱，而他的花招又很大，你就会被压垮。</p></div>
+       <div class="rule"><span class="n">B</span><p><b>反驳。</b> 你放过他的这一招，用你自己的一个理由来回应。如果理由够强，比起纠缠着去纠正一个小花招，它更能说服人……但如果理由很弱，而他的花招又很大，你就会被压垮。注意：他的论证也有力度；如果你的理由比他的弱，观众就会站到他那边。</p></div>
        <div class="rule"><span class="n">♦</span><p><b>沉着。</b> 当别人不尊重你、戳你痛处时（辱骂、威胁、人身攻击），你会失去沉着，即便你识破了这一招：这一击照样会痛。它不会自行恢复，所以会不断累积。归零时你就会失去理智（你只能骂回去、认输或逃避）；这时就停下来深呼吸，找回一点冷静。</p></div>
+       <div class="rule"><span class="n">★</span><p><b>王牌（每局各一次）。</b> <b>你是怎么知道的？</b>能拆穿那些假装有依据的花招（名人、大家都这样、几个例子、虚假因果、传统），即使你叫不出它的名字；但如果对方的论证是正当的，你会被扣分，因为他会给出理由。<b>他能得到什么？</b>能揭开说话人隐藏的利益——如果他有的话；如果没有，你会被扣分：没有迹象就假定对方不怀好意，就是攻击人。</p></div>
      </div>
      <div class="center" style="font-weight:600;margin:4px 0 8px">选择本局的主题：</div>
      <div class="pick">
@@ -482,7 +483,7 @@ function nextTurn(first){
     if(!S._oppQueue.length) S._oppQueue=shuffle(TEMAS[S.ti].opp.map((_,i)=>i));
     const idx=S._oppQueue.shift();
     const m=T.opp[idx];
-    S.move={kind:"arg", t:m.t, f:m.f, peso:m.peso||0};
+    S.move={kind:"arg", t:m.t, f:m.f, peso:m.peso||0, fuerza:m.fuerza, interes:m.interes};
   }
   S.lastHit = (S.move.kind==="estrat");
   pushThread("cpu", S.move.t, "电脑");
@@ -529,7 +530,10 @@ function renderGame(){
        <button class="btn btn-a choice" data-act="a">${hot?'指出这是花招（不是论证）':'指出谬误，逼他为之辩护'}<small>${hot?'你告诉他这并没有回应主题':'你点出它的名字；如果它是他立场的核心，就重创他'}</small></button>
        <button class="btn btn-b choice" data-act="b">用你自己的一个理由来反驳<small>你放过他这一招，用你自己的理由出击</small></button>
      </div>`;
+    if(!S.comodines) S.comodines={sabes:1, gana:1};
+    html+=comodinesHTML();
     app().innerHTML=html; scrollThread();
+    app().querySelectorAll('[data-com]').forEach(b=>b.onclick=()=>usarComodin(b.dataset.com));
     app().querySelector('[data-act="a"]').onclick=()=>chooseA();
     app().querySelector('[data-act="b"]').onclick=()=>chooseB();
 
@@ -581,11 +585,37 @@ function nameFal(k){
     if(alts.length){ const todas=[m.f,...alts].map(x=>FALACIAS[x].nombre).join("和"); extra = ` 这张牌同时藏着两个花招（${todas}）：任选其一都算对。`+extra; }
     return showFB("win","识破了，还叫出了名字！",`那是 <b>${elegida.nombre}</b> <span style="color:var(--muted)">(${elegida.tec})</span>，你逼他去为它辩护。${extra}${notaFibra}`,{q:elegida.q},d);
   }
-  if(fibra){ pushThread("you", `那是${fa.nombre}……`); const d=3; S.meter=clamp(S.meter+d);
+  if(fibra){ pushThread("you", `那是${fa.nombre}……`); const d=-3; S.meter=clamp(S.meter+d);
     return showFB("mid","你看出了那份不尊重，但不是这种谬误。",`那是 <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span>，不是「${fa.nombre}」。${notaFibra}`,{q:real.q},d); }
   pushThread("you", `那是${fa.nombre}……`);
-  const d=3; S.meter=clamp(S.meter+d);
-  showFB("mid","你看出了花招，但不是这一种。",`确实有花招，但不是「${fa.nombre}」：那是 <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span>。算你答对一半。`,{q:real.q},d);
+  const d=-3; S.meter=clamp(S.meter+d);
+  showFB("mid","你看出了花招，但不是这一种。",`确实有花招，但不是「${fa.nombre}」：那是 <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span>。叫错名字会扣分：观众看出你并不清楚问题在哪。`,{q:real.q},d);
+}
+
+/* ---------- Comodines (08-10-2026): «¿Cómo lo sabes?» y «¿Qué gana?», uno de cada por partida ---------- */
+const SIN_PRUEBAS = new Set(["famoso","todos","pocos","causa","siempre"]); // trampas que fingen tener apoyo: se caen al pedir pruebas
+function temaConInteres(){ return TEMAS[S.ti].opp.some(o=>o.interes); }
+function comodinesHTML(){
+  const c=S.comodines||{sabes:1,gana:1}; let h=`<div class="choices comodines fade" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:10px">`;
+  h+=`<button class="btn choice" data-com="sabes" ${c.sabes?'':'disabled'}>★ 你是怎么知道的？<small>${c.sabes?'要求证据；即使叫不出花招的名字也管用':'已用过'}</small></button>`;
+  if(temaConInteres()) h+=`<button class="btn choice" data-com="gana" ${c.gana?'':'disabled'}>★ 他能得到什么？<small>${c.gana?'寻找隐藏的利益；没有迹象会扣分':'已用过'}</small></button>`;
+  return h+`</div>`;
+}
+function usarComodin(k){
+  const m=S.move; S.comodines[k]=0;
+  if(k==="sabes"){
+    pushThread("you", "你是怎么知道的？你有什么证据？");
+    if(m.kind==="estrat"){ S.temple=Math.max(0,S.temple-1); return showFB("mid", "那不是一个论断。", "他是在挑衅你；问他是怎么知道的拦不住他，而且这次挑衅戳到了你的痛处。", {}, 0); }
+    if(m.f===null){ const d=-3; S.meter=clamp(S.meter+d); return showFB("lose", "他确实知道。", "他向你解释了他的理由，观众听进去了：这是一个正当的论证。要求证据没错，但这里你白白用掉了王牌。", {}, d); }
+    const fa=FALACIAS[m.f];
+    if(FIBRA.has(m.f)) S.temple=Math.max(0,S.temple-1);
+    if(SIN_PRUEBAS.has(m.f)){ const d=8; S.meter=clamp(S.meter+d); return showFB("win", "他拿不出证据。", `你问他是怎么知道的，他什么也拿不出来：他的「${fa.nombre}」没了依据。如果你还能叫出它的名字，得分更多。`, {q:fa.q}, d); }
+    return showFB("mid", "他的花招和证据无关。", `那是「${fa.nombre}」：靠要求证据解决不了。`, {q:fa.q}, 0);
+  }
+  pushThread("you", "我相信了，你能得到什么？");
+  if(m.kind==="arg" && m.interes){ const d=12; S.meter=clamp(S.meter+d); return showFB("win", "他有利益在里面！", `你问说话的人能得到什么，真相浮出水面：${m.interes}这并不能证明他在撒谎，但观众已经不那么信他了。`, {}, d); }
+  if(m.kind==="estrat") S.temple=Math.max(0,S.temple-1);
+  const d=-6; S.meter=clamp(S.meter+d); return showFB("lose", "你毫无根据地指控他。", "没有任何迹象表明他能从中得到好处。考虑利益是批判性思维的一部分，但没有迹象就假定对方不怀好意，就是攻击人。", {}, d);
 }
 
 function chooseB(){
@@ -608,10 +638,13 @@ function playCounter(i){
     return showFB("lose","你自己这一击才是耍花招。",`你用 <b>${fa.nombre}</b> <span style="color:var(--muted)">(${fa.tec})</span> 来反击，被电脑逮个正着。公众把这笔账记在你头上。`,{q:fa.q},d);
   }
   const unchallenged = (m.kind==="arg" && m.f) ? m.peso : 0;
-  const d = c.str*5 - unchallenged*4;
+  // el ordenador también tiene fuerza (08-10-2026): argumento legítimo 2, trampa 1, provocación 2; un tema puede fijar «fuerza» por argumento
+  const rival = m.kind==="arg" ? (m.fuerza || (m.f ? 1 : 2)) : 2;
+  const d = (c.str - rival)*5 - unchallenged*4;
   S.meter=clamp(S.meter+d);
   if(unchallenged===0){
-    return showFB(d>0?"win":"mid", "不错的反驳。", `你用了一个力度为 ${c.str} 的理由来回应。${m.kind==="estrat"?"而且你无视了他的挑衅：漂亮。":"他那一招没有花招；这里正该讲道理。"}`,{},d);
+    if(d<0) return showFB("lose", "他的论证更有分量。", `你的理由（力度 ${c.str}）比他说的要弱。${m.kind==="estrat"?"不理会他的挑衅没错，但需要一个更有力的回答。":"这里没有花招可指出：需要一个更有力的理由。"}`,{},d);
+    return showFB(d>0?"win":"mid", d>0?"不错的反驳。":"这一轮打平。", `你用了一个力度为 ${c.str} 的理由来回应。${m.kind==="estrat"?"而且你无视了他的挑衅：漂亮。":"他那一招没有花招；这里正该讲道理。"}`,{},d);
   }
   if(d>0){
     const fa=FALACIAS[m.f];

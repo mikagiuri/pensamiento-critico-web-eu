@@ -177,7 +177,7 @@ const TEMAS = [
   tuLado:"Zuk defendatzen duzu: «hobe ikasgelatik kanpo».",
   opp:[
    {t:"Mugikorrak hiztegia eta kalkulagailua ematen dizkizu berehala; ongi erabilita, ikasteko tresna bat da.", f:null},
-   {t:"Teknologiako guru batek esan zuen hitzaldi batean: mugikorra debekatzea analfabeto digitalena da.", f:"famoso", peso:1},
+   {t:"Teknologiako guru batek esan zuen hitzaldi batean: mugikorra debekatzea analfabeto digitalena da.", f:"famoso", peso:1, interes:"Guru horrek institutuei tabletak eta aplikazioak saltzen dizkien enpresa bati aholkatzen dio."},
    {t:"Institutu moderno guztietan jada erabiltzen dira; atzean geratzea baserritarrena da.", f:"todos", peso:2},
    {t:"Edo mugikorra aske, edo XXI. mendean bizitzeko gai ez diren gaztetxoak haziko ditugu.", f:"dos", peso:3},
    {t:"Bi ezagutzen ditut mugikorrean gauzak bilatuz gainditu zutenak; argi dago guztiei laguntzen diela.", f:"pocos", peso:2},
@@ -196,7 +196,7 @@ const TEMAS = [
   tuLado:"Zuk defendatzen duzu: «noizean behin bai, egunero ez».",
   opp:[
    {t:"Merkea eta azkarra da; denbora gutxi duenarentzat, bazkaria konpontzen du.", f:null},
-   {t:"Munduko futbolari ospetsuenak iragartzen du, beraz ez da hain txarra izango.", f:"famoso", peso:1},
+   {t:"Munduko futbolari ospetsuenak iragartzen du, beraz ez da hain txarra izango.", f:"famoso", peso:1, interes:"Futbolariak milioiak kobratzen ditu janari azkarreko kate hori iragartzeagatik."},
    {t:"Klase osoak han jaten du ostiraletan; zerbaitengatik izango da.", f:"todos", peso:2},
    {t:"Nire lehengusuak hanburgesak jaten ditu eta sendo-sendo dago: janari honek indartsu jartzen zaitu.", f:"causa", peso:2},
    {t:"Edo hau jaten duzu, edo gose geratzen zara; ez dago beste aukera merkerik.", f:"dos", peso:3},
@@ -383,7 +383,7 @@ const TEMAS = [
   ],
   opp:[
    {t:"Ikasten dutenak jakintsuak ala ezjakinak dira? Jakintsuak badira, dagoeneko dakitena ikasten dute; ezjakinak badira, ezer ulertu gabe ikasten dute. Beraz, ikastea ezinezkoa da.", f:"equivoco", peso:2},
-   {t:"Zerbait badakizu? Orduan jakintsua zara. Eta dakienak, badaki. Beraz, DENA dakizu, eta beti jakin izan duzu.", f:"equivoco", peso:2},
+   {t:"Zerbait badakizu? Orduan jakintsua zara. Eta dakienak, badaki. Beraz, DENA dakizu, eta beti jakin izan duzu.", f:"equivoco", peso:2, interes:"Bi anaiek kobratu egiten dute arte hau irakasteagatik: zenbat eta tranpa liluragarriagoa, orduan eta ikasle gehiago ordaintzen."},
    {t:"Txakur bat duzu eta kumeen aita da? Orduan aita da eta zurea da: zure aita da. Eta zu kumeen anaia zara.", f:"equivoco", peso:2},
    {t:"Gaztea jakintsu bihurtzea nahi duzu, hau da, den hori izateari uztea; izateari uztea nahi duzu: hil dadila nahi duzu!", f:"equivoco", peso:2},
    {t:"Galdera orori bai edo ez erantzuten zaio. Erantzun bai edo ez soilik eta ikusiko duzu nola erortzen zaren; ñabardurak egitea tranpatien kontua da.", f:"dos", peso:2},
@@ -406,7 +406,7 @@ const TEMAS = [
    {t:"«Hor geldituko al zara hain lasai zure seme-alabak umezurtz geratzen diren bitartean? Nolako aita zara?»", nombre:"aitaren leporatzea", schop:"argudiatu ordez errudun sentiaraztea", q:"Aita txarra naizela iradokitzeak ez dio erantzuten ihes egitea justua den galderari."},
   ],
   opp:[
-   {t:"Ihes egiten ez baduzu, jendeak esango du zure lagunok zekenak eta koldarrak izan ginela zu salbatzeko dirurik gastatu ez genuelako. Pentsa gure ospean.", f:"todos", peso:2},
+   {t:"Ihes egiten ez baduzu, jendeak esango du zure lagunok zekenak eta koldarrak izan ginela zu salbatzeko dirurik gastatu ez genuelako. Pentsa gure ospean.", f:"todos", peso:2, interes:"Kritonek bere ospea du kezka: beldur da esango dutela berak ez zuela ihesa ordaindu nahi izan."},
    {t:"Pentsa zure seme-alabengan: umezurtz uzten dituzu, haztapenik eta hezkuntzarik gabe. Horrela abandonatzea berekoien kontua da.", f:"pena", peso:2},
    {t:"Edo ihes egin eta bizi, edo gelditu eta injustuki kondenatu zintuztenei garaipena eman: ez dago besterik.", f:"dos", peso:2},
    {t:"Gelditzea bide erosoa aukeratzea da; kemenen bat duen edonork ihes egingo zukeen jadanik.", f:"persona", fAlt:["todos"], peso:1},
@@ -436,7 +436,7 @@ const app=()=>document.getElementById('app');
 
 function freshState(ti){
   return {ti, meter:50, temple:3, lastHit:false, turno:0, thread:[], move:null, hand:null,
-          fase:"turn", _oppQueue:shuffle(TEMAS[ti].opp.map((_,i)=>i))};
+          fase:"turn", _oppQueue:shuffle(TEMAS[ti].opp.map((_,i)=>i)), comodines:{sabes:1, gana:1}};
 }
 function clamp(v){ return Math.max(0,Math.min(100,v)); }
 
@@ -456,8 +456,9 @@ function renderIntro(){
      </div>
      <div class="rules">
        <div class="rule"><span class="n">A</span><p><b>Faltsukeria seinalatu.</b> Bere argudioak tranpa egiten badu, izendatu eta hura defendatzera behartzen duzu. Tranpa bere jarreraren bihotza denean, horrek kalte handia egiten dio.</p></div>
-       <div class="rule"><span class="n">B</span><p><b>Kontraargudiatu.</b> Bere jokaldia pasatzen uzten duzu eta zeure arrazoi batekin erantzuten duzu. Behar bezain sendoa bada, tranpa txiki bat zuzentzen entretenitzea baino gehiago konbentzitzen du… baina ahula bada eta bere tranpa handia bazen, hondoratu egiten zaitu.</p></div>
+       <div class="rule"><span class="n">B</span><p><b>Kontraargudiatu.</b> Bere jokaldia pasatzen uzten duzu eta zeure arrazoi batekin erantzuten duzu. Behar bezain sendoa bada, tranpa txiki bat zuzentzen entretenitzea baino gehiago konbentzitzen du… baina ahula bada eta bere tranpa handia bazen, hondoratu egiten zaitu. Kontuz: bere argudioek ere badute indarra; zure arrazoia berea baino ahulagoa bada, publikoa berarekin joaten da.</p></div>
        <div class="rule"><span class="n">♦</span><p><b>Patxada.</b> Errespetua galtzen dizutenean edo mina ematen dizutenean (irain bat, mehatxu bat, eraso pertsonal bat) patxada galtzen duzu, jokaldia harrapatuta ere: kolpeak berdin egiten du min. Ez da bere kabuz berreskuratzen, beraz pilatu egiten da. Zeron, onetik ateratzen zara (iraindu, amore eman edo ihes egin baino ez zaizu ateratzen); orduan gelditu eta arnasa hartu lasaitasun pixka bat berreskuratzeko.</p></div>
+       <div class="rule"><span class="n">★</span><p><b>Komodinak (bakoitzetik bat partidako).</b> <b>Nola dakizu?</b> euskarria dutela itxurak egiten dituzten tranpak desegiten ditu (ospetsu bat, mundu guztia, kasu gutxi, kausa faltsu bat, tradizioa), haien izena jakin gabe ere; argudio zilegi baten aurrean kendu egiten dizu, bere arrazoiak ematen dizkizulako. <b>Zer irabazten du?</b> hitz egiten duenaren interes ezkutua azaleratzen du, baldin badu; ez badu, kendu egiten dizu: zantzurik gabe asmo txarra suposatzea pertsonari erasotzea da.</p></div>
      </div>
      <div class="center" style="font-weight:600;margin:4px 0 8px">Aukeratu partida honetako gaia:</div>
      <div class="pick">
@@ -482,7 +483,7 @@ function nextTurn(first){
     if(!S._oppQueue.length) S._oppQueue=shuffle(TEMAS[S.ti].opp.map((_,i)=>i));
     const idx=S._oppQueue.shift();
     const m=T.opp[idx];
-    S.move={kind:"arg", t:m.t, f:m.f, peso:m.peso||0};
+    S.move={kind:"arg", t:m.t, f:m.f, peso:m.peso||0, fuerza:m.fuerza, interes:m.interes};
   }
   S.lastHit = (S.move.kind==="estrat");
   pushThread("cpu", S.move.t, "Ordenagailua");
@@ -529,7 +530,10 @@ function renderGame(){
        <button class="btn btn-a choice" data-act="a">${hot?'Seinalatu tranpa bat dela (ez argudio bat)':'Seinalatu faltsukeria eta hura defendatzera behartu'}<small>${hot?'esaten diozu horrek ez diola gaiari erantzuten':'izendatzen duzu; bere jarreraren ardatza bada, kalte handia egiten diozu'}</small></button>
        <button class="btn btn-b choice" data-act="b">Kontraargudiatu zeure arrazoi batekin<small>bere jokaldia pasatzen uzten duzu eta zeurearekin jotzen duzu</small></button>
      </div>`;
+    if(!S.comodines) S.comodines={sabes:1, gana:1};
+    html+=comodinesHTML();
     app().innerHTML=html; scrollThread();
+    app().querySelectorAll('[data-com]').forEach(b=>b.onclick=()=>usarComodin(b.dataset.com));
     app().querySelector('[data-act="a"]').onclick=()=>chooseA();
     app().querySelector('[data-act="b"]').onclick=()=>chooseB();
 
@@ -581,11 +585,37 @@ function nameFal(k){
     if(alts.length){ const todas=[m.f,...alts].map(x=>FALACIAS[x].nombre).join(" eta "); extra = ` Karta honek bi tranpa ezkutatzen ditu aldi berean (${todas}): bietako edozeinek balio du.`+extra; }
     return showFB("win","Harrapatua eta izenarekin!",`<b>${elegida.nombre}</b> <span style="color:var(--muted)">(${elegida.tec})</span> zen eta hura defendatzera behartzen duzu.${extra}${notaFibra}`,{q:elegida.q},d);
   }
-  if(fibra){ pushThread("you", `Hori ${fa.nombre} da…`); const d=3; S.meter=clamp(S.meter+d);
+  if(fibra){ pushThread("you", `Hori ${fa.nombre} da…`); const d=-3; S.meter=clamp(S.meter+d);
     return showFB("mid","Errespetu falta ikusi duzu, baina ez zen faltsukeria hori.",`<b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span> zen, ez «${fa.nombre}».${notaFibra}`,{q:real.q},d); }
   pushThread("you", `Hori ${fa.nombre} da…`);
-  const d=3; S.meter=clamp(S.meter+d);
-  showFB("mid","Tranpa ikusi duzu, baina ez zen hori.",`Tranpa bazegoen, bai, baina ez «${fa.nombre}»: <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span> zen. Arrazoi erdia.`,{q:real.q},d);
+  const d=-3; S.meter=clamp(S.meter+d);
+  showFB("mid","Tranpa ikusi duzu, baina ez zen hori.",`Tranpa bazegoen, bai, baina ez «${fa.nombre}»: <b>${real.nombre}</b> <span style="color:var(--muted)">(${real.tec})</span> zen. Beste izen batekin salatzeak kendu egiten du: publikoak ikusten du ez dakizula ondo zer dagoen gaizki.`,{q:real.q},d);
+}
+
+/* ---------- Comodines (08-10-2026): «¿Cómo lo sabes?» y «¿Qué gana?», uno de cada por partida ---------- */
+const SIN_PRUEBAS = new Set(["famoso","todos","pocos","causa","siempre"]); // trampas que fingen tener apoyo: se caen al pedir pruebas
+function temaConInteres(){ return TEMAS[S.ti].opp.some(o=>o.interes); }
+function comodinesHTML(){
+  const c=S.comodines||{sabes:1,gana:1}; let h=`<div class="choices comodines fade" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:10px">`;
+  h+=`<button class="btn choice" data-com="sabes" ${c.sabes?'':'disabled'}>★ Nola dakizu?<small>${c.sabes?'frogak eskatu; tranparen izena jakin gabe ere balio du':'erabilita'}</small></button>`;
+  if(temaConInteres()) h+=`<button class="btn choice" data-com="gana" ${c.gana?'':'disabled'}>★ Zer irabazten du?<small>${c.gana?'interes ezkutu bat bilatu; zantzurik gabe, kendu egiten dizu':'erabilita'}</small></button>`;
+  return h+`</div>`;
+}
+function usarComodin(k){
+  const m=S.move; S.comodines[k]=0;
+  if(k==="sabes"){
+    pushThread("you", "Nola dakizu? Zer froga dituzu?");
+    if(m.kind==="estrat"){ S.temple=Math.max(0,S.temple-1); return showFB("mid", "Hori ez zen baieztapen bat.", "Probokatzen ari zitzaizun; nola dakien galdetzeak ez dio bidea mozten, eta probokazioak mina eman dizu.", {}, 0); }
+    if(m.f===null){ const d=-3; S.meter=clamp(S.meter+d); return showFB("lose", "Bazekien, bai.", "Bere arrazoiak azaltzen dizkizu eta publikoak entzun egiten dio: argudio zilegia zen. Frogak eskatzea ondo dago, baina hemen komodina xahutu duzu.", {}, d); }
+    const fa=FALACIAS[m.f];
+    if(FIBRA.has(m.f)) S.temple=Math.max(0,S.temple-1);
+    if(SIN_PRUEBAS.has(m.f)){ const d=8; S.meter=clamp(S.meter+d); return showFB("win", "Ez zuen frogarik.", `Nola dakien galdetzen diozu eta ezin du ezer erakutsi: bere «${fa.nombre}» euskarririk gabe geratzen da. Gainera izena jartzen badiozu, gehiago batzen duzu.`, {q:fa.q}, d); }
+    return showFB("mid", "Bere tranpa ez zen frogen kontua.", `«${fa.nombre}» zen: ez da frogak eskatuz konpontzen.`, {q:fa.q}, 0);
+  }
+  pushThread("you", "Eta zuk zer irabazten duzu nik sinesteaz?");
+  if(m.kind==="arg" && m.interes){ const d=12; S.meter=clamp(S.meter+d); return showFB("win", "Interes bat zuen!", `Esaten duenak zer irabazten duen galdetzen duzu eta azaleratu egiten da: ${m.interes} Ez du frogatzen gezurra esaten duenik, baina publikoa ez da berdin fidatzen.`, {}, d); }
+  if(m.kind==="estrat") S.temple=Math.max(0,S.temple-1);
+  const d=-6; S.meter=clamp(S.meter+d); return showFB("lose", "Zantzurik gabe salatzen duzu.", "Ezerk ez du adierazten honekin zerbait irabazten duenik. Interesetan pentsatzea pentsamendu kritikoaren parte da, baina zantzurik gabe asmo txarra suposatzea pertsonari erasotzea da.", {}, d);
 }
 
 function chooseB(){
@@ -608,10 +638,13 @@ function playCounter(i){
     return showFB("lose","Zeure kolpea bera tranposoa zen.",`<b>${fa.nombre}</b> <span style="color:var(--muted)">(${fa.tec})</span> erabiliz kontraerasotu duzu, eta ordenagailuak harrapatu egiten zaitu. Publikoak deskontatu egiten dizu.`,{q:fa.q},d);
   }
   const unchallenged = (m.kind==="arg" && m.f) ? m.peso : 0;
-  const d = c.str*5 - unchallenged*4;
+  // el ordenador también tiene fuerza (08-10-2026): argumento legítimo 2, trampa 1, provocación 2; un tema puede fijar «fuerza» por argumento
+  const rival = m.kind==="arg" ? (m.fuerza || (m.f ? 1 : 2)) : 2;
+  const d = (c.str - rival)*5 - unchallenged*4;
   S.meter=clamp(S.meter+d);
   if(unchallenged===0){
-    return showFB(d>0?"win":"mid", "Kontraargudio ona.", `${c.str} indarreko arrazoi batekin erantzun duzu. ${m.kind==="estrat"?"Eta bere probokazioari jaramonik ez: dotorea.":"Bere jokaldiak ez zuen tranparik; hemen argudiatzea zegokion."}`,{},d);
+    if(d<0) return showFB("lose", "Bere argudioak pisu handiagoa zuen.", `Zure arrazoia (${c.str} indarra) berak esandakoa baino ahulagoa zen. ${m.kind==="estrat"?"Bere probokazioari jaramonik ez egitea ondo dago, baina erantzun sendoagoa behar zen.":"Ez zegoen tranparik seinalatzeko: arrazoi sendoagoa zegokion."}`,{},d);
+    return showFB(d>0?"win":"mid", d>0?"Kontraargudio ona.":"Berdinketa txanda honetan.", `${c.str} indarreko arrazoi batekin erantzun duzu. ${m.kind==="estrat"?"Eta bere probokazioari jaramonik ez: dotorea.":"Bere jokaldiak ez zuen tranparik; hemen argudiatzea zegokion."}`,{},d);
   }
   if(d>0){
     const fa=FALACIAS[m.f];
