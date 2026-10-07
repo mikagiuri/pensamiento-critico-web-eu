@@ -52,7 +52,7 @@
       'Oin bakoitzak jatorrizko fitxara eramaten du, egilearekin eta lizentziarekin. Unitate honetan aipatutako egile eta gaiei dagozkie.</p>';
     body.appendChild(strip);
     strip.querySelectorAll(".museo-img").forEach(img =>
-      img.addEventListener("click", () => { if (typeof openLightbox === "function") openLightbox(img.src); }));
+      img.addEventListener("click", () => { if (typeof openLightbox === "function") openLightbox(img.src, img.alt); }));
   }
 
   // envolver loadTheory para que la tira se reconstruya al cambiar de unidad

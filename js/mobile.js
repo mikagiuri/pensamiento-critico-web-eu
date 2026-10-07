@@ -38,7 +38,33 @@
     if (!g) return;
     function toggleSec(e) { e.stopPropagation(); const wasOpen = s.classList.contains("open"); collapseAll(); if (!wasOpen) openSec(s); }
     g.addEventListener("click", toggleSec);
-    g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSec(e); } });
+    /* Teclado (patrón «botón de menú»): Enter/Espacio/↓ abren y llevan al primer elemento,
+       ↑ al último; dentro, ↑↓ recorren (circular), Inicio/Fin saltan a los extremos y Escape
+       cierra devolviendo el foco al encabezado. Al salir el foco del grupo, se cierra. */
+    const m = s.querySelector(".navmenu");
+    function items() { return m ? Array.prototype.filter.call(m.querySelectorAll("button"), function (b) { return !b.hidden && !b.disabled && b.offsetParent !== null; }) : []; }
+    function focusItem(i) { const it = items(); if (it.length) it[i < 0 ? it.length - 1 : i].focus(); }
+    g.addEventListener("keydown", function (e) {
+      const isOpen = s.classList.contains("open");
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSec(e); if (!isOpen) focusItem(0); }
+      else if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); e.stopPropagation(); if (!isOpen) { collapseAll(); openSec(s); } focusItem(e.key === "ArrowDown" ? 0 : -1); }
+      else if (e.key === "Escape" && isOpen) { e.stopPropagation(); collapseAll(); }
+    });
+    if (m) m.addEventListener("keydown", function (e) {
+      const it = items(), i = it.indexOf(document.activeElement);
+      if (i < 0) return;
+      let n = -1;
+      if (e.key === "ArrowDown") n = (i + 1) % it.length;
+      else if (e.key === "ArrowUp") n = (i - 1 + it.length) % it.length;
+      else if (e.key === "Home") n = 0;
+      else if (e.key === "End") n = it.length - 1;
+      else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); collapseAll(); g.focus(); return; }
+      else return;
+      e.preventDefault(); it[n].focus();
+    });
+    s.addEventListener("focusout", function (e) {
+      if (s.classList.contains("open") && e.relatedTarget && !s.contains(e.relatedTarget)) { s.classList.remove("open"); g.setAttribute("aria-expanded", "false"); }
+    });
   });
 
   /* Al pulsar una sección (botón con data-view), cerrar el menú. */
@@ -49,5 +75,9 @@
     const anyOpen = tabs.classList.contains("open") || tabs.querySelector(".navsec.open");
     if (anyOpen && !tabs.contains(e.target) && e.target !== t) closeMenu();
   });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    const back = tabs.classList.contains("open") && tabs.contains(document.activeElement);  // foco dentro del menú ☰: volver al botón
+    closeMenu(); if (back) t.focus();
+  });
 })();

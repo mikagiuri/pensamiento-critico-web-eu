@@ -263,7 +263,7 @@ function loadTheory(k){
   if (typeof wireRelated === "function") wireRelated(body);
   const hs = [...body.querySelectorAll("h2")];
   hs.forEach((h, i) => { h.id = "th-" + i; });
-  body.querySelectorAll(".figimg").forEach(img => img.addEventListener("click", () => openLightbox(img.src)));
+  body.querySelectorAll(".figimg").forEach(img => img.addEventListener("click", () => openLightbox(img.src, img.alt)));
   const toc = document.getElementById("toc");
   if (porApartados){
     /* índice = selector de apartado (en «tema entero», salta al ancla como antes) */

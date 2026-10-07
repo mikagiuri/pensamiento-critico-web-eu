@@ -110,7 +110,7 @@ function renderGalGrid(){
   if (cnt) cnt.textContent = galList.length + (galList.length === 1 ? " ilustrazio" : " ilustrazio") +
     (galList.length !== GALERIA.length ? " (guztira " + GALERIA.length + ")" : "");
   grid.innerHTML = galList.map(function (g, i){
-    return '<button class="galcard" data-i="' + i + '"><img loading="lazy" src="' + g.f + '" alt="' + g.t.replace(/"/g, "&quot;") + '"><div class="cap">' + g.t + '</div></button>';
+    return '<button class="galcard" data-i="' + i + '"><img loading="lazy" src="' + g.f + '" alt=""><div class="cap">' + g.t + '</div></button>';
   }).join("");
   grid.querySelectorAll(".galcard").forEach(function (b){ b.addEventListener("click", function (){ galOpen(+b.dataset.i); }); });
 }
@@ -118,7 +118,7 @@ function renderGalGrid(){
 function galEsc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 function galShow(){
   const g = galList[galPos]; if (!g) return;
-  document.getElementById("gallbimg").src = g.f;
+  const im = document.getElementById("gallbimg"); im.src = g.f; im.alt = g.t || "";
   document.getElementById("gallbt").textContent = g.t;
   const cred = (g.pie ? g.pie + " · " : "") + (g.unidad || "");
   document.getElementById("gallbp").innerHTML = galEsc(cred) +

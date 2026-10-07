@@ -62,10 +62,59 @@ function parseHash(){
 }
 /* compatibilidad: por si algo sigue llamando a viewIdFromHash() */
 function viewIdFromHash(){ const r = parseHash(); return r ? r.go : null; }
+/* (07-10) Enlaces rotos: antes, «#noexiste» abría la ficha sin decir nada y «#tarjetas/nada»
+   dejaba la vista a medias (el cargador fallaba en silencio). Ahora se avisa con una nota
+   flotante (position:fixed, mobile.css): no desplaza el contenido. */
+function homeView(){ return document.getElementById("inicio") ? "inicio" : (typeof SUBJECTS !== "undefined" ? Object.keys(SUBJECTS).find(s => document.getElementById(s)) : null); }
+const ROUTE_NO_VIEW = "Helbide horrek ez darama web honetako inongo ataletara.";
+const ROUTE_NO_KEY = "Ez dugu aurkitu esteka horrek bilatzen zuena: atala erakusten dizugu.";
+const ROUTE_GO_HOME = "Joan ikasgaiaren fitxara", ROUTE_CLOSE = "Itxi oharra";
+/* clave existente por vista (solo las colecciones con clave; el resto no se comprueba) */
+const ROUTE_KEY_OK = {
+  teoria: k => typeof THEORY === "undefined" || !!THEORY[typeof theorySecArg === "function" ? theorySecArg(k).k : k],
+  lecturas: k => typeof LECTURAS === "undefined" || !!LECTURAS[k],
+  cuestionarios: k => typeof QUIZZES === "undefined" || !!QUIZZES[k],
+  tarjetas: k => typeof DECKS === "undefined" || !!DECKS[k],
+  materiales: k => typeof MATERIALS === "undefined" || !!MATERIALS[k],
+  ilustres: k => typeof iluList !== "function" || iluList().some(x => x.id === k)
+};
+function routeNote(msg){
+  let n = document.getElementById("routenote");
+  if (!n){
+    n = document.createElement("div"); n.id = "routenote"; n.className = "route-note";
+    n.setAttribute("role", "status");
+    document.body.appendChild(n);
+  }
+  const home = homeView();
+  n.innerHTML = '<span></span>' + (home && home !== activeViewId() ? '<a href="#' + home + '">' + ROUTE_GO_HOME + '</a>' : "") +
+    '<button type="button" aria-label="' + ROUTE_CLOSE + '">×</button>';
+  n.firstChild.textContent = msg;
+  n.hidden = false;
+  const hide = () => { n.hidden = true; };
+  n.querySelector("button").onclick = hide;
+  const a = n.querySelector("a"); if (a) a.onclick = hide;
+  clearTimeout(routeNote._t); routeNote._t = setTimeout(hide, 8000);
+}
+function routeUnknown(){
+  const raw = (location.hash || "").replace(/^#/, ""), go = raw.split("/")[0];
+  if (!go || document.getElementById(go)) return;   // sin hash, o ancla interna (#th-3, #contenido): nada que avisar
+  const home = homeView();
+  if (home){
+    try { history.replaceState(null, "", "#" + home); } catch (e){}
+    if (home !== activeViewId()) (window.show || show)(home);
+  }
+  routeNote(ROUTE_NO_VIEW);
+}
 function routeFromHash(){
-  const r = parseHash(); if (!r) return;
+  const r = parseHash(); if (!r){ routeUnknown(); return; }
   if (r.go !== activeViewId()) (window.show || show)(r.go);
   if (r.arg){
+    const ok = ROUTE_KEY_OK[r.go];
+    if (ok && !ok(r.arg)){
+      try { history.replaceState(null, "", "#" + r.go); } catch (e){}
+      if (r.go === "ilustres" && typeof renderIluList === "function") renderIluList();   // no dejar abierta la ficha anterior
+      routeNote(ROUTE_NO_KEY); return;
+    }
     const fn = window.VIEW_LOADERS[r.go];
     if (fn && typeof window[fn] === "function"){ try { window[fn](r.arg); } catch (e){} }
   }
@@ -76,10 +125,29 @@ window.addEventListener("hashchange", routeFromHash);
 document.addEventListener("DOMContentLoaded", function(){
   routeFromHash();
   if (!activeViewId()){
-    const home = document.getElementById("inicio") ? "inicio" : (typeof SUBJECTS !== "undefined" ? Object.keys(SUBJECTS).find(s => document.getElementById(s)) : null);
+    const home = homeView();
     if (home) (window.show || show)(home);
   }
 });
+
+/* (07-10) Indicador de carga discreto: barra fina fija en el borde superior mientras llega
+   una librería externa inyectada al abrir una vista (mermaid de Esquemas tarda ~10 s en frío;
+   markmap de Mapas). Las vistas propias se pintan en <120 ms y no la necesitan. No ocupa
+   sitio en el flujo: no desplaza nada. */
+(function loadBar(){
+  if (typeof MutationObserver === "undefined") return;
+  let pend = 0, bar = null;
+  const upd = () => {
+    if (!bar){ bar = document.createElement("div"); bar.className = "loadbar"; bar.setAttribute("aria-hidden", "true"); document.body.appendChild(bar); }
+    bar.classList.toggle("on", pend > 0);
+  };
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(s => {
+    if (s.tagName !== "SCRIPT" || !/^https?:/.test(s.src || "") || s.src.indexOf(location.origin) === 0) return;
+    pend++; upd();
+    const fin = () => { s.removeEventListener("load", fin); s.removeEventListener("error", fin); pend = Math.max(0, pend - 1); upd(); };
+    s.addEventListener("load", fin); s.addEventListener("error", fin);
+  }))).observe(document.head, { childList: true });
+})();
 
 /* Cada tema/chip/recurso abierto refleja su clave en la URL (#vista/argumento) con
    replaceState: sin ensuciar el historial ni disparar hashchange, de modo que el enlace

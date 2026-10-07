@@ -49,7 +49,7 @@
       + '<p class="ilus-note">Irudi libreak (domeinu publikoa) <strong>Wikimedia Commons</strong>-etik, gai honen kontzeptuak ilustratzeko aukeratuak. Sakatu bat pantaila osoan ikusteko.</p>';
     body.appendChild(strip);
     strip.querySelectorAll(".ilus-img").forEach(img =>
-      img.addEventListener("click", () => { if (typeof openLightbox === "function") openLightbox(img.src); }));
+      img.addEventListener("click", () => { if (typeof openLightbox === "function") openLightbox(img.src, img.alt); }));
   }
 
   // envolver loadTheory para reconstruir la tira al cambiar de tema
