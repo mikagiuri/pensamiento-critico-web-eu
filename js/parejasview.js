@@ -36,13 +36,13 @@ function parExportHist(){
     const url = URL.createObjectURL(blob); const a = document.createElement("a");
     a.href = url; a.download = "parejas-rondas-" + parStamp() + ".json";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
-  }catch(e){ alert("No se ha podido generar el archivo."); }
+  }catch(e){ alert("Ezin izan da fitxategia sortu."); }
 }
 function parImportHistFile(file){
   if (!file) return;
   const rd = new FileReader();
   rd.onload = function(){
-    let data; try{ data = JSON.parse(rd.result); }catch(e){ alert("El archivo no es un JSON válido."); return; }
+    let data; try{ data = JSON.parse(rd.result); }catch(e){ alert("Fitxategia ez da JSON baliozkoa."); return; }
     const arr = Array.isArray(data) ? data : (data && Array.isArray(data.rondas) ? data.rondas : null);
     if (!arr){ alert("El archivo no contiene rondas de Parejas."); return; }
     const valid = arr.filter(r => r && typeof r === "object" && (typeof r.score === "number" || typeof r.block === "string"));
@@ -56,7 +56,7 @@ function parImportHistFile(file){
     alert("Importadas " + nuevos.length + " ronda(s). Se conservan las " + PAR_HIST_MAX + " más recientes.");
     renderParStart();
   };
-  rd.onerror = function(){ alert("No se ha podido leer el archivo."); };
+  rd.onerror = function(){ alert("Ezin izan da fitxategia irakurri."); };
   rd.readAsText(file);
 }
 
@@ -72,13 +72,13 @@ function parExportBest(){
     const d = new Date(), p = n => String(n).padStart(2, "0");
     a.href = url; a.download = "parejas-marcas-" + d.getFullYear() + "-" + p(d.getMonth()+1) + "-" + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes()) + ".json";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
-  }catch(e){ alert("No se ha podido generar el archivo."); }
+  }catch(e){ alert("Ezin izan da fitxategia sortu."); }
 }
 function parImportBestFile(file){
   if (!file) return;
   const rd = new FileReader();
   rd.onload = function(){
-    let data; try{ data = JSON.parse(rd.result); }catch(e){ alert("El archivo no es un JSON válido."); return; }
+    let data; try{ data = JSON.parse(rd.result); }catch(e){ alert("Fitxategia ez da JSON baliozkoa."); return; }
     const m = data && data.marcas && typeof data.marcas === "object" ? data.marcas
             : (data && typeof data === "object" && !Array.isArray(data) ? data : null);
     if (!m){ alert("El archivo no contiene marcas de Parejas."); return; }
@@ -89,7 +89,7 @@ function parImportBestFile(file){
     alert("Actualizadas " + mejoradas + " marca(s) con las del archivo.");
     renderParStart();
   };
-  rd.onerror = function(){ alert("No se ha podido leer el archivo."); };
+  rd.onerror = function(){ alert("Ezin izan da fitxategia irakurri."); };
   rd.readAsText(file);
 }
 

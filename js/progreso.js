@@ -37,14 +37,14 @@
       a.href = url; a.download = "aula-filosofia-progreso-" + stamp() + ".json";
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
-    } catch (e) { alert("No se ha podido generar el archivo."); }
+    } catch (e) { alert("Ezin izan da fitxategia sortu."); }
   }
 
   function importAll(file) {
     if (!file) return;
     var rd = new FileReader();
     rd.onload = function () {
-      var data; try { data = JSON.parse(rd.result); } catch (e) { alert("El archivo no es un JSON válido."); return; }
+      var data; try { data = JSON.parse(rd.result); } catch (e) { alert("Fitxategia ez da JSON baliozkoa."); return; }
       var datos = (data && data.datos && typeof data.datos === "object") ? data.datos : null;
       if (!datos) { alert("El archivo no es un progreso de Aula de Filosofía."); return; }
       var keys = Object.keys(datos).filter(isProgressKey);
@@ -60,7 +60,7 @@
       alert("Importado. Se han restaurado " + ok + " apartado(s). La página se recargará para aplicarlo.");
       try { location.reload(); } catch (e) {}
     };
-    rd.onerror = function () { alert("No se ha podido leer el archivo."); };
+    rd.onerror = function () { alert("Ezin izan da fitxategia irakurri."); };
     rd.readAsText(file);
   }
 
