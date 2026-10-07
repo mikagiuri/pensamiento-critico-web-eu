@@ -46,7 +46,7 @@ function renderRetoStart(){
       '<div class="reto-pick"><span class="flabel">' + RETO_TLABEL + '</span>' + timePicks + '</div>' +
       '<div class="reto-modes">' +
         '<button class="reto-quick" id="retoQuick"><span><b>Reto rápido</b>' +
-          '<span>' + Math.min(RETO_QUICK, nQ) + ' preguntas al azar · ' + reto.time + ' s cada una</span></span>' +
+          '<span>' + Math.min(RETO_QUICK, nQ) + ' galdera ausaz · ' + reto.time + ' s bakoitzak</span></span>' +
           '<span class="go">▶</span></button>' +
         (list ? '<div><span class="flabel" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">O elige un cuestionario</span>' +
           '<div class="reto-list">' + list + '</div></div>' : '') +

@@ -47,7 +47,7 @@
     var bar = document.createElement("div");
     bar.className = "galtools";
     bar.innerHTML =
-      '<input id="galsearchbox" class="galsearch" type="search" placeholder="Buscar por nombre, autor o tema…" aria-label="Buscar en la galería">' +
+      '<input id="galsearchbox" class="galsearch" type="search" placeholder="Bilatu izenaren, egilearen edo gaiaren arabera…" aria-label="Bilatu galerian">' +
       '<label class="galia" title="Los dibujos del libro están generados con IA; actívalo para verlos"><input type="checkbox" id="galiatoggle"> Mostrar dibujos de IA</label>';
     filt.parentNode.insertBefore(bar, filt.nextSibling);
     document.getElementById("galsearchbox").addEventListener("input", function(e){ galQuery = e.target.value; renderGalGrid(); });

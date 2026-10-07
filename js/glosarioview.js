@@ -20,7 +20,7 @@ const GLO_CSS = `
 #glosario .glocount{color:var(--muted);font-size:13px;margin:10px 0 16px}
 #glosario .glolist{display:grid;gap:10px}
 #glosario .gloitem{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:13px 16px 14px;background:var(--surface);box-shadow:var(--shadow)}
-#glosario .gloitem .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+#glosario .gloitem .top{display:flex;flex-wrap:wrap;justify-content:space-between;column-gap:12px;align-items:baseline}
 #glosario .gloitem h4{margin:0 0 5px;font-size:17px;font-family:var(--serif);color:var(--ink)}
 #glosario .gloitem .tag{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
 #glosario .gloitem p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink)}

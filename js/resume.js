@@ -73,7 +73,8 @@
     var r = get(); if (!ensureCard()) return;
     var m = r && MAP[r.go], coll = m && m.coll();
     if (!r || !m || !coll || !coll[r.arg]){ card.hidden = true; return; }   // no mostrar si ya no existe en este build
-    goBtn.textContent = r.type + " · " + r.label;
+    // (08-10) tipo y etiqueta de ESTA web: las seis comparten origen (localStorage), y lo grabado en la castellana salía en castellano en la vasca
+    goBtn.textContent = m.type + " · " + (strip(m.lab(coll[r.arg])) || r.label);
     card.hidden = false;
   }
 

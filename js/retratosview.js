@@ -46,10 +46,10 @@
     if (!figs.length) return;
     const strip = document.createElement("aside");
     strip.className = "museo-strip";
-    strip.innerHTML = '<h3>Retratos y obras · imágenes de dominio público</h3>' +
+    strip.innerHTML = '<h3>Erretratuak eta obrak · domeinu publikoko irudiak</h3>' +
       '<div class="museo-grid">' + figs.map(cardHTML).join("") + '</div>' +
-      '<p class="museo-note">Imágenes libres (dominio público / CC) recopiladas de <strong>Wikimedia Commons</strong>. ' +
-      'Cada pie enlaza a la ficha original con su autoría y licencia. Corresponden a los autores y temas citados en esta unidad.</p>';
+      '<p class="museo-note">Irudi libreak (domeinu publikoa / CC), <strong>Wikimedia Commons</strong>-etik bilduak. ' +
+      'Oin bakoitzak jatorrizko fitxara eramaten du, egilearekin eta lizentziarekin. Unitate honetan aipatutako egile eta gaiei dagozkie.</p>';
     body.appendChild(strip);
     strip.querySelectorAll(".museo-img").forEach(img =>
       img.addEventListener("click", () => { if (typeof openLightbox === "function") openLightbox(img.src); }));

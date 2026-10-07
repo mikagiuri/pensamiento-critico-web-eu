@@ -20,11 +20,11 @@ const QUIZ_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-M
 /* Clasificador de temas: temas de cada materia (en orden) y tema de cada cuestionario.
    Al añadir un cuestionario a QUIZZES, añadir aquí su clave; si falta, sale en «Otros». */
 const QUIZ_TEMAS = {
-  fil: { T1: "Zer da filosofia?", T2: "El ser humano", T3: "Conocimiento y verdad", T4: "Lógica y argumentación", T5: "Etika", T6: "La vida en sociedad: política", T7: "Estética: ¿qué es el arte?" },
-  hf: { T1: "Historicidad y universalidad", T2: "Los métodos de la filosofía", T3: "Del mito al logos", T4: "Los presocráticos", T5: "Sofistas, Sócrates y Aspasia", T6: "Platón: Ideas y República", T7: "Antropología clásica", T8: "Ética clásica", T9: "Política clásica", T10: "El helenismo",
-    T11: "Filosofía medieval y universales", T12: "Fe y razón", T13: "Renacimiento y revolución científica", T14: "Racionalismo y empirismo", T15: "Dualismo y materialismo", T16: "Sociedad y poder: el contrato social", T17: "Utilitarismo y liberalismo",
-    T18: "La Ilustración", T19: "Kant: crítica y metafísica", T20: "Éticas de la felicidad y del deber", T21: "Los filósofos de la sospecha", T22: "Crítica del capitalismo: de Marx a Rawls", T23: "Nietzsche y la posmodernidad", T24: "Filosofía analítica", T25: "El existencialismo", T26: "El feminismo", T27: "Retos del siglo XXI" },
-  ipc: { pensar: "Nork bere kabuz pentsatzea", argumentar: "Argumentar bien", falacias: "Falacias y bulos", sesgos: "Sesgos", dialogo: "Dialogar", medios: "Medios y publicidad", grupo: "El grupo", huella: "Mi huella en el planeta" }
+  fil: { T1: "Zer da filosofia?", T2: "Gizakia", T3: "Ezagutza eta egia", T4: "Logika eta argudiaketa", T5: "Etika", T6: "Gizartean bizitzea: politika", T7: "Estetika: zer da artea?" },
+  hf: { T1: "Historikotasuna eta unibertsaltasuna", T2: "Filosofiaren metodoak", T3: "Mitotik logosera", T4: "Presokratikoak", T5: "Sofistak, Sokrates eta Aspasia", T6: "Platon: Ideiak eta Errepublika", T7: "Antropologia klasikoa", T8: "Etika klasikoa", T9: "Politika klasikoa", T10: "Helenismoa",
+    T11: "Erdi Aroko filosofia eta unibertsalak", T12: "Fedea eta arrazoia", T13: "Errenazimentua eta iraultza zientifikoa", T14: "Arrazionalismoa eta enpirismoa", T15: "Dualismoa eta materialismoa", T16: "Gizartea eta boterea: gizarte-kontratua", T17: "Utilitarismoa eta liberalismoa",
+    T18: "Ilustrazioa", T19: "Kant: kritika eta metafisika", T20: "Zoriontasunaren eta betebeharraren etikak", T21: "Susmoaren filosofoak", T22: "Kapitalismoaren kritika: Marxengandik Rawlsengana", T23: "Nietzsche eta posmodernitatea", T24: "Filosofia analitikoa", T25: "Existentzialismoa", T26: "Feminismoa", T27: "XXI. mendeko erronkak" },
+  ipc: { pensar: "Nork bere kabuz pentsatzea", argumentar: "Ondo argudiatu", falacias: "Faltsukeriak eta buloak", sesgos: "Alborapenak", dialogo: "Elkarrizketan aritu", medios: "Komunikabideak eta publizitatea", grupo: "Taldea", huella: "Nire aztarna planetan" }
 };
 const QUIZ_TEMA = {
   "fil-t1": "T1", "fil-metodo-q": "T1", "fil-ramas-q": "T1", "fil-t1-banco": "T1", "fil-presocraticos-q": "T1", "fil-presocraticos-banco": "T1",
@@ -233,7 +233,7 @@ function drawQuiz(){
   const total = quizPool.length;
   const it = quizPool[quizOrder[qpos]];
   quizOptOrder = quizShuffle(it.o.map((_, i) => i));
-  box.innerHTML = `<div class="q-top"><span>Pregunta ${qpos + 1} de ${total}</span><span class="score">Asmatuak: ${qscore}</span></div>
+  box.innerHTML = `<div class="q-top"><span>${qpos + 1}. galdera · guztira ${total}</span><span class="score">Asmatuak: ${qscore}</span></div>
     <div class="q-card">
       <div class="q-num">${quiz.name}</div>
       <p class="q-text">${it.q}</p>

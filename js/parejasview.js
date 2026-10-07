@@ -136,7 +136,7 @@ function renderParStart(){
   box.innerHTML = '<div class="par-wrap">' +
     '<p class="howto"><span><b>' + PAR_HOWTO.como + '</b> ' + PAR_HOWTO.txt + '</span></p>' +
     '<div class="par-pick"><span class="flabel">' + (present.some(b => PAR_BLOCK_NAME[b]) ? "Blokea" : "Gaia") + '</span>' + picks + '</div>' +
-    '<button class="par-play" id="parPlay"><span>🧩</span><span><b>Jugar</b> · empareja ' + PAR_N + ' términos con su definición</span></button>' +
+    '<button class="par-play" id="parPlay"><span>🧩</span><span><b>Jugar</b> · lotu ' + PAR_N + ' termino beren definizioarekin</span></button>' +
     bestPanel + histPanel +
     '</div>';
   box.querySelectorAll("[data-pblock]").forEach(b => b.addEventListener("click", () => { par.block = b.dataset.pblock; renderParStart(); }));
