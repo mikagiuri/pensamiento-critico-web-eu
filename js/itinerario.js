@@ -24,7 +24,7 @@
     temas: "Gaiak", unidades: "Unitateak", tema: "{n}. gaia", unidad: "{n}. unitatea",
     seguir: "Gai honekin jarraitzeko", tarjetas: "Txartelak", cuestionarios: "Galdetegiak", infografias: "Infografiak", mapas: "Kontzeptu-mapak",
     esquemas: "Eskemak", lecturas: "Irakurgaiak", comentarios: "Testu-iruzkinak", dilemas: "Dilema etikoak", pistas: "Pista mailakatuak", conceptos: "Kontzeptuak",
-    nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia",
+    nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia", anexos: "Eranskinak", volverTema: "Itzuli gaira",
     infografia: "Infografia", mapa: "Mapa", esquema: "Eskema", lectura: "Irakurgaia", dilema: "Dilema", comentario: "Iruzkina",
     pau: "USE ibilbidea", pauLead: "Prestatu USE ordenan: lehenik proba nolakoa den, gero ariketa bakoitza eta, azkenik, gaikako praktika.",
     pau1: "Nolakoa da proba", pau2: "1. ariketa · Testu-iruzkina", pau3: "2. ariketa · Disertazioa",
@@ -77,6 +77,10 @@
   var IG_TEMA = { "hf-platon": 6, "hf-kant": 19, "hf-helenismo": 10, "hf-beauvoir": 26, "hf-posmodernidad": 23,
     "fil-t1": 1, "fil-ramas": 1, "fil-mito-logos": 1, "fil-t2": 2, "fil-natur-cultura": 2, "fil-cuerpo-mente": 2, "fil-t3": 3, "fil-posverdad": 3 };
   var ESQ_REL = { AA: 7, BH: 14, CK: 19, CC: 21, CM: 21, CF: 21, C5A: 22, C5B: 27, CdB: 26, C8: 25, C8K: 25, C6: 23, C7: 24, C9: 26 };
+  /* (07-10) temas sin número del bloque A (AP: Platón entero, AA: Aristóteles entero): van entre los temas 5 y 6
+     y comparten los recursos de los temas 6 y 7. */
+  var SIGLA_TEMA = { AP: 6, AA: 7 }, SIGLA_ORDEN = { AP: 5.1, AA: 5.2 };
+  function esAnexo(o){ return !!o && typeof o.temaN === "number"; }
   var THEORY_EXTRA = { "fil-presocraticos": 1, "fil-helenismo": 5, "hf-descartes-makro": 14, "hf-platon-superficie": 6, "hf-descartes-simulacion": 14, "hf-platon-agustin": 11, "hf-platon-prejuicio": 6 };
   /* unidades del curso de 2.º ESO («Clases») → tema */
   var CLASES_TEMA = { 1: "pensar", 2: "argumentar", 3: "falacias", 4: "falacias", 5: "falacias", 6: "medios", 7: "medios", 8: "sesgos", 9: "medios", 10: "pensar",
@@ -93,7 +97,7 @@
   function temaOf(go_, key, o){
     if (o && o.subject === "ipc") return ipcTema(key);
     switch (go_){
-      case "teoria": return THEORY_EXTRA[key] || temaNum(o);
+      case "teoria": return THEORY_EXTRA[key] || (o && o.sigla ? SIGLA_TEMA[o.sigla] || null : temaNum(o));
       case "tarjetas": return DECK_TEMA[key] || null;
       case "cuestionarios": { var Q = coll("QUIZ_TEMA"), m = Q && Q[key] && String(Q[key]).match(/^T(\d+)$/); return m ? +m[1] : null; }
       case "mapas": return MAP_TEMA[key] || null;
@@ -213,8 +217,10 @@
   /* ---------- temas de la materia, en orden ---------- */
   function temasDe(subject){
     var T = coll("THEORY"); if (!T || !view("teoria")) return [];
-    var ks = Object.keys(T).filter(function(k){ return T[k].subject === subject; });
-    if (subject !== "ipc") ks.sort(function(a, b){ var na = temaOf("teoria", a, T[a]) || 0, nb = temaOf("teoria", b, T[b]) || 0; return (na - nb) || ((THEORY_EXTRA[a] ? 1 : 0) - (THEORY_EXTRA[b] ? 1 : 0)); });
+    /* (07-10) los anexos no forman parte de la secuencia «Tema anterior / siguiente»: se abren desde su tema */
+    var ks = Object.keys(T).filter(function(k){ return T[k].subject === subject && !esAnexo(T[k]); });
+    var orden = function(k){ return T[k].sigla ? SIGLA_ORDEN[T[k].sigla] || 0 : temaOf("teoria", k, T[k]) || 0; };
+    if (subject !== "ipc") ks.sort(function(a, b){ return (orden(a) - orden(b)) || ((THEORY_EXTRA[a] ? 1 : 0) - (THEORY_EXTRA[b] ? 1 : 0)); });
     return ks;
   }
 
@@ -253,17 +259,21 @@
     var cs = conceptosDe(subject, tema);
     if (cs.length) rows.push('<div class="fin-row"><span class="fin-l">' + esc(t("conceptos")) + '</span><div class="fin-links">' +
       cs.map(function(c){ return '<button class="itin-term" type="button" data-igo="glosario" data-iarg="' + esc(c.t) + '" title="' + esc(c.def) + '">' + esc(c.t) + '</button>'; }).join("") + '</div></div>');
-    /* tema anterior / siguiente, en el orden de la materia */
+    /* (07-10) anexos de este tema: fuera de la secuencia, aquí y en el índice de temas */
+    if (!esAnexo(T[key])) row(t("anexos"), Object.keys(T).filter(function(k){ return T[k].subject === subject && esAnexo(T[k]) && T[k].temaN === tema; })
+      .map(function(k){ return { go: "teoria", arg: k, label: strip(T[k].title).replace(/^(Anexo|Eranskina)\s*-\s*/, "") }; }));
+    /* tema anterior / siguiente, en el orden de la materia; desde un anexo, solo «Volver al tema» */
     var ks = temasDe(subject), i = ks.indexOf(key), prev = i > 0 ? ks[i - 1] : null, next = i >= 0 && i < ks.length - 1 ? ks[i + 1] : null;
+    if (i < 0 && esAnexo(T[key])) prev = ks.filter(function(k){ return !T[k].sigla && temaOf("teoria", k, T[k]) === tema; })[0] || null;
     var card = function(k, kick, cls){
       if (!k) return '<span class="fin-pn-empty"></span>';
-      var tn = temaOf("teoria", k, T[k]), lab = (typeof tn === "number" ? t("tema", { n: tn }) + " · " : "") + strip(T[k].title);
+      var tn = temaOf("teoria", k, T[k]), lab = (T[k].sigla ? T[k].sigla + " · " : typeof tn === "number" ? t("tema", { n: tn }) + " · " : "") + strip(T[k].title);
       return '<button class="fin-pn-card' + cls + '" type="button" data-igo="teoria" data-iarg="' + esc(k) + '"><span class="kick">' + esc(kick) + '</span><b>' + esc(lab) + '</b></button>';
     };
     if (!rows.length && !prev && !next) return "";
     return '<section class="itin-fin" style="--c:' + (SUBJ_COLOR[subject] || "var(--accent)") + '" aria-label="' + esc(t("seguir")) + '">' +
       (rows.length ? '<h2>' + esc(t("seguir")) + '</h2>' + rows.join("") : '') +
-      '<div class="fin-pager">' + card(prev, "‹ " + t("anterior"), "") + card(next, t("siguienteTema") + " ›", " fin-next") + '</div></section>';
+      '<div class="fin-pager">' + card(prev, "‹ " + t(i < 0 && esAnexo(T[key]) ? "volverTema" : "anterior"), "") + card(next, t("siguienteTema") + " ›", " fin-next") + '</div></section>';
   }
   function itemTema(go_, key){ var c = coll(COLL[go_]), o = c && c[key]; return o ? { subject: o.subject, tema: temaOf(go_, key, o) } : null; }
   function renderTeoria(k){

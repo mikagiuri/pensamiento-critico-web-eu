@@ -9,6 +9,7 @@ const THEORY_SUBJECTS = { fil: "Filosofia 1.", hf: "Filosofiaren Historia", ipc:
 const THEORY_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-Modernoa", C: "C blokea · Garaikidea" };
 
 function blockOf(t){
+  if (t.sigla) return t.sigla.charAt(0);   /* (07-10) AP/AA: temas sin número; la sigla empieza por su bloque */
   /* «Tema 19» en castellano; «19. gaia» en euskera (antes, en la web vasca, el filtro de bloque vaciaba la lista) */
   const m = (t.tema || "").match(/Tema (\d+)|(\d+)\. gaia/);
   if (!m && typeof t.temaN !== "number") return null;   /* anexos: sin «Tema N» en el nombre, con temaN */
