@@ -286,6 +286,10 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 60px;colo
 .theory table.etapas{display:table;width:100%;min-width:620px;margin:0}
 .theory table.etapas td,.theory table.etapas th{font-size:.9rem;vertical-align:top}
 .theory table.etapas tbody td:first-child{color:var(--ink);font-weight:400}
+/* Tabla sinóptica de varios pensadores (p. ej. anexo hf-platon-agustin): ancha, se desplaza dentro de .tablewrap */
+.theory table.sinoptica{display:table;width:100%;min-width:860px;margin:0;table-layout:fixed}
+.theory table.sinoptica td,.theory table.sinoptica th{font-size:.86rem;line-height:1.5;padding:8px 10px}
+.theory table.sinoptica th:first-child,.theory table.sinoptica td:first-child{width:118px;font-weight:600;color:var(--ink)}
 .theory .per{font-family:var(--mono);font-size:.78em;color:var(--muted);font-weight:400;display:inline-block;margin-top:2px}
 
 /* ----- Mapas conceptuales (Markmap) ----- */
