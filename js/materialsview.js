@@ -16,6 +16,8 @@ function matGroup(t){
   const tema = t.tema || "";
   if (/Gesti[oó]n de aula|Dilemas|R[uú]bricas/i.test(tema)) return "rutinas";
   if (/Huella/i.test(tema)) return "t3";
+  const ev = /([123])\.ª evaluaci[oó]n/i.exec(tema);   // actividades del 30 % de HF (07-10): «HF · 2.ª evaluación · …»
+  if (ev) return "t" + ev[1];
   const s = matSession(t);
   if (s == null) return "otros";
   return s <= 22 ? "t1" : s <= 48 ? "t2" : "t3";
