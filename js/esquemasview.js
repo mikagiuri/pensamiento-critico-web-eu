@@ -269,6 +269,8 @@ function esqCruces(sv, cruces){
 function esqTabs(e){
   if (!e.v2) return "";
   const t = [["diag", "Diagrama"], ["fichas", "Fitxak"], ["orig", "Jatorrizko diagrama"]];
+  /* (08-10) «Cuadrícula» (js/esq_grid.js): el v2 colocado en una cuadrícula compacta con vecindad 8 */
+  if (typeof EsqGrid !== "undefined") t.splice(1, 0, ["cuad", "Sareta"]);
   return '<div class="esq2-tabs" role="group" aria-label="Eskemaren ikuspegia">' + t.map(function (x){
     return '<button class="fbtn" data-em="' + x[0] + '" aria-pressed="' + (esqMode === x[0]) + '">' + x[1] + "</button>"; }).join("") + "</div>";
 }
@@ -281,7 +283,8 @@ function drawEsq(){
   esqInjectCss();
   const col = e.subject === "fil" ? "var(--fil)" : e.subject === "ipc" ? "var(--ipc)" : "var(--hf)";
   if (head) head.innerHTML = '<span class="kick" style="color:' + col + '">' + e.tema + '</span><h2>' + e.title + '</h2>';
-  const mode = e.v2 ? esqMode : "orig";
+  let mode = e.v2 ? esqMode : "orig";
+  if (mode === "cuad" && typeof EsqGrid === "undefined") mode = "diag";
   st.style.setProperty("--c", col);   /* color de la materia para las curvas de las relaciones entre ramas */
   if (head){
     head.insertAdjacentHTML("beforeend", esqTabs(e));
@@ -290,6 +293,7 @@ function drawEsq(){
   st.classList.toggle("v2", mode === "fichas");
   if (st.parentNode) st.parentNode.classList.toggle("v2", !!e.v2);
   if (mode === "fichas"){ st.innerHTML = esqV2Html(e); return; }
+  if (mode === "cuad"){ EsqGrid.render(e, st); return; }
   if (typeof mermaid === "undefined"){ st.innerHTML = '<p class="esq-wait">Diagrama-motorra kargatzen…</p>'; setTimeout(drawEsq, 350); return; }
   if (_esqTheme === null || _esqTheme !== esqThemeName()) esqInit();
   const src = mode === "diag" ? esqV2Mermaid(e) : e.mermaid;
