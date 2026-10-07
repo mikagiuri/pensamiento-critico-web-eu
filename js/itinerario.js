@@ -63,7 +63,7 @@
     platon: 6, antropologia: 7, etica: 8, politica: 9, helenismo: 10, medieval: 11, feRazon: 12, modernidad: 13, metafisica: 15, contrato: 16,
     utilitarismo: 17, ilustracion: 18, eticaDeber: 20, sospecha: 21, capitalismo: 22, posmodernidad: 23, analitica: 24, existencialismo: 25, beauvoir: 26, siglo21: 27,
     "fil-que-es": 1, "fil-ramas": 1, "fil-caracteristicas": 1, "fil-metodo": 1, "fil-saberes": 1, "fil-presocraticos": 1,
-    "fil-ser-humano": 2, "fil-mente": 2, "fil-concepciones": 2, "fil-identidad": 2, "fil-conocer": 3, "fil-verdad": 3, "fil-ciencia": 3, "fil-posverdad": 3,
+    "fil-ser-humano": 2, "fil-mente": 2, "fil-concepciones": 2, "fil-identidad": 2, "fil-conocer": 3, "fil-verdad": 3, "fil-metafisica": 3.5, "fil-ciencia": 3, "fil-posverdad": 3,
     "fil-logica": 4, "fil-etica": 5, "fil-helenismo": 5, "fil-politica": 6, "fil-arte": 7
   };
   var MAP_TEMA = {
@@ -72,14 +72,16 @@
     "map-medieval": 11, "map-etica-clasica": 8, "map-politica-clasica": 9, "map-renacimiento": 13, "map-sustancias-modernas": 15, "map-contrato-social": 16,
     "map-utilitarismo-liberalismo": 17, "map-maestros-sospecha": 21, "map-critica-capitalismo": 22, "map-postmodernidad": 23, "map-filosofia-lenguaje": 24,
     "map-existencialismo": 25, "map-feminismo-beauvoir": 26,
-    "map-filosofia-ciencia": 3, "map-ser-humano": 2, "map-conocimiento": 3, "map-racionalismo-empirismo": 3, "map-fil-mito-logos": 1, "map-fil-cuerpo-mente": 2
+    "map-filosofia-ciencia": 3, "map-ser-humano": 2, "map-conocimiento": 3, "map-racionalismo-empirismo": 3, "map-fil-mito-logos": 1, "map-fil-cuerpo-mente": 2,
+    "map-fil-logica": 4, "map-fil-etica": 5, "map-fil-politica": 6, "map-fil-estetica": 7, "map-fil-metafisica": 3.5
   };
   var IG_TEMA = { "hf-platon": 6, "hf-kant": 19, "hf-helenismo": 10, "hf-beauvoir": 26, "hf-posmodernidad": 23,
-    "fil-t1": 1, "fil-ramas": 1, "fil-mito-logos": 1, "fil-t2": 2, "fil-natur-cultura": 2, "fil-cuerpo-mente": 2, "fil-t3": 3, "fil-posverdad": 3 };
+    "fil-t1": 1, "fil-ramas": 1, "fil-mito-logos": 1, "fil-t2": 2, "fil-natur-cultura": 2, "fil-cuerpo-mente": 2, "fil-t3": 3, "fil-posverdad": 3,
+    "fil-t4": 4, "fil-t5": 5, "fil-t6": 6, "fil-t7": 7, "fil-metafisica": 3.5 };
   var ESQ_REL = { AA: 7, BH: 14, CK: 19, CC: 21, CM: 21, CF: 21, C5A: 22, C5B: 27, CdB: 26, C8: 25, C8K: 25, C6: 23, C7: 24, C9: 26 };
   /* (07-10) temas sin número del bloque A (AP: Platón entero, AA: Aristóteles entero): van entre los temas 5 y 6
      y comparten los recursos de los temas 6 y 7. */
-  var SIGLA_TEMA = { AP: 6, AA: 7 }, SIGLA_ORDEN = { AP: 5.1, AA: 5.2, M: 3.5 };  /* M: metafísica de Filosofía 1.º, entre T3 y T4 */
+  var SIGLA_TEMA = { AP: 6, AA: 7, M: 3.5 }, SIGLA_ORDEN = { AP: 5.1, AA: 5.2, M: 3.5 };  /* M: metafísica de Filosofía 1.º, entre T3 y T4 */
   function esAnexo(o){ return !!o && typeof o.temaN === "number"; }
   var THEORY_EXTRA = { "fil-presocraticos": 1, "fil-helenismo": 5, "hf-descartes-makro": 14, "hf-platon-superficie": 6, "hf-descartes-simulacion": 14, "hf-platon-agustin": 11, "hf-platon-prejuicio": 6 };
   /* unidades del curso de 2.º ESO («Clases») → tema */
@@ -99,11 +101,12 @@
     switch (go_){
       case "teoria": return THEORY_EXTRA[key] || (o && o.sigla ? SIGLA_TEMA[o.sigla] || null : temaNum(o));
       case "tarjetas": return DECK_TEMA[key] || null;
-      case "cuestionarios": { var Q = coll("QUIZ_TEMA"), m = Q && Q[key] && String(Q[key]).match(/^T(\d+)$/); return m ? +m[1] : null; }
+      case "cuestionarios": { var Q = coll("QUIZ_TEMA"), m = Q && Q[key] && String(Q[key]).match(/^T(\d+)$/); return m ? +m[1] : (Q && Q[key] === "M" ? 3.5 : null); }
       case "mapas": return MAP_TEMA[key] || null;
       case "infografias": { var A = coll("TEMA_ALIAS"); return IG_TEMA[key] || (A && A[key]) || null; }
       case "esquemas": {
         var m1 = /^ds-([ABC])(\d+)$/.exec(key); if (m1) return m1[1] === "A" ? +m1[2] : m1[1] === "B" ? 10 + +m1[2] : 17 + +m1[2];
+        if (/^FIL-M-/.test(key)) return 3.5;   /* (08-10) tema M de 1.º */
         var m2 = /^FIL-(T(\d)|PRE|HEL|TA)-/.exec(key); if (m2) return m2[2] ? +m2[2] : m2[1] === "PRE" ? 1 : m2[1] === "HEL" ? 5 : 4;
         var m3 = /^([A-Za-z0-9]+)-REL-/.exec(key); return (m3 && ESQ_REL[m3[1]]) || null;
       }

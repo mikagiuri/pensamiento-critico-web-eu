@@ -13,7 +13,19 @@ function galAddIlus(list, bloque, nombre){
       unidad: nombre + " · " + (x.license || "Dominio público") + " · Wikimedia Commons" });
   });
 }
-if (typeof ILUSTRACIONES !== "undefined" && Array.isArray(GALERIA)) galAddIlus(ILUSTRACIONES, "F1", "Filosofia 1.");
+/* (08-10) Filosofía 1.º: un grupo por tema, en el orden del curso (antes, las ilustraciones iban todas juntas en «F1»).
+   Las que no traigan tema conocido van a «F1». */
+const GAL_FIL_TEMAS = [
+  ["fil-t1", "1. gaia · Zer da filosofia?"], ["fil-presocraticos", "1. gaia · Presokratikoak"], ["fil-t2", "2. gaia · Gizakia"],
+  ["fil-t3", "3. gaia · Ezagutza"], ["fil-metafisica", "M · Errealitatea (Metafisika)"], ["fil-t4", "4. gaia · Logika eta argumentazioa"],
+  ["fil-t5", "5. gaia · Etika"], ["fil-helenismo", "5. gaia · Eskola helenistikoak"], ["fil-t6", "6. gaia · Politika"], ["fil-t7", "7. gaia · Estetika"]];
+if (typeof ILUSTRACIONES !== "undefined" && Array.isArray(GALERIA)){
+  GAL_FIL_TEMAS.forEach(function (p){
+    galAddIlus(ILUSTRACIONES.filter(function (x){ return x.tema === p[0]; }), p[0], p[1]);
+  });
+  const sinTema = ILUSTRACIONES.filter(function (x){ return !GAL_FIL_TEMAS.some(function (p){ return p[0] === x.tema; }); });
+  if (sinTema.length) galAddIlus(sinTema, "F1", "Filosofia 1.");
+}
 /* 1.º y 2.º de Bachillerato: «Arte y pensamiento crítico» (galeria_pensar.js), grupo «PC». */
 if (typeof GALERIA_PENSAR !== "undefined" && Array.isArray(GALERIA)) galAddIlus(GALERIA_PENSAR, "PK", "Artea eta pentsamendu kritikoa");
 /* 2.º ESO: la Galería son los dibujos de los «Cuentos para pensar», sacados del propio texto de cada
@@ -94,11 +106,26 @@ function renderGalFilter(){
   galInject();
   const present = galBlocksPresent();
   if (present.length < 2){ box.innerHTML = ""; return; }   /* un solo grupo: sin filtro */
-  box.innerHTML = '<div class="fgroup"><span class="flabel">Blokea</span>' +
-    ["all"].concat(present).map(function (b){
-      return '<button class="fbtn" data-gb="' + b + '" aria-pressed="' + (b === galBloque) + '">' +
-        (b === "all" ? "Guztiak" : GAL_BLOCKS[b]) + '</button>'; }).join("") + '</div>';
-  box.querySelectorAll("[data-gb]").forEach(function (b){ b.addEventListener("click", function (){
+  /* (08-10) más de 6 grupos (Galería de 1.º por temas): lista de temas (.chips), que compacto.js pliega
+     en una línea con el elegido, también en escritorio; con pocos, la fila de filtros de siempre */
+  let chips = document.getElementById("galchips");
+  if (present.length > 6){
+    if (!chips){
+      chips = document.createElement("div"); chips.className = "chips"; chips.id = "galchips";
+      chips.setAttribute("role", "group"); chips.setAttribute("aria-label", "Aukeratu gaia");
+      box.parentNode.insertBefore(chips, box);
+    }
+    box.innerHTML = "";
+    chips.innerHTML = present.map(function (b){
+      return '<button class="chip" data-gb="' + b + '" aria-pressed="' + (b === galBloque) + '">' + GAL_BLOCKS[b] + '</button>'; }).join("");
+  } else {
+    if (chips) chips.remove();
+    box.innerHTML = '<div class="fgroup"><span class="flabel">Blokea</span>' +
+      ["all"].concat(present).map(function (b){
+        return '<button class="fbtn" data-gb="' + b + '" aria-pressed="' + (b === galBloque) + '">' +
+          (b === "all" ? "Guztiak" : GAL_BLOCKS[b]) + '</button>'; }).join("") + '</div>';
+  }
+  (chips && present.length > 6 ? chips : box).querySelectorAll("[data-gb]").forEach(function (b){ b.addEventListener("click", function (){
     galBloque = b.dataset.gb; renderGalFilter(); renderGalGrid(); }); });
 }
 

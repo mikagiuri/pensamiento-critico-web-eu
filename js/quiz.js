@@ -20,7 +20,7 @@ const QUIZ_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-M
 /* Clasificador de temas: temas de cada materia (en orden) y tema de cada cuestionario.
    Al añadir un cuestionario a QUIZZES, añadir aquí su clave; si falta, sale en «Otros». */
 const QUIZ_TEMAS = {
-  fil: { T1: "Zer da filosofia?", T2: "Gizakia", T3: "Ezagutza eta egia", T4: "Logika eta argudiaketa", T5: "Etika", T6: "Gizartean bizitzea: politika", T7: "Estetika: zer da artea?" },
+  fil: { T1: "Zer da filosofia?", T2: "Gizakia", T3: "Ezagutza eta egia", M: "La realidad (Metafísica)", T4: "Logika eta argudiaketa", T5: "Etika", T6: "Gizartean bizitzea: politika", T7: "Estetika: zer da artea?" },
   hf: { T1: "Historikotasuna eta unibertsaltasuna", T2: "Filosofiaren metodoak", T3: "Mitotik logosera", T4: "Presokratikoak", T5: "Sofistak, Sokrates eta Aspasia", T6: "Platon: Ideiak eta Errepublika", T7: "Antropologia klasikoa", T8: "Etika klasikoa", T9: "Politika klasikoa", T10: "Helenismoa",
     T11: "Erdi Aroko filosofia eta unibertsalak", T12: "Fedea eta arrazoia", T13: "Errenazimentua eta iraultza zientifikoa", T14: "Arrazionalismoa eta enpirismoa", T15: "Dualismoa eta materialismoa", T16: "Gizartea eta boterea: gizarte-kontratua", T17: "Utilitarismoa eta liberalismoa",
     T18: "Ilustrazioa", T19: "Kant: kritika eta metafisika", T20: "Zoriontasunaren eta betebeharraren etikak", T21: "Susmoaren filosofoak", T22: "Kapitalismoaren kritika: Marxengandik Rawlsengana", T23: "Nietzsche eta posmodernitatea", T24: "Filosofia analitikoa", T25: "Existentzialismoa", T26: "Feminismoa", T27: "XXI. mendeko erronkak" },
@@ -28,7 +28,7 @@ const QUIZ_TEMAS = {
 };
 const QUIZ_TEMA = {
   "fil-t1": "T1", "fil-metodo-q": "T1", "fil-ramas-q": "T1", "fil-t1-banco": "T1", "fil-presocraticos-q": "T1", "fil-presocraticos-banco": "T1",
-  "fil-t2": "T2", "fil-mente-q": "T2", "fil-t2-banco": "T2", "fil-t3": "T3", "fil-ciencia-q": "T3", "fil-t3-banco": "T3",
+  "fil-t2": "T2", "fil-mente-q": "T2", "fil-t2-banco": "T2", "fil-t3": "T3", "fil-ciencia-q": "T3", "fil-t3-banco": "T3", "fil-metafisica": "M",
   "fil-logica-q": "T4", "fil-t4-banco": "T4", "fil-etica-q": "T5", "fil-t5-banco": "T5", "fil-helenismo-q": "T5", "fil-helenismo-banco": "T5",
   "fil-politica-q": "T6", "fil-t6-banco": "T6", "fil-t7": "T7", "fil-t7-banco": "T7",
   "hf-t1-historicidad": "T1", "hf-a01-banco": "T1", "ltfh-A1": "T1", "hf-t2-metodos": "T2", "hf-a02-banco": "T2", "hf-a03-banco": "T3",
@@ -78,6 +78,7 @@ function lexMask(text, term){
 }
 function lexTemaDe(g){
   if (g.subject === "hf"){ const t = LEX_UNIDAD[g.unidad] || QUIZ_TEMA["ltfh-" + g.unidad]; return t ? { id: t } : null; }
+  if (g.subject === "fil" && /· M$/.test(g.tema || "")) return { id: "M" };   // (08-10) tema M (metafísica), sin número
   if (g.subject === "fil"){ const m = /(\d+)/.exec(g.tema || ""); return { id: m ? "T" + m[1] : "T4" }; }   // sin número: el taller de argumentación (tema 4)
   const hit = LEX_IPC.find(([, re]) => re.test(g.tema || ""));
   return { id: hit ? hit[0] : "otros", etq: String(g.tema || "").split(" · ").pop() };
