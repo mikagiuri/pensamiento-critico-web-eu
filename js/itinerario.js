@@ -215,10 +215,11 @@
   }
 
   /* ---------- temas de la materia, en orden ---------- */
-  function temasDe(subject){
+  function temasDe(subject, conAnexos){
     var T = coll("THEORY"); if (!T || !view("teoria")) return [];
-    /* (07-10) los anexos no forman parte de la secuencia «Tema anterior / siguiente»: se abren desde su tema */
-    var ks = Object.keys(T).filter(function(k){ return T[k].subject === subject && !esAnexo(T[k]); });
+    /* (07-10) los anexos no forman parte de la secuencia «Tema anterior / siguiente»: se abren desde su tema
+       y desde la lista de temas de la ficha (conAnexos) */
+    var ks = Object.keys(T).filter(function(k){ return T[k].subject === subject && (conAnexos || !esAnexo(T[k])); });
     var orden = function(k){ return T[k].sigla ? SIGLA_ORDEN[T[k].sigla] || 0 : temaOf("teoria", k, T[k]) || 0; };
     if (subject !== "ipc") ks.sort(function(a, b){ return (orden(a) - orden(b)) || ((THEORY_EXTRA[a] ? 1 : 0) - (THEORY_EXTRA[b] ? 1 : 0)); });
     return ks;
@@ -351,7 +352,7 @@
 
   /* ---------- ficha de la materia: temas → la web en números → itinerario PAU ---------- */
   function temasHtml(subject){
-    var T = coll("THEORY"), ks = temasDe(subject), C = G("CURSO");
+    var T = coll("THEORY"), ks = temasDe(subject, true), C = G("CURSO");
     if (!ks.length && subject === "ipc" && Array.isArray(C) && view("clases")){   // 2.º ESO en castellano: las unidades de «Clases»
       return '<div class="sec-head"><h2 class="sec">' + esc(t("unidades")) + '</h2></div><ol class="itin-temas" style="--c:var(--ipc)">' + C.filter(function(u){ return u.sesiones && u.sesiones.length; }).map(function(u){
         return '<li><button type="button" data-igo="clases" data-iarg="' + esc(sid(u.sesiones[0].n)) + '"><span class="temas-n">' + esc(t("unidad", { n: u.unidad })) + '</span><span class="temas-t">' + esc(strip(String(u.titulo).replace(/\*\*/g, ""))) + '</span></button></li>';
@@ -374,7 +375,7 @@
       return (gr.g ? '<h3 class="temas-b" data-' + grpAttr + '="' + esc(gr.g) + '">' + esc((grpNames && grpNames[gr.g]) || gr.g) + '</h3>' : '') + '<ol class="itin-temas" style="--c:' + (SUBJ_COLOR[subject] || "var(--accent)") + '">' + gr.ks.map(function(k){
         var n = temaOf("teoria", k, T[k]), extra = !!THEORY_EXTRA[k], anexo = extra && typeof T[k].temaN === "number";   /* anexos: «Anexo - …», sin «Tema N» */
         return '<li' + (extra ? ' class="temas-extra"' : '') + (gr.g ? ' data-' + grpAttr + '="' + esc(gr.g) + '"' : '') + '><button type="button" data-igo="teoria" data-iarg="' + esc(k) + '">' +
-          (typeof n === "number" && !anexo ? '<span class="temas-n">' + esc(t("tema", { n: n })) + '</span>' : '') + '<span class="temas-t">' + esc(strip(T[k].title)) + '</span>' + (anexo ? '<span class="temas-anexo">Klasean</span>' : '') + '</button></li>';
+          (T[k].sigla ? '<span class="temas-n">' + esc(T[k].sigla) + '</span>' : typeof n === "number" && !anexo ? '<span class="temas-n">' + esc(t("tema", { n: n })) + '</span>' : '') + '<span class="temas-t">' + esc(strip(T[k].title)) + '</span>' + (anexo ? '<span class="temas-anexo">Klasean</span>' : '') + '</button></li>';
       }).join("") + '</ol>';
     }).join("");
   }
