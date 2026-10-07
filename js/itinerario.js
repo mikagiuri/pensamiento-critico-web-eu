@@ -79,12 +79,12 @@
   var ESQ_REL = { AA: 7, BH: 14, CK: 19, CC: 21, CM: 21, CF: 21, C5A: 22, C5B: 27, CdB: 26, C8: 25, C8K: 25, C6: 23, C7: 24, C9: 26 };
   /* (07-10) temas sin número del bloque A (AP: Platón entero, AA: Aristóteles entero): van entre los temas 5 y 6
      y comparten los recursos de los temas 6 y 7. */
-  var SIGLA_TEMA = { AP: 6, AA: 7 }, SIGLA_ORDEN = { AP: 5.1, AA: 5.2 };
+  var SIGLA_TEMA = { AP: 6, AA: 7 }, SIGLA_ORDEN = { AP: 5.1, AA: 5.2, M: 3.5 };  /* M: metafísica de Filosofía 1.º, entre T3 y T4 */
   function esAnexo(o){ return !!o && typeof o.temaN === "number"; }
   var THEORY_EXTRA = { "fil-presocraticos": 1, "fil-helenismo": 5, "hf-descartes-makro": 14, "hf-platon-superficie": 6, "hf-descartes-simulacion": 14, "hf-platon-agustin": 11, "hf-platon-prejuicio": 6 };
   /* unidades del curso de 2.º ESO («Clases») → tema */
-  var CLASES_TEMA = { 1: "pensar", 2: "argumentar", 3: "falacias", 4: "falacias", 5: "falacias", 6: "medios", 7: "medios", 8: "sesgos", 9: "medios", 10: "pensar",
-    11: "dialogo", 12: "grupo", 13: "huella", 14: "argumentar", 20: "huella" };
+  var CLASES_TEMA = { 1: "pensar", 2: "falacias", 3: "argumentar", 4: "falacias", 5: "falacias", 6: "medios", 7: "dialogo", 8: "sesgos", 9: "medios", 10: "pensar",
+    11: "dialogo", 12: "grupo", 13: "huella", 14: "argumentar", 19: "huella", 20: "medios" };
   /* glosario de HF: la unidad del libro (código) → tema, vía QUIZ_TEMA («ltfh-<código>»); los que no tienen test en el libro, a mano */
   var GLO_UNIDAD = { A5: 5, A4: 4, "A1-A2": 1, A3: 3, DM: 14 };
   var GLO_IPC = [["pensar", "pensar"], ["argument", "argumentar"], ["falacia", "falacias"], ["sesgo", "sesgos"], ["diálogo", "dialogo"], ["dialogo", "dialogo"], ["medio", "medios"], ["publicidad", "medios"], ["grupo", "grupo"], ["huella", "huella"]];
