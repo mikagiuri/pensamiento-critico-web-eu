@@ -173,7 +173,7 @@ function theoryPorApartados(t){ return THEORY_POR_APARTADOS.includes(t.subject) 
 let theoryPart = 0, theoryWhole = false;
 /* al imprimir sale siempre el tema entero, sin la barra de apartados */
 document.head.insertAdjacentHTML("beforeend",
-  '<style>.th-partnav{flex-wrap:nowrap;gap:.5rem}.th-partnav .btn:disabled{visibility:hidden}.th-partnav .th-partpos{text-align:center;flex:1}' +
+  '<style>.th-sec{margin-left:.4em;font-size:.6em;font-weight:400;color:var(--muted);text-decoration:none;opacity:.55;vertical-align:middle}.th-sec:hover,.th-sec:focus{opacity:1;text-decoration:underline}.th-partnav{flex-wrap:nowrap;gap:.5rem}.th-partnav .btn:disabled{visibility:hidden}.th-partnav .th-partpos{text-align:center;flex:1}' +
   '@media print{.th-part[hidden]{display:block!important}.th-partnav,[data-thwhole]{display:none!important}}</style>');
 
 function theoryShowPart(body, i, scroll){
@@ -233,7 +233,12 @@ function theorySplitParts(body, html, trocear){
   body.querySelectorAll("[data-thwhole]").forEach(b => b.addEventListener("click", () => { theoryWhole = !theoryWhole; theoryShowPart(body, theoryPart, true); }));
 }
 
+/* (07-10) apartados con número estable: «#teoria/<clave>/<n>» (o «<clave>§<n>») abre el tema en su n-ésimo <h2>
+   original, aunque el tema se lea por páginas; cada apartado lleva un «§» con su enlace. */
+function theorySecArg(k){ const m = /^(.*?)(?:\/|§)(\d+)$/.exec(k || ""); return m && THEORY[m[1]] ? { k: m[1], sec: +m[2] } : { k: k, sec: null }; }
+function theoryMarcaSecs(html){ const d = document.createElement("div"); d.innerHTML = html; [...d.children].filter(n => n.tagName === "H2").forEach((h, i) => { h.dataset.sec = i + 1; }); return d.innerHTML; }
 function loadTheory(k){
+  const _sa = theorySecArg(k); k = _sa.k; const _sec = _sa.sec;
   if (k !== theoryKey) theoryPart = 0;
   theoryKey = k;
   /* los filtros siguen al tema abierto (enlace profundo, buscador…): antes, con el tema 19 abierto,
@@ -252,8 +257,9 @@ function loadTheory(k){
   const relHtml = (typeof relatedStripHtml === "function") ? relatedStripHtml(k, "teoria") : "";
   const porApartados = theoryPorApartados(t), trocear = !THEORY_POR_APARTADOS.includes(t.subject);
   const head = '<div class="theory-head"><span class="kick" style="color:var(--' + t.subject + ')">' + t.tema + '</span><h1>' + t.title + '</h1>' + (typeof t.temaN === "number" ? '<span class="en-clase">Klasean</span>' : '') + '</div>' + relHtml;
-  if (porApartados){ body.innerHTML = head; theorySplitParts(body, t.html, trocear); }
-  else body.innerHTML = head + t.html;
+  const htmlSecs = theoryMarcaSecs(t.html);
+  if (porApartados){ body.innerHTML = head; theorySplitParts(body, htmlSecs, trocear); }
+  else body.innerHTML = head + htmlSecs;
   if (typeof wireRelated === "function") wireRelated(body);
   const hs = [...body.querySelectorAll("h2")];
   hs.forEach((h, i) => { h.id = "th-" + i; });
@@ -269,10 +275,14 @@ function loadTheory(k){
       theoryShowPart(body, +a.dataset.thpart, true);
     }));
     theoryShowPart(body, theoryPart, false);
+    if (_sec){ const h = body.querySelector('h2[data-sec="' + _sec + '"]'), parts = [...body.querySelectorAll(".th-part")], pi = h ? parts.indexOf(h.closest(".th-part")) : -1;
+      if (pi >= 0){ theoryShowPart(body, pi, false); h.scrollIntoView({ block: "start" }); } }
   } else {
     toc.innerHTML = '<div class="toc-title">Gai honetan</div><ol>' +
       hs.map((h, i) => '<li><a href="#th-' + i + '">' + h.textContent + '</a></li>').join("") + '</ol>';
+    if (_sec){ const h = body.querySelector('h2[data-sec="' + _sec + '"]'); if (h) h.scrollIntoView({ block: "start" }); }
   }
+  body.querySelectorAll("h2[data-sec]").forEach(h => h.insertAdjacentHTML("beforeend", ' <a class="th-sec" href="#teoria/' + k + '/' + h.dataset.sec + '" title="Atal honetarako esteka" aria-label="Atal honetarako esteka">§' + h.dataset.sec + '</a>'));   // tras el índice: el «§» no entra en sus títulos
 }
 
 renderTheoryFilter();

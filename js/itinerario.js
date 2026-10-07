@@ -278,6 +278,7 @@
   }
   function itemTema(go_, key){ var c = coll(COLL[go_]), o = c && c[key]; return o ? { subject: o.subject, tema: temaOf(go_, key, o) } : null; }
   function renderTeoria(k){
+    k = String(k || "").replace(/(?:\/|§)\d+$/, "");   /* (07-10) «clave/n»: enlace a un apartado */
     var body = document.getElementById("theorybody"), tm = itemTema("teoria", k); if (!body || !tm) return;
     var rel = body.querySelector(".related-row"); if (rel) rel.remove();   // la tira antigua de la cabecera: todo va al final
     body.querySelectorAll(":scope > .itin-fin").forEach(function(o){ o.remove(); });
