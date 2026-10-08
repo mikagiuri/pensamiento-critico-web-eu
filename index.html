@@ -74,6 +74,7 @@
         <div class="navmenu">
           <button data-view="dilemas">Dilema etikoak</button>
           <button data-view="pistas">Pistak</button>
+          <button data-view="juegosucio">Logikaren txokoa</button>
           <button data-view="cuestionarios">Galdetegiak</button>
         </div>
       </div>
@@ -303,6 +304,15 @@
     <div id="pistasbox"></div>
   </section>
 
+  <section class="view" id="juegosucio">
+    <!-- (08-10) Rincón de lógica de 2.º ESO: el juego sucio de Schopenhauer (juegosucio.js + juegosucioview.js). En la web de ESO
+         el botón se llama «Rincón de lógica» (build_eso.js); las webs de Bachillerato no la llevan (build_subject.js). -->
+    <p class="eyebrow">Ariketa</p>
+    <h1 class="title">Logikaren txokoa: joko zikina</h1>
+    <p class="lead">Arrazoirik izan gabe eztabaida bat irabazteko trikimailuak, museoko karikatura eta koadroekin. Ikasi haiek ezagutzen, zuri egin ez diezazkizuten.</p>
+    <div id="juegosuciobox"></div>
+  </section>
+
   
 
   
@@ -328,6 +338,7 @@
       <h2>Irudiak</h2>
       <ul>
         <li>Wikimedia Commonseko eta museo eta liburutegietako artelanak eta erretratuak (Metropolitan Museum, Rijksmuseum, LACMA, Wellcome Collection, New York Public Library, Library of Congress, Walters Art Museum), domeinu publikoan edo CC0, CC BY eta CC BY-SA lizentziekin. Irudi bakoitzak bere kreditua du.</li>
+        <li>Logikaren txokoa: Honoré Daumierren litografiak, Francisco de Goyaren (Prado Museoa), William Hogarthen (National Gallery of Art) eta James Gillrayren (Library of Congress) grabatuak, eta Johann Schäferrek 1859an Arthur Schopenhauerri ateratako argazkia, guztiak domeinu publikoan, Wikimedia Commons bidez.</li>
         <li>Adimen artifizialarekin sortutako ilustrazioak (Googleren Gemini eta Nano Banana, eta FLUX).</li>
       </ul>
       <h2>Zinema, telesailak eta bideoak</h2>
@@ -390,6 +401,8 @@
 <script src="js/caminoview.js"></script>
 <script src="js/pistas_uhs.js"></script>
 <script src="js/pistasview.js"></script>
+<script src="js/juegosucio.js"></script>
+<script src="js/juegosucioview.js"></script>
 <!-- mermaid se carga bajo demanda al abrir Esquemas (js/lazy_libs.js) -->
 <script src="js/esquemas.js"></script>
 <script src="js/esq_grid.js"></script>

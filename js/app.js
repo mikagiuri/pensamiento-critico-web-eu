@@ -43,7 +43,8 @@ window.VIEW_LOADERS = {
   esquemas: "loadEsq", pau: "loadPau", mapas: "loadMap", cronogramas: "loadCrono", genealogias: "loadGenea",
   ilustres: "loadIlustre", clases: "loadClase",
   pistas: "loadPista",
-  logica: "loadLogica",   // (01-10) #logica/tablas|silogismos|puertas   // (01-10) #pistas/kant-imperativo
+  logica: "loadLogica", juegosucio: "loadJuegoSucio",   // (08-10) #juegosucio/<estratagema>
+      // (01-10) #logica/tablas|silogismos|puertas   // (01-10) #pistas/kant-imperativo
   leibniz: "loadLeibniz",   // (08-10) #leibniz/maquina|binario|alfabeto|tratados|diagramas|calculemos|reverso|newton|voltaire
   comentario: "loadComentario", disertaciones: "loadDisert"   // (29-09) enlaces profundos a un ejemplo resuelto o una disertación: #comentario/heraclito
 };

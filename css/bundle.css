@@ -1214,6 +1214,35 @@ ol.itin-temas li.temas-extra .temas-t{font-size:.95rem;color:var(--muted)}
 #pistas .pis-pg.done::after{ content:"✓"; font-size:.7em; margin-left:.15em; }
 
 
+/* ==== css/juegosucio.css ==== */
+/* «Rincón de lógica» de 2.º ESO: el juego sucio de Schopenhauer (08-10). Ilustraciones de museo; acentos de la paleta «ironía». */
+#juegosucio .js-cabecera{ display:flow-root; margin:.4rem 0 1.4rem }   /* el texto rodea el retrato: en pantallas estrechas no queda una columna fina */
+#juegosucio .js-retrato{ float:left; width:9rem; margin:.2rem 1.2rem .6rem 0 }
+@media (max-width:640px){ #juegosucio .js-retrato{ width:6.5rem; margin-right:.9rem } }
+#juegosucio .js-retrato img{ width:100%; display:block; border-radius:12px; filter:grayscale(1) contrast(1.05) }
+#juegosucio .js-retrato figcaption{ font-size:.75rem; color:var(--muted); margin-top:.3rem; line-height:1.3 }
+#juegosucio .js-intro{ font-size:1.05rem; line-height:1.6; margin:0 0 .6rem }
+#juegosucio .js-pista{ color:var(--muted); margin:0 }
+#juegosucio .js-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,26rem),1fr)); gap:1.1rem; align-items:start }
+#juegosucio .js-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; scroll-margin-top:5.5rem }
+#juegosucio .js-obra{ margin:0; background:#F4F1EA }
+#juegosucio .js-obra img{ width:100%; height:auto; max-height:24rem; object-fit:contain; display:block; background:#F4F1EA }
+#juegosucio .js-obra figcaption{ font-size:.85rem; line-height:1.45; color:var(--muted); padding:.55rem 1rem .6rem; background:var(--surface-2) }
+#juegosucio .js-autor{ display:block; color:var(--ink); font-weight:600; margin-bottom:.15rem }
+#juegosucio .js-texto{ padding:.8rem 1rem 1rem }
+#juegosucio .js-n{ margin:0; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#E8793A }
+#juegosucio .js-texto h3{ margin:.15rem 0 .35rem; font-size:1.15rem }
+#juegosucio .js-tecnico{ margin:0 0 .5rem; font-size:.92rem; color:var(--muted) }
+#juegosucio .js-tecnico strong{ color:var(--ink) }
+#juegosucio .js-texto p{ margin:.35rem 0 }
+#juegosucio .js-chat{ display:flex; flex-direction:column; gap:.35rem; margin:.7rem 0 }
+#juegosucio .js-msg{ max-width:85%; border-radius:14px; padding:.4rem .7rem; margin:0 !important; line-height:1.4 }
+#juegosucio .js-msg-otra{ align-self:flex-start; background:var(--surface-2); border-bottom-left-radius:4px }
+#juegosucio .js-msg-truco{ align-self:flex-end; background:#F6C9A8; color:#1F2A44; border-bottom-right-radius:4px }
+#juegosucio .js-quien{ display:block; font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; opacity:.7 }
+#juegosucio .js-defensa{ background:var(--surface-2); border-left:4px solid #2F6FB5; border-radius:8px; padding:.45rem .65rem; margin-top:.6rem !important }
+
+
 /* ==== css/retratos.css ==== */
 /* ===== Retratos de museo integrados en la teoría ===== usa los tokens de styles.css ===== */
 .museo-strip{ margin:2.4rem 0 .5rem; padding-top:1.2rem; border-top:1px solid var(--line); }
