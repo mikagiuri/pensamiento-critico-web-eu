@@ -32,7 +32,11 @@
       sec.insertBefore(btn, ctl);
     }
     var l = label(sec);
-    btn.innerHTML = '<span class="ctl-l">' + esc(l) + '</span><span class="ctl-caret" aria-hidden="true">▾</span>';
+    /* (08-10) sin nada elegido (p. ej. Esquemas de Filosofía 1.º al entrar) el botón no puede desaparecer: si no, la
+       lista queda plegada y sin forma de abrirla. Se rotula con el nombre del grupo («Elegir esquema») y el total. */
+    var g = !l && sec.querySelector(":scope > .chips, :scope > .crono-chips"), n = g ? g.querySelectorAll("button").length : 0;
+    if (n) l = g.getAttribute("aria-label") || "";
+    btn.innerHTML = '<span class="ctl-l">' + esc(l) + (n ? ' <i>' + n + '</i>' : '') + '</span><span class="ctl-caret" aria-hidden="true">▾</span>';
     btn.hidden = !l;
   }
   function ensureToc(toc){
