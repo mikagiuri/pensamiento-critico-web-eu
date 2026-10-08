@@ -11,7 +11,7 @@ const THEORY_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa
 function blockOf(t){
   if (t.sigla) return t.sigla.charAt(0);   /* (07-10) AP/AA: temas sin número; la sigla empieza por su bloque */
   /* «Tema 19» en castellano; «19. gaia» en euskera (antes, en la web vasca, el filtro de bloque vaciaba la lista) */
-  const m = (t.tema || "").match(/(?:Tema|Thème)\s+(\d+)|(\d+)\.\s*gaia/);   /* también «Thème N» (francés) */
+  const m = (t.tema || "").match(/(?:Tema|Thème|Topic)\s+(\d+)|(\d+)\.\s*gaia/);   /* también «Thème N» (francés) y «Topic N» (inglés) */
   if (!m && typeof t.temaN !== "number") return null;   /* anexos: sin «Tema N» en el nombre, con temaN */
   const n = typeof t.temaN === "number" ? t.temaN : +(m[1] || m[2]);
   if (n >= 1 && n <= 10) return "A";
@@ -111,7 +111,7 @@ function relatedFor(key, self){
               (typeof INFOGRAFIAS !== "undefined" && INFOGRAFIAS[key]) || null;
   if (src){
     const temaN = o => { if (!o) return null; if (typeof o.tema === "number") return o.tema; if (typeof o.temaN === "number") return o.temaN;
-      const m = String(o.tema || "").match(/(?:Tema|Thème)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null; };
+      const m = String(o.tema || "").match(/(?:Tema|Thème|Topic)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null; };
     let tn = temaN(src);
     if (tn == null && typeof TEMA_ALIAS !== "undefined" && TEMA_ALIAS[key] != null) tn = TEMA_ALIAS[key];
     const subj = src.subject;

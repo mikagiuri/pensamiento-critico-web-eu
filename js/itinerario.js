@@ -48,7 +48,7 @@
   function temaNum(o){
     if (!o) return null;
     if (typeof o.tema === "number") return o.tema;
-    var m = String(o.tema || "").match(/(?:Tema|Thème)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null;
+    var m = String(o.tema || "").match(/(?:Tema|Thème|Topic)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null;
   }
   var IPC_KEY = /^(?:map-)?ipc-([a-z]+)/;
   var IPC_ALIAS = { conceptos: "pensar", publicidad: "medios", prejuicios: "sesgos", moda: "huella", consumo: "huella", fastfashion: "huella", critico: "pensar", bulos: "falacias", hecho: "pensar" };
@@ -365,7 +365,7 @@
     if (!ks.length) return "";
     /* HF: agrupada por época, con el color de Ilustres; Filosofía 1.º: por rama (js/epocas.js). Las demás, seguidas. */
     var EP = { int: "Sarrera", ant: "Antzinakoa", med: "Erdi Arokoa", ren: "Errenazimentua", mod: "Modernoa", ilu: "Ilustrazioa", con: "Garaikidea" };
-    var RM = { ant: "Antropología", con: "Conocimiento", log: "Lógica", eti: "Etika", pol: "Política", est: "Estética" };
+    var RM = { ant: "Antropologia", con: "Ezagutza", log: "Logika", eti: "Etika", pol: "Politika", est: "Estetika" };
     var grpNames = null, grpAttr = "", grpOf = null;
     if (subject === "hf"){ grpNames = EP; grpAttr = "ep"; grpOf = window.Epocas ? function(n){ return window.Epocas.epocaDeTema(n); } : function(n){ return n <= 2 ? "int" : n <= 10 ? "ant" : n <= 12 ? "med" : n === 13 ? "ren" : n <= 17 ? "mod" : n <= 20 ? "ilu" : "con"; }; }
     else if (subject === "fil"){ grpNames = RM; grpAttr = "rama"; grpOf = window.Ramas ? function(n){ return window.Ramas.ramaDeTema(n); } : function(n){ return ({ 2: "ant", 3: "con", 4: "log", 5: "eti", 6: "pol", 7: "est" })[n] || null; }; }
