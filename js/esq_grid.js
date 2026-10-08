@@ -119,6 +119,7 @@ const EsqGrid = (function (){
     let fit = Math.max(2, Math.floor((width + GAP) / (MIN_COL + GAP)));   /* columnas que caben sin deslizar */
     if (fit < 3 && Math.floor((width + GAP) / (86 + GAP)) >= 3) fit = 3;   /* teléfono: 3 columnas con celdas de hasta 86 px antes que deslizar */
     function add(r, c, scroll){ const k = r + "x" + c; if (!seen[k]){ seen[k] = 1; out.push({ rows: r, cols: c, scroll: scroll }); } }
+    if (n > 25 && fit < sq){ add(sq, sq, true); add(sq + 1, sq, true); }   /* mapas grandes en pantalla estrecha: las formas altas casi nunca caben y cuestan segundos; primero la cuadrada (con desplazamiento) */
     for (let c = Math.min(fit, sq); c >= 3; c--){ const r = Math.max(c, Math.ceil(n / c)); add(r, c, false); add(r + 1, c, false); }
     add(sq, sq, true); add(sq + 1, sq, true);
     if (fit < 3) for (let c = 3; c <= sq; c++){ add(Math.max(c, Math.ceil(n / c)), c, true); }
@@ -158,7 +159,12 @@ const EsqGrid = (function (){
 .esqg-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px}
 .esqg-top .esq2-q{margin:0;flex:1 1 200px}
 @media (max-width:520px){.esqg-n{padding:7px 8px;min-height:54px}}
-@media print{.esqg-n{break-inside:avoid}}
+.esqg-short .esqg-a{display:none}
+.esqg-short .esqg-has{cursor:pointer}
+.esqg-short .esqg-has::after{content:"+";position:absolute;right:7px;bottom:3px;font-size:.8rem;color:var(--muted);line-height:1}
+.esqg-short .esqg-open .esqg-a{display:block;font-style:normal;color:var(--ink)}
+.esqg-short .esqg-open::after{content:"−"}
+@media print{.esqg-n{break-inside:avoid}.esqg-short .esqg-a{display:block}.esqg-short .esqg-has::after{content:""}}
 `;
   let cssDone = false;
   function injectCss(){ if (cssDone) return; const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); cssDone = true; }
@@ -181,6 +187,13 @@ const EsqGrid = (function (){
       const node = { t: text, c: [] };
       const m = text.match(/^\*\*([^*]+)\*\*\s*(?::|—|–|-)\s+(.+)$/);
       if (m){ node.t = m[1].trim(); node.a = m[2].trim(); }
+      else if (!h && text.length > 28){
+        /* viñeta larga sin «Título: resto»: etiqueta corta = las palabras en negrita (si las hay) o las primeras
+           palabras; la frase entera queda como detalle (se ve al tocar la caja) */
+        const bold = (text.match(/\*\*([^*]+)\*\*/g) || []).map(function (b){ return b.replace(/\*\*/g, ""); });
+        const label = bold.length ? bold.join(" · ") : text.replace(/[*_]/g, "").split(/\s+/).slice(0, 5).join(" ") + "…";
+        if (label.length < text.length - 6){ node.t = label; node.a = text; }
+      }
       if (stack.length === 1 && !root.t && h && lvl === 1){ root.t = node.t; stack.push({ lvl: lvl, node: root }); return; }
       stack[stack.length - 1].node.c.push(node);
       stack.push({ lvl: lvl, node: node });
@@ -242,7 +255,9 @@ const EsqGrid = (function (){
   drawArrows.n = 0;
 
   let ro = null;
-  function render(e, st){
+  /* opts.short: cuadrícula de mapas: solo la etiqueta en cada caja; el detalle se abre al tocarla */
+  function render(e, st, opts){
+    const short = !!(opts && opts.short);
     injectCss();
     const v = e.v2, tree = buildTree(v), n = tree.nodes.length;
     const width = st.clientWidth || 700;
@@ -264,17 +279,18 @@ const EsqGrid = (function (){
     if (hasX) v.cruces.forEach(function (x, i){ [x.de, x.a].forEach(function (t){ (badges[t] = badges[t] || []).push(i + 1); }); });
     st.innerHTML = '<div class="esqg-top">' + (v.pregunta ? '<p class="esq2-q">' + esc(v.pregunta) + "</p>" : "") +
       (hasX ? '<label class="esq2-xtog"><input type="checkbox" id="esqgxtog"' + (showCross ? " checked" : "") + '> Adarren arteko erlazioak marraztu</label>' : "") + "</div>" +
-      '<div class="esqg-wrap"' + (scrollX ? ' style="overflow-x:auto;padding-bottom:6px"' : "") + '><div class="esqg" data-s="' + esc(e.subject) + '" style="font-size:' + fontPx + 'px;grid-template-columns:repeat(' + shape.cols + ',minmax(' + (scrollX ? MIN_COL + "px" : "0") + ',1fr))">' +
+      '<div class="esqg-wrap"' + (scrollX ? ' style="overflow-x:auto;padding-bottom:6px"' : "") + '><div class="esqg' + (short ? " esqg-short" : "") + '" data-s="' + esc(e.subject) + '" style="font-size:' + fontPx + 'px;grid-template-columns:repeat(' + shape.cols + ',minmax(' + (scrollX ? MIN_COL + "px" : "0") + ',1fr))">' +
       tree.nodes.map(function (nd){ const p = pos[nd.id];
         const bs = badges[nd.t] ? '<span class="esqg-bs">' + badges[nd.t].map(function (i){ return '<span class="esqg-b">' + i + "</span>"; }).join("") + "</span>" : "";
-        return '<div class="esqg-n' + (nd.k ? " esqg-k" : "") + '" data-id="' + nd.id + '" data-d="' + Math.min(nd.depth, 3) + '" style="grid-row:' + (p[0] + 1) + ';grid-column:' + (p[1] + 1) + '">' + bs +
+        return '<div class="esqg-n' + (nd.k ? " esqg-k" : "") + (short && nd.a ? " esqg-has" : "") + '" data-id="' + nd.id + '" data-d="' + Math.min(nd.depth, 3) + '" style="grid-row:' + (p[0] + 1) + ';grid-column:' + (p[1] + 1) + '">' + bs +
           (nd.rel ? '<span class="esqg-rel">' + esc(nd.rel) + "</span>" : "") + '<span class="esqg-t">' + md(nd.t) + "</span>" + (nd.a ? '<span class="esqg-a">' + md(nd.a) + "</span>" : "") + "</div>"; }).join("") +
       "</div></div>" +
       (hasX ? '<ol class="esqg-xl">' + v.cruces.map(function (x){ return "<li><em>" + esc(x.de) + '</em> <span class="esqg-xr">' + esc(x.rel) + "</span> <em>" + esc(x.a) + "</em></li>"; }).join("") + "</ol>" : "") +
-      '<p class="esq2-hint">' + (scrollX ? "Irristatu sareta alboetara." + " " : "") + "Kontzeptu bakoitzak bere kontzeptu gurasoa ukitzen du (diagonalean ere bai)." +
+      '<p class="esq2-hint">' + (scrollX ? "Irristatu sareta alboetara." + " " : "") + (short ? "Sakatu kutxa bat bere testu osoa ikusteko." + " " : "") + "Kontzeptu bakoitzak bere kontzeptu gurasoa ukitzen du (diagonalean ere bai)." +
         (tree.nodes.some(function (nd){ return nd.rel; }) ? " " + "Erlazio mota kutxa bakoitzaren barruan idatzita dago." : "") + "</p>";   /* literales enteros entre comillas: así los traduce ui/<lang>.json */
     const grid = st.querySelector(".esqg");
     drawArrows(grid, tree, v.cruces);
+    if (short) grid.querySelectorAll(".esqg-has").forEach(function (el){ el.addEventListener("click", function (){ el.classList.toggle("esqg-open"); drawArrows(grid, tree, v.cruces); }); });
     const cb = st.querySelector("#esqgxtog");
     if (cb) cb.addEventListener("change", function (){ showCross = cb.checked; const l = grid.querySelector(".esqg-x-layer"); if (l) l.style.display = showCross ? "" : "none"; });
     /* al cambiar el ancho: si cambia la forma de la cuadrícula se recoloca; si no, solo se redibujan las flechas */

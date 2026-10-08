@@ -75,7 +75,7 @@ function drawMap(){
   }
   const cuad = mapMode === "cuad" && gridEl && typeof EsqGrid !== "undefined";
   if (svgEl) svgEl.style.display = cuad ? "none" : "";
-  if (gridEl){ gridEl.style.display = cuad ? "" : "none"; if (cuad){ EsqGrid.render({ subject: m.subject, v2: EsqGrid.fromMarkmap(m.md) }, gridEl); return; } }
+  if (gridEl){ gridEl.style.display = cuad ? "" : "none"; if (cuad){ EsqGrid.render({ subject: m.subject, v2: EsqGrid.fromMarkmap(m.md) }, gridEl, { short: true }); return; } }
 
   if (!_ready()){                 // Markmap aún cargando desde el CDN: reintentar
     if (_pending) return;
@@ -91,7 +91,7 @@ function drawMap(){
   if (!_tf) _tf = new mk.Transformer();
   const data = _tf.transform(m.md).root;
   const svg = document.getElementById("mapsvg");
-  if (!_mm) _mm = mk.Markmap.create(svg, { autoFit: false, initialExpandLevel: 3, colorFreezeLevel: 2, spacingVertical: 6, spacingHorizontal: 90, paddingX: 16, duration: 250 }, data);
+  if (!_mm) _mm = mk.Markmap.create(svg, { autoFit: false, initialExpandLevel: 4,   /* (08-10) los mapas rejerarquizados tienen las viñetas en el 4.º nivel */ colorFreezeLevel: 2, spacingVertical: 6, spacingHorizontal: 90, paddingX: 16, duration: 250 }, data);
   else _mm.setData(data);
   requestAnimationFrame(() => { try { _mm.fit(); } catch (e) {} });
 }
