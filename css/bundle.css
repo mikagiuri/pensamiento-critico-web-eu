@@ -513,6 +513,13 @@ ol.itin-temas li.temas-extra .temas-t{font-size:.95rem;color:var(--muted)}
 /* Cuentos: botón de descarga de la ficha de trabajo (PDF B/N). */
 .cuento-dl{margin:.6rem 0 0}
 .cuento-dl .btn{font-size:.9rem}
+/* Fuentes: notas de Areté por temas (tools/fuentes_notas_arete.py) */
+#fuentes details{border:1px solid var(--line);border-radius:10px;background:var(--surface-2);margin:.5rem 0;padding:.1rem .9rem}
+#fuentes details>summary{cursor:pointer;padding:.55rem 0;font-family:var(--sans)}
+#fuentes details[open]>summary{border-bottom:1px solid var(--line-soft);margin-bottom:.3rem}
+#fuentes h3.notas-apartado{font-size:1rem;margin:.9rem 0 .3rem}
+#fuentes details li{overflow-wrap:anywhere;font-size:.95rem}
+#fuentes .nota-origen{color:var(--muted);font-size:.88em}
 
 
 /* ==== css/mobile.css ==== */
