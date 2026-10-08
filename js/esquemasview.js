@@ -297,7 +297,10 @@ function drawEsq(){
   if (typeof mermaid === "undefined"){ st.innerHTML = '<p class="esq-wait">Diagrama-motorra kargatzen…</p>'; setTimeout(drawEsq, 350); return; }
   if (_esqTheme === null || _esqTheme !== esqThemeName()) esqInit();
   const src = mode === "diag" ? esqV2Mermaid(e) : e.mermaid;
+  const pedido = esqKey + "|" + mode;   /* (08-10) mermaid es asíncrono: si mientras dibuja se cambia de esquema o de pestaña
+                                            (p. ej. a «Cuadrícula»), su resultado llegaría tarde y pisaría lo nuevo: se descarta */
   mermaid.render("esqm" + (++_mid), src).then(function (res){
+    if (pedido !== esqKey + "|" + (e.v2 ? esqMode : "orig")) return;
     st.innerHTML = (mode === "diag" && e.v2.pregunta ? '<p class="esq2-q esq2-q-diag">' + esqEsc(e.v2.pregunta) + "</p>" : "") + res.svg +
       '<p class="esq2-hint">Irristatu osorik ikusteko; − / + botoiekin urrundu edo hurbildu dezakezu. «Fitxak» atalean, kontzeptu bakoitza bere azalpenarekin.</p>';
     if (mode === "diag") esqCruces(st.querySelector("svg"), esqV2Mermaid.cruces);
