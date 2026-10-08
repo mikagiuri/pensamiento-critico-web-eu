@@ -67,7 +67,7 @@ function openLightbox(src, alt){
     lb.id = "medialightbox";
     lb.className = "lightbox";
     lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Imagen ampliada");
-    lb.innerHTML = '<button class="lb-close" aria-label="Cerrar">×</button><img alt="Imagen ampliada">';
+    lb.innerHTML = '<button class="lb-close" aria-label="Itxi">×</button><img alt="Imagen ampliada">';
     document.body.appendChild(lb);
     lb.addEventListener("click", e => {
       if (e.target === lb || e.target.classList.contains("lb-close")) closeMediaLightbox();

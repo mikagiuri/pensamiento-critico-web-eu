@@ -13,6 +13,15 @@ function gloPresent(){ return ["hf", "fil", "ipc"].filter(s => GLOSARIO.some(g =
 let gloSubject = "hf", gloBloque = "A", gloArea = "all", gloQuery = "";  /* materia y bloque concretos por defecto, nunca «Todos» */
 
 const GLO_CSS = `
+#glosario #glogrids{margin:6px 0 14px}
+#glosario .glogrid-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px}
+#glosario .glogrid-stage{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;overflow:hidden}
+#glosario .glogrid-head{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:0 0 10px;margin:0 0 12px}
+#glosario .glogrid-head h3{margin:0;font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+#glosario .esq2-q{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--muted);margin:0}
+#glosario .esq2-hint{color:var(--muted);font-size:.85rem;margin:8px 0 0;text-align:center}
+#glosario .esq2-xtog{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--muted);cursor:pointer;white-space:nowrap}
+#glosario .esq2-xtog input{width:18px;height:18px}
 #glosario .glotools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 4px}
 #glosario .glosearch{flex:1;min-width:220px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:var(--surface);color:var(--ink)}
 #glosario .glosearch:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
@@ -105,7 +114,39 @@ function renderGloControls(){
   inp.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { gloQuery = inp.value.trim(); renderGloList(); }, 120); });
 }
 
+/* (08-10) Cuadrículas de conceptos (js/glosario_grids.js + js/esq_grid.js): un botón por tema que tenga su árbol,
+   según la materia y el bloque elegidos; se dibuja encima de la lista con el estilo de la Cuadrícula de Esquemas. */
+let gloGrid = null;
+function gloGridsVisibles(){
+  if (typeof GLOSARIO_GRIDS === "undefined") return [];   /* EsqGrid (esq_grid.js) se carga después: se comprueba al dibujar */
+  const present = gloPresent();
+  return Object.entries(GLOSARIO_GRIDS).filter(([k, g]) => {
+    if (!present.includes(g.subject) || (gloSubject !== "all" && g.subject !== gloSubject)) return false;
+    if (g.subject === "hf" && gloBloque !== "all"){
+      const e = GLOSARIO.find(x => x.tema === g.tema && x.bloque); if (e && e.bloque !== gloBloque) return false;
+    }
+    return true;
+  });
+}
+function renderGloGrids(){
+  const list = document.getElementById("glolist"); if (!list) return;
+  let box = document.getElementById("glogrids");
+  if (!box){ box = document.createElement("div"); box.id = "glogrids"; list.parentNode.insertBefore(box, list); }
+  const vis = gloGridsVisibles();
+  if (gloGrid && !vis.some(([k]) => k === gloGrid)) gloGrid = null;
+  if (!vis.length){ box.innerHTML = ""; return; }
+  box.innerHTML = '<div class="glogrid-bar"><span class="flabel">Kontzeptu-saretak</span>' +
+    vis.map(([k, g]) => '<button type="button" class="fbtn" data-gg="' + k + '" aria-pressed="' + (k === gloGrid) + '">' + gloEsc(g.tema) + "</button>").join("") + "</div>" +
+    (gloGrid ? '<div class="glogrid-stage"><div class="glogrid-head"><h3>' + gloEsc(GLOSARIO_GRIDS[gloGrid].tema) + '</h3><button type="button" class="fbtn" data-gg="">Itxi</button></div><div id="glogridbox"></div></div>' : "");
+  box.querySelectorAll("[data-gg]").forEach(b => b.addEventListener("click", () => {
+    gloGrid = b.dataset.gg && b.dataset.gg !== gloGrid ? b.dataset.gg : null; renderGloGrids();
+    if (gloGrid) document.getElementById("glogrids").scrollIntoView({ block: "start", behavior: "smooth" });
+  }));
+  if (gloGrid && typeof EsqGrid !== "undefined"){ const g = GLOSARIO_GRIDS[gloGrid]; EsqGrid.render({ subject: g.subject, v2: g.v2 }, document.getElementById("glogridbox")); }
+}
+
 function renderGloList(){
+  renderGloGrids();
   const list = document.getElementById("glolist");
   const cnt = document.getElementById("glocount");
   if (!list) return;

@@ -77,7 +77,7 @@ function galInject(){
   _lb.setAttribute("role", "dialog"); _lb.setAttribute("aria-modal", "true"); _lb.setAttribute("aria-label", "Visor de la galería");
   _lb.innerHTML = '<div class="box"><button class="nav prev" aria-label="Aurrekoa">‹</button>' +
     '<img id="gallbimg" alt=""><div class="meta"><h4 id="gallbt"></h4><p id="gallbp"></p></div>' +
-    '<button class="nav next" aria-label="Hurrengoa">›</button><button class="close" aria-label="Cerrar">×</button></div>';
+    '<button class="nav next" aria-label="Hurrengoa">›</button><button class="close" aria-label="Itxi">×</button></div>';
   document.body.appendChild(_lb);
   _lb.querySelector(".close").addEventListener("click", galClose);
   _lb.querySelector(".prev").addEventListener("click", function (e){ e.stopPropagation(); galStep(-1); });
