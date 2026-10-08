@@ -25,6 +25,12 @@ const GLO_CSS = `
 #glosario .gloitem .tag{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
 #glosario .gloitem p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink)}
 #glosario .gloitem .src{color:var(--muted);font-size:12px;margin-top:7px}
+#glosario .gloitem .ety{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px;padding-top:7px;border-top:1px dashed var(--line-soft)}
+#glosario .gloitem .ety[hidden]{display:none}
+#glosario .gloitem .ety b{font-weight:600;color:var(--ink)}
+#glosario .gloitem .ety i{color:var(--ink)}
+#glosario .glo-root{display:inline-flex;align-items:center;justify-content:center;width:1.55em;height:1.55em;margin-left:.4em;vertical-align:.12em;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--surface-2);color:var(--muted);font:600 13px var(--serif);line-height:1;cursor:pointer}
+#glosario .glo-root:hover,#glosario .glo-root[aria-expanded="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 #glosario mark{background:var(--accent);color:var(--on-accent);padding:0 2px;border-radius:3px}
 #glosario .gloempty{color:var(--muted);padding:24px 2px}
 `;
@@ -32,6 +38,11 @@ const GLO_CSS = `
 function gloFold(s){ return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 function gloEsc(s){ return (s || "").replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
 function gloBold(s){ return s.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
+/* (08-10) raíz de la palabra (campo `et`): plegada tras el botón λ (de lógos, «palabra») junto al término; solo lo llevan los términos
+   con raíz. Dentro, la palabra en su alfabeto y, entre paréntesis, transliterada (*así*, en cursiva). Se abre sola
+   cuando lo buscado solo aparece en la raíz. */
+function gloIt(s){ return s.replace(/\*([^*]+)\*/g, "<i>$1</i>"); }
+const GLO_ETY = "Erroa:", GLO_ETY_BTN = "Ikusi hitza nondik datorren";
 function gloHi(escaped, q){
   if (!q || q.length < 2) return escaped;
   const rx = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
@@ -103,7 +114,7 @@ function renderGloList(){
     if (gloSubject !== "all" && g.subject !== gloSubject) return false;
     if ((gloSubject === "hf" || gloSubject === "all") && present.includes("hf") && gloBloque !== "all" && g.bloque && g.bloque !== gloBloque) return false;
     if (gloArea !== "all" && g.area !== gloArea) return false;
-    if (q && !gloFold(g.t + " " + g.def + " " + g.area).includes(q)) return false;
+    if (q && !gloFold(g.t + " " + g.def + " " + g.area + " " + (g.et || "").replace(/\*/g, "")).includes(q)) return false;
     return true;
   });
   if (cnt) cnt.textContent = rows.length + (rows.length === 1 ? " termino" : " termino") +
@@ -113,11 +124,24 @@ function renderGloList(){
     const term = gloHi(gloEsc(g.t), gloQuery);
     const def = gloHi(gloBold(gloEsc(g.def)), gloQuery);
     const tag = (g.area ? g.area : "") + (g.bloque ? " · " + (GLO_BLOCKS[g.bloque] || g.bloque) : "");
+    const abre = g.et && q && !gloFold(g.t + " " + g.def + " " + g.area).includes(q);   // lo buscado está solo en la raíz
+    const ety = g.et ? '<div class="ety"' + (abre ? "" : " hidden") + "><b>" + GLO_ETY + "</b> " + gloIt(gloHi(gloEsc(g.et), gloQuery)) + "</div>" : "";
+    const btn = g.et ? '<button type="button" class="glo-root" aria-expanded="' + !!abre + '" aria-label="' + GLO_ETY_BTN + '" title="' + GLO_ETY_BTN + '">λ</button>' : "";
     const src = g.tema ? '<div class="src">' + gloEsc(g.tema) + (g.unidad ? " · " + g.unidad : "") + '</div>' : "";
     const ep = g.subject === "hf" && { A: "ant", B: "medmod", C: "con" }[g.bloque];   // (30-09) color del bloque de HF (styles.css)
-    return '<article class="gloitem"' + (ep ? ' data-ep="' + ep + '"' : '') + '><div class="top"><h4>' + term + '</h4><span class="tag">' + gloEsc(tag) + '</span></div><p>' + def + '</p>' + src + '</article>';
+    return '<article class="gloitem"' + (ep ? ' data-ep="' + ep + '"' : '') + '><div class="top"><h4>' + term + btn + '</h4><span class="tag">' + gloEsc(tag) + '</span></div><p>' + def + '</p>' + ety + src + '</article>';
   }).join("");
 }
+
+/* el botón √ abre y cierra la raíz de su tarjeta (delegado: la lista se repinta en cada filtro) */
+(() => {
+  const list = document.getElementById("glolist");
+  if (list) list.addEventListener("click", e => {
+    const b = e.target.closest(".glo-root"); if (!b) return;
+    const ety = b.closest(".gloitem").querySelector(".ety"); if (!ety) return;
+    ety.hidden = !ety.hidden; b.setAttribute("aria-expanded", String(!ety.hidden));
+  });
+})();
 
 renderGloControls();
 renderGloList();
