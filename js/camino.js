@@ -40,7 +40,7 @@ const CAMINOS = [
     ]
    },
    "preguntar": {
-    "texto": "Erantzuten dizute: «Aneren lehengusinak esan du, zuzendaria ezagutzen du eta». Pare batek jai-zapuztaile deitzen dizute galdetzeagatik.",
+    "texto": "Erantzuten dizute: «Klaseko neska baten lehengusinak esan du, zuzendaria ezagutzen du eta». Pare batek jai-zapuztaile deitzen dizute galdetzeagatik.",
     "opciones": [
      {
       "t": "Isilik geratzea, gaizki ez geratzeko.",
@@ -103,7 +103,7 @@ const CAMINOS = [
   "start": "inicio",
   "escenas": {
    "inicio": {
-    "texto": "Jolas-orduan, zure koadrila barrez ari da Ikerren argazki batekin —zure klasekoa da—, Gorputz Hezkuntzan estropezu egiten. Mikelek Instagramera meme batekin igotzea proposatzen du. Denak zuri begira daude, zure erreakzioaren zain.",
+    "texto": "Jolas-orduan, zure koadrila barrez ari da zure klaseko mutil baten argazki batekin, Gorputz Hezkuntzan estropezu egiten. Lagun batek Instagramera meme batekin igotzea proposatzen du. Denak zuri begira daude, zure erreakzioaren zain.",
     "opciones": [
      {
       "t": "Barre egitea eta esatea: «Igo ezazu!».",
@@ -120,23 +120,23 @@ const CAMINOS = [
     ]
    },
    "sube": {
-    "texto": "Argazkiak berrehun «atsegin dut» eta iruzkin mordoa lortzen ditu. Biharamunean Iker ez da klasera etortzen. Taldean diote: «Txantxa bat zen, ez du ezer jasaten».",
+    "texto": "Argazkiak berrehun «atsegin dut» eta iruzkin mordoa lortzen ditu. Biharamunean argazkiko mutila ez da klasera etortzen. Taldean diote: «Txantxa bat zen, ez du ezer jasaten».",
     "opciones": [
      {
       "t": "Arrazoia ematea: «Txantxa bat besterik ez zen».",
       "to": "f_broma"
      },
      {
-      "t": "Ikerri pribatuan idaztea, nola dagoen jakiteko.",
+      "t": "Argazkiko mutilari pribatuan idaztea, nola dagoen jakiteko.",
       "to": "f_reparar"
      }
     ]
    },
    "paso": {
-    "texto": "Mikelek iseka egiten du: «Zein aspergarria zaren». Baina Unaik, isilik zegoenak, begiratu eta baietz egiten dizu buruarekin: zuk bezala pentsatzen duela dirudi.",
+    "texto": "Igotzea proposatu zuenak iseka egiten du: «Zein aspergarria zaren». Baina koadrilako neska batek, isilik zegoenak, begiratu eta baietz egiten dizu buruarekin: zuk bezala pentsatzen duela dirudi.",
     "opciones": [
      {
-      "t": "Nire arrazoiak azaltzea eta Unairen babesa bilatzea.",
+      "t": "Nire arrazoiak azaltzea eta neska horren babesa bilatzea.",
       "to": "f_valiente"
      },
      {
@@ -149,7 +149,7 @@ const CAMINOS = [
     "texto": "Argazkia igo egiten dute hala ere. Arratsalde osoan ezin duzu horretan pentsatzeari utzi, eta deseroso sentitzen zara.",
     "opciones": [
      {
-      "t": "Ikerrekin hitz egitea edo tutoreari kontatzea.",
+      "t": "Argazkiko mutilarekin hitz egitea edo tutoreari kontatzea.",
       "to": "f_reparar"
      },
      {
@@ -163,19 +163,19 @@ const CAMINOS = [
    "f_broma": {
     "emoji": "😶",
     "titulo": "Txantxa bat besterik ez?",
-    "texto": "Ikerrek egunak behar ditu itzultzeko eta taldea saihesten du. Argazkiak zabaltzen jarraitzen du, nahiz eta zuek ezabatu duzuen.",
+    "texto": "Argazkiko mutilak egunak behar ditu itzultzeko eta taldea saihesten du. Argazkiak zabaltzen jarraitzen du, nahiz eta zuek ezabatu duzuen.",
     "idea": "Txantxa bat denentzat da barregarria; batzuk bakarrik barre egiten badute beste baten kontura, umiliazio bat da. Internetera igotzen dena ezin da guztiz jaso."
    },
    "f_reparar": {
     "emoji": "🤝",
     "titulo": "Inoiz ez da berandu konpontzeko",
-    "texto": "Ikerrek mezua eskertzen du. Tutorearen laguntzarekin, argazkia kentzen da eta gaia tutoretzan lantzen da.",
+    "texto": "Argazkiko mutilak mezua eskertzen du. Tutorearen laguntzarekin, argazkia kentzen da eta gaia tutoretzan lantzen da.",
     "idea": "Kaltea konpontzea (barkamena eskatzea, ondoan egotea, heldu bati abisatzea) ere alde hartzea da. Enpatia: bestearen lekuan jartzea eta horren arabera jokatzea."
    },
    "f_valiente": {
     "emoji": "🦁",
     "titulo": "Taldean ezetz esatea",
-    "texto": "Unai zure alde dagoela, plana hustu egiten da. Argazkia ez da igotzen. Mikelek marmar egiten du, baina ez da ezer gehiago gertatzen.",
+    "texto": "Neska hori zure alde dagoela, plana hustu egiten da. Argazkia ez da igotzen. Proposatu zuenak marmar egiten du, baina ez da ezer gehiago gertatzen.",
     "idea": "Asch-en esperimentuan, nahikoa zen taldeko pertsona bakar batek bat ez etortzea besteak pentsatzen zutena esatera ausartzeko. Aliatu batek dena aldatzen du."
    },
    "f_testigo": {
