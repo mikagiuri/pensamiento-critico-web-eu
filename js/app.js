@@ -343,7 +343,7 @@ document.querySelectorAll(".courses [data-view]").forEach(card => {
     '<p>Ikasleek ikusten dutena: ikasgai bakoitza berea duela eta irakaslearen materialik gabe. Argitaratzean eguneratzen dira.</p></div>' +
     '<div class="pubwebs">' + webs.map(w =>
       '<div class="pubweb" style="--c:var(--' + w[0] + ')"><h3>' + w[1] + '</h3>' +
-      link(B + w[2] + "/", "Gaztelania") + link(B + w[2] + "-eu/", "Euskara") + '</div>').join("") + '</div>');
+      link(B + w[2] + "/", "Gaztelania") + link(B + w[2] + "-eu/", "Euskara") + link(B + w[2] + "-fr/", "Français") + '</div>').join("") + '</div>');
   document.querySelectorAll(".pw-copy").forEach(b => b.addEventListener("click", () => {
     const done = () => { b.textContent = "Kopiatuta"; b.classList.add("ok"); setTimeout(() => { b.textContent = "Kopiatu"; b.classList.remove("ok"); }, 1600); };
     if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.url).then(done, () => window.prompt("Kopiatu esteka:", b.dataset.url));

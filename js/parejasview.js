@@ -144,7 +144,7 @@ function renderParStart(){
   const pe = document.getElementById("parExport"); if (pe) pe.addEventListener("click", parExportBest);
   const pi = document.getElementById("parImport"), pf = document.getElementById("parBestFile");
   if (pi && pf){ pi.addEventListener("click", () => pf.click()); pf.addEventListener("change", () => { parImportBestFile(pf.files && pf.files[0]); pf.value = ""; }); }
-  const pc = document.getElementById("parClear"); if (pc) pc.addEventListener("click", () => { if (confirm("¿Borrar todas tus mejores marcas de Parejas?")){ store.set(PAR_BEST_KEY, {}); renderParStart(); } });
+  const pc = document.getElementById("parClear"); if (pc) pc.addEventListener("click", () => { if (confirm("Bikoteak jokoko zure marka onenak ezabatu nahi dituzu?")){ store.set(PAR_BEST_KEY, {}); renderParStart(); } });
   const ph = document.getElementById("parHistClear"); if (ph) ph.addEventListener("click", () => { if (confirm("¿Borrar el historial de rondas de Parejas?")){ store.set(PAR_HIST_KEY, []); renderParStart(); } });
   const he = document.getElementById("parHistExport"); if (he) he.addEventListener("click", parExportHist);
   const hi = document.getElementById("parHistImport"), hf = document.getElementById("parHistFile");

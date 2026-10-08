@@ -147,7 +147,7 @@ function retoAnswer(i){
   }
   const sc = document.querySelector(".reto-score"); if (sc) sc.textContent = reto.score + " pts";
   const fb = document.getElementById("retoFb");
-  const head = ok ? '<b class="reto-gain">+' + gain + ' pts.</b> ' : (i < 0 ? '<b>¡Tiempo!</b> ' : '<b>La correcta es ' + "ABCD"[reto.optOrder.indexOf(it.a)] + '.</b> ');
+  const head = ok ? '<b class="reto-gain">+' + gain + ' pts.</b> ' : (i < 0 ? '<b>Denbora agortu da!</b> ' : '<b>La correcta es ' + "ABCD"[reto.optOrder.indexOf(it.a)] + '.</b> ');
   fb.innerHTML = head + it.fb;
   fb.classList.add("show");
   document.getElementById("retoNext").hidden = false;
@@ -161,7 +161,7 @@ function retoNext(){
 
 /* ---------- resultado ---------- */
 function retoRank(pct){
-  if (pct >= 100) return ["🏆", "¡Filósofo/a!"];
+  if (pct >= 100) return ["🏆", "Filosofoa!"];
   if (pct >= 80)  return ["🎓", "Muy bien"];
   if (pct >= 60)  return ["🌱", "Vas por buen camino"];
   if (pct >= 40)  return ["💪", "A seguir repasando"];
