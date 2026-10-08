@@ -5,7 +5,6 @@
 
 let mapKey = Object.keys(MAPS)[0];
 let _mm = null, _tf = null, _pending = false;
-let mapMode = "mm";   /* (08-10) "mm" = Markmap interactivo · "cuad" = cuadrícula compacta (js/esq_grid.js, vecindad 8) */
 let mapSubject = "all", mapBlock = "all";
 
 const MAP_SUBJECTS = { fil: "Filosofia 1.", hf: "Filosofiaren Historia", ipc: "Pentsamendu kritikoa" };
@@ -64,18 +63,6 @@ function drawMap(){
   if (!m) return;
   const head = document.getElementById("maphead");
   if (head) head.innerHTML = '<span class="kick" style="color:var(--' + m.subject + ')">' + m.tema + '</span><h2>' + m.title + '</h2>';
-  /* pestañas Interactivo / Cuadrícula (la cuadrícula solo si está cargado esq_grid.js) */
-  const svgEl = document.getElementById("mapsvg");
-  let gridEl = document.getElementById("mapgrid");
-  if (head && typeof EsqGrid !== "undefined"){
-    if (!gridEl && svgEl){ gridEl = document.createElement("div"); gridEl.id = "mapgrid"; svgEl.insertAdjacentElement("afterend", gridEl); }
-    head.insertAdjacentHTML("beforeend", '<div class="esq2-tabs" role="group" aria-label="Vista del mapa">' +
-      [["mm", "Interaktiboa"], ["cuad", "Sareta"]].map(function (x){ return '<button class="fbtn" data-mm="' + x[0] + '" aria-pressed="' + (mapMode === x[0]) + '">' + x[1] + "</button>"; }).join("") + "</div>");
-    head.querySelectorAll("[data-mm]").forEach(function (b){ b.addEventListener("click", function (){ mapMode = b.dataset.mm; drawMap(); }); });
-  }
-  const cuad = mapMode === "cuad" && gridEl && typeof EsqGrid !== "undefined";
-  if (svgEl) svgEl.style.display = cuad ? "none" : "";
-  if (gridEl){ gridEl.style.display = cuad ? "" : "none"; if (cuad){ EsqGrid.render({ subject: m.subject, v2: EsqGrid.fromMarkmap(m.md) }, gridEl, { short: true }); return; } }
 
   if (!_ready()){                 // Markmap aún cargando desde el CDN: reintentar
     if (_pending) return;
@@ -91,7 +78,7 @@ function drawMap(){
   if (!_tf) _tf = new mk.Transformer();
   const data = _tf.transform(m.md).root;
   const svg = document.getElementById("mapsvg");
-  if (!_mm) _mm = mk.Markmap.create(svg, { autoFit: false, initialExpandLevel: 4,   /* (08-10) los mapas rejerarquizados tienen las viñetas en el 4.º nivel */ colorFreezeLevel: 2, spacingVertical: 6, spacingHorizontal: 90, paddingX: 16, duration: 250 }, data);
+  if (!_mm) _mm = mk.Markmap.create(svg, { autoFit: false, initialExpandLevel: 3, colorFreezeLevel: 2, spacingVertical: 6, spacingHorizontal: 90, paddingX: 16, duration: 250 }, data);
   else _mm.setData(data);
   requestAnimationFrame(() => { try { _mm.fit(); } catch (e) {} });
 }

@@ -1,6 +1,6 @@
 // Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/juegosucio.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
 const JUEGO_SUCIO = {
- "intro": "Arthur Schopenhauer (1788-1860) filosofo alemaniar bat izan zen, gogo txarreko fama zuena: begira iezaiozu ileari. 1830 inguruan liburuxka bat idatzi zuen, <em>Arrazoia izatearen artea</em>, 38 «estratagemarekin»: eztabaida bat irabazteko trikimailuak, arrazoirik ez izan arren. Ez zuen idatzi guk tranpak egin genitzan: haiek ezagutu behar direla zioen, guri egin ez diezazkiguten. Hemen dituzu 15.",
+ "intro": "Arthur Schopenhauer (1788-1860) filosofo alemaniar bat izan zen, gogo txarreko fama zuena: begira iezaiozu ileari. 1830 inguruan liburuxka bat idatzi zuen, <em>Arrazoia izatearen artea</em>, 38 «estratagemarekin»: eztabaida bat irabazteko trikimailuak, arrazoirik ez izan arren. Ez zuen idatzi guk tranpak egin genitzan: haiek ezagutu behar direla zioen, guri egin ez diezazkiguten. Hemen dituzu 25.",
  "pista": "Irudiak domeinu publikoko karikatura eta koadro zaharrak dira, batez ere Honoré Daumierrenak, bere garaiko abokatuez barre egin zuena: haren marrazki asko, hitzez hitz, Schopenhauerren estratagemak dira. Begiratu beti tranpa egiten duenak zer bilatzen duen: ez du jakin nahi nork duen arrazoia, irabazi nahi du.",
  "retrato": "Arthur Schopenhauer, Johann Schäferrek 1859an argazkiatua.",
  "estratagemas": [
@@ -49,6 +49,98 @@ const JUEGO_SUCIO = {
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 20. xafla (1845-1848).",
    "pie": "«—Jauna, ezinezkoa zait zure auzia defendatzea… pieza garrantzitsuenak falta zaizkizu… (alde batera) bost liberako piezak!» Frantsesez, <em>pièces</em> dira aldi berean epaiketako agiriak eta txanponak: abokatua bi esanahiekin jolasten da.",
    "defensa": "Galdetu: «Zein zentzutan erabiltzen duzu hitz hori?»."
+  },
+  {
+   "id": "relativo",
+   "n": 3,
+   "titulo": "Kendu «kasu batzuetan»",
+   "tecnico": "Secundum quid faltsukeria (erlatibotik absolutura)",
+   "que": "Besteak kasu batean edo zentzu batean balio duen zerbait esaten badu, kasu guztiez esango balu bezala jokatu, eta bota bertsio hori.",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Niretzat, mugikorra baliagarria izan daiteke ikasteko."
+    },
+    {
+     "k": "zorro",
+     "t": "Bai? Orduan mugikorra azterketetan utzi behar da?"
+    }
+   ],
+   "img": "media/juegosucio/relativo.jpg",
+   "w": 900,
+   "h": 721,
+   "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 15. xafla (1845-1848).",
+   "pie": "«—Gose zinen… gose zinen… hori ez da arrazoi bat… Ni ere ia egunero gose naiz, eta ez dut horregatik lapurtzen!» Epaileak, ondo janda, bere gosea txiro baten gosearekin parekatzen du: «zer egoeratan» saltatzen du.",
+   "defensa": "«Ikasteko esan dut, ez azterketan.» Berreskuratu zure esaldiaren «zein kasutan»."
+  },
+  {
+   "id": "circulo",
+   "n": 6,
+   "titulo": "Eman frogatutzat frogatu behar dena",
+   "tecnico": "Printzipio-eskea (arrazoibide zirkularra)",
+   "que": "Zure arrazoietan sartzen du, beste hitz batzuekin mozorrotuta, hain zuzen eztabaidatzen ari dena. Frogatu duzula dirudi, baina errepikatu baino ez duzu egin.",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Zergatik diozu web hori fidagarria dela?"
+    },
+    {
+     "k": "zorro",
+     "t": "Argitaratzen duen guztia egia delako."
+    }
+   ],
+   "img": "media/juegosucio/circulo.jpg",
+   "w": 900,
+   "h": 1185,
+   "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 12. xafla (1845-1848).",
+   "pie": "«—Eta pentsatzea nire hiru akusatu ezin izan ditudala zigorrarazi!… Ospea galduko dut!» Fiskalak errudunak zirela ematen du ziurtzat, eta hori zen, hain zuzen, epaiketan frogatu behar zena.",
+   "defensa": "«Horixe da frogatu behar duzuna.» Eskatu ideia bera beste hitz batzuekin ez den arrazoi bat."
+  },
+  {
+   "id": "enfadar",
+   "n": 8,
+   "titulo": "Haserrarazi bestea",
+   "tecnico": "Probokazioa (ez da faltsukeria bat: taktika bat da)",
+   "que": "Ziztatu bestea haserretu arte. Haserre dagoela okerrago arrazoitzen du, pentsatzen ez dituen gauzak esaten ditu eta galtzen ari dela dirudi.",
+   "dialogo": [
+    {
+     "k": "zorro",
+     "t": "Ai, ze gorri jartzen zaren. Molestatzen zaitu kontra egiteak?"
+    },
+    {
+     "k": "buho",
+     "t": "Ez nau molestatzen, baina…!"
+    }
+   ],
+   "img": "media/juegosucio/enfadar.jpg",
+   "w": 900,
+   "h": 1200,
+   "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 9. xafla (1845-1848).",
+   "pie": "«—Zure alegatuan iraindu nauzu, baina jakingo dut azalpenak ematera behartzen!… —Jakin ezazu, jauna, ez dizudala beldurrik…» Bi abokatuk elkar ziztatu dute: jada ez dute auzia eztabaidatzen, euren artean ari dira.",
+   "defensa": "Hartu arnasa eta itzuli gaira: zu haserretzeak ez du egia bihurtzen besteak esaten duena."
+  },
+  {
+   "id": "generalizar",
+   "n": 11,
+   "titulo": "Atera araua kasu gutxi batzuetatik",
+   "tecnico": "Orokorpen presatua",
+   "que": "Lortu besteak kasu batzuk onartzea eta, gero, eman onartutzat arau orokorra, inork onartu ez badu ere. Schopenhauerrek «indukzioa» deitzen dio.",
+   "dialogo": [
+    {
+     "k": "zorro",
+     "t": "Zure lehengusuak suspenditu zuen eta zure bizilagunak ere bai: institutu horretakoak alferrak dira denak."
+    },
+    {
+     "k": "buho",
+     "t": "Bi pertsonagatik?"
+    }
+   ],
+   "img": "media/juegosucio/generalizar.jpg",
+   "w": 900,
+   "h": 626,
+   "obra": "John James Audubon, <em>Beltxarga tronpetaria</em>, <em>Ameriketako hegaztiak</em> lanaren 406. xafla (1838).",
+   "pie": "Mendeetan zehar, Europan ikusten ziren beltxarga guztiak zuriak ziren, eta beltxarga guztiak zuriak zirela ematen zen ziurtzat. Orokortze bat zen: kasu asko-asko, baina ez guztiak.",
+   "defensa": "«Zenbat kasu begiratu dituzu?» Kasu gutxi batzuek ez dute araurik egiten."
   },
   {
    "id": "eufemismo",
@@ -143,6 +235,52 @@ const JUEGO_SUCIO = {
    "defensa": "«Agian nik ere egin nuen. Ondo dago botatzea ala ez?»"
   },
   {
+   "id": "distincion",
+   "n": 17,
+   "titulo": "Atera bereizketa bat mahukatik",
+   "tecnico": "Alegatu berezia (neurrira egindako salbuespena)",
+   "que": "Harrapatzen zaituztenean, asmatu inork aipatu ez duen desberdintasun bat ihes egiteko: «hau desberdina da, zeren…».",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Inoiz ez duzula kopiatzen esan zenuen, eta kopiatzen ikusi zaitut."
+    },
+    {
+     "k": "zorro",
+     "t": "Hori ez zen kopiatzea: erantzunak konparatzea zen."
+    }
+   ],
+   "img": "media/juegosucio/distincion.jpg",
+   "w": 900,
+   "h": 1213,
+   "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 19. xafla (1845-1848).",
+   "pie": "«—Gogaitzen nauena da hamabi lapurretaz akusatzen nautela. —Hamabi?… Hobe!… Monomania alegatuko dut.» Bereizketa berri batekin, hamabi lapurreta ez dira jada lapurretak, mania bat baizik.",
+   "defensa": "Galdetu: «Desberdintasun hori lehenago esana zenuen, ala oraintxe asmatu duzu?»."
+  },
+  {
+   "id": "general",
+   "n": 19,
+   "titulo": "Zerbait zehatza eskatzen badizute, jo orokorrera",
+   "tecnico": "Erantzun lausoa (iheskorra)",
+   "que": "Besteak froga zehatz bat eskatzen duenean, erantzun esaldi orokor handiekin, inork kontra egin ezin dienekin.",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Zer datutan oinarritzen zara langabezia jaitsi dela esateko?"
+    },
+    {
+     "k": "zorro",
+     "t": "Begira, ekonomia sistema konplexu bat da, eta dena dago dena eraginda."
+    }
+   ],
+   "img": "media/juegosucio/general.jpg",
+   "w": 900,
+   "h": 712,
+   "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 33. xafla (1845-1848).",
+   "pie": "«Demostenesen erako amaiera.» Abokatuak besoak altxatu eta bere alegatua hitzaldi handi batekin amaitzen du. Zenbat eta orokorragoa eta handiagoa, orduan eta gutxiago egiazta daiteke.",
+   "defensa": "«Ados, baina zer datu zehatz duzu?» Eskatu berriro zehatza."
+  },
+  {
    "id": "pendiente",
    "n": 24,
    "titulo": "Atera ondorio puztuak",
@@ -164,6 +302,52 @@ const JUEGO_SUCIO = {
    "obra": "William Hogarth, <em>Libertinoaren ibilbidea</em>, 4. xafla (1735).",
    "pie": "Hogarthek zortzi grabatutan kontatu zuen dirutza bat jasotzen duen gazte baten erorialdia: festak, zorrak, kartzela eta eroetxea. Xafla honetan, zorrengatik atxilotzen dute. Malda irristakorrak horrela kontatzen du edozein lehen urrats: azkenera erremediorik gabe eramango balu bezala.",
    "defensa": "Galdetu urrats bakoitzean: «Zergatik gertatu beharko luke hori?»."
+  },
+  {
+   "id": "contraejemplo",
+   "n": 25,
+   "titulo": "Bilatu kontrako kasu bakar bat",
+   "tecnico": "Kontraadibidea (instantia)",
+   "que": "Besteak zerbait beti gertatzen dela esaten badu, nahikoa da kontrako kasu bat hura botatzeko. Oraingoan ez da tranpa: Schopenhauerrek baieztapen orokorren aurka gomendatzen duen jokaldi garbia da.",
+   "dialogo": [
+    {
+     "k": "zorro",
+     "t": "Beltxarga guztiak zuriak dira: denek dakite."
+    },
+    {
+     "k": "buho",
+     "t": "Ba Australian beltzak ere badaude."
+    }
+   ],
+   "img": "media/juegosucio/contraejemplo.jpg",
+   "w": 900,
+   "h": 1204,
+   "obra": "John Gerrard Keulemans, <em>Beltxarga beltza</em> (1869).",
+   "pie": "1697an, nabigatzaile europar batzuek beltxarga beltzak ikusi zituzten Australian. Kasu bakar bat nahikoa izan zen «beltxarga guztiak zuriak dira» araua botatzeko. Horregatik da «beltxarga beltza» kontraadibidearen adibide klasikoa.",
+   "defensa": "Kontraadibidea benetakoa bada, ezin da geldiarazi: araua zuzendu behar da («ia guztiak…»). Hori bai, egiaztatu kasua benetakoa dela."
+  },
+  {
+   "id": "vuelta",
+   "n": 26,
+   "titulo": "Eman buelta bere argudioari",
+   "tecnico": "Argudioaren itzulera (retorsio argumenti)",
+   "que": "Erabili bestearen argudio bera kontrako ondorioa ateratzeko. Adibidea Schopenhauerrena berarena da.",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Txikia da: ez zigortu."
+    },
+    {
+     "k": "zorro",
+     "t": "Hain zuzen txikia delako zuzendu behar da, ohitura txarrak har ez ditzan."
+    }
+   ],
+   "img": "media/juegosucio/vuelta.jpg",
+   "w": 900,
+   "h": 1143,
+   "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 22. xafla (1845-1848).",
+   "pie": "«Umezurtza eta alarguna defendatzen ditu… alarguna eta umezurtza erasotzen ez dituenean.» Argudio berak alde baterako eta besterako balio du, nork ordaintzen duen.",
+   "defensa": "Begiratu benetan kontrakoa ondorioztatzen den, ala burutsua dirudien bakarrik."
   },
   {
    "id": "publico",
@@ -235,6 +419,29 @@ const JUEGO_SUCIO = {
    "defensa": "Galdetu: «Badaki horretaz? Zer irabazten du hori esanda?»."
   },
   {
+   "id": "ironia",
+   "n": 31,
+   "titulo": "Egin tontoarena ironiaz",
+   "tecnico": "Gaitasunik eza ironikoki itxuratzea",
+   "que": "Erantzunik ez duzunean, esan apaltasun faltsuz «hori sakonegia dela zuretzat». Horrela, besteak esaten duena nahaspila bat dela dirudi.",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Denok kopiatzen badugu, notak ez du neurtzen zer dakigun."
+    },
+    {
+     "k": "zorro",
+     "t": "Ai, hori sakonegia da niretzat: ez dut ulertzen."
+    }
+   ],
+   "img": "media/juegosucio/ironia.jpg",
+   "w": 900,
+   "h": 1233,
+   "obra": "Francisco de Goya, <em>50. kapritxoa: Los Chinchillas</em> (1799). Prado Museoa.",
+   "pie": "Belarriak giltzarrapoz itxita eta begiak itxita dituzten bi gizoni koilarakadaka ematen zaie jaten. Ulertu nahi ez duenak ez du ulertzen.",
+   "defensa": "«Polikiago azalduko dizut.» Eta benetan ulertzen ez badu, esan dezala zein zati."
+  },
+  {
    "id": "etiqueta",
    "n": 32,
    "titulo": "Jarri etiketa itsusi bat",
@@ -256,6 +463,29 @@ const JUEGO_SUCIO = {
    "obra": "Honoré Daumier, <em>Les Bas-bleus</em> (1844).",
    "pie": "«<em>Bas-bleu</em>» («jakintsu-itxura») zen idazten zuten emakumeak barregarri uzteko etiketa, eta Daumierrek sail oso bat eskaini zion. Horrelako etiketa batekin, jada ez da beharrezkoa norbaitek esaten duena entzutea.",
    "defensa": "Etiketa ez da arrazoi bat: «Eta zer du txarrik?»."
+  },
+  {
+   "id": "teoria",
+   "n": 33,
+   "titulo": "«Teorian bai, praktikan ez»",
+   "tecnico": "Teoriaren eta praktikaren arteko kontraste faltsua",
+   "que": "Onartu bestearen arrazoiak, baina esan «praktikan» ez dutela funtzionatzen. Schopenhauerrek erantzuten du zerbait teorian zuzena bada, praktikan ere zuzena izan behar duela: huts egiten badu, akats bat dago teorian.",
+   "dialogo": [
+    {
+     "k": "buho",
+     "t": "Egunero pixka bat ikasten baduzu, azterketa hobeto ateratzen zaizu."
+    },
+    {
+     "k": "zorro",
+     "t": "Hori teorian oso ondo dago, baina praktikan ez du funtzionatzen."
+    }
+   ],
+   "img": "media/juegosucio/teoria.jpg",
+   "w": 900,
+   "h": 1114,
+   "obra": "Honoré Daumier, <em>Leverrier planetaren bilaketa antzua</em> (1846). National Gallery of Art, Washington.",
+   "pie": "1846an, Le Verrier astronomoak paperean kalkulatu zuen non egon behar zuen planeta berri batek, Neptunok, eta berehala aurkitu zen. Senar-emazte hauek ez dute ikusten beren betaurreko luzearekin: teorian egongo da, baina praktikan, ezer ez.",
+   "defensa": "Galdetu zer huts egiten duen zehazki praktikan: edo akats zehatz bat dago, edo aitzakia bat da."
   },
   {
    "id": "interes",
