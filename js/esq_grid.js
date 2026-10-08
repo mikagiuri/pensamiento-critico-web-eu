@@ -97,8 +97,10 @@ const EsqGrid = (function (){
     if (tree.nodes.length > rows * cols) return null;
     if (whyNotFit(tree)) return null;
     const rnd = rng(seed || 1), t0 = Date.now();
-    let best = null, bestS = Infinity, found = 0;
-    while (Date.now() - t0 < (ms || 250) && found < (max || 80)){
+    let best = null, bestS = Infinity, found = 0, tries = 0;
+    /* presupuesto por nº de intentos (determinista con la semilla, no depende de la carga de la CPU); el tiempo solo es un tope de seguridad */
+    while (tries < (ms || 300) && found < (max || 80) && Date.now() - t0 < 2500){
+      tries++;
       const sol = solveOnce(tree, rows, cols, rnd, limit || 150);
       if (!sol) continue;
       found++; const sc = score(tree, sol, rows, cols);
@@ -107,23 +109,28 @@ const EsqGrid = (function (){
     return best;
   }
 
-  /* ---- formas de cuadrícula a probar, por orden, según el ancho disponible. En pantalla estrecha se
-     intenta primero con 3 columnas (sin desplazamiento); si el árbol no cabe (p. ej. varios nodos con
-     4 hijos), 4 y 5 columnas con desplazamiento horizontal dentro de la cuadrícula ---- */
-  const MIN_COL = 150;   /* ancho mínimo de columna cuando hay que desplazar */
+  /* ---- formas de cuadrícula a probar, por orden, según el ancho disponible. Primero las que caben sin
+     deslizar (tantas columnas como permita el ancho, de la más cuadrada a la más alta); si el árbol no
+     cabe en ninguna (p. ej. varios nodos con 4 hijos en 3 columnas), las cuadradas con desplazamiento
+     horizontal dentro de la cuadrícula. Las celdas pueden estrecharse hasta MIN_COL. ---- */
+  const MIN_COL = 100, GAP = 20;
   function gridShapes(n, width){
-    const sq = Math.max(4, Math.ceil(Math.sqrt(n))), out = [];   /* 4×4 hasta 16, 5×5 hasta 25, 6×6 hasta 36… */
-    if (width < 560){ out.push({ rows: Math.max(4, Math.ceil(n / 3)), cols: 3 }); out.push({ rows: Math.max(4, Math.ceil(n / 3)) + 1, cols: 3 }); out.push({ rows: Math.max(4, Math.ceil(n / 4)) + 1, cols: 4 }); }
-    out.push({ rows: sq, cols: sq }); out.push({ rows: sq + 1, cols: sq });
+    const sq = Math.max(4, Math.ceil(Math.sqrt(n))), out = [], seen = {};
+    let fit = Math.max(2, Math.floor((width + GAP) / (MIN_COL + GAP)));   /* columnas que caben sin deslizar */
+    if (fit < 3 && Math.floor((width + GAP) / (86 + GAP)) >= 3) fit = 3;   /* teléfono: 3 columnas con celdas de hasta 86 px antes que deslizar */
+    function add(r, c, scroll){ const k = r + "x" + c; if (!seen[k]){ seen[k] = 1; out.push({ rows: r, cols: c, scroll: scroll }); } }
+    for (let c = Math.min(fit, sq); c >= 3; c--){ const r = Math.max(c, Math.ceil(n / c)); add(r, c, false); add(r + 1, c, false); }
+    add(sq, sq, true); add(sq + 1, sq, true);
+    if (fit < 3) for (let c = 3; c <= sq; c++){ add(Math.max(c, Math.ceil(n / c)), c, true); }
     return out;
   }
 
   const CSS = `
 #esquemas .esqg-wrap{position:relative}
-.esqg{--c:var(--hf);position:relative;display:grid;gap:22px 24px;font-family:var(--sans);color:var(--ink);align-items:stretch}
+.esqg{--c:var(--hf);position:relative;display:grid;gap:22px 20px;font-family:var(--sans);color:var(--ink);align-items:stretch}
 .esqg[data-s="fil"]{--c:var(--fil)} .esqg[data-s="ipc"]{--c:var(--ipc)}
-.esqg-n{position:relative;z-index:1;border-radius:12px;padding:9px 11px;background:var(--surface-2);border:1px solid var(--line);font-size:.92rem;line-height:1.3;display:flex;flex-direction:column;justify-content:center;min-height:62px}
-.esqg-n[data-d="0"]{background:var(--c);color:var(--surface);border-color:var(--c);font-weight:700;font-size:1.02rem;text-align:center;border-radius:999px;padding:12px 14px;letter-spacing:.02em}
+.esqg-n{position:relative;z-index:1;border-radius:12px;padding:9px 10px;background:var(--surface-2);border:1px solid var(--line);font-size:1em;line-height:1.3;display:flex;flex-direction:column;justify-content:center;min-height:62px;overflow-wrap:anywhere}
+.esqg-n[data-d="0"]{background:var(--c);color:var(--surface);border-color:var(--c);font-weight:700;font-size:1.08em;text-align:center;border-radius:999px;padding:12px 12px;letter-spacing:.02em}
 .esqg-n[data-d="1"]{border:2px solid var(--c);background:color-mix(in srgb,var(--c) 12%,var(--surface));font-weight:700}
 .esqg-n[data-d="2"]{background:var(--surface-2)}
 .esqg-n[data-d="3"]{background:var(--surface);border-style:dashed}
@@ -150,7 +157,7 @@ const EsqGrid = (function (){
 .esqg-xl .esqg-xr{color:var(--muted)}
 .esqg-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px}
 .esqg-top .esq2-q{margin:0;flex:1 1 200px}
-@media (max-width:520px){.esqg{gap:16px 14px}.esqg-n{font-size:.84rem;padding:7px 8px;min-height:54px}.esqg-n[data-d="0"]{font-size:.92rem}}
+@media (max-width:520px){.esqg-n{padding:7px 8px;min-height:54px}}
 @media print{.esqg-n{break-inside:avoid}}
 `;
   let cssDone = false;
@@ -240,7 +247,7 @@ const EsqGrid = (function (){
     const v = e.v2, tree = buildTree(v), n = tree.nodes.length;
     const width = st.clientWidth || 700;
     let shape = null, pos = null;
-    for (const sh of gridShapes(n, width)){ pos = layout(tree, sh.rows, sh.cols, 1, 140, 60); if (pos){ shape = sh; break; } }   /* 140 ms por forma: las que no caben (3 columnas con varios nodos de 4 hijos) se descartan rápido */
+    for (const sh of gridShapes(n, width)){ pos = layout(tree, sh.rows, sh.cols, 1, 300, 60); if (pos){ shape = sh; break; } }   /* 300 intentos por forma: las que no caben se descartan en ~0,1 s */
     if (!pos){
       const why = whyNotFit(tree);
       st.innerHTML = '<p class="esq-wait">' + (why
@@ -248,14 +255,16 @@ const EsqGrid = (function (){
         : "Eskema hau ez da saretan sartzen.") + "</p>";
       return;
     }
-    const scrollX = shape.cols * MIN_COL > width;   /* columnas mínimas: la cuadrícula se desliza en horizontal */
+    const scrollX = !!shape.scroll;   /* solo cuando ninguna forma cabía en el ancho: celdas de MIN_COL y desplazamiento */
+    const cellW = scrollX ? MIN_COL : (width - GAP * (shape.cols - 1)) / shape.cols;
+    const fontPx = cellW < 125 ? 12.5 : cellW < 145 ? 13.5 : cellW < 170 ? 14.5 : 15.5;   /* letra según el ancho de celda */
     const hasX = Array.isArray(v.cruces) && v.cruces.length > 0;
     /* relaciones entre ramas: insignia numerada en las dos cajas (①…) y leyenda debajo de la cuadrícula */
     const badges = {};
     if (hasX) v.cruces.forEach(function (x, i){ [x.de, x.a].forEach(function (t){ (badges[t] = badges[t] || []).push(i + 1); }); });
     st.innerHTML = '<div class="esqg-top">' + (v.pregunta ? '<p class="esq2-q">' + esc(v.pregunta) + "</p>" : "") +
       (hasX ? '<label class="esq2-xtog"><input type="checkbox" id="esqgxtog"' + (showCross ? " checked" : "") + '> Adarren arteko erlazioak marraztu</label>' : "") + "</div>" +
-      '<div class="esqg-wrap"' + (scrollX ? ' style="overflow-x:auto;padding-bottom:6px"' : "") + '><div class="esqg" data-s="' + esc(e.subject) + '" style="grid-template-columns:repeat(' + shape.cols + ',minmax(' + (scrollX ? MIN_COL + "px" : "0") + ',1fr))">' +
+      '<div class="esqg-wrap"' + (scrollX ? ' style="overflow-x:auto;padding-bottom:6px"' : "") + '><div class="esqg" data-s="' + esc(e.subject) + '" style="font-size:' + fontPx + 'px;grid-template-columns:repeat(' + shape.cols + ',minmax(' + (scrollX ? MIN_COL + "px" : "0") + ',1fr))">' +
       tree.nodes.map(function (nd){ const p = pos[nd.id];
         const bs = badges[nd.t] ? '<span class="esqg-bs">' + badges[nd.t].map(function (i){ return '<span class="esqg-b">' + i + "</span>"; }).join("") + "</span>" : "";
         return '<div class="esqg-n' + (nd.k ? " esqg-k" : "") + '" data-id="' + nd.id + '" data-d="' + Math.min(nd.depth, 3) + '" style="grid-row:' + (p[0] + 1) + ';grid-column:' + (p[1] + 1) + '">' + bs +
@@ -275,7 +284,7 @@ const EsqGrid = (function (){
       ro = new ResizeObserver(function (){ clearTimeout(tm); tm = setTimeout(function (){
         if (!document.body.contains(grid)) return;
         const w = st.clientWidth;
-        if ((w < 560) !== (last < 560)){ render(e, st); return; }   /* cambia el juego de formas: recolocar */
+        if (gridShapes(n, w)[0].cols !== gridShapes(n, last)[0].cols){ render(e, st); return; }   /* cambia el nº de columnas que caben: recolocar */
         if (w !== last){ last = w; drawArrows(grid, tree, v.cruces); }
       }, 120); });
       ro.observe(st);
