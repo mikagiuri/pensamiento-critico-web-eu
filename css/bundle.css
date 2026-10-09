@@ -520,6 +520,31 @@ ol.itin-temas li.temas-extra .temas-t{font-size:.95rem;color:var(--muted)}
 #fuentes h3.notas-apartado{font-size:1rem;margin:.9rem 0 .3rem}
 #fuentes details li{overflow-wrap:anywhere;font-size:.95rem}
 #fuentes .nota-origen{color:var(--muted);font-size:.88em}
+/* ===== Estantería de libros en la teoría (09-10, anexo hf-marx-biblioteca) ===== */
+.estanteria{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px 18px;margin:18px 0 26px;padding:14px 14px 4px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
+.balda{margin-bottom:14px}.balda-g4{grid-column:1/-1}
+.balda-tit{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.04em;color:var(--muted);margin:0 0 6px}
+.balda-lomos{display:flex;flex-wrap:wrap;align-items:flex-end;gap:3px;padding:0 4px;border-bottom:7px solid #8a6a4a;border-radius:0 0 3px 3px;min-height:150px}
+.lomo{writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:space-between;gap:10px;
+  width:40px;height:auto;min-height:132px;padding:10px 4px;white-space:nowrap;border:1px solid rgba(0,0,0,.25);border-radius:3px 3px 2px 2px;cursor:pointer;
+  font-family:var(--sans);font-size:.78rem;font-weight:600;color:var(--on-e);background:var(--lc,var(--e-int));
+  box-shadow:inset 3px 0 0 rgba(255,255,255,.18),inset -3px 0 0 rgba(0,0,0,.15);transition:transform .15s,filter .15s}
+.lomo:nth-child(3n+1){min-height:150px}.lomo:nth-child(3n+2){min-height:120px;width:36px}.lomo:nth-child(4n){width:46px}
+.lomo:hover,.lomo:focus-visible{transform:rotate(180deg) translateY(6px);filter:brightness(1.08);outline:2px solid var(--accent);outline-offset:2px}
+.lomo-fe{font-weight:400;font-size:.66rem;opacity:.8}
+.lomo-g1,.ficha-g1{--lc:var(--r-pol)}.lomo-g2,.ficha-g2{--lc:var(--e-ren)}.lomo-g3,.ficha-g3{--lc:var(--r-con)}.lomo-g4,.ficha-g4{--lc:var(--r-eti)}
+.lomo-g5,.ficha-g5{--lc:var(--r-est)}.lomo-g6,.ficha-g6{--lc:var(--r-log)}.lomo-g7,.ficha-g7{--lc:var(--r-ant)}.lomo-g8,.ficha-g8{--lc:var(--e-ant)}
+.fichas-tit{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--muted);margin:18px 0 6px}
+.ficha-libro{border:1px solid var(--line);border-left:6px solid var(--lc,var(--line));border-radius:8px;margin:6px 0;background:var(--surface);scroll-margin-top:90px}
+.ficha-libro summary{cursor:pointer;padding:8px 12px}
+.ficha-fe{color:var(--muted);font-weight:400}
+.ficha-cuerpo{padding:0 12px 10px;overflow:hidden}
+.ficha-img{float:right;width:110px;max-height:150px;object-fit:cover;margin:0 0 8px 12px;border-radius:6px;border:1px solid var(--line)}
+.ficha-libro-tit{font-family:var(--sans);font-size:.9rem;margin:0 0 6px}
+.ficha-ilu{font-family:var(--sans);font-size:.85rem;white-space:nowrap}
+.ficha-libro.ficha-flash{box-shadow:0 0 0 3px var(--accent)}
+@media (max-width:560px){.lomo{width:34px;font-size:.72rem}.lomo:nth-child(3n+2){width:32px}.lomo:nth-child(4n){width:38px}.ficha-img{width:84px}}
+@media print{.estanteria{display:none}.ficha-libro{break-inside:avoid}}
 
 
 /* ==== css/mobile.css ==== */

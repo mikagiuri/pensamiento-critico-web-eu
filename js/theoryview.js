@@ -264,6 +264,12 @@ function loadTheory(k){
   const hs = [...body.querySelectorAll("h2")];
   hs.forEach((h, i) => { h.id = "th-" + i; });
   body.querySelectorAll(".figimg").forEach(img => img.addEventListener("click", () => openLightbox(img.src, img.alt)));
+  /* (09-10) estantería de libros (anexo de la biblioteca de Marx): el lomo abre su ficha y la muestra */
+  body.querySelectorAll(".lomo[data-libro]").forEach(b => b.addEventListener("click", () => {
+    const d = body.querySelector("#libro-" + b.dataset.libro); if (!d) return;
+    d.open = true; d.scrollIntoView({ block: "center", behavior: "smooth" });
+    d.classList.add("ficha-flash"); setTimeout(() => d.classList.remove("ficha-flash"), 1400);
+  }));
   const toc = document.getElementById("toc");
   if (porApartados){
     /* índice = selector de apartado (en «tema entero», salta al ancla como antes) */
