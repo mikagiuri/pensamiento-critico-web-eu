@@ -48,7 +48,7 @@
   function temaNum(o){
     if (!o) return null;
     if (typeof o.tema === "number") return o.tema;
-    var m = String(o.tema || "").match(/(?:Tema|Thème|Topic)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null;
+    var m = String(o.tema || "").match(/(?:Tema|Thème|Topic|الموضوع)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null;
   }
   var IPC_KEY = /^(?:map-)?ipc-([a-z]+)/;
   var IPC_ALIAS = { conceptos: "pensar", publicidad: "medios", prejuicios: "sesgos", moda: "huella", consumo: "huella", fastfashion: "huella", critico: "pensar", bulos: "falacias", hecho: "pensar" };

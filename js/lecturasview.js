@@ -7,7 +7,7 @@ let lecturaBlock = "A";  /* bloque concreto por defecto, nunca «Todos los bloqu
 const LECTURA_BLOCKS = { A: "A blokea · Antzinakoa", B: "B blokea · Erdi Arokoa-Modernoa", C: "C blokea · Garaikidea" };
 
 function blockOf(t){   /* misma función que en theoryview.js (esta, cargada después, es la que vale) */
-  const m = (t.tema || "").match(/(?:Tema|Thème|Topic)\s+(\d+)|(\d+)\.\s*gaia/);   /* «Tema 19» / euskera «19. gaia» / francés «Thème 19» / inglés «Topic 19» */
+  const m = (t.tema || "").match(/(?:Tema|Thème|Topic|الموضوع)\s+(\d+)|(\d+)\.\s*gaia/);   /* «Tema 19» / euskera «19. gaia» / francés «Thème 19» / inglés «Topic 19» / árabe «الموضوع 19» */
   if (!m && typeof t.temaN !== "number") return null;   /* anexos: sin «Tema N» en el nombre, con temaN */
   const n = typeof t.temaN === "number" ? t.temaN : +(m[1] || m[2]);
   if (n >= 1 && n <= 10) return "A";
