@@ -16,7 +16,15 @@
     + '.cine-t{ font-weight:600; color:var(--ink); }'
     + '.cine-meta{ font-size:.78rem; color:var(--muted); }'
     + '.cine-q{ font-size:.86rem; color:var(--ink); line-height:1.4; }'
-    + '.cine-note{ font-size:.76rem; color:var(--muted); line-height:1.5; margin:.4rem 0 0; }';
+    + '.cine-note{ font-size:.76rem; color:var(--muted); line-height:1.5; margin:.4rem 0 0; }'
+    + '.cine-mas{ margin-top:.25rem; font-size:.84rem; }'
+    + '.cine-mas summary{ cursor:pointer; color:var(--accent); font-weight:600; font-size:.82rem; }'
+    + '.cine-mas p{ margin:.45rem 0 0; line-height:1.45; }'
+    + '.cine-mas ol{ margin:.35rem 0 0; padding-left:1.2rem; line-height:1.45; }'
+    + '.cine-mas li{ margin:.25rem 0; }'
+    + '.cine-lab{ font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); display:block; margin-top:.55rem; }'
+    + '.cine-trampa{ background:var(--surface-2); border-radius:8px; padding:.4rem .55rem; }'
+    + '.cine-aviso{ color:var(--bad,#a53b34); }';
   let cssDone = false;
   function injectCss(){ if (cssDone) return; const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); cssDone = true; }
   function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
@@ -27,7 +35,18 @@
     return '<div class="cine-card"><div class="cine-h"><span class="cine-ico">' + ico + '</span>'
       + '<span class="cine-t">' + esc(x.t) + '</span>'
       + (meta ? '<span class="cine-meta">' + esc(meta) + '</span>' : '') + '</div>'
-      + '<div class="cine-q">' + esc(x.q) + '</div></div>';
+      + '<div class="cine-q">' + esc(x.q) + '</div>' + fichaHTML(x) + '</div>';
+  }
+
+  /* (09-10) cine para discutir, no para ilustrar: escena clave, tres preguntas que piden razones y la lectura trampa */
+  function fichaHTML(x){
+    if (!x.pregs) return '';
+    return '<details class="cine-mas"><summary>' + 'Klasean lantzeko' + '</summary>'
+      + '<span class="cine-lab">' + 'Gako-eszena' + '</span><p>' + esc(x.esc) + '</p>'
+      + '<span class="cine-lab">' + 'Galderak: erantzun arrazoiak emanez' + '</span><ol>' + x.pregs.map(q => '<li>' + esc(q) + '</li>').join('') + '</ol>'
+      + '<span class="cine-lab">' + 'Irakurketa-tranpa' + '</span><p class="cine-trampa">' + esc(x.trampa) + '</p>'
+      + (x.aviso ? '<span class="cine-lab cine-aviso">' + 'Edukiari buruzko oharra' + '</span><p>' + esc(x.aviso) + '</p>' : '')
+      + '</details>';
   }
 
   function injectCine(){
