@@ -24,7 +24,7 @@
     temas: "Gaiak", unidades: "Unitateak", tema: "{n}. gaia", unidad: "{n}. unitatea",
     seguir: "Gai honekin jarraitzeko", tarjetas: "Txartelak", cuestionarios: "Galdetegiak", infografias: "Infografiak", mapas: "Kontzeptu-mapak",
     esquemas: "Eskemak", lecturas: "Irakurgaiak", comentarios: "Testu-iruzkinak", dilemas: "Dilema etikoak", pistas: "Pista mailakatuak", conceptos: "Kontzeptuak",
-    nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia", anexos: "Eranskinak", volverTema: "Itzuli gaira",
+    nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia", anexos: "Esplorazioak", volverTema: "Itzuli gaira",
     infografia: "Infografia", mapa: "Mapa", esquema: "Eskema", lectura: "Irakurgaia", dilema: "Dilema", comentario: "Iruzkina",
     pau: "USE ibilbidea", pauLead: "Prestatu USE ordenan: lehenik proba nolakoa den, gero ariketa bakoitza eta, azkenik, gaikako praktika.",
     pau1: "Nolakoa da proba", pau2: "1. ariketa · Testu-iruzkina", pau3: "2. ariketa · Disertazioa",
@@ -265,7 +265,7 @@
       cs.map(function(c){ return '<button class="itin-term" type="button" data-igo="glosario" data-iarg="' + esc(c.t) + '" title="' + esc(c.def) + '">' + esc(c.t) + '</button>'; }).join("") + '</div></div>');
     /* (07-10) anexos de este tema: fuera de la secuencia, aquí y en el índice de temas */
     if (!esAnexo(T[key])) row(t("anexos"), Object.keys(T).filter(function(k){ return T[k].subject === subject && esAnexo(T[k]) && T[k].temaN === tema; })
-      .map(function(k){ return { go: "teoria", arg: k, label: strip(T[k].title).replace(/^(Anexo|Eranskina)\s*-\s*/, "") }; }));
+      .map(function(k){ return { go: "teoria", arg: k, label: strip(T[k].title).replace(/^(Exploración|Esplorazioa|Exploration|Anexo|Eranskina|Annexe|Annex|Appendix)\s*-\s*/, "") }; }));
     /* tema anterior / siguiente, en el orden de la materia; desde un anexo, solo «Volver al tema» */
     var ks = temasDe(subject), i = ks.indexOf(key), prev = i > 0 ? ks[i - 1] : null, next = i >= 0 && i < ks.length - 1 ? ks[i + 1] : null;
     if (i < 0 && esAnexo(T[key])) prev = ks.filter(function(k){ return !T[k].sigla && temaOf("teoria", k, T[k]) === tema; })[0] || null;
