@@ -75,7 +75,7 @@ const CINE = [
  {
   "tema": "ipc-medios",
   "kind": "cine",
-  "t": "El dilema de las redes (dokumentala)",
+  "t": "The Social Dilemma (dokumentala)",
   "year": 2020,
   "autor": "Jeff Orlowski",
   "q": "Sare sozial handietako langile ohiek azaltzen dute nola diseinatzen diren gu harrapatzeko: nor da produktua?"
