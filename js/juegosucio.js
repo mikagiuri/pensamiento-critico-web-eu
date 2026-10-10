@@ -8,7 +8,7 @@ const JUEGO_SUCIO = {
    "id": "exagerar",
    "n": 1,
    "titulo": "Puztu besteak esaten duena",
-   "tecnico": "Lastozko gizonaren faltsukeria",
+   "tecnico": "Lastozko gizonaren falazia",
    "que": "Besteak esan duena bertsio puztu edo barregarri batekin ordezten du, eta bertsio hori erasotzen du, botatzen erraz-erraza baita. Schopenhauerrek «zabaltzea» deitzen dio.",
    "dialogo": [
     {
@@ -31,7 +31,7 @@ const JUEGO_SUCIO = {
    "id": "palabras",
    "n": 2,
    "titulo": "Jolastu hitzekin",
-   "tecnico": "Anbiguotasunaren faltsukeria",
+   "tecnico": "Anbiguotasunaren falazia",
    "que": "Bi esanahi dituen hitz bat erabiltzen du eta batetik bestera salto egiten du, gauza bera balitz bezala. Schopenhauerrek «homonimia» deitzen dio.",
    "dialogo": [
     {
@@ -54,7 +54,7 @@ const JUEGO_SUCIO = {
    "id": "relativo",
    "n": 3,
    "titulo": "Kendu «kasu batzuetan»",
-   "tecnico": "Secundum quid faltsukeria (erlatibotik absolutura)",
+   "tecnico": "Secundum quid falazia (erlatibotik absolutura)",
    "que": "Besteak kasu batean edo zentzu batean balio duen zerbait esaten badu, kasu guztiez esango balu bezala jokatu, eta bota bertsio hori.",
    "dialogo": [
     {
@@ -100,7 +100,7 @@ const JUEGO_SUCIO = {
    "id": "enfadar",
    "n": 8,
    "titulo": "Haserrarazi bestea",
-   "tecnico": "Probokazioa (ez da faltsukeria bat: taktika bat da)",
+   "tecnico": "Probokazioa (ez da falazia bat: taktika bat da)",
    "que": "Ziztatu bestea haserretu arte. Haserre dagoela okerrago arrazoitzen du, pentsatzen ez dituen gauzak esaten ditu eta galtzen ari dela dirudi.",
    "dialogo": [
     {
@@ -192,7 +192,7 @@ const JUEGO_SUCIO = {
    "id": "victoria",
    "n": 14,
    "titulo": "Garaipena ospatu, irabazi ez baduzu ere",
-   "tecnico": "Garaipena aldarrikatzea (ez da faltsukeria bat: farola da)",
+   "tecnico": "Garaipena aldarrikatzea (ez da falazia bat: farola da)",
    "que": "Eztabaidaren amaieran, oso ziur iragarri irabazi duzula. Segurtasunez esaten baduzu, jende askok sinesten du.",
    "dialogo": [
     {
@@ -215,7 +215,7 @@ const JUEGO_SUCIO = {
    "id": "tutambien",
    "n": 16,
    "titulo": "«Ba zuk ere bai!»",
-   "tecnico": "Tu quoque faltsukeria (ad hominem)",
+   "tecnico": "Tu quoque falazia (ad hominem)",
    "que": "Kritikari erantzun beharrean, gogorarazten du besteak gauza bera egin zuela. Horrek ondo ala gaizki dagoen aldatuko balu bezala.",
    "dialogo": [
     {
@@ -399,7 +399,7 @@ const JUEGO_SUCIO = {
    "id": "autoridad",
    "n": 30,
    "titulo": "Jo agintaritzara",
-   "tecnico": "Agintaritzaren faltsukeria (ad verecundiam)",
+   "tecnico": "Agintaritzaren falazia (ad verecundiam)",
    "que": "Arrazoien ordez, norbait ospetsu edo garrantzitsu bat aipatzen du, gaiaz ezer ez badaki ere.",
    "dialogo": [
     {
@@ -537,7 +537,7 @@ const JUEGO_SUCIO = {
    "id": "pruebamala",
    "n": 37,
    "titulo": "Bota froga txarra eta ideia botatzat eman",
-   "tecnico": "Faltsukeriaren faltsukeria (ad logicam)",
+   "tecnico": "Falaziaren falazia (ad logicam)",
    "que": "Besteak ideia egiazko bat arrazoi txar batekin defendatzen badu, arrazoia erasotzen du eta ideia faltsua balitz bezala jokatzen du.",
    "dialogo": [
     {

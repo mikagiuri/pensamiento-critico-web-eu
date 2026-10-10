@@ -2,7 +2,7 @@
 const INFOGRAFIAS = {
  "ipc-falacias": {
   "subject": "ipc",
-  "label": "Faltsukeriak",
+  "label": "Falaziak",
   "accent": "#ff5a52",
   "burstInk": "#2b0a08",
   "title": "LAS<br><em>FALACIAS</em>",
@@ -16,7 +16,7 @@ const INFOGRAFIAS = {
    {
     "type": "tiles",
     "n": "01",
-    "title": "Zer da faltsukeria bat?",
+    "title": "Zer da falazia bat?",
     "items": [
      {
       "emoji": "🎭",
@@ -38,7 +38,7 @@ const INFOGRAFIAS = {
    {
     "type": "tiles",
     "n": "02",
-    "title": "Erasotzen duten faltsukeriak (arrazoitu beharrean)",
+    "title": "Erasotzen duten falaziak (arrazoitu beharrean)",
     "items": [
      {
       "emoji": "👤",
@@ -71,21 +71,21 @@ const INFOGRAFIAS = {
     "type": "quote",
     "label": "Gelako erronka",
     "big": "Idatzi albiste faltsu bat",
-    "text": "15-20 lerrotan, sartu ezkutuan <b>gutxienez 3 faltsukeria</b> desberdin, sinesgarria izan dadin… gezurra izan arren. Gero besteek <b>harrapatu</b> behar dituzte. Gezurra ondo esaten ikastea <b>engainatua ez izaten</b> ikastea da."
+    "text": "15-20 lerrotan, sartu ezkutuan <b>gutxienez 3 falazia</b> desberdin, sinesgarria izan dadin… gezurra izan arren. Gero besteek <b>harrapatu</b> behar dituzte. Gezurra ondo esaten ikastea <b>engainatua ez izaten</b> ikastea da."
    },
    {
     "type": "tiles",
     "n": "03",
-    "title": "Arrazoitzean engainatzen duten faltsukeriak",
+    "title": "Arrazoitzean engainatzen duten falaziak",
     "items": [
      {
       "emoji": "⭐",
-      "t": "Autoritatearen faltsukeria",
+      "t": "Autoritatearen falazia",
       "p": "«<b>Famatu</b> batek esan du, egia da.» Youtuber batek ez du ezer frogatzen."
      },
      {
       "emoji": "🕰️",
-      "t": "Tradizioaren faltsukeria",
+      "t": "Tradizioaren falazia",
       "p": "«<b>Beti</b> egin da horrela; beraz, ondo dago.»"
      },
      {
@@ -254,7 +254,7 @@ const INFOGRAFIAS = {
      {
       "h": "Argudio txarra",
       "tag": "Tranpaz konbentzitzen du",
-      "p": "Premisa faltsuak, edo haietatik <b>ateratzen ez den</b> ondorioa: hor bizi dira <b>faltsukeriak</b>."
+      "p": "Premisa faltsuak, edo haietatik <b>ateratzen ez den</b> ondorioa: hor bizi dira <b>falaziak</b>."
      },
      {
       "h": "Iritzia ≠ argudioa",
@@ -283,7 +283,7 @@ const INFOGRAFIAS = {
       "p": "Benetan arrazoi horiek horra eramaten dute, ala jauzi bat dago?"
      },
      {
-      "t": "Faltsukeriarik ba al dago?",
+      "t": "Falaziarik ba al dago?",
       "p": "Pertsonari erasotzen dio, beldurra sartzen du, puzten du, gehiengora jotzen du…?"
      }
     ]
@@ -679,8 +679,8 @@ const INFOGRAFIAS = {
      },
      {
       "emoji": "🆚",
-      "t": "Ez da faltsukeria bat",
-      "p": "<b>Faltsukeria</b> <b>argudiatzeko</b> akatsa da; <b>alborapena</b>, <b>pentsatzeko eta hautemateko</b> akatsa."
+      "t": "Ez da falazia bat",
+      "p": "<b>Falazia</b> <b>argudiatzeko</b> akatsa da; <b>alborapena</b>, <b>pentsatzeko eta hautemateko</b> akatsa."
      },
      {
       "emoji": "👀",

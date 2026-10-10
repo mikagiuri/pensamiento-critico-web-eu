@@ -80,57 +80,57 @@ const GLOSARIO = [
  {
   "subject": "ipc",
   "t": "Ad hominem",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Pertsonari erasotzea bere argudioari beharrean."
  },
  {
   "subject": "ipc",
   "t": "Lastozko gizona",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Besteak esan zuena deformatzea errazago kontra egiteko."
  },
  {
   "subject": "ipc",
   "t": "Dilema faltsua",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Bi irtenbide bakarrik eskaintzea, gehiago daudenean."
  },
  {
   "subject": "ipc",
   "t": "Aldapa irristakorra",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Urrats batek ezinbestean hondamendira daramala suposatzea."
  },
  {
   "subject": "ipc",
   "t": "Orokorpen presatua",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Kasu gutxi batzuetatik arau orokor bat ateratzea."
  },
  {
   "subject": "ipc",
   "t": "Gehiengoarengana jo",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Zerbait egiatzat jotzea jende askok sinesten duelako."
  },
  {
   "subject": "ipc",
   "t": "Autoritateari deia",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Zerbait onartzea, pertsona ospetsu edo boteredun batek esaten duelako soilik."
  },
  {
   "subject": "ipc",
   "t": "Emozioari deia",
-  "area": "Faltsukeriak",
-  "tema": "Pentsamendu kritikoa · Faltsukeriak",
+  "area": "Falaziak",
+  "tema": "Pentsamendu kritikoa · Falaziak",
   "def": "Arrazoiak beldur, pena edo amorruz ordezkatzea."
  },
  {

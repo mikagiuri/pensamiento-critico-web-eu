@@ -71,7 +71,7 @@ const CAMINOS = [
     "emoji": "📣",
     "titulo": "Bulo kateatua",
     "texto": "Audioa ehunka pertsonarengana iristen da. Biharamunean institutua ohi bezala irekitzen da, eta hainbat familiak beren eguna alferrik berrantolatu dute.",
-    "idea": "«Jende askok esaten badu, egia izango da» faltsukeria bat da: gehiengoari deia. Bulo bat ez da egia bihurtzen errepikatzeagatik; arriskutsuago bihurtzen da."
+    "idea": "«Jende askok esaten badu, egia izango da» falazia bat da: gehiengoari deia. Bulo bat ez da egia bihurtzen errepikatzeagatik; arriskutsuago bihurtzen da."
    },
    "f_rectificar": {
     "emoji": "↩️",

@@ -3,22 +3,22 @@ const PISTAS = [
  {
   "id": "ipc-falacias",
   "subject": "ipc",
-  "tema": "Faltsukeriak",
+  "tema": "Falaziak",
   "unidad": "ipc-falacias",
   "materia": "Pentsamendu kritikoa · DBH 2",
-  "titulo": "Faltsukeriak, banan-banan",
+  "titulo": "Falaziak, banan-banan",
   "lede": "Bost tranpa ohiko. Pista bakoitza maila bat da: lehenik oinarrizkoa, gero zertan datzan bakoitza. Eskatu behar dituzunak baino ez.",
   "ciclos": [
    {
-    "fase": "1. faltsukeria · Pertsonaren aurkako erasoa",
+    "fase": "1. falazia · Pertsonaren aurkako erasoa",
     "etiqueta": "Ad hominem",
-    "pregunta": "Zertan datza pertsonaren aurkako erasoaren faltsukeria (<em>ad hominem</em>)?",
+    "pregunta": "Zertan datza pertsonaren aurkako erasoaren falazia (<em>ad hominem</em>)?",
     "intro": [
      "Pentsatu zeuk lehenbizi. Eskatu pistak banan-banan: bakoitzak urrats bat hurbiltzen zaitu."
     ],
     "pistas": [
-     "Gogoratu oinarrizkoa, kokatzeko: faltsukeria bat konbentzitzeko gai den argudiatzeko modu bat da, baina zorroztasunik (arrazoi onik) gabea.",
-     "Faltsukeria honek erabiltzen duenari besteren argudioaz libratzeko aukera ematen dio, ezeztatu beharrik gabe.",
+     "Gogoratu oinarrizkoa, kokatzeko: falazia bat konbentzitzeko gai den argudiatzeko modu bat da, baina zorroztasunik (arrazoi onik) gabea.",
+     "Falazia honek erabiltzen duenari besteren argudioaz libratzeko aukera ematen dio, ezeztatu beharrik gabe.",
      "Nola egiten du? Esan denari erantzun beharrean, <strong>nork</strong> esaten duen aipatzen du: nolakoa den, zer egin zuen, nondik datorren.",
      "«Ez egin kasurik» erantzutea bezalakoa da, «esaten duzun hori gaizki dago, zeren…» esan beharrean: ideia pertsonarengatik aldatzen da."
     ],
@@ -37,12 +37,12 @@ const PISTAS = [
       [
        "Gaiari buruz gezur bat nahita esatea.",
        false,
-       "Faltsukeria bat ez da gezurra esatea: gaizki arrazoitzea da. Hemen hutsa pertsonaren aurka tiro egitea da."
+       "Falazia bat ez da gezurra esatea: gaizki arrazoitzea da. Hemen hutsa pertsonaren aurka tiro egitea da."
       ],
       [
        "Baieztatzen denaren frogak eskatzea.",
        false,
-       "Frogak eskatzea zentzuzkoa da: ez da faltsukeria."
+       "Frogak eskatzea zentzuzkoa da: ez da falazia."
       ]
      ],
      "ok": "Hain zuzen: pertsonaren aurka tiro egiten da, ez ideiaren aurka.",
@@ -62,7 +62,7 @@ const PISTAS = [
       ],
       "comprobacion": {
        "etiqueta": "Adibidearen egiaztapena",
-       "pregunta": "Zergatik da faltsukeria?",
+       "pregunta": "Zergatik da falazia?",
        "opciones": [
         [
          "Pertsonari erasotzen diolako eta ideia erantzun gabe uzten duelako.",
@@ -87,12 +87,12 @@ const PISTAS = [
     ]
    },
    {
-    "fase": "2. faltsukeria · Lastozko gizona",
+    "fase": "2. falazia · Lastozko gizona",
     "etiqueta": "Lastozko gizona",
-    "pregunta": "Zertan datza lastozko gizonaren faltsukeria?",
+    "pregunta": "Zertan datza lastozko gizonaren falazia?",
     "pistas": [
-     "Gogoratu, kokatzeko: faltsukeria bat konbentzitzeko gai den argudiatzeko modu bat da, baina zorroztasunik gabea.",
-     "Erabiltzen duenari aurkariaren argudioaren benetako edukiari aurre egitea saihesteko aukera ematen dion faltsukeria da.",
+     "Gogoratu, kokatzeko: falazia bat konbentzitzeko gai den argudiatzeko modu bat da, baina zorroztasunik gabea.",
+     "Erabiltzen duenari aurkariaren argudioaren benetako edukiari aurre egitea saihesteko aukera ematen dion falazia da.",
      "Eta ez dio pertsonari erasotzen (hori aurrekoa zen): besteak esan ez duen zerbait esan duela baieztatzen du, erraz ezeztatu ahal izateko.",
      "Lastozko gizon batekin hitz egitearen antzekoa litzateke, panpina baten bidez hitz egitea bera baino argiagoak garela erakusteko."
     ],
@@ -116,7 +116,7 @@ const PISTAS = [
       [
        "Besteari esaten duena frogatzeko eskatzen zaio.",
        false,
-       "Hori zentzuzkoa da, ez faltsukeria."
+       "Hori zentzuzkoa da, ez falazia."
       ]
      ],
      "ok": "Horixe da: lastozko panpina bat muntatu eta eraisten da, benetako ideia osorik dirauen bitartean.",
@@ -161,11 +161,11 @@ const PISTAS = [
     ]
    },
    {
-    "fase": "3. faltsukeria · Aldapa irristakorra",
+    "fase": "3. falazia · Aldapa irristakorra",
     "etiqueta": "Aldapa irristakorra",
-    "pregunta": "Zertan datza aldapa irristakorraren faltsukeria?",
+    "pregunta": "Zertan datza aldapa irristakorraren falazia?",
     "pistas": [
-     "Oinarria: faltsukeria batek argudio on bat dirudi, baina ez da.",
+     "Oinarria: falazia batek argudio on bat dirudi, baina ez da.",
      "Honek zerbait txikia baztertzeko aukera ematen du, amaiera katastrofiko batekin beldurra sartuz, amaiera hori gertatuko dela frogatu gabe.",
      "Nola? Urratsak kateatzen ditu —«A onartzen badugu, B etorriko da, gero C, eta okerrenean amaituko dugu»— urrats bakoitzak ezinbestean hurrengora eramango balu bezala.",
      "Aldapa izoztu batean urrats bat ematen baduzu, behealderaino biraka eroriko zarela gelditu ezinik esatea bezalakoa da; baina ia beti gelditu daiteke."
@@ -185,7 +185,7 @@ const PISTAS = [
       [
        "Benetako eta frogatutako ondorio batez ohartarazten du.",
        false,
-       "Katea frogatuta badago, ez da faltsukeria: benetako arrisku batez ohartaraztea bidezkoa da. Tranpa frogarik gabe ziurtzat ematea da."
+       "Katea frogatuta badago, ez da falazia: benetako arrisku batez ohartaraztea bidezkoa da. Tranpa frogarik gabe ziurtzat ematea da."
       ],
       [
        "Bi aukera baino ez ditu eskaintzen.",
@@ -210,7 +210,7 @@ const PISTAS = [
       ],
       "comprobacion": {
        "etiqueta": "Adibidearen egiaztapena",
-       "pregunta": "Zergatik da faltsukeria?",
+       "pregunta": "Zergatik da falazia?",
        "opciones": [
         [
          "Frogatzen ez duen ondorio-kate bat ziurtzat ematen du.",
@@ -235,11 +235,11 @@ const PISTAS = [
     ]
    },
    {
-    "fase": "4. faltsukeria · Gehiengoari deia",
+    "fase": "4. falazia · Gehiengoari deia",
     "etiqueta": "Gehiengoarengana jo",
-    "pregunta": "Zertan datza gehiengoari deiaren faltsukeria?",
+    "pregunta": "Zertan datza gehiengoari deiaren falazia?",
     "pistas": [
-     "Gogoratu: faltsukeria batean, konbentzitzen duena ez dira arrazoi onak.",
+     "Gogoratu: falazia batean, konbentzitzen duena ez dira arrazoi onak.",
      "Honek zerbait on edo egiatzat ematea ahalbidetzen du arrazoirik gabe, jende askok pentsatzen edo egiten duelako soilik.",
      "Nola? «Hau egia da / ondo dago» aldatzen du «hau mundu guztiak sinesten edo egiten du» esatera, bigarrenak lehena frogatuko balu bezala.",
      "Baina askok zerbait sinesteak ez du egia bihurtzen: lehen ia denek uste zuten Eguzkia Lurraren inguruan biratzen zela."
@@ -309,11 +309,11 @@ const PISTAS = [
     ]
    },
    {
-    "fase": "5. faltsukeria · Dilema faltsua",
+    "fase": "5. falazia · Dilema faltsua",
     "etiqueta": "Dilema faltsua",
-    "pregunta": "Zertan datza dilema faltsuaren faltsukeria?",
+    "pregunta": "Zertan datza dilema faltsuaren falazia?",
     "pistas": [
-     "Oinarria: faltsukeria bat kanpotik konbentzigarria da eta barrutik ahula.",
+     "Oinarria: falazia bat kanpotik konbentzigarria da eta barrutik ahula.",
      "Honek bestea bazterrera eramateko aukera ematen du bi irteera baino ez eskainiz, benetan gehiago daudenean.",
      "Nola? «Edo hau edo bestea» aurkezten du erdiko biderik edo beste aukerarik ez balego bezala, interesatzen zaionerantz bultzatzeko.",
      "Bost ate dituen gela batean bi ate baino ez erakustea bezalakoa da: beste hirurak han daude, baina ez dizkizute erakusten."
@@ -333,7 +333,7 @@ const PISTAS = [
       [
        "Benetan bi irteera baino ez dituen aukera bat planteatzen du.",
        false,
-       "Benetan bi irteera baino ez badaude, ez da faltsukeria: tranpa gainerakoak ezkutatzea da."
+       "Benetan bi irteera baino ez badaude, ez da falazia: tranpa gainerakoak ezkutatzea da."
       ],
       [
        "Aukeratzen duenari erasotzen dio.",
@@ -357,7 +357,7 @@ const PISTAS = [
       ],
       "comprobacion": {
        "etiqueta": "Adibidearen egiaztapena",
-       "pregunta": "Zergatik da faltsukeria?",
+       "pregunta": "Zergatik da falazia?",
        "opciones": [
         [
          "Bi irteera baino ez ditu aurkezten, gehiago daudenean.",
@@ -407,7 +407,7 @@ const PISTAS = [
      "Pentsatu zeuk lehenbizi. Eskatu pistak banan-banan: bakoitzak urrats bat hurbiltzen zaitu."
     ],
     "pistas": [
-     "Gogoratu oinarrizkoa, kokatzeko: alborapen bat gogamenaren lasterbide bat da, konturatu gabe oker pentsarazten diguna; gure <em>barruan</em> dago, argudioetan dauden faltsukerien aldean.",
+     "Gogoratu oinarrizkoa, kokatzeko: alborapen bat gogamenaren lasterbide bat da, konturatu gabe oker pentsarazten diguna; gure <em>barruan</em> dago, argudioetan dauden falazien aldean.",
      "Alborapen honek lehendik pentsatzen genuena defendarazten digu, inoiz benetan probarik jarri gabe.",
      "Nola egiten du? Gure ideia <strong>berresten duena baino ez</strong> dugu bilatzen, gogoratzen eta sinesten, eta ez dugu ikusten kontra egiten diguna.",
      "Arrazoia ematen dizuna igarotzen uzten duten eta gainerakoa ezabatzen duten betaurrekoak eramatea bezalakoa da."

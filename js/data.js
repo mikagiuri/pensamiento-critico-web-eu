@@ -64,7 +64,7 @@ const SUBJECTS = {
   "mats": [],
   "tools": [
    [
-    "Galdetegia: faltsukeriak",
+    "Galdetegia: falaziak",
     "cuestionarios",
     "falacias"
    ],
@@ -159,7 +159,7 @@ const DECKS = {
   ]
  },
  "ipc-falacias": {
-  "name": "Pentsamendu kritikoa · Faltsukeriak",
+  "name": "Pentsamendu kritikoa · Falaziak",
   "subject": "ipc",
   "cards": [
    [
@@ -250,8 +250,8 @@ const DECKS = {
    ],
    [
     "🔀",
-    "Alborapena ≠ faltsukeria",
-    "Faltsukeria argudioko akats bat da; alborapena, berriz, nola pentsatzen dugun okertzen duen buru-bidezidor bat."
+    "Alborapena ≠ falazia",
+    "Falazia argudioko akats bat da; alborapena, berriz, nola pentsatzen dugun okertzen duen buru-bidezidor bat."
    ]
   ]
  },
@@ -482,11 +482,11 @@ const DECKS = {
 };
 const QUIZZES = {
  "falacias": {
-  "name": "Faltsukeriak",
+  "name": "Falaziak",
   "subject": "ipc",
   "items": [
    {
-    "q": "Zer da faltsukeria bat?",
+    "q": "Zer da falazia bat?",
     "o": [
      "Arrazoi sendoak eta frogak dituen argudio bat.",
      "Ona dirudien baina hala ez den arrazoibidea; askotan konbentzitzeko edo engainatzeko erabiltzen da.",
@@ -494,7 +494,7 @@ const QUIZZES = {
      "Ados ez nagoen iritzi bat."
     ],
     "a": 1,
-    "fb": "Faltsukeria batek arrazoibide ona dirudi, baina bere arrazoiek ez dute ondorioa eusten."
+    "fb": "Falazia batek arrazoibide ona dirudi, baina bere arrazoiek ez dute ondorioa eusten."
    },
    {
     "q": "Klaseko batzarrean, norbaitek motxilak lekuz aldatzea proposatzen du. Beste pertsona batek erantzuten dio: «Eta zuk zer proposatuko duzu, egunero berandu iristen bazara?».",
@@ -690,15 +690,15 @@ const QUIZZES = {
     "fb": "FOMO: kanpoan geratzeko beldurrak bulkadaz erabakitzera bultzatzen du."
    },
    {
-    "q": "Zertan bereizten dira alborapena eta faltsukeria?",
+    "q": "Zertan bereizten dira alborapena eta falazia?",
     "o": [
      "Gauza bera dira, zehatz-mehatz.",
-     "Faltsukeria argudioko akats bat da; alborapena, berriz, nola pentsatzen dugun okertzen duen buru-bidezidor bat.",
+     "Falazia argudioko akats bat da; alborapena, berriz, nola pentsatzen dugun okertzen duen buru-bidezidor bat.",
      "Alborapena matematikan bakarrik agertzen da.",
-     "Faltsukeria helduek bakarrik egiten dute."
+     "Falazia helduek bakarrik egiten dute."
     ],
     "a": 1,
-    "fb": "Faltsukeria = arrazoibideko akatsa; alborapena = pentsatzeko moduaren desbideratzea."
+    "fb": "Falazia = arrazoibideko akatsa; alborapena = pentsatzeko moduaren desbideratzea."
    },
    {
     "q": "Zer da halo-efektua?",
@@ -1248,7 +1248,7 @@ const QUIZZES = {
     "fb": "«Garaiz iristea» eta «orduan egotea» gauza bera dira. «-lako» darama, baina ez du arrazoirik gehitzen."
    },
    {
-    "q": "Eztabaida batean, pertsona batek familiek zenbat aurreztuko luketen azaltzen du. Beste pertsona batek erantzuten du: «Ez egiozue kasurik; iaz bi irakasgai gainditu gabe utzi zituen eta beti berandu iristen da». Zein faltsukeria egiten du?",
+    "q": "Eztabaida batean, pertsona batek familiek zenbat aurreztuko luketen azaltzen du. Beste pertsona batek erantzuten du: «Ez egiozue kasurik; iaz bi irakasgai gainditu gabe utzi zituen eta beti berandu iristen da». Zein falazia egiten du?",
     "o": [
      "Ad hominem.",
      "Lastozko gizona.",
@@ -1292,7 +1292,7 @@ const QUIZZES = {
     "fb": "Errukia pizten saiatzen da, lanari buruzko arrazoiak eman beharrean. Ez du irakaslea beldurtzen: errukia eskatzen dio."
    },
    {
-    "q": "Neska batek honako hau proposatzen du: «Mugikorrak motxilan gorde genitzake eskola orduetan, hobeto kontzentratzeko». Mutil batek erantzuten dio: «Zuk nahi duzuna da teknologia guztia debekatzea eta Erdi Arora itzultzea!». Zein faltsukeria erabiltzen du mutil horrek?",
+    "q": "Neska batek honako hau proposatzen du: «Mugikorrak motxilan gorde genitzake eskola orduetan, hobeto kontzentratzeko». Mutil batek erantzuten dio: «Zuk nahi duzuna da teknologia guztia debekatzea eta Erdi Arora itzultzea!». Zein falazia erabiltzen du mutil horrek?",
     "o": [
      "Lastozko gizona.",
      "Autoritateari deia.",
@@ -1325,7 +1325,7 @@ const QUIZZES = {
     "fb": "Gauza bat beste baten ondoren gertatzeak ez du esan nahi hark eragin duenik. Galdetu: ez ote da kasualitatea, edo beste kausaren bat egongo da?"
    },
    {
-    "q": "Eztabaida batean, norbaitek dio: «Edo erabat debekatzen ditugu autoak erdigunean, edo onartzen dugu kutsadurak birikak hondatzea». Zein faltsukeria egiten du?",
+    "q": "Eztabaida batean, norbaitek dio: «Edo erabat debekatzen ditugu autoak erdigunean, edo onartzen dugu kutsadurak birikak hondatzea». Zein falazia egiten du?",
     "o": [
      "Dilema faltsua.",
      "Lastozko gizona.",
@@ -2098,22 +2098,22 @@ const QUIZZES = {
   ]
  },
  "ipc-falacias-banco": {
-  "name": "Faltsukeriak: arrazoiketa txarraren trikimailuak (galdera-bilduma zabaldua)",
+  "name": "Falaziak: arrazoiketa txarraren trikimailuak (galdera-bilduma zabaldua)",
   "subject": "ipc",
   "items": [
    {
-    "q": "Zertan bereizten dira faltsukeria bat eta gezur bat?",
+    "q": "Zertan bereizten dira falazia bat eta gezur bat?",
     "o": [
-     "Faltsukeria datu faltsu bat da; gezurra, arrazoiketako akats bat.",
+     "Falazia datu faltsu bat da; gezurra, arrazoiketako akats bat.",
      "Ez dago alderik: biak dira gauza faltsuak esateko moduak.",
-     "Gezurra datu faltsu bat da; faltsukeria, arrazoiketako akats bat.",
-     "Faltsukeria beti nahita esaten da; gezurra, nahi gabe."
+     "Gezurra datu faltsu bat da; falazia, arrazoiketako akats bat.",
+     "Falazia beti nahita esaten da; gezurra, nahi gabe."
     ],
     "a": 2,
-    "fb": "Gezur batek datu faltsu bat ematen du. Faltsukeria bat gaizki eraikitako argudio bat da, ona dirudiena."
+    "fb": "Gezur batek datu faltsu bat ematen du. Falazia bat gaizki eraikitako argudio bat da, ona dirudiena."
    },
    {
-    "q": "Neska batek institutura bakarrik bizikletan joatea eskatzen du. Bere aitak dio: «Gaur bizikleta, bihar beste hiri batera bakarrik joan nahiko duzu eta galduta amaituko duzu». Zein faltsukeria erabiltzen du?",
+    "q": "Neska batek institutura bakarrik bizikletan joatea eskatzen du. Bere aitak dio: «Gaur bizikleta, bihar beste hiri batera bakarrik joan nahiko duzu eta galduta amaituko duzu». Zein falazia erabiltzen du?",
     "o": [
      "Aldapa irristakorra",
      "Dilema faltsua",
@@ -2124,7 +2124,7 @@ const QUIZZES = {
     "fb": "Lehen urrats txiki batek ezinbestean hondamendi batera daramala uste du. Hori aldapa irristakorra da."
    },
    {
-    "q": "Zer egiten du lastozko gizonaren faltsukeria erabiltzen duenak?",
+    "q": "Zer egiten du lastozko gizonaren falazia erabiltzen duenak?",
     "o": [
      "Hitz egiten ari den pertsonari erasotzen dio, ez haren ideiei.",
      "Bi aukera bakarrik ematen ditu, egiaz gehiago daudenean.",
@@ -2135,7 +2135,7 @@ const QUIZZES = {
     "fb": "Lastozko gizonak besteak esandakoa desitxuratzen du, eta asmatutako bertsio hori ezeztatzen du, ez benetakoa."
    },
    {
-    "q": "Eztabaida batean, norbaitek bere arrazoiak azaltzen ditu. Beste pertsona batek botatzen dio: «Zuk ez eman iritzirik, beti sudadera bera daramazulako». Zein faltsukeria erabiltzen du beste pertsona horrek?",
+    "q": "Eztabaida batean, norbaitek bere arrazoiak azaltzen ditu. Beste pertsona batek botatzen dio: «Zuk ez eman iritzirik, beti sudadera bera daramazulako». Zein falazia erabiltzen du beste pertsona horrek?",
     "o": [
      "Lastozko gizona",
      "Ad hominem",
@@ -2157,7 +2157,7 @@ const QUIZZES = {
     "fb": "Autoritate batek balio du gaiaz badaki. Ospetsua izatea edo boterea izatea ez da nahikoa."
    },
    {
-    "q": "Zapatila-iragarki batek dio: «Edo gure zapatilak janzten dituzu, edo ordezkoen aulkian geratzen zara». Zer faltsukeria dago?",
+    "q": "Zapatila-iragarki batek dio: «Edo gure zapatilak janzten dituzu, edo ordezkoen aulkian geratzen zara». Zer falazia dago?",
     "o": [
      "Autoritateari deia",
      "Aldapa irristakorra",
@@ -2179,7 +2179,7 @@ const QUIZZES = {
     "fb": "Biek saihesten dute benetako argudioa, baina ad hominemak pertsonaren aurka egiten du, eta lastozko gizonak haren hitzak aldatzen ditu."
    },
    {
-    "q": "Norbaitek bi fantasiazko liburu irakurri ditu eta ez zaizkio gustatu. Ondorioztatzen du: «Fantasiazko liburuak denak aspergarriak dira». Zein faltsukeria egiten du?",
+    "q": "Norbaitek bi fantasiazko liburu irakurri ditu eta ez zaizkio gustatu. Ondorioztatzen du: «Fantasiazko liburuak denak aspergarriak dira». Zein falazia egiten du?",
     "o": [
      "Gehiengoarengana jo",
      "Orokorpen presatua",
@@ -2198,10 +2198,10 @@ const QUIZZES = {
      "Beldurra, pena edo amorrua"
     ],
     "a": 3,
-    "fb": "Faltsukeria honek beldurra, pena edo amorrua piztuz konbentzitu nahi du, arrazoirik eman gabe."
+    "fb": "Falazia honek beldurra, pena edo amorrua piztuz konbentzitu nahi du, arrazoirik eman gabe."
    },
    {
-    "q": "Milioika bisitako bideo batek lau orduz lo egitea nahikoa dela dio. Norbaitek iruzkintzen du: «Hainbeste jendek ikusi badu, egia izango da». Zein faltsukeria da?",
+    "q": "Milioika bisitako bideo batek lau orduz lo egitea nahikoa dela dio. Norbaitek iruzkintzen du: «Hainbeste jendek ikusi badu, egia izango da». Zein falazia da?",
     "o": [
      "Gehiengoarengana jo",
      "Autoritateari deia",
@@ -2223,7 +2223,7 @@ const QUIZZES = {
     "fb": "Oso adibide gutxirekin ezin da guztientzat balio duen araurik atera."
    },
    {
-    "q": "Aktore oso ospetsu batek app bat gomendatzen du sare sozialetan, matematika «ikasten aritu gabe» menderatzeko. Zure lehengusuak dio ona izango dela, bera oso ezaguna delako. Zer faltsukeria da?",
+    "q": "Aktore oso ospetsu batek app bat gomendatzen du sare sozialetan, matematika «ikasten aritu gabe» menderatzeko. Zure lehengusuak dio ona izango dela, bera oso ezaguna delako. Zer falazia da?",
     "o": [
      "Gehiengoarengana jo",
      "Autoritateari deia",
@@ -2234,7 +2234,7 @@ const QUIZZES = {
     "fb": "Ospetsua izateak ez du matematika ikasten aditu bihurtzen. Gaizki erabilitako autoritatea da."
    },
    {
-    "q": "Alarma-iragarki batek etxe ilun bat erakusten du, eta ahots batek galdetzen du: «Lasai egingo al zenuke lo, zure familia arriskuan egonda?». Ez du daturik ematen. Zer faltsukeria dago?",
+    "q": "Alarma-iragarki batek etxe ilun bat erakusten du, eta ahots batek galdetzen du: «Lasai egingo al zenuke lo, zure familia arriskuan egonda?». Ez du daturik ematen. Zer falazia dago?",
     "o": [
      "Emozioari deia",
      "Aldapa irristakorra",
@@ -2256,7 +2256,7 @@ const QUIZZES = {
     "fb": "Lehen urrats txiki batetik abiatuta, konponbiderik gabeko gaitz-kate bat irudikatzen du."
    },
    {
-    "q": "Norbaitek etxean dio astean zehar denbora libre pixka bat gehiago izatea gustatuko litzaiokeela. Bere anaiak erantzuten du: «Jakina, zuk nahi duzuna da ikasturte osoan ez ikastea». Zein faltsukeria da?",
+    "q": "Norbaitek etxean dio astean zehar denbora libre pixka bat gehiago izatea gustatuko litzaiokeela. Bere anaiak erantzuten du: «Jakina, zuk nahi duzuna da ikasturte osoan ez ikastea». Zein falazia da?",
     "o": [
      "Ad hominem",
      "Dilema faltsua",
@@ -2278,7 +2278,7 @@ const QUIZZES = {
     "fb": "Orokorpenak adibide gutxitatik ateratzen du arau bat. Gehiengoari deia jende askok pentsatzen duenaz fidatzen da."
    },
    {
-    "q": "Egoera hauetako zeinetan EZ dago faltsukeriarik?",
+    "q": "Egoera hauetako zeinetan EZ dago falaziarik?",
     "o": [
      "Neska batek uste du jogurt bat osasungarria dela futbolari batek iragartzen duelako.",
      "Neska batek uste du mugikor bat ona dela denek dutelako.",
@@ -2286,10 +2286,10 @@ const QUIZZES = {
      "Neska batek bere medikuak sendagai bati buruz esandakoari jarraitzen dio."
     ],
     "a": 3,
-    "fb": "Medikua gai horretan aditua da; beraz, harengan fidatzea zentzuzkoa da. Besteak faltsukeriak dira."
+    "fb": "Medikua gai horretan aditua da; beraz, harengan fidatzea zentzuzkoa da. Besteak falaziak dira."
    },
    {
-    "q": "Gaiaren arabera, zergatik erabiltzen dira hainbeste faltsukeriak?",
+    "q": "Gaiaren arabera, zergatik erabiltzen dira hainbeste falaziak?",
     "o": [
      "Funtzionatzen dutelako: konbentzitu egiten dute, arrazoirik ez izan arren.",
      "Datu egiazkoak emateko modurik azkarrena direlako.",
@@ -2297,10 +2297,10 @@ const QUIZZES = {
      "Argudio zuzenak baina zailak direlako."
     ],
     "a": 0,
-    "fb": "Faltsukeriek argudio onak dirudite, eta horregatik konbentzitzen dute, arrazoirik ez izan arren."
+    "fb": "Falaziek argudio onak dirudite, eta horregatik konbentzitzen dute, arrazoirik ez izan arren."
    },
    {
-    "q": "Zure anaia txikiak esaten dizu: «Benetan maite banindu, zure kontsola asteburu osoan utziko zenidake». Zer faltsukeria erabiltzen du?",
+    "q": "Zure anaia txikiak esaten dizu: «Benetan maite banindu, zure kontsola asteburu osoan utziko zenidake». Zer falazia erabiltzen du?",
     "o": [
      "Ad hominem",
      "Emozioari deia",
@@ -2311,7 +2311,7 @@ const QUIZZES = {
     "fb": "Ez du arrazoirik ematen: zu gaizki sentiaraztea bilatzen du, kontsola lortzeko."
    },
    {
-    "q": "Beste institutu bateko mutil bat iritsi da klasera, eta lehen bi egunetan berandu etorri da. Norbaitek dio: «Institutu horretako guztiak berandukariak dira». Zer faltsukeria da?",
+    "q": "Beste institutu bateko mutil bat iritsi da klasera, eta lehen bi egunetan berandu etorri da. Norbaitek dio: «Institutu horretako guztiak berandukariak dira». Zer falazia da?",
     "o": [
      "Ad hominem",
      "Gehiengoarengana jo",
@@ -2322,12 +2322,12 @@ const QUIZZES = {
     "fb": "Mutil bakar batekin eta bi egunekin ezin da institutu oso bati buruzko araurik atera."
    },
    {
-    "q": "Zertarako balio du faltsukeriak ezagutzen ikasteak?",
+    "q": "Zertarako balio du falaziak ezagutzen ikasteak?",
     "o": [
      "Ez gaitzaten engainatu, eta guk konturatu gabe ez engainatzeko.",
      "Eztabaidak beti irabazteko, arrazoia izan ala ez.",
      "Edozein albistetan zer datu diren faltsuak jakiteko.",
-     "Faltsukeriak erabili ahal izateko, inor konturatu gabe."
+     "Falaziak erabili ahal izateko, inor konturatu gabe."
     ],
     "a": 0,
     "fb": "Ezagutzeak engainuetatik babesten gaitu, eta guri geuri hobeto arrazoitzen laguntzen digu."
@@ -2338,7 +2338,7 @@ const QUIZZES = {
      "Orokorpen presatu bat",
      "Dilema faltsu bat",
      "Lastozko gizon bat",
-     "Gezur bat, ez faltsukeria bat"
+     "Gezur bat, ez falazia bat"
     ],
     "a": 3,
     "fb": "Norbaitek nahita datu faltsu bat ematen du. Hori gezur bat da, ez arrazoibidearen akats bat."
@@ -2366,7 +2366,7 @@ const QUIZZES = {
     "fb": "Dilema faltsuak dena bi irteeratara murrizten du. Aldapa irristakorrak gaizki amaitzen den kate bat irudikatzen du."
    },
    {
-    "q": "Mutil batek proposatzen du taldeak atzerago defendatzea hurrengo partidan. Ikaskide batek erantzuten dio: «Zuk zer jakingo duzu, ordezkoa bazara?». Zein faltsukeria da?",
+    "q": "Mutil batek proposatzen du taldeak atzerago defendatzea hurrengo partidan. Ikaskide batek erantzuten dio: «Zuk zer jakingo duzu, ordezkoa bazara?». Zein falazia da?",
     "o": [
      "Ad hominem",
      "Dilema faltsua",
@@ -2377,7 +2377,7 @@ const QUIZZES = {
     "fb": "Ez dio erantzuten mutilaren ideiari, bera erasotzen du baizik. Ordezkoa izateak ez du bere proposamena faltsu bihurtzen."
    },
    {
-    "q": "Gaiaren arabera, zergatik funtzionatzen dute faltsukeriek, argudio txarrak izan arren?",
+    "q": "Gaiaren arabera, zergatik funtzionatzen dute falaziek, argudio txarrak izan arren?",
     "o": [
      "Beti datu egiazko eta egiaztatuetan oinarritzen direlako.",
      "Gaian adituak diren pertsonek bakarrik erabiltzen dituztelako.",
@@ -2388,7 +2388,7 @@ const QUIZZES = {
     "fb": "Pentsatzeko lana aurrezten digute: sentitzen dugunarekin eta azkar erabakitzeko gogoarekin jokatzen dute."
    },
    {
-    "q": "Neska batek mutil bati esaten dio: «Edo abeslari hau gustatzen zaizu edo ez duzu musikaz batere ideiarik». Zein faltsukeria erabiltzen du?",
+    "q": "Neska batek mutil bati esaten dio: «Edo abeslari hau gustatzen zaizu edo ez duzu musikaz batere ideiarik». Zein falazia erabiltzen du?",
     "o": [
      "Orokorpen presatua",
      "Dilema faltsua",
@@ -2418,10 +2418,10 @@ const QUIZZES = {
      "Fidatu, norbait ospetsua gomendatzen ateratzen bada."
     ],
     "a": 0,
-    "fb": "Faltsukeriek emozioarekin eta presarekin jokatzen dute. Gelditu eta arrazoiak bilatzeak babesten gaitu."
+    "fb": "Falaziek emozioarekin eta presarekin jokatzen dute. Gelditu eta arrazoiak bilatzeak babesten gaitu."
    },
    {
-    "q": "Zer faltsukeria da bi irteera bakarrik eskaintzea, egiaz gehiago daudenean?",
+    "q": "Zer falazia da bi irteera bakarrik eskaintzea, egiaz gehiago daudenean?",
     "o": [
      "Aldapa irristakorra",
      "Lastozko gizona",
@@ -2619,7 +2619,7 @@ const QUIZZES = {
      "Arraste-efektu batean",
      "Ainguraketa batean",
      "Burbuila batean",
-     "Faltsukeria batean"
+     "Falazia batean"
     ],
     "a": 2,
     "fb": "Sareek gustuko duena bakarrik erakusten diote, eta denek arrazoia ematen diotela dirudi: burbuila batean dago."
