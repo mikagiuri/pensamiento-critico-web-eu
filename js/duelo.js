@@ -136,6 +136,7 @@ const DUELO_REACCIONES = [
 const DUELO_TEMAS = [
  {
   "id": "moviles",
+  "grupo": "dia",
   "nivel": [
    "eso"
   ],
@@ -202,6 +203,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "comida",
+  "grupo": "dia",
   "nivel": [
    "eso"
   ],
@@ -269,6 +271,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "mascota",
+  "grupo": "dia",
   "nivel": [
    "eso"
   ],
@@ -335,6 +338,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "trasimaco",
+  "grupo": "socrates",
   "nivel": [
    "fil",
    "hf"
@@ -425,6 +429,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "atheismusstreit",
+  "grupo": "contemporanea",
   "nivel": [
    "hf"
   ],
@@ -511,6 +516,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "descartes-dualismo",
+  "grupo": "moderna",
   "nivel": [
    "fil",
    "hf"
@@ -597,6 +603,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "hegel-kant",
+  "grupo": "contemporanea",
   "nivel": [
    "hf"
   ],
@@ -682,6 +689,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "calicles",
+  "grupo": "socrates",
   "nivel": [
    "fil",
    "hf"
@@ -769,6 +777,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "eutifron",
+  "grupo": "socrates",
   "nivel": [
    "fil",
    "hf"
@@ -854,6 +863,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "eutidemo",
+  "grupo": "socrates",
   "nivel": [
    "fil",
    "hf"
@@ -943,6 +953,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "criton",
+  "grupo": "socrates",
   "nivel": [
    "fil",
    "hf"
@@ -1033,6 +1044,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "pol-erasmo-lutero",
+  "grupo": "moderna",
   "nivel": [
    "fil",
    "hf"
@@ -1119,6 +1131,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "pol-leibniz-newton-clarke",
+  "grupo": "moderna",
   "nivel": [
    "fil",
    "hf"
@@ -1205,6 +1218,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "pol-voltaire-rousseau-lisboa",
+  "grupo": "moderna",
   "nivel": [
    "fil",
    "hf"
@@ -1291,6 +1305,7 @@ const DUELO_TEMAS = [
  },
  {
   "id": "pol-sartre-camus",
+  "grupo": "contemporanea",
   "nivel": [
    "fil",
    "hf"
@@ -1371,6 +1386,615 @@ const DUELO_TEMAS = [
    },
    {
     "t": "Edo kontzentrazio-esparru guztiak gaitzesten dituzu, edo hiltzaileen konplize zara: aukeratu.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-maniqueos",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Agustin manikeoen aurka (Hipona, 392): nondik dator gaizkia?",
+  "cpuLado": "Ordenagailua Fortunato da, apaiz manikeoa: betiko bi substantzia daude borrokan, argia eta ilunpea.",
+  "tuLado": "Agustin zara: Jainko on bakarra dago, hark egin zuen guztia ona da, eta gaizkia gure borondate asketik sortzen da.",
+  "estrat": [
+   {
+    "t": "«Bederatzi urtez gutako bat izan zinen: zer aurpegirekin kritikatzen gaituzu orain?»",
+    "nombre": "iraganaren aurpegiratzea",
+    "schop": "ad hominem",
+    "q": "Lehen beste zerbait pentsatu izanak ez du erabakitzen nork duen arrazoia orain. Itzuli argudiora."
+   },
+   {
+    "t": "«Hemen denek dakite manikeook jende zintzoa garela; zuk kalumniak errepikatzen dituzu, besterik ez.»",
+    "nombre": "ospera desbideratzea",
+    "schop": "gaia aldatzea",
+    "q": "Ez ditut zuen ohiturak eztabaidatzen, gaizkia nondik datorren baizik."
+   },
+   {
+    "t": "«Diozun hori greziarren filosofia da, ez Kristoren fedea.»",
+    "nombre": "etiketa susmagarria",
+    "schop": "gorrotagarria den kategoria batean sartzea",
+    "q": "«Greziarrena» deitzeak ez du errefusatzen. Zer du faltsurik?"
+   }
+  ],
+  "opp": [
+   {
+    "t": "Denok sentitzen dugu barruan kontrako noranzkoetan tiratzen duten bi indarren arteko borroka bat: horrek erakusten du bi natura daudela.",
+    "f": null
+   },
+   {
+    "t": "Dena Jainko on eta ahalguztidun batetik badator, nondik dator inork nahi ez duen hainbeste gaizki?",
+    "f": null
+   },
+   {
+    "t": "Edo gaizkia ongia bezain substantzia erreala da, edo ez da existitzen eta sufrimendu guztia ilusio bat da: aukeratu.",
+    "f": "dos",
+    "peso": 2
+   },
+   {
+    "t": "Zure ustez, Jainkoa da gaizkiaren egilea, dena berak egin baitzuen.",
+    "f": "deformar",
+    "peso": 3
+   },
+   {
+    "t": "Mani Kristok agindutako Paraklito gisa bidalia izan zen: zuk zuzenduko al duzu hura?",
+    "f": "famoso",
+    "peso": 2
+   },
+   {
+    "t": "Ilunpearen printzipioa ukatzen baduzu, zuk bakarrik eramango duzu zure bekatu guztien errua: hori nahi al duzu?",
+    "f": "miedo",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Jainkoari ezerk ezin badio kalterik egin, zergatik bidaliko luke bere zati bat mundu honetan sufritzera? Eta zerbaitek kalte egin ahal balio, ez litzateke Jainkoa.",
+    "str": 3
+   },
+   {
+    "t": "Gaizkia gure errua ez bada, beste natura batena baizik, ez du zentzurik ez damutzeak, ez zigortzeak, ez saritzeak.",
+    "str": 3
+   },
+   {
+    "t": "Jainkoak gauza guztiak onak egin zituen; gaizki deitzen den gauza bakarra gure borondatezko bekatua da, eta hori ez da substantzia bat, nahi makur bat baizik.",
+    "str": 2
+   },
+   {
+    "t": "Barruan sentitzen dugun borrokak ez ditu bi natura frogatzen: borondate zatitu bat frogatzen du, nahi duena eta guztiz nahi izatera iristen ez dena.",
+    "str": 2
+   },
+   {
+    "t": "Manikeook hipokritak zarete: garbitasuna predikatzen duzue eta beste guztiak bezala bizi zarete.",
+    "f": "persona"
+   },
+   {
+    "t": "Edo Jainko bakarra onartzen duzu, edo deabrua gurtzen duzu: ez dago besterik.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-jeronimo",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Agustin Jeronimoren aurka (394-405): gezurra esan al daiteke kausa on baten alde?",
+  "cpuLado": "Ordenagailua Jeronimo da: Paulok Pedrori egindako errieta egokitzapen zuhur bat izan zen, ez gezur bat.",
+  "tuLado": "Agustin zara: Idazteunean gezur «onuragarri» bakar bat onartzen bada, ezin da inolako pasartez fidatu.",
+  "estrat": [
+   {
+    "t": "«Gazte batek ez du zahar bat zirikatu behar Idazteunen eremuan: idi nekatuak indar handiagoz zapaltzen du.»",
+    "nombre": "adinaren pisua",
+    "schop": "norberaren autoritatera jotzea",
+    "q": "Adinak ez du erabakitzen testu batek gezurra dioen. Erantzun horri."
+   },
+   {
+    "t": "«Zure gutuna Italia erdian zehar ibili da niregana iritsi aurretik: nire bizkarretik ospea bilatzen al duzu?»",
+    "nombre": "asmoen susmoa",
+    "schop": "ad hominem",
+    "q": "Nire asmoek ez dute argudioa aldatzen. Gezurrik izan zen ala ez?"
+   },
+   {
+    "t": "«Hebreera badakizu zuk? Orduan ez irakatsi niri Biblia irakurtzen.»",
+    "nombre": "adituaren mespretxua",
+    "schop": "norberaren autoritatera jotzea",
+    "q": "Ez dut zure hebreera eztabaidatzen, gezur onuragarri bat onar daitekeen baizik."
+   }
+  ],
+  "opp": [
+   {
+    "t": "Pedrok eta Paulok, zuhurtziaz, Legea betetzen zutelako itxura egin zuten, juduak ez eskandalizatzeko: egokitzea ez da gezurra esatea.",
+    "f": null
+   },
+   {
+    "t": "Testuak interpreterik onenekin eta jatorrizko hizkuntzan irakurri behar dira, ez itzulpenen itzulpenekin.",
+    "f": null
+   },
+   {
+    "t": "Origenesek eta iruzkingile handiek horrela irakurri zuten ni baino lehen: denak zuzenduko al dituzu?",
+    "f": "famoso",
+    "peso": 2
+   },
+   {
+    "t": "Zure ustez, beraz, apostoluak haurrak bezala liskarrean aritzen ziren, eta Eliza eskandalu batekin hasi zen.",
+    "f": "deformar",
+    "peso": 2
+   },
+   {
+    "t": "Edo nire irakurketa onartzen duzu, edo arrazoia ematen diezu Porfirio bezalako paganoei, apostoluez trufatzen baitira.",
+    "f": "dos",
+    "peso": 2
+   },
+   {
+    "t": "Alexandriako eskoletan beti irakurri izan da horrela.",
+    "f": "siempre",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Behin gezur onuragarri bat hain agintaritza gorenean onartuz gero, edonork deitu ahal izango dio «onuragarri» traba egiten dion esaldiari: ez da pasarte segururik geratuko.",
+    "str": 3
+   },
+   {
+    "t": "Testu baten agintaritza inoiz gezurrik ez esatearen menpe dago; horregatik Paulok benetan egin behar izan zion errieta Pedrori, Pedrok gaizki jokatu baitzuen.",
+    "str": 3
+   },
+   {
+    "t": "Gauza bat da zerbait zuhurtziaz isiltzea, eta beste bat faltsua dena baieztatzea: lehena jakintsua izan daiteke; bigarrena gezurra esatea da.",
+    "str": 2
+   },
+   {
+    "t": "Paganoak trufatzea ez da arrazoi bat testuaren zentzua aldatzeko: egia ez da trufen beldurrera egokitzen.",
+    "str": 2
+   },
+   {
+    "t": "Zuk hau defendatzen duzu zuzentzea jasaten ez duen zahar harroa zarelako.",
+    "f": "persona"
+   },
+   {
+    "t": "Edo arrazoia ematen didazu, edo Idazteunaren egiaren etsaia zara: aukeratu.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-petiliano",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Agustin donatisten aurka (400-411 inguruan): balio al du sakramentu batek apaiz txar batek ematen badu?",
+  "cpuLado": "Ordenagailua Petiliano da, apezpiku donatista: ministro zikindu batek ezin du inor garbitu; benetako Eliza garbiena da.",
+  "tuLado": "Agustin zara: benetan bataiatzen duena Kristo da; apaiza tresna bat baino ez da, eta sakramentuak balio du apaiza duina ez bada ere.",
+  "estrat": [
+   {
+    "t": "«Manikeoen apaiza izan zinen: nor zara zu sakramentuez hitz egiteko?»",
+    "nombre": "salaketa faltsua",
+    "schop": "ad hominem",
+    "q": "Ez nintzen inoiz apaiz manikeoa izan, eta izan banintz ere, horrek ez dio argudioari erantzuten."
+   },
+   {
+    "t": "«Dialektikoa zara, engainuaren artista: hitz bihurrituekin dena frogatzen duzu.»",
+    "nombre": "logikaren mespretxua",
+    "schop": "metodoa desprestigiatzea",
+    "q": "Kontuz arrazoitzea ez da engainatzea. Adierazi non dagoen akatsa."
+   },
+   {
+    "t": "«Zuen Elizak ituna egin zuen traidoreekin: ez duzue hitz egiteko agintaritzarik.»",
+    "nombre": "taldea deskalifikatzea",
+    "schop": "ad hominem",
+    "q": "Beste batzuek egin zutenak ez du erabakitzen sakramentua ministroaren menpe dagoen."
+   }
+  ],
+  "opp": [
+   {
+    "t": "Kontatzen duena sakramentua ematen duenaren kontzientzia da: kontzientzia zikindu batek ezin du jasotzen duenarena garbitu.",
+    "f": null
+   },
+   {
+    "t": "Bere burua salbatzeko fedea traizionatu zutenak artzain gisa hartzen dituen Eliza batek bere santutasuna galtzen du.",
+    "f": null
+   },
+   {
+    "t": "Zure ustez, berdin dio apaiza gaizkile bat izatea: ez du batere axola artzainak nola bizi diren.",
+    "f": "deformar",
+    "peso": 3
+   },
+   {
+    "t": "Edo Eliza garbia da, edo deabruaren sinagoga da: ez dago erdibiderik.",
+    "f": "dos",
+    "peso": 2
+   },
+   {
+    "t": "Martiriak ez traizionatzeagatik hil ziren: traidoreak onartzen badituzu, haien odolaren gainean txu egiten duzu.",
+    "f": "pena",
+    "peso": 2
+   },
+   {
+    "t": "Numidia osoan herria gurekin dago.",
+    "f": "todos",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Bataioa apaizaren kontzientziaren menpe balego, inor ezingo litzateke ziur egon bataiatuta dagoela, besteren kontzientzia ez baita ikusten.",
+    "str": 3
+   },
+   {
+    "t": "Benetan bataiatzen duena Kristo da: ministroak, ona edo txarra izan, eskuak baino ez ditu uzten. Horregatik jartzen da itxaropena Kristorengan, ez gizaki batengan.",
+    "str": 3
+   },
+   {
+    "t": "Ez dut esaten berdin diola artzainak nola bizi diren: esaten dut haien bekatuak haiek kondenatzen dituela, eta ez duela deuseztatzen Kristok haien eskuen bidez ematen duena.",
+    "str": 2
+   },
+   {
+    "t": "Garbien sakramentuek bakarrik balio badute, zuenak errepikatu beharko zenituzkete zuen apezpikuren batengan bekatu bat aurkitzen den bakoitzean.",
+    "str": 2
+   },
+   {
+    "t": "Donatistok fanatiko bortitzak zarete; beraz, ez duzue arrazoirik.",
+    "f": "persona"
+   },
+   {
+    "t": "Edo Eliza katolikora itzultzen zarete, edo heretiko kondenatuak zarete: aukeratu.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-volusiano",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Agustin paganoen aurka (408-412): kristautasunak hiritar okerragoak egiten al ditu?",
+  "cpuLado": "Ordenagailua Volusiano da, pagano ikasi bat: etsaia barkatzea eta beste masaila eskaintzea ez zaio komeni bere burua defendatu behar duen Estatu bati.",
+  "tuLado": "Agustin zara: doktrina kristauak ez du debekatzen aberria zerbitzatzea; denak haren arabera biziko balira, Estatua osasuntsuagoa izango litzateke.",
+  "estrat": [
+   {
+    "t": "«Enperadoreak kristauak direnetik, Erroma Alarikoren eskuetan erori da. Gehiago esan beharrik ba al dago?»",
+    "nombre": "hondamendiaren kausa",
+    "schop": "argudiatu gabe iradokitzea",
+    "q": "Gauza bat beste baten ondoren etortzeak ez du frogatzen hark eragiten duenik. Jarrai dezagun arrazoiekin."
+   },
+   {
+    "t": "«Zuk, probintziako afrikar batek, erromatar bati irakatsiko diozu zer den aberria?»",
+    "nombre": "jatorriaren mespretxua",
+    "schop": "ad hominem",
+    "q": "Nire jatorriak ez du erabakitzen Ebanjelioak Estatuari kalte egiten dion."
+   },
+   {
+    "t": "«Zizeronek esan zuen jada: lehen betebeharra aberria da. Zizeroni kontra egiten ausartzen zara?»",
+    "nombre": "izen handia",
+    "schop": "autoritateari dei egitea",
+    "q": "Zizeron errespetatzen dut, baina kontua da ea doktrina kristauak betebehar hori suntsitzen duen, eta ez du suntsitzen."
+   }
+  ],
+  "opp": [
+   {
+    "t": "Gaizkiari gaizkiz ez erantzuteko agintzen duen moral batek babesik gabe uzten du hiria, arpilatzen duenaren aurrean.",
+    "f": null
+   },
+   {
+    "t": "Erlijio bat bizitza publikoarekin egiten duenagatik ere epaitzen da, ez heriotzaren ondorerako agintzen duenagatik bakarrik.",
+    "f": null
+   },
+   {
+    "t": "Erroma bere jainkoak utzi ondoren arpilatu zuten: jainkoek zigortu egin dute.",
+    "f": "causa",
+    "peso": 3
+   },
+   {
+    "t": "Zure ustez, soldaduek armak bota eta beren burua hiltzen utzi beharko lukete.",
+    "f": "deformar",
+    "peso": 2
+   },
+   {
+    "t": "Gure arbasoek beti ohoratu zituzten Erromako jainkoak, eta horrela egin zen handi.",
+    "f": "siempre",
+    "peso": 2
+   },
+   {
+    "t": "Hori predikatzen jarraitzen baduzu, bihar ez da inor geratuko zure Hipona barbaroengandik defendatzeko.",
+    "f": "miedo",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Kristoren doktrina Estatuaren kontrakoa dela diotenek eman dezatela doktrina horrek eskatzen duen bezalako armada bat: abusurik egiten ez duten, lapurtzen ez duten eta beren soldatarekin konformatzen diren soldaduak.",
+    "str": 3
+   },
+   {
+    "t": "Erromaren gaitzak ez ziren kristauekin hasi: haren egile propioek, Salustiok adibidez, ohituren ustelkeria deitoratzen zuten jada.",
+    "str": 3
+   },
+   {
+    "t": "Ebanjelioak ez die soldaduei armak uzteko agintzen, haiez ez abusatzeko baizik: Joan Bataiatzaileak beren soldatarekin konformatzeko esan zien, ez desertatzeko.",
+    "str": 2
+   },
+   {
+    "t": "Beste masaila eskaintzea ez mendekatzeko bihotzaren jarrera bat da, ez Estatu bat gaizkileak ez zigortzera behartzen duen lege bat.",
+    "str": 2
+   },
+   {
+    "t": "Paganook estatuak gurtzen dituzuen superstiziozkoak zarete; zer jakingo duzue zuek?",
+    "f": "persona"
+   },
+   {
+    "t": "Edo kristau egiten zara, edo Erromaren hondamenaren errudun izaten jarraituko duzu.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-pelagio",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Pelagio Agustinen aurka (411-418): ongia egin al dezakegu geure indarrez?",
+  "cpuLado": "Ordenagailua Agustin da: Adanez geroztik zaurituta jaiotzen gara; Jainkoaren graziarik gabe, borondatea ez da ongia nahi izatera ez egitera iristen.",
+  "tuLado": "Pelagio zara: Jainkoak bekaturik ez egiteko gai egin gintuen; Jainkoak zerbait agintzen badu, hori betetzeko gai garelako da.",
+  "estrat": [
+   {
+    "t": "«Diospolisen hitzez gaitzetsi zenuen zure idazkietan defendatzen jarraitzen duzuna.»",
+    "nombre": "bi aurpegikotasunaren salaketa",
+    "schop": "ad hominem",
+    "q": "Neure buruari kontra egiten badiot, adierazi hori argudioan. Kontzilio batean esan zitekeenak ez dio galderari erantzuten."
+   },
+   {
+    "t": "«Bere kabuz salbatzeko gai dela uste duen fraide harro bat zara.»",
+    "nombre": "izaerari ziria",
+    "schop": "ad hominem",
+    "q": "Nire izaerak ez du erabakitzen borondateak ongia egin dezakeen."
+   },
+   {
+    "t": "«Afrikako kontzilioek eta Erromako apezpikuak gaitzetsi zaituzte: zer gehiago nahi duzu?»",
+    "nombre": "gaitzespenaren pisua",
+    "schop": "autoritateari dei egitea",
+    "q": "Gaitzespen bat ez da arrazoi bat. Zer du faltsurik nik diodanak?"
+   }
+  ],
+  "opp": [
+   {
+    "t": "Askotan badakigu zer den ona, eta hala ere ez dugu egiten: borondatea zatituta dago eta sendatu beharra du.",
+    "f": null
+   },
+   {
+    "t": "Geure indar hutsez onak izan bagintezke, Kristo adibidea ematera bakarrik etorriko zatekeen, ez salbatzera.",
+    "f": null
+   },
+   {
+    "t": "Zure ustez, gizakiak ez du Jainkoaren beharrik ezertarako.",
+    "f": "deformar",
+    "peso": 3
+   },
+   {
+    "t": "Edo dena da Jainkoaren grazia, edo dena da gizakiaren merezimendua: ez dago erdibiderik.",
+    "f": "dos",
+    "peso": 2
+   },
+   {
+    "t": "Paulo apostoluak esan zuen jada, eta onartzen ez duena ez da kristaua.",
+    "f": "notrue",
+    "peso": 2
+   },
+   {
+    "t": "Zuri entzuten badizute, jendea harrokeriaz beteko da eta inork ez du otoitzik egingo.",
+    "f": "miedo",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Bekatua saihestu ezin badugu, ez gara haren erantzule, eta ez du zentzurik guri ezer eskatzeak.",
+    "str": 3
+   },
+   {
+    "t": "Jainkoak zerbait agintzen badu, betetzeko gai garelako da: ezinezkoa agintzea bidegabea litzateke.",
+    "str": 3
+   },
+   {
+    "t": "Grazia Jainkoak sortzean eman zigun gaitasuna da, legearekin eta Kristoren adibidearekin batera: ez dut grazia ukatzen, zertan datzan esaten dut.",
+    "str": 2
+   },
+   {
+    "t": "Graziarik gabe ongia egiten ez dugula esateak aitzakia ezin hobea ematen dio ahaleginik egin nahi ez duenari.",
+    "str": 2
+   },
+   {
+    "t": "Zuk barrutik manikeo izaten jarraitzen duzu: horregatik ikusten duzu gaizkia leku guztietan.",
+    "f": "persona"
+   },
+   {
+    "t": "Edo gizakia erabat aske da, edo Jainkoaren txotxongiloa da: aukeratu.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-julian",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Eklanako Juliano Agustinen aurka (419-430): eraman al dezake jaioberri batek besteren bekatu bat?",
+  "cpuLado": "Ordenagailua Agustin da: denok jaiotzen gara Adanengandik heredatutako jatorrizko bekatuarekin, eta horregatik bataiatzen dira haurrak ere.",
+  "tuLado": "Eklanako Juliano zara: ez dago bekaturik borondate propiorik gabe, eta Jainko zuzen batek ezin dio inori besteren bekatuaren errua egotzi.",
+  "estrat": [
+   {
+    "t": "«Haurren babesle handia! Eta bataiorik gabe uzten dituzu?»",
+    "nombre": "ironia",
+    "schop": "errefusatu ordez barregarri uztea",
+    "q": "Ironia ez da argudio bat. Nola izan daiteke errudun ezer nahi izan ez duena?"
+   },
+   {
+    "t": "«Kargutik kendutako apezpiku erbesteratu bat zara: zure iritziak ez du balio.»",
+    "nombre": "deskalifikazioa",
+    "schop": "ad hominem",
+    "q": "Nire erbesteak ez du erabakitzen borondaterik gabeko bekaturik dagoen."
+   },
+   {
+    "t": "«Pelagiok defendatzen duena defendatzen duzu, eta Pelagio gaitzetsita dago jada.»",
+    "nombre": "elkartze bidezko errua",
+    "schop": "gorrotagarria den kategoria batean sartzea",
+    "q": "Gaitzetsitako norbaitekin bat etortzeak ez du frogatzen oker nagoenik. Erantzun argudioari."
+   }
+  ],
+  "opp": [
+   {
+    "t": "Denok, hasieratik, gaizkira makurtuta gaude, eta mina, ezjakintasuna eta heriotza jasaten ditugu, aukeratu gabe: horrek azalpen bat eskatzen du.",
+    "f": null
+   },
+   {
+    "t": "Haurrek salbatu beharreko ezer ez balute, Kristo ez litzateke guztien salbatzailea.",
+    "f": null
+   },
+   {
+    "t": "Zure ustez, gizakia perfektu jaiotzen da eta ez du Kristoren beharrik.",
+    "f": "deformar",
+    "peso": 3
+   },
+   {
+    "t": "Elizak betidanik bataiatzen ditu haurrak bekatuen barkamenerako: beraz, bekatua dute.",
+    "f": "siempre",
+    "peso": 2
+   },
+   {
+    "t": "Zuri kasu egiten badizugu, gurasoek beren seme-alabak bataiatzeari utziko diote, eta haiek galdu egingo dira.",
+    "f": "miedo",
+    "peso": 2
+   },
+   {
+    "t": "Edo jatorrizko bekatua onartzen duzu, edo Idazteun osoa ukatzen duzu.",
+    "f": "dos",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Norbaiti egin ez duenaren errua egoztea bidegabekeriaren definizioa bera da, eta ezin zaio Jainkoari egotzi.",
+    "str": 3
+   },
+   {
+    "t": "Ez dago bekaturik gizakiarengan, borondate propiorik edo onespenik batere ez badago, eta jaioberri batek oraindik ez du ezer nahi izan.",
+    "str": 3
+   },
+   {
+    "t": "Sexu-desira Jainkoak sortutako indar naturala da, ona neurriz erabiltzen bada: ez da bekatu baten aztarna.",
+    "str": 2
+   },
+   {
+    "t": "Giza natura jaiotzetik gaiztoa bada, horrek antz handiegia du manikeoen printzipio gaiztoarekin.",
+    "str": 2
+   },
+   {
+    "t": "Zu punikoen Aristoteles bat baino ez zara, erretore afrikar bat.",
+    "f": "persona"
+   },
+   {
+    "t": "Edo arrazoia ematen didazu, edo Jainkoa krimen baten errudun egiten duzu: aukeratu.",
+    "f": "dos"
+   }
+  ]
+ },
+ {
+  "id": "pol-agustin-maximino",
+  "grupo": "agustin",
+  "nivel": [
+   "fil",
+   "hf"
+  ],
+  "claim": "Agustin Maximinoren aurka (427-428 inguruan): Semea Aitaren berdina al da?",
+  "cpuLado": "Ordenagailua Maximino da, apezpiku arriotarra: Aita bakarrik da Jainko jatorririk gabea; Semea Jainkoa da, baina sortua eta haren menpekoa.",
+  "tuLado": "Agustin zara: Aita, Semea eta Espiritu Santua, bakoitza Jainkoa da, ahalmen berarekin, eta hirurak batera Jainko bakarra dira.",
+  "estrat": [
+   {
+    "t": "«Enperadoreen boterearen babesean hitz egiten duzu: horrela edonork irabazten du eztabaida bat.»",
+    "nombre": "abantailaren susmoa",
+    "schop": "ad hominem",
+    "q": "Nork nor babesten duen ez du erabakitzen Idazteunak zer dioen. Itzuli argudiora."
+   },
+   {
+    "t": "(Hitz eta hitz ari da, erantzun gabe, denbora agortu arte.)",
+    "nombre": "denbora xahutzea",
+    "schop": "desbideratu eta luzatu",
+    "q": "Hitzaldia luzatzeak ez dio galderari erantzuten. Semea Aitaren berdina da ala ez?"
+   },
+   {
+    "t": "«Formulei atxikitako hirurogeita hamar urteko zahar bat zara.»",
+    "nombre": "adinagatiko ziria",
+    "schop": "ad hominem",
+    "q": "Nire adinak ez du argudioa aldatzen."
+   }
+  ],
+  "opp": [
+   {
+    "t": "Seme bat bere aitarengandik dator, eta jatorria beste batengan duena ez da haren berdina.",
+    "f": null
+   },
+   {
+    "t": "Idazteunak Aitak bidalitako eta hari esaneko den Semea erakusten du: dioen bezala irakurrita, menpekotasuna irakasten du.",
+    "f": null
+   },
+   {
+    "t": "Hirurehun eta hogeita hamar apezpikuk sinatu zuten Riminin nik defendatzen dudana.",
+    "f": "todos",
+    "peso": 2
+   },
+   {
+    "t": "Zure ustez, Aita eta Semea mozorrotutako pertsona bera dira.",
+    "f": "deformar",
+    "peso": 3
+   },
+   {
+    "t": "Edo Semea Aita baino txikiagoa da, edo bi jainko daude: ez dago beste irtenbiderik.",
+    "f": "dos",
+    "peso": 2
+   },
+   {
+    "t": "Godoek, Erroma defendatzen dutenek, nik bezala sinesten dute: haien aurka jarriko al zara?",
+    "f": "miedo",
+    "peso": 1
+   }
+  ],
+  "counters": [
+   {
+    "t": "Aita Jainkoa bada eta Semea ere Jainkoa bada, baina beste bat eta txikiagoa, orduan bi jainko gurtzen dituzue; eta Jainko bakarra badago, ez duzue Kristo gurtzen.",
+    "str": 3
+   },
+   {
+    "t": "«Entzun, Israel, Jauna, zure Jainkoa, bakarra da»: Aita Jainkoa da, Semea Jainkoa da, Espiritu Santua Jainkoa da, eta Trinitate bera Jainko bakarra da.",
+    "str": 3
+   },
+   {
+    "t": "Semea Aitarengandik etortzeak ez du txikiago egiten: lanpara batetik ateratzen den argia lanpara bezain argia da.",
+    "str": 2
+   },
+   {
+    "t": "Ez dut esaten pertsona bera direnik: hiru dira, elkarrengandik bereiziak, baina ahalmen bakarrekoak eta natura bakarrekoak.",
+    "str": 2
+   },
+   {
+    "t": "Zuek, arriotarrok, ezer ulertzen ez duzuen barbaroak zarete.",
+    "f": "persona"
+   },
+   {
+    "t": "Edo Nizea onartzen duzu, edo Elizatik kanpo zaude: aukeratu.",
     "f": "dos"
    }
   ]
