@@ -548,6 +548,14 @@ ol.itin-temas li.temas-extra .temas-t{font-size:.95rem;color:var(--muted)}
 /* (09-10) matriz de obras (anexo hf-corazon-piedra): primera columna como cabecera de fila */
 .matriz th[scope="row"]{background:var(--surface-2);font-weight:400;min-width:150px}.matriz td{font-size:.88rem;vertical-align:top;min-width:150px}
 
+/* (11-10) diagramas SVG propios en la teoría (.diag): colores del tema, legibles en claro y oscuro y en el móvil */
+.diag .fig{flex:1 1 100%;max-width:640px;margin:0 auto}
+.diag svg{width:100%;height:auto;display:block;font-family:var(--sans);direction:ltr}
+.diag .dg-t{fill:var(--ink)} .diag .dg-m{fill:var(--muted)} .diag .dg-w{fill:var(--on-accent)}
+.diag .dg-a{fill:var(--accent)} .diag .dg-o{fill:var(--e-ant)} .diag .dg-r{fill:var(--hf)} .diag .dg-r2{fill:var(--hf);font-weight:600}
+.diag .dg-g{fill:var(--surface-2);stroke:var(--line)} .diag .dg-b{fill:var(--surface);stroke:var(--line)}
+.diag .dg-l{fill:none;stroke:var(--muted);stroke-width:1.4} .diag .dg-mk{fill:var(--muted)}
+
 
 /* ==== css/mobile.css ==== */
 /* ===== Capa móvil (mobile-first overrides) — Aula de Filosofía =====
