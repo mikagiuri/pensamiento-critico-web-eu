@@ -30,6 +30,8 @@ const MAPA_DESC = {
   ilustres: "Pentsalarien biografiak eta aro bakoitzeko fitxak.",
   citas: "Filosofoen esaldi ospetsuak, azalduta.",
   adagios: "Latinezko eta grezierazko lema klasikoak, beren historiarekin.",
+  duelo: "Ordenagailuaren aurkako eztabaida: harrapatu bere falaziak edo erantzun arrazoi sendoagoekin, patxada galdu gabe.",
+  polemicas: "Garai berean bizi izan ziren eta elkarren aurka aritu ziren pentsalariak: aukeratu norekin zoazen eta zergatik.",
   mundo: "Gela mundua balitz: planetaren datuak, zure ikasgelan.",
   camino: "Zer egin aukeratzen duzun eta ondorioak ikusten dituzun istorioak.",
   eudaimonia: "Zoriontasunari buruzko jokoa, Aristotelesen arabera.",
@@ -63,7 +65,7 @@ const MAPA_DESC = {
   signos: "Zeinu-hizkuntzako ikastaroa."
 };
 /* cuántos elementos tiene cada sección (si su colección está cargada en esta web) */
-const MAPA_CUENTA = { tarjetas: "DECKS", cuestionarios: "QUIZZES", glosario: "GLOSARIO", ilustres: "ILUSTRES", citas: "CITAS", adagios: "ADAGIOS",
+const MAPA_CUENTA = { tarjetas: "DECKS", cuestionarios: "QUIZZES", glosario: "GLOSARIO", ilustres: "ILUSTRES", citas: "CITAS", adagios: "ADAGIOS", polemicas: "POLEMICAS",
   infografias: "INFOGRAFIAS", mapas: "MAPS", esquemas: "ESQUEMAS", cronogramas: "CRONOGRAMAS", genealogias: "GENEALOGIAS", lecturas: "LECTURAS",
   galeria: "GALERIA", dilemas: "DILEMAS", disertaciones: "DISERTACIONES", nudos: "NUDOS", pistas: "PISTAS", materiales: "MATERIALS" };
 function mapaG(name){ try { return (0, eval)("typeof " + name + " !== 'undefined' ? " + name + " : undefined"); } catch (e){ return undefined; } }

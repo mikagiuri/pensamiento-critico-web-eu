@@ -56,7 +56,7 @@
       <div class="navsec">
         <span class="navgroup" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Jokoak</span>
         <div class="navmenu">
-          <a class="gamelink" href="media/juego_duelo_de_razones_eu.html#eso" target="_blank" rel="noopener">Arrazoien dueloa ↗</a>
+          <button data-view="duelo">Arrazoien dueloa</button>
           <button data-view="mundo">Gela mundua balitz</button>
           <button data-view="camino">Aukeratu zure bidea</button>
           <button data-view="dilemas">Dilema etikoak</button>
@@ -216,6 +216,17 @@
   <!-- CITAS -->
   
 
+  <section class="view" id="duelo">
+    <!-- (11-10) Duelo de razones: antes juego aparte (media/juego_duelo_de_razones*.html, cinco copias); ahora sección (duelo.js + dueloview.js).
+         En todas las webs: cada una muestra los debates de su nivel (eso | fil | hf). -->
+    <p class="eyebrow">Jokoak</p>
+    <h1 class="title">Arrazoien dueloa</h1>
+    <div class="due-top"><button type="button" class="due-proybtn" id="dueproy">Proiektore modua</button></div>
+    <div id="duelobox"></div>
+  </section>
+
+  
+
   
 
   <!-- TARJETAS -->
@@ -365,6 +376,7 @@
       <h2>Itzulpenen terminologia</h2>
       <ul>
         <li>Euskara: terminologia-erabakiak <em>Euskaltzaindiaren Hiztegia</em>rekin hartzen dira, eta kontsulta bakoitza hemen estekatzen da. 2026-10-11: «época», aldi historiko gisa, «aro» da (<a href="https://www.euskaltzaindia.eus/index.php?option=com_hiztegianbilatu&amp;task=bilaketa&amp;Itemid=1693&amp;lang=eu&amp;query=aro" target="_blank" rel="noopener">aro</a>, 4. adiera: denbora historikoa banatzen den zatietako bakoitza), ez «garai» (<a href="https://www.euskaltzaindia.eus/index.php?option=com_hiztegianbilatu&amp;task=bilaketa&amp;Itemid=1693&amp;lang=eu&amp;query=garai" target="_blank" rel="noopener">garai</a>, denbora-bitartea oro har); «falacia» «falazia» da (<a href="https://www.euskaltzaindia.eus/index.php?option=com_hiztegianbilatu&amp;task=bilaketa&amp;Itemid=1693&amp;lang=eu&amp;query=falazia" target="_blank" rel="noopener">falazia</a>), ez «faltsukeria», horrek «gezurra, egia eza» esan nahi baitu.</li>
+        <li>Euskara, 2026-10-12: «libre albedrío» «borondate askea» da (<a href="https://www.euskaltzaindia.eus/index.php?option=com_hiztegianbilatu&amp;task=bilaketa&amp;Itemid=1693&amp;lang=eu&amp;query=borondate" target="_blank" rel="noopener">borondate</a>, 1. adiera: nahi izateko, askatasunez zerbait egiteko edo ez egiteko edo hautatzeko ahalmena), webguneak lehendik erabiltzen duen forma.</li>
       </ul>
       <!-- NOTAS-ARETE-INICIO -->
       <!-- NOTAS-ARETE-FIN -->
@@ -373,6 +385,7 @@
         <li>Wikimedia Commonseko eta museo eta liburutegietako artelanak eta erretratuak (Metropolitan Museum, Rijksmuseum, LACMA, Wellcome Collection, New York Public Library, Library of Congress, Walters Art Museum), domeinu publikoan edo CC0, CC BY eta CC BY-SA lizentziekin. Irudi bakoitzak bere kreditua du.</li>
         <li>Logikaren txokoa: Honoré Daumierren litografiak (National Gallery of Art-ekoak ere bai), Francisco de Goyaren (Prado Museoa), William Hogarthen (National Gallery of Art) eta James Gillrayren (Library of Congress) grabatuak, John James Audubonen eta John Gerrard Keulemansen hegazti-xaflak, eta Johann Schäferrek 1859an Arthur Schopenhauerri ateratako argazkia, guztiak domeinu publikoan, Wikimedia Commons bidez.</li>
         <li>Adimen artifizialarekin sortutako ilustrazioak (Googleren Gemini eta Nano Banana, eta FLUX).</li>
+        <li>Infografiak norberak eginak dira, adimen artifizialeko tresnen laguntzaz, eta irakasleak berrikusiak.</li>
       </ul>
       <h2>Zinema, telesailak eta bideoak</h2>
       <ul>
@@ -385,10 +398,15 @@
         <li>Spectral, IBM Plex eta Fraunces tipografiak (SIL Open Font License).</li>
         <li>Fredoka eta Nunito Sans tipografiak (SIL Open Font License).</li>
       </ul>
+      <h2>Lizentzia</h2>
+      <ul>
+        <li>Web honetako material propioa (testuak, jarduerak, galdetegiak, eskemak eta infografiak) <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.eu" rel="license">Creative Commons Aitortu-EzKomertziala-PartekatuBerdin 4.0 Nazioartekoa (CC BY-NC-SA 4.0)</a> lizentziarekin argitaratzen da: kopiatu eta egokitu daiteke, jatorria aipatuta, helburu komertzialik gabe eta lizentzia berarekin partekatuta.</li>
+        <li>Lizentzia honetatik kanpo geratzen dira USEko testuak, argitaletxeek argitaratutako itzulpenak eta hirugarrenen irudiak eta testuak; horiek beren lizentzia dute, orri honetan eta kreditu bakoitzean adierazita.</li>
+      </ul>
     </article>
   </section>
 </main>
-<footer class="wrap sitefoot"><a href="#mapa">Webgunearen mapa</a> · <a href="#fuentes">Iturriak eta oharra</a></footer>
+<footer class="wrap sitefoot"><a href="#mapa">Webgunearen mapa</a> · <a href="#fuentes">Iturriak eta oharra</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC BY-NC-SA 4.0</a></footer>
 
 <script src="js/store.js"></script>
 <script src="js/data.js"></script>
@@ -437,6 +455,8 @@
 <script src="js/juegosucio.js"></script>
 <script src="js/juegosucioview.js"></script>
 <script src="js/cruces_tesis.js"></script>
+<script src="js/duelo.js"></script>
+<script src="js/dueloview.js"></script>
 <!-- mermaid se carga bajo demanda al abrir Esquemas (js/lazy_libs.js) -->
 <script src="js/esquemas.js"></script>
 <script src="js/esq_grid.js"></script>
