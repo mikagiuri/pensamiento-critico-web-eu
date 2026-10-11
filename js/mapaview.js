@@ -31,6 +31,7 @@ const MAPA_DESC = {
   citas: "Filosofoen esaldi ospetsuak, azalduta.",
   adagios: "Latinezko eta grezierazko lema klasikoak, beren historiarekin.",
   duelo: "Ordenagailuaren aurkako eztabaida: harrapatu bere falaziak edo erantzun arrazoi sendoagoekin, patxada galdu gabe.",
+  epocas: "Aro bakoitzaren fitxak, Antzinako Greziatik gaur egunera, bakoitza bere kosmosaren irudiarekin.",
   polemicas: "Garai berean bizi izan ziren eta elkarren aurka aritu ziren pentsalariak: aukeratu norekin zoazen eta zergatik.",
   perseguidos: "Beren ideiengatik zigortutako filosofoak eta zientzialariak: zer gertatu zen eta zer kontatu ohi den gaizki.",
   comunidades: "Pentsalarien eskolak eta zirkuluak, eta biltzen ziren lekuak.",
