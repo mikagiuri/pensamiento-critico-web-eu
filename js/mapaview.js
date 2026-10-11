@@ -29,7 +29,7 @@ const MAPA_DESC = {
   glosario: "Gai bakoitzeko kontzeptuak, beren definizio eta jatorriarekin.",
   ilustres: "Pentsalarien biografiak eta aro bakoitzeko fitxak.",
   citas: "Filosofoen esaldi ospetsuak, azalduta.",
-  adagios: "Latinezko eta grezierazko lema klasikoak, beren historiarekin.",
+  adagios: "Latinezko eta grekozko lema klasikoak, eta filosofoen esaldi ospetsuak: zer esan nahi duten eta noiz erabili.",
   duelo: "Ordenagailuaren aurkako eztabaida: harrapatu bere falaziak edo erantzun arrazoi sendoagoekin, patxada galdu gabe.",
   epocas: "Aro bakoitzaren fitxak, Antzinako Greziatik gaur egunera, bakoitza bere kosmosaren irudiarekin.",
   polemicas: "Garai berean bizi izan ziren eta elkarren aurka aritu ziren pentsalariak: aukeratu norekin zoazen eta zergatik.",
