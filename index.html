@@ -331,6 +331,14 @@
 
   <!-- FUENTES Y AVISO (07-10): en todas las webs, enlazada desde el pie. data-web = webs publicadas que
        llevan esa fuente (student_lib.filterFuentes quita las demás); la web maestra las muestra todas. -->
+  <!-- (11-10) MAPA DE LA WEB: se rellena desde js/mapaview.js con el menú de cada build -->
+  <section class="view" id="mapa">
+    <p class="eyebrow">Orientazioa</p>
+    <h1 class="title">Webgunearen mapa</h1>
+    <p class="lead">Webgune honetan dagoen guztia, menuaren ordena berean, eta ikasgai bakoitzeko gaiak. Sakatu edozein izen hara joateko.</p>
+    <div id="mapabox"></div>
+  </section>
+
   <section class="view" id="fuentes">
     <p class="eyebrow">Oharra</p>
     <h1 class="title">Iturriak eta oharra</h1>
@@ -373,7 +381,7 @@
     </article>
   </section>
 </main>
-<footer class="wrap sitefoot"><a href="#fuentes">Iturriak eta oharra</a></footer>
+<footer class="wrap sitefoot"><a href="#mapa">Webgunearen mapa</a> · <a href="#fuentes">Iturriak eta oharra</a></footer>
 
 <script src="js/store.js"></script>
 <script src="js/data.js"></script>
@@ -438,6 +446,7 @@
 <script src="js/search.js"></script>
 <script src="js/resume.js"></script>
 <script src="js/itinerario.js"></script>
+<script src="js/mapaview.js"></script>
 <script src="js/epocas.js"></script>
 <script src="js/compacto.js"></script>
 <script src="js/nav_toc.js"></script>
