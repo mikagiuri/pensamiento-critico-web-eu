@@ -101,7 +101,7 @@
     /* (11-10) fichas de época (epocas_fichas.js): se abren en Ilustres («epoca-<clave>») */
     if (typeof EPOCAS_FICHAS !== "undefined" && EPOCAS_FICHAS && typeof iluNombreFicha === "function" && document.getElementById("ilustres")){
       var EFI = {}; Object.keys(EPOCAS_FICHAS).forEach(function(k){ EFI["epoca-" + k] = EPOCAS_FICHAS[k]; });
-      addAll(EFI, "ilustres", function(i){ var k = Object.keys(EPOCAS_FICHAS).find(function(x){ return EPOCAS_FICHAS[x] === i; }); return iluNombreFicha(k); }, function(i){ return i.anos || ""; }, "Garaia",
+      addAll(EFI, "ilustres", function(i){ var k = Object.keys(EPOCAS_FICHAS).find(function(x){ return EPOCAS_FICHAS[x] === i; }); return iluNombreFicha(k); }, function(i){ return i.anos || ""; }, "Aroa",
         function(i){ return [i.abre, i.social, i.politico, i.ciencia, i.arte, i.pensamiento, i.rupturas].filter(Boolean).join(" · "); });
     }
     addAll(typeof CLASES_IDX !== "undefined" ? CLASES_IDX : null, "clases", function(i){ return i.label; }, function(i){ return i.meta; }, "Clase");

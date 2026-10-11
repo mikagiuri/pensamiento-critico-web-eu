@@ -150,7 +150,7 @@ function renderGloGrids(){
 
 /* (10-10) Al pie de cada término, los pensadores que nombra (campo «ilustre», tools/build_glosario_ilustres.js),
    con enlace a su ficha de Ilustres; solo los que están en esta web. */
-const GLO_ILU = "Pentsalariak", GLO_EPOCA = "Garaia";
+const GLO_ILU = "Pentsalariak", GLO_EPOCA = "Aroa";
 function gloIlustres(g){
   if (typeof ILUSTRES === "undefined" || !ILUSTRES) return "";
   const ids = (g.ilustre || []).filter(id => ILUSTRES[id]);
