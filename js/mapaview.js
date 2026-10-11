@@ -32,6 +32,8 @@ const MAPA_DESC = {
   adagios: "Latinezko eta grezierazko lema klasikoak, beren historiarekin.",
   duelo: "Ordenagailuaren aurkako eztabaida: harrapatu bere falaziak edo erantzun arrazoi sendoagoekin, patxada galdu gabe.",
   polemicas: "Garai berean bizi izan ziren eta elkarren aurka aritu ziren pentsalariak: aukeratu norekin zoazen eta zergatik.",
+  perseguidos: "Beren ideiengatik zigortutako filosofoak eta zientzialariak: zer gertatu zen eta zer kontatu ohi den gaizki.",
+  comunidades: "Pentsalarien eskolak eta zirkuluak, eta biltzen ziren lekuak.",
   mundo: "Gela mundua balitz: planetaren datuak, zure ikasgelan.",
   camino: "Zer egin aukeratzen duzun eta ondorioak ikusten dituzun istorioak.",
   eudaimonia: "Zoriontasunari buruzko jokoa, Aristotelesen arabera.",
@@ -65,7 +67,7 @@ const MAPA_DESC = {
   signos: "Zeinu-hizkuntzako ikastaroa."
 };
 /* cuántos elementos tiene cada sección (si su colección está cargada en esta web) */
-const MAPA_CUENTA = { tarjetas: "DECKS", cuestionarios: "QUIZZES", glosario: "GLOSARIO", ilustres: "ILUSTRES", citas: "CITAS", adagios: "ADAGIOS", polemicas: "POLEMICAS",
+const MAPA_CUENTA = { tarjetas: "DECKS", cuestionarios: "QUIZZES", glosario: "GLOSARIO", ilustres: "ILUSTRES", citas: "CITAS", adagios: "ADAGIOS", polemicas: "POLEMICAS", perseguidos: "PERSEGUIDOS", comunidades: "COMUNIDADES",
   infografias: "INFOGRAFIAS", mapas: "MAPS", esquemas: "ESQUEMAS", cronogramas: "CRONOGRAMAS", genealogias: "GENEALOGIAS", lecturas: "LECTURAS",
   galeria: "GALERIA", dilemas: "DILEMAS", disertaciones: "DISERTACIONES", nudos: "NUDOS", pistas: "PISTAS", materiales: "MATERIALS" };
 function mapaG(name){ try { return (0, eval)("typeof " + name + " !== 'undefined' ? " + name + " : undefined"); } catch (e){ return undefined; } }
