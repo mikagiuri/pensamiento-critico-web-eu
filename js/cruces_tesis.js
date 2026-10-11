@@ -70,7 +70,7 @@ const CRU_TXT = {
   historia: "Filosofiaren historian", juegos: "Jokoetan", seguir: "Pentsatzen jarraitzeko",
   concuerdan: "Bat datoz", seOponen: "Aurka daude",
   nudos: "Korapiloak", rayuela: "Txingoka filosofikoa", vivelo: "Bizi ezazu Txingokan: hasi bidaia bat «{t}» geltokian",
-  deshaz: "Pentsa ezazu lasai Korapiloetan: «{t}»", estacion: "Hasi bidaia bat «{t}» geltokian",
+  deshaz: "Pentsa ezazu lasai Korapiloetan: «{t}»", metro: "Ikusi zure ibilbidea Genealogien planoan", estacion: "Hasi bidaia bat «{t}» geltokian",
   nota: "Hemen tesi hau eztabaidatzen da; horrek ez du esan nahi zure erantzuna harekin bat datorrenik."
 };
 function cruT(k, v){ return String(CRU_TXT[k] || k).replace(/\{(\w+)\}/g, (_, x) => (v && v[x] != null ? v[x] : "")); }
@@ -109,8 +109,15 @@ function cruRayuelaFinal(ruta, tens){
   const N = typeof NUDOS !== "undefined" && cruVista("nudos") ? NUDOS : [];
   const nud = [...mods].map(id => N.find(m => m.id === id)).filter(Boolean);
   const tes = cruTesisHtml([...new Set(ids)].slice(0, 6), "historia");
-  if (!tes && !nud.length) return "";
-  return '<div class="ray-box cru-seguir"><b>' + cruT("seguir") + '</b>' + tes +
+  /* (11-10) «Tu recorrido en el metro»: los pensadores de las estaciones del viaje que están en alguna línea de Genealogías */
+  let metro = "";
+  if (typeof GENEALOGIAS !== "undefined" && cruVista("genealogias")){
+    const R = cruRay(), enLinea = new Set(GENEALOGIAS.lineas.flatMap(l => l.ilustre)), ids = [];
+    (ruta || []).forEach(n => ((R && R.estaciones[n] && R.estaciones[n].autores) || []).forEach(a => { if (enLinea.has(a.id) && !ids.includes(a.id)) ids.push(a.id); }));
+    if (ids.length) metro = '<p class="cru-links"><button type="button" class="cru-a" data-igo="genealogias" data-iarg="ruta/' + ids.join(",") + '">🚇 ' + cruEsc(cruT("metro")) + '</button></p>';
+  }
+  if (!tes && !nud.length && !metro) return "";
+  return '<div class="ray-box cru-seguir"><b>' + cruT("seguir") + '</b>' + metro + tes +
     (nud.length ? '<p class="cru-links">' + nud.map(m => '<button type="button" class="cru-a" data-igo="nudos" data-iarg="' + m.id + '">' + cruEsc(cruT("deshaz", { t: m.titulo })) + '</button>').join("<br>") + '</p>' : "") + '</div>';
 }
 /* «En los juegos» de una tesis en la Red de tesis: módulos de Nudos y estaciones (de pregunta) de la Rayuela de esta web */
