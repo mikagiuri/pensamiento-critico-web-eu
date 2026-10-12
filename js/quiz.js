@@ -173,7 +173,7 @@ function renderQuizFilter(){
     const temas = quizTemasVisibles();
     if (!temas.includes(quizTema)) quizTema = "all";
     temaBtns = ["all"].concat(temas).map(t =>
-      '<button class="fbtn" data-tema="' + t + '" aria-pressed="' + (t === quizTema) + '" title="' + (t === "all" ? "Todos los temas" : quizTemaEtq(t)) + '">' +
+      '<button class="fbtn" data-tema="' + t + '" aria-pressed="' + (t === quizTema) + '" title="' + (t === "all" ? "Gai guztiak" : quizTemaEtq(t)) + '">' +
       (t === "all" ? "Guztiak" : (quizEsFil() && QUIZ_RAMAS[t]) ? QUIZ_RAMAS[t] : quizTemaNum(t) ? t : quizTemaEtq(t)) + '</button>'
     ).join("");
   }

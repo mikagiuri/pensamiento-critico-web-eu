@@ -95,7 +95,7 @@ function renderGloControls(){
       : '') +
     '<div class="glotools">' +
       '<input class="glosearch" id="glosearch" type="search" placeholder="Bilatu terminoa edo definizioa…" autocomplete="off" aria-label="Bilatu glosarioan">' +
-      '<select class="gloarea" id="gloarea" aria-label="Filtrar por área">' + areaOpts + '</select>' +
+      '<select class="gloarea" id="gloarea" aria-label="Arloka iragazi">' + areaOpts + '</select>' +
     '</div>';
 
   box.querySelectorAll("[data-sub]").forEach(b => b.addEventListener("click", () => {
