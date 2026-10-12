@@ -6,7 +6,7 @@
 const PAR_N = 6;                 // parejas por ronda
 /* «Cómo se juega» (29-09): una línea al abrir el juego; cadena entera para que la traduzca ui/<lang>.json */
 const PAR_HOWTO = { como: "Nola jokatzen den:", txt: "Sakatu termino bat eta gero bere definizioa (edo alderantziz). Sei bikote txanda bakoitzean, erlojuaren kontra: asmatu jarraian bolada egiteko." };
-const PAR_BLOCK_NAME = { A: "Bloque A · Antigua-medieval", B: "B blokea · Modernoa", C: "C blokea · Garaikidea" };
+const PAR_BLOCK_NAME = { A: "A blokea · Antzinakoa eta Erdi Arokoa", B: "B blokea · Modernoa", C: "C blokea · Garaikidea" };
 /* Grupo de un término: el bloque (glosario de HF, A/B/C) o, si no lo tiene, el tema (glosario de
    Filosofía 1.º: "Filosofía · Tema 1", "Taller de argumentación"…). Así el juego funciona en las
    dos webs con el glosario de cada una. */
