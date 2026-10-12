@@ -25,7 +25,7 @@
     seguir: "Gai honekin jarraitzeko", tarjetas: "Txartelak", cuestionarios: "Galdetegiak", infografias: "Infografiak", mapas: "Kontzeptu-mapak",
     esquemas: "Eskemak", lecturas: "Irakurgaiak", comentarios: "Testu-iruzkinak", dilemas: "Dilema etikoak", pistas: "Pista mailakatuak", conceptos: "Kontzeptuak",
     nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia", anexos: "Esplorazioak", epoca: "Aroa", epocaDe: "Aroa: {e}", volverTema: "Itzuli gaira",
-    blEstudiar: "Ikasi", blPau: "PAU prestatu", blPensar: "Pentsatu eta idatzi", blAmpliar: "Zabaldu",
+    blEstudiar: "Ikasi", blPau: "PAU prestatu", blPensar: "Pentsatu eta idatzi", blAmpliar: "Zabaldu", pauBadge: "PAUko irakurketa",
     infografia: "Infografia", mapa: "Mapa", esquema: "Eskema", lectura: "Irakurgaia", dilema: "Dilema", comentario: "Iruzkina",
     pau: "USE ibilbidea", pauLead: "Prestatu USE ordenan: lehenik proba nolakoa den, gero ariketa bakoitza eta, azkenik, gaikako praktika.",
     pau1: "Nolakoa da proba", pau2: "1. ariketa · Testu-iruzkina", pau3: "2. ariketa · Disertazioa",
@@ -267,9 +267,11 @@
   });
 
   /* ---------- final de cada tema de Teoría ---------- */
+  /* (12-10, rediseño Lote 3 · H0) temas de HF con lectura PAU: T6 (República VII), T14 (Discurso II-IV),
+     T18 (¿Qué es la Ilustración?), T23 (Ecce Homo) y T26 (El segundo sexo). Saca la insignia «Lectura PAU». */
+  var PAU_TEMAS = { 6: 1, 14: 1, 18: 1, 23: 1, 26: 1 };
   function finHtml(subject, tema, key){
     var T = coll("THEORY"), teoria = items("teoria", subject, tema);
-    var piloto = (subject === "hf" && tema === 6) || (subject === "fil" && tema === 5);
     var row = function(label, arr){ return arr.length ? '<div class="fin-row"><span class="fin-l">' + esc(label) + '</span><div class="fin-links">' + arr.map(function(x){ return btn(x); }).join("") + '</div></div>' : ""; };
     var cs = conceptosDe(subject, tema);
     var conceptosHtml = cs.length ? '<div class="fin-row"><span class="fin-l">' + esc(t("conceptos")) + '</span><div class="fin-links">' +
@@ -283,17 +285,12 @@
       esquemas: row(t("esquemas"), items("esquemas", subject, tema)), lecturas: row(t("lecturas"), items("lecturas", subject, tema)),
       comentario: row(t("comentarios"), items("comentario", subject, tema)), dilemas: row(t("dilemas"), dilemasDe(teoria.map(function(x){ return x.arg; }))),
       pistas: row(t("pistas"), pistasDe(teoria.map(function(x){ return x.arg; }))), conceptos: conceptosHtml, anexos: row(t("anexos"), anexosArr), epoca: row(t("epoca"), epocaArr) };
-    /* (12-10, rediseño Lote 2 · piloto) HF T6 (Platón) y Filosofía 1.º T5 (Ética) reorganizan la caja en tres bloques */
-    var rowsHtml;
-    if (piloto){
-      var blk = function(titulo, arr){ var inner = arr.filter(Boolean).join(""); return inner ? '<div class="fin-bloque"><h3>' + esc(titulo) + '</h3>' + inner + '</div>' : ""; };
-      var amp = function(titulo, arr){ var inner = arr.filter(Boolean).join(""); return inner ? '<details class="fin-bloque fin-amp"><summary>' + esc(titulo) + '</summary>' + inner + '</details>' : ""; };
-      rowsHtml = blk(t("blEstudiar"), [P.tarjetas, P.cuestionarios, P.infografias, P.mapas, P.esquemas, P.conceptos, P.epoca]) +
-        (subject === "hf" ? blk(t("blPau"), [P.lecturas, P.comentario]) : blk(t("blPensar"), [P.lecturas, P.dilemas, P.pistas])) +
-        (subject === "hf" ? amp(t("blAmpliar"), [P.anexos, P.dilemas, P.pistas]) : amp(t("blAmpliar"), [P.anexos]));
-    } else {
-      rowsHtml = [P.tarjetas, P.cuestionarios, P.infografias, P.mapas, P.esquemas, P.lecturas, P.comentario, P.dilemas, P.pistas, P.conceptos, P.anexos, P.epoca].filter(Boolean).join("");
-    }
+    /* (12-10, rediseño Lote 3) la caja del final del tema se ordena en TRES bloques en TODOS los temas */
+    var blk = function(titulo, arr){ var inner = arr.filter(Boolean).join(""); return inner ? '<div class="fin-bloque"><h3>' + esc(titulo) + '</h3>' + inner + '</div>' : ""; };
+    var amp = function(titulo, arr){ var inner = arr.filter(Boolean).join(""); return inner ? '<details class="fin-bloque fin-amp"><summary>' + esc(titulo) + '</summary>' + inner + '</details>' : ""; };
+    var rowsHtml = blk(t("blEstudiar"), [P.tarjetas, P.cuestionarios, P.infografias, P.mapas, P.esquemas, P.conceptos, P.epoca]) +
+      (subject === "hf" ? blk(t("blPau"), [P.lecturas, P.comentario]) : blk(t("blPensar"), [P.lecturas, P.dilemas, P.pistas])) +
+      (subject === "hf" ? amp(t("blAmpliar"), [P.anexos, P.dilemas, P.pistas]) : amp(t("blAmpliar"), [P.anexos]));
     /* tema anterior / siguiente, en el orden de la materia; desde un anexo, solo «Volver al tema» */
     var ks = temasDe(subject), i = ks.indexOf(key), prev = i > 0 ? ks[i - 1] : null, next = i >= 0 && i < ks.length - 1 ? ks[i + 1] : null;
     if (i < 0 && esAnexo(T[key])) prev = ks.filter(function(k){ return !T[k].sigla && temaOf("teoria", k, T[k]) === tema; })[0] || null;
@@ -418,7 +415,7 @@
              presocráticos; «Filosofía · Tema 5», helenismo) va sangrado bajo su tema y NO repite la ficha «Tema N» */
           var declaraN = extra && !anexo && temaNum(T[k]) != null;
           var li = '<li' + (extra ? ' class="temas-extra"' : '') + ga + '><button type="button" data-igo="teoria" data-iarg="' + esc(k) + '">' +
-            (T[k].sigla ? '<span class="temas-n">' + esc(T[k].sigla) + '</span>' : typeof n === "number" && !anexo && !declaraN ? '<span class="temas-n">' + esc(t("tema", { n: n })) + '</span>' : '') + '<span class="temas-t">' + esc(anexo ? strip(T[k].title).replace(/^[^\s-]+ - /, "") : strip(T[k].title)) + '</span>' + (anexo && T[k].clase ? '<span class="temas-anexo">Klasean</span>' : '') + '</button></li>';
+            (T[k].sigla ? '<span class="temas-n">' + esc(T[k].sigla) + '</span>' : typeof n === "number" && !anexo && !declaraN ? '<span class="temas-n">' + esc(t("tema", { n: n })) + '</span>' : '') + '<span class="temas-t">' + esc(anexo ? strip(T[k].title).replace(/^[^\s-]+ - /, "") : strip(T[k].title)) + '</span>' + (subject === "hf" && PAU_TEMAS[n] ? '<span class="temas-pau">' + esc(t("pauBadge")) + '</span>' : '') + (anexo && T[k].clase ? '<span class="temas-anexo">Klasean</span>' : '') + '</button></li>';
           if (anexo) exp.push(li);
           else { if (!extra) flush(); out += li; }
         });
