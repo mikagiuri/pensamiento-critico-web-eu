@@ -44,6 +44,7 @@ const MAPA_DESC = {
   dilemas: "Kasu zailak, zer dagoen ondo eztabaidatzeko.",
   logica: "Egia-taulak, silogismoak, oposizio-karratua eta diagramak.",
   leibniz: "Leibniz eta haren asmakizunak: kalkulagailua, sistema bitarra eta kalkulua.",
+  palabra: "Hitzaren artea: poetika, erretorika eta topikoak, Aristotelesengandik gaurko literaturara, antzerkira eta publizitatera.",
   universo: "Aristotelesen unibertsoa: lau elementuak, gorputzen erorketa, arima eta izaki bizidunak, eta zientzia modernoak ireki zituen arrakalak.",
   infografias: "Gai bakoitza irudi batean laburbilduta.",
   galeria: "Gaietako artelanak eta ilustrazioak.",
