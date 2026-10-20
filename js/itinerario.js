@@ -339,22 +339,30 @@
     ],
     "fil-t2": [
       { k: "hf-antropologia", n: 7, tit: "Antropologia klasikoa: Sokrates, Platon eta Aristoteles", txt: "1. Batxilergoan arima gorputz-gogo arazoan ikusi zenuen, Platonekin eta Aristotelesekin; 2. Batxilergoan Sokratesen buelta eta psikearen hiru kontzepzioak irakurriko dituzu: arima, bertutea eta bizitza ona." },
-      { k: "hf-metafisica", n: 15, tit: "Eztabaida metafisiko modernoa: dualismoa eta materialismoa", txt: "1. Batxilergoan Descartesen dualismoa eta Hobbesen materialismoa ikusi zenituen; 2. Batxilergoan eztabaida modernoa osorik ikusiko duzu, Spinozaren monismoarekin eta Lockeren buelta enpiristarekin." }
+      { k: "hf-metafisica", n: 15, tit: "Eztabaida metafisiko modernoa: dualismoa eta materialismoa", txt: "1. Batxilergoan Descartesen dualismoa eta Hobbesen materialismoa ikusi zenituen; 2. Batxilergoan eztabaida modernoa osorik ikusiko duzu, Spinozaren monismoarekin eta Lockeren buelta enpiristarekin." },
+      { k: "hf-sospecha", n: 21, tit: "Susmoaren filosofoak: Marx, Nietzsche eta Freud", txt: "1. Batxilergoan Marx, Nietzsche eta Freud ikusi zenituen gizakiaren ikuskeren artean —lana, gaingizakia eta «bere etxeko jabe ez den» ni bat—; 2. Batxilergoan elkarrekin ikusiko dituzu, «susmoaren maisu» gisa, bere buruaren jabe den subjektuaren ideia krisian jartzen dutenak." }
     ],
     "fil-t3": [
       { k: "hf-racionalismo", n: 14, tit: "Arrazionalismoa eta enpirismoa: Descartes eta Hume", txt: "1. Batxilergoan arrazionalismoa eta enpirismoa ezagutzaren bi iturri aurkaratu gisa ikusi zenituen; 2. Batxilergoan Descartes eta Hume barrutik irakurriko dituzu: zalantza metodikoa, cogitoa eta kausalitatearen kritika." },
-      { k: "hf-kant", n: 19, tit: "Kanten filosofia kritikoa eta metafisikaren arazoa", txt: "1. Batxilergoan Kanten kritizismoak arrazoia eta esperientzia batzen zituela ikusi zenuen; 2. Batxilergoan ikusiko duzu espazioak, denborak eta kategoriek nola antolatzen duten esperientzia eta zergatik ez ditugun gauzak «berez» ezagutzen." }
+      { k: "hf-kant", n: 19, tit: "Kanten filosofia kritikoa eta metafisikaren arazoa", txt: "1. Batxilergoan Kanten kritizismoak arrazoia eta esperientzia batzen zituela ikusi zenuen; 2. Batxilergoan ikusiko duzu espazioak, denborak eta kategoriek nola antolatzen duten esperientzia eta zergatik ez ditugun gauzak «berez» ezagutzen." },
+      { k: "hf-sofistas", n: 5, tit: "Greziako Ilustrazioa: sofistak, Sokrates eta Aspasia", txt: "1. Batxilergoan Protagorasen erlatibismoa ikusi zenuen —«gizakia da gauza guztien neurria»— egiaren aurreko jarreren artean; 2. Batxilergoan sofistak eta Greziako Ilustrazioaren jiro antropologikoa ikusiko dituzu, Sokrates eta Aspasiarekin." },
+      { k: "hf-platon", n: 6, tit: "Platon: Ideien teoria eta Errepublika", txt: "1. Batxilergoan Platonek iritziaren (doxa) eta zientziaren (episteme) artean egindako bereizketa eta Ideien idealismoa ikusi zenituen; 2. Batxilergoan Ideien teoria osoa eta Errepublikako hiri zuzena irakurriko dituzu." },
+      { k: "hf-modernidad", n: 13, tit: "Modernitatearen jaiotza: Errenazimentua, protestantismoa eta iraultza zientifikoa", txt: "1. Batxilergoan Galileoren iraultza zientifikoa eta metodo hipotetiko-deduktiboa ikusi zenituen, eta nola aldatu zen zientziaren eta kosmosaren ideia; 2. Batxilergoan iraultza hori modernitatearen jaiotzaren barruan ikusiko duzu, Errenazimentuarekin eta Erreformarekin." }
     ],
     "fil-t5": [
       { k: "hf-etica", n: 8, tit: "Etika klasikoa: intelektualismoa, bertuteak eta eudaimonia", txt: "1. Batxilergoan bertutea erdibide gisa eta Sokratesen intelektualismoa ikusi zenituen; 2. Batxilergoan etika klasiko osoa irakurriko duzu: areté, eudaimonía eta Sokratesen, Platonen eta Aristotelesen erantzunak." },
       { k: "hf-helenismo", n: 10, tit: "Helenismoa: zinismoa, estoizismoa, epikureismoa eta eszeptizismoa", txt: "1. Batxilergoan Epikuroren hedonismoa zoriontasunaren etika gisa ikusi zenuen; 2. Batxilergoan helenismo osoa ikusiko duzu: zinismoa, estoizismoa, epikureismoa eta eszeptizismoa, mundu ziurgabe batean nola bizi den galderari erantzuten." },
-      { k: "hf-etica-deber", n: 20, tit: "Zoriontasunaren etikak eta betebeharraren etikak: Kant utilitarismoaren aurrean", txt: "1. Batxilergoan Kanten etika formala eta Benthamen eta Millen utilitarismoa ikusi zenituen; 2. Batxilergoan talka hori sakon irakurriko duzu: betebeharraren etikak zoriontasunarenen aurrean." }
+      { k: "hf-etica-deber", n: 20, tit: "Zoriontasunaren etikak eta betebeharraren etikak: Kant utilitarismoaren aurrean", txt: "1. Batxilergoan Kanten etika formala eta Benthamen eta Millen utilitarismoa ikusi zenituen; 2. Batxilergoan talka hori sakon irakurriko duzu: betebeharraren etikak zoriontasunarenen aurrean." },
+      { k: "hf-sofistas", n: 5, tit: "Greziako Ilustrazioa: sofistak, Sokrates eta Aspasia", txt: "1. Batxilergoan Sokratesen intelektualismo morala ikusi zenuen, zeinentzat inork ez duen gaizki egiten jakinaren gainean; 2. Batxilergoan bere testuinguru historikoan ikusiko duzu: sofisten, Sokratesen eta Aspasiaren Atenas demokratikoa." }
     ],
     "fil-t6": [
       { k: "hf-contrato", n: 16, tit: "Gizartearen eta boterearen jatorria: Machiavelli eta gizarte-kontratua", txt: "1. Batxilergoan Hobbesen, Lockeren eta Rousseauren kontratu soziala Estatuaren jatorri gisa ikusi zenuen; 2. Batxilergoan, gainera, Maquiavelo eta Montesquieuren ideia irakurriko dituzu: boterea mugatzea." },
       { k: "hf-utilitarismo", n: 17, tit: "Utilitarismoa eta liberalismoa: kapitalismoaren oinarriak", txt: "1. Batxilergoan Lockeren liberalismo politikoa eta kontratu soziala ikusi zenituen; 2. Batxilergoan liberalismo ekonomikoaren oinarriak ikusiko dituzu: Benthamen eta Millen utilitarismoa eta Adam Smithen merkatua." },
       { k: "hf-capitalismo", n: 22, tit: "Kapitalismoaren kritika: Marxetik Rawlsera", txt: "1. Batxilergoan Marxek kapitalismoari egindako kritika ikusi zenuen: klase-borroka, soberakina eta alienazioa; 2. Batxilergoan irakurriko duzu nola jarraitzen duen Gramscin, Frankfurteko Eskolan, Habermasen eta Rawlsen." },
-      { k: "hf-beauvoir", n: 26, tit: "Feminismo garaikidea: Simone de Beauvoir", txt: "1. Batxilergoan Beauvoir feminismoaren olatuetan eta bere «Ez da emakume jaiotzen: emakume bihurtzen da» ikusi zenuen; 2. Batxilergoan haren existentzialismoa sakon irakurriko duzu, eta baita Butler, Fraser eta Nussbaum ere." }
+      { k: "hf-beauvoir", n: 26, tit: "Feminismo garaikidea: Simone de Beauvoir", txt: "1. Batxilergoan Beauvoir feminismoaren olatuetan eta bere «Ez da emakume jaiotzen: emakume bihurtzen da» ikusi zenuen; 2. Batxilergoan haren existentzialismoa sakon irakurriko duzu, eta baita Butler, Fraser eta Nussbaum ere." },
+      { k: "hf-platon", n: 6, tit: "Platon: Ideien teoria eta Errepublika", txt: "1. Batxilergoan Platonen Errepublika lehen utopia handi gisa ikusi zenuen, errege-filosofoen hiri zuzena; 2. Batxilergoan sakon irakurriko duzu, arimaren eta Ideien teoriarekin lotuta." },
+      { k: "hf-politica", n: 9, tit: "Politika klasikoa: Platon eta Aristoteles", txt: "1. Batxilergoan Aristotelesek gizakia animalia politiko gisa definitzen ikusi zenuen, eta Errepublikako hiri zuzena; 2. Batxilergoan sakon alderatuko dituzu Platonen eta Aristotelesen bi eredu politiko handiak." },
+      { k: "hf-ilustracion", n: 18, tit: "Proiektu ilustratua: arrazoiaren indarra eta mugak", txt: "1. Batxilergoan giza eskubideak, gizarte-kontratua eta Olympe de Gougesen eta Wollstonecraften feminismoaren lehen olatua ikusi zenituen; 2. Batxilergoan eskubide eta kritika horiek sortzen dituen proiektu ilustratua ikusiko duzu: arrazoian konfiantza eta haren mugak." }
     ],
     "hf-antropologia": [
       { k: "fil-t2", n: 2, tit: "Zer da gizakia?", txt: "1. Batxilergoan arima gorputz-gogo arazoan ikusi zenuen jada, Platonen dualismoarekin eta Aristotelesen arima-formarekin; hemen Sokratesen buelta eta psikearen hiru kontzepzioak irakurri dituzu." }
@@ -380,6 +388,9 @@
     "hf-helenismo": [
       { k: "fil-t5", n: 5, tit: "Etikaren galderak", txt: "1. Batxilergoan Epikuroren hedonismoa eta haren ataraxia ikusi zenituen jada; hemen helenismo osoa irakurri duzu: mundu ziurgabe batean ondo bizitzeko galderari erantzuten dioten lau eskola." }
     ],
+    "hf-ilustracion": [
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan giza eskubideak, gizarte-kontratua eta Olympe de Gougesen eta Wollstonecraften feminismoaren lehen olatua ikusi zenituen jada; hemen eskubide eta kritika horiek sortzen dituen proiektu ilustratua aztertu duzu." }
+    ],
     "hf-kant": [
       { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan Kanten kritizismoa arrazionalismoaren eta enpirismoaren sintesi gisa ikusi zenuen jada; hemen haren filosofia kritikoa sakon irakurri duzu: fenomenoa, noumenoa eta arrazoiaren mugak." }
     ],
@@ -390,14 +401,31 @@
       { k: "fil-t2", n: 2, tit: "Zer da gizakia?", txt: "1. Batxilergoan gorputz-gogo arazoa ikusi zenuen jada, Descartesen dualismoarekin eta Hobbesen materialismoarekin; hemen eztabaida modernoa osorik irakurri duzu, Spinozaren monismoarekin eta Lockeren bueltarekin." },
       { k: "fil-metafisica", n: "M", tit: "Errealitatea: zer dago eta nolakoa da? (Metafisika)", txt: "1. Batxilergoan monismoa, dualismoa eta materialismoa substantziari buruzko jarrera gisa ikusi zenituen jada; hemen eztabaida hori modernitatean irakurri duzu, Descartes, Hobbes, Spinoza eta Lockerekin." }
     ],
+    "hf-modernidad": [
+      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan iraultza zientifikoa eta Galileoren metodo hipotetiko-deduktiboa ikusi zenituen jada, eta nola aldatu zuten zientziaren eta kosmosaren ideia; hemen Errenazimentua eta iraultza hori ibili dituzu, modernitatearen jaiotza gisa." }
+    ],
     "hf-mito": [
       { k: "fil-t1", n: 1, tit: "Zer da filosofia?", txt: "1. Batxilergoan mitotik logosera igarotzea eta pentsamendu mitikoaren ezaugarriak ikusi zenituen jada; hemen filosofiaren jaiotza Jonian irakurri duzu, naturaren azalpena naturaz gaindikoa erabili gabe." }
+    ],
+    "hf-platon": [
+      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan Platonek iritziaren (doxa) eta zientziaren (episteme) artean egindako bereizketa eta Ideien idealismoa ikusi zenituen jada; hemen Ideien teoria osoa eta ezagutzaren bidea Onera aztertu dituzu." },
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Platonen Errepublika lehen utopia handi gisa ikusi zenuen jada, filosofoek gobernatzen duten hiri zuzena; hemen sakon irakurri duzu, arimaren eta Ideien teoriarekin lotuta." }
+    ],
+    "hf-politica": [
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Aristotelesek gizakia animalia politiko gisa definitzen ikusi zenuen jada, eta Platonen Errepublika hiri zuzen gisa; hemen sakon alderatu dituzu komunitate onenaren bi ereduak." }
     ],
     "hf-preso": [
       { k: "fil-t1", n: 1, tit: "Zer da filosofia?", txt: "1. Batxilergoan Talesen arkhé logosaren lehen urrats gisa ikusi zenuen jada; hemen aurresokratikoek errealitateari eta guztiaren printzipioari buruzko galderari emandako erantzunak zeharkatu dituzu." }
     ],
     "hf-racionalismo": [
       { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan arrazionalismoa eta enpirismoa ezagutzaren iturrien taulan ikusi zenituen jada; hemen Descartes eta Hume barrutik irakurri dituzu: zalantza, cogitoa eta kausalitatearen kritika." }
+    ],
+    "hf-sofistas": [
+      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan Protagorasen erlatibismoa ikusi zenuen jada —«gizakia da gauza guztien neurria»— egiaren aurreko jarreren artean; hemen bere munduan kokatu duzu: Greziako Ilustrazioa eta sofisten jiroa gizakirantz eta poliserantz." },
+      { k: "fil-t5", n: 5, tit: "Etikaren galderak", txt: "1. Batxilergoan Sokratesen intelektualismo morala ikusi zenuen jada, zeinentzat inork ez duen gaizki egiten jakinaren gainean; hemen hura defendatu zuen Sokrates ezagutu duzu, sofisten aurrean, Atenas demokratikoan." }
+    ],
+    "hf-sospecha": [
+      { k: "fil-t2", n: 2, tit: "Zer da gizakia?", txt: "1. Batxilergoan Marx, Nietzsche eta Freud ikusi zenituen jada gizakiaren ikuskeren artean —lana, gaingizakia eta «bere etxeko jabe ez den» ni bat—; hemen elkarrekin irakurri dituzu, susmoaren maisu gisa." }
     ],
     "hf-utilitarismo": [
       { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Lockeren liberalismo politikoa eta kontratu soziala ikusi zenituen jada; hemen liberalismo ekonomikoaren oinarriak irakurri dituzu: Benthamen eta Millen utilitarismoa eta Adam Smithen merkatua." }
@@ -662,5 +690,5 @@
     if (G("quizKey") != null) renderQuiz(G("quizKey"));
   } catch (e){}
 
-  window.Itinerario = { itinerario: itinerario, temaOf: temaOf, go: go, epocaFicha: epocaFicha, gloTema: gloTema, temasDe: temasDe, esAnexo: esAnexo };
+  window.Itinerario = { itinerario: itinerario, temaOf: temaOf, go: go, epocaFicha: epocaFicha, gloTema: gloTema, temasDe: temasDe, esAnexo: esAnexo, PUENTES: PUENTES };
 })();
