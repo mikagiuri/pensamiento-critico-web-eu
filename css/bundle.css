@@ -385,6 +385,8 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 60px;colo
 .itin-l{font-weight:600;color:var(--ink);font-size:.9rem}
 .itin-here{font-style:normal;font-weight:600;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--accent));margin-inline-start:6px}
 .itin-links{display:flex;flex-wrap:wrap;gap:6px}
+/* (19-10) puentes 1.º <-> 2.º */
+.fin-puente{margin:.2rem 0 .7rem}.fin-puente p{margin:.35rem 0 0;color:var(--muted);font-size:.9rem;line-height:1.45}
 .itin-lnk{background:var(--surface);border:1px solid var(--line);color:var(--ink);padding:4px 10px;border-radius:999px;font:500 .84rem/1.3 var(--sans);text-align:start}
 .itin-lnk:hover{border-color:var(--c,var(--accent));color:var(--c,var(--accent))}
 .itin-lnk[aria-current="true"]{background:var(--c,var(--accent));border-color:transparent;color:var(--on-accent);cursor:default}

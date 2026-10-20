@@ -27,6 +27,7 @@
     nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia", anexos: "Esplorazioak", epoca: "Aroa", epocaDe: "Aroa: {e}", volverTema: "Itzuli gaira",
     blEstudiar: "Ikasi", blPau: "PAU prestatu", blPensar: "Pentsatu eta idatzi", blAmpliar: "Zabaldu", pauBadge: "PAUko irakurketa",
     cronogramas: "Kronogramak", disertaciones: "Disertazioak", comparativas: "Konparatiboak", polemicas: "Polemikak", comunidades: "Komunitateak",
+    puenteFil: "2. Batxilergoan berriro ikusiko duzu", puenteHf: "1. Batxilergoan ikusi zenuen jada", hfSig: "FH",
     perseguidos: "Jazarriak", duelo: "Arrazoien dueloa", juegos: "Jokoak", logica: "Logikaren txokoa",
     videosEu: "Bideoak euskaraz (Ikusgela)", videoEu: "Ikusgelaren bideoa, euskaraz", transcripcion: "Transkripzioa", transcripcionT: "Bideoaren testua: Ikusgelaren azpitituluak", infografia: "Infografia", mapa: "Mapa", esquema: "Eskema", lectura: "Irakurgaia", dilema: "Dilema", comentario: "Iruzkina",
     pau: "USE ibilbidea", pauLead: "Prestatu USE ordenan: lehenik proba nolakoa den, gero ariketa bakoitza eta, azkenik, gaikako praktika.",
@@ -323,6 +324,94 @@
     if (subject === "fil") js.push("rayuela");   /* decisión del profesor (18-10): Rayuela en todos los temas de 1.º */
     return js.filter(function(v){ return view(v); }).map(function(v){ return { go: v, arg: "", label: navLabel(v, "juegos") }; });
   }
+  /* (19-10) puentes 1.º <-> 2.º (informe fil1->hf2 §5.2; borrador de DSH, visto bueno de la 50). Muestra aprobada por el profesor; extendido a todos los temas del mapa (borrador 3 de DSH).
+     En la web completa el enlace abre el tema; en las webs del alumnado, la otra web publicada en la misma lengua. */
+  var PUENTES = {
+    "fil-metafisica": [
+      { k: "hf-medieval", n: 11, tit: "Erdi Aroko filosofia: etapak, metodoak eta unibertsalen arazoa", txt: "1. Batxilergoan Anselmok eta Tomas Akinokoak Jainkoari buruz emandako argudio medievalak ikusi zenituen; 2. Batxilergoan Erdi Aro osoa ikusiko duzu: fede-arrazoi harremana, haren etapak eta unibertsalen arazoa." },
+      { k: "hf-fe-razon", n: 12, tit: "Fedea eta arrazoia: filosofia grekoaren asimilazioa eta Jainkoaren existentzia", txt: "1. Batxilergoan Tomas Akinokoaren bost bideak eta esentzia-existentzia bereizketa ikusi zenituen; 2. Batxilergoan ikusiko duzu kristautasunak nola barneratu zuen greziar filosofia, Agustin, Tomas Akinokoa, Avizena eta Ockhamekin." },
+      { k: "hf-metafisica", n: 15, tit: "Eztabaida metafisiko modernoa: dualismoa eta materialismoa", txt: "1. Batxilergoan monismoa, dualismoa eta materialismoa substantziari buruzko erantzun gisa ikusi zenituen; 2. Batxilergoan eztabaida hori modernitatean ikusiko duzu, Descartes, Hobbes, Spinoza eta Lockerekin." }
+    ],
+    "fil-t1": [
+      { k: "hf-mito", n: 3, tit: "Filosofiaren sorrera: mitotik logosera", txt: "1. Batxilergoan mitotik logosera igarotzea filosofiaren jaiotza gisa ikusi zenuen; 2. Batxilergoan Miletoko lehen filosofoak irakurriko dituzu, errealitatea arrazoiaren bidez azaltzen, jainkorik gabe." },
+      { k: "hf-preso", n: 4, tit: "Errealitatearen arazoa presokratikoengan", txt: "1. Batxilergoan Miletoko Tales arkhé lehen printzipio gisa bilatzen ikusi zenuen; 2. Batxilergoan ikusiko duzu zergatik proposatu zuen aurresokratiko bakoitzak bat desberdina eta nola ulertzen zuten errealitatea." }
+    ],
+    "fil-t2": [
+      { k: "hf-antropologia", n: 7, tit: "Antropologia klasikoa: Sokrates, Platon eta Aristoteles", txt: "1. Batxilergoan arima gorputz-gogo arazoan ikusi zenuen, Platonekin eta Aristotelesekin; 2. Batxilergoan Sokratesen buelta eta psikearen hiru kontzepzioak irakurriko dituzu: arima, bertutea eta bizitza ona." },
+      { k: "hf-metafisica", n: 15, tit: "Eztabaida metafisiko modernoa: dualismoa eta materialismoa", txt: "1. Batxilergoan Descartesen dualismoa eta Hobbesen materialismoa ikusi zenituen; 2. Batxilergoan eztabaida modernoa osorik ikusiko duzu, Spinozaren monismoarekin eta Lockeren buelta enpiristarekin." }
+    ],
+    "fil-t3": [
+      { k: "hf-racionalismo", n: 14, tit: "Arrazionalismoa eta enpirismoa: Descartes eta Hume", txt: "1. Batxilergoan arrazionalismoa eta enpirismoa ezagutzaren bi iturri aurkaratu gisa ikusi zenituen; 2. Batxilergoan Descartes eta Hume barrutik irakurriko dituzu: zalantza metodikoa, cogitoa eta kausalitatearen kritika." },
+      { k: "hf-kant", n: 19, tit: "Kanten filosofia kritikoa eta metafisikaren arazoa", txt: "1. Batxilergoan Kanten kritizismoak arrazoia eta esperientzia batzen zituela ikusi zenuen; 2. Batxilergoan ikusiko duzu espazioak, denborak eta kategoriek nola antolatzen duten esperientzia eta zergatik ez ditugun gauzak «berez» ezagutzen." }
+    ],
+    "fil-t5": [
+      { k: "hf-etica", n: 8, tit: "Etika klasikoa: intelektualismoa, bertuteak eta eudaimonia", txt: "1. Batxilergoan bertutea erdibide gisa eta Sokratesen intelektualismoa ikusi zenituen; 2. Batxilergoan etika klasiko osoa irakurriko duzu: areté, eudaimonía eta Sokratesen, Platonen eta Aristotelesen erantzunak." },
+      { k: "hf-helenismo", n: 10, tit: "Helenismoa: zinismoa, estoizismoa, epikureismoa eta eszeptizismoa", txt: "1. Batxilergoan Epikuroren hedonismoa zoriontasunaren etika gisa ikusi zenuen; 2. Batxilergoan helenismo osoa ikusiko duzu: zinismoa, estoizismoa, epikureismoa eta eszeptizismoa, mundu ziurgabe batean nola bizi den galderari erantzuten." },
+      { k: "hf-etica-deber", n: 20, tit: "Zoriontasunaren etikak eta betebeharraren etikak: Kant utilitarismoaren aurrean", txt: "1. Batxilergoan Kanten etika formala eta Benthamen eta Millen utilitarismoa ikusi zenituen; 2. Batxilergoan talka hori sakon irakurriko duzu: betebeharraren etikak zoriontasunarenen aurrean." }
+    ],
+    "fil-t6": [
+      { k: "hf-contrato", n: 16, tit: "Gizartearen eta boterearen jatorria: Machiavelli eta gizarte-kontratua", txt: "1. Batxilergoan Hobbesen, Lockeren eta Rousseauren kontratu soziala Estatuaren jatorri gisa ikusi zenuen; 2. Batxilergoan, gainera, Maquiavelo eta Montesquieuren ideia irakurriko dituzu: boterea mugatzea." },
+      { k: "hf-utilitarismo", n: 17, tit: "Utilitarismoa eta liberalismoa: kapitalismoaren oinarriak", txt: "1. Batxilergoan Lockeren liberalismo politikoa eta kontratu soziala ikusi zenituen; 2. Batxilergoan liberalismo ekonomikoaren oinarriak ikusiko dituzu: Benthamen eta Millen utilitarismoa eta Adam Smithen merkatua." },
+      { k: "hf-capitalismo", n: 22, tit: "Kapitalismoaren kritika: Marxetik Rawlsera", txt: "1. Batxilergoan Marxek kapitalismoari egindako kritika ikusi zenuen: klase-borroka, soberakina eta alienazioa; 2. Batxilergoan irakurriko duzu nola jarraitzen duen Gramscin, Frankfurteko Eskolan, Habermasen eta Rawlsen." },
+      { k: "hf-beauvoir", n: 26, tit: "Feminismo garaikidea: Simone de Beauvoir", txt: "1. Batxilergoan Beauvoir feminismoaren olatuetan eta bere «Ez da emakume jaiotzen: emakume bihurtzen da» ikusi zenuen; 2. Batxilergoan haren existentzialismoa sakon irakurriko duzu, eta baita Butler, Fraser eta Nussbaum ere." }
+    ],
+    "hf-antropologia": [
+      { k: "fil-t2", n: 2, tit: "Zer da gizakia?", txt: "1. Batxilergoan arima gorputz-gogo arazoan ikusi zenuen jada, Platonen dualismoarekin eta Aristotelesen arima-formarekin; hemen Sokratesen buelta eta psikearen hiru kontzepzioak irakurri dituzu." }
+    ],
+    "hf-beauvoir": [
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Beauvoir feminismoaren olatuetan eta bere «Ez da emakume jaiotzen» ikusi zenuen jada; hemen haren existentzialismoa sakon irakurri duzu, eta baita Butler, Fraser eta Nussbaum ere." }
+    ],
+    "hf-capitalismo": [
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Marxek kapitalismoari egindako kritika ikusi zenuen jada: klase-borroka, soberakina eta alienazioa; hemen haren jarraipena irakurri duzu, Gramscitik eta Frankfurteko Eskolatik Habermasera eta Rawlsera." }
+    ],
+    "hf-contrato": [
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Hobbesen, Lockeren eta Rousseauren kontratu soziala eta jainkozko eskubidea ikusi zenituen jada; hemen, gainera, Maquiavelo eta Montesquieuren botereen banaketa irakurri dituzu." }
+    ],
+    "hf-etica": [
+      { k: "fil-t5", n: 5, tit: "Etikaren galderak", txt: "1. Batxilergoan bertutea erdibide gisa eta Sokratesen intelektualismoa ikusi zenituen jada; hemen etika klasikoa irakurri duzu: zer diren areté eta eudaimonía Sokratesentzat, Platonentzat eta Aristotelesentzat." }
+    ],
+    "hf-etica-deber": [
+      { k: "fil-t5", n: 5, tit: "Etikaren galderak", txt: "1. Batxilergoan Kanten etika formala eta Benthamen eta Millen utilitarismoa ikusi zenituen jada; hemen talka hori sakon irakurri duzu: betebeharraren etikak zoriontasunarenen aurrean." }
+    ],
+    "hf-fe-razon": [
+      { k: "fil-metafisica", n: "M", tit: "Errealitatea: zer dago eta nolakoa da? (Metafisika)", txt: "1. Batxilergoan Tomas Akinokoaren bost bideak eta esentzia-existentzia bereizketa ikusi zenituen jada; hemen fedearen eta arrazoiaren sintesia irakurri duzu, Agustin, Tomas Akinokoa, Avizena eta Ockhamekin." }
+    ],
+    "hf-helenismo": [
+      { k: "fil-t5", n: 5, tit: "Etikaren galderak", txt: "1. Batxilergoan Epikuroren hedonismoa eta haren ataraxia ikusi zenituen jada; hemen helenismo osoa irakurri duzu: mundu ziurgabe batean ondo bizitzeko galderari erantzuten dioten lau eskola." }
+    ],
+    "hf-kant": [
+      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan Kanten kritizismoa arrazionalismoaren eta enpirismoaren sintesi gisa ikusi zenuen jada; hemen haren filosofia kritikoa sakon irakurri duzu: fenomenoa, noumenoa eta arrazoiaren mugak." }
+    ],
+    "hf-medieval": [
+      { k: "fil-metafisica", n: "M", tit: "Errealitatea: zer dago eta nolakoa da? (Metafisika)", txt: "1. Batxilergoan Anselmok eta Tomas Akinokoak Jainkoari buruz emandako argudioak ikusi zenituen jada; hemen horiek inguratzen dituen Erdi Aroa irakurri duzu: fede-arrazoi harremana, haren etapak eta unibertsalen arazoa." }
+    ],
+    "hf-metafisica": [
+      { k: "fil-t2", n: 2, tit: "Zer da gizakia?", txt: "1. Batxilergoan gorputz-gogo arazoa ikusi zenuen jada, Descartesen dualismoarekin eta Hobbesen materialismoarekin; hemen eztabaida modernoa osorik irakurri duzu, Spinozaren monismoarekin eta Lockeren bueltarekin." },
+      { k: "fil-metafisica", n: "M", tit: "Errealitatea: zer dago eta nolakoa da? (Metafisika)", txt: "1. Batxilergoan monismoa, dualismoa eta materialismoa substantziari buruzko jarrera gisa ikusi zenituen jada; hemen eztabaida hori modernitatean irakurri duzu, Descartes, Hobbes, Spinoza eta Lockerekin." }
+    ],
+    "hf-mito": [
+      { k: "fil-t1", n: 1, tit: "Zer da filosofia?", txt: "1. Batxilergoan mitotik logosera igarotzea eta pentsamendu mitikoaren ezaugarriak ikusi zenituen jada; hemen filosofiaren jaiotza Jonian irakurri duzu, naturaren azalpena naturaz gaindikoa erabili gabe." }
+    ],
+    "hf-preso": [
+      { k: "fil-t1", n: 1, tit: "Zer da filosofia?", txt: "1. Batxilergoan Talesen arkhé logosaren lehen urrats gisa ikusi zenuen jada; hemen aurresokratikoek errealitateari eta guztiaren printzipioari buruzko galderari emandako erantzunak zeharkatu dituzu." }
+    ],
+    "hf-racionalismo": [
+      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan arrazionalismoa eta enpirismoa ezagutzaren iturrien taulan ikusi zenituen jada; hemen Descartes eta Hume barrutik irakurri dituzu: zalantza, cogitoa eta kausalitatearen kritika." }
+    ],
+    "hf-utilitarismo": [
+      { k: "fil-t6", n: 6, tit: "Bizitza gizartean (Filosofia politikoa)", txt: "1. Batxilergoan Lockeren liberalismo politikoa eta kontratu soziala ikusi zenituen jada; hemen liberalismo ekonomikoaren oinarriak irakurri dituzu: Benthamen eta Millen utilitarismoa eta Adam Smithen merkatua." }
+    ]
+  };
+  var WEB_REPO = { fil: "aula-de-filosofia-web", hf: "historia-filosofia-web" };
+  function puentesHtml(subject, key){
+    var arr = PUENTES[key]; if (!arr || !arr.length) return "";
+    var T = coll("THEORY"), lang = (document.documentElement.lang || "es").slice(0, 2), otra = subject === "fil" ? "hf" : "fil";
+    var url = "https://mikagiuri.github.io/" + WEB_REPO[otra] + (lang === "es" ? "" : "-" + lang) + "/#teoria/";
+    return '<div class="fin-bloque fin-puentes"><h3>' + esc(t(subject === "fil" ? "puenteFil" : "puenteHf")) + '</h3>' + arr.map(function(x){
+      var lab = (otra === "hf" ? t("hfSig") + " · " : "") + (typeof x.n === "number" ? t("tema", { n: x.n }) : x.n) + " · " + x.tit;
+      var a = T && T[x.k] ? btn({ go: "teoria", arg: x.k, label: lab }) : '<a class="itin-lnk" href="' + esc(url + x.k) + '" target="_blank" rel="noopener">' + esc(lab) + ' ↗</a>';
+      return '<div class="fin-puente">' + a + '<p>' + esc(x.txt) + '</p></div>'; }).join("") + '</div>';
+  }
   function finHtml(subject, tema, key){
     var T = coll("THEORY"), teoria = items("teoria", subject, tema);
     var row = function(label, arr){ return arr.length ? '<div class="fin-row"><span class="fin-l">' + esc(label) + '</span><div class="fin-links">' + arr.map(function(x){ return btn(x); }).join("") + '</div></div>' : ""; };
@@ -364,7 +453,7 @@
     var blk = function(titulo, arr){ var inner = arr.filter(Boolean).join(""); return inner ? '<div class="fin-bloque"><h3>' + esc(titulo) + '</h3>' + inner + '</div>' : ""; };
     var amp = function(titulo, arr){ var inner = arr.filter(Boolean).join(""); return inner ? '<details class="fin-bloque fin-amp"><summary>' + esc(titulo) + '</summary>' + inner + '</details>' : ""; };
     var ampComun = [P.anexos].concat(subject === "hf" ? [P.dilemas, P.pistas] : []).concat([P.polemicas, P.comunidades, P.perseguidos, P.duelo, P.juegos, P.videos]);
-    var rowsHtml = blk(t("blEstudiar"), [P.tarjetas, P.cuestionarios, P.infografias, P.mapas, P.esquemas, P.conceptos, P.epoca, P.cronogramas]) +
+    var rowsHtml = puentesHtml(subject, key) + blk(t("blEstudiar"), [P.tarjetas, P.cuestionarios, P.infografias, P.mapas, P.esquemas, P.conceptos, P.epoca, P.cronogramas]) +
       (subject === "hf" ? blk(t("blPau"), [P.lecturas, P.comentario, P.disertaciones, P.comparativas]) : blk(t("blPensar"), [P.lecturas, P.disertaciones, P.dilemas, P.pistas, P.logica])) +
       amp(t("blAmpliar"), ampComun);
     /* tema anterior / siguiente, en el orden de la materia; desde un anexo, solo «Volver al tema» */
@@ -494,7 +583,7 @@
              presocráticos; «Filosofía · Tema 5», helenismo) va sangrado bajo su tema y NO repite la ficha «Tema N» */
           var declaraN = extra && !anexo && temaNum(T[k]) != null;
           var li = '<li' + (extra ? ' class="temas-extra"' : '') + ga + '><button type="button" data-igo="teoria" data-iarg="' + esc(k) + '">' +
-            (T[k].sigla ? '<span class="temas-n">' + esc(T[k].sigla) + '</span>' : typeof n === "number" && !anexo && !declaraN ? '<span class="temas-n">' + esc(t("tema", { n: n })) + '</span>' : '') + '<span class="temas-t">' + esc(anexo ? strip(T[k].title).replace(/^[^\s-]+ - /, "") : strip(T[k].title)) + (subject === "hf" && typeof n === "number" && !anexo && !T[k].sigla && typeof impBadge === "function" ? ' ' + impBadge("tema", n) : '') + '</span>' + (subject === "hf" && PAU_TEMAS[n] ? '<span class="temas-pau">' + esc(t("pauBadge")) + '</span>' : '') + (anexo && T[k].clase ? '<span class="temas-anexo">Klasean</span>' : '') + '</button></li>';
+            (T[k].sigla ? '<span class="temas-n">' + esc(T[k].sigla) + '</span>' : typeof n === "number" && !anexo && !declaraN ? '<span class="temas-n">' + esc(t("tema", { n: n })) + '</span>' : '') + '<span class="temas-t">' + esc(anexo ? strip(T[k].title).replace(/^[^\s-]+ - /, "") : strip(T[k].title)) + (subject === "hf" && !anexo && typeof impBadge === "function" ? ' ' + impBadge("tema", typeof n === "number" && !T[k].sigla ? n : k) : '') + '</span>' + (subject === "hf" && PAU_TEMAS[n] ? '<span class="temas-pau">' + esc(t("pauBadge")) + '</span>' : '') + (anexo && T[k].clase ? '<span class="temas-anexo">Klasean</span>' : '') + '</button></li>';
           if (anexo) exp.push(li);
           else { if (!extra) flush(); out += li; }
         });
