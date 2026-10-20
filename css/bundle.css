@@ -1358,6 +1358,15 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 #pistas .pis-pg.cur{ background:var(--pc, var(--hf)); color:var(--on-hf); border-color:var(--pc, var(--hf)); }
 #pistas .pis-pg.done:not(.cur){ border-color:var(--ok); color:var(--ok); }
 #pistas .pis-pg.done::after{ content:"✓"; font-size:.7em; margin-inline-start:.15em; }
+/* (20-10) puente con el glosario: términos plegados (details), con su definición de GLOSARIO y enlace #glosario/<id> */
+#pistas .pis-glo{ margin:1.1rem 0 .2rem; padding-top:.8rem; border-top:1px dashed var(--line); display:grid; gap:.45rem; }
+#pistas .pis-glo-lb{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+#pistas .pis-glo-it{ border:1px solid var(--line); border-radius:10px; background:var(--surface-2); }
+#pistas .pis-glo-it summary{ cursor:pointer; padding:.5rem .8rem; font-family:var(--serif); font-weight:600; color:var(--ink); }
+#pistas .pis-glo-it summary:hover, #pistas .pis-glo-it summary:focus-visible{ color:var(--pc, var(--hf)); }
+#pistas .pis-glo-it[open] summary{ border-bottom:1px solid var(--line); }
+#pistas .pis-glo-it p{ margin:0; padding:.6rem .8rem .2rem; font-size:.95rem; line-height:1.55; }
+#pistas .pis-glo-a{ display:inline-block; margin:.1rem .8rem .6rem; font-size:.88rem; color:var(--accent); }
 
 
 /* ==== css/juegosucio.css ==== */
