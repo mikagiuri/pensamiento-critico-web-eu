@@ -30,7 +30,7 @@ const QUIZ_TEMAS = {
   hf: { T1: "Historikotasuna eta unibertsaltasuna", T2: "Filosofiaren metodoak", T3: "Mitotik logosera", T4: "Presokratikoak", T5: "Sofistak, Sokrates eta Aspasia", T6: "Platon: Ideiak eta Errepublika", T7: "Antropologia klasikoa", T8: "Etika klasikoa", T9: "Politika klasikoa", T10: "Helenismoa",
     T11: "Erdi Aroko filosofia eta unibertsalak", T12: "Fedea eta arrazoia", T13: "Errenazimentua eta iraultza zientifikoa", T14: "Arrazionalismoa eta enpirismoa", T15: "Dualismoa eta materialismoa", T16: "Gizartea eta boterea: gizarte-kontratua", T17: "Utilitarismoa eta liberalismoa",
     T18: "Ilustrazioa", T19: "Kant: kritika eta metafisika", T20: "Zoriontasunaren eta betebeharraren etikak", T21: "Susmoaren filosofoak", T22: "Kapitalismoaren kritika: Marxengandik Rawlsengana", T23: "Nietzsche eta postmodernitatea", T24: "Filosofia analitikoa", T25: "Existentzialismoa", T26: "Feminismoa", T27: "XXI. mendeko erronkak" },
-  ipc: { pensar: "Nork bere kabuz pentsatzea", argumentar: "Ondo argudiatu", falacias: "Faltsukeriak eta buloak", sesgos: "Alborapenak", dialogo: "Elkarrizketan aritu", medios: "Komunikabideak eta publizitatea", grupo: "Taldea", huella: "Nire aztarna planetan" }
+  ipc: { pensar: "Nork bere kabuz pentsatzea", argumentar: "Ondo argudiatu", falacias: "Falaziak eta buloak", sesgos: "Alborapenak", dialogo: "Elkarrizketan aritu", medios: "Komunikabideak eta publizitatea", grupo: "Taldea", huella: "Nire aztarna planetan" }
 };
 const QUIZ_TEMA = {
   "fil-t1": "T1", "fil-metodo-q": "T1", "fil-ramas-q": "T1", "fil-t1-banco": "T1", "fil-presocraticos-q": "T1", "fil-presocraticos-banco": "T1",
