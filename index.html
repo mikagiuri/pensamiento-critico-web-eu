@@ -80,8 +80,6 @@
         </div>
       </div>
       
-      <button data-view="uso">Uso</button>
-      <button data-view="puentes">Puentes 1.º↔2.º</button>
     </nav>
     <button class="navtoggle" id="navtoggle" aria-label="Ireki atalen menua" aria-expanded="false">☰</button>
     <details class="langmenu" id="langmenu"><summary class="theme langbtn" title="Hizkuntza" aria-label="Hizkuntza">🌐</summary><div class="langlist"><a href="https://mikagiuri.github.io/pensamiento-critico-web/" hreflang="es" lang="es" onclick="this.href=this.href.split('#')[0]+location.hash">Castellano</a><a href="https://mikagiuri.github.io/pensamiento-critico-web-eu/" hreflang="eu" lang="eu" aria-current="true" onclick="this.href=this.href.split('#')[0]+location.hash">Euskara</a><a href="https://mikagiuri.github.io/pensamiento-critico-web-fr/" hreflang="fr" lang="fr" onclick="this.href=this.href.split('#')[0]+location.hash">Français</a><a href="https://mikagiuri.github.io/pensamiento-critico-web-en/" hreflang="en" lang="en" onclick="this.href=this.href.split('#')[0]+location.hash">English</a></div></details>
@@ -106,21 +104,7 @@
 
   
 
-  <section class="view" id="uso">
-    <p class="eyebrow">Registro de uso · solo web local</p>
-    <h1 class="title">Pulso de uso</h1>
-    <p class="lead">Qué consultan los grupos y dónde fallan, de forma anónima y por grupo. Esta sección no se publica en las webs del alumnado.</p>
-
-    <div class="sec-head"><h2 class="sec">Panel</h2></div>
-    <p><a class="fbtn" href="uso/pulso_de_uso.html" target="_blank" rel="noopener">Abrir el panel «Pulso de uso»</a></p>
-    <p class="lead">Si el enlace no abre nada, aún no has generado el panel. Para crearlo o actualizarlo con datos reales:</p>
-    <ol class="lead">
-      <li>En la hoja de Google del registro, exporta las pestañas <b>resumen</b> eta <b>falladas</b> a CSV (Archivo › Descargar › CSV).</li>
-      <li>Desde <code>editables_lab_iesmdb</code>, ejecuta: <code>node tools/uso_panel.js --resumen resumen.csv --falladas falladas.csv --out web/uso/pulso_de_uso.html</code></li>
-      <li>Recarga esta página y pulsa «Abrir el panel».</li>
-    </ol>
-    <p class="lead">El resumen se genera cada lunes de madrugada; hasta el primero, el panel avisa de que aún no hay datos. El panel nunca muestra nombres, códigos de alumno, IP ni texto, ni ninguna celda con menos de 5 visitas.</p>
-  </section>
+  
 
   
 
@@ -189,12 +173,7 @@
 
   
 
-  <section class="view" id="puentes">
-    <!-- MAPA DE PUENTES 1.º↔2.º (20-10): solo web local; panel de coordinación, lee THEORY + Itinerario.PUENTES en vivo (js/puentesmapaview.js) -->
-    <h1>Puentes entre 1.º y 2.º</h1>
-    <p class="lead">Todos los puentes «Lo volverás a ver en 2.º» / «Ya lo viste en 1.º» que hay entre Filosofía de 1.º y la Historia de la Filosofía de 2.º, y dónde faltan. Solo en tu web local.</p>
-    <div id="puentesbody"></div>
-  </section>
+  
 
   
 
