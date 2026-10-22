@@ -1,7 +1,7 @@
 // Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/juegosucio.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
 const JUEGO_SUCIO = {
  "intro": "Arthur Schopenhauer (1788-1860) filosofo alemaniar bat izan zen, gogo txarreko fama zuena: begira iezaiozu ileari. 1830 inguruan liburuxka bat idatzi zuen, <em>Arrazoia izatearen artea</em>, 38 «estratagemarekin»: eztabaida bat irabazteko trikimailuak, arrazoirik ez izan arren. Ez zuen idatzi guk tranpak egin genitzan: haiek ezagutu behar direla zioen, guri egin ez diezazkiguten. Hemen dituzu 25.",
- "pista": "Irudiak domeinu publikoko karikatura eta koadro zaharrak dira, batez ere Honoré Daumierrenak, bere garaiko abokatuez barre egin zuena: haren marrazki asko, hitzez hitz, Schopenhauerren estratagemak dira. Begiratu beti tranpa egiten duenak zer bilatzen duen: ez du jakin nahi nork duen arrazoia, irabazi nahi du.",
+ "pista": "Irudiak domeinu publikoko karikatura eta koadro zaharrak dira, batez ere Honoré Daumierrenak, bere garaiko abokatuez barre egin zuena. Askotan, txistea pertsonaiek esaten dutenean dago: irakurri oina. Begiratu beti tranpa egiten duenak zer bilatzen duen: ez du jakin nahi nork duen arrazoia, irabazi nahi du.",
  "retrato": "Arthur Schopenhauer, Johann Schäferrek 1859an argazkiatua.",
  "estratagemas": [
   {
@@ -116,7 +116,7 @@ const JUEGO_SUCIO = {
    "w": 900,
    "h": 1200,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 9. xafla (1845-1848).",
-   "pie": "«—Zure alegatuan iraindu nauzu, baina jakingo dut azalpenak ematera behartzen!… —Jakin ezazu, jauna, ez dizudala beldurrik…» Bi abokatuk elkar ziztatu dute: jada ez dute auzia eztabaidatzen, euren artean ari dira.",
+   "pie": "«—Zure alegatuan iraindu nauzu, baina jakingo dut azalpenak ematera behartzen!… —Jakin ezazu, jauna, ez dizudala beldurrik… eta probokazio bati inoiz ez erantzuteko adore zibikoa dudala!» Kaleko jaun batek hatza jartzen dio abokatuari kokotsaren azpian, zirikatzeko. Abokatuak ez dio jaramonik egiten: horrela geldiarazten da estratagema hau.",
    "defensa": "Hartu arnasa eta itzuli gaira: zu haserretzeak ez du egia bihurtzen besteak esaten duena."
   },
   {
@@ -300,7 +300,7 @@ const JUEGO_SUCIO = {
    "w": 900,
    "h": 796,
    "obra": "William Hogarth, <em>Libertinoaren ibilbidea</em>, 4. xafla (1735).",
-   "pie": "Hogarthek zortzi grabatutan kontatu zuen dirutza bat jasotzen duen gazte baten erorialdia: festak, zorrak, kartzela eta eroetxea. Xafla honetan, zorrengatik atxilotzen dute. Malda irristakorrak horrela kontatzen du edozein lehen urrats: azkenera erremediorik gabe eramango balu bezala.",
+   "pie": "Hogarthek zortzi grabatutan kontatu zuen dirutza bat jasotzen duen gazte baten erorialdia: festak, zorrak, kartzela eta eroetxea. Hau laugarren xafla da: zorrengatik atxilotzen dute (eskuinean, eskulandaren ondoan). Malda irristakorrak horrela kontatzen du edozein lehen urrats: azkenera erremediorik gabe eramango balu bezala.",
    "defensa": "Galdetu urrats bakoitzean: «Zergatik gertatu beharko luke hori?»."
   },
   {
@@ -369,7 +369,7 @@ const JUEGO_SUCIO = {
    "w": 900,
    "h": 1006,
    "obra": "William Hogarth, <em>Barre egiten duen publikoa</em> (1733). National Gallery of Art, Washington.",
-   "pie": "Antzoki bateko publikoa barrez lehertzen da; orkestrako musikariak baino ez daude serio, aurrean. Jendeak barre egiten duenean, txisteak eztabaida irabazi duela dirudi.",
+   "pie": "Antzoki bateko publikoa barrez lehertzen da; orkestrako musikariak baino ez daude serio, beheko ilaran. Jendeak barre egiten duenean, txisteak eztabaida irabazi duela dirudi.",
    "defensa": "Itxaron barreak pasatu arte eta itzuli zure argudiora: txiste bat ez da arrazoi bat."
   },
   {
@@ -392,7 +392,7 @@ const JUEGO_SUCIO = {
    "w": 900,
    "h": 683,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 30. xafla (1845-1848).",
-   "pie": "«Zorabiatzen den abokatua: azken baliabidea auzia oso gaixo dagoenean.» Denek zorabiatuari begiratzen badiote, inork ez die frogei begiratzen.",
+   "pie": "«Zorabiatzen den abokatua: azken baliabidea auzia oso gaixo dagoenean.» Denak zorabiatuaren inguruan pilatzen dira, hain estu ezen ez baita ikusten ere. Denek zorabiatuari begiratzen badiote, inork ez die frogei begiratzen.",
    "defensa": "«Gero hitz egingo dugu horretaz. Orain beste gauza batez ari ginen…»"
   },
   {
@@ -457,11 +457,6 @@ const JUEGO_SUCIO = {
      "t": "Hori aitona-amonena da!"
     }
    ],
-   "img": "media/juegosucio/etiqueta.jpg",
-   "w": 900,
-   "h": 1100,
-   "obra": "Honoré Daumier, <em>Les Bas-bleus</em> (1844).",
-   "pie": "«<em>Bas-bleu</em>» («jakintsu-itxura») zen idazten zuten emakumeak barregarri uzteko etiketa, eta Daumierrek sail oso bat eskaini zion. Horrelako etiketa batekin, jada ez da beharrezkoa norbaitek esaten duena entzutea.",
    "defensa": "Etiketa ez da arrazoi bat: «Eta zer du txarrik?»."
   },
   {
@@ -484,7 +479,7 @@ const JUEGO_SUCIO = {
    "w": 900,
    "h": 1114,
    "obra": "Honoré Daumier, <em>Leverrier planetaren bilaketa antzua</em> (1846). National Gallery of Art, Washington.",
-   "pie": "1846an, Le Verrier astronomoak paperean kalkulatu zuen non egon behar zuen planeta berri batek, Neptunok, eta berehala aurkitu zen. Senar-emazte hauek ez dute ikusten beren betaurreko luzearekin: teorian egongo da, baina praktikan, ezer ez.",
+   "pie": "1846an, Le Verrier astronomoak paperean kalkulatu zuen non egon behar zuen planeta berri batek, Neptunok, eta teleskopio batekin berehala aurkitu zen. Senar-emazte hauek begi hutsez bilatzen dute, aterkia eskuan, eta ez dute ezer ikusten: «teorian egongo da, baina praktikan, ezer ez». Teoriak asmatu zuen; huts egiten zuena haien begiratzeko modua zen.",
    "defensa": "Galdetu zer huts egiten duen zehazki praktikan: edo akats zehatz bat dago, edo aitzakia bat da."
   },
   {

@@ -1401,6 +1401,9 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 #juegosucio .js-obra figcaption{ font-size:.85rem; line-height:1.45; color:var(--muted); padding:.55rem 1rem .6rem; background:var(--surface-2) }
 #juegosucio .js-autor{ display:block; color:var(--ink); font-weight:600; margin-bottom:.15rem }
 #juegosucio .js-texto{ padding:.8rem 1rem 1rem }
+#juegosucio .js-cabeza{ padding-bottom:.75rem }   /* (22-10) título y explicación van antes del cuadro */
+#juegosucio .js-sin-obra .js-cabeza{ padding-bottom:0 }   /* tarjeta sin cuadro (p. ej. «etiqueta», retirado el 22-10) */
+#juegosucio .js-obra + .js-texto .js-chat{ margin-top:.2rem }
 #juegosucio .js-n{ margin:0; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#E8793A }
 #juegosucio .js-texto h3{ margin:.15rem 0 .35rem; font-size:1.15rem }
 #juegosucio .js-tecnico{ margin:0 0 .5rem; font-size:.92rem; color:var(--muted) }

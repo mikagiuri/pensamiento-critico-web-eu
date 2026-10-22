@@ -16,11 +16,13 @@ function jsTarjeta(e){
     const truco = d.k === "zorro";
     return '<p class="js-msg ' + (truco ? "js-msg-truco" : "js-msg-otra") + '"><span class="js-quien">' + jsT(truco ? "trampa" : "otra") + "</span>" + d.t + "</p>";
   }).join("");
-  return '<article class="js-card" id="js-' + e.id + '">' +
-    '<figure class="js-obra"><img src="' + e.img + '"' + (e.w ? ' width="' + e.w + '" height="' + e.h + '"' : "") + ' alt="" loading="lazy" decoding="async"><figcaption><span class="js-autor">' + e.obra + "</span> " + e.pie + "</figcaption></figure>" +
-    '<div class="js-texto"><p class="js-n">' + jsT("estratagema", { n: e.n }) + "</p><h3>" + e.titulo + "</h3>" +
-    '<p class="js-tecnico">' + jsT("tecnico") + " <strong>" + e.tecnico + "</strong></p><p>" + e.que + "</p>" +
-    '<div class="js-chat" aria-label="' + jsT("ejemplo") + '">' + chat + "</div>" +
+  /* (22-10) título y explicación ANTES del cuadro, para que se sepa qué buscar en él; el cuadro es opcional (sin img, no sale) */
+  const obra = e.img ? '<figure class="js-obra"><img src="' + e.img + '"' + (e.w ? ' width="' + e.w + '" height="' + e.h + '"' : "") + ' alt="" loading="lazy" decoding="async"><figcaption><span class="js-autor">' + (e.obra || "") + "</span> " + (e.pie || "") + "</figcaption></figure>" : "";
+  return '<article class="js-card' + (obra ? "" : " js-sin-obra") + '" id="js-' + e.id + '">' +
+    '<div class="js-texto js-cabeza"><p class="js-n">' + jsT("estratagema", { n: e.n }) + "</p><h3>" + e.titulo + "</h3>" +
+    '<p class="js-tecnico">' + jsT("tecnico") + " <strong>" + e.tecnico + "</strong></p><p>" + e.que + "</p></div>" +
+    obra +
+    '<div class="js-texto"><div class="js-chat" aria-label="' + jsT("ejemplo") + '">' + chat + "</div>" +
     '<p class="js-defensa"><strong>' + jsT("parar") + "</strong> " + e.defensa + "</p></div></article>";
 }
 function jsRender(){
