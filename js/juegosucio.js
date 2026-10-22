@@ -138,8 +138,8 @@ const JUEGO_SUCIO = {
    "img": "media/juegosucio/generalizar.jpg",
    "w": 900,
    "h": 626,
-   "obra": "John James Audubon, <em>Beltxarga tronpetaria</em>, <em>Ameriketako hegaztiak</em> lanaren 406. xafla (1838).",
-   "pie": "Mendeetan zehar, Europan ikusten ziren beltxarga guztiak zuriak ziren, eta beltxarga guztiak zuriak zirela ematen zen ziurtzat. Orokortze bat zen: kasu asko-asko, baina ez guztiak.",
+   "obra": "John James Audubon, <em>Zisne tronpetaria</em>, <em>Ameriketako hegaztiak</em> lanaren 406. xafla (1838).",
+   "pie": "Mendeetan zehar, Europan ikusten ziren zisne guztiak zuriak ziren, eta zisne guztiak zuriak zirela ematen zen ziurtzat. Orokortze bat zen: kasu asko-asko, baina ez guztiak.",
    "defensa": "«Zenbat kasu begiratu dituzu?» Kasu gutxi batzuek ez dute araurik egiten."
   },
   {
@@ -312,7 +312,7 @@ const JUEGO_SUCIO = {
    "dialogo": [
     {
      "k": "zorro",
-     "t": "Beltxarga guztiak zuriak dira: denek dakite."
+     "t": "Zisne guztiak zuriak dira: denek dakite."
     },
     {
      "k": "buho",
@@ -322,8 +322,8 @@ const JUEGO_SUCIO = {
    "img": "media/juegosucio/contraejemplo.jpg",
    "w": 900,
    "h": 1204,
-   "obra": "John Gerrard Keulemans, <em>Beltxarga beltza</em> (1869).",
-   "pie": "1697an, nabigatzaile europar batzuek beltxarga beltzak ikusi zituzten Australian. Kasu bakar bat nahikoa izan zen «beltxarga guztiak zuriak dira» araua botatzeko. Horregatik da «beltxarga beltza» kontraadibidearen adibide klasikoa.",
+   "obra": "John Gerrard Keulemans, <em>Zisne beltza</em> (1869).",
+   "pie": "1697an, nabigatzaile europar batzuek zisne beltzak ikusi zituzten Australian. Kasu bakar bat nahikoa izan zen «zisne guztiak zuriak dira» araua botatzeko. Horregatik da «zisne beltza» kontraadibidearen adibide klasikoa.",
    "defensa": "Kontraadibidea benetakoa bada, ezin da geldiarazi: araua zuzendu behar da («ia guztiak…»). Hori bai, egiaztatu kasua benetakoa dela."
   },
   {
