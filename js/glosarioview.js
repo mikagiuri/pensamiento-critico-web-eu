@@ -107,7 +107,7 @@ function renderGloControls(){
     (typeof impBadge === "function" && typeof IMPRESCINDIBLES !== "undefined" && present.includes("hf") && gloSubject !== "fil" && gloSubject !== "ipc"
       ? '<div class="fgroup"><button class="fbtn" data-gimp aria-pressed="' + gloImp + '">' + impT("filtro") + '</button></div>' + impLeyenda() : '') +
     '<div class="glotools">' +
-      '<input class="glosearch" id="glosearch" type="search" placeholder="Bilatu terminoa edo definizioa…" autocomplete="off" aria-label="Bilatu glosarioan">' +
+      '<input class="glosearch" id="glosearch" type="search" placeholder="Bilatu terminoa edo definizioa…" autocomplete="off" aria-label="Bilatu hiztegian">' +
       '<select class="gloarea" id="gloarea" aria-label="Arloka iragazi">' + areaOpts + '</select>' +
     '</div>';
 

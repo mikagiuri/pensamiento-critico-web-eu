@@ -20,7 +20,7 @@ const PIS_TXT = {
   comprobacion: "Egiaztapena", pregunta: "Galdera", logrado: "Ulermena lortuta", completado: "Ibilbidea osatuta",
   sinAyuda: "Pistarik gabe ebatzi duzu.", usaste: "Erabilitako pistak: {n}.", repetir: "Berriro egin", siguiente: "Hurrengo galdera:",
   pisN: "{n}. pista", revelar: "Sakatu erakusteko", preguntas: "Galderak",
-  enGlosario: "Glosarioan", abrirGlo: "Ireki glosarioan ›",
+  enGlosario: "Hiztegian", abrirGlo: "Ireki hiztegian ›",
   seguir: "Berriro saiatu",
   intentoLb: "Azalpena ikusi aurretik", intentoTxt: "Idatzi zure erantzuna zure hitzekin, ziur ez bazaude ere. Gero azalpenarekin alderatuko duzu.",
   intentoGuarda: "Idazten duzuna nabigatzaile honetan bakarrik gordetzen da.", intentoPal: "{n} hitz (gutxienez {m})", intentoVer: "Ikusi azalpena eta alderatu",
