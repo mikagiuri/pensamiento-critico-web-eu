@@ -472,6 +472,7 @@
 (function(){var s=document.querySelector(".sitefoot-ver");if(!s||!window.fetch)return;fetch("sw.js",{cache:"no-cache"}).then(function(r){return r.ok?r.text():"";}).then(function(t){var m=/VERSION\s*=\s*"(v\d+)/.exec(t);if(m)s.textContent=" · "+m[1];}).catch(function(){});})();</script>
 
 <script src="js/store.js"></script>
+<script src="js/lang_fragmentos.js"></script><!-- DUA D0.6: marca el griego con lang="grc" tras pintar la vista -->
 <script src="js/data.js"></script>
 <script src="js/tarjetas_img.js"></script>
 <script src="js/flashcards.js"></script>

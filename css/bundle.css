@@ -6,17 +6,17 @@
   --line:#ddd6c9; --line-soft:#e7e1d6;
   --accent:#1f5d5a; --accent-2:#2b7a75; --on-accent:#f7fbf9;
   --fil:#2f6f6b; --hf:#8a3b3f; --ipc:#976720;  /* antes #9a6a22 (4,44:1 sobre --surface); ahora 4,63:1 */
-  --ok:#2f7a4d; --ok-bg:#e5f0e6; --bad:#a53b34; --bad-bg:#f3e3df; --on-ok:#fff; --on-bad:#fff; --on-hf:#fff; --on-r:#fff;
+  --ok:#2e784c; --ok-bg:#e5f0e6; --bad:#a53b34; --bad-bg:#f3e3df; --on-ok:#fff; --on-bad:#fff; --on-hf:#fff; --on-r:#fff;
   --shadow:0 1px 2px rgba(30,28,22,.05), 0 6px 20px -12px rgba(30,28,22,.28);
   --radius:14px;
   --serif:"Spectral",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   /* épocas (30-09): los colores de Ilustres y del eje cronológico, para toda la web (js/epocas.js) */
-  --e-int:#6E6E78; --on-e:#fff;   /* int = temas introductorios de HF (1-2), en gris; --on-e = texto sobre el color */
-  --e-ant:#8F6600; --e-med:#8A4B84; --e-ren:#B83220; --e-mod:#0A76A0; --e-ilu:#5B4FC4; --e-con:#267A5B;
+  --e-int:#696973; --on-e:#fff;   /* int = temas introductorios de HF (1-2), en gris; --on-e = texto sobre el color */
+  --e-ant:#8B6300; --e-med:#8A4B84; --e-ren:#B83220; --e-mod:#0A729B; --e-ilu:#5B4FC4; --e-con:#257859;
   /* ramas (30-09): un color por rama en Filosofía 1.º (js/epocas.js), igual que las épocas en HF */
-  --r-ant:#B0672B; --r-con:#2B6CB0; --r-log:#6D5BA6; --r-eti:#3E8A5B; --r-pol:#C0392B; --r-est:#B04A8A;
+  --r-ant:#9A5A26; --r-con:#2B6CB0; --r-log:#6D5BA6; --r-eti:#35774E; --r-pol:#C0392B; --r-est:#A84784;
   scroll-padding-top:80px;   /* (proto-menu-3) la ficha arranca arriba, sin quedar bajo la cabecera fija */
 }
 @media (prefers-color-scheme:dark){
@@ -187,7 +187,7 @@ table.week tr:last-child td{border-bottom:0}
 .lightbox{position:fixed;inset:0;background:rgba(20,21,25,.88);display:none;align-items:center;justify-content:center;z-index:100;padding:24px}
 .lightbox.open{display:flex}
 .lightbox img{max-width:92vw;max-height:92vh;background:#faf8f3;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
-.lb-close{position:absolute;top:16px;inset-inline-end:16px;background:var(--surface);border:none;border-radius:50%;width:42px;height:42px;font-size:24px;line-height:1;cursor:pointer;color:var(--ink)}
+.lb-close{position:absolute;top:16px;inset-inline-end:16px;background:var(--surface);border:none;border-radius:50%;width:42px;height:42px;font-size:1.5rem;line-height:1;cursor:pointer;color:var(--ink)}
 
 /* Infografías incrustadas en la teoría */
 .figwrap{display:flex;flex-wrap:wrap;gap:16px;margin:22px 0}
@@ -542,10 +542,10 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
 }
 
 /* Anexos dados en clase: mini-etiqueta «En clase» */
-.theory-head .en-clase{display:inline-block;margin-inline-start:.5rem;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-accent,#fff);background:var(--accent);border-radius:999px;padding:3px 10px;vertical-align:middle}
-.temas-anexo{display:inline-block;margin-inline-start:.4rem;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 7px}
+.theory-head .en-clase{display:inline-block;margin-inline-start:.5rem;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-accent,#fff);background:var(--accent);border-radius:999px;padding:3px 10px;vertical-align:middle}
+.temas-anexo{display:inline-block;margin-inline-start:.4rem;font-size:.625rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 7px}
 /* (12-10, rediseño Lote 3 · H0) insignia «Lectura PAU» en los temas de HF con lectura de la prueba */
-.temas-pau{display:inline-block;margin-inline-start:.4rem;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7a5c12;background:#ffe9a8;border:1px solid #e5c35c;border-radius:999px;padding:1px 8px}
+.temas-pau{display:inline-block;margin-inline-start:.4rem;font-size:.625rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7a5c12;background:#ffe9a8;border:1px solid #e5c35c;border-radius:999px;padding:1px 8px}
 
 /* Cuentos: botón de descarga de la ficha de trabajo (PDF B/N). */
 .cuento-dl{margin:.6rem 0 0}
@@ -623,6 +623,9 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
 .uso-linea .uso-l{font-weight:600}
 .uso-linea .fbtn{font-size:.8rem}
 
+/* (DUA D0.2, 23-10) Red de seguridad: con «reducir movimiento» del sistema, ninguna animación ni desplazamiento suave */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
 
 /* ==== css/mobile.css ==== */
 /* ===== Capa móvil (mobile-first overrides) — Aula de Filosofía =====
@@ -659,7 +662,7 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
     font-size: .92rem; font-weight: 600; color: var(--muted); margin: 0;
     padding: 7px 12px; border: 1px solid transparent; border-radius: 999px;
   }
-  #tabs .navgroup::after { content: "\25BE"; font-size: 10px; opacity: .65; }  /* ▾ */
+  #tabs .navgroup::after { content: "\25BE"; font-size: .625rem; opacity: .65; }  /* ▾ */
   #tabs .navgroup:hover { color: var(--ink); background: var(--surface-2); }
   #tabs .navsec.open > .navgroup { color: var(--ink); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
   /* pista: resaltar el "cajón" que contiene la vista activa */
@@ -677,10 +680,10 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
 @media (max-width: 760px) {
   /* ---- Cabecera compacta: marca · ☰ · tema, en una fila ---- */
   .bar-in { flex-wrap: nowrap; gap: 8px; align-items: center; position: relative; }
-  .brand { flex: 1 1 auto; font-size: 18px; min-width: 0; }
+  .brand { flex: 1 1 auto; font-size: 1.125rem; min-width: 0; }
   .navtoggle {
     display: inline-flex; align-items: center; justify-content: center;
-    min-width: 44px; min-height: 44px; padding: 0 12px; font-size: 20px; line-height: 1;
+    min-width: 44px; min-height: 44px; padding: 0 12px; font-size: 1.25rem; line-height: 1;
     background: var(--surface-2); color: var(--ink);
     border: 1px solid var(--line); border-radius: 12px; cursor: pointer;
   }
@@ -701,7 +704,7 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   #tabs.open { display: flex; }
   #tabs button {
     width: 100%; text-align: start; min-height: 44px; padding: 11px 14px;
-    border-radius: 10px; font-size: 15px;
+    border-radius: 10px; font-size: .9375rem;
   }
   #tabs button[aria-current="true"] { background: var(--surface-2); }
   /* Grupos plegables (acordeón): al abrir el menú solo se ven Inicio + 5 grupos */
@@ -709,11 +712,11 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   #tabs .navgroup {
     display: flex; align-items: center; justify-content: space-between; gap: 8px;
     width: 100%; min-height: 46px; padding: 10px 14px; cursor: pointer;
-    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
     color: var(--muted); border-radius: 10px; margin: 0;
   }
   #tabs .navgroup:hover, #tabs .navsec.open > .navgroup { color: var(--ink); }
-  #tabs .navgroup::after { content: "\25B8"; font-size: 13px; transition: transform .15s ease; }
+  #tabs .navgroup::after { content: "\25B8"; font-size: .8125rem; transition: transform .15s ease; }
   #tabs .navsec.open > .navgroup::after { transform: rotate(90deg); }
   #tabs .navsec > .navmenu { display: none; }
   #tabs .navsec.open > .navmenu { display: block; }
@@ -721,13 +724,13 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   /* ---- Márgenes y tipografía a escala de teléfono ---- */
   .wrap { padding-inline-start: 16px; padding-inline-end: 16px; }
   .view { padding-top: 8px; }
-  .title { font-size: 30px; line-height: 1.08; }
-  .lead { font-size: 15.5px; }
-  .sec { font-size: 22px; }
+  .title { font-size: 1.875rem; line-height: 1.08; }
+  .lead { font-size: .9688rem; }
+  .sec { font-size: 1.375rem; }
   h1.title, h2.sec { text-wrap: balance; }
 
   /* ---- Objetivos táctiles ≥44px en todos los controles ---- */
-  .chip, .fbtn { min-height: 42px; padding: 9px 14px; font-size: 14px; }
+  .chip, .fbtn { min-height: 42px; padding: 9px 14px; font-size: .875rem; }
   .icon-btn, .known-btn, .btn, .opt, .seslink, .sesbtn { min-height: 44px; }
   .filterbar, .chips { gap: 8px; }
 
@@ -766,11 +769,11 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   .ctl-toggle, .toc-toggle {
     display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px;
     margin: 12px 0 0; padding: 9px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-    color: var(--ink); font: 600 15px/1.3 var(--sans); text-align: start; cursor: pointer;
+    color: var(--ink); font: 600 .9375rem/1.3 var(--sans); text-align: start; cursor: pointer;
   }
   .ctl-toggle[hidden], .toc-toggle[hidden] { display: none; }
   .ctl-toggle .ctl-l, .toc-toggle .ctl-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .toc-toggle .ctl-l i, .ctl-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: 13px; }
+  .toc-toggle .ctl-l i, .ctl-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: .8125rem; }
   .ctl-caret { flex: none; color: var(--muted); transition: transform .15s ease; }
   .ctl-open > .ctl-toggle .ctl-caret, .toc-open > .toc-toggle .ctl-caret { transform: rotate(180deg); }
   .view:not(.ctl-open) > .filterbar, .view:not(.ctl-open) > .chips, .view:not(.ctl-open) > .crono-filter, .view:not(.ctl-open) > .crono-chips { display: none; }
@@ -782,9 +785,9 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   .theory-layout > .toc { margin: 0 0 8px; padding: 8px 4px 0; }
   /* con el plegado, la entradilla de la sección sobra: el contenido ya se explica solo */
   .view:has(> .ctl-toggle:not([hidden])) > .lead { display: none; }
-  .view:has(> .ctl-toggle:not([hidden])) > h1.title { font-size: 24px; }
+  .view:has(> .ctl-toggle:not([hidden])) > h1.title { font-size: 1.5rem; }
   /* la tira «De este tema» y «Siguiente paso» van al final del tema; en móvil, más pequeñas aún */
-  .itin-strip .btn { min-height: 36px; padding: 5px 11px; font-size: 14px; }
+  .itin-strip .btn { min-height: 36px; padding: 5px 11px; font-size: .875rem; }
 }
 
 /* ===== Escritorio (05-10, js/compacto.js): una lista larga de temas/materiales (más de 6) se pliega en una línea con
@@ -794,20 +797,20 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   .view.ctl-many > .chips-toggle:not([hidden]) {
     display: inline-flex; align-items: center; gap: 12px; max-width: 100%; min-height: 42px;
     margin: 20px 0 4px; padding: 8px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
-    color: var(--ink); font: 600 15px/1.3 var(--sans); text-align: start; cursor: pointer;
+    color: var(--ink); font: 600 .9375rem/1.3 var(--sans); text-align: start; cursor: pointer;
   }
   .view.ctl-many > .chips-toggle:hover { border-color: var(--accent); }
   .chips-toggle .ctl-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .chips-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: 13px; margin-inline-start: 4px; }
+  .chips-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: .8125rem; margin-inline-start: 4px; }
   .chips-open > .chips-toggle .ctl-caret { transform: rotate(180deg); }
   .view.ctl-many:not(.chips-open) > .chips, .view.ctl-many:not(.chips-open) > .crono-chips { display: none; }
   .view.ctl-many.chips-open > .chips, .view.ctl-many.chips-open > .crono-chips { margin: 12px 0 18px; }
 }
 
 @media (max-width: 420px) {
-  .title { font-size: 25px; }
-  .sec { font-size: 20px; }
-  .brand .owl { font-size: 18px; }
+  .title { font-size: 1.5625rem; }
+  .sec { font-size: 1.25rem; }
+  .brand .owl { font-size: 1.125rem; }
   .wrap { padding-inline-start: 13px; padding-inline-end: 13px; }
   #sesiones .sescard .top { flex-direction: column; gap: 2px; }
 }
@@ -827,7 +830,7 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
-  font: 600 15px/1.2 "IBM Plex Sans", system-ui, sans-serif;
+  font: 600 .9375rem/1.2 "IBM Plex Sans", system-ui, sans-serif;
   transition: top .15s ease;
 }
 .skiplink:focus { top: 8px; outline: 2.5px solid var(--ink, #111); outline-offset: 2px; }
@@ -861,7 +864,7 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   .brand { flex: 1 1 auto; min-width: 0; }
   .navtoggle {
     display: inline-flex; align-items: center; justify-content: center;
-    min-width: 44px; min-height: 44px; padding: 0 12px; font-size: 20px; line-height: 1;
+    min-width: 44px; min-height: 44px; padding: 0 12px; font-size: 1.25rem; line-height: 1;
     background: var(--surface-2); color: var(--ink);
     border: 1px solid var(--line); border-radius: 12px; cursor: pointer;
   }
@@ -873,17 +876,17 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
     border-radius: 14px; box-shadow: var(--shadow); padding: 8px; z-index: 60;
   }
   #tabs.open { display: flex; }
-  #tabs button { width: 100%; text-align: start; min-height: 44px; padding: 11px 14px; border-radius: 10px; font-size: 15px; }
+  #tabs button { width: 100%; text-align: start; min-height: 44px; padding: 11px 14px; border-radius: 10px; font-size: .9375rem; }
   #tabs button[aria-current="true"] { background: var(--surface-2); }
   #tabs .navsec { display: block; }
   #tabs .navgroup {
     display: flex; align-items: center; justify-content: space-between; gap: 8px;
     width: 100%; min-height: 46px; padding: 10px 14px; cursor: pointer;
-    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
     color: var(--muted); border-radius: 10px; margin: 0;
   }
   #tabs .navgroup:hover, #tabs .navsec.open > .navgroup { color: var(--ink); }
-  #tabs .navgroup::after { content: "\25B8"; font-size: 13px; transition: transform .15s ease; }
+  #tabs .navgroup::after { content: "\25B8"; font-size: .8125rem; transition: transform .15s ease; }
   #tabs .navsec.open > .navgroup::after { transform: rotate(90deg); }
   #tabs .navsec > .navmenu { display: none; }
   #tabs .navsec.open > .navmenu { display: block; }
@@ -892,11 +895,11 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   .ctl-toggle, .toc-toggle {
     display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px;
     margin: 12px 0 0; padding: 9px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-    color: var(--ink); font: 600 15px/1.3 var(--sans); text-align: start; cursor: pointer;
+    color: var(--ink); font: 600 .9375rem/1.3 var(--sans); text-align: start; cursor: pointer;
   }
   .ctl-toggle[hidden], .toc-toggle[hidden] { display: none; }
   .ctl-toggle .ctl-l, .toc-toggle .ctl-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .toc-toggle .ctl-l i, .ctl-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: 13px; }
+  .toc-toggle .ctl-l i, .ctl-toggle .ctl-l i { font-style: normal; font-weight: 500; color: var(--muted); font-size: .8125rem; }
   .ctl-caret { flex: none; color: var(--muted); transition: transform .15s ease; }
   .ctl-open > .ctl-toggle .ctl-caret, .toc-open > .toc-toggle .ctl-caret { transform: rotate(180deg); }
   .view:not(.ctl-open) > .filterbar, .view:not(.ctl-open) > .chips, .view:not(.ctl-open) > .crono-filter, .view:not(.ctl-open) > .crono-chips { display: none; }
@@ -929,7 +932,7 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
 @media (max-width: 400px) { .bar-in:has(.langmenu) .brand .owl { display: none; } }   /* (11-10) ver el botón de idioma */
 
 /* (proto-menu-3 · opción F) subapartados plegados dentro del desplegable */
-#tabs .navfold-head::after { content: " \25B8"; font-size: 10px; opacity: .65; }
+#tabs .navfold-head::after { content: " \25B8"; font-size: .625rem; opacity: .65; }
 #tabs .navfold.open > .navfold-head::after { content: " \25BE"; }
 #tabs .navfold-body { display: none; padding-inline-start: 8px; }
 #tabs .navfold.open > .navfold-body { display: block; }
@@ -1349,6 +1352,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 #pistas .pis-spoil-cta::before{ content:"👁 "; }
 #pistas .pis-hint.reveal{ animation:pisReveal .22s ease-out; }
 @keyframes pisReveal{ from{ opacity:0; transform:translateY(-3px); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){ #pistas .pis-hint.reveal{ animation:none; } }
 /* (01-10) índice de preguntas: saltar de página a página dentro del itinerario */
 #pistas .pis-pager{ display:flex; align-items:center; flex-wrap:wrap; gap:.4rem; margin-top:.7rem; padding-top:.7rem; border-top:1px solid var(--line); }
 #pistas .pis-pager-lb{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-inline-end:.2rem; }
@@ -1404,7 +1408,9 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 #juegosucio .js-cabeza{ padding-bottom:.75rem }   /* (22-10) título y explicación van antes del cuadro */
 #juegosucio .js-sin-obra .js-cabeza{ padding-bottom:0 }   /* tarjeta sin cuadro (p. ej. «etiqueta», retirado el 22-10) */
 #juegosucio .js-obra + .js-texto .js-chat{ margin-top:.2rem }
-#juegosucio .js-n{ margin:0; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#E8793A }
+#juegosucio .js-n{ margin:0; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#BB5116 }   /* (DUA D0.3, 23-10) antes #E8793A, 2,7:1 en claro; en oscuro se queda */
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) #juegosucio .js-n{ color:#E8793A } }
+:root[data-theme="dark"] #juegosucio .js-n{ color:#E8793A }
 #juegosucio .js-texto h3{ margin:.15rem 0 .35rem; font-size:1.15rem }
 #juegosucio .js-tecnico{ margin:0 0 .5rem; font-size:.92rem; color:var(--muted) }
 #juegosucio .js-tecnico strong{ color:var(--ink) }
@@ -1420,7 +1426,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 /* ==== css/duelo.css ==== */
 /* «Duelo de razones» (11-10: de juego aparte a sección; dueloview.js). Mismo diseño que el juego original, con los colores y
    el tema claro/oscuro de la web (--surface, --line, --ok, --bad…). «Modo proyector»: pantalla completa y letra grande. */
-#duelo{ --due-warn:#b5691a; --due-disp:var(--serif); }
+#duelo{ --due-warn:#a66018; --due-disp:var(--serif); }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) #duelo{ --due-warn:#e2a15a; } }
 :root[data-theme="dark"] #duelo{ --due-warn:#e2a15a; }
 #duelo .due-top{ display:flex; justify-content:flex-end; margin:.2rem 0 .6rem }
@@ -1545,9 +1551,9 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 :root{
   --bg:#FBF7EF; --surface:#FFFFFF; --surface-2:#EAF0F7; --ink:#1F2A44; --muted:#4A5568;
   --line:#E2DDD2; --line-soft:#EDE8DE;
-  --accent:#2F6FB5; --accent-2:#E8793A; --on-accent:#FFFFFF;
+  --accent:#2F6FB5; --accent-2:#E8793A; --on-accent:#FFFFFF; --eyebrow:#BB5116;
   --ipc:#E8793A; --fil:#2F6FB5; --hf:#2F6FB5;
-  --ok:#2f7a4d; --ok-bg:#e5f0e6; --bad:#a53b34; --bad-bg:#f6e4df;
+  --ok:#2e784c; --ok-bg:#e5f0e6; --bad:#a53b34; --bad-bg:#f6e4df;
   --shadow:0 1px 2px rgba(31,42,68,.05), 0 6px 20px -12px rgba(31,42,68,.25);
   --radius:18px;
   --serif:"Fredoka","Nunito Sans","Segoe UI",system-ui,sans-serif;
@@ -1557,7 +1563,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
   :root:not([data-theme="light"]){
     --bg:#161E31; --surface:#1F2A44; --surface-2:#26334F; --ink:#FBF7EF; --muted:#C9D3E6;
     --line:#34425F; --line-soft:#2B3853;
-    --accent:#8DB6E6; --accent-2:#F4B183; --on-accent:#161E31;
+    --accent:#8DB6E6; --accent-2:#F4B183; --on-accent:#161E31; --eyebrow:var(--accent-2);
     --ipc:#F4B183; --fil:#8DB6E6; --hf:#8DB6E6;
     --ok:#7bc98f; --ok-bg:#1c2f22; --bad:#e88a80; --bad-bg:#33211e;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 26px -14px rgba(0,0,0,.6);
@@ -1566,7 +1572,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 :root[data-theme="dark"]{
   --bg:#161E31; --surface:#1F2A44; --surface-2:#26334F; --ink:#FBF7EF; --muted:#C9D3E6;
   --line:#34425F; --line-soft:#2B3853;
-  --accent:#8DB6E6; --accent-2:#F4B183; --on-accent:#161E31;
+  --accent:#8DB6E6; --accent-2:#F4B183; --on-accent:#161E31; --eyebrow:var(--accent-2);
   --ipc:#F4B183; --fil:#8DB6E6; --hf:#8DB6E6;
   --ok:#7bc98f; --ok-bg:#1c2f22; --bad:#e88a80; --bad-bg:#33211e;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 26px -14px rgba(0,0,0,.6);
@@ -1585,6 +1591,6 @@ h1{letter-spacing:-.005em}
 .q-text,#reto .reto-q{font-weight:600}
 
 /* Piezas del estilo: etiquetas en naranja espaciadas y botones redondeados. */
-.eyebrow{color:var(--accent-2);letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:.78rem}
+.eyebrow{color:var(--eyebrow,var(--accent-2));letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:.78rem}
 nav.tabs button[aria-current="true"]{background:var(--surface-2);box-shadow:none;color:var(--ink)}
 
