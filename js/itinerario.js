@@ -383,7 +383,9 @@
       { k: "hf-existencialismo", n: 25, tit: "Existentzialismoa: Heidegger, Sartre eta filosofia espainiarra", txt: "1. Batxilergoan Ortega y Gasseten perspektibismoa ikusi zenuen: «ni naiz ni eta nire zirkunstantzia»; 2. Batxilergoan existentzialisten ondoan ikusiko duzu, Unamuno eta María Zambranorekin." }
     ],
     "fil-t4": [
-      { k: "hf-analitica", n: 24, tit: "Filosofia analitikoa: Wittgenstein eta bihurgune linguistikoa", txt: "1. Batxilergoan Frege eta Russellen logika sinbolikoa ikusi zenuen, hizkuntza formuletara itzultzen duena; 2. Batxilergoan ikusiko duzu nola erabiltzen duten Russellek eta lehen Wittgensteinek analisi logiko hori hizkuntza perfektu baten bila: filosofia analitikoaren hizkuntzaren bira da." }
+      { k: "hf-aa", n: "AA", tit: "Aristoteles: sistema osoa", txt: "En 1.º viste los silogismos y el cuadrado de oposición (en el Rincón de lógica); en 2.º verás la lógica dentro del sistema de Aristóteles: el Órganon, la clasificación de las ciencias, las categorías y cómo la teoría del silogismo se enlaza con su metafísica." },
+      { k: "hf-racionalismo", n: 14, tit: "Arrazionalismoa eta enpirismoa: Descartes eta Hume", txt: "En 1.º viste el álgebra de Boole, que convierte la lógica en un cálculo con 1 y 0; en 2.º verás la mathesis universalis de Descartes, su sueño de una ciencia universal del orden. Leibniz, que en ese tema aparece con las mónadas, lo llevó más lejos: imaginó una lengua en la que razonar fuera calcular." },
+      { k: "hf-analitica", n: 24, tit: "Filosofia analitikoa: Wittgenstein eta bihurgune linguistikoa", txt: "En 1.º viste la lógica de las conectivas y sus tablas de verdad, los cuantificadores y la lógica simbólica de Frege y de Russell; en 2.º verás cómo Russell y el primer Wittgenstein usan ese análisis lógico del lenguaje para buscar un lenguaje perfecto: es el giro lingüístico de la filosofía analítica." }
     ],
     "fil-t5": [
       { k: "hf-etica", n: 8, tit: "Etika klasikoa: intelektualismoa, bertuteak eta eudaimonia", txt: "1. Batxilergoan bertutea erdibide gisa eta Sokratesen intelektualismoa ikusi zenituen; 2. Batxilergoan etika klasiko osoa irakurriko duzu: areté, eudaimonía eta Sokratesen, Platonen eta Aristotelesen erantzunak." },
@@ -400,7 +402,8 @@
       { k: "hf-ilustracion", n: 18, tit: "Proiektu ilustratua: arrazoiaren indarra eta mugak", txt: "1. Batxilergoan giza eskubideak, gizarte-kontratua eta Olympe de Gougesen eta Wollstonecraften feminismoaren lehen olatua ikusi zenituen; 2. Batxilergoan eskubide eta kritika horiek sortzen dituen proiektu ilustratua ikusiko duzu: arrazoian konfiantza eta haren mugak." }
     ],
     "hf-aa": [
-      { k: "fil-metafisica", n: "M", tit: "Errealitatea: zer dago eta nolakoa da? (Metafisika)", txt: "1. Batxilergoan substantzia, esentzia eta potentziatik ekintzarako igarobidea ikusi zenituen jada; hemen Aristotelesen sistema osoa aztertu duzu: kategoriak, lau kausak eta teleologia." }
+      { k: "fil-metafisica", n: "M", tit: "Errealitatea: zer dago eta nolakoa da? (Metafisika)", txt: "1. Batxilergoan substantzia, esentzia eta potentziatik ekintzarako igarobidea ikusi zenituen jada; hemen Aristotelesen sistema osoa aztertu duzu: kategoriak, lau kausak eta teleologia." },
+      { k: "fil-t4", n: 4, tit: "Logika eta argudiaketa", txt: "Ya viste en 1.º los silogismos y el cuadrado de oposición (en el Rincón de lógica); aquí has visto esa lógica dentro del sistema de Aristóteles: el Órganon, la clasificación de las ciencias, las categorías y la teoría del silogismo ligada a su metafísica." }
     ],
     "hf-analitica": [
       { k: "fil-t4", n: 4, tit: "Logika eta argudiaketa", txt: "1. Batxilergoan Frege eta Russellen logika sinbolikoa ikusi zenuen jada; hemen ikusi duzu nola sortzen duen hizkuntzaren analisi logiko horrek Russellen eta Wittgensteinen hizkuntzaren bira." }
@@ -463,7 +466,8 @@
       { k: "fil-t1", n: 1, tit: "Zer da filosofia?", txt: "1. Batxilergoan Talesen arkhé logosaren lehen urrats gisa ikusi zenuen jada; hemen aurresokratikoek errealitateari eta guztiaren printzipioari buruzko galderari emandako erantzunak zeharkatu dituzu." }
     ],
     "hf-racionalismo": [
-      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan arrazionalismoa eta enpirismoa ezagutzaren iturrien taulan ikusi zenituen jada; hemen Descartes eta Hume barrutik irakurri dituzu: zalantza, cogitoa eta kausalitatearen kritika." }
+      { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan arrazionalismoa eta enpirismoa ezagutzaren iturrien taulan ikusi zenituen jada; hemen Descartes eta Hume barrutik irakurri dituzu: zalantza, cogitoa eta kausalitatearen kritika." },
+      { k: "fil-t4", n: 4, tit: "Logika eta argudiaketa", txt: "Ya viste en 1.º el álgebra de Boole y la lógica binaria (1 y 0); aquí has visto la mathesis universalis de Descartes, el sueño de una ciencia universal del orden. Leibniz, que en este tema aparece con las mónadas, lo llevó más lejos: una lengua en la que razonar fuera calcular." }
     ],
     "hf-sofistas": [
       { k: "fil-t3", n: 3, tit: "Zer ezagut dezakegu?", txt: "1. Batxilergoan Protagorasen erlatibismoa ikusi zenuen jada —«gizakia da gauza guztien neurria»— egiaren aurreko jarreren artean; hemen bere munduan kokatu duzu: Greziako Ilustrazioa eta sofisten jiroa gizakirantz eta poliserantz." }
