@@ -447,7 +447,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 60px;colo
 #cronogramas .cbtn[data-ep][aria-pressed="true"]{background:var(--e);border-color:var(--e);color:var(--on-e)}
 .chip[data-ep="medmod"],.fbtn[data-ep="medmod"]{box-shadow:inset 4px 0 0 var(--e2)}
 .chip[data-ep="medmod"][aria-pressed="true"],.fbtn[data-ep="medmod"][aria-pressed="true"]{background:linear-gradient(90deg,var(--e),var(--e2));box-shadow:none}
-/* Frases y Glosario: la tarjeta lleva el color de su época */
+/* Frases y Diccionario: la tarjeta lleva el color de su época */
 #citas .citcard[data-ep]{border-inline-start-color:var(--e)}
 #citas .citcard[data-ep] .cit-q::before{color:var(--e)}
 #diccionario .dicitem[data-ep]{border-inline-start-color:var(--e)}
@@ -1031,7 +1031,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 
 
 /* ==== css/parejas.css ==== */
-/* ===== Parejas: juego de emparejar término ↔ definición (glosario) ===== usa tokens de styles.css ===== */
+/* ===== Parejas: juego de emparejar término ↔ definición (diccionario) ===== usa tokens de styles.css ===== */
 #parejas .par-wrap{ max-width:900px; }
 #parejas .par-pick{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1rem; align-items:center; }
 #parejas .par-pick .flabel{ width:100%; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
@@ -1362,7 +1362,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 #pistas .pis-pg.cur{ background:var(--pc, var(--hf)); color:var(--on-hf); border-color:var(--pc, var(--hf)); }
 #pistas .pis-pg.done:not(.cur){ border-color:var(--ok); color:var(--ok); }
 #pistas .pis-pg.done::after{ content:"✓"; font-size:.7em; margin-inline-start:.15em; }
-/* (20-10) puente con el glosario: términos plegados (details), con su definición de DICCIONARIO y enlace #diccionario/<id> */
+/* (20-10) puente con el diccionario: términos plegados (details), con su definición de DICCIONARIO y enlace #diccionario/<id> */
 #pistas .pis-glo{ margin:1.1rem 0 .2rem; padding-top:.8rem; border-top:1px dashed var(--line); display:grid; gap:.45rem; }
 #pistas .pis-dic-lb{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; }
 #pistas .pis-dic-it{ border:1px solid var(--line); border-radius:10px; background:var(--surface-2); }
@@ -1678,5 +1678,5 @@ nav.tabs button[aria-current="true"]{background:var(--surface-2);box-shadow:none
 /* Los cuatro botones de jugar van en degradado azul → naranja con texto blanco: el texto tinta no sirve sobre el
    azul (2,8:1), así que el degradado termina en el naranja oscuro y el blanco da ≥ 4,88:1 en todo el botón
    (24-10; el profesor dejó la elección a la sesión). En oscuro, --ipc-txt es el naranja claro de siempre. */
-#republica .rep-play,#parejas .par-play,#reto .reto-quick,#dilemas .dil-play{background:linear-gradient(120deg,var(--accent),var(--ipc-txt))}
+#republica .rep-play,#parejas .par-play,#retos .retos-quick,#dilemas .dil-play{background:linear-gradient(120deg,var(--accent),var(--ipc-txt))}
 

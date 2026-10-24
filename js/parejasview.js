@@ -1,13 +1,13 @@
 "use strict";
 /* ===== Parejas ===== depende de: data diccionario.js (DICCIONARIO) =====
-   Juego de emparejar término ↔ definición: rondas de 6 parejas del glosario,
+   Juego de emparejar término ↔ definición: rondas de 6 parejas del diccionario,
    por bloque, con puntos, racha, errores, tiempo y mejor marca (localStorage). */
 
 const PAR_N = 6;                 // parejas por ronda
 /* «Cómo se juega» (29-09): una línea al abrir el juego; cadena entera para que la traduzca ui/<lang>.json */
 const PAR_HOWTO = { como: "Nola jokatzen den:", txt: "Sakatu termino bat eta gero bere definizioa (edo alderantziz). Sei bikote txanda bakoitzean, erlojuaren kontra: asmatu jarraian bolada egiteko." };
 const PAR_EPOCAS = { ant: "Antzinakoa", med: "Erdi Arokoa", mod: "Modernoa", ilu: "Ilustrazioa", con: "Garaikidea" };
-/* (12-10) grupo de un término de HF = su época (vía gloTema, como el Glosario); en 1.º/ESO, el tema. */
+/* (12-10) grupo de un término de HF = su época (vía gloTema, como el Diccionario); en 1.º/ESO, el tema. */
 function parEpocaOf(g){
   if (g.subject !== "hf") return null;
   if (window.Itinerario && window.Itinerario.gloTema && window.Epocas && window.Epocas.epocaDeTema){
