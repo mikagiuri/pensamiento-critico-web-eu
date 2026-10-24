@@ -48,9 +48,9 @@
           <button data-view="teoria">Teoria</button>
           <button data-view="cuentos">Ipuinak</button>
           <button data-view="tarjetas">Txartelak</button>
-          <button data-view="reto">Erronka</button>
+          <button data-view="retos">Erronkak</button>
           <button data-view="parejas">Bikoteak</button>
-          <button data-view="glosario">Hiztegia</button>
+          <button data-view="diccionario">Hiztegia</button>
         </div>
       </div>
       
@@ -76,7 +76,7 @@
         <div class="navmenu">
           <button data-view="pistas">Pistak</button>
           <button data-view="cuestionarios">Galdetegiak</button>
-          <button data-view="juegosucio">Logikaren txokoa</button>
+          <button data-view="logica_pca">Logikaren txokoa</button>
         </div>
       </div>
       
@@ -212,14 +212,14 @@
     <div class="galgrid" id="galgrid"></div>
   </section>
 
-  <!-- GLOSARIO -->
-  <section class="view" id="glosario">
+  <!-- DICCIONARIO -->
+  <section class="view" id="diccionario">
     <p class="eyebrow">Erreferentzia</p>
     <h1 class="title">Hiztegia</h1>
     <p class="lead">Ikasgaiaren hiztegia: Pentsamendu kritikoaren <strong>terminoak</strong> beren definizioarekin, ikastaroko eskoletatik hartuak. Bilatu hitzaren arabera edo iragazi <strong>arloaren</strong> arabera.</p>
-    <div class="filterbar" id="glofilter" role="group" aria-label="Iragazi hiztegia"></div>
-    <div class="glocount" id="glocount"></div>
-    <div class="glolist" id="glolist"></div>
+    <div class="filterbar" id="dicfilter" role="group" aria-label="Iragazi hiztegia"></div>
+    <div class="diccount" id="diccount"></div>
+    <div class="diclist" id="diclist"></div>
   </section>
 
   <!-- ÉTIMOS -->
@@ -295,11 +295,11 @@
     <div id="itin-quiz"></div>
   </section>
 
-  <section class="view" id="reto">
+  <section class="view" id="retos">
     <p class="eyebrow">Tresna</p>
-    <h1 class="title">Juego · Reto</h1>
+    <h1 class="title">Erronkak</h1>
     <p class="lead">Errepasatu jolasean: denboraren aurka, abiaduragatiko eta segidagatiko puntuekin. Zure markarik onena nabigatzaile honetan gordetzen da.</p>
-    <div id="retobox"></div>
+    <div id="retosbox"></div>
   </section>
 
   
@@ -345,13 +345,13 @@
     <div id="pistasbox"></div>
   </section>
 
-  <section class="view" id="juegosucio">
-    <!-- (08-10) Rincón de lógica de 2.º ESO: el juego sucio de Schopenhauer (juegosucio.js + juegosucioview.js). En la web de ESO
+  <section class="view" id="logica_pca">
+    <!-- (08-10) Rincón de lógica de 2.º ESO: el juego sucio de Schopenhauer (logica_pca.js + logica_pcaview.js). En la web de ESO
          el botón se llama «Rincón de lógica» (build_eso.js); las webs de Bachillerato no la llevan (build_subject.js). -->
     <p class="eyebrow">Ariketa</p>
     <h1 class="title">Logikaren txokoa: joko zikina</h1>
     <p class="lead">Arrazoirik izan gabe eztabaida bat irabazteko trikimailuak, museoko karikatura eta koadroekin. Ikasi haiek ezagutzen, zuri egin ez diezazkizuten.</p>
-    <div id="juegosuciobox"></div>
+    <div id="logica_pcabox"></div>
   </section>
 
   
@@ -480,7 +480,7 @@
 <script src="js/tarjetas_img.js"></script>
 <script src="js/flashcards.js"></script>
 <script src="js/quiz.js"></script>
-<script src="js/retoview.js"></script>
+<script src="js/retosview.js"></script>
 <script src="js/theory.js"></script>
 <script src="js/theoryview.js"></script>
 <script src="js/retratos_museo.js"></script>
@@ -493,8 +493,8 @@
 <script src="js/lecturasview.js"></script>
 <script src="js/disertaciones.js"></script>
 <script src="js/disertacionesview.js"></script>
-<script src="js/pau.js"></script>
-<script src="js/pauview.js"></script>
+<script src="js/prepara_PAU.js"></script>
+<script src="js/prepara_PAUview.js"></script>
 <script src="js/comentario.js"></script>
 <script src="js/comentarioview.js"></script>
 <script src="js/diapositivas.js"></script>
@@ -506,8 +506,8 @@
 <script src="js/mapsview.js"></script>
 <script src="js/infografias.js"></script>
 <script src="js/infografiasview.js"></script>
-<script src="js/glosario.js"></script>
-<script src="js/glosarioview.js"></script>
+<script src="js/diccionario.js"></script>
+<script src="js/diccionarioview.js"></script>
 <script src="js/parejasview.js"></script>
 <script src="js/dilemas.js"></script>
 <script src="js/dilemasview.js"></script>
@@ -517,8 +517,8 @@
 <script src="js/caminoview.js"></script>
 <script src="js/pistas_uhs.js"></script>
 <script src="js/pistasview.js"></script>
-<script src="js/juegosucio.js"></script>
-<script src="js/juegosucioview.js"></script>
+<script src="js/logica_pca.js"></script>
+<script src="js/logica_pcaview.js"></script>
 <script src="js/cruces_tesis.js"></script>
 <script src="js/duelo.js"></script>
 <script src="js/dueloview.js"></script>

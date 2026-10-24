@@ -4,7 +4,7 @@
    Se construye al cargar a partir del menú (#tabs) tal como lo deja cada build, así que cada web publicada
    (Filosofía 1.º, HF, ESO, y sus traducciones) muestra solo sus secciones, en el orden del menú, con una línea
    de qué hay en cada una y, cuando se puede contar, cuántos elementos tiene. Debajo, los temas de cada materia
-   con sus exploraciones (de Itinerario.temasDe) y, dentro de Ilustres, las fichas de época.
+   con sus exploraciones (de Itinerario.temasDe) y, dentro de Biografías, las fichas de época.
    Los textos van en MAPA_TXT y MAPA_DESC (se traducen con el diccionario de interfaz ui/<lang>.json). */
 const MAPA_TXT = {
   secciones: "Atalak", temas: "Ikasgai bakoitzeko gaiak", tema: "{n}. gaia", exploraciones: "Esplorazioak",
@@ -24,9 +24,9 @@ const MAPA_DESC = {
   materiales: "Deskargatzeko fitxak, jarduerak eta dokumentuak.",
   cuentos: "Pentsatzeko ipuinak, beren galderekin.",
   tarjetas: "Errepasatzeko txartelak: galdera aurrean, erantzuna atzean.",
-  reto: "Denboraren aurkako galderak, jolasean errepasatzeko.",
+  retos: "Denboraren aurkako galderak, jolasean errepasatzeko.",
   parejas: "Memoria-jokoa: lotu kontzeptu bakoitza bere bikotearekin.",
-  glosario: "Gai bakoitzeko kontzeptuak, beren definizio eta jatorriarekin.",
+  diccionario: "Gai bakoitzeko kontzeptuak, beren definizio eta jatorriarekin.",
   biografias: "Pentsalarien biografiak eta aro bakoitzeko fitxak.",
   citas: "Filosofoen esaldi ospetsuak, azalduta.",
   adagios: "Latinezko eta grekozko lema klasikoak, eta filosofoen esaldi ospetsuak: zer esan nahi duten eta noiz erabili.",
@@ -53,17 +53,17 @@ const MAPA_DESC = {
   cronogramas: "Egileen eta aroen denbora-lerroak.",
   genealogias: "Nork nori eragin zion: maisuak, ikasleak eta aurkariak.",
   esquemas: "Gai bakoitzeko ideia nagusien eskemak.",
-  esqautor: "Laburpen bat egile bakoitzeko, USErako.",
+  resumenes: "Laburpen bat egile bakoitzeko, USErako.",
   diapositivas: "Gaien aurkezpenak.",
   rescritura: "Ikasi testu bat zure hitzekin berridazten.",
   pistas: "Pixkanaka irekitzen diren pistak dituzten buruhausteak.",
   cuestionarios: "Gai bakoitzeko test motako galderak, zuzenketarekin.",
-  juegosucio: "Eztabaidako tranpak, haiek ezagutzeko.",
+  logica_pca: "Eztabaidako tranpak, haiek ezagutzeko.",
   unidad: "Unitate bateko galdera guztiak, batera.",
   rubricas: "Lanak eta azterketak nola zuzentzen diren.",
   evidencias: "Iazko ikasturteko ikaskuntza-ebidentziak.",
   recursos: "Kanpoko estekak eta tresnak.",
-  pau: "Nolakoa den unibertsitatera sartzeko proba.",
+  prepara_PAU: "Nolakoa den unibertsitatera sartzeko proba.",
   comentario: "Nola egiten den testu-iruzkina, ebatzitako adibideekin.",
   disertaciones: "Nola idazten den disertazioa, ereduekin.",
   lecturas: "Egileen testuak, irakurri eta iruzkintzeko.",
@@ -71,7 +71,7 @@ const MAPA_DESC = {
   signos: "Zeinu-hizkuntzako ikastaroa."
 };
 /* cuántos elementos tiene cada sección (si su colección está cargada en esta web) */
-const MAPA_CUENTA = { tarjetas: "DECKS", cuestionarios: "QUIZZES", glosario: "GLOSARIO", biografias: "BIOGRAFIAS", citas: "CITAS", adagios: "ADAGIOS", polemicas: "POLEMICAS", perseguidos: "PERSEGUIDOS", comunidades: "COMUNIDADES",
+const MAPA_CUENTA = { tarjetas: "DECKS", cuestionarios: "QUIZZES", diccionario: "DICCIONARIO", biografias: "BIOGRAFIAS", citas: "CITAS", adagios: "ADAGIOS", polemicas: "POLEMICAS", perseguidos: "PERSEGUIDOS", comunidades: "COMUNIDADES",
   infografias: "INFOGRAFIAS", mapas: "MAPS", esquemas: "ESQUEMAS", cronogramas: "CRONOGRAMAS", genealogias: "GENEALOGIAS", lecturas: "LECTURAS",
   galeria: "GALERIA", dilemas: "DILEMAS", disertaciones: "DISERTACIONES", nudos: "NUDOS", pistas: "PISTAS", materiales: "MATERIALS" };
 function mapaG(name){ try { return (0, eval)("typeof " + name + " !== 'undefined' ? " + name + " : undefined"); } catch (e){ return undefined; } }

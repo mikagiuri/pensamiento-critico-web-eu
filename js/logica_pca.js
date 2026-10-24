@@ -1,4 +1,4 @@
-// Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/juegosucio.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
+// Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/logica_pca.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
 const JUEGO_SUCIO = {
  "intro": "Arthur Schopenhauer (1788-1860) filosofo alemaniar bat izan zen, gogo txarreko fama zuena: begira iezaiozu ileari. 1830 inguruan liburuxka bat idatzi zuen, <em>Arrazoia izatearen artea</em>, 38 «estratagemarekin»: eztabaida bat irabazteko trikimailuak, arrazoirik ez izan arren. Ez zuen idatzi guk tranpak egin genitzan: haiek ezagutu behar direla zioen, guri egin ez diezazkiguten. Hemen dituzu 25.",
  "pista": "Irudiak domeinu publikoko karikatura eta koadro zaharrak dira, batez ere Honoré Daumierrenak, bere garaiko abokatuez barre egin zuena. Askotan, txistea pertsonaiek esaten dutenean dago: irakurri oina. Begiratu beti tranpa egiten duenak zer bilatzen duen: ez du jakin nahi nork duen arrazoia, irabazi nahi du.",
@@ -20,7 +20,7 @@ const JUEGO_SUCIO = {
      "t": "Bai zera, zuk nahi duzuna da inoiz ez ikastea!"
     }
    ],
-   "img": "media/juegosucio/exagerar.jpg",
+   "img": "media/logica_pca/exagerar.jpg",
    "w": 900,
    "h": 1567,
    "obra": "Francisco de Goya, <em>El pelele</em> (1791-1792). Prado Museoa.",
@@ -43,7 +43,7 @@ const JUEGO_SUCIO = {
      "t": "Azkarra? Atzo azkena izan zen korrika lasterketan!"
     }
    ],
-   "img": "media/juegosucio/palabras.jpg",
+   "img": "media/logica_pca/palabras.jpg",
    "w": 900,
    "h": 1145,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 20. xafla (1845-1848).",
@@ -66,7 +66,7 @@ const JUEGO_SUCIO = {
      "t": "Bai? Orduan mugikorra azterketetan utzi behar da?"
     }
    ],
-   "img": "media/juegosucio/relativo.jpg",
+   "img": "media/logica_pca/relativo.jpg",
    "w": 900,
    "h": 721,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 15. xafla (1845-1848).",
@@ -89,7 +89,7 @@ const JUEGO_SUCIO = {
      "t": "Argitaratzen duen guztia egia delako."
     }
    ],
-   "img": "media/juegosucio/circulo.jpg",
+   "img": "media/logica_pca/circulo.jpg",
    "w": 900,
    "h": 1185,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 12. xafla (1845-1848).",
@@ -112,7 +112,7 @@ const JUEGO_SUCIO = {
      "t": "Ez nau molestatzen, baina…!"
     }
    ],
-   "img": "media/juegosucio/enfadar.jpg",
+   "img": "media/logica_pca/enfadar.jpg",
    "w": 900,
    "h": 1200,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 9. xafla (1845-1848).",
@@ -135,7 +135,7 @@ const JUEGO_SUCIO = {
      "t": "Bi pertsonagatik?"
     }
    ],
-   "img": "media/juegosucio/generalizar.jpg",
+   "img": "media/logica_pca/generalizar.jpg",
    "w": 900,
    "h": 626,
    "obra": "John James Audubon, <em>Zisne tronpetaria</em>, <em>Ameriketako hegaztiak</em> lanaren 406. xafla (1838).",
@@ -158,7 +158,7 @@ const JUEGO_SUCIO = {
      "t": "Ez ditut kopiatu: zure lanean inspiratu naiz."
     }
    ],
-   "img": "media/juegosucio/eufemismo.jpg",
+   "img": "media/logica_pca/eufemismo.jpg",
    "w": 900,
    "h": 707,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 11. xafla (1845-1848).",
@@ -181,7 +181,7 @@ const JUEGO_SUCIO = {
      "t": "Eta ez dago hirugarren aterik?"
     }
    ],
-   "img": "media/juegosucio/dosopciones.jpg",
+   "img": "media/logica_pca/dosopciones.jpg",
    "w": 900,
    "h": 762,
    "obra": "James Gillray, <em>Britannia Eszila eta Karibdisen artean</em> (1793). Kongresuko Liburutegia, Washington.",
@@ -204,7 +204,7 @@ const JUEGO_SUCIO = {
      "t": "Baina ez duzu ezer frogatu…"
     }
    ],
-   "img": "media/juegosucio/victoria.jpg",
+   "img": "media/logica_pca/victoria.jpg",
    "w": 900,
    "h": 1209,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 35. xafla (1845-1848).",
@@ -227,7 +227,7 @@ const JUEGO_SUCIO = {
      "t": "Ba zuk ere bat bota zenuen beste egunean!"
     }
    ],
-   "img": "media/juegosucio/tutambien.jpg",
+   "img": "media/logica_pca/tutambien.jpg",
    "w": 900,
    "h": 727,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 14. xafla (1845-1848).",
@@ -250,7 +250,7 @@ const JUEGO_SUCIO = {
      "t": "Hori ez zen kopiatzea: erantzunak konparatzea zen."
     }
    ],
-   "img": "media/juegosucio/distincion.jpg",
+   "img": "media/logica_pca/distincion.jpg",
    "w": 900,
    "h": 1213,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 19. xafla (1845-1848).",
@@ -273,7 +273,7 @@ const JUEGO_SUCIO = {
      "t": "Begira, ekonomia sistema konplexu bat da, eta dena dago dena eraginda."
     }
    ],
-   "img": "media/juegosucio/general.jpg",
+   "img": "media/logica_pca/general.jpg",
    "w": 900,
    "h": 712,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 33. xafla (1845-1848).",
@@ -296,7 +296,7 @@ const JUEGO_SUCIO = {
      "t": "Gaur hamarretan, bihar hamabietan… eta hilabete barru kalean biziko zara!"
     }
    ],
-   "img": "media/juegosucio/pendiente.jpg",
+   "img": "media/logica_pca/pendiente.jpg",
    "w": 900,
    "h": 796,
    "obra": "William Hogarth, <em>Libertinoaren ibilbidea</em>, 4. xafla (1735).",
@@ -319,7 +319,7 @@ const JUEGO_SUCIO = {
      "t": "Ba Australian beltzak ere badaude."
     }
    ],
-   "img": "media/juegosucio/contraejemplo.jpg",
+   "img": "media/logica_pca/contraejemplo.jpg",
    "w": 900,
    "h": 1204,
    "obra": "John Gerrard Keulemans, <em>Zisne beltza</em> (1869).",
@@ -342,7 +342,7 @@ const JUEGO_SUCIO = {
      "t": "Hain zuzen txikia delako zuzendu behar da, ohitura txarrak har ez ditzan."
     }
    ],
-   "img": "media/juegosucio/vuelta.jpg",
+   "img": "media/logica_pca/vuelta.jpg",
    "w": 900,
    "h": 1143,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 22. xafla (1845-1848).",
@@ -365,7 +365,7 @@ const JUEGO_SUCIO = {
      "t": "Ja! Eta orain erle batekin ezkonduko zara?"
     }
    ],
-   "img": "media/juegosucio/publico.jpg",
+   "img": "media/logica_pca/publico.jpg",
    "w": 900,
    "h": 1006,
    "obra": "William Hogarth, <em>Barre egiten duen publikoa</em> (1733). National Gallery of Art, Washington.",
@@ -388,7 +388,7 @@ const JUEGO_SUCIO = {
      "t": "Eta ikusi duzue gaur zer zapatila daramatzan irakasleak?"
     }
    ],
-   "img": "media/juegosucio/cambiartema.jpg",
+   "img": "media/logica_pca/cambiartema.jpg",
    "w": 900,
    "h": 683,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 30. xafla (1845-1848).",
@@ -411,7 +411,7 @@ const JUEGO_SUCIO = {
      "t": "Hiru milioi jarraitzaile dituen futbolari batek dio!"
     }
    ],
-   "img": "media/juegosucio/autoridad.jpg",
+   "img": "media/logica_pca/autoridad.jpg",
    "w": 900,
    "h": 1258,
    "obra": "Francisco de Goya, <em>37. kapritxoa: Ikasleak gehiago jakingo ote du?</em> (1799). Prado Museoa.",
@@ -434,7 +434,7 @@ const JUEGO_SUCIO = {
      "t": "Ai, hori sakonegia da niretzat: ez dut ulertzen."
     }
    ],
-   "img": "media/juegosucio/ironia.jpg",
+   "img": "media/logica_pca/ironia.jpg",
    "w": 900,
    "h": 1233,
    "obra": "Francisco de Goya, <em>50. kapritxoa: Los Chinchillas</em> (1799). Prado Museoa.",
@@ -475,7 +475,7 @@ const JUEGO_SUCIO = {
      "t": "Hori teorian oso ondo dago, baina praktikan ez du funtzionatzen."
     }
    ],
-   "img": "media/juegosucio/teoria.jpg",
+   "img": "media/logica_pca/teoria.jpg",
    "w": 900,
    "h": 1114,
    "obra": "Honoré Daumier, <em>Leverrier planetaren bilaketa antzua</em> (1846). National Gallery of Art, Washington.",
@@ -498,7 +498,7 @@ const JUEGO_SUCIO = {
      "t": "Bai, eta nork aterako ditu argazkiak zuen sareetarako?"
     }
    ],
-   "img": "media/juegosucio/interes.jpg",
+   "img": "media/logica_pca/interes.jpg",
    "w": 900,
    "h": 731,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 6. xafla (1845-1848).",
@@ -521,7 +521,7 @@ const JUEGO_SUCIO = {
      "t": "Eta horrek zer esan nahi du?"
     }
    ],
-   "img": "media/juegosucio/palabreria.jpg",
+   "img": "media/logica_pca/palabreria.jpg",
    "w": 900,
    "h": 1276,
    "obra": "Francisco de Goya, <em>53. kapritxoa: Hau urrezko mokoa!</em> (1799). Prado Museoa.",
@@ -544,7 +544,7 @@ const JUEGO_SUCIO = {
      "t": "Zure amona ez da medikua! Beraz, erretzea ez da txarra."
     }
    ],
-   "img": "media/juegosucio/pruebamala.jpg",
+   "img": "media/logica_pca/pruebamala.jpg",
    "w": 900,
    "h": 750,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 17. xafla (1845-1848).",
@@ -567,7 +567,7 @@ const JUEGO_SUCIO = {
      "t": "Eta zuk zer jakingo duzu, matematikak suspenditu bazenituen!"
     }
    ],
-   "img": "media/juegosucio/insultar.jpg",
+   "img": "media/logica_pca/insultar.jpg",
    "w": 900,
    "h": 1196,
    "obra": "Honoré Daumier, <em>Les Gens de justice</em>, 32. xafla (1845-1848).",

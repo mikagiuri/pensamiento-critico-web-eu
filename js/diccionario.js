@@ -1,5 +1,5 @@
-// Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/glosario.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
-const GLOSARIO = [
+// Generado por web_i18n/i18n_rebuild.js (eu) a partir de web/js/diccionario.js. No editar a mano: editar la memoria tm/eu.json y regenerar.
+const DICCIONARIO = [
  {
   "subject": "ipc",
   "t": "Pentsamendu kritikoa",
@@ -512,7 +512,7 @@ const GLOSARIO = [
   "def": "Benetan behar duzunean eta pertsonengan eta planetan duen eraginean pentsatuz erostea."
  }
 ];
-const GLOSARIO_TRAMPAS = {
+const DICCIONARIO_TRAMPAS = {
  "ipc": [
   [
    "Iritzia",
