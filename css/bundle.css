@@ -1543,6 +1543,80 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 @media (max-width:560px){ .museo-grid{ grid-template-columns:repeat(auto-fill,minmax(min(120px,100%),1fr)); } }
 
 
+/* ==== css/accesibilidad.css ==== */
+/* accesibilidad.css — DUA, Ola 1 (fichas D1.1 y D1.2): panel «Aa» y lectura en voz alta.
+   Decisiones del profesor del 24-10 (docs/36): panel completo (P1); fuentes Atkinson Hyperlegible,
+   la del sistema y OpenDyslexic como preferencia personal (P2); también en la ESO (P7).
+   Nada de esto cambia el aspecto si no se toca el panel: todas las reglas cuelgan de un atributo
+   de <html> que pone js/accesibilidad.js. Hoja propia para no chocar con styles.css. */
+
+/* ---------- Botón «Aa» y panel ---------- */
+#a11ybtn{font-weight:700;letter-spacing:-.02em}
+/* Con un botón más en la cabecera, en el móvil el nombre de la web ya no cabe entero: se corta con «…»
+   en lugar de quedar debajo de los botones. En pantallas anchas no cambia nada. */
+@media (max-width:520px){
+  header .brand{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  header .brand .owl{margin-inline-end:6px}
+}
+.a11y-panel{position:fixed;z-index:60;top:var(--a11y-top,64px);inset-inline-end:12px;width:min(330px,calc(100vw - 24px));
+  max-height:calc(100vh - var(--a11y-top,64px) - 12px);overflow:auto;background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--radius,14px);box-shadow:var(--shadow);padding:14px 16px;font-family:var(--sans);font-size:.95rem}
+.a11y-panel[hidden]{display:none}
+.a11y-panel .a11y-tit{margin:0 0 10px;font-weight:700;font-size:1rem}
+.a11y-panel fieldset{border:0;margin:0 0 10px;padding:0;min-width:0}
+.a11y-panel legend{padding:0;margin-bottom:4px;font-weight:600;font-size:.88rem;color:var(--muted)}
+.a11y-seg{display:flex;gap:4px;flex-wrap:wrap}
+.a11y-seg button,.a11y-panel .a11y-escuchar,.a11y-panel .a11y-reset{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+  border-radius:8px;padding:5px 10px;min-height:32px}
+.a11y-seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.a11y-panel .a11y-escuchar{width:100%;margin-bottom:8px;font-weight:600}
+.a11y-panel .a11y-reset{margin-top:6px}
+.a11y-panel select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 6px;max-width:100%}
+.a11y-panel .a11y-fila{display:flex;flex-direction:column;gap:4px;margin:0 0 6px;font-weight:600;font-size:.88rem;color:var(--muted)}
+.a11y-panel .a11y-chk{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
+.a11y-panel .a11y-nota,.a11y-panel .a11y-pie,.a11y-panel .a11y-aviso{font-size:.82rem;color:var(--muted);margin:4px 0 8px}
+.a11y-panel .a11y-pie{margin:10px 0 0}
+
+/* ---------- Barra de lectura (solo mientras suena; fija, no empuja nada) ---------- */
+.a11y-bar{position:fixed;z-index:59;bottom:12px;inset-inline-start:12px;display:flex;gap:6px;align-items:center;
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow);padding:5px 8px}
+.a11y-bar[hidden]{display:none}
+.a11y-bar button,.a11y-bar select{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;min-width:34px;min-height:34px;padding:2px 8px}
+.a11y-leyendo{background:color-mix(in srgb,var(--accent) 13%,transparent);outline:2px solid color-mix(in srgb,var(--accent) 50%,transparent);outline-offset:3px;border-radius:4px}
+
+/* ---------- Fuentes (P2). Las @font-face solo se descargan si alguien elige la letra. ---------- */
+@font-face{font-family:"OpenDyslexic";src:url("../media/fuentes/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"OpenDyslexic";src:url("../media/fuentes/opendyslexic/OpenDyslexic-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"OpenDyslexic";src:url("../media/fuentes/opendyslexic/OpenDyslexic-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+html[data-a11y-fuente="atkinson"]{--serif:"Atkinson Hyperlegible",system-ui,sans-serif;--sans:"Atkinson Hyperlegible",system-ui,sans-serif}
+html[data-a11y-fuente="sistema"]{--serif:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html[data-a11y-fuente="opendyslexic"]{--serif:"OpenDyslexic",system-ui,sans-serif;--sans:"OpenDyslexic",system-ui,sans-serif}
+
+/* ---------- Interlineado, espaciado (WCAG 1.4.12) y alineación ---------- */
+html[data-a11y-lh="amplio"] :is(p,li,dd,dt,blockquote,td,th,figcaption,.theory){line-height:1.8!important}
+html[data-a11y-esp="amplio"]:not([data-a11y-lh="amplio"]) :is(p,li,dd,dt,blockquote,td,th,figcaption,.theory){line-height:1.5!important}
+html[data-a11y-esp="amplio"] :is(p,li,dd,dt,blockquote,td,th,figcaption,h1,h2,h3,h4){word-spacing:.16em!important}
+html[data-a11y-esp="amplio"]:not([lang="ar"]) :is(p,li,dd,dt,blockquote,td,th,figcaption,h1,h2,h3,h4){letter-spacing:.12em!important}   /* en árabe el espaciado entre letras rompe la escritura ligada */
+html[data-a11y-esp="amplio"] p{margin-block-end:2em!important}
+html[data-a11y-izq] :is(p,li,dd,blockquote,.theory){text-align:start!important;hyphens:manual!important}
+
+/* ---------- Más contraste: a mano o por prefers-contrast del sistema ---------- */
+html:root[data-a11y-contraste]{--muted:color-mix(in srgb,var(--ink) 88%,var(--bg));--line:color-mix(in srgb,var(--ink) 50%,var(--bg));--line-soft:color-mix(in srgb,var(--ink) 35%,var(--bg))}
+@media (prefers-contrast:more){
+  html:root{--muted:color-mix(in srgb,var(--ink) 88%,var(--bg));--line:color-mix(in srgb,var(--ink) 50%,var(--bg));--line-soft:color-mix(in srgb,var(--ink) 35%,var(--bg))}
+}
+@media (forced-colors:active){
+  .a11y-panel,.a11y-bar{border:1px solid CanvasText}
+  .a11y-seg button[aria-pressed="true"]{outline:2px solid Highlight}
+  .a11y-leyendo{outline:2px solid Highlight}
+}
+
+/* ---------- Reducir movimiento (lo mismo que prefers-reduced-motion en styles.css) ---------- */
+html[data-motion="reduce"] *,html[data-motion="reduce"] *::before,html[data-motion="reduce"] *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+
+@media print{.a11y-panel,.a11y-bar{display:none!important}.a11y-leyendo{background:none;outline:0}}
+
+
 /* ==== css/eso_ironia.css ==== */
 /* ESO (Pensamiento crítico): «estilo ironía» ATENUADO, el mismo del curso (ipc/curso) y de las diapositivas de IPC.
    Solo lo enlaza tools/build_eso.js (web de 2.º ESO, ES y EU). La web del profesor y las de Bachillerato no lo cargan.
@@ -1553,6 +1627,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
   --line:#E2DDD2; --line-soft:#EDE8DE;
   --accent:#2F6FB5; --accent-2:#E8793A; --on-accent:#FFFFFF; --eyebrow:#BB5116;
   --ipc:#E8793A; --fil:#2F6FB5; --hf:#2F6FB5;
+  --ipc-txt:#BB5116; --on-ipc:#1F2A44;
   --ok:#2e784c; --ok-bg:#e5f0e6; --bad:#a53b34; --bad-bg:#f6e4df;
   --shadow:0 1px 2px rgba(31,42,68,.05), 0 6px 20px -12px rgba(31,42,68,.25);
   --radius:18px;
@@ -1564,7 +1639,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
     --bg:#161E31; --surface:#1F2A44; --surface-2:#26334F; --ink:#FBF7EF; --muted:#C9D3E6;
     --line:#34425F; --line-soft:#2B3853;
     --accent:#8DB6E6; --accent-2:#F4B183; --on-accent:#161E31; --eyebrow:var(--accent-2);
-    --ipc:#F4B183; --fil:#8DB6E6; --hf:#8DB6E6;
+    --ipc:#F4B183; --fil:#8DB6E6; --hf:#8DB6E6; --ipc-txt:var(--ipc); --on-ipc:var(--bg);
     --ok:#7bc98f; --ok-bg:#1c2f22; --bad:#e88a80; --bad-bg:#33211e;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 26px -14px rgba(0,0,0,.6);
   }
@@ -1573,7 +1648,7 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
   --bg:#161E31; --surface:#1F2A44; --surface-2:#26334F; --ink:#FBF7EF; --muted:#C9D3E6;
   --line:#34425F; --line-soft:#2B3853;
   --accent:#8DB6E6; --accent-2:#F4B183; --on-accent:#161E31; --eyebrow:var(--accent-2);
-  --ipc:#F4B183; --fil:#8DB6E6; --hf:#8DB6E6;
+  --ipc:#F4B183; --fil:#8DB6E6; --hf:#8DB6E6; --ipc-txt:var(--ipc); --on-ipc:var(--bg);
   --ok:#7bc98f; --ok-bg:#1c2f22; --bad:#e88a80; --bad-bg:#33211e;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 26px -14px rgba(0,0,0,.6);
 }
@@ -1593,4 +1668,15 @@ h1{letter-spacing:-.005em}
 /* Piezas del estilo: etiquetas en naranja espaciadas y botones redondeados. */
 .eyebrow{color:var(--eyebrow,var(--accent-2));letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:.78rem}
 nav.tabs button[aria-current="true"]{background:var(--surface-2);box-shadow:none;color:var(--ink)}
+
+/* (DUA, decisión del profesor del 24-10, opción B) El naranja #E8793A no llega al contraste con blanco (2,9:1).
+   El relleno no cambia: sobre el naranja sólido, texto tinta (--on-ipc, 4,9:1); donde el naranja es letra sobre
+   blanco, naranja oscuro (--ipc-txt, #BB5116, 4,9:1). En oscuro las dos variables dejan el aspecto de siempre. */
+#camino .cam-n,#camino .cam-new{color:var(--on-ipc)}
+#eudaimonia .ari-risk,#republica .rep-warn{color:var(--ipc-txt)}
+#guia .guia-go:hover{color:var(--ipc-txt)}
+/* Los cuatro botones de jugar van en degradado azul → naranja con texto blanco: el texto tinta no sirve sobre el
+   azul (2,8:1), así que el degradado termina en el naranja oscuro y el blanco da ≥ 4,88:1 en todo el botón
+   (24-10; el profesor dejó la elección a la sesión). En oscuro, --ipc-txt es el naranja claro de siempre. */
+#republica .rep-play,#parejas .par-play,#reto .reto-quick,#dilemas .dil-play{background:linear-gradient(120deg,var(--accent),var(--ipc-txt))}
 
