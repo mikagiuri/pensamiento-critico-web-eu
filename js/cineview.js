@@ -62,7 +62,10 @@
     strip.innerHTML = '<h3>Filosofia eta zinema/artea · gai honetarako</h3>'
       + '<div class="cine-grid">' + list.map(cardHTML).join("") + '</div>'
       + '<p class="cine-note">Gai honen galderak planteatzen dituzten filmak eta obrak. Filosofia zinematik eta artetik pentsatzeko bide bat.</p>';
-    body.appendChild(strip);
+    /* (25-10) es de todo el tema: en la vista por apartados va dentro del ÚLTIMO, una sola vez al final (el profesor:
+       «solo enlaces relacionados con el apartado, no con el tema completo») */
+    const partes = body.querySelectorAll(":scope > .th-part");
+    (partes.length ? partes[partes.length - 1] : body).appendChild(strip);
   }
 
   if (typeof loadTheory === "function"){
