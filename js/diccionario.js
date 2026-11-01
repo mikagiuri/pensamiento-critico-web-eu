@@ -263,7 +263,7 @@ const DICCIONARIO = [
  },
  {
   "subject": "ipc",
-  "t": "Postegia",
+  "t": "Egia-ostea",
   "id": "g-ipc-posverdad",
   "area": "Hedabideak eta sareak",
   "tema": "Pentsamendu kritikoa · Hedabideak eta sareak",
@@ -304,6 +304,33 @@ const DICCIONARIO = [
   "area": "Hedabideak eta sareak",
   "tema": "Pentsamendu kritikoa · Hedabideak eta sareak",
   "def": "Besteek egiten dutenetik kanpo geratzeko beldurra.",
+  "k": "medios"
+ },
+ {
+  "subject": "ipc",
+  "t": "Oinarrizko beharra",
+  "id": "g-ipc-necesidad-basica",
+  "area": "Hedabideak eta sareak",
+  "tema": "Pentsamendu kritikoa · Hedabideak eta sareak",
+  "def": "Ondo bizitzeko behar dugun zerbait (jatea, berotzea, ikastea…).",
+  "k": "medios"
+ },
+ {
+  "subject": "ipc",
+  "t": "Desio alferrikakoa",
+  "id": "g-ipc-deseo-superfluo",
+  "area": "Hedabideak eta sareak",
+  "tema": "Pentsamendu kritikoa · Hedabideak eta sareak",
+  "def": "Nahi dugun zerbait, baina hura gabe berdin-berdin bizi gintezke.",
+  "k": "medios"
+ },
+ {
+  "subject": "ipc",
+  "t": "Diderot efektua",
+  "id": "g-ipc-efecto-diderot",
+  "area": "Hedabideak eta sareak",
+  "tema": "Pentsamendu kritikoa · Hedabideak eta sareak",
+  "def": "Erosketa berri batek harekin «bat datozen» beste batzuk desiratzera garamatzanean, bata bestearen atzetik.",
   "k": "medios"
  },
  {
@@ -708,7 +735,7 @@ const DICCIONARIO_TRAMPAS = {
    "Clickbait-a"
   ],
   [
-   "Postegia",
+   "Egia-ostea",
    "Gezurra (fake news)"
   ],
   [

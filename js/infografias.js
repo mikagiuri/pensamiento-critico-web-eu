@@ -336,7 +336,7 @@ const INFOGRAFIAS = {
       "h": "Beharra ala desioa?",
       "rows": [
        {
-        "t": "Beharrezkotasuna",
+        "t": "Oinarrizko beharra",
         "p": "<b>Bizitzeko</b> behar dena: jatea, aterpea, osasuna, maitasuna."
        },
        {

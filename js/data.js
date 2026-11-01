@@ -799,7 +799,7 @@ const QUIZZES = {
     "o": [
      "clickbaita.",
      "alfabetatze mediatikoa.",
-     "post-egia.",
+     "egia-ostea.",
      "ainguraketa."
     ],
     "a": 1,
@@ -2989,7 +2989,7 @@ const QUIZZES = {
   "subject": "ipc",
   "items": [
    {
-    "q": "Zer da post-egia?",
+    "q": "Zer da egia-ostea?",
     "o": [
      "Emozioek gertakariek baino pisu handiagoa duten garaia",
      "Egiazkoa balitz bezala zabaltzen den albiste faltsua",
@@ -2997,7 +2997,7 @@ const QUIZZES = {
      "Albisteak hainbat iturritan egiaztatzeko ohitura"
     ],
     "a": 0,
-    "fb": "Post-egia da emozioek eta sinesmenek egiaztatutako gertakariek baino pisu handiagoa duten egoera."
+    "fb": "Egia-ostea da emozioek eta sinesmenek egiaztatutako gertakariek baino pisu handiagoa duten egoera."
    },
    {
     "q": "Zer da buloa (fake news)?",
@@ -3126,7 +3126,7 @@ const QUIZZES = {
      "Beharra da, arropak hotzetik babesteko balio duelako",
      "Desio soberakoa da, hura gabe berdin-berdin biziko litzatekeelako",
      "Buloa da, iragarkiak zerbait faltsua kontatzen duelako",
-     "Post-egiaren kasu bat da, ilusioa egiten diolako"
+     "Egia-ostearen kasu bat da, ilusioa egiten diolako"
     ],
     "a": 1,
     "fb": "Pertsona hori dagoeneko ondo babestuta dago; hirugarren sudadera nahi duen zerbait da, baina hura gabe ere berdin ondo biziko litzateke."
@@ -3181,7 +3181,7 @@ const QUIZZES = {
      "Ondo egiten du, horrela ez baita inoiz bulo batean eroriko",
      "Gehiegi egiten du, denaz mesfidatzeak ere geldiarazi egiten baitu",
      "Kontrastearen urratsa oso ondo aplikatzen ari da",
-     "Post-egiaren tranpan erortzen ari da"
+     "Egia-ostearen tranpan erortzen ari da"
     ],
     "a": 1,
     "fb": "Kontua ez da denaz mesfidatzea, erabaki aurretik egiaztatzea baizik."
@@ -3200,13 +3200,13 @@ const QUIZZES = {
    {
     "q": "Klaseko eztabaida batean, norbaitek dio: «Berdin zait datuek zer dioten. Nik sentitzen dut egia dela eta kito». Gaiaren zein ideia islatzen du haren jarrerak?",
     "o": [
-     "Post-egia",
+     "Egia-ostea",
      "Clickbait titularra",
      "Diderot efektua",
      "Egiaztapena"
     ],
     "a": 0,
-    "fb": "Post-egian, emozioek eta sinesmenek egiaztatutako gertakariek baino pisu handiagoa dute."
+    "fb": "Egia-ostean, emozioek eta sinesmenek egiaztatutako gertakariek baino pisu handiagoa dute."
    },
    {
     "q": "Norbaitek berokia behar du, berea txiki geratu zaiolako eta negua datorrelako. Gaiaren arabera, beroki hori…",

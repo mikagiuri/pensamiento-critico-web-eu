@@ -44,7 +44,7 @@
   function coll(name){ var v = G(name); return v && typeof v === "object" ? v : null; }
   function fn(name){ var f = window[name]; return typeof f === "function" ? f : null; }
   function view(id){ return !!document.getElementById(id); }
-  var SUBJ_COLOR = { fil: "var(--fil)", hf: "var(--hf)", ipc: "var(--ipc)" };
+  var SUBJ_COLOR = { fil: "var(--fil)", hf: "var(--hf)", ipc: "var(--ipc)", mat: "var(--mat)", bio: "var(--bio)" };   // (01-11) mat y bio: Refuerzos
   function singleSubject(){ var S = coll("SUBJECTS"), ks = S ? Object.keys(S) : []; return ks.length === 1 ? ks[0] : null; }
 
   /* ---------- tema de cada recurso ----------
@@ -441,7 +441,7 @@
     "hf-siglo21": [
       {"k":"fil-t1","n":1,"tit":"Zer da filosofia?","txt":"1. Batxilergoan filosofia zertarako balio duen ikusi zenuen jada; hemen funtzio horiek XXI. mendeko erronkei aplikatzen diezu."},
       {"k":"fil-t2","n":2,"tit":"Zer da gizakia?","txt":"1. Batxilergoan kulturak identitatea eta arauak eraikitzen dituela ikusi zenuen jada; hemen genero- eta gorputz-arauak eraikuntza sozial gisa aztertzen dituzu."},
-      {"k":"fil-t3","n":3,"tit":"Zer ezagut dezakegu?","txt":"1. Batxilergoan postegiaren arazoa ikusi zenuen jada; hemen XXI. mendeko erronketan txertatzen duzu."},
+      {"k":"fil-t3","n":3,"tit":"Zer ezagut dezakegu?","txt":"1. Batxilergoan egia-ostearen arazoa ikusi zenuen jada; hemen XXI. mendeko erronketan txertatzen duzu."},
       {"k":"fil-metafisica","n":"M","tit":"Errealitatea: zer dago eta nolakoa da? (Metafisika)","txt":"1. Batxilergoan adimen artifizialaren arazoa ikusi zenuen jada; hemen mundu birtualaren eta zainketen erronkekin lotzen duzu."},
       {"k":"fil-t5","n":5,"tit":"Etikaren galderak","txt":"1. Batxilergoan zainketen etika ikusi zenuen jada; hemen XXI. mendeko erronkei aplikatzen diozu."},
       {"k":"fil-t6","n":6,"tit":"Bizitza gizartean (Filosofia politikoa)","txt":"1. Batxilergoan erronka globalak ikusi zenituen jada; hemen XXI. mendeko arazoen mapa bihurtzen dira."},
@@ -510,7 +510,7 @@
       {"k":"hf-helenismo","n":10,"tit":"Helenismoa: zinismoa, estoizismoa, epikureismoa eta eszeptizismoa","txt":"1. Batxilergoan eszeptizismoa ezagutzaren aurreko jarrera gisa ikusi duzu."},
       {"k":"hf-analitica","n":24,"tit":"Filosofia analitikoa: Wittgenstein eta bihurgune linguistikoa","txt":"1. Batxilergoan egia gure epaiketen propietate gisa ikusi duzu."},
       {"k":"hf-posmodernidad","n":23,"tit":"Nietzsche eta postmodernitatea: Habermas hausleeen aurrean","txt":"1. Batxilergoan egiaren nozioa eta bere irizpideak aztertu dituzu."},
-      {"k":"hf-siglo21","n":27,"tit":"Gaur egungo gizartea: XXI. mendeko erronkak","txt":"1. Batxilergoan postegia eta albiste faltsuek nola manipulatzen duten sinesmena ikusi duzu."},
+      {"k":"hf-siglo21","n":27,"tit":"Gaur egungo gizartea: XXI. mendeko erronkak","txt":"1. Batxilergoan egia-ostea eta albiste faltsuek nola manipulatzen duten sinesmena ikusi duzu."},
       {"k":"hf-modernidad","n":13,"tit":"Modernitatearen jaiotza: Errenazimentua, protestantismoa eta iraultza zientifikoa","txt":"1. Batxilergoan zientzia ezagutza arrazionalen sistema gisa ikusi duzu."},
       {"k":"hf-existencialismo","n":25,"tit":"Existentzialismoa: Heidegger, Sartre eta filosofia espainiarra","txt":"1. Batxilergoan Ortegaren perspektibismoa eta irudikapenaren eginkizuna ikusi dituzu."},
       {"k":"hf-ilustracion","n":18,"tit":"Proiektu ilustratua: arrazoiaren indarra eta mugak","txt":"1. Batxilergoan ezagutzeak engainua saihesteko balio duela ikusi duzu."},
@@ -620,6 +620,18 @@
     ]
   };
   var WEB_REPO = { fil: "aula-de-filosofia-web", hf: "historia-filosofia-web" };
+  /* (01-11) enlaces del texto a un tema de la otra materia («#teoria/hf-…» en 1.º, «#teoria/fil-…» en HF): en las webs
+     del alumnado ese tema no está y el enlace no llevaba a ninguna parte. Como las cajas de puentes, se abre la otra web
+     publicada, en la misma lengua y en pestaña nueva. En la web completa (el tema existe) no cambia nada. */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#teoria/"]'); if (!a) return;
+    var resto = a.getAttribute("href").slice(8), k = resto.split("/")[0], T = coll("THEORY");
+    var otra = /^hf-/.test(k) ? "hf" : /^fil-/.test(k) ? "fil" : null;
+    if (!T || T[k] || !otra) return;
+    var lang = (document.documentElement.lang || "es").slice(0, 2);
+    e.preventDefault(); e.stopPropagation();
+    window.open("https://mikagiuri.github.io/" + WEB_REPO[otra] + (lang === "es" ? "" : "-" + lang) + "/#teoria/" + resto, "_blank", "noopener");
+  }, true);
   function puentesHtml(subject, key){
     var arr = PUENTES[key]; if (!arr || !arr.length) return "";
     var T = coll("THEORY"), lang = (document.documentElement.lang || "es").slice(0, 2), otra = subject === "fil" ? "hf" : "fil";
@@ -627,12 +639,14 @@
     return '<div class="fin-bloque fin-puentes"><h3>' + esc(t(subject === "fil" ? "puenteFil" : "puenteHf")) + '</h3>' + arr.map(function(x){
       var lab = (otra === "hf" ? t("hfSig") + " · " : "") + (typeof x.n === "number" ? t("tema", { n: x.n }) : x.n) + " · " + x.tit;
       var a = T && T[x.k] ? btn({ go: "teoria", arg: x.k, label: lab }) : '<a class="itin-lnk" href="' + esc(url + x.k) + '" target="_blank" rel="noopener">' + esc(lab) + ' ↗</a>';
-      return '<div class="fin-puente">' + a + '<p>' + esc(x.txt) + '</p></div>'; }).join("") + '</div>';
+      /* (01-11, sesión 110) cuestionario de conocimientos previos del puente (previosview.js, solo si existe) */
+      var pv = window.Previos ? window.Previos.botonPuente(subject === "fil" ? key + "|" + x.k : x.k + "|" + key) : "";
+      return '<div class="fin-puente">' + a + '<p>' + esc(x.txt) + '</p>' + pv + '</div>'; }).join("") + '</div>';
   }
   /* (24-10) ampliación de 1.º (actividades_74): enlaces del final del tema a sus apartados nuevos */
   var AMPLIACION_FIL = {
     "fil-t2": [["#teoria/fil-t2/4", "Emozioak: balioesten duen gorputza"], ["#teoria/fil-t2/3", "Jarreretatik politiketara: elkarbizitzaren bost eredu"]],
-    "fil-t3": [["#teoria/fil-t3/1", "Fida gaitezke hautematen eta gogoratzen dugunaz?"], ["#teoria/fil-t3/5", "Posegia, sakonago"], ["#teoria/fil-t3/7", "Nork egin ahal izan du zientzia: data jakineko oztopoak"], ["#teoria/fil-t3/7", "Matilda efektua"]],
+    "fil-t3": [["#teoria/fil-t3/1", "Fida gaitezke hautematen eta gogoratzen dugunaz?"], ["#teoria/fil-t3/5", "Egia-ostea, sakonago"], ["#teoria/fil-t3/7", "Nork egin ahal izan du zientzia: data jakineko oztopoak"], ["#teoria/fil-t3/7", "Matilda efektua"]],
     "fil-metafisica": [["#teoria/fil-metafisica/5", "Adimen artifiziala, filosofiaren aztergai"]],
     "fil-t4": [["#teoria/fil-t4/12", "Zergatik arrazoitzen dugu gaizki: alborapen kognitiboak"]],
     "fil-t5": [["#teoria/fil-t5/4", "Estoizismoa, bertutearen etika gisa"], ["#teoria/fil-t5/4", "Nahikoa al da pertsona ona izatea? Bertutearen etikari egindako eragozpenak"], ["#teoria/fil-t5/5", "Betebeharraren etikaren egitura"], ["#teoria/fil-t5/11", "Ingurumen-etika eta etika aplikatuaren beste eremu batzuk"]],
@@ -874,9 +888,9 @@
       return (gr.g ? '<h3 class="temas-b" data-' + grpAttr + '="' + esc(gr.g) + '">' + esc((grpNames && grpNames[gr.g]) || gr.g) + '</h3>' : '') + cuerpo;
     }).join("");
   }
-  ["fil", "hf", "ipc"].forEach(function(s){
+  ["fil", "hf", "ipc", "mat", "bio"].forEach(function(s){   // (01-11) mat y bio: Refuerzos
     var el = document.getElementById(s); if (!el) return;
-    if (singleSubject() === s) el.querySelectorAll(":scope > .toolrow").forEach(function(o){ o.remove(); });   // sin la fila de botones curados: la lista de temas la sustituye
+    if (singleSubject() === s || s === "mat" || s === "bio") el.querySelectorAll(":scope > .toolrow").forEach(function(o){ o.remove(); });   // sin la fila de botones curados: la lista de temas la sustituye
     var tmp = document.createElement("div");
     tmp.innerHTML = temasHtml(s);
     var first = el.querySelector(":scope > .sec-head");   // «Explora la materia» (la web en números)
@@ -889,7 +903,7 @@
   });
 
   /* ---------- migas de contexto ---------- */
-  var LANDING = { inicio: 1, fil: 1, hf: 1, ipc: 1 };
+  var LANDING = { inicio: 1, fil: 1, hf: 1, ipc: 1, mat: 1, bio: 1 };
   function homeId(){ return view("inicio") ? "inicio" : singleSubject(); }
   function crumbs(id){
     var v = document.getElementById(id); if (!v || !v.classList.contains("view")) return;
