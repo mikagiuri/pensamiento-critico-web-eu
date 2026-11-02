@@ -93,8 +93,8 @@
     addAll(D, "tarjetas", function(i){ return i.name; }, function(i){ return subjName(i.subject); }, "Txartelak");
     var ES = typeof ESQUEMAS !== "undefined" ? ESQUEMAS : null;
     addAll(ES, "esquemas", function(i){ return i.title; }, function(i){ return i.tema || subjName(i.subject); }, "Eskema", function(i){
-      if (!i.v2) return ""; var parts = [i.v2.pregunta || "", i.v2.raiz || "", i.v2.idea || ""];
-      (function walk(n){ parts.push((n.rel || "") + " " + (n.t || "") + " " + (n.d || "") + " " + (n.a || "")); (n.c || []).forEach(walk); })({ c: i.v2.ramas || [] });
+      var v = i.v3 || i.v2; if (!v) return ""; var parts = [v.pregunta || "", v.raiz || "", v.idea || ""];
+      (function walk(n){ parts.push((n.rel || "") + " " + (n.t || "") + " " + (n.d || "") + " " + (n.a || "")); (n.c || []).forEach(walk); })({ c: v.ramas || [] });
       return parts.join(" · "); });
     addAll(typeof PAU !== "undefined" ? PAU : null, "prepara_PAU", function(i){ return i.title; }, function(i){ return i.kick || "USE"; }, "USE");
     addAll(typeof BIOGRAFIAS !== "undefined" ? BIOGRAFIAS : null, "biografias", function(i){ return i.name; }, function(i){ return i.dates + (i.role ? " · " + i.role : ""); }, "Biografia", function(i){ return [i.idea, i.bio, i.anecdota].filter(Boolean).join(" · "); });
