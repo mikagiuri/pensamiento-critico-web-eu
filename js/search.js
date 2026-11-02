@@ -49,7 +49,7 @@
     esquemas: "loadEsq", prepara_PAU: "loadPau", mapas: "loadMap"
   };
   /* orden de los grupos en los resultados */
-  var ORDER = ["Atala", "Teoria", "Atala", "Hiztegia", "Irakurgaia", "Pasartea", "Aipua", "Galdera", "Txartela", "Eskema", "Materiala", "Ipuina", "Infografia", "Galdetegia", "Txartelak", "USE", "Biografia", "Clase"];
+  var ORDER = ["Atala", "Teoria", "Atala", "Hiztegia", "Irakurgaia", "Pasartea", "Aipua", "Galdera", "Txartela", "Eskema", "Materiala", "Ipuina", "Infografia", "Galdetegia", "Txartelak", "USaP", "Biografia", "Clase"];
 
   var index = null;
   /* entrada: { type, label, meta, go, arg, text (fragmento original donde buscar), hay (fold de label+meta+clave),
@@ -96,7 +96,7 @@
       var v = i.v3 || i.v2; if (!v) return ""; var parts = [v.pregunta || "", v.raiz || "", v.idea || ""];
       (function walk(n){ parts.push((n.rel || "") + " " + (n.t || "") + " " + (n.d || "") + " " + (n.a || "")); (n.c || []).forEach(walk); })({ c: v.ramas || [] });
       return parts.join(" · "); });
-    addAll(typeof PAU !== "undefined" ? PAU : null, "prepara_PAU", function(i){ return i.title; }, function(i){ return i.kick || "USE"; }, "USE");
+    addAll(typeof PAU !== "undefined" ? PAU : null, "prepara_PAU", function(i){ return i.title; }, function(i){ return i.kick || "USaP"; }, "USaP");
     addAll(typeof BIOGRAFIAS !== "undefined" ? BIOGRAFIAS : null, "biografias", function(i){ return i.name; }, function(i){ return i.dates + (i.role ? " · " + i.role : ""); }, "Biografia", function(i){ return [i.idea, i.bio, i.anecdota].filter(Boolean).join(" · "); });
     /* (11-10) fichas de época (epocas_fichas.js): se abren en Biografías («epoca-<clave>») */
     if (typeof EPOCAS_FICHAS !== "undefined" && EPOCAS_FICHAS && typeof bioNombreFicha === "function" && document.getElementById("biografias")){

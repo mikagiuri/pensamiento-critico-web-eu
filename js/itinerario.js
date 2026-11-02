@@ -18,19 +18,20 @@
    web_i18n/ui/<lang>.json los traduzca. Estilos: styles.css («Viaje del alumno»). */
 (function(){
   var TXT = {
-    ariaItin: "Gaiaren ibilbidea", ariaPau: "USE ibilbidea", ariaCrumbs: "Non zauden", deEsteTema: "Gai honi buruz:",
+    ariaItin: "Gaiaren ibilbidea", ariaPau: "USaP ibilbidea", ariaCrumbs: "Non zauden", deEsteTema: "Gai honi buruz:",
     p1: "Irakurri teoria", p1clases: "Jarraitu klaseak", p2: "Errepasatu txartelekin", p3: "Jarri zeure burua proban", p4: "Ikusizko errepasoa",
     aqui: "Hemen zaude", siguiente: "Hurrengo urratsa",
     temas: "Gaiak", exploraciones: "Esplorazioak", unidades: "Unitateak", tema: "{n}. gaia", unidad: "{n}. unitatea",
     seguir: "Gai honekin jarraitzeko", tarjetas: "Txartelak", cuestionarios: "Galdetegiak", infografias: "Infografiak", mapas: "Kontzeptu-mapak",
     esquemas: "Eskemak", lecturas: "Irakurgaiak", comentarios: "Testu-iruzkinak", dilemas: "Dilema etikoak", pistas: "Pista mailakatuak", conceptos: "Kontzeptuak",
     nTarjetas: "{n} txartel", nPreguntas: "{n} galdera", anterior: "Aurreko gaia", siguienteTema: "Hurrengo gaia", anexos: "Esplorazioak", epoca: "Aroa", epocaDe: "Aroa: {e}", volverTema: "Itzuli gaira",
-    blEstudiar: "Ikasi", blPau: "PAU prestatu", blPensar: "Pentsatu eta idatzi", blAmpliar: "Zabaldu", pauBadge: "PAUko irakurketa",
+    blEstudiar: "Ikasi", blPau: "USaP prestatu", blPensar: "Pentsatu eta idatzi", blAmpliar: "Zabaldu", pauBadge: "USaPeko irakurgaia",
     cronogramas: "Kronogramak", disertaciones: "Disertazioak", comparativas: "Konparatiboak", polemicas: "Polemikak", comunidades: "Komunitateak",
     puenteFil: "2. Batxilergoan berriro ikusiko duzu", puenteHf: "1. Batxilergoan ikusi zenuen jada", hfSig: "FH",
+    antes: "Hasi aurretik: {n} termino",   // (02-11, P-107)
     perseguidos: "Jazarriak", duelo: "Arrazoien dueloa", juegos: "Jokoak", logica: "Logikaren txokoa", masFondo: "Gai honetan sakonago",
     videosEu: "Bideoak euskaraz (Ikusgela)", videoEu: "Ikusgelaren bideoa, euskaraz", transcripcion: "Transkripzioa", transcripcionT: "Bideoaren testua: Ikusgelaren azpitituluak", infografia: "Infografia", mapa: "Mapa", esquema: "Eskema", lectura: "Irakurgaia", dilema: "Dilema", comentario: "Iruzkina",
-    pau: "USE ibilbidea", pauLead: "Prestatu USE ordenan: lehenik proba nolakoa den, gero ariketa bakoitza eta, azkenik, gaikako praktika.",
+    pau: "USaP ibilbidea", pauLead: "Prestatu USaP ordenan: lehenik proba nolakoa den, gero ariketa bakoitza eta, azkenik, gaikako praktika.",
     pau1: "Nolakoa da proba", pau2: "1. ariketa · Testu-iruzkina", pau3: "2. ariketa · Disertazioa",
     pau4: "3. ariketa · Azalpena", pau5: "Nola zuzentzen den", pau6: "Praktikatu gaika", inicio: "Hasiera",
     s1: "Teoria", s1clases: "Clases", s2: "Txartelak", s3: "Galdetegia", s4: "Errepasoa",
@@ -52,7 +53,7 @@
   function temaNum(o){
     if (!o) return null;
     if (typeof o.tema === "number") return o.tema;
-    var m = String(o.tema || "").match(/(?:Tema|Thème|Topic|الموضوع)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null;
+    var m = String(o.tema || "").match(/(?:Tema|Thème|Topic|Thema|الموضوع)\s+(\d+)|(\d+)\.\s*gaia/); return m ? +(m[1] || m[2]) : null;
   }
   var IPC_KEY = /^(?:map-)?ipc-([a-z]+)/;
   var IPC_ALIAS = { conceptos: "pensar", publicidad: "medios", prejuicios: "sesgos", moda: "huella", consumo: "huella", fastfashion: "huella", critico: "pensar", bulos: "falacias", hecho: "pensar", tecnologia: "medios", genero: "grupo", emociones: "pensar" };
@@ -303,7 +304,7 @@
       .map(function(k){ return { go: "disertaciones", arg: k, label: strip(D[k].title) }; });
   }
   function comparativasDe(subject, tema){
-    var Pa = coll("USE"); if (subject !== "hf" || !PAU_TEMAS[tema] || !Pa || !Pa["comparativas-temas"] || !view("pau")) return [];
+    var Pa = coll("USaP"); if (subject !== "hf" || !PAU_TEMAS[tema] || !Pa || !Pa["comparativas-temas"] || !view("pau")) return [];
     return [{ go: "pau", arg: "comparativas-temas", label: strip(Pa["comparativas-temas"].title) }];
   }
   /* rótulo de una sección tal como lo pone el menú (ya traducido); si no está en el menú, el de TXT */
@@ -710,13 +711,30 @@
       (rowsHtml ? '<h2>' + esc(t("seguir")) + '</h2>' + rowsHtml : '') +
       '<div class="fin-pager">' + card(prev, "‹ " + t(i < 0 && esAnexo(T[key]) ? "volverTema" : "anterior"), "") + card(next, t("siguienteTema") + " ›", " fin-next") + '</div></section>';
   }
+  /* (02-11, P-107: ideas de Dislegi, aprobadas el 26-10, docs/36) arriba de cada tema, «Antes de empezar: 5 términos»: los
+     cinco términos del tema con más importancia (imp) que ya tienen entrada en el Diccionario, con su definición y su ficha.
+     Solo en la entrada principal de cada tema, y plegada en una línea con el estilo de «Ampliar» para no desplazar el
+     contenido (docs/35, regla 4.1). Las definiciones son las del Diccionario: en cada lengua salen ya traducidas. */
+  function antesHtml(subject, tema, key){
+    var Gl = G("DICCIONARIO"), T = coll("THEORY"); if (!Array.isArray(Gl) || !T || !view("diccionario")) return "";
+    var prim = temasDe(subject).filter(function(k){ return !T[k].sigla && !extraDe(k, T[k]) && temaOf("teoria", k, T[k]) === tema; })[0]; if (prim !== key) return "";
+    /* a igual importancia, primero el que antes sale en el texto del tema (el que el alumnado se encuentra antes) */
+    var txt = strip(T[key].html || "").toLowerCase(), pos = function(g){ var i = txt.indexOf(strip(g.t).toLowerCase()); return i < 0 ? 1e9 : i; };
+    var cs = Gl.filter(function(g){ return g && g.id && g.subject === subject && g.t && g.def && gloTema(g) === tema; }).map(function(g){ return { g: g, p: pos(g) }; })
+      .sort(function(a, b){ return ((b.g.imp || 0) - (a.g.imp || 0)) || (a.p - b.p); }).slice(0, 5);
+    if (!cs.length) return "";
+    return '<details class="fin-bloque fin-amp itin-antes" style="--c:' + (SUBJ_COLOR[subject] || "var(--accent)") + '"><summary>' + esc(t("antes", { n: cs.length })) + '</summary><ul>' +
+      cs.map(function(x){ return '<li><a href="#diccionario/' + esc(x.g.id) + '"><strong>' + esc(strip(x.g.t)) + '</strong></a> · ' + esc(strip(x.g.def)) + '</li>'; }).join("") + '</ul></details>';
+  }
   function itemTema(go_, key){ var c = coll(COLL[go_]), o = c && c[key]; return o ? { subject: o.subject, tema: temaOf(go_, key, o) } : null; }
   function renderTeoria(k){
     k = String(k || "").replace(/(?:\/|§)\d+$/, "");   /* (07-10) «clave/n»: enlace a un apartado */
     var body = document.getElementById("theorybody"), tm = itemTema("teoria", k); if (!body || !tm) return;
     var rel = body.querySelector(".related-row"); if (rel) rel.remove();   // la tira antigua de la cabecera: todo va al final
-    body.querySelectorAll(":scope > .itin-fin, :scope > .th-part > .itin-fin").forEach(function(o){ o.remove(); });
+    body.querySelectorAll(":scope > .itin-fin, :scope > .th-part > .itin-fin, :scope > .itin-antes").forEach(function(o){ o.remove(); });
     if (tm.tema == null) return;
+    var ant = document.createElement("div"); ant.innerHTML = antesHtml(tm.subject, tm.tema, k);
+    if (ant.firstElementChild){ var head = body.querySelector(":scope > .theory-head"); body.insertBefore(ant.firstElementChild, head ? head.nextSibling : body.firstChild); }
     var tmp = document.createElement("div"); tmp.innerHTML = finHtml(tm.subject, tm.tema, k);
     /* (25-10, el profesor: «solo enlaces relacionados con el apartado, no con el tema completo») en la vista por
        apartados la caja va dentro del ÚLTIMO apartado: sale una sola vez, al final del tema, y no debajo de cada uno */
@@ -755,10 +773,10 @@
     var item = function(go_, name, key){ var c = coll(name); if (!view(go_) || !c || !c[key]) return null; return { go: go_, arg: key, label: strip(c[key].title || c[key].name || key) }; };
     var sec = function(id){ return view(id) ? { go: id, arg: "", label: navLabel(id) || id } : null; };
     var steps = [
-      { id: "pau", label: t("pau1"), short: t("spau1"), items: [item("prepara_PAU", "USE", "estructura"), item("prepara_PAU", "USE", "modelos")] },
-      { id: "comentario", label: t("pau2"), short: t("spau2"), items: [item("comentario", "COMENTARIO", "metodo"), item("comentario", "COMENTARIO", "consejos"), item("prepara_PAU", "USE", "ejercicio1"), sec("lecturas")] },
+      { id: "pau", label: t("pau1"), short: t("spau1"), items: [item("prepara_PAU", "USaP", "estructura"), item("prepara_PAU", "USaP", "modelos")] },
+      { id: "comentario", label: t("pau2"), short: t("spau2"), items: [item("comentario", "COMENTARIO", "metodo"), item("comentario", "COMENTARIO", "consejos"), item("prepara_PAU", "USaP", "ejercicio1"), sec("lecturas")] },
       { id: "disertaciones", label: t("pau3"), short: t("spau3"), items: [item("disertaciones", "DISERTACIONES", "metodologia"), item("disertaciones", "DISERTACIONES", "temas"), item("disertaciones", "DISERTACIONES", "comparativas")] },
-      { id: "pau-ej3", label: t("pau4"), short: t("spau4"), items: [item("prepara_PAU", "USE", "ejercicio3"), item("prepara_PAU", "USE", "comparativas-temas")] },
+      { id: "pau-ej3", label: t("pau4"), short: t("spau4"), items: [item("prepara_PAU", "USaP", "ejercicio3"), item("prepara_PAU", "USaP", "comparativas-temas")] },
       { id: "rubricas", label: t("pau5"), short: t("spau5"), items: [sec("rubricas")] },
       { id: "unidad", label: t("pau6"), short: t("spau6"), items: [sec("cuestionarios"), sec("unidad"), sec("resumenes"), sec("cronogramas")] }
     ];

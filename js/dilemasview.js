@@ -23,7 +23,7 @@ const DIL_TXT = {
   mantengo: "Nire aukerari eusten diot", cambiaria: "Iritziz aldatuko nuke", siguiente: "Hurrengoa:", tipo: "Dilema mota",
   /* Bachillerato (25-09): pregunta universal, escuelas, debate de época, reflexión PAU */
   preguntaFondo: "Funtsezko galdera", escuelas: "Eskolek erantzuten dute", elige: "elige", debateEpoca: "Bere garaiko eztabaida",
-  verTeoria: "Ikusi teorian", pau: "PAU hausnarketa (2. ariketa)", seguir: "Jarraitzeko:",   /* (20-10) enlaces de un dilema a Perseguidos o a una exploración */
+  verTeoria: "Ikusi teorian", pau: "USaPeko hausnarketa (2. ariketa)", seguir: "Jarraitzeko:",   /* (20-10) enlaces de un dilema a Perseguidos o a una exploración */
   como: "Nola jokatzen den:", howto: "Ireki dilema bat, aukeratu A ala B, idatzi zergatik eta begiratu «pentsatzeko»: amaieran erabakiko duzu zure aukerari eutsi ala aldatu."
 };
 const dil = { group: (Object.keys(DIL_GROUPS).find(g => typeof DILEMAS !== "undefined" && DILEMAS.some(d => d.grupo === g)) || "tecno"), cur: null, step: 0 };

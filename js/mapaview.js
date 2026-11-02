@@ -53,7 +53,7 @@ const MAPA_DESC = {
   cronogramas: "Egileen eta aroen denbora-lerroak.",
   genealogias: "Nork nori eragin zion: maisuak, ikasleak eta aurkariak.",
   esquemas: "Gai bakoitzeko ideia nagusien eskemak.",
-  resumenes: "Laburpen bat egile bakoitzeko, USErako.",
+  resumenes: "Laburpen bat egile bakoitzeko, USaPerako.",
   diapositivas: "Gaien aurkezpenak.",
   rescritura: "Ikasi testu bat zure hitzekin berridazten.",
   pistas: "Pixkanaka irekitzen diren pistak dituzten buruhausteak.",
