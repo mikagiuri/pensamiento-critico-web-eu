@@ -37,4 +37,5 @@ function loadJuegoSucio(arg){
   jsRender();
   if (arg){ const el = document.getElementById("js-" + arg); if (el) el.scrollIntoView({ block: "start" }); }
 }
-if (jsBox()) jsRender();
+/* (02-11, P-040) se pinta al abrir la vista por primera vez, no al cargar la página (js/carga_diferida.js) */
+if (jsBox()) (window.pintarAlAbrir || ((id, f) => f()))("logica_pca", jsRender);
