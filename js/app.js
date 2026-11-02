@@ -63,7 +63,6 @@ function parseHash(){
   const i = raw.indexOf("/");
   let go = i < 0 ? raw : raw.slice(0, i);
   let arg = i < 0 ? null : raw.slice(i + 1);
-  if (go === "citas"){ go = "adagios"; arg = "frases"; }   // (12-10) la antigua sección «Frases» vive ahora en Adagios (interruptor)
   const el = go && document.getElementById(go);
   if (!(el && el.classList.contains("view"))) return null;   // p. ej. #th-3 (ancla interna del índice): se ignora
   if (arg){ try { arg = decodeURIComponent(arg); } catch (e){} }
@@ -117,8 +116,9 @@ function routeUnknown(){
   if (nf){
     views.forEach(v => v.classList.toggle("active", v === nf));
     tabs.querySelectorAll("button[data-view]").forEach(b => b.setAttribute("aria-current", "false"));
-    let dir = raw; try { dir = decodeURIComponent(raw); } catch (e){}
-    const d = document.getElementById("nfdir"); if (d) d.textContent = "#" + dir;
+    /* (02-11, P-117) la dirección abierta no se repite en pantalla: si es un nombre viejo, el profesor no
+       quiere que se vea («deben desaparecer de una vez por todas»). Se oculta la línea «Dirección: …». */
+    const d = document.getElementById("nfdir"); if (d){ d.textContent = ""; if (d.parentNode) d.parentNode.hidden = true; }
     const home = homeView(), a = document.getElementById("nfhome"); if (a && home) a.setAttribute("href", "#" + home);
     const m = document.getElementById("nfmapa"); if (m) m.hidden = !document.getElementById("mapa");
     const b = document.getElementById("nfsearch");
@@ -350,10 +350,13 @@ document.querySelectorAll(".courses [data-view]").forEach(card => {
   const courses = document.querySelector("#inicio .courses");
   if (!courses) return;
   const B = "https://mikagiuri.github.io/";
+  /* (02-11) cada web con sus lenguas publicadas (antes, fijas es-eu-fr-en: faltaban el árabe y el neerlandés) y Refuerzos */
+  const LANG = { es: "Gaztelania", eu: "Euskara", fr: "Français", en: "English", ar: "العربية", nl: "Nederlands" };
   const webs = [
-    ["fil", "Filosofia, Batxilergoko 1. maila", "aula-de-filosofia-web"],
-    ["hf", "Filosofiaren Historia, Batxilergoko 2. maila", "historia-filosofia-web"],
-    ["ipc", "Pentsamendu kritikoa, DBH 2", "pensamiento-critico-web"]
+    ["fil", "Filosofia, Batxilergoko 1. maila", "aula-de-filosofia-web", ["es", "eu", "fr", "en", "ar", "nl"]],
+    ["hf", "Filosofiaren Historia, Batxilergoko 2. maila", "historia-filosofia-web", ["es", "eu", "fr", "en", "ar"]],
+    ["ipc", "Pentsamendu kritikoa, DBH 2", "pensamiento-critico-web", ["es", "eu", "fr", "en"]],
+    ["mat", "Refuerzos 1.º Bachillerato (Matemáticas I y Biología)", "refuerzos-web", ["es", "en"]]
   ];
   const link = (url, lab) =>
     '<span class="pw-l"><a href="' + url + '" target="_blank" rel="noopener">' + lab + '</a>' +
@@ -372,7 +375,7 @@ document.querySelectorAll(".courses [data-view]").forEach(card => {
     '<p>Ikasleek ikusten dutena: ikasgai bakoitza berea duela eta irakaslearen materialik gabe. Argitaratzean eguneratzen dira.</p></div>' +
     '<div class="pubwebs">' + webs.map(w =>
       '<div class="pubweb" style="--c:var(--' + w[0] + ')"><h3>' + w[1] + '</h3>' +
-      link(B + w[2] + "/", "Gaztelania") + link(B + w[2] + "-eu/", "Euskara") + link(B + w[2] + "-fr/", "Français") + link(B + w[2] + "-en/", "English") + '</div>').join("") + '</div>');
+      w[3].map(l => link(B + w[2] + (l === "es" ? "" : "-" + l) + "/", LANG[l])).join("") + '</div>').join("") + '</div>');
   document.querySelectorAll(".pw-copy").forEach(b => b.addEventListener("click", () => {
     const done = () => { b.textContent = "Kopiatuta"; b.classList.add("ok"); setTimeout(() => { b.textContent = "Kopiatu"; b.classList.remove("ok"); }, 1600); };
     if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.url).then(done, () => window.prompt("Kopiatu esteka:", b.dataset.url));

@@ -79,6 +79,7 @@ function loadPau(k){
     ((ant || sig) ? '<nav class="pau-pasos">' +
       (ant ? '<a href="#prepara_PAU/' + pauEsc(ant.k) + '"><small>← ' + pauEsc("Aurrekoa") + '</small>' + pauEsc(PAU[ant.k].title) + '</a>' : '<span></span>') +
       (sig ? '<a class="pau-sig" href="#prepara_PAU/' + pauEsc(sig.k) + '"><small>' + pauEsc("Hurrengoa") + ' →</small>' + pauEsc(PAU[sig.k].title) + '</a>' : '') + '</nav>' : '');
+  body.querySelectorAll("table").forEach(t => { t.tabIndex = 0; });   // (02-11, la 116) en el móvil las tablas anchas se desplazan: con foco, también con el teclado
   const hs = [...body.querySelectorAll("h2")];
   hs.forEach((h, j) => { h.id = "ph-" + j; });
   if (toc) toc.innerHTML = '<div class="toc-title">Gida honetan</div><ol>' +
