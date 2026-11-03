@@ -98,7 +98,7 @@ const SUBJECTS = {
 };
 const DECKS = {
  "ipc-conceptos": {
-  "name": "Pentsamendu kritikoa · Oinarrizko kontzeptuak",
+  "name": "Oinarrizko kontzeptuak",
   "subject": "ipc",
   "cards": [
    [
@@ -159,7 +159,7 @@ const DECKS = {
   ]
  },
  "ipc-falacias": {
-  "name": "Pentsamendu kritikoa · Falaziak",
+  "name": "Falaziak",
   "subject": "ipc",
   "cards": [
    [
@@ -215,7 +215,7 @@ const DECKS = {
   ]
  },
  "ipc-sesgos": {
-  "name": "Pentsamendu kritikoa · Alborapen kognitiboak",
+  "name": "Alborapen kognitiboak",
   "subject": "ipc",
   "cards": [
    [
@@ -256,7 +256,7 @@ const DECKS = {
   ]
  },
  "ipc-publicidad": {
-  "name": "Pentsamendu kritikoa · Publizitatea eta hedabideak",
+  "name": "Publizitatea eta hedabideak",
   "subject": "ipc",
   "cards": [
    [
@@ -302,7 +302,7 @@ const DECKS = {
   ]
  },
  "ipc-huella": {
-  "name": "Pentsamendu kritikoa · Nire aztarna planetan",
+  "name": "Nire aztarna planetan",
   "subject": "ipc",
   "cards": [
    [
@@ -348,7 +348,7 @@ const DECKS = {
   ]
  },
  "ipc-prejuicios": {
-  "name": "Pentsamendu kritikoa · Aurreiritziak eta estereotipoak",
+  "name": "Aurreiritziak eta estereotipoak",
   "subject": "ipc",
   "cards": [
    [
@@ -414,7 +414,7 @@ const DECKS = {
   ]
  },
  "ipc-moda": {
-  "name": "Pentsamendu kritikoa · Moda azkarra (dokumentala)",
+  "name": "Moda azkarra (dokumentala)",
   "subject": "ipc",
   "cards": [
    [
@@ -1503,7 +1503,7 @@ const QUIZZES = {
   ]
  },
  "ipc-pensar-banco": {
-  "name": "Nork bere kabuz pentsatu (galdera-bilduma zabaldua)",
+  "name": "Nork bere kabuz pentsatu",
   "subject": "ipc",
   "items": [
    {
@@ -1784,7 +1784,7 @@ const QUIZZES = {
   ]
  },
  "ipc-argumentar-banco": {
-  "name": "Ondo argudiatu (galdera-bilduma zabaldua)",
+  "name": "Ondo argudiatu",
   "subject": "ipc",
   "items": [
    {
@@ -2098,7 +2098,7 @@ const QUIZZES = {
   ]
  },
  "ipc-falacias-banco": {
-  "name": "Falaziak: arrazoiketa txarraren trikimailuak (galdera-bilduma zabaldua)",
+  "name": "Falaziak: arrazoiketa txarraren trikimailuak",
   "subject": "ipc",
   "items": [
    {
@@ -2434,7 +2434,7 @@ const QUIZZES = {
   ]
  },
  "ipc-sesgos-banco": {
-  "name": "Adimenaren tranpak: alborapenak (galdera-bilduma zabaldua)",
+  "name": "Adimenaren tranpak: alborapenak",
   "subject": "ipc",
   "items": [
    {
@@ -2770,7 +2770,7 @@ const QUIZZES = {
   ]
  },
  "ipc-dialogo-banco": {
-  "name": "Elkarrizketaren artea (galdera-bilduma zabaldua)",
+  "name": "Elkarrizketaren artea",
   "subject": "ipc",
   "items": [
    {
@@ -2985,7 +2985,7 @@ const QUIZZES = {
   ]
  },
  "ipc-medios-banco": {
-  "name": "Begiratu hedabideak lupaz (galdera-bilduma zabaldua)",
+  "name": "Begiratu hedabideak lupaz",
   "subject": "ipc",
   "items": [
    {
@@ -3299,7 +3299,7 @@ const QUIZZES = {
   ]
  },
  "ipc-grupo-banco": {
-  "name": "Talde bat ala pilo bat gara? Kohesioa (galdera-bilduma zabaldua)",
+  "name": "Talde bat ala pilo bat gara? Kohesioa",
   "subject": "ipc",
   "items": [
    {
