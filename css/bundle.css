@@ -271,6 +271,11 @@ table.rubrica tr.r-sec td{background:var(--surface-2);font-weight:600;color:var(
 .opt.wrong{background:var(--bad-bg);border-color:var(--bad)}
 .opt.wrong .k{background:var(--bad);border-color:var(--bad);color:var(--on-bad)}
 .opt.dim{opacity:.55}
+/* daltonismo (aupa-0048): ✓ en la correcta y ✗ en la elegida mal, a la derecha (al final en RTL); borde discontinuo en la errónea */
+.opt.correct::after,.opt.wrong::after{flex:0 0 auto;margin-inline-start:auto;padding-inline-start:4px;font-weight:700;font-size:1.1rem;line-height:24px}
+.opt.correct::after{content:"✓";content:"✓" / "";color:var(--ok)}
+.opt.wrong::after{content:"✗";content:"✗" / "";color:var(--bad)}
+.opt.wrong{border-style:dashed;border-width:2px;padding:12px 14px}
 .fb{margin-top:16px;padding:13px 15px;border-radius:11px;background:var(--surface-2);border:1px solid var(--line-soft);
   font-size:.92rem;color:var(--ink);display:none}
 .fb.show{display:block}
@@ -807,6 +812,7 @@ ol.itin-temas li.temas-exp li.temas-extra button{margin-inline-start:0;width:100
   /* ---- Cuestionarios: opciones a lo ancho ---- */
   .opts { gap: 10px; }
   .opt { width: 100%; text-align: start; padding: 12px 14px; }
+  .opt.wrong { padding: 11px 13px; }   /* borde de 2 px (aupa-0048): sin salto */
   .q-card { padding: 16px; }
 
   /* ---- Mapas y esquemas: alto útil y scroll dentro de su caja ---- */
@@ -1060,6 +1066,11 @@ a.brand { text-decoration: none; color: inherit; cursor: pointer; }
 #retos .retos-opt.correct .k{ color:var(--ok); }
 #retos .retos-opt.wrong{ border-color:var(--bad); background:var(--bad-bg); }
 #retos .retos-opt.wrong .k{ color:var(--bad); }
+/* daltonismo (aupa-0048): como .opt en styles.css */
+#retos .retos-opt.correct::after, #retos .retos-opt.wrong::after{ flex:0 0 auto; margin-inline-start:auto; padding-inline-start:4px; font-weight:700; font-size:1.1rem; line-height:1.4 }
+#retos .retos-opt.correct::after{ content:"✓"; content:"✓" / ""; color:var(--ok); }
+#retos .retos-opt.wrong::after{ content:"✗"; content:"✗" / ""; color:var(--bad); }
+#retos .retos-opt.wrong{ border-style:dashed; border-width:2px; padding:calc(.7rem - 1px) calc(.85rem - 1px); }
 #retos .retos-fb{ margin-top:.9rem; padding:.75rem .85rem; border-inline-start:3px solid var(--accent); background:var(--surface-2);
   border-radius:8px; font-size:.92rem; line-height:1.45; opacity:0; max-height:0; overflow:hidden; transition:opacity .25s; }
 #retos .retos-fb.show{ opacity:1; max-height:none; }
